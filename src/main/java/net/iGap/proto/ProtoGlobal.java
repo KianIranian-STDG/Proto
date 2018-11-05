@@ -5118,6 +5118,11 @@ public final class ProtoGlobal {
      * <code>optional bool verified = 17;</code>
      */
     boolean getVerified();
+
+    /**
+     * <code>optional bool bot = 18;</code>
+     */
+    boolean getBot();
   }
   /**
    * Protobuf type {@code proto.RegisteredUser}
@@ -5878,6 +5883,29 @@ public final class ProtoGlobal {
       verified_ = false;
     }
 
+    public static final int BOT_FIELD_NUMBER = 18;
+    private boolean bot_;
+    /**
+     * <code>optional bool bot = 18;</code>
+     */
+    public boolean getBot() {
+      return bot_;
+    }
+    /**
+     * <code>optional bool bot = 18;</code>
+     */
+    private void setBot(boolean value) {
+      
+      bot_ = value;
+    }
+    /**
+     * <code>optional bool bot = 18;</code>
+     */
+    private void clearBot() {
+      
+      bot_ = false;
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0L) {
@@ -5930,6 +5958,9 @@ public final class ProtoGlobal {
       }
       if (verified_ != false) {
         output.writeBool(17, verified_);
+      }
+      if (bot_ != false) {
+        output.writeBool(18, bot_);
       }
     }
 
@@ -6005,6 +6036,10 @@ public final class ProtoGlobal {
       if (verified_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(17, verified_);
+      }
+      if (bot_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(18, bot_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -6655,6 +6690,29 @@ public final class ProtoGlobal {
         return this;
       }
 
+      /**
+       * <code>optional bool bot = 18;</code>
+       */
+      public boolean getBot() {
+        return instance.getBot();
+      }
+      /**
+       * <code>optional bool bot = 18;</code>
+       */
+      public Builder setBot(boolean value) {
+        copyOnWrite();
+        instance.setBot(value);
+        return this;
+      }
+      /**
+       * <code>optional bool bot = 18;</code>
+       */
+      public Builder clearBot() {
+        copyOnWrite();
+        instance.clearBot();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:proto.RegisteredUser)
     }
     protected final Object dynamicMethod(
@@ -6708,6 +6766,8 @@ public final class ProtoGlobal {
               !other.bio_.isEmpty(), other.bio_);
           verified_ = visitor.visitBoolean(verified_ != false, verified_,
               other.verified_ != false, other.verified_);
+          bot_ = visitor.visitBoolean(bot_ != false, bot_,
+              other.bot_ != false, other.bot_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -6832,6 +6892,11 @@ public final class ProtoGlobal {
                 case 136: {
 
                   verified_ = input.readBool();
+                  break;
+                }
+                case 144: {
+
+                  bot_ = input.readBool();
                   break;
                 }
               }
