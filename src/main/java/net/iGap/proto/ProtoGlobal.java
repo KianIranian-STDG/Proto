@@ -417,6 +417,10 @@ public final class ProtoGlobal {
      * <code>WALLET = 15;</code>
      */
     WALLET(15),
+    /**
+     * <code>STICKER = 16;</code>
+     */
+    STICKER(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -484,6 +488,10 @@ public final class ProtoGlobal {
      * <code>WALLET = 15;</code>
      */
     public static final int WALLET_VALUE = 15;
+    /**
+     * <code>STICKER = 16;</code>
+     */
+    public static final int STICKER_VALUE = 16;
 
 
     public final int getNumber() {
@@ -516,6 +524,7 @@ public final class ProtoGlobal {
         case 12: return LOG;
         case 13: return CONTACT;
         case 15: return WALLET;
+        case 16: return STICKER;
         default: return null;
       }
     }
