@@ -22933,6 +22933,18 @@ public final class ProtoGlobal {
        * <code>STICKER_SHOP = 22;</code>
        */
       STICKER_SHOP(22),
+      /**
+       * <code>IVAND = 23;</code>
+       */
+      IVAND(23),
+      /**
+       * <code>IVANDQR = 24;</code>
+       */
+      IVANDQR(24),
+      /**
+       * <code>IVANDLIST = 25;</code>
+       */
+      IVANDLIST(25),
       UNRECOGNIZED(-1),
       ;
 
@@ -23028,6 +23040,18 @@ public final class ProtoGlobal {
        * <code>STICKER_SHOP = 22;</code>
        */
       public static final int STICKER_SHOP_VALUE = 22;
+      /**
+       * <code>IVAND = 23;</code>
+       */
+      public static final int IVAND_VALUE = 23;
+      /**
+       * <code>IVANDQR = 24;</code>
+       */
+      public static final int IVANDQR_VALUE = 24;
+      /**
+       * <code>IVANDLIST = 25;</code>
+       */
+      public static final int IVANDLIST_VALUE = 25;
 
 
       public final int getNumber() {
@@ -23067,6 +23091,9 @@ public final class ProtoGlobal {
           case 20: return NEARBY_MENU;
           case 21: return CALL;
           case 22: return STICKER_SHOP;
+          case 23: return IVAND;
+          case 24: return IVANDQR;
+          case 25: return IVANDLIST;
           default: return null;
         }
       }
@@ -24461,6 +24488,448 @@ public final class ProtoGlobal {
     private static volatile com.google.protobuf.Parser<Discovery> PARSER;
 
     public static com.google.protobuf.Parser<Discovery> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface IVandActivityOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.IVandActivity)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional string title = 1;</code>
+     */
+    java.lang.String getTitle();
+    /**
+     * <code>optional string title = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getTitleBytes();
+
+    /**
+     * <code>optional uint32 score = 2;</code>
+     */
+    int getScore();
+
+    /**
+     * <code>optional uint32 time = 3;</code>
+     */
+    int getTime();
+  }
+  /**
+   * Protobuf type {@code proto.IVandActivity}
+   */
+  public  static final class IVandActivity extends
+      com.google.protobuf.GeneratedMessageLite<
+          IVandActivity, IVandActivity.Builder> implements
+      // @@protoc_insertion_point(message_implements:proto.IVandActivity)
+      IVandActivityOrBuilder {
+    private IVandActivity() {
+      title_ = "";
+    }
+    public static final int TITLE_FIELD_NUMBER = 1;
+    private java.lang.String title_;
+    /**
+     * <code>optional string title = 1;</code>
+     */
+    public java.lang.String getTitle() {
+      return title_;
+    }
+    /**
+     * <code>optional string title = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      return com.google.protobuf.ByteString.copyFromUtf8(title_);
+    }
+    /**
+     * <code>optional string title = 1;</code>
+     */
+    private void setTitle(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      title_ = value;
+    }
+    /**
+     * <code>optional string title = 1;</code>
+     */
+    private void clearTitle() {
+      
+      title_ = getDefaultInstance().getTitle();
+    }
+    /**
+     * <code>optional string title = 1;</code>
+     */
+    private void setTitleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      title_ = value.toStringUtf8();
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 2;
+    private int score_;
+    /**
+     * <code>optional uint32 score = 2;</code>
+     */
+    public int getScore() {
+      return score_;
+    }
+    /**
+     * <code>optional uint32 score = 2;</code>
+     */
+    private void setScore(int value) {
+      
+      score_ = value;
+    }
+    /**
+     * <code>optional uint32 score = 2;</code>
+     */
+    private void clearScore() {
+      
+      score_ = 0;
+    }
+
+    public static final int TIME_FIELD_NUMBER = 3;
+    private int time_;
+    /**
+     * <code>optional uint32 time = 3;</code>
+     */
+    public int getTime() {
+      return time_;
+    }
+    /**
+     * <code>optional uint32 time = 3;</code>
+     */
+    private void setTime(int value) {
+      
+      time_ = value;
+    }
+    /**
+     * <code>optional uint32 time = 3;</code>
+     */
+    private void clearTime() {
+      
+      time_ = 0;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!title_.isEmpty()) {
+        output.writeString(1, getTitle());
+      }
+      if (score_ != 0) {
+        output.writeUInt32(2, score_);
+      }
+      if (time_ != 0) {
+        output.writeUInt32(3, time_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!title_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getTitle());
+      }
+      if (score_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, score_);
+      }
+      if (time_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, time_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.IVandActivity parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.IVandActivity prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code proto.IVandActivity}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          net.iGap.proto.ProtoGlobal.IVandActivity, Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.IVandActivity)
+        net.iGap.proto.ProtoGlobal.IVandActivityOrBuilder {
+      // Construct using net.iGap.proto.ProtoGlobal.IVandActivity.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional string title = 1;</code>
+       */
+      public java.lang.String getTitle() {
+        return instance.getTitle();
+      }
+      /**
+       * <code>optional string title = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTitleBytes() {
+        return instance.getTitleBytes();
+      }
+      /**
+       * <code>optional string title = 1;</code>
+       */
+      public Builder setTitle(
+          java.lang.String value) {
+        copyOnWrite();
+        instance.setTitle(value);
+        return this;
+      }
+      /**
+       * <code>optional string title = 1;</code>
+       */
+      public Builder clearTitle() {
+        copyOnWrite();
+        instance.clearTitle();
+        return this;
+      }
+      /**
+       * <code>optional string title = 1;</code>
+       */
+      public Builder setTitleBytes(
+          com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setTitleBytes(value);
+        return this;
+      }
+
+      /**
+       * <code>optional uint32 score = 2;</code>
+       */
+      public int getScore() {
+        return instance.getScore();
+      }
+      /**
+       * <code>optional uint32 score = 2;</code>
+       */
+      public Builder setScore(int value) {
+        copyOnWrite();
+        instance.setScore(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 score = 2;</code>
+       */
+      public Builder clearScore() {
+        copyOnWrite();
+        instance.clearScore();
+        return this;
+      }
+
+      /**
+       * <code>optional uint32 time = 3;</code>
+       */
+      public int getTime() {
+        return instance.getTime();
+      }
+      /**
+       * <code>optional uint32 time = 3;</code>
+       */
+      public Builder setTime(int value) {
+        copyOnWrite();
+        instance.setTime(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 time = 3;</code>
+       */
+      public Builder clearTime() {
+        copyOnWrite();
+        instance.clearTime();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:proto.IVandActivity)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new net.iGap.proto.ProtoGlobal.IVandActivity();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          net.iGap.proto.ProtoGlobal.IVandActivity other = (net.iGap.proto.ProtoGlobal.IVandActivity) arg1;
+          title_ = visitor.visitString(!title_.isEmpty(), title_,
+              !other.title_.isEmpty(), other.title_);
+          score_ = visitor.visitInt(score_ != 0, score_,
+              other.score_ != 0, other.score_);
+          time_ = visitor.visitInt(time_ != 0, time_,
+              other.time_ != 0, other.time_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  String s = input.readStringRequireUtf8();
+
+                  title_ = s;
+                  break;
+                }
+                case 16: {
+
+                  score_ = input.readUInt32();
+                  break;
+                }
+                case 24: {
+
+                  time_ = input.readUInt32();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoGlobal.IVandActivity.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:proto.IVandActivity)
+    private static final net.iGap.proto.ProtoGlobal.IVandActivity DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new IVandActivity();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.IVandActivity getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<IVandActivity> PARSER;
+
+    public static com.google.protobuf.Parser<IVandActivity> parser() {
       return DEFAULT_INSTANCE.getParserForType();
     }
   }
