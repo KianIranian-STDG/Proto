@@ -8,9 +8,15 @@ public final class ProtoClientGetPromote {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface ClientGetPromoteOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ClientGetPromote)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional .proto.Request request = 1;</code>
@@ -20,17 +26,86 @@ public final class ProtoClientGetPromote {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ClientGetPromote}
    */
   public  static final class ClientGetPromote extends
-      com.google.protobuf.GeneratedMessageLite<
-          ClientGetPromote, ClientGetPromote.Builder> implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ClientGetPromote)
       ClientGetPromoteOrBuilder {
+    // Use ClientGetPromote.newBuilder() to construct.
+    private ClientGetPromote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private ClientGetPromote() {
     }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ClientGetPromote(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromote_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromote_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoClientGetPromote.ClientGetPromote.class, net.iGap.proto.ProtoClientGetPromote.ClientGetPromote.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
@@ -48,39 +123,18 @@ public final class ProtoClientGetPromote {
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -91,7 +145,7 @@ public final class ProtoClientGetPromote {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -99,245 +153,430 @@ public final class ProtoClientGetPromote {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      memoizedSerializedSize = size;
+      memoizedSize = size;
       return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoClientGetPromote.ClientGetPromote)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoClientGetPromote.ClientGetPromote other = (net.iGap.proto.ProtoClientGetPromote.ClientGetPromote) obj;
+
+      boolean result = true;
+      result = result && (hasRequest() == other.hasRequest());
+      if (hasRequest()) {
+        result = result && getRequest()
+            .equals(other.getRequest());
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoClientGetPromote.ClientGetPromote prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ClientGetPromote}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoClientGetPromote.ClientGetPromote, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ClientGetPromote)
         net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteOrBuilder {
-      // Construct using net.iGap.proto.ProtoClientGetPromote.ClientGetPromote.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromote_descriptor;
       }
 
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromote_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientGetPromote.ClientGetPromote.class, net.iGap.proto.ProtoClientGetPromote.ClientGetPromote.Builder.class);
+      }
 
+      // Construct using net.iGap.proto.ProtoClientGetPromote.ClientGetPromote.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromote_descriptor;
+      }
+
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromote getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoClientGetPromote.ClientGetPromote.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromote build() {
+        net.iGap.proto.ProtoClientGetPromote.ClientGetPromote result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromote buildPartial() {
+        net.iGap.proto.ProtoClientGetPromote.ClientGetPromote result = new net.iGap.proto.ProtoClientGetPromote.ClientGetPromote(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoClientGetPromote.ClientGetPromote) {
+          return mergeFrom((net.iGap.proto.ProtoClientGetPromote.ClientGetPromote)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoClientGetPromote.ClientGetPromote other) {
+        if (other == net.iGap.proto.ProtoClientGetPromote.ClientGetPromote.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoClientGetPromote.ClientGetPromote parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoClientGetPromote.ClientGetPromote) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
       }
 
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
       // @@protoc_insertion_point(builder_scope:proto.ClientGetPromote)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoClientGetPromote.ClientGetPromote();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoClientGetPromote.ClientGetPromote other = (net.iGap.proto.ProtoClientGetPromote.ClientGetPromote) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientGetPromote.ClientGetPromote.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ClientGetPromote)
     private static final net.iGap.proto.ProtoClientGetPromote.ClientGetPromote DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientGetPromote();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientGetPromote.ClientGetPromote();
     }
 
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromote getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ClientGetPromote> PARSER;
+    private static final com.google.protobuf.Parser<ClientGetPromote>
+        PARSER = new com.google.protobuf.AbstractParser<ClientGetPromote>() {
+      public ClientGetPromote parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClientGetPromote(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ClientGetPromote> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientGetPromote> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoClientGetPromote.ClientGetPromote getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface ClientGetPromoteResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ClientGetPromoteResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional .proto.Response response = 1;</code>
@@ -347,6 +586,10 @@ public final class ProtoClientGetPromote {
      * <code>optional .proto.Response response = 1;</code>
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
@@ -361,21 +604,108 @@ public final class ProtoClientGetPromote {
      * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
      */
     int getPromoteCount();
+    /**
+     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.PromoteOrBuilder> 
+        getPromoteOrBuilderList();
+    /**
+     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
+     */
+    net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.PromoteOrBuilder getPromoteOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.ClientGetPromoteResponse}
    */
   public  static final class ClientGetPromoteResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          ClientGetPromoteResponse, ClientGetPromoteResponse.Builder> implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ClientGetPromoteResponse)
       ClientGetPromoteResponseOrBuilder {
-    private ClientGetPromoteResponse() {
-      promote_ = emptyProtobufList();
+    // Use ClientGetPromoteResponse.newBuilder() to construct.
+    private ClientGetPromoteResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private ClientGetPromoteResponse() {
+      promote_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ClientGetPromoteResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                promote_ = new java.util.ArrayList<net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              promote_.add(
+                  input.readMessage(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          promote_ = java.util.Collections.unmodifiableList(promote_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.class, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Builder.class);
+    }
+
     public interface PromoteOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.ClientGetPromoteResponse.Promote)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
        * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
@@ -395,17 +725,82 @@ public final class ProtoClientGetPromote {
      * Protobuf type {@code proto.ClientGetPromoteResponse.Promote}
      */
     public  static final class Promote extends
-        com.google.protobuf.GeneratedMessageLite<
-            Promote, Promote.Builder> implements
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.ClientGetPromoteResponse.Promote)
         PromoteOrBuilder {
-      private Promote() {
+      // Use Promote.newBuilder() to construct.
+      private Promote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
       }
+      private Promote() {
+        type_ = 0;
+        id_ = 0L;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private Promote(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+
+                type_ = rawValue;
+                break;
+              }
+              case 16: {
+
+                id_ = input.readUInt64();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_Promote_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_Promote_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.class, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder.class);
+      }
+
       /**
        * Protobuf enum {@code proto.ClientGetPromoteResponse.Promote.Type}
        */
       public enum Type
-          implements com.google.protobuf.Internal.EnumLite {
+          implements com.google.protobuf.ProtocolMessageEnum {
         /**
          * <code>USER = 0;</code>
          */
@@ -428,6 +823,10 @@ public final class ProtoClientGetPromote {
 
 
         public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
           return value;
         }
 
@@ -459,6 +858,33 @@ public final class ProtoClientGetPromote {
                 }
               };
 
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor
+            getValueDescriptor() {
+          return getDescriptor().getValues().get(ordinal());
+        }
+        public final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptorForType() {
+          return getDescriptor();
+        }
+        public static final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.getDescriptor().getEnumTypes().get(0);
+        }
+
+        private static final Type[] VALUES = values();
+
+        public static Type valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
         private final int value;
 
         private Type(int value) {
@@ -480,31 +906,8 @@ public final class ProtoClientGetPromote {
        * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
        */
       public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type getType() {
-        net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type result = net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type.forNumber(type_);
+        net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type result = net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type.valueOf(type_);
         return result == null ? net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
-       */
-      private void setTypeValue(int value) {
-          type_ = value;
-      }
-      /**
-       * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
-       */
-      private void setType(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        type_ = value.getNumber();
-      }
-      /**
-       * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
-       */
-      private void clearType() {
-        
-        type_ = 0;
       }
 
       public static final int ID_FIELD_NUMBER = 2;
@@ -515,19 +918,15 @@ public final class ProtoClientGetPromote {
       public long getId() {
         return id_;
       }
-      /**
-       * <code>optional uint64 id = 2;</code>
-       */
-      private void setId(long value) {
-        
-        id_ = value;
-      }
-      /**
-       * <code>optional uint64 id = 2;</code>
-       */
-      private void clearId() {
-        
-        id_ = 0L;
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -541,7 +940,7 @@ public final class ProtoClientGetPromote {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -553,255 +952,375 @@ public final class ProtoClientGetPromote {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(2, id_);
         }
-        memoizedSerializedSize = size;
+        memoizedSize = size;
         return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote other = (net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote) obj;
+
+        boolean result = true;
+        result = result && type_ == other.type_;
+        result = result && (getId()
+            == other.getId());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getId());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
       }
 
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.ClientGetPromoteResponse.Promote}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.ClientGetPromoteResponse.Promote)
           net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.PromoteOrBuilder {
-        // Construct using net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.newBuilder()
-        private Builder() {
-          super(DEFAULT_INSTANCE);
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_Promote_descriptor;
         }
 
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_Promote_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.class, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder.class);
+        }
 
+        // Construct using net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          type_ = 0;
+
+          id_ = 0L;
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_Promote_descriptor;
+        }
+
+        public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.getDefaultInstance();
+        }
+
+        public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote build() {
+          net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote buildPartial() {
+          net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote result = new net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote(this);
+          result.type_ = type_;
+          result.id_ = id_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote) {
+            return mergeFrom((net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote other) {
+          if (other == net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.getDefaultInstance()) return this;
+          if (other.type_ != 0) {
+            setTypeValue(other.getTypeValue());
+          }
+          if (other.getId() != 0L) {
+            setId(other.getId());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int type_ = 0;
         /**
          * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
          */
         public int getTypeValue() {
-          return instance.getTypeValue();
+          return type_;
         }
         /**
          * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
          */
         public Builder setTypeValue(int value) {
-          copyOnWrite();
-          instance.setTypeValue(value);
+          type_ = value;
+          onChanged();
           return this;
         }
         /**
          * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
          */
         public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type getType() {
-          return instance.getType();
+          net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type result = net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type.valueOf(type_);
+          return result == null ? net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type.UNRECOGNIZED : result;
         }
         /**
          * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
          */
         public Builder setType(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Type value) {
-          copyOnWrite();
-          instance.setType(value);
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          type_ = value.getNumber();
+          onChanged();
           return this;
         }
         /**
          * <code>optional .proto.ClientGetPromoteResponse.Promote.Type type = 1;</code>
          */
         public Builder clearType() {
-          copyOnWrite();
-          instance.clearType();
+          
+          type_ = 0;
+          onChanged();
           return this;
         }
 
+        private long id_ ;
         /**
          * <code>optional uint64 id = 2;</code>
          */
         public long getId() {
-          return instance.getId();
+          return id_;
         }
         /**
          * <code>optional uint64 id = 2;</code>
          */
         public Builder setId(long value) {
-          copyOnWrite();
-          instance.setId(value);
+          
+          id_ = value;
+          onChanged();
           return this;
         }
         /**
          * <code>optional uint64 id = 2;</code>
          */
         public Builder clearId() {
-          copyOnWrite();
-          instance.clearId();
+          
+          id_ = 0L;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return this;
         }
 
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
         // @@protoc_insertion_point(builder_scope:proto.ClientGetPromoteResponse.Promote)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote other = (net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote) arg1;
-            type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
-            id_ = visitor.visitLong(id_ != 0L, id_,
-                other.id_ != 0L, other.id_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-                    int rawValue = input.readEnum();
-
-                    type_ = rawValue;
-                    break;
-                  }
-                  case 16: {
-
-                    id_ = input.readUInt64();
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.ClientGetPromoteResponse.Promote)
       private static final net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Promote();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote();
       }
 
       public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<Promote> PARSER;
+      private static final com.google.protobuf.Parser<Promote>
+          PARSER = new com.google.protobuf.AbstractParser<Promote>() {
+        public Promote parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Promote(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<Promote> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Promote> getParserForType() {
+        return PARSER;
+      }
+
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     private int bitField0_;
@@ -822,43 +1341,12 @@ public final class ProtoClientGetPromote {
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int PROMOTE_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote> promote_;
+    private java.util.List<net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote> promote_;
     /**
      * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
      */
@@ -891,90 +1379,15 @@ public final class ProtoClientGetPromote {
         int index) {
       return promote_.get(index);
     }
-    private void ensurePromoteIsMutable() {
-      if (!promote_.isModifiable()) {
-        promote_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(promote_);
-       }
-    }
 
-    /**
-     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
-     */
-    private void setPromote(
-        int index, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensurePromoteIsMutable();
-      promote_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
-     */
-    private void setPromote(
-        int index, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder builderForValue) {
-      ensurePromoteIsMutable();
-      promote_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
-     */
-    private void addPromote(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensurePromoteIsMutable();
-      promote_.add(value);
-    }
-    /**
-     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
-     */
-    private void addPromote(
-        int index, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensurePromoteIsMutable();
-      promote_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
-     */
-    private void addPromote(
-        net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder builderForValue) {
-      ensurePromoteIsMutable();
-      promote_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
-     */
-    private void addPromote(
-        int index, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder builderForValue) {
-      ensurePromoteIsMutable();
-      promote_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
-     */
-    private void addAllPromote(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote> values) {
-      ensurePromoteIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, promote_);
-    }
-    /**
-     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
-     */
-    private void clearPromote() {
-      promote_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
-     */
-    private void removePromote(int index) {
-      ensurePromoteIsMutable();
-      promote_.remove(index);
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -988,7 +1401,7 @@ public final class ProtoClientGetPromote {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1000,162 +1413,488 @@ public final class ProtoClientGetPromote {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, promote_.get(i));
       }
-      memoizedSerializedSize = size;
+      memoizedSize = size;
       return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse other = (net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse) obj;
+
+      boolean result = true;
+      result = result && (hasResponse() == other.hasResponse());
+      if (hasResponse()) {
+        result = result && getResponse()
+            .equals(other.getResponse());
+      }
+      result = result && getPromoteList()
+          .equals(other.getPromoteList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      if (getPromoteCount() > 0) {
+        hash = (37 * hash) + PROMOTE_FIELD_NUMBER;
+        hash = (53 * hash) + getPromoteList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ClientGetPromoteResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ClientGetPromoteResponse)
         net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponseOrBuilder {
-      // Construct using net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_descriptor;
       }
 
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.class, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Builder.class);
+      }
 
+      // Construct using net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPromoteFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        if (promoteBuilder_ == null) {
+          promote_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          promoteBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoClientGetPromote.internal_static_proto_ClientGetPromoteResponse_descriptor;
+      }
+
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse build() {
+        net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse buildPartial() {
+        net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse result = new net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        if (promoteBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            promote_ = java.util.Collections.unmodifiableList(promote_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.promote_ = promote_;
+        } else {
+          result.promote_ = promoteBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse) {
+          return mergeFrom((net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse other) {
+        if (other == net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (promoteBuilder_ == null) {
+          if (!other.promote_.isEmpty()) {
+            if (promote_.isEmpty()) {
+              promote_ = other.promote_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensurePromoteIsMutable();
+              promote_.addAll(other.promote_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.promote_.isEmpty()) {
+            if (promoteBuilder_.isEmpty()) {
+              promoteBuilder_.dispose();
+              promoteBuilder_ = null;
+              promote_ = other.promote_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              promoteBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPromoteFieldBuilder() : null;
+            } else {
+              promoteBuilder_.addAllMessages(other.promote_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote> promote_ =
+        java.util.Collections.emptyList();
+      private void ensurePromoteIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          promote_ = new java.util.ArrayList<net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote>(promote_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.PromoteOrBuilder> promoteBuilder_;
 
       /**
        * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
        */
       public java.util.List<net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote> getPromoteList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getPromoteList());
+        if (promoteBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(promote_);
+        } else {
+          return promoteBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
        */
       public int getPromoteCount() {
-        return instance.getPromoteCount();
-      }/**
+        if (promoteBuilder_ == null) {
+          return promote_.size();
+        } else {
+          return promoteBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
        */
       public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote getPromote(int index) {
-        return instance.getPromote(index);
+        if (promoteBuilder_ == null) {
+          return promote_.get(index);
+        } else {
+          return promoteBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
        */
       public Builder setPromote(
           int index, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote value) {
-        copyOnWrite();
-        instance.setPromote(index, value);
+        if (promoteBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePromoteIsMutable();
+          promote_.set(index, value);
+          onChanged();
+        } else {
+          promoteBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -1163,16 +1902,29 @@ public final class ProtoClientGetPromote {
        */
       public Builder setPromote(
           int index, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder builderForValue) {
-        copyOnWrite();
-        instance.setPromote(index, builderForValue);
+        if (promoteBuilder_ == null) {
+          ensurePromoteIsMutable();
+          promote_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          promoteBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
        */
       public Builder addPromote(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote value) {
-        copyOnWrite();
-        instance.addPromote(value);
+        if (promoteBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePromoteIsMutable();
+          promote_.add(value);
+          onChanged();
+        } else {
+          promoteBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -1180,8 +1932,16 @@ public final class ProtoClientGetPromote {
        */
       public Builder addPromote(
           int index, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote value) {
-        copyOnWrite();
-        instance.addPromote(index, value);
+        if (promoteBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePromoteIsMutable();
+          promote_.add(index, value);
+          onChanged();
+        } else {
+          promoteBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -1189,8 +1949,13 @@ public final class ProtoClientGetPromote {
        */
       public Builder addPromote(
           net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder builderForValue) {
-        copyOnWrite();
-        instance.addPromote(builderForValue);
+        if (promoteBuilder_ == null) {
+          ensurePromoteIsMutable();
+          promote_.add(builderForValue.build());
+          onChanged();
+        } else {
+          promoteBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1198,8 +1963,13 @@ public final class ProtoClientGetPromote {
        */
       public Builder addPromote(
           int index, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder builderForValue) {
-        copyOnWrite();
-        instance.addPromote(index, builderForValue);
+        if (promoteBuilder_ == null) {
+          ensurePromoteIsMutable();
+          promote_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          promoteBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1207,146 +1977,225 @@ public final class ProtoClientGetPromote {
        */
       public Builder addAllPromote(
           java.lang.Iterable<? extends net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote> values) {
-        copyOnWrite();
-        instance.addAllPromote(values);
+        if (promoteBuilder_ == null) {
+          ensurePromoteIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, promote_);
+          onChanged();
+        } else {
+          promoteBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
        */
       public Builder clearPromote() {
-        copyOnWrite();
-        instance.clearPromote();
+        if (promoteBuilder_ == null) {
+          promote_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          promoteBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
        */
       public Builder removePromote(int index) {
-        copyOnWrite();
-        instance.removePromote(index);
+        if (promoteBuilder_ == null) {
+          ensurePromoteIsMutable();
+          promote_.remove(index);
+          onChanged();
+        } else {
+          promoteBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
+       */
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder getPromoteBuilder(
+          int index) {
+        return getPromoteFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
+       */
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.PromoteOrBuilder getPromoteOrBuilder(
+          int index) {
+        if (promoteBuilder_ == null) {
+          return promote_.get(index);  } else {
+          return promoteBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.PromoteOrBuilder> 
+           getPromoteOrBuilderList() {
+        if (promoteBuilder_ != null) {
+          return promoteBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(promote_);
+        }
+      }
+      /**
+       * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
+       */
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder addPromoteBuilder() {
+        return getPromoteFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
+       */
+      public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder addPromoteBuilder(
+          int index) {
+        return getPromoteFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ClientGetPromoteResponse.Promote promote = 2;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder> 
+           getPromoteBuilderList() {
+        return getPromoteFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.PromoteOrBuilder> 
+          getPromoteFieldBuilder() {
+        if (promoteBuilder_ == null) {
+          promoteBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.Builder, net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.PromoteOrBuilder>(
+                  promote_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          promote_ = null;
+        }
+        return promoteBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
       }
 
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
       // @@protoc_insertion_point(builder_scope:proto.ClientGetPromoteResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          promote_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse other = (net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          promote_= visitor.visitList(promote_, other.promote_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  if (!promote_.isModifiable()) {
-                    promote_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(promote_);
-                  }
-                  promote_.add(
-                      input.readMessage(net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.Promote.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ClientGetPromoteResponse)
     private static final net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ClientGetPromoteResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse();
     }
 
     public static net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ClientGetPromoteResponse> PARSER;
+    private static final com.google.protobuf.Parser<ClientGetPromoteResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ClientGetPromoteResponse>() {
+      public ClientGetPromoteResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClientGetPromoteResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ClientGetPromoteResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientGetPromoteResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoClientGetPromote.ClientGetPromoteResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientGetPromote_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientGetPromote_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientGetPromoteResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientGetPromoteResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ClientGetPromoteResponse_Promote_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ClientGetPromoteResponse_Promote_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\026ClientGetPromote.proto\022\005proto\032\rRequest" +
+      ".proto\032\016Response.proto\"3\n\020ClientGetPromo" +
+      "te\022\037\n\007request\030\001 \001(\0132\016.proto.Request\"\355\001\n\030" +
+      "ClientGetPromoteResponse\022!\n\010response\030\001 \001" +
+      "(\0132\017.proto.Response\0228\n\007promote\030\002 \003(\0132\'.p" +
+      "roto.ClientGetPromoteResponse.Promote\032t\n" +
+      "\007Promote\022:\n\004type\030\001 \001(\0162,.proto.ClientGet" +
+      "PromoteResponse.Promote.Type\022\n\n\002id\030\002 \001(\004" +
+      "\"!\n\004Type\022\010\n\004USER\020\000\022\017\n\013PUBLIC_ROOM\020\001B\'\n\016n" +
+      "et.iGap.protoB\025ProtoClientGetPromoteb\006pr",
+      "oto3"
+    };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        }, assigner);
+    internal_static_proto_ClientGetPromote_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_ClientGetPromote_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientGetPromote_descriptor,
+        new java.lang.String[] { "Request", });
+    internal_static_proto_ClientGetPromoteResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_ClientGetPromoteResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientGetPromoteResponse_descriptor,
+        new java.lang.String[] { "Response", "Promote", });
+    internal_static_proto_ClientGetPromoteResponse_Promote_descriptor =
+      internal_static_proto_ClientGetPromoteResponse_descriptor.getNestedTypes().get(0);
+    internal_static_proto_ClientGetPromoteResponse_Promote_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ClientGetPromoteResponse_Promote_descriptor,
+        new java.lang.String[] { "Type", "Id", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

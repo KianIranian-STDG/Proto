@@ -8,9 +8,15 @@ public final class ProtoMplSalesList {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface MplSalesListOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.MplSalesList)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional .proto.Request request = 1;</code>
@@ -20,6 +26,10 @@ public final class ProtoMplSalesList {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
      * <code>optional .proto.MplSale.Status status = 2;</code>
@@ -38,17 +48,106 @@ public final class ProtoMplSalesList {
      * <code>optional .proto.Pagination pagination = 3;</code>
      */
     net.iGap.proto.ProtoGlobal.Pagination getPagination();
+    /**
+     * <code>optional .proto.Pagination pagination = 3;</code>
+     */
+    net.iGap.proto.ProtoGlobal.PaginationOrBuilder getPaginationOrBuilder();
   }
   /**
    * Protobuf type {@code proto.MplSalesList}
    */
   public  static final class MplSalesList extends
-      com.google.protobuf.GeneratedMessageLite<
-          MplSalesList, MplSalesList.Builder> implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MplSalesList)
       MplSalesListOrBuilder {
-    private MplSalesList() {
+    // Use MplSalesList.newBuilder() to construct.
+    private MplSalesList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private MplSalesList() {
+      status_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private MplSalesList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 26: {
+              net.iGap.proto.ProtoGlobal.Pagination.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(net.iGap.proto.ProtoGlobal.Pagination.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesList_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoMplSalesList.MplSalesList.class, net.iGap.proto.ProtoMplSalesList.MplSalesList.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
@@ -66,39 +165,8 @@ public final class ProtoMplSalesList {
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int STATUS_FIELD_NUMBER = 2;
@@ -113,31 +181,8 @@ public final class ProtoMplSalesList {
      * <code>optional .proto.MplSale.Status status = 2;</code>
      */
     public net.iGap.proto.ProtoGlobal.MplSale.Status getStatus() {
-      net.iGap.proto.ProtoGlobal.MplSale.Status result = net.iGap.proto.ProtoGlobal.MplSale.Status.forNumber(status_);
+      net.iGap.proto.ProtoGlobal.MplSale.Status result = net.iGap.proto.ProtoGlobal.MplSale.Status.valueOf(status_);
       return result == null ? net.iGap.proto.ProtoGlobal.MplSale.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .proto.MplSale.Status status = 2;</code>
-     */
-    private void setStatusValue(int value) {
-        status_ = value;
-    }
-    /**
-     * <code>optional .proto.MplSale.Status status = 2;</code>
-     */
-    private void setStatus(net.iGap.proto.ProtoGlobal.MplSale.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      status_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.MplSale.Status status = 2;</code>
-     */
-    private void clearStatus() {
-      
-      status_ = 0;
     }
 
     public static final int PAGINATION_FIELD_NUMBER = 3;
@@ -157,39 +202,18 @@ public final class ProtoMplSalesList {
     /**
      * <code>optional .proto.Pagination pagination = 3;</code>
      */
-    private void setPagination(net.iGap.proto.ProtoGlobal.Pagination value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      pagination_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Pagination pagination = 3;</code>
-     */
-    private void setPagination(
-        net.iGap.proto.ProtoGlobal.Pagination.Builder builderForValue) {
-      pagination_ = builderForValue.build();
-      
+    public net.iGap.proto.ProtoGlobal.PaginationOrBuilder getPaginationOrBuilder() {
+      return getPagination();
     }
-    /**
-     * <code>optional .proto.Pagination pagination = 3;</code>
-     */
-    private void mergePagination(net.iGap.proto.ProtoGlobal.Pagination value) {
-      if (pagination_ != null &&
-          pagination_ != net.iGap.proto.ProtoGlobal.Pagination.getDefaultInstance()) {
-        pagination_ =
-          net.iGap.proto.ProtoGlobal.Pagination.newBuilder(pagination_).mergeFrom(value).buildPartial();
-      } else {
-        pagination_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Pagination pagination = 3;</code>
-     */
-    private void clearPagination() {  pagination_ = null;
-      
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -206,7 +230,7 @@ public final class ProtoMplSalesList {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -222,348 +246,623 @@ public final class ProtoMplSalesList {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getPagination());
       }
-      memoizedSerializedSize = size;
+      memoizedSize = size;
       return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoMplSalesList.MplSalesList)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoMplSalesList.MplSalesList other = (net.iGap.proto.ProtoMplSalesList.MplSalesList) obj;
+
+      boolean result = true;
+      result = result && (hasRequest() == other.hasRequest());
+      if (hasRequest()) {
+        result = result && getRequest()
+            .equals(other.getRequest());
+      }
+      result = result && status_ == other.status_;
+      result = result && (hasPagination() == other.hasPagination());
+      if (hasPagination()) {
+        result = result && getPagination()
+            .equals(other.getPagination());
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoMplSalesList.MplSalesList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.MplSalesList}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoMplSalesList.MplSalesList, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.MplSalesList)
         net.iGap.proto.ProtoMplSalesList.MplSalesListOrBuilder {
-      // Construct using net.iGap.proto.ProtoMplSalesList.MplSalesList.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesList_descriptor;
       }
 
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoMplSalesList.MplSalesList.class, net.iGap.proto.ProtoMplSalesList.MplSalesList.Builder.class);
+      }
 
+      // Construct using net.iGap.proto.ProtoMplSalesList.MplSalesList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        status_ = 0;
+
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesList_descriptor;
+      }
+
+      public net.iGap.proto.ProtoMplSalesList.MplSalesList getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoMplSalesList.MplSalesList.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoMplSalesList.MplSalesList build() {
+        net.iGap.proto.ProtoMplSalesList.MplSalesList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoMplSalesList.MplSalesList buildPartial() {
+        net.iGap.proto.ProtoMplSalesList.MplSalesList result = new net.iGap.proto.ProtoMplSalesList.MplSalesList(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.status_ = status_;
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoMplSalesList.MplSalesList) {
+          return mergeFrom((net.iGap.proto.ProtoMplSalesList.MplSalesList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoMplSalesList.MplSalesList other) {
+        if (other == net.iGap.proto.ProtoMplSalesList.MplSalesList.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoMplSalesList.MplSalesList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoMplSalesList.MplSalesList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
+      }
 
+      private int status_ = 0;
       /**
        * <code>optional .proto.MplSale.Status status = 2;</code>
        */
       public int getStatusValue() {
-        return instance.getStatusValue();
+        return status_;
       }
       /**
        * <code>optional .proto.MplSale.Status status = 2;</code>
        */
       public Builder setStatusValue(int value) {
-        copyOnWrite();
-        instance.setStatusValue(value);
+        status_ = value;
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.MplSale.Status status = 2;</code>
        */
       public net.iGap.proto.ProtoGlobal.MplSale.Status getStatus() {
-        return instance.getStatus();
+        net.iGap.proto.ProtoGlobal.MplSale.Status result = net.iGap.proto.ProtoGlobal.MplSale.Status.valueOf(status_);
+        return result == null ? net.iGap.proto.ProtoGlobal.MplSale.Status.UNRECOGNIZED : result;
       }
       /**
        * <code>optional .proto.MplSale.Status status = 2;</code>
        */
       public Builder setStatus(net.iGap.proto.ProtoGlobal.MplSale.Status value) {
-        copyOnWrite();
-        instance.setStatus(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.MplSale.Status status = 2;</code>
        */
       public Builder clearStatus() {
-        copyOnWrite();
-        instance.clearStatus();
+        
+        status_ = 0;
+        onChanged();
         return this;
       }
 
+      private net.iGap.proto.ProtoGlobal.Pagination pagination_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Pagination, net.iGap.proto.ProtoGlobal.Pagination.Builder, net.iGap.proto.ProtoGlobal.PaginationOrBuilder> paginationBuilder_;
       /**
        * <code>optional .proto.Pagination pagination = 3;</code>
        */
       public boolean hasPagination() {
-        return instance.hasPagination();
+        return paginationBuilder_ != null || pagination_ != null;
       }
       /**
        * <code>optional .proto.Pagination pagination = 3;</code>
        */
       public net.iGap.proto.ProtoGlobal.Pagination getPagination() {
-        return instance.getPagination();
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? net.iGap.proto.ProtoGlobal.Pagination.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Pagination pagination = 3;</code>
        */
       public Builder setPagination(net.iGap.proto.ProtoGlobal.Pagination value) {
-        copyOnWrite();
-        instance.setPagination(value);
-        return this;
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Pagination pagination = 3;</code>
        */
       public Builder setPagination(
           net.iGap.proto.ProtoGlobal.Pagination.Builder builderForValue) {
-        copyOnWrite();
-        instance.setPagination(builderForValue);
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Pagination pagination = 3;</code>
        */
       public Builder mergePagination(net.iGap.proto.ProtoGlobal.Pagination value) {
-        copyOnWrite();
-        instance.mergePagination(value);
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              net.iGap.proto.ProtoGlobal.Pagination.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Pagination pagination = 3;</code>
        */
-      public Builder clearPagination() {  copyOnWrite();
-        instance.clearPagination();
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Pagination pagination = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Pagination.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Pagination pagination = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PaginationOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              net.iGap.proto.ProtoGlobal.Pagination.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <code>optional .proto.Pagination pagination = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Pagination, net.iGap.proto.ProtoGlobal.Pagination.Builder, net.iGap.proto.ProtoGlobal.PaginationOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Pagination, net.iGap.proto.ProtoGlobal.Pagination.Builder, net.iGap.proto.ProtoGlobal.PaginationOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
       }
 
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
       // @@protoc_insertion_point(builder_scope:proto.MplSalesList)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoMplSalesList.MplSalesList();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoMplSalesList.MplSalesList other = (net.iGap.proto.ProtoMplSalesList.MplSalesList) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          status_ = visitor.visitInt(status_ != 0, status_,    other.status_ != 0, other.status_);
-          pagination_ = visitor.visitMessage(pagination_, other.pagination_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-                  int rawValue = input.readEnum();
-
-                  status_ = rawValue;
-                  break;
-                }
-                case 26: {
-                  net.iGap.proto.ProtoGlobal.Pagination.Builder subBuilder = null;
-                  if (pagination_ != null) {
-                    subBuilder = pagination_.toBuilder();
-                  }
-                  pagination_ = input.readMessage(net.iGap.proto.ProtoGlobal.Pagination.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(pagination_);
-                    pagination_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoMplSalesList.MplSalesList.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.MplSalesList)
     private static final net.iGap.proto.ProtoMplSalesList.MplSalesList DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MplSalesList();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoMplSalesList.MplSalesList();
     }
 
     public static net.iGap.proto.ProtoMplSalesList.MplSalesList getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<MplSalesList> PARSER;
+    private static final com.google.protobuf.Parser<MplSalesList>
+        PARSER = new com.google.protobuf.AbstractParser<MplSalesList>() {
+      public MplSalesList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MplSalesList(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<MplSalesList> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MplSalesList> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoMplSalesList.MplSalesList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface MplSalesListResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.MplSalesListResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional .proto.Response response = 1;</code>
@@ -573,6 +872,10 @@ public final class ProtoMplSalesList {
      * <code>optional .proto.Response response = 1;</code>
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>repeated .proto.MplSale sale = 2;</code>
@@ -587,18 +890,105 @@ public final class ProtoMplSalesList {
      * <code>repeated .proto.MplSale sale = 2;</code>
      */
     int getSaleCount();
+    /**
+     * <code>repeated .proto.MplSale sale = 2;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGlobal.MplSaleOrBuilder> 
+        getSaleOrBuilderList();
+    /**
+     * <code>repeated .proto.MplSale sale = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.MplSaleOrBuilder getSaleOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.MplSalesListResponse}
    */
   public  static final class MplSalesListResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          MplSalesListResponse, MplSalesListResponse.Builder> implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.MplSalesListResponse)
       MplSalesListResponseOrBuilder {
-    private MplSalesListResponse() {
-      sale_ = emptyProtobufList();
+    // Use MplSalesListResponse.newBuilder() to construct.
+    private MplSalesListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private MplSalesListResponse() {
+      sale_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private MplSalesListResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                sale_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.MplSale>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              sale_.add(
+                  input.readMessage(net.iGap.proto.ProtoGlobal.MplSale.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          sale_ = java.util.Collections.unmodifiableList(sale_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesListResponse_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesListResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoMplSalesList.MplSalesListResponse.class, net.iGap.proto.ProtoMplSalesList.MplSalesListResponse.Builder.class);
+    }
+
     private int bitField0_;
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
@@ -617,43 +1007,12 @@ public final class ProtoMplSalesList {
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int SALE_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoGlobal.MplSale> sale_;
+    private java.util.List<net.iGap.proto.ProtoGlobal.MplSale> sale_;
     /**
      * <code>repeated .proto.MplSale sale = 2;</code>
      */
@@ -686,90 +1045,15 @@ public final class ProtoMplSalesList {
         int index) {
       return sale_.get(index);
     }
-    private void ensureSaleIsMutable() {
-      if (!sale_.isModifiable()) {
-        sale_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(sale_);
-       }
-    }
 
-    /**
-     * <code>repeated .proto.MplSale sale = 2;</code>
-     */
-    private void setSale(
-        int index, net.iGap.proto.ProtoGlobal.MplSale value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSaleIsMutable();
-      sale_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.MplSale sale = 2;</code>
-     */
-    private void setSale(
-        int index, net.iGap.proto.ProtoGlobal.MplSale.Builder builderForValue) {
-      ensureSaleIsMutable();
-      sale_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.MplSale sale = 2;</code>
-     */
-    private void addSale(net.iGap.proto.ProtoGlobal.MplSale value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSaleIsMutable();
-      sale_.add(value);
-    }
-    /**
-     * <code>repeated .proto.MplSale sale = 2;</code>
-     */
-    private void addSale(
-        int index, net.iGap.proto.ProtoGlobal.MplSale value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureSaleIsMutable();
-      sale_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.MplSale sale = 2;</code>
-     */
-    private void addSale(
-        net.iGap.proto.ProtoGlobal.MplSale.Builder builderForValue) {
-      ensureSaleIsMutable();
-      sale_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.MplSale sale = 2;</code>
-     */
-    private void addSale(
-        int index, net.iGap.proto.ProtoGlobal.MplSale.Builder builderForValue) {
-      ensureSaleIsMutable();
-      sale_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.MplSale sale = 2;</code>
-     */
-    private void addAllSale(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.MplSale> values) {
-      ensureSaleIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, sale_);
-    }
-    /**
-     * <code>repeated .proto.MplSale sale = 2;</code>
-     */
-    private void clearSale() {
-      sale_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.MplSale sale = 2;</code>
-     */
-    private void removeSale(int index) {
-      ensureSaleIsMutable();
-      sale_.remove(index);
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -783,7 +1067,7 @@ public final class ProtoMplSalesList {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -795,162 +1079,488 @@ public final class ProtoMplSalesList {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, sale_.get(i));
       }
-      memoizedSerializedSize = size;
+      memoizedSize = size;
       return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoMplSalesList.MplSalesListResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoMplSalesList.MplSalesListResponse other = (net.iGap.proto.ProtoMplSalesList.MplSalesListResponse) obj;
+
+      boolean result = true;
+      result = result && (hasResponse() == other.hasResponse());
+      if (hasResponse()) {
+        result = result && getResponse()
+            .equals(other.getResponse());
+      }
+      result = result && getSaleList()
+          .equals(other.getSaleList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      if (getSaleCount() > 0) {
+        hash = (37 * hash) + SALE_FIELD_NUMBER;
+        hash = (53 * hash) + getSaleList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoMplSalesList.MplSalesListResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.MplSalesListResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoMplSalesList.MplSalesListResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.MplSalesListResponse)
         net.iGap.proto.ProtoMplSalesList.MplSalesListResponseOrBuilder {
-      // Construct using net.iGap.proto.ProtoMplSalesList.MplSalesListResponse.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesListResponse_descriptor;
       }
 
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesListResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoMplSalesList.MplSalesListResponse.class, net.iGap.proto.ProtoMplSalesList.MplSalesListResponse.Builder.class);
+      }
 
+      // Construct using net.iGap.proto.ProtoMplSalesList.MplSalesListResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSaleFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        if (saleBuilder_ == null) {
+          sale_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          saleBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoMplSalesList.internal_static_proto_MplSalesListResponse_descriptor;
+      }
+
+      public net.iGap.proto.ProtoMplSalesList.MplSalesListResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoMplSalesList.MplSalesListResponse.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoMplSalesList.MplSalesListResponse build() {
+        net.iGap.proto.ProtoMplSalesList.MplSalesListResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoMplSalesList.MplSalesListResponse buildPartial() {
+        net.iGap.proto.ProtoMplSalesList.MplSalesListResponse result = new net.iGap.proto.ProtoMplSalesList.MplSalesListResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        if (saleBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            sale_ = java.util.Collections.unmodifiableList(sale_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.sale_ = sale_;
+        } else {
+          result.sale_ = saleBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoMplSalesList.MplSalesListResponse) {
+          return mergeFrom((net.iGap.proto.ProtoMplSalesList.MplSalesListResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoMplSalesList.MplSalesListResponse other) {
+        if (other == net.iGap.proto.ProtoMplSalesList.MplSalesListResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (saleBuilder_ == null) {
+          if (!other.sale_.isEmpty()) {
+            if (sale_.isEmpty()) {
+              sale_ = other.sale_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSaleIsMutable();
+              sale_.addAll(other.sale_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sale_.isEmpty()) {
+            if (saleBuilder_.isEmpty()) {
+              saleBuilder_.dispose();
+              saleBuilder_ = null;
+              sale_ = other.sale_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              saleBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSaleFieldBuilder() : null;
+            } else {
+              saleBuilder_.addAllMessages(other.sale_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoMplSalesList.MplSalesListResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoMplSalesList.MplSalesListResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoGlobal.MplSale> sale_ =
+        java.util.Collections.emptyList();
+      private void ensureSaleIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          sale_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.MplSale>(sale_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.MplSale, net.iGap.proto.ProtoGlobal.MplSale.Builder, net.iGap.proto.ProtoGlobal.MplSaleOrBuilder> saleBuilder_;
 
       /**
        * <code>repeated .proto.MplSale sale = 2;</code>
        */
       public java.util.List<net.iGap.proto.ProtoGlobal.MplSale> getSaleList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getSaleList());
+        if (saleBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sale_);
+        } else {
+          return saleBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.MplSale sale = 2;</code>
        */
       public int getSaleCount() {
-        return instance.getSaleCount();
-      }/**
+        if (saleBuilder_ == null) {
+          return sale_.size();
+        } else {
+          return saleBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.MplSale sale = 2;</code>
        */
       public net.iGap.proto.ProtoGlobal.MplSale getSale(int index) {
-        return instance.getSale(index);
+        if (saleBuilder_ == null) {
+          return sale_.get(index);
+        } else {
+          return saleBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.MplSale sale = 2;</code>
        */
       public Builder setSale(
           int index, net.iGap.proto.ProtoGlobal.MplSale value) {
-        copyOnWrite();
-        instance.setSale(index, value);
+        if (saleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSaleIsMutable();
+          sale_.set(index, value);
+          onChanged();
+        } else {
+          saleBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -958,16 +1568,29 @@ public final class ProtoMplSalesList {
        */
       public Builder setSale(
           int index, net.iGap.proto.ProtoGlobal.MplSale.Builder builderForValue) {
-        copyOnWrite();
-        instance.setSale(index, builderForValue);
+        if (saleBuilder_ == null) {
+          ensureSaleIsMutable();
+          sale_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          saleBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MplSale sale = 2;</code>
        */
       public Builder addSale(net.iGap.proto.ProtoGlobal.MplSale value) {
-        copyOnWrite();
-        instance.addSale(value);
+        if (saleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSaleIsMutable();
+          sale_.add(value);
+          onChanged();
+        } else {
+          saleBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -975,8 +1598,16 @@ public final class ProtoMplSalesList {
        */
       public Builder addSale(
           int index, net.iGap.proto.ProtoGlobal.MplSale value) {
-        copyOnWrite();
-        instance.addSale(index, value);
+        if (saleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSaleIsMutable();
+          sale_.add(index, value);
+          onChanged();
+        } else {
+          saleBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -984,8 +1615,13 @@ public final class ProtoMplSalesList {
        */
       public Builder addSale(
           net.iGap.proto.ProtoGlobal.MplSale.Builder builderForValue) {
-        copyOnWrite();
-        instance.addSale(builderForValue);
+        if (saleBuilder_ == null) {
+          ensureSaleIsMutable();
+          sale_.add(builderForValue.build());
+          onChanged();
+        } else {
+          saleBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -993,8 +1629,13 @@ public final class ProtoMplSalesList {
        */
       public Builder addSale(
           int index, net.iGap.proto.ProtoGlobal.MplSale.Builder builderForValue) {
-        copyOnWrite();
-        instance.addSale(index, builderForValue);
+        if (saleBuilder_ == null) {
+          ensureSaleIsMutable();
+          sale_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          saleBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1002,146 +1643,214 @@ public final class ProtoMplSalesList {
        */
       public Builder addAllSale(
           java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.MplSale> values) {
-        copyOnWrite();
-        instance.addAllSale(values);
+        if (saleBuilder_ == null) {
+          ensureSaleIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, sale_);
+          onChanged();
+        } else {
+          saleBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MplSale sale = 2;</code>
        */
       public Builder clearSale() {
-        copyOnWrite();
-        instance.clearSale();
+        if (saleBuilder_ == null) {
+          sale_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          saleBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.MplSale sale = 2;</code>
        */
       public Builder removeSale(int index) {
-        copyOnWrite();
-        instance.removeSale(index);
+        if (saleBuilder_ == null) {
+          ensureSaleIsMutable();
+          sale_.remove(index);
+          onChanged();
+        } else {
+          saleBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.MplSale sale = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.MplSale.Builder getSaleBuilder(
+          int index) {
+        return getSaleFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.MplSale sale = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.MplSaleOrBuilder getSaleOrBuilder(
+          int index) {
+        if (saleBuilder_ == null) {
+          return sale_.get(index);  } else {
+          return saleBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.MplSale sale = 2;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGlobal.MplSaleOrBuilder> 
+           getSaleOrBuilderList() {
+        if (saleBuilder_ != null) {
+          return saleBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sale_);
+        }
+      }
+      /**
+       * <code>repeated .proto.MplSale sale = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.MplSale.Builder addSaleBuilder() {
+        return getSaleFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGlobal.MplSale.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.MplSale sale = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.MplSale.Builder addSaleBuilder(
+          int index) {
+        return getSaleFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGlobal.MplSale.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.MplSale sale = 2;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.MplSale.Builder> 
+           getSaleBuilderList() {
+        return getSaleFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.MplSale, net.iGap.proto.ProtoGlobal.MplSale.Builder, net.iGap.proto.ProtoGlobal.MplSaleOrBuilder> 
+          getSaleFieldBuilder() {
+        if (saleBuilder_ == null) {
+          saleBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.MplSale, net.iGap.proto.ProtoGlobal.MplSale.Builder, net.iGap.proto.ProtoGlobal.MplSaleOrBuilder>(
+                  sale_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          sale_ = null;
+        }
+        return saleBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
       }
 
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
       // @@protoc_insertion_point(builder_scope:proto.MplSalesListResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoMplSalesList.MplSalesListResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          sale_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoMplSalesList.MplSalesListResponse other = (net.iGap.proto.ProtoMplSalesList.MplSalesListResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          sale_= visitor.visitList(sale_, other.sale_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  if (!sale_.isModifiable()) {
-                    sale_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(sale_);
-                  }
-                  sale_.add(
-                      input.readMessage(net.iGap.proto.ProtoGlobal.MplSale.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoMplSalesList.MplSalesListResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.MplSalesListResponse)
     private static final net.iGap.proto.ProtoMplSalesList.MplSalesListResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MplSalesListResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoMplSalesList.MplSalesListResponse();
     }
 
     public static net.iGap.proto.ProtoMplSalesList.MplSalesListResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<MplSalesListResponse> PARSER;
+    private static final com.google.protobuf.Parser<MplSalesListResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MplSalesListResponse>() {
+      public MplSalesListResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MplSalesListResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<MplSalesListResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MplSalesListResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoMplSalesList.MplSalesListResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MplSalesList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MplSalesList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_MplSalesListResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_MplSalesListResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\022MplSalesList.proto\022\005proto\032\rRequest.pro" +
+      "to\032\016Response.proto\032\014Global.proto\"}\n\014MplS" +
+      "alesList\022\037\n\007request\030\001 \001(\0132\016.proto.Reques" +
+      "t\022%\n\006status\030\002 \001(\0162\025.proto.MplSale.Status" +
+      "\022%\n\npagination\030\003 \001(\0132\021.proto.Pagination\"" +
+      "W\n\024MplSalesListResponse\022!\n\010response\030\001 \001(" +
+      "\0132\017.proto.Response\022\034\n\004sale\030\002 \003(\0132\016.proto" +
+      ".MplSaleB#\n\016net.iGap.protoB\021ProtoMplSale" +
+      "sListb\006proto3"
+    };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
+        }, assigner);
+    internal_static_proto_MplSalesList_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_MplSalesList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MplSalesList_descriptor,
+        new java.lang.String[] { "Request", "Status", "Pagination", });
+    internal_static_proto_MplSalesListResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_MplSalesListResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_MplSalesListResponse_descriptor,
+        new java.lang.String[] { "Response", "Sale", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

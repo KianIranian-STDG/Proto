@@ -8,9 +8,15 @@ public final class ProtoChannelGetMemberList {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface ChannelGetMemberListOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ChannelGetMemberList)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional .proto.Request request = 1;</code>
@@ -20,6 +26,10 @@ public final class ProtoChannelGetMemberList {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
      * <code>optional uint64 room_id = 2;</code>
@@ -43,22 +53,117 @@ public final class ProtoChannelGetMemberList {
      * <code>optional .proto.Pagination pagination = 4;</code>
      */
     net.iGap.proto.ProtoGlobal.Pagination getPagination();
+    /**
+     * <code>optional .proto.Pagination pagination = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.PaginationOrBuilder getPaginationOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ChannelGetMemberList}
    */
   public  static final class ChannelGetMemberList extends
-      com.google.protobuf.GeneratedMessageLite<
-          ChannelGetMemberList, ChannelGetMemberList.Builder> implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ChannelGetMemberList)
       ChannelGetMemberListOrBuilder {
-    private ChannelGetMemberList() {
+    // Use ChannelGetMemberList.newBuilder() to construct.
+    private ChannelGetMemberList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private ChannelGetMemberList() {
+      roomId_ = 0L;
+      filterRole_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ChannelGetMemberList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              roomId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              filterRole_ = rawValue;
+              break;
+            }
+            case 34: {
+              net.iGap.proto.ProtoGlobal.Pagination.Builder subBuilder = null;
+              if (pagination_ != null) {
+                subBuilder = pagination_.toBuilder();
+              }
+              pagination_ = input.readMessage(net.iGap.proto.ProtoGlobal.Pagination.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pagination_);
+                pagination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberList_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.class, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.Builder.class);
+    }
+
     /**
      * Protobuf enum {@code proto.ChannelGetMemberList.FilterRole}
      */
     public enum FilterRole
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>ALL = 0;</code>
        */
@@ -97,6 +202,10 @@ public final class ProtoChannelGetMemberList {
 
 
       public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
         return value;
       }
 
@@ -130,6 +239,33 @@ public final class ProtoChannelGetMemberList {
               }
             };
 
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final FilterRole[] VALUES = values();
+
+      public static FilterRole valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
       private final int value;
 
       private FilterRole(int value) {
@@ -156,39 +292,8 @@ public final class ProtoChannelGetMemberList {
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 2;
@@ -198,20 +303,6 @@ public final class ProtoChannelGetMemberList {
      */
     public long getRoomId() {
       return roomId_;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void setRoomId(long value) {
-      
-      roomId_ = value;
-    }
-    /**
-     * <code>optional uint64 room_id = 2;</code>
-     */
-    private void clearRoomId() {
-      
-      roomId_ = 0L;
     }
 
     public static final int FILTER_ROLE_FIELD_NUMBER = 3;
@@ -226,31 +317,8 @@ public final class ProtoChannelGetMemberList {
      * <code>optional .proto.ChannelGetMemberList.FilterRole filter_role = 3;</code>
      */
     public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole getFilterRole() {
-      net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole result = net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole.forNumber(filterRole_);
+      net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole result = net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole.valueOf(filterRole_);
       return result == null ? net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .proto.ChannelGetMemberList.FilterRole filter_role = 3;</code>
-     */
-    private void setFilterRoleValue(int value) {
-        filterRole_ = value;
-    }
-    /**
-     * <code>optional .proto.ChannelGetMemberList.FilterRole filter_role = 3;</code>
-     */
-    private void setFilterRole(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      filterRole_ = value.getNumber();
-    }
-    /**
-     * <code>optional .proto.ChannelGetMemberList.FilterRole filter_role = 3;</code>
-     */
-    private void clearFilterRole() {
-      
-      filterRole_ = 0;
     }
 
     public static final int PAGINATION_FIELD_NUMBER = 4;
@@ -270,39 +338,18 @@ public final class ProtoChannelGetMemberList {
     /**
      * <code>optional .proto.Pagination pagination = 4;</code>
      */
-    private void setPagination(net.iGap.proto.ProtoGlobal.Pagination value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      pagination_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Pagination pagination = 4;</code>
-     */
-    private void setPagination(
-        net.iGap.proto.ProtoGlobal.Pagination.Builder builderForValue) {
-      pagination_ = builderForValue.build();
-      
+    public net.iGap.proto.ProtoGlobal.PaginationOrBuilder getPaginationOrBuilder() {
+      return getPagination();
     }
-    /**
-     * <code>optional .proto.Pagination pagination = 4;</code>
-     */
-    private void mergePagination(net.iGap.proto.ProtoGlobal.Pagination value) {
-      if (pagination_ != null &&
-          pagination_ != net.iGap.proto.ProtoGlobal.Pagination.getDefaultInstance()) {
-        pagination_ =
-          net.iGap.proto.ProtoGlobal.Pagination.newBuilder(pagination_).mergeFrom(value).buildPartial();
-      } else {
-        pagination_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Pagination pagination = 4;</code>
-     */
-    private void clearPagination() {  pagination_ = null;
-      
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -322,7 +369,7 @@ public final class ProtoChannelGetMemberList {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -342,378 +389,660 @@ public final class ProtoChannelGetMemberList {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getPagination());
       }
-      memoizedSerializedSize = size;
+      memoizedSize = size;
       return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList other = (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList) obj;
+
+      boolean result = true;
+      result = result && (hasRequest() == other.hasRequest());
+      if (hasRequest()) {
+        result = result && getRequest()
+            .equals(other.getRequest());
+      }
+      result = result && (getRoomId()
+          == other.getRoomId());
+      result = result && filterRole_ == other.filterRole_;
+      result = result && (hasPagination() == other.hasPagination());
+      if (hasPagination()) {
+        result = result && getPagination()
+            .equals(other.getPagination());
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      hash = (37 * hash) + FILTER_ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + filterRole_;
+      if (hasPagination()) {
+        hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPagination().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ChannelGetMemberList}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ChannelGetMemberList)
         net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListOrBuilder {
-      // Construct using net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberList_descriptor;
       }
 
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.class, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.Builder.class);
+      }
 
+      // Construct using net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        roomId_ = 0L;
+
+        filterRole_ = 0;
+
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberList_descriptor;
+      }
+
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList build() {
+        net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList buildPartial() {
+        net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList result = new net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        result.roomId_ = roomId_;
+        result.filterRole_ = filterRole_;
+        if (paginationBuilder_ == null) {
+          result.pagination_ = pagination_;
+        } else {
+          result.pagination_ = paginationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList) {
+          return mergeFrom((net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList other) {
+        if (other == net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (other.filterRole_ != 0) {
+          setFilterRoleValue(other.getFilterRoleValue());
+        }
+        if (other.hasPagination()) {
+          mergePagination(other.getPagination());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
+      }
 
+      private long roomId_ ;
       /**
        * <code>optional uint64 room_id = 2;</code>
        */
       public long getRoomId() {
-        return instance.getRoomId();
+        return roomId_;
       }
       /**
        * <code>optional uint64 room_id = 2;</code>
        */
       public Builder setRoomId(long value) {
-        copyOnWrite();
-        instance.setRoomId(value);
+        
+        roomId_ = value;
+        onChanged();
         return this;
       }
       /**
        * <code>optional uint64 room_id = 2;</code>
        */
       public Builder clearRoomId() {
-        copyOnWrite();
-        instance.clearRoomId();
+        
+        roomId_ = 0L;
+        onChanged();
         return this;
       }
 
+      private int filterRole_ = 0;
       /**
        * <code>optional .proto.ChannelGetMemberList.FilterRole filter_role = 3;</code>
        */
       public int getFilterRoleValue() {
-        return instance.getFilterRoleValue();
+        return filterRole_;
       }
       /**
        * <code>optional .proto.ChannelGetMemberList.FilterRole filter_role = 3;</code>
        */
       public Builder setFilterRoleValue(int value) {
-        copyOnWrite();
-        instance.setFilterRoleValue(value);
+        filterRole_ = value;
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.ChannelGetMemberList.FilterRole filter_role = 3;</code>
        */
       public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole getFilterRole() {
-        return instance.getFilterRole();
+        net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole result = net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole.valueOf(filterRole_);
+        return result == null ? net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole.UNRECOGNIZED : result;
       }
       /**
        * <code>optional .proto.ChannelGetMemberList.FilterRole filter_role = 3;</code>
        */
       public Builder setFilterRole(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.FilterRole value) {
-        copyOnWrite();
-        instance.setFilterRole(value);
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        filterRole_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
        * <code>optional .proto.ChannelGetMemberList.FilterRole filter_role = 3;</code>
        */
       public Builder clearFilterRole() {
-        copyOnWrite();
-        instance.clearFilterRole();
+        
+        filterRole_ = 0;
+        onChanged();
         return this;
       }
 
+      private net.iGap.proto.ProtoGlobal.Pagination pagination_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Pagination, net.iGap.proto.ProtoGlobal.Pagination.Builder, net.iGap.proto.ProtoGlobal.PaginationOrBuilder> paginationBuilder_;
       /**
        * <code>optional .proto.Pagination pagination = 4;</code>
        */
       public boolean hasPagination() {
-        return instance.hasPagination();
+        return paginationBuilder_ != null || pagination_ != null;
       }
       /**
        * <code>optional .proto.Pagination pagination = 4;</code>
        */
       public net.iGap.proto.ProtoGlobal.Pagination getPagination() {
-        return instance.getPagination();
+        if (paginationBuilder_ == null) {
+          return pagination_ == null ? net.iGap.proto.ProtoGlobal.Pagination.getDefaultInstance() : pagination_;
+        } else {
+          return paginationBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Pagination pagination = 4;</code>
        */
       public Builder setPagination(net.iGap.proto.ProtoGlobal.Pagination value) {
-        copyOnWrite();
-        instance.setPagination(value);
-        return this;
+        if (paginationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pagination_ = value;
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Pagination pagination = 4;</code>
        */
       public Builder setPagination(
           net.iGap.proto.ProtoGlobal.Pagination.Builder builderForValue) {
-        copyOnWrite();
-        instance.setPagination(builderForValue);
+        if (paginationBuilder_ == null) {
+          pagination_ = builderForValue.build();
+          onChanged();
+        } else {
+          paginationBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Pagination pagination = 4;</code>
        */
       public Builder mergePagination(net.iGap.proto.ProtoGlobal.Pagination value) {
-        copyOnWrite();
-        instance.mergePagination(value);
+        if (paginationBuilder_ == null) {
+          if (pagination_ != null) {
+            pagination_ =
+              net.iGap.proto.ProtoGlobal.Pagination.newBuilder(pagination_).mergeFrom(value).buildPartial();
+          } else {
+            pagination_ = value;
+          }
+          onChanged();
+        } else {
+          paginationBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Pagination pagination = 4;</code>
        */
-      public Builder clearPagination() {  copyOnWrite();
-        instance.clearPagination();
+      public Builder clearPagination() {
+        if (paginationBuilder_ == null) {
+          pagination_ = null;
+          onChanged();
+        } else {
+          pagination_ = null;
+          paginationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Pagination pagination = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Pagination.Builder getPaginationBuilder() {
+        
+        onChanged();
+        return getPaginationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Pagination pagination = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PaginationOrBuilder getPaginationOrBuilder() {
+        if (paginationBuilder_ != null) {
+          return paginationBuilder_.getMessageOrBuilder();
+        } else {
+          return pagination_ == null ?
+              net.iGap.proto.ProtoGlobal.Pagination.getDefaultInstance() : pagination_;
+        }
+      }
+      /**
+       * <code>optional .proto.Pagination pagination = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Pagination, net.iGap.proto.ProtoGlobal.Pagination.Builder, net.iGap.proto.ProtoGlobal.PaginationOrBuilder> 
+          getPaginationFieldBuilder() {
+        if (paginationBuilder_ == null) {
+          paginationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Pagination, net.iGap.proto.ProtoGlobal.Pagination.Builder, net.iGap.proto.ProtoGlobal.PaginationOrBuilder>(
+                  getPagination(),
+                  getParentForChildren(),
+                  isClean());
+          pagination_ = null;
+        }
+        return paginationBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
       }
 
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
       // @@protoc_insertion_point(builder_scope:proto.ChannelGetMemberList)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList other = (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          roomId_ = visitor.visitLong(roomId_ != 0L, roomId_,
-              other.roomId_ != 0L, other.roomId_);
-          filterRole_ = visitor.visitInt(filterRole_ != 0, filterRole_,    other.filterRole_ != 0, other.filterRole_);
-          pagination_ = visitor.visitMessage(pagination_, other.pagination_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  roomId_ = input.readUInt64();
-                  break;
-                }
-                case 24: {
-                  int rawValue = input.readEnum();
-
-                  filterRole_ = rawValue;
-                  break;
-                }
-                case 34: {
-                  net.iGap.proto.ProtoGlobal.Pagination.Builder subBuilder = null;
-                  if (pagination_ != null) {
-                    subBuilder = pagination_.toBuilder();
-                  }
-                  pagination_ = input.readMessage(net.iGap.proto.ProtoGlobal.Pagination.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(pagination_);
-                    pagination_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ChannelGetMemberList)
     private static final net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ChannelGetMemberList();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList();
     }
 
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ChannelGetMemberList> PARSER;
+    private static final com.google.protobuf.Parser<ChannelGetMemberList>
+        PARSER = new com.google.protobuf.AbstractParser<ChannelGetMemberList>() {
+      public ChannelGetMemberList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ChannelGetMemberList(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ChannelGetMemberList> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChannelGetMemberList> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface ChannelGetMemberListResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.ChannelGetMemberListResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional .proto.Response response = 1;</code>
@@ -723,6 +1052,10 @@ public final class ProtoChannelGetMemberList {
      * <code>optional .proto.Response response = 1;</code>
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
@@ -737,21 +1070,108 @@ public final class ProtoChannelGetMemberList {
      * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
      */
     int getMemberCount();
+    /**
+     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.MemberOrBuilder> 
+        getMemberOrBuilderList();
+    /**
+     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
+     */
+    net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.MemberOrBuilder getMemberOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.ChannelGetMemberListResponse}
    */
   public  static final class ChannelGetMemberListResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          ChannelGetMemberListResponse, ChannelGetMemberListResponse.Builder> implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.ChannelGetMemberListResponse)
       ChannelGetMemberListResponseOrBuilder {
-    private ChannelGetMemberListResponse() {
-      member_ = emptyProtobufList();
+    // Use ChannelGetMemberListResponse.newBuilder() to construct.
+    private ChannelGetMemberListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
     }
+    private ChannelGetMemberListResponse() {
+      member_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ChannelGetMemberListResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                member_ = new java.util.ArrayList<net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              member_.add(
+                  input.readMessage(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          member_ = java.util.Collections.unmodifiableList(member_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.class, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Builder.class);
+    }
+
     public interface MemberOrBuilder extends
         // @@protoc_insertion_point(interface_extends:proto.ChannelGetMemberListResponse.Member)
-        com.google.protobuf.MessageLiteOrBuilder {
+        com.google.protobuf.MessageOrBuilder {
 
       /**
        * <code>optional uint64 userId = 1;</code>
@@ -771,12 +1191,77 @@ public final class ProtoChannelGetMemberList {
      * Protobuf type {@code proto.ChannelGetMemberListResponse.Member}
      */
     public  static final class Member extends
-        com.google.protobuf.GeneratedMessageLite<
-            Member, Member.Builder> implements
+        com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:proto.ChannelGetMemberListResponse.Member)
         MemberOrBuilder {
-      private Member() {
+      // Use Member.newBuilder() to construct.
+      private Member(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
       }
+      private Member() {
+        userId_ = 0L;
+        role_ = 0;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private Member(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+
+                userId_ = input.readUInt64();
+                break;
+              }
+              case 16: {
+                int rawValue = input.readEnum();
+
+                role_ = rawValue;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_Member_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_Member_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.class, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder.class);
+      }
+
       public static final int USERID_FIELD_NUMBER = 1;
       private long userId_;
       /**
@@ -784,20 +1269,6 @@ public final class ProtoChannelGetMemberList {
        */
       public long getUserId() {
         return userId_;
-      }
-      /**
-       * <code>optional uint64 userId = 1;</code>
-       */
-      private void setUserId(long value) {
-        
-        userId_ = value;
-      }
-      /**
-       * <code>optional uint64 userId = 1;</code>
-       */
-      private void clearUserId() {
-        
-        userId_ = 0L;
       }
 
       public static final int ROLE_FIELD_NUMBER = 2;
@@ -812,31 +1283,18 @@ public final class ProtoChannelGetMemberList {
        * <code>optional .proto.ChannelRoom.Role role = 2;</code>
        */
       public net.iGap.proto.ProtoGlobal.ChannelRoom.Role getRole() {
-        net.iGap.proto.ProtoGlobal.ChannelRoom.Role result = net.iGap.proto.ProtoGlobal.ChannelRoom.Role.forNumber(role_);
+        net.iGap.proto.ProtoGlobal.ChannelRoom.Role result = net.iGap.proto.ProtoGlobal.ChannelRoom.Role.valueOf(role_);
         return result == null ? net.iGap.proto.ProtoGlobal.ChannelRoom.Role.UNRECOGNIZED : result;
       }
-      /**
-       * <code>optional .proto.ChannelRoom.Role role = 2;</code>
-       */
-      private void setRoleValue(int value) {
-          role_ = value;
-      }
-      /**
-       * <code>optional .proto.ChannelRoom.Role role = 2;</code>
-       */
-      private void setRole(net.iGap.proto.ProtoGlobal.ChannelRoom.Role value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        role_ = value.getNumber();
-      }
-      /**
-       * <code>optional .proto.ChannelRoom.Role role = 2;</code>
-       */
-      private void clearRole() {
-        
-        role_ = 0;
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
       }
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -850,7 +1308,7 @@ public final class ProtoChannelGetMemberList {
       }
 
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -862,255 +1320,375 @@ public final class ProtoChannelGetMemberList {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(2, role_);
         }
-        memoizedSerializedSize = size;
+        memoizedSize = size;
         return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member other = (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member) obj;
+
+        boolean result = true;
+        result = result && (getUserId()
+            == other.getUserId());
+        result = result && role_ == other.role_;
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + USERID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUserId());
+        hash = (37 * hash) + ROLE_FIELD_NUMBER;
+        hash = (53 * hash) + role_;
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
       }
 
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data);
+        return PARSER.parseFrom(data);
       }
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, data, extensionRegistry);
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageLite.parseFrom(
-            DEFAULT_INSTANCE, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
+      public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
       public static Builder newBuilder(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
       /**
        * Protobuf type {@code proto.ChannelGetMemberListResponse.Member}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessageLite.Builder<
-            net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member, Builder> implements
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
           // @@protoc_insertion_point(builder_implements:proto.ChannelGetMemberListResponse.Member)
           net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.MemberOrBuilder {
-        // Construct using net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.newBuilder()
-        private Builder() {
-          super(DEFAULT_INSTANCE);
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_Member_descriptor;
         }
 
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_Member_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.class, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder.class);
+        }
 
+        // Construct using net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          userId_ = 0L;
+
+          role_ = 0;
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_Member_descriptor;
+        }
+
+        public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.getDefaultInstance();
+        }
+
+        public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member build() {
+          net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member buildPartial() {
+          net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member result = new net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member(this);
+          result.userId_ = userId_;
+          result.role_ = role_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member) {
+            return mergeFrom((net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member other) {
+          if (other == net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.getDefaultInstance()) return this;
+          if (other.getUserId() != 0L) {
+            setUserId(other.getUserId());
+          }
+          if (other.role_ != 0) {
+            setRoleValue(other.getRoleValue());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private long userId_ ;
         /**
          * <code>optional uint64 userId = 1;</code>
          */
         public long getUserId() {
-          return instance.getUserId();
+          return userId_;
         }
         /**
          * <code>optional uint64 userId = 1;</code>
          */
         public Builder setUserId(long value) {
-          copyOnWrite();
-          instance.setUserId(value);
+          
+          userId_ = value;
+          onChanged();
           return this;
         }
         /**
          * <code>optional uint64 userId = 1;</code>
          */
         public Builder clearUserId() {
-          copyOnWrite();
-          instance.clearUserId();
+          
+          userId_ = 0L;
+          onChanged();
           return this;
         }
 
+        private int role_ = 0;
         /**
          * <code>optional .proto.ChannelRoom.Role role = 2;</code>
          */
         public int getRoleValue() {
-          return instance.getRoleValue();
+          return role_;
         }
         /**
          * <code>optional .proto.ChannelRoom.Role role = 2;</code>
          */
         public Builder setRoleValue(int value) {
-          copyOnWrite();
-          instance.setRoleValue(value);
+          role_ = value;
+          onChanged();
           return this;
         }
         /**
          * <code>optional .proto.ChannelRoom.Role role = 2;</code>
          */
         public net.iGap.proto.ProtoGlobal.ChannelRoom.Role getRole() {
-          return instance.getRole();
+          net.iGap.proto.ProtoGlobal.ChannelRoom.Role result = net.iGap.proto.ProtoGlobal.ChannelRoom.Role.valueOf(role_);
+          return result == null ? net.iGap.proto.ProtoGlobal.ChannelRoom.Role.UNRECOGNIZED : result;
         }
         /**
          * <code>optional .proto.ChannelRoom.Role role = 2;</code>
          */
         public Builder setRole(net.iGap.proto.ProtoGlobal.ChannelRoom.Role value) {
-          copyOnWrite();
-          instance.setRole(value);
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          role_ = value.getNumber();
+          onChanged();
           return this;
         }
         /**
          * <code>optional .proto.ChannelRoom.Role role = 2;</code>
          */
         public Builder clearRole() {
-          copyOnWrite();
-          instance.clearRole();
+          
+          role_ = 0;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
           return this;
         }
 
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
         // @@protoc_insertion_point(builder_scope:proto.ChannelGetMemberListResponse.Member)
       }
-      protected final Object dynamicMethod(
-          com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-          Object arg0, Object arg1) {
-        switch (method) {
-          case NEW_MUTABLE_INSTANCE: {
-            return new net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member();
-          }
-          case IS_INITIALIZED: {
-            return DEFAULT_INSTANCE;
-          }
-          case MAKE_IMMUTABLE: {
-            return null;
-          }
-          case NEW_BUILDER: {
-            return new Builder();
-          }
-          case VISIT: {
-            Visitor visitor = (Visitor) arg0;
-            net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member other = (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member) arg1;
-            userId_ = visitor.visitLong(userId_ != 0L, userId_,
-                other.userId_ != 0L, other.userId_);
-            role_ = visitor.visitInt(role_ != 0, role_,    other.role_ != 0, other.role_);
-            if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-                .INSTANCE) {
-            }
-            return this;
-          }
-          case MERGE_FROM_STREAM: {
-            com.google.protobuf.CodedInputStream input =
-                (com.google.protobuf.CodedInputStream) arg0;
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-                (com.google.protobuf.ExtensionRegistryLite) arg1;
-            try {
-              boolean done = false;
-              while (!done) {
-                int tag = input.readTag();
-                switch (tag) {
-                  case 0:
-                    done = true;
-                    break;
-                  default: {
-                    if (!input.skipField(tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-                  case 8: {
-
-                    userId_ = input.readUInt64();
-                    break;
-                  }
-                  case 16: {
-                    int rawValue = input.readEnum();
-
-                    role_ = rawValue;
-                    break;
-                  }
-                }
-              }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw new RuntimeException(e.setUnfinishedMessage(this));
-            } catch (java.io.IOException e) {
-              throw new RuntimeException(
-                  new com.google.protobuf.InvalidProtocolBufferException(
-                      e.getMessage()).setUnfinishedMessage(this));
-            } finally {
-            }
-          }
-          case GET_DEFAULT_INSTANCE: {
-            return DEFAULT_INSTANCE;
-          }
-          case GET_PARSER: {
-            if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.class) {
-                if (PARSER == null) {
-                  PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-                }
-              }
-            }
-            return PARSER;
-          }
-        }
-        throw new UnsupportedOperationException();
-      }
-
 
       // @@protoc_insertion_point(class_scope:proto.ChannelGetMemberListResponse.Member)
       private static final net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new Member();
-        DEFAULT_INSTANCE.makeImmutable();
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member();
       }
 
       public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static volatile com.google.protobuf.Parser<Member> PARSER;
+      private static final com.google.protobuf.Parser<Member>
+          PARSER = new com.google.protobuf.AbstractParser<Member>() {
+        public Member parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Member(input, extensionRegistry);
+        }
+      };
 
       public static com.google.protobuf.Parser<Member> parser() {
-        return DEFAULT_INSTANCE.getParserForType();
+        return PARSER;
       }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Member> getParserForType() {
+        return PARSER;
+      }
+
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     private int bitField0_;
@@ -1131,43 +1709,12 @@ public final class ProtoChannelGetMemberList {
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int MEMBER_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member> member_;
+    private java.util.List<net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member> member_;
     /**
      * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
      */
@@ -1200,90 +1747,15 @@ public final class ProtoChannelGetMemberList {
         int index) {
       return member_.get(index);
     }
-    private void ensureMemberIsMutable() {
-      if (!member_.isModifiable()) {
-        member_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(member_);
-       }
-    }
 
-    /**
-     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
-     */
-    private void setMember(
-        int index, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureMemberIsMutable();
-      member_.set(index, value);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
-     */
-    private void setMember(
-        int index, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder builderForValue) {
-      ensureMemberIsMutable();
-      member_.set(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
-     */
-    private void addMember(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureMemberIsMutable();
-      member_.add(value);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
-     */
-    private void addMember(
-        int index, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureMemberIsMutable();
-      member_.add(index, value);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
-     */
-    private void addMember(
-        net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder builderForValue) {
-      ensureMemberIsMutable();
-      member_.add(builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
-     */
-    private void addMember(
-        int index, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder builderForValue) {
-      ensureMemberIsMutable();
-      member_.add(index, builderForValue.build());
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
-     */
-    private void addAllMember(
-        java.lang.Iterable<? extends net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member> values) {
-      ensureMemberIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, member_);
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
-     */
-    private void clearMember() {
-      member_ = emptyProtobufList();
-    }
-    /**
-     * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
-     */
-    private void removeMember(int index) {
-      ensureMemberIsMutable();
-      member_.remove(index);
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -1297,7 +1769,7 @@ public final class ProtoChannelGetMemberList {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -1309,162 +1781,488 @@ public final class ProtoChannelGetMemberList {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, member_.get(i));
       }
-      memoizedSerializedSize = size;
+      memoizedSize = size;
       return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse other = (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse) obj;
+
+      boolean result = true;
+      result = result && (hasResponse() == other.hasResponse());
+      if (hasResponse()) {
+        result = result && getResponse()
+            .equals(other.getResponse());
+      }
+      result = result && getMemberList()
+          .equals(other.getMemberList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      if (getMemberCount() > 0) {
+        hash = (37 * hash) + MEMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getMemberList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.ChannelGetMemberListResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.ChannelGetMemberListResponse)
         net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponseOrBuilder {
-      // Construct using net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_descriptor;
       }
 
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.class, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Builder.class);
+      }
 
+      // Construct using net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMemberFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        if (memberBuilder_ == null) {
+          member_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          memberBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoChannelGetMemberList.internal_static_proto_ChannelGetMemberListResponse_descriptor;
+      }
+
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse build() {
+        net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse buildPartial() {
+        net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse result = new net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        if (memberBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            member_ = java.util.Collections.unmodifiableList(member_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.member_ = member_;
+        } else {
+          result.member_ = memberBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse) {
+          return mergeFrom((net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse other) {
+        if (other == net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (memberBuilder_ == null) {
+          if (!other.member_.isEmpty()) {
+            if (member_.isEmpty()) {
+              member_ = other.member_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureMemberIsMutable();
+              member_.addAll(other.member_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.member_.isEmpty()) {
+            if (memberBuilder_.isEmpty()) {
+              memberBuilder_.dispose();
+              memberBuilder_ = null;
+              member_ = other.member_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              memberBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMemberFieldBuilder() : null;
+            } else {
+              memberBuilder_.addAllMessages(other.member_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member> member_ =
+        java.util.Collections.emptyList();
+      private void ensureMemberIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          member_ = new java.util.ArrayList<net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member>(member_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.MemberOrBuilder> memberBuilder_;
 
       /**
        * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
        */
       public java.util.List<net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member> getMemberList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getMemberList());
+        if (memberBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(member_);
+        } else {
+          return memberBuilder_.getMessageList();
+        }
       }
       /**
        * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
        */
       public int getMemberCount() {
-        return instance.getMemberCount();
-      }/**
+        if (memberBuilder_ == null) {
+          return member_.size();
+        } else {
+          return memberBuilder_.getCount();
+        }
+      }
+      /**
        * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
        */
       public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member getMember(int index) {
-        return instance.getMember(index);
+        if (memberBuilder_ == null) {
+          return member_.get(index);
+        } else {
+          return memberBuilder_.getMessage(index);
+        }
       }
       /**
        * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
        */
       public Builder setMember(
           int index, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member value) {
-        copyOnWrite();
-        instance.setMember(index, value);
+        if (memberBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMemberIsMutable();
+          member_.set(index, value);
+          onChanged();
+        } else {
+          memberBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
@@ -1472,16 +2270,29 @@ public final class ProtoChannelGetMemberList {
        */
       public Builder setMember(
           int index, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder builderForValue) {
-        copyOnWrite();
-        instance.setMember(index, builderForValue);
+        if (memberBuilder_ == null) {
+          ensureMemberIsMutable();
+          member_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          memberBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
        */
       public Builder addMember(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member value) {
-        copyOnWrite();
-        instance.addMember(value);
+        if (memberBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMemberIsMutable();
+          member_.add(value);
+          onChanged();
+        } else {
+          memberBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
@@ -1489,8 +2300,16 @@ public final class ProtoChannelGetMemberList {
        */
       public Builder addMember(
           int index, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member value) {
-        copyOnWrite();
-        instance.addMember(index, value);
+        if (memberBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMemberIsMutable();
+          member_.add(index, value);
+          onChanged();
+        } else {
+          memberBuilder_.addMessage(index, value);
+        }
         return this;
       }
       /**
@@ -1498,8 +2317,13 @@ public final class ProtoChannelGetMemberList {
        */
       public Builder addMember(
           net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder builderForValue) {
-        copyOnWrite();
-        instance.addMember(builderForValue);
+        if (memberBuilder_ == null) {
+          ensureMemberIsMutable();
+          member_.add(builderForValue.build());
+          onChanged();
+        } else {
+          memberBuilder_.addMessage(builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1507,8 +2331,13 @@ public final class ProtoChannelGetMemberList {
        */
       public Builder addMember(
           int index, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder builderForValue) {
-        copyOnWrite();
-        instance.addMember(index, builderForValue);
+        if (memberBuilder_ == null) {
+          ensureMemberIsMutable();
+          member_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          memberBuilder_.addMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
@@ -1516,146 +2345,231 @@ public final class ProtoChannelGetMemberList {
        */
       public Builder addAllMember(
           java.lang.Iterable<? extends net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member> values) {
-        copyOnWrite();
-        instance.addAllMember(values);
+        if (memberBuilder_ == null) {
+          ensureMemberIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, member_);
+          onChanged();
+        } else {
+          memberBuilder_.addAllMessages(values);
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
        */
       public Builder clearMember() {
-        copyOnWrite();
-        instance.clearMember();
+        if (memberBuilder_ == null) {
+          member_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          memberBuilder_.clear();
+        }
         return this;
       }
       /**
        * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
        */
       public Builder removeMember(int index) {
-        copyOnWrite();
-        instance.removeMember(index);
+        if (memberBuilder_ == null) {
+          ensureMemberIsMutable();
+          member_.remove(index);
+          onChanged();
+        } else {
+          memberBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder getMemberBuilder(
+          int index) {
+        return getMemberFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.MemberOrBuilder getMemberOrBuilder(
+          int index) {
+        if (memberBuilder_ == null) {
+          return member_.get(index);  } else {
+          return memberBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.MemberOrBuilder> 
+           getMemberOrBuilderList() {
+        if (memberBuilder_ != null) {
+          return memberBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(member_);
+        }
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder addMemberBuilder() {
+        return getMemberFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
+       */
+      public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder addMemberBuilder(
+          int index) {
+        return getMemberFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.ChannelGetMemberListResponse.Member member = 2;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder> 
+           getMemberBuilderList() {
+        return getMemberFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.MemberOrBuilder> 
+          getMemberFieldBuilder() {
+        if (memberBuilder_ == null) {
+          memberBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.Builder, net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.MemberOrBuilder>(
+                  member_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          member_ = null;
+        }
+        return memberBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
       }
 
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
       // @@protoc_insertion_point(builder_scope:proto.ChannelGetMemberListResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          member_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse other = (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          member_= visitor.visitList(member_, other.member_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 18: {
-                  if (!member_.isModifiable()) {
-                    member_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(member_);
-                  }
-                  member_.add(
-                      input.readMessage(net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.Member.parser(), extensionRegistry));
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.ChannelGetMemberListResponse)
     private static final net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ChannelGetMemberListResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse();
     }
 
     public static net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<ChannelGetMemberListResponse> PARSER;
+    private static final com.google.protobuf.Parser<ChannelGetMemberListResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ChannelGetMemberListResponse>() {
+      public ChannelGetMemberListResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ChannelGetMemberListResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<ChannelGetMemberListResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChannelGetMemberListResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoChannelGetMemberList.ChannelGetMemberListResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelGetMemberList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelGetMemberList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelGetMemberListResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelGetMemberListResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_ChannelGetMemberListResponse_Member_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_ChannelGetMemberListResponse_Member_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\032ChannelGetMemberList.proto\022\005proto\032\rReq" +
+      "uest.proto\032\016Response.proto\032\014Global.proto" +
+      "\"\351\001\n\024ChannelGetMemberList\022\037\n\007request\030\001 \001" +
+      "(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\004\022;\n\013f" +
+      "ilter_role\030\003 \001(\0162&.proto.ChannelGetMembe" +
+      "rList.FilterRole\022%\n\npagination\030\004 \001(\0132\021.p" +
+      "roto.Pagination\";\n\nFilterRole\022\007\n\003ALL\020\000\022\n" +
+      "\n\006MEMBER\020\001\022\r\n\tMODERATOR\020\002\022\t\n\005ADMIN\020\003\"\276\001\n" +
+      "\034ChannelGetMemberListResponse\022!\n\010respons" +
+      "e\030\001 \001(\0132\017.proto.Response\022:\n\006member\030\002 \003(\013",
+      "2*.proto.ChannelGetMemberListResponse.Me" +
+      "mber\032?\n\006Member\022\016\n\006userId\030\001 \001(\004\022%\n\004role\030\002" +
+      " \001(\0162\027.proto.ChannelRoom.RoleB+\n\016net.iGa" +
+      "p.protoB\031ProtoChannelGetMemberListb\006prot" +
+      "o3"
+    };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
+        }, assigner);
+    internal_static_proto_ChannelGetMemberList_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_ChannelGetMemberList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelGetMemberList_descriptor,
+        new java.lang.String[] { "Request", "RoomId", "FilterRole", "Pagination", });
+    internal_static_proto_ChannelGetMemberListResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_ChannelGetMemberListResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelGetMemberListResponse_descriptor,
+        new java.lang.String[] { "Response", "Member", });
+    internal_static_proto_ChannelGetMemberListResponse_Member_descriptor =
+      internal_static_proto_ChannelGetMemberListResponse_descriptor.getNestedTypes().get(0);
+    internal_static_proto_ChannelGetMemberListResponse_Member_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_ChannelGetMemberListResponse_Member_descriptor,
+        new java.lang.String[] { "UserId", "Role", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

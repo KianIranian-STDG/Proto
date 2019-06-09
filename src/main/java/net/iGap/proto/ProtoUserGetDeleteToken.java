@@ -8,9 +8,15 @@ public final class ProtoUserGetDeleteToken {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
   public interface UserGetDeleteTokenOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserGetDeleteToken)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional .proto.Request request = 1;</code>
@@ -20,17 +26,86 @@ public final class ProtoUserGetDeleteToken {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.Request getRequest();
+    /**
+     * <code>optional .proto.Request request = 1;</code>
+     */
+    net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
   }
   /**
    * Protobuf type {@code proto.UserGetDeleteToken}
    */
   public  static final class UserGetDeleteToken extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserGetDeleteToken, UserGetDeleteToken.Builder> implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserGetDeleteToken)
       UserGetDeleteTokenOrBuilder {
+    // Use UserGetDeleteToken.newBuilder() to construct.
+    private UserGetDeleteToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private UserGetDeleteToken() {
     }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private UserGetDeleteToken(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
+              if (request_ != null) {
+                subBuilder = request_.toBuilder();
+              }
+              request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(request_);
+                request_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteToken_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteToken_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.class, net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.Builder.class);
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
@@ -48,39 +123,18 @@ public final class ProtoUserGetDeleteToken {
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    private void setRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      request_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void setRequest(
-        net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-      request_ = builderForValue.build();
-      
+    public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      return getRequest();
     }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-      if (request_ != null &&
-          request_ != net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) {
-        request_ =
-          net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-      } else {
-        request_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Request request = 1;</code>
-     */
-    private void clearRequest() {  request_ = null;
-      
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -91,7 +145,7 @@ public final class ProtoUserGetDeleteToken {
     }
 
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -99,245 +153,430 @@ public final class ProtoUserGetDeleteToken {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      memoizedSerializedSize = size;
+      memoizedSize = size;
       return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken other = (net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken) obj;
+
+      boolean result = true;
+      result = result && (hasRequest() == other.hasRequest());
+      if (hasRequest()) {
+        result = result && getRequest()
+            .equals(other.getRequest());
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasRequest()) {
+        hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getRequest().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserGetDeleteToken}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserGetDeleteToken)
         net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenOrBuilder {
-      // Construct using net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteToken_descriptor;
       }
 
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteToken_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.class, net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.Builder.class);
+      }
 
+      // Construct using net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (requestBuilder_ == null) {
+          request_ = null;
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteToken_descriptor;
+      }
+
+      public net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken build() {
+        net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken buildPartial() {
+        net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken result = new net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken(this);
+        if (requestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = requestBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken) {
+          return mergeFrom((net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken other) {
+        if (other == net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          mergeRequest(other.getRequest());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private net.iGap.proto.ProtoRequest.Request request_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public boolean hasRequest() {
-        return instance.hasRequest();
+        return requestBuilder_ != null || request_ != null;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public net.iGap.proto.ProtoRequest.Request getRequest() {
-        return instance.getRequest();
+        if (requestBuilder_ == null) {
+          return request_ == null ? net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        } else {
+          return requestBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.setRequest(value);
-        return this;
+        if (requestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          request_ = value;
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(
           net.iGap.proto.ProtoRequest.Request.Builder builderForValue) {
-        copyOnWrite();
-        instance.setRequest(builderForValue);
+        if (requestBuilder_ == null) {
+          request_ = builderForValue.build();
+          onChanged();
+        } else {
+          requestBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder mergeRequest(net.iGap.proto.ProtoRequest.Request value) {
-        copyOnWrite();
-        instance.mergeRequest(value);
+        if (requestBuilder_ == null) {
+          if (request_ != null) {
+            request_ =
+              net.iGap.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+          } else {
+            request_ = value;
+          }
+          onChanged();
+        } else {
+          requestBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public Builder clearRequest() {  copyOnWrite();
-        instance.clearRequest();
+      public Builder clearRequest() {
+        if (requestBuilder_ == null) {
+          request_ = null;
+          onChanged();
+        } else {
+          request_ = null;
+          requestBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+        
+        onChanged();
+        return getRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      public net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+        if (requestBuilder_ != null) {
+          return requestBuilder_.getMessageOrBuilder();
+        } else {
+          return request_ == null ?
+              net.iGap.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+        }
+      }
+      /**
+       * <code>optional .proto.Request request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder> 
+          getRequestFieldBuilder() {
+        if (requestBuilder_ == null) {
+          requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoRequest.Request, net.iGap.proto.ProtoRequest.Request.Builder, net.iGap.proto.ProtoRequest.RequestOrBuilder>(
+                  getRequest(),
+                  getParentForChildren(),
+                  isClean());
+          request_ = null;
+        }
+        return requestBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
       }
 
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
       // @@protoc_insertion_point(builder_scope:proto.UserGetDeleteToken)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken other = (net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken) arg1;
-          request_ = visitor.visitMessage(request_, other.request_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoRequest.Request.Builder subBuilder = null;
-                  if (request_ != null) {
-                    subBuilder = request_.toBuilder();
-                  }
-                  request_ = input.readMessage(net.iGap.proto.ProtoRequest.Request.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(request_);
-                    request_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserGetDeleteToken)
     private static final net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserGetDeleteToken();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken();
     }
 
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserGetDeleteToken> PARSER;
+    private static final com.google.protobuf.Parser<UserGetDeleteToken>
+        PARSER = new com.google.protobuf.AbstractParser<UserGetDeleteToken>() {
+      public UserGetDeleteToken parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UserGetDeleteToken(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserGetDeleteToken> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserGetDeleteToken> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface UserGetDeleteTokenResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.UserGetDeleteTokenResponse)
-      com.google.protobuf.MessageLiteOrBuilder {
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>optional .proto.Response response = 1;</code>
@@ -347,6 +586,10 @@ public final class ProtoUserGetDeleteToken {
      * <code>optional .proto.Response response = 1;</code>
      */
     net.iGap.proto.ProtoResponse.Response getResponse();
+    /**
+     * <code>optional .proto.Response response = 1;</code>
+     */
+    net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>optional uint32 resend_delay = 2;</code>
@@ -390,15 +633,122 @@ public final class ProtoUserGetDeleteToken {
    * Protobuf type {@code proto.UserGetDeleteTokenResponse}
    */
   public  static final class UserGetDeleteTokenResponse extends
-      com.google.protobuf.GeneratedMessageLite<
-          UserGetDeleteTokenResponse, UserGetDeleteTokenResponse.Builder> implements
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:proto.UserGetDeleteTokenResponse)
       UserGetDeleteTokenResponseOrBuilder {
+    // Use UserGetDeleteTokenResponse.newBuilder() to construct.
+    private UserGetDeleteTokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
     private UserGetDeleteTokenResponse() {
-      smsNumber_ = emptyLongList();
+      resendDelay_ = 0;
+      smsNumber_ = java.util.Collections.emptyList();
       tokenRegex_ = "";
       tokenLength_ = "";
     }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private UserGetDeleteTokenResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
+              if (response_ != null) {
+                subBuilder = response_.toBuilder();
+              }
+              response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(response_);
+                response_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              resendDelay_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                smsNumber_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              smsNumber_.add(input.readUInt64());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
+                smsNumber_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                smsNumber_.add(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tokenRegex_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tokenLength_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          smsNumber_ = java.util.Collections.unmodifiableList(smsNumber_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteTokenResponse_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteTokenResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse.class, net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse.Builder.class);
+    }
+
     private int bitField0_;
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
@@ -417,39 +767,8 @@ public final class ProtoUserGetDeleteToken {
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    private void setResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      response_ = value;
-      
-      }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void setResponse(
-        net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-      response_ = builderForValue.build();
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-      if (response_ != null &&
-          response_ != net.iGap.proto.ProtoResponse.Response.getDefaultInstance()) {
-        response_ =
-          net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
-      } else {
-        response_ = value;
-      }
-      
-    }
-    /**
-     * <code>optional .proto.Response response = 1;</code>
-     */
-    private void clearResponse() {  response_ = null;
-      
+    public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      return getResponse();
     }
 
     public static final int RESEND_DELAY_FIELD_NUMBER = 2;
@@ -460,23 +779,9 @@ public final class ProtoUserGetDeleteToken {
     public int getResendDelay() {
       return resendDelay_;
     }
-    /**
-     * <code>optional uint32 resend_delay = 2;</code>
-     */
-    private void setResendDelay(int value) {
-      
-      resendDelay_ = value;
-    }
-    /**
-     * <code>optional uint32 resend_delay = 2;</code>
-     */
-    private void clearResendDelay() {
-      
-      resendDelay_ = 0;
-    }
 
     public static final int SMS_NUMBER_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.LongList smsNumber_;
+    private java.util.List<java.lang.Long> smsNumber_;
     /**
      * <code>repeated uint64 sms_number = 3;</code>
      */
@@ -494,135 +799,86 @@ public final class ProtoUserGetDeleteToken {
      * <code>repeated uint64 sms_number = 3;</code>
      */
     public long getSmsNumber(int index) {
-      return smsNumber_.getLong(index);
+      return smsNumber_.get(index);
     }
-    private void ensureSmsNumberIsMutable() {
-      if (!smsNumber_.isModifiable()) {
-        smsNumber_ =
-            com.google.protobuf.GeneratedMessageLite.mutableCopy(smsNumber_);
-       }
-    }
-    /**
-     * <code>repeated uint64 sms_number = 3;</code>
-     */
-    private void setSmsNumber(
-        int index, long value) {
-      ensureSmsNumberIsMutable();
-      smsNumber_.setLong(index, value);
-    }
-    /**
-     * <code>repeated uint64 sms_number = 3;</code>
-     */
-    private void addSmsNumber(long value) {
-      ensureSmsNumberIsMutable();
-      smsNumber_.addLong(value);
-    }
-    /**
-     * <code>repeated uint64 sms_number = 3;</code>
-     */
-    private void addAllSmsNumber(
-        java.lang.Iterable<? extends java.lang.Long> values) {
-      ensureSmsNumberIsMutable();
-      com.google.protobuf.AbstractMessageLite.addAll(
-          values, smsNumber_);
-    }
-    /**
-     * <code>repeated uint64 sms_number = 3;</code>
-     */
-    private void clearSmsNumber() {
-      smsNumber_ = emptyLongList();
-    }
+    private int smsNumberMemoizedSerializedSize = -1;
 
     public static final int TOKEN_REGEX_FIELD_NUMBER = 4;
-    private java.lang.String tokenRegex_;
+    private volatile java.lang.Object tokenRegex_;
     /**
      * <code>optional string token_regex = 4;</code>
      */
     public java.lang.String getTokenRegex() {
-      return tokenRegex_;
+      java.lang.Object ref = tokenRegex_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tokenRegex_ = s;
+        return s;
+      }
     }
     /**
      * <code>optional string token_regex = 4;</code>
      */
     public com.google.protobuf.ByteString
         getTokenRegexBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(tokenRegex_);
-    }
-    /**
-     * <code>optional string token_regex = 4;</code>
-     */
-    private void setTokenRegex(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      tokenRegex_ = value;
-    }
-    /**
-     * <code>optional string token_regex = 4;</code>
-     */
-    private void clearTokenRegex() {
-      
-      tokenRegex_ = getDefaultInstance().getTokenRegex();
-    }
-    /**
-     * <code>optional string token_regex = 4;</code>
-     */
-    private void setTokenRegexBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      tokenRegex_ = value.toStringUtf8();
+      java.lang.Object ref = tokenRegex_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tokenRegex_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int TOKEN_LENGTH_FIELD_NUMBER = 5;
-    private java.lang.String tokenLength_;
+    private volatile java.lang.Object tokenLength_;
     /**
      * <code>optional string token_length = 5;</code>
      */
     public java.lang.String getTokenLength() {
-      return tokenLength_;
+      java.lang.Object ref = tokenLength_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tokenLength_ = s;
+        return s;
+      }
     }
     /**
      * <code>optional string token_length = 5;</code>
      */
     public com.google.protobuf.ByteString
         getTokenLengthBytes() {
-      return com.google.protobuf.ByteString.copyFromUtf8(tokenLength_);
+      java.lang.Object ref = tokenLength_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tokenLength_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
-    /**
-     * <code>optional string token_length = 5;</code>
-     */
-    private void setTokenLength(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      tokenLength_ = value;
-    }
-    /**
-     * <code>optional string token_length = 5;</code>
-     */
-    private void clearTokenLength() {
-      
-      tokenLength_ = getDefaultInstance().getTokenLength();
-    }
-    /**
-     * <code>optional string token_length = 5;</code>
-     */
-    private void setTokenLengthBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      tokenLength_ = value.toStringUtf8();
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -634,19 +890,23 @@ public final class ProtoUserGetDeleteToken {
       if (resendDelay_ != 0) {
         output.writeUInt32(2, resendDelay_);
       }
+      if (getSmsNumberList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(smsNumberMemoizedSerializedSize);
+      }
       for (int i = 0; i < smsNumber_.size(); i++) {
-        output.writeUInt64(3, smsNumber_.getLong(i));
+        output.writeUInt64NoTag(smsNumber_.get(i));
       }
-      if (!tokenRegex_.isEmpty()) {
-        output.writeString(4, getTokenRegex());
+      if (!getTokenRegexBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tokenRegex_);
       }
-      if (!tokenLength_.isEmpty()) {
-        output.writeString(5, getTokenLength());
+      if (!getTokenLengthBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, tokenLength_);
       }
     }
 
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -662,208 +922,523 @@ public final class ProtoUserGetDeleteToken {
         int dataSize = 0;
         for (int i = 0; i < smsNumber_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt64SizeNoTag(smsNumber_.getLong(i));
+            .computeUInt64SizeNoTag(smsNumber_.get(i));
         }
         size += dataSize;
-        size += 1 * getSmsNumberList().size();
+        if (!getSmsNumberList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        smsNumberMemoizedSerializedSize = dataSize;
       }
-      if (!tokenRegex_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(4, getTokenRegex());
+      if (!getTokenRegexBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tokenRegex_);
       }
-      if (!tokenLength_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(5, getTokenLength());
+      if (!getTokenLengthBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, tokenLength_);
       }
-      memoizedSerializedSize = size;
+      memoizedSize = size;
       return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse other = (net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse) obj;
+
+      boolean result = true;
+      result = result && (hasResponse() == other.hasResponse());
+      if (hasResponse()) {
+        result = result && getResponse()
+            .equals(other.getResponse());
+      }
+      result = result && (getResendDelay()
+          == other.getResendDelay());
+      result = result && getSmsNumberList()
+          .equals(other.getSmsNumberList());
+      result = result && getTokenRegex()
+          .equals(other.getTokenRegex());
+      result = result && getTokenLength()
+          .equals(other.getTokenLength());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasResponse()) {
+        hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getResponse().hashCode();
+      }
+      hash = (37 * hash) + RESEND_DELAY_FIELD_NUMBER;
+      hash = (53 * hash) + getResendDelay();
+      if (getSmsNumberCount() > 0) {
+        hash = (37 * hash) + SMS_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + getSmsNumberList().hashCode();
+      }
+      hash = (37 * hash) + TOKEN_REGEX_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenRegex().hashCode();
+      hash = (37 * hash) + TOKEN_LENGTH_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenLength().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data);
+      return PARSER.parseFrom(data);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, data, extensionRegistry);
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageLite.parseFrom(
-          DEFAULT_INSTANCE, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
     public static Builder newBuilder(net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code proto.UserGetDeleteTokenResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageLite.Builder<
-          net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse, Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserGetDeleteTokenResponse)
         net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponseOrBuilder {
-      // Construct using net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse.newBuilder()
-      private Builder() {
-        super(DEFAULT_INSTANCE);
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteTokenResponse_descriptor;
       }
 
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteTokenResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse.class, net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse.Builder.class);
+      }
 
+      // Construct using net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (responseBuilder_ == null) {
+          response_ = null;
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+        resendDelay_ = 0;
+
+        smsNumber_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        tokenRegex_ = "";
+
+        tokenLength_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoUserGetDeleteToken.internal_static_proto_UserGetDeleteTokenResponse_descriptor;
+      }
+
+      public net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse build() {
+        net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse buildPartial() {
+        net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse result = new net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (responseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = responseBuilder_.build();
+        }
+        result.resendDelay_ = resendDelay_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          smsNumber_ = java.util.Collections.unmodifiableList(smsNumber_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.smsNumber_ = smsNumber_;
+        result.tokenRegex_ = tokenRegex_;
+        result.tokenLength_ = tokenLength_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse) {
+          return mergeFrom((net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse other) {
+        if (other == net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse.getDefaultInstance()) return this;
+        if (other.hasResponse()) {
+          mergeResponse(other.getResponse());
+        }
+        if (other.getResendDelay() != 0) {
+          setResendDelay(other.getResendDelay());
+        }
+        if (!other.smsNumber_.isEmpty()) {
+          if (smsNumber_.isEmpty()) {
+            smsNumber_ = other.smsNumber_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureSmsNumberIsMutable();
+            smsNumber_.addAll(other.smsNumber_);
+          }
+          onChanged();
+        }
+        if (!other.getTokenRegex().isEmpty()) {
+          tokenRegex_ = other.tokenRegex_;
+          onChanged();
+        }
+        if (!other.getTokenLength().isEmpty()) {
+          tokenLength_ = other.tokenLength_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private net.iGap.proto.ProtoResponse.Response response_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public boolean hasResponse() {
-        return instance.hasResponse();
+        return responseBuilder_ != null || response_ != null;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public net.iGap.proto.ProtoResponse.Response getResponse() {
-        return instance.getResponse();
+        if (responseBuilder_ == null) {
+          return response_ == null ? net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        } else {
+          return responseBuilder_.getMessage();
+        }
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.setResponse(value);
-        return this;
+        if (responseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(value);
         }
+
+        return this;
+      }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(
           net.iGap.proto.ProtoResponse.Response.Builder builderForValue) {
-        copyOnWrite();
-        instance.setResponse(builderForValue);
+        if (responseBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          responseBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder mergeResponse(net.iGap.proto.ProtoResponse.Response value) {
-        copyOnWrite();
-        instance.mergeResponse(value);
+        if (responseBuilder_ == null) {
+          if (response_ != null) {
+            response_ =
+              net.iGap.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          responseBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public Builder clearResponse() {  copyOnWrite();
-        instance.clearResponse();
+      public Builder clearResponse() {
+        if (responseBuilder_ == null) {
+          response_ = null;
+          onChanged();
+        } else {
+          response_ = null;
+          responseBuilder_ = null;
+        }
+
         return this;
       }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+        
+        onChanged();
+        return getResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      public net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+        if (responseBuilder_ != null) {
+          return responseBuilder_.getMessageOrBuilder();
+        } else {
+          return response_ == null ?
+              net.iGap.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+        }
+      }
+      /**
+       * <code>optional .proto.Response response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder> 
+          getResponseFieldBuilder() {
+        if (responseBuilder_ == null) {
+          responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoResponse.Response, net.iGap.proto.ProtoResponse.Response.Builder, net.iGap.proto.ProtoResponse.ResponseOrBuilder>(
+                  getResponse(),
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        return responseBuilder_;
+      }
 
+      private int resendDelay_ ;
       /**
        * <code>optional uint32 resend_delay = 2;</code>
        */
       public int getResendDelay() {
-        return instance.getResendDelay();
+        return resendDelay_;
       }
       /**
        * <code>optional uint32 resend_delay = 2;</code>
        */
       public Builder setResendDelay(int value) {
-        copyOnWrite();
-        instance.setResendDelay(value);
+        
+        resendDelay_ = value;
+        onChanged();
         return this;
       }
       /**
        * <code>optional uint32 resend_delay = 2;</code>
        */
       public Builder clearResendDelay() {
-        copyOnWrite();
-        instance.clearResendDelay();
+        
+        resendDelay_ = 0;
+        onChanged();
         return this;
       }
 
+      private java.util.List<java.lang.Long> smsNumber_ = java.util.Collections.emptyList();
+      private void ensureSmsNumberIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          smsNumber_ = new java.util.ArrayList<java.lang.Long>(smsNumber_);
+          bitField0_ |= 0x00000004;
+         }
+      }
       /**
        * <code>repeated uint64 sms_number = 3;</code>
        */
       public java.util.List<java.lang.Long>
           getSmsNumberList() {
-        return java.util.Collections.unmodifiableList(
-            instance.getSmsNumberList());
+        return java.util.Collections.unmodifiableList(smsNumber_);
       }
       /**
        * <code>repeated uint64 sms_number = 3;</code>
        */
       public int getSmsNumberCount() {
-        return instance.getSmsNumberCount();
+        return smsNumber_.size();
       }
       /**
        * <code>repeated uint64 sms_number = 3;</code>
        */
       public long getSmsNumber(int index) {
-        return instance.getSmsNumber(index);
+        return smsNumber_.get(index);
       }
       /**
        * <code>repeated uint64 sms_number = 3;</code>
        */
       public Builder setSmsNumber(
           int index, long value) {
-        copyOnWrite();
-        instance.setSmsNumber(index, value);
+        ensureSmsNumberIsMutable();
+        smsNumber_.set(index, value);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 sms_number = 3;</code>
        */
       public Builder addSmsNumber(long value) {
-        copyOnWrite();
-        instance.addSmsNumber(value);
+        ensureSmsNumberIsMutable();
+        smsNumber_.add(value);
+        onChanged();
         return this;
       }
       /**
@@ -871,47 +1446,74 @@ public final class ProtoUserGetDeleteToken {
        */
       public Builder addAllSmsNumber(
           java.lang.Iterable<? extends java.lang.Long> values) {
-        copyOnWrite();
-        instance.addAllSmsNumber(values);
+        ensureSmsNumberIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, smsNumber_);
+        onChanged();
         return this;
       }
       /**
        * <code>repeated uint64 sms_number = 3;</code>
        */
       public Builder clearSmsNumber() {
-        copyOnWrite();
-        instance.clearSmsNumber();
+        smsNumber_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
         return this;
       }
 
+      private java.lang.Object tokenRegex_ = "";
       /**
        * <code>optional string token_regex = 4;</code>
        */
       public java.lang.String getTokenRegex() {
-        return instance.getTokenRegex();
+        java.lang.Object ref = tokenRegex_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tokenRegex_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <code>optional string token_regex = 4;</code>
        */
       public com.google.protobuf.ByteString
           getTokenRegexBytes() {
-        return instance.getTokenRegexBytes();
+        java.lang.Object ref = tokenRegex_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tokenRegex_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
        * <code>optional string token_regex = 4;</code>
        */
       public Builder setTokenRegex(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setTokenRegex(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tokenRegex_ = value;
+        onChanged();
         return this;
       }
       /**
        * <code>optional string token_regex = 4;</code>
        */
       public Builder clearTokenRegex() {
-        copyOnWrite();
-        instance.clearTokenRegex();
+        
+        tokenRegex_ = getDefaultInstance().getTokenRegex();
+        onChanged();
         return this;
       }
       /**
@@ -919,39 +1521,68 @@ public final class ProtoUserGetDeleteToken {
        */
       public Builder setTokenRegexBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setTokenRegexBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tokenRegex_ = value;
+        onChanged();
         return this;
       }
 
+      private java.lang.Object tokenLength_ = "";
       /**
        * <code>optional string token_length = 5;</code>
        */
       public java.lang.String getTokenLength() {
-        return instance.getTokenLength();
+        java.lang.Object ref = tokenLength_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tokenLength_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <code>optional string token_length = 5;</code>
        */
       public com.google.protobuf.ByteString
           getTokenLengthBytes() {
-        return instance.getTokenLengthBytes();
+        java.lang.Object ref = tokenLength_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tokenLength_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
        * <code>optional string token_length = 5;</code>
        */
       public Builder setTokenLength(
           java.lang.String value) {
-        copyOnWrite();
-        instance.setTokenLength(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tokenLength_ = value;
+        onChanged();
         return this;
       }
       /**
        * <code>optional string token_length = 5;</code>
        */
       public Builder clearTokenLength() {
-        copyOnWrite();
-        instance.clearTokenLength();
+        
+        tokenLength_ = getDefaultInstance().getTokenLength();
+        onChanged();
         return this;
       }
       /**
@@ -959,165 +1590,121 @@ public final class ProtoUserGetDeleteToken {
        */
       public Builder setTokenLengthBytes(
           com.google.protobuf.ByteString value) {
-        copyOnWrite();
-        instance.setTokenLengthBytes(value);
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tokenLength_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
       }
 
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
       // @@protoc_insertion_point(builder_scope:proto.UserGetDeleteTokenResponse)
     }
-    protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
-        Object arg0, Object arg1) {
-      switch (method) {
-        case NEW_MUTABLE_INSTANCE: {
-          return new net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse();
-        }
-        case IS_INITIALIZED: {
-          return DEFAULT_INSTANCE;
-        }
-        case MAKE_IMMUTABLE: {
-          smsNumber_.makeImmutable();
-          return null;
-        }
-        case NEW_BUILDER: {
-          return new Builder();
-        }
-        case VISIT: {
-          Visitor visitor = (Visitor) arg0;
-          net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse other = (net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse) arg1;
-          response_ = visitor.visitMessage(response_, other.response_);
-          resendDelay_ = visitor.visitInt(resendDelay_ != 0, resendDelay_,
-              other.resendDelay_ != 0, other.resendDelay_);
-          smsNumber_= visitor.visitLongList(smsNumber_, other.smsNumber_);
-          tokenRegex_ = visitor.visitString(!tokenRegex_.isEmpty(), tokenRegex_,
-              !other.tokenRegex_.isEmpty(), other.tokenRegex_);
-          tokenLength_ = visitor.visitString(!tokenLength_.isEmpty(), tokenLength_,
-              !other.tokenLength_.isEmpty(), other.tokenLength_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
-              .INSTANCE) {
-            bitField0_ |= other.bitField0_;
-          }
-          return this;
-        }
-        case MERGE_FROM_STREAM: {
-          com.google.protobuf.CodedInputStream input =
-              (com.google.protobuf.CodedInputStream) arg0;
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
-              (com.google.protobuf.ExtensionRegistryLite) arg1;
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!input.skipField(tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 10: {
-                  net.iGap.proto.ProtoResponse.Response.Builder subBuilder = null;
-                  if (response_ != null) {
-                    subBuilder = response_.toBuilder();
-                  }
-                  response_ = input.readMessage(net.iGap.proto.ProtoResponse.Response.parser(), extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(response_);
-                    response_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-                case 16: {
-
-                  resendDelay_ = input.readUInt32();
-                  break;
-                }
-                case 24: {
-                  if (!smsNumber_.isModifiable()) {
-                    smsNumber_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(smsNumber_);
-                  }
-                  smsNumber_.addLong(input.readUInt64());
-                  break;
-                }
-                case 26: {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  if (!smsNumber_.isModifiable() && input.getBytesUntilLimit() > 0) {
-                    smsNumber_ =
-                        com.google.protobuf.GeneratedMessageLite.mutableCopy(smsNumber_);
-                  }
-                  while (input.getBytesUntilLimit() > 0) {
-                    smsNumber_.addLong(input.readUInt64());
-                  }
-                  input.popLimit(limit);
-                  break;
-                }
-                case 34: {
-                  String s = input.readStringRequireUtf8();
-
-                  tokenRegex_ = s;
-                  break;
-                }
-                case 42: {
-                  String s = input.readStringRequireUtf8();
-
-                  tokenLength_ = s;
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-          }
-        }
-        case GET_DEFAULT_INSTANCE: {
-          return DEFAULT_INSTANCE;
-        }
-        case GET_PARSER: {
-          if (PARSER == null) {    synchronized (net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse.class) {
-              if (PARSER == null) {
-                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
-              }
-            }
-          }
-          return PARSER;
-        }
-      }
-      throw new UnsupportedOperationException();
-    }
-
 
     // @@protoc_insertion_point(class_scope:proto.UserGetDeleteTokenResponse)
     private static final net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserGetDeleteTokenResponse();
-      DEFAULT_INSTANCE.makeImmutable();
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse();
     }
 
     public static net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static volatile com.google.protobuf.Parser<UserGetDeleteTokenResponse> PARSER;
+    private static final com.google.protobuf.Parser<UserGetDeleteTokenResponse>
+        PARSER = new com.google.protobuf.AbstractParser<UserGetDeleteTokenResponse>() {
+      public UserGetDeleteTokenResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UserGetDeleteTokenResponse(input, extensionRegistry);
+      }
+    };
 
     public static com.google.protobuf.Parser<UserGetDeleteTokenResponse> parser() {
-      return DEFAULT_INSTANCE.getParserForType();
+      return PARSER;
     }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserGetDeleteTokenResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteTokenResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserGetDeleteToken_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserGetDeleteToken_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserGetDeleteTokenResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserGetDeleteTokenResponse_fieldAccessorTable;
 
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
+    java.lang.String[] descriptorData = {
+      "\n\030UserGetDeleteToken.proto\022\005proto\032\rReque" +
+      "st.proto\032\016Response.proto\"5\n\022UserGetDelet" +
+      "eToken\022\037\n\007request\030\001 \001(\0132\016.proto.Request\"" +
+      "\224\001\n\032UserGetDeleteTokenResponse\022!\n\010respon" +
+      "se\030\001 \001(\0132\017.proto.Response\022\024\n\014resend_dela" +
+      "y\030\002 \001(\r\022\022\n\nsms_number\030\003 \003(\004\022\023\n\013token_reg" +
+      "ex\030\004 \001(\t\022\024\n\014token_length\030\005 \001(\tB)\n\016net.iG" +
+      "ap.protoB\027ProtoUserGetDeleteTokenb\006proto" +
+      "3"
+    };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoRequest.getDescriptor(),
+          net.iGap.proto.ProtoResponse.getDescriptor(),
+        }, assigner);
+    internal_static_proto_UserGetDeleteToken_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_proto_UserGetDeleteToken_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserGetDeleteToken_descriptor,
+        new java.lang.String[] { "Request", });
+    internal_static_proto_UserGetDeleteTokenResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_UserGetDeleteTokenResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserGetDeleteTokenResponse_descriptor,
+        new java.lang.String[] { "Response", "ResendDelay", "SmsNumber", "TokenRegex", "TokenLength", });
+    net.iGap.proto.ProtoRequest.getDescriptor();
+    net.iGap.proto.ProtoResponse.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
