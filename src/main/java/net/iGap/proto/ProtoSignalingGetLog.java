@@ -43,6 +43,15 @@ public final class ProtoSignalingGetLog {
      * <code>optional .proto.Pagination pagination = 2;</code>
      */
     net.iGap.proto.ProtoGlobal.PaginationOrBuilder getPaginationOrBuilder();
+
+    /**
+     * <code>optional .proto.SignalingGetLog.Filter filter = 3;</code>
+     */
+    int getFilterValue();
+    /**
+     * <code>optional .proto.SignalingGetLog.Filter filter = 3;</code>
+     */
+    net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter getFilter();
   }
   /**
    * Protobuf type {@code proto.SignalingGetLog}
@@ -56,6 +65,7 @@ public final class ProtoSignalingGetLog {
       super(builder);
     }
     private SignalingGetLog() {
+      filter_ = 0;
     }
 
     @java.lang.Override
@@ -109,6 +119,12 @@ public final class ProtoSignalingGetLog {
 
               break;
             }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              filter_ = rawValue;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -130,6 +146,131 @@ public final class ProtoSignalingGetLog {
       return net.iGap.proto.ProtoSignalingGetLog.internal_static_proto_SignalingGetLog_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.class, net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.SignalingGetLog.Filter}
+     */
+    public enum Filter
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ALL = 0;</code>
+       */
+      ALL(0),
+      /**
+       * <code>MISSED = 1;</code>
+       */
+      MISSED(1),
+      /**
+       * <code>CANCELED = 2;</code>
+       */
+      CANCELED(2),
+      /**
+       * <code>INCOMING = 3;</code>
+       */
+      INCOMING(3),
+      /**
+       * <code>OUTGOING = 4;</code>
+       */
+      OUTGOING(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ALL = 0;</code>
+       */
+      public static final int ALL_VALUE = 0;
+      /**
+       * <code>MISSED = 1;</code>
+       */
+      public static final int MISSED_VALUE = 1;
+      /**
+       * <code>CANCELED = 2;</code>
+       */
+      public static final int CANCELED_VALUE = 2;
+      /**
+       * <code>INCOMING = 3;</code>
+       */
+      public static final int INCOMING_VALUE = 3;
+      /**
+       * <code>OUTGOING = 4;</code>
+       */
+      public static final int OUTGOING_VALUE = 4;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Filter valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Filter forNumber(int value) {
+        switch (value) {
+          case 0: return ALL;
+          case 1: return MISSED;
+          case 2: return CANCELED;
+          case 3: return INCOMING;
+          case 4: return OUTGOING;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Filter>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Filter> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Filter>() {
+              public Filter findValueByNumber(int number) {
+                return Filter.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Filter[] VALUES = values();
+
+      public static Filter valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Filter(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.SignalingGetLog.Filter)
     }
 
     public static final int REQUEST_FIELD_NUMBER = 1;
@@ -174,6 +315,22 @@ public final class ProtoSignalingGetLog {
       return getPagination();
     }
 
+    public static final int FILTER_FIELD_NUMBER = 3;
+    private int filter_;
+    /**
+     * <code>optional .proto.SignalingGetLog.Filter filter = 3;</code>
+     */
+    public int getFilterValue() {
+      return filter_;
+    }
+    /**
+     * <code>optional .proto.SignalingGetLog.Filter filter = 3;</code>
+     */
+    public net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter getFilter() {
+      net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter result = net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter.valueOf(filter_);
+      return result == null ? net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -192,6 +349,9 @@ public final class ProtoSignalingGetLog {
       if (pagination_ != null) {
         output.writeMessage(2, getPagination());
       }
+      if (filter_ != net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter.ALL.getNumber()) {
+        output.writeEnum(3, filter_);
+      }
     }
 
     public int getSerializedSize() {
@@ -206,6 +366,10 @@ public final class ProtoSignalingGetLog {
       if (pagination_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getPagination());
+      }
+      if (filter_ != net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter.ALL.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, filter_);
       }
       memoizedSize = size;
       return size;
@@ -233,6 +397,7 @@ public final class ProtoSignalingGetLog {
         result = result && getPagination()
             .equals(other.getPagination());
       }
+      result = result && filter_ == other.filter_;
       return result;
     }
 
@@ -251,6 +416,8 @@ public final class ProtoSignalingGetLog {
         hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
         hash = (53 * hash) + getPagination().hashCode();
       }
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + filter_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -381,6 +548,8 @@ public final class ProtoSignalingGetLog {
           pagination_ = null;
           paginationBuilder_ = null;
         }
+        filter_ = 0;
+
         return this;
       }
 
@@ -413,6 +582,7 @@ public final class ProtoSignalingGetLog {
         } else {
           result.pagination_ = paginationBuilder_.build();
         }
+        result.filter_ = filter_;
         onBuilt();
         return result;
       }
@@ -459,6 +629,9 @@ public final class ProtoSignalingGetLog {
         }
         if (other.hasPagination()) {
           mergePagination(other.getPagination());
+        }
+        if (other.filter_ != 0) {
+          setFilterValue(other.getFilterValue());
         }
         onChanged();
         return this;
@@ -718,6 +891,50 @@ public final class ProtoSignalingGetLog {
           pagination_ = null;
         }
         return paginationBuilder_;
+      }
+
+      private int filter_ = 0;
+      /**
+       * <code>optional .proto.SignalingGetLog.Filter filter = 3;</code>
+       */
+      public int getFilterValue() {
+        return filter_;
+      }
+      /**
+       * <code>optional .proto.SignalingGetLog.Filter filter = 3;</code>
+       */
+      public Builder setFilterValue(int value) {
+        filter_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.SignalingGetLog.Filter filter = 3;</code>
+       */
+      public net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter getFilter() {
+        net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter result = net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter.valueOf(filter_);
+        return result == null ? net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.SignalingGetLog.Filter filter = 3;</code>
+       */
+      public Builder setFilter(net.iGap.proto.ProtoSignalingGetLog.SignalingGetLog.Filter value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        filter_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.SignalingGetLog.Filter filter = 3;</code>
+       */
+      public Builder clearFilter() {
+        
+        filter_ = 0;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2776,21 +2993,24 @@ public final class ProtoSignalingGetLog {
     java.lang.String[] descriptorData = {
       "\n\025SignalingGetLog.proto\022\005proto\032\rRequest." +
       "proto\032\016Response.proto\032\014Global.proto\032\024Sig" +
-      "nalingOffer.proto\"Y\n\017SignalingGetLog\022\037\n\007" +
-      "request\030\001 \001(\0132\016.proto.Request\022%\n\npaginat" +
-      "ion\030\002 \001(\0132\021.proto.Pagination\"\226\003\n\027Signali" +
-      "ngGetLogResponse\022!\n\010response\030\001 \001(\0132\017.pro" +
-      "to.Response\022B\n\rsignaling_log\030\002 \003(\0132+.pro" +
-      "to.SignalingGetLogResponse.SignalingLog\032" +
-      "\223\002\n\014SignalingLog\022\n\n\002id\030\001 \001(\004\022(\n\004type\030\002 \001" +
-      "(\0162\032.proto.SignalingOffer.Type\022B\n\006status",
-      "\030\003 \001(\01622.proto.SignalingGetLogResponse.S" +
-      "ignalingLog.Status\022#\n\004peer\030\004 \001(\0132\025.proto" +
-      ".RegisteredUser\022\022\n\noffer_time\030\005 \001(\r\022\020\n\010d" +
-      "uration\030\006 \001(\r\">\n\006Status\022\n\n\006MISSED\020\000\022\014\n\010C" +
-      "ANCELED\020\001\022\014\n\010INCOMING\020\002\022\014\n\010OUTGOING\020\003B&\n" +
-      "\016net.iGap.protoB\024ProtoSignalingGetLogb\006p" +
-      "roto3"
+      "nalingOffer.proto\"\321\001\n\017SignalingGetLog\022\037\n" +
+      "\007request\030\001 \001(\0132\016.proto.Request\022%\n\npagina" +
+      "tion\030\002 \001(\0132\021.proto.Pagination\022-\n\006filter\030" +
+      "\003 \001(\0162\035.proto.SignalingGetLog.Filter\"G\n\006" +
+      "Filter\022\007\n\003ALL\020\000\022\n\n\006MISSED\020\001\022\014\n\010CANCELED\020" +
+      "\002\022\014\n\010INCOMING\020\003\022\014\n\010OUTGOING\020\004\"\226\003\n\027Signal" +
+      "ingGetLogResponse\022!\n\010response\030\001 \001(\0132\017.pr" +
+      "oto.Response\022B\n\rsignaling_log\030\002 \003(\0132+.pr",
+      "oto.SignalingGetLogResponse.SignalingLog" +
+      "\032\223\002\n\014SignalingLog\022\n\n\002id\030\001 \001(\004\022(\n\004type\030\002 " +
+      "\001(\0162\032.proto.SignalingOffer.Type\022B\n\006statu" +
+      "s\030\003 \001(\01622.proto.SignalingGetLogResponse." +
+      "SignalingLog.Status\022#\n\004peer\030\004 \001(\0132\025.prot" +
+      "o.RegisteredUser\022\022\n\noffer_time\030\005 \001(\r\022\020\n\010" +
+      "duration\030\006 \001(\r\">\n\006Status\022\n\n\006MISSED\020\000\022\014\n\010" +
+      "CANCELED\020\001\022\014\n\010INCOMING\020\002\022\014\n\010OUTGOING\020\003B&" +
+      "\n\016net.iGap.protoB\024ProtoSignalingGetLogb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2813,7 +3033,7 @@ public final class ProtoSignalingGetLog {
     internal_static_proto_SignalingGetLog_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_SignalingGetLog_descriptor,
-        new java.lang.String[] { "Request", "Pagination", });
+        new java.lang.String[] { "Request", "Pagination", "Filter", });
     internal_static_proto_SignalingGetLogResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_SignalingGetLogResponse_fieldAccessorTable = new
