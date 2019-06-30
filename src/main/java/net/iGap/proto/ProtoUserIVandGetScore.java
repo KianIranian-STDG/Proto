@@ -595,6 +595,40 @@ public final class ProtoUserIVandGetScore {
      * <code>optional uint32 score = 2;</code>
      */
     int getScore();
+
+    /**
+     * <code>optional uint32 user_rank = 3;</code>
+     */
+    int getUserRank();
+
+    /**
+     * <code>optional uint32 total_rank = 4;</code>
+     */
+    int getTotalRank();
+
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    java.util.List<net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore> 
+        getScoresList();
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore getScores(int index);
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    int getScoresCount();
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder> 
+        getScoresOrBuilderList();
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder getScoresOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code proto.UserIVandGetScoreResponse}
@@ -609,6 +643,9 @@ public final class ProtoUserIVandGetScore {
     }
     private UserIVandGetScoreResponse() {
       score_ = 0;
+      userRank_ = 0;
+      totalRank_ = 0;
+      scores_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -654,6 +691,25 @@ public final class ProtoUserIVandGetScore {
               score_ = input.readUInt32();
               break;
             }
+            case 24: {
+
+              userRank_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              totalRank_ = input.readUInt32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                scores_ = new java.util.ArrayList<net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              scores_.add(
+                  input.readMessage(net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -662,6 +718,9 @@ public final class ProtoUserIVandGetScore {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          scores_ = java.util.Collections.unmodifiableList(scores_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -677,6 +736,773 @@ public final class ProtoUserIVandGetScore {
               net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.class, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.Builder.class);
     }
 
+    public interface IVandScoreOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.UserIVandGetScoreResponse.IVandScore)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional uint32 id = 1;</code>
+       */
+      int getId();
+
+      /**
+       * <code>optional string en_name = 2;</code>
+       */
+      java.lang.String getEnName();
+      /**
+       * <code>optional string en_name = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getEnNameBytes();
+
+      /**
+       * <code>optional string fa_name = 3;</code>
+       */
+      java.lang.String getFaName();
+      /**
+       * <code>optional string fa_name = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getFaNameBytes();
+
+      /**
+       * <code>optional uint32 score = 4;</code>
+       */
+      int getScore();
+    }
+    /**
+     * Protobuf type {@code proto.UserIVandGetScoreResponse.IVandScore}
+     */
+    public  static final class IVandScore extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:proto.UserIVandGetScoreResponse.IVandScore)
+        IVandScoreOrBuilder {
+      // Use IVandScore.newBuilder() to construct.
+      private IVandScore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private IVandScore() {
+        id_ = 0;
+        enName_ = "";
+        faName_ = "";
+        score_ = 0;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private IVandScore(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+
+                id_ = input.readUInt32();
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                enName_ = s;
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                faName_ = s;
+                break;
+              }
+              case 32: {
+
+                score_ = input.readUInt32();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoUserIVandGetScore.internal_static_proto_UserIVandGetScoreResponse_IVandScore_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoUserIVandGetScore.internal_static_proto_UserIVandGetScoreResponse_IVandScore_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.class, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder.class);
+      }
+
+      public static final int ID_FIELD_NUMBER = 1;
+      private int id_;
+      /**
+       * <code>optional uint32 id = 1;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+
+      public static final int EN_NAME_FIELD_NUMBER = 2;
+      private volatile java.lang.Object enName_;
+      /**
+       * <code>optional string en_name = 2;</code>
+       */
+      public java.lang.String getEnName() {
+        java.lang.Object ref = enName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          enName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>optional string en_name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEnNameBytes() {
+        java.lang.Object ref = enName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          enName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int FA_NAME_FIELD_NUMBER = 3;
+      private volatile java.lang.Object faName_;
+      /**
+       * <code>optional string fa_name = 3;</code>
+       */
+      public java.lang.String getFaName() {
+        java.lang.Object ref = faName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          faName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>optional string fa_name = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFaNameBytes() {
+        java.lang.Object ref = faName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          faName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SCORE_FIELD_NUMBER = 4;
+      private int score_;
+      /**
+       * <code>optional uint32 score = 4;</code>
+       */
+      public int getScore() {
+        return score_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (id_ != 0) {
+          output.writeUInt32(1, id_);
+        }
+        if (!getEnNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, enName_);
+        }
+        if (!getFaNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, faName_);
+        }
+        if (score_ != 0) {
+          output.writeUInt32(4, score_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (id_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(1, id_);
+        }
+        if (!getEnNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, enName_);
+        }
+        if (!getFaNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, faName_);
+        }
+        if (score_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(4, score_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore other = (net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore) obj;
+
+        boolean result = true;
+        result = result && (getId()
+            == other.getId());
+        result = result && getEnName()
+            .equals(other.getEnName());
+        result = result && getFaName()
+            .equals(other.getFaName());
+        result = result && (getScore()
+            == other.getScore());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId();
+        hash = (37 * hash) + EN_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getEnName().hashCode();
+        hash = (37 * hash) + FA_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getFaName().hashCode();
+        hash = (37 * hash) + SCORE_FIELD_NUMBER;
+        hash = (53 * hash) + getScore();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code proto.UserIVandGetScoreResponse.IVandScore}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.UserIVandGetScoreResponse.IVandScore)
+          net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoUserIVandGetScore.internal_static_proto_UserIVandGetScoreResponse_IVandScore_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoUserIVandGetScore.internal_static_proto_UserIVandGetScoreResponse_IVandScore_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.class, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder.class);
+        }
+
+        // Construct using net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          id_ = 0;
+
+          enName_ = "";
+
+          faName_ = "";
+
+          score_ = 0;
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoUserIVandGetScore.internal_static_proto_UserIVandGetScoreResponse_IVandScore_descriptor;
+        }
+
+        public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.getDefaultInstance();
+        }
+
+        public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore build() {
+          net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore buildPartial() {
+          net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore result = new net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore(this);
+          result.id_ = id_;
+          result.enName_ = enName_;
+          result.faName_ = faName_;
+          result.score_ = score_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore) {
+            return mergeFrom((net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore other) {
+          if (other == net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.getDefaultInstance()) return this;
+          if (other.getId() != 0) {
+            setId(other.getId());
+          }
+          if (!other.getEnName().isEmpty()) {
+            enName_ = other.enName_;
+            onChanged();
+          }
+          if (!other.getFaName().isEmpty()) {
+            faName_ = other.faName_;
+            onChanged();
+          }
+          if (other.getScore() != 0) {
+            setScore(other.getScore());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int id_ ;
+        /**
+         * <code>optional uint32 id = 1;</code>
+         */
+        public int getId() {
+          return id_;
+        }
+        /**
+         * <code>optional uint32 id = 1;</code>
+         */
+        public Builder setId(int value) {
+          
+          id_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 id = 1;</code>
+         */
+        public Builder clearId() {
+          
+          id_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object enName_ = "";
+        /**
+         * <code>optional string en_name = 2;</code>
+         */
+        public java.lang.String getEnName() {
+          java.lang.Object ref = enName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            enName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string en_name = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getEnNameBytes() {
+          java.lang.Object ref = enName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            enName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string en_name = 2;</code>
+         */
+        public Builder setEnName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          enName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string en_name = 2;</code>
+         */
+        public Builder clearEnName() {
+          
+          enName_ = getDefaultInstance().getEnName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string en_name = 2;</code>
+         */
+        public Builder setEnNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          enName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object faName_ = "";
+        /**
+         * <code>optional string fa_name = 3;</code>
+         */
+        public java.lang.String getFaName() {
+          java.lang.Object ref = faName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            faName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string fa_name = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getFaNameBytes() {
+          java.lang.Object ref = faName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            faName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string fa_name = 3;</code>
+         */
+        public Builder setFaName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          faName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string fa_name = 3;</code>
+         */
+        public Builder clearFaName() {
+          
+          faName_ = getDefaultInstance().getFaName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string fa_name = 3;</code>
+         */
+        public Builder setFaNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          faName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int score_ ;
+        /**
+         * <code>optional uint32 score = 4;</code>
+         */
+        public int getScore() {
+          return score_;
+        }
+        /**
+         * <code>optional uint32 score = 4;</code>
+         */
+        public Builder setScore(int value) {
+          
+          score_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 score = 4;</code>
+         */
+        public Builder clearScore() {
+          
+          score_ = 0;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:proto.UserIVandGetScoreResponse.IVandScore)
+      }
+
+      // @@protoc_insertion_point(class_scope:proto.UserIVandGetScoreResponse.IVandScore)
+      private static final net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore();
+      }
+
+      public static net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<IVandScore>
+          PARSER = new com.google.protobuf.AbstractParser<IVandScore>() {
+        public IVandScore parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new IVandScore(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<IVandScore> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<IVandScore> getParserForType() {
+        return PARSER;
+      }
+
+      public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
     public static final int RESPONSE_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoResponse.Response response_;
     /**
@@ -707,6 +1533,59 @@ public final class ProtoUserIVandGetScore {
       return score_;
     }
 
+    public static final int USER_RANK_FIELD_NUMBER = 3;
+    private int userRank_;
+    /**
+     * <code>optional uint32 user_rank = 3;</code>
+     */
+    public int getUserRank() {
+      return userRank_;
+    }
+
+    public static final int TOTAL_RANK_FIELD_NUMBER = 4;
+    private int totalRank_;
+    /**
+     * <code>optional uint32 total_rank = 4;</code>
+     */
+    public int getTotalRank() {
+      return totalRank_;
+    }
+
+    public static final int SCORES_FIELD_NUMBER = 5;
+    private java.util.List<net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore> scores_;
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    public java.util.List<net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore> getScoresList() {
+      return scores_;
+    }
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    public java.util.List<? extends net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder> 
+        getScoresOrBuilderList() {
+      return scores_;
+    }
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    public int getScoresCount() {
+      return scores_.size();
+    }
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore getScores(int index) {
+      return scores_.get(index);
+    }
+    /**
+     * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+     */
+    public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder getScoresOrBuilder(
+        int index) {
+      return scores_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -725,6 +1604,15 @@ public final class ProtoUserIVandGetScore {
       if (score_ != 0) {
         output.writeUInt32(2, score_);
       }
+      if (userRank_ != 0) {
+        output.writeUInt32(3, userRank_);
+      }
+      if (totalRank_ != 0) {
+        output.writeUInt32(4, totalRank_);
+      }
+      for (int i = 0; i < scores_.size(); i++) {
+        output.writeMessage(5, scores_.get(i));
+      }
     }
 
     public int getSerializedSize() {
@@ -739,6 +1627,18 @@ public final class ProtoUserIVandGetScore {
       if (score_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, score_);
+      }
+      if (userRank_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, userRank_);
+      }
+      if (totalRank_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, totalRank_);
+      }
+      for (int i = 0; i < scores_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, scores_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -763,6 +1663,12 @@ public final class ProtoUserIVandGetScore {
       }
       result = result && (getScore()
           == other.getScore());
+      result = result && (getUserRank()
+          == other.getUserRank());
+      result = result && (getTotalRank()
+          == other.getTotalRank());
+      result = result && getScoresList()
+          .equals(other.getScoresList());
       return result;
     }
 
@@ -779,6 +1685,14 @@ public final class ProtoUserIVandGetScore {
       }
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getScore();
+      hash = (37 * hash) + USER_RANK_FIELD_NUMBER;
+      hash = (53 * hash) + getUserRank();
+      hash = (37 * hash) + TOTAL_RANK_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalRank();
+      if (getScoresCount() > 0) {
+        hash = (37 * hash) + SCORES_FIELD_NUMBER;
+        hash = (53 * hash) + getScoresList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -893,6 +1807,7 @@ public final class ProtoUserIVandGetScore {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getScoresFieldBuilder();
         }
       }
       public Builder clear() {
@@ -905,6 +1820,16 @@ public final class ProtoUserIVandGetScore {
         }
         score_ = 0;
 
+        userRank_ = 0;
+
+        totalRank_ = 0;
+
+        if (scoresBuilder_ == null) {
+          scores_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          scoresBuilder_.clear();
+        }
         return this;
       }
 
@@ -927,12 +1852,26 @@ public final class ProtoUserIVandGetScore {
 
       public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse buildPartial() {
         net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse result = new net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (responseBuilder_ == null) {
           result.response_ = response_;
         } else {
           result.response_ = responseBuilder_.build();
         }
         result.score_ = score_;
+        result.userRank_ = userRank_;
+        result.totalRank_ = totalRank_;
+        if (scoresBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            scores_ = java.util.Collections.unmodifiableList(scores_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.scores_ = scores_;
+        } else {
+          result.scores_ = scoresBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -980,6 +1919,38 @@ public final class ProtoUserIVandGetScore {
         if (other.getScore() != 0) {
           setScore(other.getScore());
         }
+        if (other.getUserRank() != 0) {
+          setUserRank(other.getUserRank());
+        }
+        if (other.getTotalRank() != 0) {
+          setTotalRank(other.getTotalRank());
+        }
+        if (scoresBuilder_ == null) {
+          if (!other.scores_.isEmpty()) {
+            if (scores_.isEmpty()) {
+              scores_ = other.scores_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureScoresIsMutable();
+              scores_.addAll(other.scores_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.scores_.isEmpty()) {
+            if (scoresBuilder_.isEmpty()) {
+              scoresBuilder_.dispose();
+              scoresBuilder_ = null;
+              scores_ = other.scores_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              scoresBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getScoresFieldBuilder() : null;
+            } else {
+              scoresBuilder_.addAllMessages(other.scores_);
+            }
+          }
+        }
         onChanged();
         return this;
       }
@@ -1005,6 +1976,7 @@ public final class ProtoUserIVandGetScore {
         }
         return this;
       }
+      private int bitField0_;
 
       private net.iGap.proto.ProtoResponse.Response response_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1148,6 +2120,298 @@ public final class ProtoUserIVandGetScore {
         onChanged();
         return this;
       }
+
+      private int userRank_ ;
+      /**
+       * <code>optional uint32 user_rank = 3;</code>
+       */
+      public int getUserRank() {
+        return userRank_;
+      }
+      /**
+       * <code>optional uint32 user_rank = 3;</code>
+       */
+      public Builder setUserRank(int value) {
+        
+        userRank_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 user_rank = 3;</code>
+       */
+      public Builder clearUserRank() {
+        
+        userRank_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int totalRank_ ;
+      /**
+       * <code>optional uint32 total_rank = 4;</code>
+       */
+      public int getTotalRank() {
+        return totalRank_;
+      }
+      /**
+       * <code>optional uint32 total_rank = 4;</code>
+       */
+      public Builder setTotalRank(int value) {
+        
+        totalRank_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 total_rank = 4;</code>
+       */
+      public Builder clearTotalRank() {
+        
+        totalRank_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore> scores_ =
+        java.util.Collections.emptyList();
+      private void ensureScoresIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          scores_ = new java.util.ArrayList<net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore>(scores_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder> scoresBuilder_;
+
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore> getScoresList() {
+        if (scoresBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(scores_);
+        } else {
+          return scoresBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public int getScoresCount() {
+        if (scoresBuilder_ == null) {
+          return scores_.size();
+        } else {
+          return scoresBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore getScores(int index) {
+        if (scoresBuilder_ == null) {
+          return scores_.get(index);
+        } else {
+          return scoresBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public Builder setScores(
+          int index, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore value) {
+        if (scoresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureScoresIsMutable();
+          scores_.set(index, value);
+          onChanged();
+        } else {
+          scoresBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public Builder setScores(
+          int index, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder builderForValue) {
+        if (scoresBuilder_ == null) {
+          ensureScoresIsMutable();
+          scores_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          scoresBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public Builder addScores(net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore value) {
+        if (scoresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureScoresIsMutable();
+          scores_.add(value);
+          onChanged();
+        } else {
+          scoresBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public Builder addScores(
+          int index, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore value) {
+        if (scoresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureScoresIsMutable();
+          scores_.add(index, value);
+          onChanged();
+        } else {
+          scoresBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public Builder addScores(
+          net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder builderForValue) {
+        if (scoresBuilder_ == null) {
+          ensureScoresIsMutable();
+          scores_.add(builderForValue.build());
+          onChanged();
+        } else {
+          scoresBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public Builder addScores(
+          int index, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder builderForValue) {
+        if (scoresBuilder_ == null) {
+          ensureScoresIsMutable();
+          scores_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          scoresBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public Builder addAllScores(
+          java.lang.Iterable<? extends net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore> values) {
+        if (scoresBuilder_ == null) {
+          ensureScoresIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, scores_);
+          onChanged();
+        } else {
+          scoresBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public Builder clearScores() {
+        if (scoresBuilder_ == null) {
+          scores_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          scoresBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public Builder removeScores(int index) {
+        if (scoresBuilder_ == null) {
+          ensureScoresIsMutable();
+          scores_.remove(index);
+          onChanged();
+        } else {
+          scoresBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder getScoresBuilder(
+          int index) {
+        return getScoresFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder getScoresOrBuilder(
+          int index) {
+        if (scoresBuilder_ == null) {
+          return scores_.get(index);  } else {
+          return scoresBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder> 
+           getScoresOrBuilderList() {
+        if (scoresBuilder_ != null) {
+          return scoresBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(scores_);
+        }
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder addScoresBuilder() {
+        return getScoresFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder addScoresBuilder(
+          int index) {
+        return getScoresFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.UserIVandGetScoreResponse.IVandScore scores = 5;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder> 
+           getScoresBuilderList() {
+        return getScoresFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder> 
+          getScoresFieldBuilder() {
+        if (scoresBuilder_ == null) {
+          scoresBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScore.Builder, net.iGap.proto.ProtoUserIVandGetScore.UserIVandGetScoreResponse.IVandScoreOrBuilder>(
+                  scores_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          scores_ = null;
+        }
+        return scoresBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1207,6 +2471,11 @@ public final class ProtoUserIVandGetScore {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_UserIVandGetScoreResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_UserIVandGetScoreResponse_IVandScore_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_UserIVandGetScoreResponse_IVandScore_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1218,11 +2487,15 @@ public final class ProtoUserIVandGetScore {
     java.lang.String[] descriptorData = {
       "\n\027UserIVandGetScore.proto\022\005proto\032\rReques" +
       "t.proto\032\016Response.proto\"4\n\021UserIVandGetS" +
-      "core\022\037\n\007request\030\001 \001(\0132\016.proto.Request\"M\n" +
-      "\031UserIVandGetScoreResponse\022!\n\010response\030\001" +
-      " \001(\0132\017.proto.Response\022\r\n\005score\030\002 \001(\rB(\n\016" +
-      "net.iGap.protoB\026ProtoUserIVandGetScoreb\006" +
-      "proto3"
+      "core\022\037\n\007request\030\001 \001(\0132\016.proto.Request\"\374\001" +
+      "\n\031UserIVandGetScoreResponse\022!\n\010response\030" +
+      "\001 \001(\0132\017.proto.Response\022\r\n\005score\030\002 \001(\r\022\021\n" +
+      "\tuser_rank\030\003 \001(\r\022\022\n\ntotal_rank\030\004 \001(\r\022;\n\006" +
+      "scores\030\005 \003(\0132+.proto.UserIVandGetScoreRe" +
+      "sponse.IVandScore\032I\n\nIVandScore\022\n\n\002id\030\001 " +
+      "\001(\r\022\017\n\007en_name\030\002 \001(\t\022\017\n\007fa_name\030\003 \001(\t\022\r\n" +
+      "\005score\030\004 \001(\rB(\n\016net.iGap.protoB\026ProtoUse",
+      "rIVandGetScoreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1249,7 +2522,13 @@ public final class ProtoUserIVandGetScore {
     internal_static_proto_UserIVandGetScoreResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserIVandGetScoreResponse_descriptor,
-        new java.lang.String[] { "Response", "Score", });
+        new java.lang.String[] { "Response", "Score", "UserRank", "TotalRank", "Scores", });
+    internal_static_proto_UserIVandGetScoreResponse_IVandScore_descriptor =
+      internal_static_proto_UserIVandGetScoreResponse_descriptor.getNestedTypes().get(0);
+    internal_static_proto_UserIVandGetScoreResponse_IVandScore_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_UserIVandGetScoreResponse_IVandScore_descriptor,
+        new java.lang.String[] { "Id", "EnName", "FaName", "Score", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
   }
