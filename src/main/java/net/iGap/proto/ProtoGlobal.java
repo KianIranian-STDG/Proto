@@ -33642,6 +33642,36 @@ public final class ProtoGlobal {
      * <code>optional uint32 id = 5;</code>
      */
     int getId();
+
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    java.lang.String getParam();
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getParamBytes();
+
+    /**
+     * <code>optional bool agreement = 7;</code>
+     */
+    boolean getAgreement();
+
+    /**
+     * <code>optional bool refresh = 8;</code>
+     */
+    boolean getRefresh();
+
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    java.lang.String getAgreementSlug();
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getAgreementSlugBytes();
   }
   /**
    * Protobuf type {@code proto.DiscoveryField}
@@ -33660,6 +33690,10 @@ public final class ProtoGlobal {
       actiontype_ = 0;
       orderid_ = 0;
       id_ = 0;
+      param_ = "";
+      agreement_ = false;
+      refresh_ = false;
+      agreementSlug_ = "";
     }
 
     @java.lang.Override
@@ -33713,6 +33747,28 @@ public final class ProtoGlobal {
             case 40: {
 
               id_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              param_ = s;
+              break;
+            }
+            case 56: {
+
+              agreement_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              refresh_ = input.readBool();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              agreementSlug_ = s;
               break;
             }
           }
@@ -33855,6 +33911,14 @@ public final class ProtoGlobal {
        * <code>CARD_TO_CARD = 27;</code>
        */
       CARD_TO_CARD(27),
+      /**
+       * <code>FAVORITE_CHANNEL = 28;</code>
+       */
+      FAVORITE_CHANNEL(28),
+      /**
+       * <code>MUSIC = 29;</code>
+       */
+      MUSIC(29),
       UNRECOGNIZED(-1),
       ;
 
@@ -33970,6 +34034,14 @@ public final class ProtoGlobal {
        * <code>CARD_TO_CARD = 27;</code>
        */
       public static final int CARD_TO_CARD_VALUE = 27;
+      /**
+       * <code>FAVORITE_CHANNEL = 28;</code>
+       */
+      public static final int FAVORITE_CHANNEL_VALUE = 28;
+      /**
+       * <code>MUSIC = 29;</code>
+       */
+      public static final int MUSIC_VALUE = 29;
 
 
       public final int getNumber() {
@@ -34018,6 +34090,8 @@ public final class ProtoGlobal {
           case 25: return IVANDLIST;
           case 26: return IVANDSCORE;
           case 27: return CARD_TO_CARD;
+          case 28: return FAVORITE_CHANNEL;
+          case 29: return MUSIC;
           default: return null;
         }
       }
@@ -34172,6 +34246,92 @@ public final class ProtoGlobal {
       return id_;
     }
 
+    public static final int PARAM_FIELD_NUMBER = 6;
+    private volatile java.lang.Object param_;
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    public java.lang.String getParam() {
+      java.lang.Object ref = param_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        param_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string param = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getParamBytes() {
+      java.lang.Object ref = param_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        param_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AGREEMENT_FIELD_NUMBER = 7;
+    private boolean agreement_;
+    /**
+     * <code>optional bool agreement = 7;</code>
+     */
+    public boolean getAgreement() {
+      return agreement_;
+    }
+
+    public static final int REFRESH_FIELD_NUMBER = 8;
+    private boolean refresh_;
+    /**
+     * <code>optional bool refresh = 8;</code>
+     */
+    public boolean getRefresh() {
+      return refresh_;
+    }
+
+    public static final int AGREEMENTSLUG_FIELD_NUMBER = 9;
+    private volatile java.lang.Object agreementSlug_;
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    public java.lang.String getAgreementSlug() {
+      java.lang.Object ref = agreementSlug_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agreementSlug_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string agreementSlug = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAgreementSlugBytes() {
+      java.lang.Object ref = agreementSlug_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        agreementSlug_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -34199,6 +34359,18 @@ public final class ProtoGlobal {
       if (id_ != 0) {
         output.writeUInt32(5, id_);
       }
+      if (!getParamBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, param_);
+      }
+      if (agreement_ != false) {
+        output.writeBool(7, agreement_);
+      }
+      if (refresh_ != false) {
+        output.writeBool(8, refresh_);
+      }
+      if (!getAgreementSlugBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, agreementSlug_);
+      }
     }
 
     public int getSerializedSize() {
@@ -34223,6 +34395,20 @@ public final class ProtoGlobal {
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, id_);
+      }
+      if (!getParamBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, param_);
+      }
+      if (agreement_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, agreement_);
+      }
+      if (refresh_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, refresh_);
+      }
+      if (!getAgreementSlugBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, agreementSlug_);
       }
       memoizedSize = size;
       return size;
@@ -34249,6 +34435,14 @@ public final class ProtoGlobal {
           == other.getOrderid());
       result = result && (getId()
           == other.getId());
+      result = result && getParam()
+          .equals(other.getParam());
+      result = result && (getAgreement()
+          == other.getAgreement());
+      result = result && (getRefresh()
+          == other.getRefresh());
+      result = result && getAgreementSlug()
+          .equals(other.getAgreementSlug());
       return result;
     }
 
@@ -34269,6 +34463,16 @@ public final class ProtoGlobal {
       hash = (53 * hash) + getOrderid();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
+      hash = (37 * hash) + PARAM_FIELD_NUMBER;
+      hash = (53 * hash) + getParam().hashCode();
+      hash = (37 * hash) + AGREEMENT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getAgreement());
+      hash = (37 * hash) + REFRESH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getRefresh());
+      hash = (37 * hash) + AGREEMENTSLUG_FIELD_NUMBER;
+      hash = (53 * hash) + getAgreementSlug().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -34397,6 +34601,14 @@ public final class ProtoGlobal {
 
         id_ = 0;
 
+        param_ = "";
+
+        agreement_ = false;
+
+        refresh_ = false;
+
+        agreementSlug_ = "";
+
         return this;
       }
 
@@ -34424,6 +34636,10 @@ public final class ProtoGlobal {
         result.actiontype_ = actiontype_;
         result.orderid_ = orderid_;
         result.id_ = id_;
+        result.param_ = param_;
+        result.agreement_ = agreement_;
+        result.refresh_ = refresh_;
+        result.agreementSlug_ = agreementSlug_;
         onBuilt();
         return result;
       }
@@ -34481,6 +34697,20 @@ public final class ProtoGlobal {
         }
         if (other.getId() != 0) {
           setId(other.getId());
+        }
+        if (!other.getParam().isEmpty()) {
+          param_ = other.param_;
+          onChanged();
+        }
+        if (other.getAgreement() != false) {
+          setAgreement(other.getAgreement());
+        }
+        if (other.getRefresh() != false) {
+          setRefresh(other.getRefresh());
+        }
+        if (!other.getAgreementSlug().isEmpty()) {
+          agreementSlug_ = other.agreementSlug_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -34738,6 +34968,196 @@ public final class ProtoGlobal {
       public Builder clearId() {
         
         id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object param_ = "";
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public java.lang.String getParam() {
+        java.lang.Object ref = param_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          param_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getParamBytes() {
+        java.lang.Object ref = param_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          param_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public Builder setParam(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        param_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public Builder clearParam() {
+        
+        param_ = getDefaultInstance().getParam();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string param = 6;</code>
+       */
+      public Builder setParamBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        param_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean agreement_ ;
+      /**
+       * <code>optional bool agreement = 7;</code>
+       */
+      public boolean getAgreement() {
+        return agreement_;
+      }
+      /**
+       * <code>optional bool agreement = 7;</code>
+       */
+      public Builder setAgreement(boolean value) {
+        
+        agreement_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool agreement = 7;</code>
+       */
+      public Builder clearAgreement() {
+        
+        agreement_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean refresh_ ;
+      /**
+       * <code>optional bool refresh = 8;</code>
+       */
+      public boolean getRefresh() {
+        return refresh_;
+      }
+      /**
+       * <code>optional bool refresh = 8;</code>
+       */
+      public Builder setRefresh(boolean value) {
+        
+        refresh_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool refresh = 8;</code>
+       */
+      public Builder clearRefresh() {
+        
+        refresh_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object agreementSlug_ = "";
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public java.lang.String getAgreementSlug() {
+        java.lang.Object ref = agreementSlug_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          agreementSlug_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAgreementSlugBytes() {
+        java.lang.Object ref = agreementSlug_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          agreementSlug_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public Builder setAgreementSlug(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        agreementSlug_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public Builder clearAgreementSlug() {
+        
+        agreementSlug_ = getDefaultInstance().getAgreementSlug();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string agreementSlug = 9;</code>
+       */
+      public Builder setAgreementSlugBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        agreementSlug_ = value;
         onChanged();
         return this;
       }
@@ -38077,67 +38497,70 @@ public final class ProtoGlobal {
       "\030\002 \001(\t\"+\n\nPagination\022\016\n\006offset\030\001 \001(\r\022\r\n\005" +
       "limit\030\002 \001(\r\"Z\n\010Favorite\022\014\n\004name\030\001 \001(\t\022\021\n" +
       "\ttextcolor\030\002 \001(\t\022\017\n\007bgcolor\030\003 \001(\t\022\r\n\005val" +
-      "ue\030\004 \001(\t\022\r\n\005image\030\005 \001(\t\"\357\004\n\016DiscoveryFie" +
+      "ue\030\004 \001(\t\022\r\n\005image\030\005 \001(\t\"\332\005\n\016DiscoveryFie" +
       "ld\022\020\n\010imageurl\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022:\n\na" +
       "ctiontype\030\003 \001(\0162&.proto.DiscoveryField.B" +
       "uttonActionType\022\017\n\007orderid\030\004 \001(\r\022\n\n\002id\030\005" +
-      " \001(\r\"\342\003\n\020ButtonActionType\022\010\n\004NONE\020\000\022\r\n\tJ" +
-      "OIN_LINK\020\001\022\016\n\nBOT_ACTION\020\002\022\021\n\rUSERNAME_L" +
-      "INK\020\003\022\014\n\010WEB_LINK\020\004\022\021\n\rWEB_VIEW_LINK\020\005\022\017",
-      "\n\013STREAM_PLAY\020\006\022\021\n\rPAY_BY_WALLET\020\007\022\016\n\nPA" +
-      "Y_DIRECT\020\010\022\021\n\rREQUEST_PHONE\020\t\022\024\n\020REQUEST" +
-      "_LOCATION\020\n\022\016\n\nSHOW_ALERT\020\013\022\010\n\004PAGE\020\014\022\022\n" +
-      "\016FINANCIAL_MENU\020\r\022\r\n\tBILL_MENU\020\016\022\025\n\021TRAF" +
-      "FIC_BILL_MENU\020\017\022\024\n\020MOBILE_BILL_MENU\020\020\022\023\n" +
-      "\017PHONE_BILL_MENU\020\021\022\016\n\nTOPUP_MENU\020\022\022\017\n\013WA" +
-      "LLET_MENU\020\023\022\017\n\013NEARBY_MENU\020\024\022\010\n\004CALL\020\025\022\020" +
-      "\n\014STICKER_SHOP\020\026\022\t\n\005IVAND\020\027\022\013\n\007IVANDQR\020\030" +
-      "\022\r\n\tIVANDLIST\020\031\022\016\n\nIVANDSCORE\020\032\022\020\n\014CARD_" +
-      "TO_CARD\020\033\"\340\001\n\tDiscovery\022.\n\005model\030\001 \001(\0162\037",
-      ".proto.Discovery.DiscoveryModel\022\r\n\005scale" +
-      "\030\002 \001(\t\022.\n\017discoveryfields\030\003 \003(\0132\025.proto." +
-      "DiscoveryField\"d\n\016DiscoveryModel\022\n\n\006MODE" +
-      "L1\020\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003" +
-      "\022\n\n\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\";\n\r" +
-      "IVandActivity\022\r\n\005title\030\001 \001(\t\022\r\n\005score\030\002 " +
-      "\001(\005\022\014\n\004time\030\003 \001(\r\"\222\002\n\007MplSale\022\026\n\016invoice" +
-      "_number\030\001 \001(\004\022\024\n\014from_user_id\030\002 \001(\004\022\016\n\006a" +
-      "mount\030\003 \001(\004\022\024\n\014trace_number\030\004 \001(\003\022\020\n\010pay" +
-      "_time\030\005 \001(\r\022\023\n\013description\030\006 \001(\t\022\023\n\013card",
-      "_number\030\007 \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t \001" +
-      "(\0162\025.proto.MplSale.Status\"C\n\006Status\022\022\n\016P" +
-      "ENDING_VERIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002" +
-      "\022\014\n\010REVERSED\020\003*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n" +
-      "\004MALE\020\001\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN" +
-      "_DEVICE\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020" +
-      "\003*k\n\010Platform\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007A" +
-      "NDROID\020\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS" +
-      "\020\004\022\t\n\005LINUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Langua" +
-      "ge\022\t\n\005EN_US\020\000\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMessage",
-      "Type\022\010\n\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020" +
-      "\002\022\t\n\005VIDEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022" +
-      "\016\n\nAUDIO_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010G" +
-      "IF_TEXT\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LO" +
-      "CATION\020\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET" +
-      "\020\017\022\013\n\007STICKER\020\020*]\n\021RoomMessageStatus\022\n\n\006" +
-      "FAILED\020\000\022\013\n\007SENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tDELIV" +
-      "ERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LISTENED\020\005*5\n\023RoomMe" +
-      "ssageReaction\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUMBS_D" +
-      "OWN\020\001*\244\002\n\014ClientAction\022\n\n\006CANCEL\020\000\022\n\n\006TY",
-      "PING\020\001\022\021\n\rSENDING_IMAGE\020\002\022\023\n\017CAPTURING_I" +
-      "MAGE\020\003\022\021\n\rSENDING_VIDEO\020\004\022\023\n\017CAPTURING_V" +
-      "IDEO\020\005\022\021\n\rSENDING_AUDIO\020\006\022\023\n\017RECORDING_V" +
-      "OICE\020\007\022\021\n\rSENDING_VOICE\020\010\022\024\n\020SENDING_DOC" +
-      "UMENT\020\t\022\017\n\013SENDING_GIF\020\n\022\020\n\014SENDING_FILE" +
-      "\020\013\022\024\n\020SENDING_LOCATION\020\014\022\024\n\020CHOOSING_CON" +
-      "TACT\020\r\022\014\n\010PAINTING\020\016* \n\010RoomMute\022\n\n\006UNMU" +
-      "TE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013PrivacyType\022\017\n\013USER_S" +
-      "TATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n" +
-      "\016CHANNEL_INVITE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\r",
-      "VIDEO_CALLING\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013S" +
-      "ECRET_CHAT\020\007*?\n\014PrivacyLevel\022\r\n\tALLOW_AL" +
-      "L\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n" +
-      "\016net.iGap.protoB\013ProtoGlobalb\006proto3"
+      " \001(\r\022\r\n\005param\030\006 \001(\t\022\021\n\tagreement\030\007 \001(\010\022\017" +
+      "\n\007refresh\030\010 \001(\010\022\025\n\ragreementSlug\030\t \001(\t\"\203" +
+      "\004\n\020ButtonActionType\022\010\n\004NONE\020\000\022\r\n\tJOIN_LI",
+      "NK\020\001\022\016\n\nBOT_ACTION\020\002\022\021\n\rUSERNAME_LINK\020\003\022" +
+      "\014\n\010WEB_LINK\020\004\022\021\n\rWEB_VIEW_LINK\020\005\022\017\n\013STRE" +
+      "AM_PLAY\020\006\022\021\n\rPAY_BY_WALLET\020\007\022\016\n\nPAY_DIRE" +
+      "CT\020\010\022\021\n\rREQUEST_PHONE\020\t\022\024\n\020REQUEST_LOCAT" +
+      "ION\020\n\022\016\n\nSHOW_ALERT\020\013\022\010\n\004PAGE\020\014\022\022\n\016FINAN" +
+      "CIAL_MENU\020\r\022\r\n\tBILL_MENU\020\016\022\025\n\021TRAFFIC_BI" +
+      "LL_MENU\020\017\022\024\n\020MOBILE_BILL_MENU\020\020\022\023\n\017PHONE" +
+      "_BILL_MENU\020\021\022\016\n\nTOPUP_MENU\020\022\022\017\n\013WALLET_M" +
+      "ENU\020\023\022\017\n\013NEARBY_MENU\020\024\022\010\n\004CALL\020\025\022\020\n\014STIC" +
+      "KER_SHOP\020\026\022\t\n\005IVAND\020\027\022\013\n\007IVANDQR\020\030\022\r\n\tIV",
+      "ANDLIST\020\031\022\016\n\nIVANDSCORE\020\032\022\020\n\014CARD_TO_CAR" +
+      "D\020\033\022\024\n\020FAVORITE_CHANNEL\020\034\022\t\n\005MUSIC\020\035\"\340\001\n" +
+      "\tDiscovery\022.\n\005model\030\001 \001(\0162\037.proto.Discov" +
+      "ery.DiscoveryModel\022\r\n\005scale\030\002 \001(\t\022.\n\017dis" +
+      "coveryfields\030\003 \003(\0132\025.proto.DiscoveryFiel" +
+      "d\"d\n\016DiscoveryModel\022\n\n\006MODEL1\020\000\022\n\n\006MODEL" +
+      "2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003\022\n\n\006MODEL5\020\004\022" +
+      "\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\";\n\rIVandActivity" +
+      "\022\r\n\005title\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004time\030\003" +
+      " \001(\r\"\222\002\n\007MplSale\022\026\n\016invoice_number\030\001 \001(\004",
+      "\022\024\n\014from_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001(\004\022\024" +
+      "\n\014trace_number\030\004 \001(\003\022\020\n\010pay_time\030\005 \001(\r\022\023" +
+      "\n\013description\030\006 \001(\t\022\023\n\013card_number\030\007 \001(\t" +
+      "\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t \001(\0162\025.proto.Mp" +
+      "lSale.Status\"C\n\006Status\022\022\n\016PENDING_VERIFY" +
+      "\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002\022\014\n\010REVERSED\020" +
+      "\003*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020\001\022\n\n\006FE" +
+      "MALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEVICE\020\000\022\006\n\002" +
+      "PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n\010Platform" +
+      "\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDROID\020\001\022\007\n\003I",
+      "OS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005LINUX\020\005" +
+      "\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t\n\005EN_US\020\000" +
+      "\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMessageType\022\010\n\004TEXT\020" +
+      "\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005VIDEO\020\003\022" +
+      "\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUDIO_TEXT" +
+      "\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEXT\020\016\022\010\n\004" +
+      "FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATION\020\013\022\007\n\003L" +
+      "OG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017\022\013\n\007STICKER" +
+      "\020\020*]\n\021RoomMessageStatus\022\n\n\006FAILED\020\000\022\013\n\007S" +
+      "ENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004SEE",
+      "N\020\004\022\014\n\010LISTENED\020\005*5\n\023RoomMessageReaction" +
+      "\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUMBS_DOWN\020\001*\244\002\n\014Cli" +
+      "entAction\022\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\rSEN" +
+      "DING_IMAGE\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\rSEN" +
+      "DING_VIDEO\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\rSEN" +
+      "DING_AUDIO\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\rSEN" +
+      "DING_VOICE\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n\013SE" +
+      "NDING_GIF\020\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SENDING" +
+      "_LOCATION\020\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010PAI" +
+      "NTING\020\016* \n\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MUTE\020",
+      "\001*\233\001\n\013PrivacyType\022\017\n\013USER_STATUS\020\000\022\n\n\006AV" +
+      "ATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016CHANNEL_INVI" +
+      "TE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVIDEO_CALLING" +
+      "\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013SECRET_CHAT\020\007*" +
+      "?\n\014PrivacyLevel\022\r\n\tALLOW_ALL\020\000\022\014\n\010DENY_A" +
+      "LL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016net.iGap.pro" +
+      "toB\013ProtoGlobalb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -38330,7 +38753,7 @@ public final class ProtoGlobal {
     internal_static_proto_DiscoveryField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_DiscoveryField_descriptor,
-        new java.lang.String[] { "Imageurl", "Value", "Actiontype", "Orderid", "Id", });
+        new java.lang.String[] { "Imageurl", "Value", "Actiontype", "Orderid", "Id", "Param", "Agreement", "Refresh", "AgreementSlug", });
     internal_static_proto_Discovery_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_proto_Discovery_fieldAccessorTable = new
