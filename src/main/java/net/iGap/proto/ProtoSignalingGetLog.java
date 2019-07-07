@@ -1163,6 +1163,11 @@ public final class ProtoSignalingGetLog {
        * <code>optional uint32 duration = 6;</code>
        */
       int getDuration();
+
+      /**
+       * <code>optional uint64 log_id = 7;</code>
+       */
+      long getLogId();
     }
     /**
      * Protobuf type {@code proto.SignalingGetLogResponse.SignalingLog}
@@ -1181,6 +1186,7 @@ public final class ProtoSignalingGetLog {
         status_ = 0;
         offerTime_ = 0;
         duration_ = 0;
+        logId_ = 0L;
       }
 
       @java.lang.Override
@@ -1246,6 +1252,11 @@ public final class ProtoSignalingGetLog {
               case 48: {
 
                 duration_ = input.readUInt32();
+                break;
+              }
+              case 56: {
+
+                logId_ = input.readUInt64();
                 break;
               }
             }
@@ -1467,6 +1478,15 @@ public final class ProtoSignalingGetLog {
         return duration_;
       }
 
+      public static final int LOG_ID_FIELD_NUMBER = 7;
+      private long logId_;
+      /**
+       * <code>optional uint64 log_id = 7;</code>
+       */
+      public long getLogId() {
+        return logId_;
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -1496,6 +1516,9 @@ public final class ProtoSignalingGetLog {
         }
         if (duration_ != 0) {
           output.writeUInt32(6, duration_);
+        }
+        if (logId_ != 0L) {
+          output.writeUInt64(7, logId_);
         }
       }
 
@@ -1528,6 +1551,10 @@ public final class ProtoSignalingGetLog {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(6, duration_);
         }
+        if (logId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(7, logId_);
+        }
         memoizedSize = size;
         return size;
       }
@@ -1557,6 +1584,8 @@ public final class ProtoSignalingGetLog {
             == other.getOfferTime());
         result = result && (getDuration()
             == other.getDuration());
+        result = result && (getLogId()
+            == other.getLogId());
         return result;
       }
 
@@ -1582,6 +1611,9 @@ public final class ProtoSignalingGetLog {
         hash = (53 * hash) + getOfferTime();
         hash = (37 * hash) + DURATION_FIELD_NUMBER;
         hash = (53 * hash) + getDuration();
+        hash = (37 * hash) + LOG_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getLogId());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1716,6 +1748,8 @@ public final class ProtoSignalingGetLog {
 
           duration_ = 0;
 
+          logId_ = 0L;
+
           return this;
         }
 
@@ -1748,6 +1782,7 @@ public final class ProtoSignalingGetLog {
           }
           result.offerTime_ = offerTime_;
           result.duration_ = duration_;
+          result.logId_ = logId_;
           onBuilt();
           return result;
         }
@@ -1806,6 +1841,9 @@ public final class ProtoSignalingGetLog {
           }
           if (other.getDuration() != 0) {
             setDuration(other.getDuration());
+          }
+          if (other.getLogId() != 0L) {
+            setLogId(other.getLogId());
           }
           onChanged();
           return this;
@@ -2112,6 +2150,32 @@ public final class ProtoSignalingGetLog {
         public Builder clearDuration() {
           
           duration_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private long logId_ ;
+        /**
+         * <code>optional uint64 log_id = 7;</code>
+         */
+        public long getLogId() {
+          return logId_;
+        }
+        /**
+         * <code>optional uint64 log_id = 7;</code>
+         */
+        public Builder setLogId(long value) {
+          
+          logId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 log_id = 7;</code>
+         */
+        public Builder clearLogId() {
+          
+          logId_ = 0L;
           onChanged();
           return this;
         }
@@ -2998,19 +3062,19 @@ public final class ProtoSignalingGetLog {
       "tion\030\002 \001(\0132\021.proto.Pagination\022-\n\006filter\030" +
       "\003 \001(\0162\035.proto.SignalingGetLog.Filter\"G\n\006" +
       "Filter\022\007\n\003ALL\020\000\022\n\n\006MISSED\020\001\022\014\n\010CANCELED\020" +
-      "\002\022\014\n\010INCOMING\020\003\022\014\n\010OUTGOING\020\004\"\226\003\n\027Signal" +
+      "\002\022\014\n\010INCOMING\020\003\022\014\n\010OUTGOING\020\004\"\246\003\n\027Signal" +
       "ingGetLogResponse\022!\n\010response\030\001 \001(\0132\017.pr" +
       "oto.Response\022B\n\rsignaling_log\030\002 \003(\0132+.pr",
       "oto.SignalingGetLogResponse.SignalingLog" +
-      "\032\223\002\n\014SignalingLog\022\n\n\002id\030\001 \001(\004\022(\n\004type\030\002 " +
+      "\032\243\002\n\014SignalingLog\022\n\n\002id\030\001 \001(\004\022(\n\004type\030\002 " +
       "\001(\0162\032.proto.SignalingOffer.Type\022B\n\006statu" +
       "s\030\003 \001(\01622.proto.SignalingGetLogResponse." +
       "SignalingLog.Status\022#\n\004peer\030\004 \001(\0132\025.prot" +
       "o.RegisteredUser\022\022\n\noffer_time\030\005 \001(\r\022\020\n\010" +
-      "duration\030\006 \001(\r\">\n\006Status\022\n\n\006MISSED\020\000\022\014\n\010" +
-      "CANCELED\020\001\022\014\n\010INCOMING\020\002\022\014\n\010OUTGOING\020\003B&" +
-      "\n\016net.iGap.protoB\024ProtoSignalingGetLogb\006" +
-      "proto3"
+      "duration\030\006 \001(\r\022\016\n\006log_id\030\007 \001(\004\">\n\006Status" +
+      "\022\n\n\006MISSED\020\000\022\014\n\010CANCELED\020\001\022\014\n\010INCOMING\020\002" +
+      "\022\014\n\010OUTGOING\020\003B&\n\016net.iGap.protoB\024ProtoS" +
+      "ignalingGetLogb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3045,7 +3109,7 @@ public final class ProtoSignalingGetLog {
     internal_static_proto_SignalingGetLogResponse_SignalingLog_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_SignalingGetLogResponse_SignalingLog_descriptor,
-        new java.lang.String[] { "Id", "Type", "Status", "Peer", "OfferTime", "Duration", });
+        new java.lang.String[] { "Id", "Type", "Status", "Peer", "OfferTime", "Duration", "LogId", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
