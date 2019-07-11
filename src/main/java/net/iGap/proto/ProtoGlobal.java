@@ -33919,6 +33919,26 @@ public final class ProtoGlobal {
        * <code>MUSIC = 29;</code>
        */
       MUSIC(29),
+      /**
+       * <code>CHARITY = 30;</code>
+       */
+      CHARITY(30),
+      /**
+       * <code>FUN_SERVICE = 31;</code>
+       */
+      FUN_SERVICE(31),
+      /**
+       * <code>VIRTUAL_MONEY = 32;</code>
+       */
+      VIRTUAL_MONEY(32),
+      /**
+       * <code>CITY_SERVICE = 33;</code>
+       */
+      CITY_SERVICE(33),
+      /**
+       * <code>POLL = 34;</code>
+       */
+      POLL(34),
       UNRECOGNIZED(-1),
       ;
 
@@ -34042,6 +34062,26 @@ public final class ProtoGlobal {
        * <code>MUSIC = 29;</code>
        */
       public static final int MUSIC_VALUE = 29;
+      /**
+       * <code>CHARITY = 30;</code>
+       */
+      public static final int CHARITY_VALUE = 30;
+      /**
+       * <code>FUN_SERVICE = 31;</code>
+       */
+      public static final int FUN_SERVICE_VALUE = 31;
+      /**
+       * <code>VIRTUAL_MONEY = 32;</code>
+       */
+      public static final int VIRTUAL_MONEY_VALUE = 32;
+      /**
+       * <code>CITY_SERVICE = 33;</code>
+       */
+      public static final int CITY_SERVICE_VALUE = 33;
+      /**
+       * <code>POLL = 34;</code>
+       */
+      public static final int POLL_VALUE = 34;
 
 
       public final int getNumber() {
@@ -34092,6 +34132,11 @@ public final class ProtoGlobal {
           case 27: return CARD_TO_CARD;
           case 28: return FAVORITE_CHANNEL;
           case 29: return MUSIC;
+          case 30: return CHARITY;
+          case 31: return FUN_SERVICE;
+          case 32: return VIRTUAL_MONEY;
+          case 33: return CITY_SERVICE;
+          case 34: return POLL;
           default: return null;
         }
       }
@@ -36320,6 +36365,1994 @@ public final class ProtoGlobal {
 
   }
 
+  public interface PollFieldOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.PollField)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string imageurl = 1;</code>
+     */
+    java.lang.String getImageurl();
+    /**
+     * <code>optional string imageurl = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getImageurlBytes();
+
+    /**
+     * <code>optional uint32 orderid = 2;</code>
+     */
+    int getOrderid();
+
+    /**
+     * <code>optional uint32 id = 3;</code>
+     */
+    int getId();
+
+    /**
+     * <code>optional bool clicked = 4;</code>
+     */
+    boolean getClicked();
+
+    /**
+     * <code>optional uint64 sum = 5;</code>
+     */
+    long getSum();
+
+    /**
+     * <code>optional bool clickable = 6;</code>
+     */
+    boolean getClickable();
+
+    /**
+     * <code>optional string label = 7;</code>
+     */
+    java.lang.String getLabel();
+    /**
+     * <code>optional string label = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getLabelBytes();
+  }
+  /**
+   * Protobuf type {@code proto.PollField}
+   */
+  public  static final class PollField extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.PollField)
+      PollFieldOrBuilder {
+    // Use PollField.newBuilder() to construct.
+    private PollField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PollField() {
+      imageurl_ = "";
+      orderid_ = 0;
+      id_ = 0;
+      clicked_ = false;
+      sum_ = 0L;
+      clickable_ = false;
+      label_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private PollField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              imageurl_ = s;
+              break;
+            }
+            case 16: {
+
+              orderid_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              id_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              clicked_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              sum_ = input.readUInt64();
+              break;
+            }
+            case 48: {
+
+              clickable_ = input.readBool();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              label_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_PollField_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_PollField_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.PollField.class, net.iGap.proto.ProtoGlobal.PollField.Builder.class);
+    }
+
+    public static final int IMAGEURL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object imageurl_;
+    /**
+     * <code>optional string imageurl = 1;</code>
+     */
+    public java.lang.String getImageurl() {
+      java.lang.Object ref = imageurl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageurl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string imageurl = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getImageurlBytes() {
+      java.lang.Object ref = imageurl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        imageurl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ORDERID_FIELD_NUMBER = 2;
+    private int orderid_;
+    /**
+     * <code>optional uint32 orderid = 2;</code>
+     */
+    public int getOrderid() {
+      return orderid_;
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
+    private int id_;
+    /**
+     * <code>optional uint32 id = 3;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
+    public static final int CLICKED_FIELD_NUMBER = 4;
+    private boolean clicked_;
+    /**
+     * <code>optional bool clicked = 4;</code>
+     */
+    public boolean getClicked() {
+      return clicked_;
+    }
+
+    public static final int SUM_FIELD_NUMBER = 5;
+    private long sum_;
+    /**
+     * <code>optional uint64 sum = 5;</code>
+     */
+    public long getSum() {
+      return sum_;
+    }
+
+    public static final int CLICKABLE_FIELD_NUMBER = 6;
+    private boolean clickable_;
+    /**
+     * <code>optional bool clickable = 6;</code>
+     */
+    public boolean getClickable() {
+      return clickable_;
+    }
+
+    public static final int LABEL_FIELD_NUMBER = 7;
+    private volatile java.lang.Object label_;
+    /**
+     * <code>optional string label = 7;</code>
+     */
+    public java.lang.String getLabel() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        label_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string label = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLabelBytes() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        label_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getImageurlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, imageurl_);
+      }
+      if (orderid_ != 0) {
+        output.writeUInt32(2, orderid_);
+      }
+      if (id_ != 0) {
+        output.writeUInt32(3, id_);
+      }
+      if (clicked_ != false) {
+        output.writeBool(4, clicked_);
+      }
+      if (sum_ != 0L) {
+        output.writeUInt64(5, sum_);
+      }
+      if (clickable_ != false) {
+        output.writeBool(6, clickable_);
+      }
+      if (!getLabelBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, label_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getImageurlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, imageurl_);
+      }
+      if (orderid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, orderid_);
+      }
+      if (id_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, id_);
+      }
+      if (clicked_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, clicked_);
+      }
+      if (sum_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, sum_);
+      }
+      if (clickable_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, clickable_);
+      }
+      if (!getLabelBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, label_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.PollField)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.PollField other = (net.iGap.proto.ProtoGlobal.PollField) obj;
+
+      boolean result = true;
+      result = result && getImageurl()
+          .equals(other.getImageurl());
+      result = result && (getOrderid()
+          == other.getOrderid());
+      result = result && (getId()
+          == other.getId());
+      result = result && (getClicked()
+          == other.getClicked());
+      result = result && (getSum()
+          == other.getSum());
+      result = result && (getClickable()
+          == other.getClickable());
+      result = result && getLabel()
+          .equals(other.getLabel());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + IMAGEURL_FIELD_NUMBER;
+      hash = (53 * hash) + getImageurl().hashCode();
+      hash = (37 * hash) + ORDERID_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderid();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
+      hash = (37 * hash) + CLICKED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getClicked());
+      hash = (37 * hash) + SUM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSum());
+      hash = (37 * hash) + CLICKABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getClickable());
+      hash = (37 * hash) + LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLabel().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.PollField parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.PollField parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PollField parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.PollField parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PollField parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.PollField parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PollField parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.PollField parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PollField parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.PollField parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.PollField prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.PollField}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.PollField)
+        net.iGap.proto.ProtoGlobal.PollFieldOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_PollField_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_PollField_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.PollField.class, net.iGap.proto.ProtoGlobal.PollField.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.PollField.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        imageurl_ = "";
+
+        orderid_ = 0;
+
+        id_ = 0;
+
+        clicked_ = false;
+
+        sum_ = 0L;
+
+        clickable_ = false;
+
+        label_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_PollField_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.PollField getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.PollField.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.PollField build() {
+        net.iGap.proto.ProtoGlobal.PollField result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.PollField buildPartial() {
+        net.iGap.proto.ProtoGlobal.PollField result = new net.iGap.proto.ProtoGlobal.PollField(this);
+        result.imageurl_ = imageurl_;
+        result.orderid_ = orderid_;
+        result.id_ = id_;
+        result.clicked_ = clicked_;
+        result.sum_ = sum_;
+        result.clickable_ = clickable_;
+        result.label_ = label_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.PollField) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.PollField)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.PollField other) {
+        if (other == net.iGap.proto.ProtoGlobal.PollField.getDefaultInstance()) return this;
+        if (!other.getImageurl().isEmpty()) {
+          imageurl_ = other.imageurl_;
+          onChanged();
+        }
+        if (other.getOrderid() != 0) {
+          setOrderid(other.getOrderid());
+        }
+        if (other.getId() != 0) {
+          setId(other.getId());
+        }
+        if (other.getClicked() != false) {
+          setClicked(other.getClicked());
+        }
+        if (other.getSum() != 0L) {
+          setSum(other.getSum());
+        }
+        if (other.getClickable() != false) {
+          setClickable(other.getClickable());
+        }
+        if (!other.getLabel().isEmpty()) {
+          label_ = other.label_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.PollField parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.PollField) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object imageurl_ = "";
+      /**
+       * <code>optional string imageurl = 1;</code>
+       */
+      public java.lang.String getImageurl() {
+        java.lang.Object ref = imageurl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          imageurl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string imageurl = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getImageurlBytes() {
+        java.lang.Object ref = imageurl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          imageurl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string imageurl = 1;</code>
+       */
+      public Builder setImageurl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        imageurl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string imageurl = 1;</code>
+       */
+      public Builder clearImageurl() {
+        
+        imageurl_ = getDefaultInstance().getImageurl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string imageurl = 1;</code>
+       */
+      public Builder setImageurlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        imageurl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int orderid_ ;
+      /**
+       * <code>optional uint32 orderid = 2;</code>
+       */
+      public int getOrderid() {
+        return orderid_;
+      }
+      /**
+       * <code>optional uint32 orderid = 2;</code>
+       */
+      public Builder setOrderid(int value) {
+        
+        orderid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 orderid = 2;</code>
+       */
+      public Builder clearOrderid() {
+        
+        orderid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <code>optional uint32 id = 3;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>optional uint32 id = 3;</code>
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 id = 3;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean clicked_ ;
+      /**
+       * <code>optional bool clicked = 4;</code>
+       */
+      public boolean getClicked() {
+        return clicked_;
+      }
+      /**
+       * <code>optional bool clicked = 4;</code>
+       */
+      public Builder setClicked(boolean value) {
+        
+        clicked_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool clicked = 4;</code>
+       */
+      public Builder clearClicked() {
+        
+        clicked_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long sum_ ;
+      /**
+       * <code>optional uint64 sum = 5;</code>
+       */
+      public long getSum() {
+        return sum_;
+      }
+      /**
+       * <code>optional uint64 sum = 5;</code>
+       */
+      public Builder setSum(long value) {
+        
+        sum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 sum = 5;</code>
+       */
+      public Builder clearSum() {
+        
+        sum_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean clickable_ ;
+      /**
+       * <code>optional bool clickable = 6;</code>
+       */
+      public boolean getClickable() {
+        return clickable_;
+      }
+      /**
+       * <code>optional bool clickable = 6;</code>
+       */
+      public Builder setClickable(boolean value) {
+        
+        clickable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool clickable = 6;</code>
+       */
+      public Builder clearClickable() {
+        
+        clickable_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object label_ = "";
+      /**
+       * <code>optional string label = 7;</code>
+       */
+      public java.lang.String getLabel() {
+        java.lang.Object ref = label_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          label_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string label = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLabelBytes() {
+        java.lang.Object ref = label_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          label_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string label = 7;</code>
+       */
+      public Builder setLabel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        label_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string label = 7;</code>
+       */
+      public Builder clearLabel() {
+        
+        label_ = getDefaultInstance().getLabel();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string label = 7;</code>
+       */
+      public Builder setLabelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        label_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.PollField)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.PollField)
+    private static final net.iGap.proto.ProtoGlobal.PollField DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.PollField();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.PollField getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PollField>
+        PARSER = new com.google.protobuf.AbstractParser<PollField>() {
+      public PollField parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PollField(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PollField> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PollField> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.PollField getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PollOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.Poll)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .proto.Discovery.DiscoveryModel model = 1;</code>
+     */
+    int getModelValue();
+    /**
+     * <code>optional .proto.Discovery.DiscoveryModel model = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel getModel();
+
+    /**
+     * <code>optional string scale = 2;</code>
+     */
+    java.lang.String getScale();
+    /**
+     * <code>optional string scale = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getScaleBytes();
+
+    /**
+     * <code>optional uint32 max = 3;</code>
+     */
+    int getMax();
+
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    java.util.List<net.iGap.proto.ProtoGlobal.PollField> 
+        getPollfieldsList();
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.PollField getPollfields(int index);
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    int getPollfieldsCount();
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGlobal.PollFieldOrBuilder> 
+        getPollfieldsOrBuilderList();
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.PollFieldOrBuilder getPollfieldsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code proto.Poll}
+   */
+  public  static final class Poll extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.Poll)
+      PollOrBuilder {
+    // Use Poll.newBuilder() to construct.
+    private Poll(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Poll() {
+      model_ = 0;
+      scale_ = "";
+      max_ = 0;
+      pollfields_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Poll(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              model_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              scale_ = s;
+              break;
+            }
+            case 24: {
+
+              max_ = input.readUInt32();
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                pollfields_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.PollField>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              pollfields_.add(
+                  input.readMessage(net.iGap.proto.ProtoGlobal.PollField.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          pollfields_ = java.util.Collections.unmodifiableList(pollfields_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_Poll_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_Poll_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.Poll.class, net.iGap.proto.ProtoGlobal.Poll.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MODEL_FIELD_NUMBER = 1;
+    private int model_;
+    /**
+     * <code>optional .proto.Discovery.DiscoveryModel model = 1;</code>
+     */
+    public int getModelValue() {
+      return model_;
+    }
+    /**
+     * <code>optional .proto.Discovery.DiscoveryModel model = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel getModel() {
+      net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel result = net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel.valueOf(model_);
+      return result == null ? net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel.UNRECOGNIZED : result;
+    }
+
+    public static final int SCALE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object scale_;
+    /**
+     * <code>optional string scale = 2;</code>
+     */
+    public java.lang.String getScale() {
+      java.lang.Object ref = scale_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        scale_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string scale = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getScaleBytes() {
+      java.lang.Object ref = scale_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        scale_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAX_FIELD_NUMBER = 3;
+    private int max_;
+    /**
+     * <code>optional uint32 max = 3;</code>
+     */
+    public int getMax() {
+      return max_;
+    }
+
+    public static final int POLLFIELDS_FIELD_NUMBER = 4;
+    private java.util.List<net.iGap.proto.ProtoGlobal.PollField> pollfields_;
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    public java.util.List<net.iGap.proto.ProtoGlobal.PollField> getPollfieldsList() {
+      return pollfields_;
+    }
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    public java.util.List<? extends net.iGap.proto.ProtoGlobal.PollFieldOrBuilder> 
+        getPollfieldsOrBuilderList() {
+      return pollfields_;
+    }
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    public int getPollfieldsCount() {
+      return pollfields_.size();
+    }
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.PollField getPollfields(int index) {
+      return pollfields_.get(index);
+    }
+    /**
+     * <code>repeated .proto.PollField pollfields = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.PollFieldOrBuilder getPollfieldsOrBuilder(
+        int index) {
+      return pollfields_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (model_ != net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel.MODEL1.getNumber()) {
+        output.writeEnum(1, model_);
+      }
+      if (!getScaleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, scale_);
+      }
+      if (max_ != 0) {
+        output.writeUInt32(3, max_);
+      }
+      for (int i = 0; i < pollfields_.size(); i++) {
+        output.writeMessage(4, pollfields_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (model_ != net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel.MODEL1.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, model_);
+      }
+      if (!getScaleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, scale_);
+      }
+      if (max_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, max_);
+      }
+      for (int i = 0; i < pollfields_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, pollfields_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.Poll)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.Poll other = (net.iGap.proto.ProtoGlobal.Poll) obj;
+
+      boolean result = true;
+      result = result && model_ == other.model_;
+      result = result && getScale()
+          .equals(other.getScale());
+      result = result && (getMax()
+          == other.getMax());
+      result = result && getPollfieldsList()
+          .equals(other.getPollfieldsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + model_;
+      hash = (37 * hash) + SCALE_FIELD_NUMBER;
+      hash = (53 * hash) + getScale().hashCode();
+      hash = (37 * hash) + MAX_FIELD_NUMBER;
+      hash = (53 * hash) + getMax();
+      if (getPollfieldsCount() > 0) {
+        hash = (37 * hash) + POLLFIELDS_FIELD_NUMBER;
+        hash = (53 * hash) + getPollfieldsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Poll parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Poll parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Poll parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Poll parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Poll parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Poll parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Poll parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Poll parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Poll parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Poll parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.Poll prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.Poll}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.Poll)
+        net.iGap.proto.ProtoGlobal.PollOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_Poll_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_Poll_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.Poll.class, net.iGap.proto.ProtoGlobal.Poll.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.Poll.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPollfieldsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        model_ = 0;
+
+        scale_ = "";
+
+        max_ = 0;
+
+        if (pollfieldsBuilder_ == null) {
+          pollfields_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          pollfieldsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_Poll_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.Poll getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.Poll.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.Poll build() {
+        net.iGap.proto.ProtoGlobal.Poll result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.Poll buildPartial() {
+        net.iGap.proto.ProtoGlobal.Poll result = new net.iGap.proto.ProtoGlobal.Poll(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.model_ = model_;
+        result.scale_ = scale_;
+        result.max_ = max_;
+        if (pollfieldsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            pollfields_ = java.util.Collections.unmodifiableList(pollfields_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.pollfields_ = pollfields_;
+        } else {
+          result.pollfields_ = pollfieldsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.Poll) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.Poll)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.Poll other) {
+        if (other == net.iGap.proto.ProtoGlobal.Poll.getDefaultInstance()) return this;
+        if (other.model_ != 0) {
+          setModelValue(other.getModelValue());
+        }
+        if (!other.getScale().isEmpty()) {
+          scale_ = other.scale_;
+          onChanged();
+        }
+        if (other.getMax() != 0) {
+          setMax(other.getMax());
+        }
+        if (pollfieldsBuilder_ == null) {
+          if (!other.pollfields_.isEmpty()) {
+            if (pollfields_.isEmpty()) {
+              pollfields_ = other.pollfields_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensurePollfieldsIsMutable();
+              pollfields_.addAll(other.pollfields_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.pollfields_.isEmpty()) {
+            if (pollfieldsBuilder_.isEmpty()) {
+              pollfieldsBuilder_.dispose();
+              pollfieldsBuilder_ = null;
+              pollfields_ = other.pollfields_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              pollfieldsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPollfieldsFieldBuilder() : null;
+            } else {
+              pollfieldsBuilder_.addAllMessages(other.pollfields_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.Poll parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.Poll) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int model_ = 0;
+      /**
+       * <code>optional .proto.Discovery.DiscoveryModel model = 1;</code>
+       */
+      public int getModelValue() {
+        return model_;
+      }
+      /**
+       * <code>optional .proto.Discovery.DiscoveryModel model = 1;</code>
+       */
+      public Builder setModelValue(int value) {
+        model_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Discovery.DiscoveryModel model = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel getModel() {
+        net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel result = net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel.valueOf(model_);
+        return result == null ? net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.Discovery.DiscoveryModel model = 1;</code>
+       */
+      public Builder setModel(net.iGap.proto.ProtoGlobal.Discovery.DiscoveryModel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        model_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Discovery.DiscoveryModel model = 1;</code>
+       */
+      public Builder clearModel() {
+        
+        model_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object scale_ = "";
+      /**
+       * <code>optional string scale = 2;</code>
+       */
+      public java.lang.String getScale() {
+        java.lang.Object ref = scale_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          scale_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string scale = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getScaleBytes() {
+        java.lang.Object ref = scale_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          scale_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string scale = 2;</code>
+       */
+      public Builder setScale(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        scale_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string scale = 2;</code>
+       */
+      public Builder clearScale() {
+        
+        scale_ = getDefaultInstance().getScale();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string scale = 2;</code>
+       */
+      public Builder setScaleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        scale_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int max_ ;
+      /**
+       * <code>optional uint32 max = 3;</code>
+       */
+      public int getMax() {
+        return max_;
+      }
+      /**
+       * <code>optional uint32 max = 3;</code>
+       */
+      public Builder setMax(int value) {
+        
+        max_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 max = 3;</code>
+       */
+      public Builder clearMax() {
+        
+        max_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoGlobal.PollField> pollfields_ =
+        java.util.Collections.emptyList();
+      private void ensurePollfieldsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          pollfields_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.PollField>(pollfields_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.PollField, net.iGap.proto.ProtoGlobal.PollField.Builder, net.iGap.proto.ProtoGlobal.PollFieldOrBuilder> pollfieldsBuilder_;
+
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.PollField> getPollfieldsList() {
+        if (pollfieldsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(pollfields_);
+        } else {
+          return pollfieldsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public int getPollfieldsCount() {
+        if (pollfieldsBuilder_ == null) {
+          return pollfields_.size();
+        } else {
+          return pollfieldsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PollField getPollfields(int index) {
+        if (pollfieldsBuilder_ == null) {
+          return pollfields_.get(index);
+        } else {
+          return pollfieldsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public Builder setPollfields(
+          int index, net.iGap.proto.ProtoGlobal.PollField value) {
+        if (pollfieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePollfieldsIsMutable();
+          pollfields_.set(index, value);
+          onChanged();
+        } else {
+          pollfieldsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public Builder setPollfields(
+          int index, net.iGap.proto.ProtoGlobal.PollField.Builder builderForValue) {
+        if (pollfieldsBuilder_ == null) {
+          ensurePollfieldsIsMutable();
+          pollfields_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pollfieldsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public Builder addPollfields(net.iGap.proto.ProtoGlobal.PollField value) {
+        if (pollfieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePollfieldsIsMutable();
+          pollfields_.add(value);
+          onChanged();
+        } else {
+          pollfieldsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public Builder addPollfields(
+          int index, net.iGap.proto.ProtoGlobal.PollField value) {
+        if (pollfieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePollfieldsIsMutable();
+          pollfields_.add(index, value);
+          onChanged();
+        } else {
+          pollfieldsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public Builder addPollfields(
+          net.iGap.proto.ProtoGlobal.PollField.Builder builderForValue) {
+        if (pollfieldsBuilder_ == null) {
+          ensurePollfieldsIsMutable();
+          pollfields_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pollfieldsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public Builder addPollfields(
+          int index, net.iGap.proto.ProtoGlobal.PollField.Builder builderForValue) {
+        if (pollfieldsBuilder_ == null) {
+          ensurePollfieldsIsMutable();
+          pollfields_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pollfieldsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public Builder addAllPollfields(
+          java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.PollField> values) {
+        if (pollfieldsBuilder_ == null) {
+          ensurePollfieldsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, pollfields_);
+          onChanged();
+        } else {
+          pollfieldsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public Builder clearPollfields() {
+        if (pollfieldsBuilder_ == null) {
+          pollfields_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          pollfieldsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public Builder removePollfields(int index) {
+        if (pollfieldsBuilder_ == null) {
+          ensurePollfieldsIsMutable();
+          pollfields_.remove(index);
+          onChanged();
+        } else {
+          pollfieldsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PollField.Builder getPollfieldsBuilder(
+          int index) {
+        return getPollfieldsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PollFieldOrBuilder getPollfieldsOrBuilder(
+          int index) {
+        if (pollfieldsBuilder_ == null) {
+          return pollfields_.get(index);  } else {
+          return pollfieldsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGlobal.PollFieldOrBuilder> 
+           getPollfieldsOrBuilderList() {
+        if (pollfieldsBuilder_ != null) {
+          return pollfieldsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(pollfields_);
+        }
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PollField.Builder addPollfieldsBuilder() {
+        return getPollfieldsFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGlobal.PollField.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PollField.Builder addPollfieldsBuilder(
+          int index) {
+        return getPollfieldsFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGlobal.PollField.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.PollField pollfields = 4;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.PollField.Builder> 
+           getPollfieldsBuilderList() {
+        return getPollfieldsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.PollField, net.iGap.proto.ProtoGlobal.PollField.Builder, net.iGap.proto.ProtoGlobal.PollFieldOrBuilder> 
+          getPollfieldsFieldBuilder() {
+        if (pollfieldsBuilder_ == null) {
+          pollfieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.PollField, net.iGap.proto.ProtoGlobal.PollField.Builder, net.iGap.proto.ProtoGlobal.PollFieldOrBuilder>(
+                  pollfields_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          pollfields_ = null;
+        }
+        return pollfieldsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.Poll)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.Poll)
+    private static final net.iGap.proto.ProtoGlobal.Poll DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.Poll();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Poll getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Poll>
+        PARSER = new com.google.protobuf.AbstractParser<Poll>() {
+      public Poll parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Poll(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Poll> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Poll> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.Poll getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface IVandActivityOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.IVandActivity)
       com.google.protobuf.MessageOrBuilder {
@@ -38336,6 +40369,16 @@ public final class ProtoGlobal {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_Discovery_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_PollField_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_PollField_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_Poll_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_Poll_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_IVandActivity_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -38497,12 +40540,12 @@ public final class ProtoGlobal {
       "\030\002 \001(\t\"+\n\nPagination\022\016\n\006offset\030\001 \001(\r\022\r\n\005" +
       "limit\030\002 \001(\r\"Z\n\010Favorite\022\014\n\004name\030\001 \001(\t\022\021\n" +
       "\ttextcolor\030\002 \001(\t\022\017\n\007bgcolor\030\003 \001(\t\022\r\n\005val" +
-      "ue\030\004 \001(\t\022\r\n\005image\030\005 \001(\t\"\332\005\n\016DiscoveryFie" +
+      "ue\030\004 \001(\t\022\r\n\005image\030\005 \001(\t\"\247\006\n\016DiscoveryFie" +
       "ld\022\020\n\010imageurl\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022:\n\na" +
       "ctiontype\030\003 \001(\0162&.proto.DiscoveryField.B" +
       "uttonActionType\022\017\n\007orderid\030\004 \001(\r\022\n\n\002id\030\005" +
       " \001(\r\022\r\n\005param\030\006 \001(\t\022\021\n\tagreement\030\007 \001(\010\022\017" +
-      "\n\007refresh\030\010 \001(\010\022\025\n\ragreementSlug\030\t \001(\t\"\203" +
+      "\n\007refresh\030\010 \001(\010\022\025\n\ragreementSlug\030\t \001(\t\"\320" +
       "\004\n\020ButtonActionType\022\010\n\004NONE\020\000\022\r\n\tJOIN_LI",
       "NK\020\001\022\016\n\nBOT_ACTION\020\002\022\021\n\rUSERNAME_LINK\020\003\022" +
       "\014\n\010WEB_LINK\020\004\022\021\n\rWEB_VIEW_LINK\020\005\022\017\n\013STRE" +
@@ -38515,52 +40558,60 @@ public final class ProtoGlobal {
       "ENU\020\023\022\017\n\013NEARBY_MENU\020\024\022\010\n\004CALL\020\025\022\020\n\014STIC" +
       "KER_SHOP\020\026\022\t\n\005IVAND\020\027\022\013\n\007IVANDQR\020\030\022\r\n\tIV",
       "ANDLIST\020\031\022\016\n\nIVANDSCORE\020\032\022\020\n\014CARD_TO_CAR" +
-      "D\020\033\022\024\n\020FAVORITE_CHANNEL\020\034\022\t\n\005MUSIC\020\035\"\340\001\n" +
-      "\tDiscovery\022.\n\005model\030\001 \001(\0162\037.proto.Discov" +
-      "ery.DiscoveryModel\022\r\n\005scale\030\002 \001(\t\022.\n\017dis" +
-      "coveryfields\030\003 \003(\0132\025.proto.DiscoveryFiel" +
-      "d\"d\n\016DiscoveryModel\022\n\n\006MODEL1\020\000\022\n\n\006MODEL" +
-      "2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003\022\n\n\006MODEL5\020\004\022" +
-      "\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\";\n\rIVandActivity" +
-      "\022\r\n\005title\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004time\030\003" +
-      " \001(\r\"\222\002\n\007MplSale\022\026\n\016invoice_number\030\001 \001(\004",
-      "\022\024\n\014from_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001(\004\022\024" +
-      "\n\014trace_number\030\004 \001(\003\022\020\n\010pay_time\030\005 \001(\r\022\023" +
-      "\n\013description\030\006 \001(\t\022\023\n\013card_number\030\007 \001(\t" +
-      "\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t \001(\0162\025.proto.Mp" +
-      "lSale.Status\"C\n\006Status\022\022\n\016PENDING_VERIFY" +
-      "\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002\022\014\n\010REVERSED\020" +
-      "\003*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020\001\022\n\n\006FE" +
-      "MALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEVICE\020\000\022\006\n\002" +
-      "PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n\010Platform" +
-      "\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDROID\020\001\022\007\n\003I",
-      "OS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005LINUX\020\005" +
-      "\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t\n\005EN_US\020\000" +
-      "\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMessageType\022\010\n\004TEXT\020" +
-      "\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005VIDEO\020\003\022" +
-      "\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUDIO_TEXT" +
-      "\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEXT\020\016\022\010\n\004" +
-      "FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATION\020\013\022\007\n\003L" +
-      "OG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017\022\013\n\007STICKER" +
-      "\020\020*]\n\021RoomMessageStatus\022\n\n\006FAILED\020\000\022\013\n\007S" +
-      "ENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004SEE",
-      "N\020\004\022\014\n\010LISTENED\020\005*5\n\023RoomMessageReaction" +
-      "\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUMBS_DOWN\020\001*\244\002\n\014Cli" +
-      "entAction\022\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\rSEN" +
-      "DING_IMAGE\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\rSEN" +
-      "DING_VIDEO\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\rSEN" +
-      "DING_AUDIO\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\rSEN" +
-      "DING_VOICE\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n\013SE" +
-      "NDING_GIF\020\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SENDING" +
-      "_LOCATION\020\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010PAI" +
-      "NTING\020\016* \n\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MUTE\020",
-      "\001*\233\001\n\013PrivacyType\022\017\n\013USER_STATUS\020\000\022\n\n\006AV" +
-      "ATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016CHANNEL_INVI" +
-      "TE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVIDEO_CALLING" +
-      "\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013SECRET_CHAT\020\007*" +
-      "?\n\014PrivacyLevel\022\r\n\tALLOW_ALL\020\000\022\014\n\010DENY_A" +
-      "LL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016net.iGap.pro" +
-      "toB\013ProtoGlobalb\006proto3"
+      "D\020\033\022\024\n\020FAVORITE_CHANNEL\020\034\022\t\n\005MUSIC\020\035\022\013\n\007" +
+      "CHARITY\020\036\022\017\n\013FUN_SERVICE\020\037\022\021\n\rVIRTUAL_MO" +
+      "NEY\020 \022\020\n\014CITY_SERVICE\020!\022\010\n\004POLL\020\"\"\340\001\n\tDi" +
+      "scovery\022.\n\005model\030\001 \001(\0162\037.proto.Discovery" +
+      ".DiscoveryModel\022\r\n\005scale\030\002 \001(\t\022.\n\017discov" +
+      "eryfields\030\003 \003(\0132\025.proto.DiscoveryField\"d" +
+      "\n\016DiscoveryModel\022\n\n\006MODEL1\020\000\022\n\n\006MODEL2\020\001" +
+      "\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003\022\n\n\006MODEL5\020\004\022\n\n\006" +
+      "MODEL6\020\005\022\n\n\006MODEL7\020\006\"z\n\tPollField\022\020\n\010ima",
+      "geurl\030\001 \001(\t\022\017\n\007orderid\030\002 \001(\r\022\n\n\002id\030\003 \001(\r" +
+      "\022\017\n\007clicked\030\004 \001(\010\022\013\n\003sum\030\005 \001(\004\022\021\n\tclicka" +
+      "ble\030\006 \001(\010\022\r\n\005label\030\007 \001(\t\"x\n\004Poll\022.\n\005mode" +
+      "l\030\001 \001(\0162\037.proto.Discovery.DiscoveryModel" +
+      "\022\r\n\005scale\030\002 \001(\t\022\013\n\003max\030\003 \001(\r\022$\n\npollfiel" +
+      "ds\030\004 \003(\0132\020.proto.PollField\";\n\rIVandActiv" +
+      "ity\022\r\n\005title\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004tim" +
+      "e\030\003 \001(\r\"\222\002\n\007MplSale\022\026\n\016invoice_number\030\001 " +
+      "\001(\004\022\024\n\014from_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001(" +
+      "\004\022\024\n\014trace_number\030\004 \001(\003\022\020\n\010pay_time\030\005 \001(",
+      "\r\022\023\n\013description\030\006 \001(\t\022\023\n\013card_number\030\007 " +
+      "\001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t \001(\0162\025.proto" +
+      ".MplSale.Status\"C\n\006Status\022\022\n\016PENDING_VER" +
+      "IFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002\022\014\n\010REVERS" +
+      "ED\020\003*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020\001\022\n\n" +
+      "\006FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEVICE\020\000\022" +
+      "\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n\010Platf" +
+      "orm\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDROID\020\001\022\007" +
+      "\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005LINU" +
+      "X\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t\n\005EN_U",
+      "S\020\000\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMessageType\022\010\n\004TE" +
+      "XT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005VIDEO" +
+      "\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUDIO_T" +
+      "EXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEXT\020\016\022" +
+      "\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATION\020\013\022\007" +
+      "\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017\022\013\n\007STIC" +
+      "KER\020\020*]\n\021RoomMessageStatus\022\n\n\006FAILED\020\000\022\013" +
+      "\n\007SENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004" +
+      "SEEN\020\004\022\014\n\010LISTENED\020\005*5\n\023RoomMessageReact" +
+      "ion\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUMBS_DOWN\020\001*\244\002\n\014",
+      "ClientAction\022\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\r" +
+      "SENDING_IMAGE\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\r" +
+      "SENDING_VIDEO\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\r" +
+      "SENDING_AUDIO\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\r" +
+      "SENDING_VOICE\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n" +
+      "\013SENDING_GIF\020\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SEND" +
+      "ING_LOCATION\020\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010" +
+      "PAINTING\020\016* \n\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MU" +
+      "TE\020\001*\233\001\n\013PrivacyType\022\017\n\013USER_STATUS\020\000\022\n\n" +
+      "\006AVATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016CHANNEL_I",
+      "NVITE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVIDEO_CALL" +
+      "ING\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013SECRET_CHAT" +
+      "\020\007*?\n\014PrivacyLevel\022\r\n\tALLOW_ALL\020\000\022\014\n\010DEN" +
+      "Y_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016net.iGap." +
+      "protoB\013ProtoGlobalb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -38760,14 +40811,26 @@ public final class ProtoGlobal {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Discovery_descriptor,
         new java.lang.String[] { "Model", "Scale", "Discoveryfields", });
-    internal_static_proto_IVandActivity_descriptor =
+    internal_static_proto_PollField_descriptor =
       getDescriptor().getMessageTypes().get(20);
+    internal_static_proto_PollField_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_PollField_descriptor,
+        new java.lang.String[] { "Imageurl", "Orderid", "Id", "Clicked", "Sum", "Clickable", "Label", });
+    internal_static_proto_Poll_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_proto_Poll_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_Poll_descriptor,
+        new java.lang.String[] { "Model", "Scale", "Max", "Pollfields", });
+    internal_static_proto_IVandActivity_descriptor =
+      getDescriptor().getMessageTypes().get(22);
     internal_static_proto_IVandActivity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_IVandActivity_descriptor,
         new java.lang.String[] { "Title", "Score", "Time", });
     internal_static_proto_MplSale_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_proto_MplSale_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplSale_descriptor,

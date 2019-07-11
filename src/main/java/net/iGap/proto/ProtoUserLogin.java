@@ -1717,6 +1717,26 @@ public final class ProtoUserLogin {
      * <code>optional bool wallet_agreement_accepted = 8;</code>
      */
     boolean getWalletAgreementAccepted();
+
+    /**
+     * <code>optional string access_token = 9;</code>
+     */
+    java.lang.String getAccessToken();
+    /**
+     * <code>optional string access_token = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getAccessTokenBytes();
+
+    /**
+     * <code>optional string contact_hash = 10;</code>
+     */
+    java.lang.String getContactHash();
+    /**
+     * <code>optional string contact_hash = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getContactHashBytes();
   }
   /**
    * Protobuf type {@code proto.UserLoginResponse}
@@ -1737,6 +1757,8 @@ public final class ProtoUserLogin {
       walletActive_ = false;
       mplActive_ = false;
       walletAgreementAccepted_ = false;
+      accessToken_ = "";
+      contactHash_ = "";
     }
 
     @java.lang.Override
@@ -1811,6 +1833,18 @@ public final class ProtoUserLogin {
             case 64: {
 
               walletAgreementAccepted_ = input.readBool();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accessToken_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contactHash_ = s;
               break;
             }
           }
@@ -1945,6 +1979,74 @@ public final class ProtoUserLogin {
       return walletAgreementAccepted_;
     }
 
+    public static final int ACCESS_TOKEN_FIELD_NUMBER = 9;
+    private volatile java.lang.Object accessToken_;
+    /**
+     * <code>optional string access_token = 9;</code>
+     */
+    public java.lang.String getAccessToken() {
+      java.lang.Object ref = accessToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accessToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string access_token = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAccessTokenBytes() {
+      java.lang.Object ref = accessToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accessToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTACT_HASH_FIELD_NUMBER = 10;
+    private volatile java.lang.Object contactHash_;
+    /**
+     * <code>optional string contact_hash = 10;</code>
+     */
+    public java.lang.String getContactHash() {
+      java.lang.Object ref = contactHash_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contactHash_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string contact_hash = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContactHashBytes() {
+      java.lang.Object ref = contactHash_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contactHash_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1980,6 +2082,12 @@ public final class ProtoUserLogin {
       }
       if (walletAgreementAccepted_ != false) {
         output.writeBool(8, walletAgreementAccepted_);
+      }
+      if (!getAccessTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, accessToken_);
+      }
+      if (!getContactHashBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, contactHash_);
       }
     }
 
@@ -2019,6 +2127,12 @@ public final class ProtoUserLogin {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, walletAgreementAccepted_);
       }
+      if (!getAccessTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, accessToken_);
+      }
+      if (!getContactHashBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, contactHash_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -2054,6 +2168,10 @@ public final class ProtoUserLogin {
           == other.getMplActive());
       result = result && (getWalletAgreementAccepted()
           == other.getWalletAgreementAccepted());
+      result = result && getAccessToken()
+          .equals(other.getAccessToken());
+      result = result && getContactHash()
+          .equals(other.getContactHash());
       return result;
     }
 
@@ -2087,6 +2205,10 @@ public final class ProtoUserLogin {
       hash = (37 * hash) + WALLET_AGREEMENT_ACCEPTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getWalletAgreementAccepted());
+      hash = (37 * hash) + ACCESS_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessToken().hashCode();
+      hash = (37 * hash) + CONTACT_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getContactHash().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2225,6 +2347,10 @@ public final class ProtoUserLogin {
 
         walletAgreementAccepted_ = false;
 
+        accessToken_ = "";
+
+        contactHash_ = "";
+
         return this;
       }
 
@@ -2259,6 +2385,8 @@ public final class ProtoUserLogin {
         result.walletActive_ = walletActive_;
         result.mplActive_ = mplActive_;
         result.walletAgreementAccepted_ = walletAgreementAccepted_;
+        result.accessToken_ = accessToken_;
+        result.contactHash_ = contactHash_;
         onBuilt();
         return result;
       }
@@ -2324,6 +2452,14 @@ public final class ProtoUserLogin {
         }
         if (other.getWalletAgreementAccepted() != false) {
           setWalletAgreementAccepted(other.getWalletAgreementAccepted());
+        }
+        if (!other.getAccessToken().isEmpty()) {
+          accessToken_ = other.accessToken_;
+          onChanged();
+        }
+        if (!other.getContactHash().isEmpty()) {
+          contactHash_ = other.contactHash_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -2692,6 +2828,144 @@ public final class ProtoUserLogin {
         onChanged();
         return this;
       }
+
+      private java.lang.Object accessToken_ = "";
+      /**
+       * <code>optional string access_token = 9;</code>
+       */
+      public java.lang.String getAccessToken() {
+        java.lang.Object ref = accessToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accessToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string access_token = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAccessTokenBytes() {
+        java.lang.Object ref = accessToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accessToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string access_token = 9;</code>
+       */
+      public Builder setAccessToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        accessToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string access_token = 9;</code>
+       */
+      public Builder clearAccessToken() {
+        
+        accessToken_ = getDefaultInstance().getAccessToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string access_token = 9;</code>
+       */
+      public Builder setAccessTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        accessToken_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contactHash_ = "";
+      /**
+       * <code>optional string contact_hash = 10;</code>
+       */
+      public java.lang.String getContactHash() {
+        java.lang.Object ref = contactHash_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contactHash_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string contact_hash = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContactHashBytes() {
+        java.lang.Object ref = contactHash_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contactHash_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string contact_hash = 10;</code>
+       */
+      public Builder setContactHash(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contactHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string contact_hash = 10;</code>
+       */
+      public Builder clearContactHash() {
+        
+        contactHash_ = getDefaultInstance().getContactHash();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string contact_hash = 10;</code>
+       */
+      public Builder setContactHashBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contactHash_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -2769,14 +3043,15 @@ public final class ProtoUserLogin {
       "Platform\022\030\n\020platform_version\030\010 \001(\t\022\035\n\006de" +
       "vice\030\t \001(\0162\r.proto.Device\022\023\n\013device_name" +
       "\030\n \001(\t\022!\n\010language\030\013 \001(\0162\017.proto.Languag" +
-      "e\"\203\002\n\021UserLoginResponse\022!\n\010response\030\001 \001(",
+      "e\"\257\002\n\021UserLoginResponse\022!\n\010response\030\001 \001(",
       "\0132\017.proto.Response\022\031\n\021deprecated_client\030" +
       "\002 \001(\010\022\033\n\023secondary_node_name\030\003 \001(\t\022\030\n\020up" +
       "date_available\030\004 \001(\010\022+\n#chat_delete_mess" +
       "age_for_both_period\030\005 \001(\r\022\025\n\rwallet_acti" +
       "ve\030\006 \001(\010\022\022\n\nmpl_active\030\007 \001(\010\022!\n\031wallet_a" +
-      "greement_accepted\030\010 \001(\010B \n\016net.iGap.prot" +
-      "oB\016ProtoUserLoginb\006proto3"
+      "greement_accepted\030\010 \001(\010\022\024\n\014access_token\030" +
+      "\t \001(\t\022\024\n\014contact_hash\030\n \001(\tB \n\016net.iGap." +
+      "protoB\016ProtoUserLoginb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2804,7 +3079,7 @@ public final class ProtoUserLogin {
     internal_static_proto_UserLoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserLoginResponse_descriptor,
-        new java.lang.String[] { "Response", "DeprecatedClient", "SecondaryNodeName", "UpdateAvailable", "ChatDeleteMessageForBothPeriod", "WalletActive", "MplActive", "WalletAgreementAccepted", });
+        new java.lang.String[] { "Response", "DeprecatedClient", "SecondaryNodeName", "UpdateAvailable", "ChatDeleteMessageForBothPeriod", "WalletActive", "MplActive", "WalletAgreementAccepted", "AccessToken", "ContactHash", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
