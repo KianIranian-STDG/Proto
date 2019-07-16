@@ -59,6 +59,16 @@ public final class ProtoUserContactsImport {
      * <code>optional bool force = 3;</code>
      */
     boolean getForce();
+
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    java.lang.String getContactHash();
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getContactHashBytes();
   }
   /**
    * Protobuf type {@code proto.UserContactsImport}
@@ -74,6 +84,7 @@ public final class ProtoUserContactsImport {
     private UserContactsImport() {
       contacts_ = java.util.Collections.emptyList();
       force_ = false;
+      contactHash_ = "";
     }
 
     @java.lang.Override
@@ -126,6 +137,12 @@ public final class ProtoUserContactsImport {
             case 24: {
 
               force_ = input.readBool();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contactHash_ = s;
               break;
             }
           }
@@ -1134,6 +1151,40 @@ public final class ProtoUserContactsImport {
       return force_;
     }
 
+    public static final int CONTACT_HASH_FIELD_NUMBER = 4;
+    private volatile java.lang.Object contactHash_;
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    public java.lang.String getContactHash() {
+      java.lang.Object ref = contactHash_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contactHash_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string contact_hash = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContactHashBytes() {
+      java.lang.Object ref = contactHash_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contactHash_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1155,6 +1206,9 @@ public final class ProtoUserContactsImport {
       if (force_ != false) {
         output.writeBool(3, force_);
       }
+      if (!getContactHashBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, contactHash_);
+      }
     }
 
     public int getSerializedSize() {
@@ -1173,6 +1227,9 @@ public final class ProtoUserContactsImport {
       if (force_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, force_);
+      }
+      if (!getContactHashBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, contactHash_);
       }
       memoizedSize = size;
       return size;
@@ -1199,6 +1256,8 @@ public final class ProtoUserContactsImport {
           .equals(other.getContactsList());
       result = result && (getForce()
           == other.getForce());
+      result = result && getContactHash()
+          .equals(other.getContactHash());
       return result;
     }
 
@@ -1220,6 +1279,8 @@ public final class ProtoUserContactsImport {
       hash = (37 * hash) + FORCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getForce());
+      hash = (37 * hash) + CONTACT_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getContactHash().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1353,6 +1414,8 @@ public final class ProtoUserContactsImport {
         }
         force_ = false;
 
+        contactHash_ = "";
+
         return this;
       }
 
@@ -1392,6 +1455,7 @@ public final class ProtoUserContactsImport {
           result.contacts_ = contactsBuilder_.build();
         }
         result.force_ = force_;
+        result.contactHash_ = contactHash_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1465,6 +1529,10 @@ public final class ProtoUserContactsImport {
         }
         if (other.getForce() != false) {
           setForce(other.getForce());
+        }
+        if (!other.getContactHash().isEmpty()) {
+          contactHash_ = other.contactHash_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1872,6 +1940,75 @@ public final class ProtoUserContactsImport {
       public Builder clearForce() {
         
         force_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contactHash_ = "";
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public java.lang.String getContactHash() {
+        java.lang.Object ref = contactHash_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contactHash_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContactHashBytes() {
+        java.lang.Object ref = contactHash_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contactHash_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public Builder setContactHash(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contactHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public Builder clearContactHash() {
+        
+        contactHash_ = getDefaultInstance().getContactHash();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string contact_hash = 4;</code>
+       */
+      public Builder setContactHashBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contactHash_ = value;
         onChanged();
         return this;
       }
@@ -3453,18 +3590,19 @@ public final class ProtoUserContactsImport {
   static {
     java.lang.String[] descriptorData = {
       "\n\030UserContactsImport.proto\022\005proto\032\rReque" +
-      "st.proto\032\016Response.proto\"\315\001\n\022UserContact" +
+      "st.proto\032\016Response.proto\"\343\001\n\022UserContact" +
       "sImport\022\037\n\007request\030\001 \001(\0132\016.proto.Request" +
       "\0223\n\010contacts\030\002 \003(\0132!.proto.UserContactsI" +
-      "mport.Contact\022\r\n\005force\030\003 \001(\010\032R\n\007Contact\022" +
-      "\r\n\005phone\030\001 \001(\t\022\022\n\nfirst_name\030\002 \001(\t\022\021\n\tla" +
-      "st_name\030\003 \001(\t\022\021\n\tclient_id\030\004 \001(\t\"\266\001\n\032Use" +
-      "rContactsImportResponse\022!\n\010response\030\001 \001(" +
-      "\0132\017.proto.Response\022F\n\023registered_contact" +
-      "s\030\002 \003(\0132).proto.UserContactsImportRespon",
-      "se.Contact\032-\n\007Contact\022\021\n\tclient_id\030\001 \001(\t" +
-      "\022\017\n\007user_id\030\002 \001(\004B)\n\016net.iGap.protoB\027Pro" +
-      "toUserContactsImportb\006proto3"
+      "mport.Contact\022\r\n\005force\030\003 \001(\010\022\024\n\014contact_" +
+      "hash\030\004 \001(\t\032R\n\007Contact\022\r\n\005phone\030\001 \001(\t\022\022\n\n" +
+      "first_name\030\002 \001(\t\022\021\n\tlast_name\030\003 \001(\t\022\021\n\tc" +
+      "lient_id\030\004 \001(\t\"\266\001\n\032UserContactsImportRes" +
+      "ponse\022!\n\010response\030\001 \001(\0132\017.proto.Response" +
+      "\022F\n\023registered_contacts\030\002 \003(\0132).proto.Us",
+      "erContactsImportResponse.Contact\032-\n\007Cont" +
+      "act\022\021\n\tclient_id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\004B" +
+      ")\n\016net.iGap.protoB\027ProtoUserContactsImpo" +
+      "rtb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3485,7 +3623,7 @@ public final class ProtoUserContactsImport {
     internal_static_proto_UserContactsImport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserContactsImport_descriptor,
-        new java.lang.String[] { "Request", "Contacts", "Force", });
+        new java.lang.String[] { "Request", "Contacts", "Force", "ContactHash", });
     internal_static_proto_UserContactsImport_Contact_descriptor =
       internal_static_proto_UserContactsImport_descriptor.getNestedTypes().get(0);
     internal_static_proto_UserContactsImport_Contact_fieldAccessorTable = new
