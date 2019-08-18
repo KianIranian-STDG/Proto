@@ -39,6 +39,15 @@ public final class ProtoInfoWallpaper {
      * <code>optional .proto.InfoWallpaper.Fit fit = 2;</code>
      */
     net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Fit getFit();
+
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type getType();
   }
   /**
    * Protobuf type {@code proto.InfoWallpaper}
@@ -53,6 +62,7 @@ public final class ProtoInfoWallpaper {
     }
     private InfoWallpaper() {
       fit_ = 0;
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -97,6 +107,12 @@ public final class ProtoInfoWallpaper {
               int rawValue = input.readEnum();
 
               fit_ = rawValue;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
               break;
             }
           }
@@ -229,6 +245,104 @@ public final class ProtoInfoWallpaper {
       // @@protoc_insertion_point(enum_scope:proto.InfoWallpaper.Fit)
     }
 
+    /**
+     * Protobuf enum {@code proto.InfoWallpaper.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CHAT_BACKGROUND = 0;</code>
+       */
+      CHAT_BACKGROUND(0),
+      /**
+       * <code>PROFILE_WALLPAPER = 1;</code>
+       */
+      PROFILE_WALLPAPER(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>CHAT_BACKGROUND = 0;</code>
+       */
+      public static final int CHAT_BACKGROUND_VALUE = 0;
+      /**
+       * <code>PROFILE_WALLPAPER = 1;</code>
+       */
+      public static final int PROFILE_WALLPAPER_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return CHAT_BACKGROUND;
+          case 1: return PROFILE_WALLPAPER;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.InfoWallpaper.Type)
+    }
+
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
@@ -266,6 +380,22 @@ public final class ProtoInfoWallpaper {
       return result == null ? net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Fit.UNRECOGNIZED : result;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 3;
+    private int type_;
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+     */
+    public net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type getType() {
+      net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type result = net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.valueOf(type_);
+      return result == null ? net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -284,6 +414,9 @@ public final class ProtoInfoWallpaper {
       if (fit_ != net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Fit.PHONE.getNumber()) {
         output.writeEnum(2, fit_);
       }
+      if (type_ != net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.CHAT_BACKGROUND.getNumber()) {
+        output.writeEnum(3, type_);
+      }
     }
 
     public int getSerializedSize() {
@@ -298,6 +431,10 @@ public final class ProtoInfoWallpaper {
       if (fit_ != net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Fit.PHONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, fit_);
+      }
+      if (type_ != net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.CHAT_BACKGROUND.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, type_);
       }
       memoizedSize = size;
       return size;
@@ -321,6 +458,7 @@ public final class ProtoInfoWallpaper {
             .equals(other.getRequest());
       }
       result = result && fit_ == other.fit_;
+      result = result && type_ == other.type_;
       return result;
     }
 
@@ -337,6 +475,8 @@ public final class ProtoInfoWallpaper {
       }
       hash = (37 * hash) + FIT_FIELD_NUMBER;
       hash = (53 * hash) + fit_;
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -463,6 +603,8 @@ public final class ProtoInfoWallpaper {
         }
         fit_ = 0;
 
+        type_ = 0;
+
         return this;
       }
 
@@ -491,6 +633,7 @@ public final class ProtoInfoWallpaper {
           result.request_ = requestBuilder_.build();
         }
         result.fit_ = fit_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -537,6 +680,9 @@ public final class ProtoInfoWallpaper {
         }
         if (other.fit_ != 0) {
           setFitValue(other.getFitValue());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
         }
         onChanged();
         return this;
@@ -721,6 +867,50 @@ public final class ProtoInfoWallpaper {
       public Builder clearFit() {
         
         fit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type getType() {
+        net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type result = net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public Builder setType(net.iGap.proto.ProtoInfoWallpaper.InfoWallpaper.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.InfoWallpaper.Type type = 3;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
         onChanged();
         return this;
       }
@@ -1725,14 +1915,17 @@ public final class ProtoInfoWallpaper {
   static {
     java.lang.String[] descriptorData = {
       "\n\023InfoWallpaper.proto\022\005proto\032\rRequest.pr" +
-      "oto\032\016Response.proto\032\014Global.proto\"\202\001\n\rIn" +
+      "oto\032\016Response.proto\032\014Global.proto\"\337\001\n\rIn" +
       "foWallpaper\022\037\n\007request\030\001 \001(\0132\016.proto.Req" +
       "uest\022%\n\003fit\030\002 \001(\0162\030.proto.InfoWallpaper." +
-      "Fit\")\n\003Fit\022\t\n\005PHONE\020\000\022\n\n\006TABLET\020\001\022\013\n\007DES" +
-      "KTOP\020\002\"_\n\025InfoWallpaperResponse\022!\n\010respo" +
-      "nse\030\001 \001(\0132\017.proto.Response\022#\n\twallpaper\030" +
-      "\002 \003(\0132\020.proto.WallpaperB$\n\016net.iGap.prot" +
-      "oB\022ProtoInfoWallpaperb\006proto3"
+      "Fit\022\'\n\004type\030\003 \001(\0162\031.proto.InfoWallpaper." +
+      "Type\")\n\003Fit\022\t\n\005PHONE\020\000\022\n\n\006TABLET\020\001\022\013\n\007DE" +
+      "SKTOP\020\002\"2\n\004Type\022\023\n\017CHAT_BACKGROUND\020\000\022\025\n\021" +
+      "PROFILE_WALLPAPER\020\001\"_\n\025InfoWallpaperResp" +
+      "onse\022!\n\010response\030\001 \001(\0132\017.proto.Response\022" +
+      "#\n\twallpaper\030\002 \003(\0132\020.proto.WallpaperB$\n\016",
+      "net.iGap.protoB\022ProtoInfoWallpaperb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1754,7 +1947,7 @@ public final class ProtoInfoWallpaper {
     internal_static_proto_InfoWallpaper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_InfoWallpaper_descriptor,
-        new java.lang.String[] { "Request", "Fit", });
+        new java.lang.String[] { "Request", "Fit", "Type", });
     internal_static_proto_InfoWallpaperResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_InfoWallpaperResponse_fieldAccessorTable = new
