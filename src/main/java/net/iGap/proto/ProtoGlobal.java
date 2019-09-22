@@ -33947,6 +33947,10 @@ public final class ProtoGlobal {
        * <code>FINANCIAL_HISTORY = 36;</code>
        */
       FINANCIAL_HISTORY(36),
+      /**
+       * <code>INVITE_FRIEND = 37;</code>
+       */
+      INVITE_FRIEND(37),
       UNRECOGNIZED(-1),
       ;
 
@@ -34098,6 +34102,10 @@ public final class ProtoGlobal {
        * <code>FINANCIAL_HISTORY = 36;</code>
        */
       public static final int FINANCIAL_HISTORY_VALUE = 36;
+      /**
+       * <code>INVITE_FRIEND = 37;</code>
+       */
+      public static final int INVITE_FRIEND_VALUE = 37;
 
 
       public final int getNumber() {
@@ -34155,6 +34163,7 @@ public final class ProtoGlobal {
           case 34: return POLL;
           case 35: return INTERNET_PACKAGE_MENU;
           case 36: return FINANCIAL_HISTORY;
+          case 37: return INVITE_FRIEND;
           default: return null;
         }
       }
@@ -48044,12 +48053,12 @@ public final class ProtoGlobal {
       "\030\002 \001(\t\"+\n\nPagination\022\016\n\006offset\030\001 \001(\r\022\r\n\005" +
       "limit\030\002 \001(\r\"Z\n\010Favorite\022\014\n\004name\030\001 \001(\t\022\021\n" +
       "\ttextcolor\030\002 \001(\t\022\017\n\007bgcolor\030\003 \001(\t\022\r\n\005val" +
-      "ue\030\004 \001(\t\022\r\n\005image\030\005 \001(\t\"\331\006\n\016DiscoveryFie" +
+      "ue\030\004 \001(\t\022\r\n\005image\030\005 \001(\t\"\354\006\n\016DiscoveryFie" +
       "ld\022\020\n\010imageurl\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022:\n\na" +
       "ctiontype\030\003 \001(\0162&.proto.DiscoveryField.B" +
       "uttonActionType\022\017\n\007orderid\030\004 \001(\r\022\n\n\002id\030\005" +
       " \001(\r\022\r\n\005param\030\006 \001(\t\022\021\n\tagreement\030\007 \001(\010\022\017" +
-      "\n\007refresh\030\010 \001(\010\022\025\n\ragreementSlug\030\t \001(\t\"\202" +
+      "\n\007refresh\030\010 \001(\010\022\025\n\ragreementSlug\030\t \001(\t\"\225" +
       "\005\n\020ButtonActionType\022\010\n\004NONE\020\000\022\r\n\tJOIN_LI",
       "NK\020\001\022\016\n\nBOT_ACTION\020\002\022\021\n\rUSERNAME_LINK\020\003\022" +
       "\014\n\010WEB_LINK\020\004\022\021\n\rWEB_VIEW_LINK\020\005\022\017\n\013STRE" +
@@ -48066,91 +48075,92 @@ public final class ProtoGlobal {
       "CHARITY\020\036\022\017\n\013FUN_SERVICE\020\037\022\021\n\rVIRTUAL_MO" +
       "NEY\020 \022\020\n\014CITY_SERVICE\020!\022\010\n\004POLL\020\"\022\031\n\025INT" +
       "ERNET_PACKAGE_MENU\020#\022\025\n\021FINANCIAL_HISTOR" +
-      "Y\020$\"\340\001\n\tDiscovery\022.\n\005model\030\001 \001(\0162\037.proto" +
-      ".Discovery.DiscoveryModel\022\r\n\005scale\030\002 \001(\t" +
-      "\022.\n\017discoveryfields\030\003 \003(\0132\025.proto.Discov" +
-      "eryField\"d\n\016DiscoveryModel\022\n\n\006MODEL1\020\000\022\n" +
-      "\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003\022\n\n\006MO",
-      "DEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\"z\n\tPollFi" +
-      "eld\022\020\n\010imageurl\030\001 \001(\t\022\017\n\007orderid\030\002 \001(\r\022\n" +
-      "\n\002id\030\003 \001(\r\022\017\n\007clicked\030\004 \001(\010\022\013\n\003sum\030\005 \001(\004" +
-      "\022\021\n\tclickable\030\006 \001(\010\022\r\n\005label\030\007 \001(\t\"x\n\004Po" +
-      "ll\022.\n\005model\030\001 \001(\0162\037.proto.Discovery.Disc" +
-      "overyModel\022\r\n\005scale\030\002 \001(\t\022\013\n\003max\030\003 \001(\r\022$" +
-      "\n\npollfields\030\004 \003(\0132\020.proto.PollField\";\n\r" +
-      "IVandActivity\022\r\n\005title\030\001 \001(\t\022\r\n\005score\030\002 " +
-      "\001(\005\022\014\n\004time\030\003 \001(\r\"\222\002\n\007MplSale\022\026\n\016invoice" +
-      "_number\030\001 \001(\004\022\024\n\014from_user_id\030\002 \001(\004\022\016\n\006a",
-      "mount\030\003 \001(\004\022\024\n\014trace_number\030\004 \001(\003\022\020\n\010pay" +
-      "_time\030\005 \001(\r\022\023\n\013description\030\006 \001(\t\022\023\n\013card" +
-      "_number\030\007 \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t \001" +
-      "(\0162\025.proto.MplSale.Status\"C\n\006Status\022\022\n\016P" +
-      "ENDING_VERIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002" +
-      "\022\014\n\010REVERSED\020\003\"\313\n\n\016MplTransaction\022\020\n\010ord" +
-      "er_id\030\001 \001(\004\022\r\n\005token\030\002 \001(\t\022\020\n\010pay_time\030\003" +
-      " \001(\r\022(\n\004type\030\004 \001(\0162\032.proto.MplTransactio" +
-      "n.Type\022(\n\004bill\030\005 \001(\0132\032.proto.MplTransact" +
-      "ion.Bill\022*\n\005topup\030\006 \001(\0132\033.proto.MplTrans",
-      "action.Topup\022*\n\005sales\030\007 \001(\0132\033.proto.MplT" +
-      "ransaction.Sales\0224\n\ncardtocard\030\010 \001(\0132 .p" +
-      "roto.MplTransaction.CardToCard\032\370\001\n\004Bill\022" +
-      "\016\n\006BillId\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020\n\010BillTy" +
-      "pe\030\003 \001(\t\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amount\030\005 \001(\004" +
-      "\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014MerchantName\030\007 \001" +
-      "(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDateTime\030\t" +
-      " \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescription\030\013" +
-      " \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007TraceNo\030\r \001(" +
-      "\r\032\226\002\n\005Topup\022\035\n\025RequesterMobileNumber\030\001 \001",
-      "(\004\022\032\n\022ChargeMobileNumber\030\002 \001(\004\022\021\n\tTopupT" +
-      "ype\030\003 \001(\r\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amount\030\005 \001(" +
-      "\004\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014MerchantName\030\007 " +
-      "\001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDateTime\030" +
-      "\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescription\030" +
-      "\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007TraceNo\030\r \001" +
-      "(\r\032\310\001\n\005Sales\022\016\n\006Status\030\001 \001(\r\022\016\n\006Amount\030\002" +
-      " \001(\004\022\022\n\nCardNumber\030\003 \001(\t\022\024\n\014MerchantName" +
-      "\030\004 \001(\t\022\017\n\007OrderId\030\005 \001(\004\022\027\n\017RequestDateTi" +
-      "me\030\006 \001(\004\022\013\n\003RRN\030\007 \001(\004\022\031\n\021StatusDescripti",
-      "on\030\010 \001(\t\022\022\n\nTerminalNo\030\t \001(\r\022\017\n\007TraceNo\030" +
-      "\n \001(\r\032\200\002\n\nCardToCard\022\016\n\006Status\030\001 \001(\r\022\016\n\006" +
-      "Amount\030\002 \001(\004\022\030\n\020SourceCardNumber\030\003 \001(\t\022\026" +
-      "\n\016DestCardNumber\030\004 \001(\t\022\020\n\010BankName\030\005 \001(\t" +
-      "\022\024\n\014DestBankName\030\006 \001(\t\022\025\n\rCardOwnerName\030" +
-      "\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDateTim" +
-      "e\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescriptio" +
-      "n\030\013 \001(\t\022\017\n\007TraceNo\030\r \001(\r\"B\n\004Type\022\010\n\004NONE" +
-      "\020\000\022\010\n\004BILL\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES\020\003\022\020\n\014CA" +
-      "RD_TO_CARD\020\004*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004M",
-      "ALE\020\001\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_D" +
-      "EVICE\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*" +
-      "k\n\010Platform\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007AND" +
-      "ROID\020\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004" +
-      "\022\t\n\005LINUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Language" +
-      "\022\t\n\005EN_US\020\000\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMessageTy" +
-      "pe\022\010\n\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022" +
-      "\t\n\005VIDEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n" +
-      "\nAUDIO_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF" +
-      "_TEXT\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCA",
-      "TION\020\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017" +
-      "\022\013\n\007STICKER\020\020*]\n\021RoomMessageStatus\022\n\n\006FA" +
-      "ILED\020\000\022\013\n\007SENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tDELIVER" +
-      "ED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LISTENED\020\005*5\n\023RoomMess" +
-      "ageReaction\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUMBS_DOW" +
-      "N\020\001*\244\002\n\014ClientAction\022\n\n\006CANCEL\020\000\022\n\n\006TYPI" +
-      "NG\020\001\022\021\n\rSENDING_IMAGE\020\002\022\023\n\017CAPTURING_IMA" +
-      "GE\020\003\022\021\n\rSENDING_VIDEO\020\004\022\023\n\017CAPTURING_VID" +
-      "EO\020\005\022\021\n\rSENDING_AUDIO\020\006\022\023\n\017RECORDING_VOI" +
-      "CE\020\007\022\021\n\rSENDING_VOICE\020\010\022\024\n\020SENDING_DOCUM",
-      "ENT\020\t\022\017\n\013SENDING_GIF\020\n\022\020\n\014SENDING_FILE\020\013" +
-      "\022\024\n\020SENDING_LOCATION\020\014\022\024\n\020CHOOSING_CONTA" +
-      "CT\020\r\022\014\n\010PAINTING\020\016* \n\010RoomMute\022\n\n\006UNMUTE" +
-      "\020\000\022\010\n\004MUTE\020\001*\233\001\n\013PrivacyType\022\017\n\013USER_STA" +
-      "TUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016C" +
-      "HANNEL_INVITE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVI" +
-      "DEO_CALLING\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013SEC" +
-      "RET_CHAT\020\007*?\n\014PrivacyLevel\022\r\n\tALLOW_ALL\020" +
-      "\000\022\014\n\010DENY_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016n" +
-      "et.iGap.protoB\013ProtoGlobalb\006proto3"
+      "Y\020$\022\021\n\rINVITE_FRIEND\020%\"\340\001\n\tDiscovery\022.\n\005" +
+      "model\030\001 \001(\0162\037.proto.Discovery.DiscoveryM" +
+      "odel\022\r\n\005scale\030\002 \001(\t\022.\n\017discoveryfields\030\003" +
+      " \003(\0132\025.proto.DiscoveryField\"d\n\016Discovery" +
+      "Model\022\n\n\006MODEL1\020\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020",
+      "\002\022\n\n\006MODEL4\020\003\022\n\n\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n" +
+      "\006MODEL7\020\006\"z\n\tPollField\022\020\n\010imageurl\030\001 \001(\t" +
+      "\022\017\n\007orderid\030\002 \001(\r\022\n\n\002id\030\003 \001(\r\022\017\n\007clicked" +
+      "\030\004 \001(\010\022\013\n\003sum\030\005 \001(\004\022\021\n\tclickable\030\006 \001(\010\022\r" +
+      "\n\005label\030\007 \001(\t\"x\n\004Poll\022.\n\005model\030\001 \001(\0162\037.p" +
+      "roto.Discovery.DiscoveryModel\022\r\n\005scale\030\002" +
+      " \001(\t\022\013\n\003max\030\003 \001(\r\022$\n\npollfields\030\004 \003(\0132\020." +
+      "proto.PollField\";\n\rIVandActivity\022\r\n\005titl" +
+      "e\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004time\030\003 \001(\r\"\222\002\n" +
+      "\007MplSale\022\026\n\016invoice_number\030\001 \001(\004\022\024\n\014from",
+      "_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001(\004\022\024\n\014trace_" +
+      "number\030\004 \001(\003\022\020\n\010pay_time\030\005 \001(\r\022\023\n\013descri" +
+      "ption\030\006 \001(\t\022\023\n\013card_number\030\007 \001(\t\022\013\n\003rrn\030" +
+      "\010 \001(\003\022%\n\006status\030\t \001(\0162\025.proto.MplSale.St" +
+      "atus\"C\n\006Status\022\022\n\016PENDING_VERIFY\020\000\022\013\n\007SU" +
+      "CCESS\020\001\022\n\n\006FAILED\020\002\022\014\n\010REVERSED\020\003\"\313\n\n\016Mp" +
+      "lTransaction\022\020\n\010order_id\030\001 \001(\004\022\r\n\005token\030" +
+      "\002 \001(\t\022\020\n\010pay_time\030\003 \001(\r\022(\n\004type\030\004 \001(\0162\032." +
+      "proto.MplTransaction.Type\022(\n\004bill\030\005 \001(\0132" +
+      "\032.proto.MplTransaction.Bill\022*\n\005topup\030\006 \001",
+      "(\0132\033.proto.MplTransaction.Topup\022*\n\005sales" +
+      "\030\007 \001(\0132\033.proto.MplTransaction.Sales\0224\n\nc" +
+      "ardtocard\030\010 \001(\0132 .proto.MplTransaction.C" +
+      "ardToCard\032\370\001\n\004Bill\022\016\n\006BillId\030\001 \001(\t\022\r\n\005Pa" +
+      "yId\030\002 \001(\t\022\020\n\010BillType\030\003 \001(\t\022\016\n\006Status\030\004 " +
+      "\001(\r\022\016\n\006Amount\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t\022" +
+      "\024\n\014MerchantName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027" +
+      "\n\017RequestDateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021" +
+      "StatusDescription\030\013 \001(\t\022\022\n\nTerminalNo\030\014 " +
+      "\001(\r\022\017\n\007TraceNo\030\r \001(\r\032\226\002\n\005Topup\022\035\n\025Reques",
+      "terMobileNumber\030\001 \001(\004\022\032\n\022ChargeMobileNum" +
+      "ber\030\002 \001(\004\022\021\n\tTopupType\030\003 \001(\r\022\016\n\006Status\030\004" +
+      " \001(\r\022\016\n\006Amount\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t" +
+      "\022\024\n\014MerchantName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022" +
+      "\027\n\017RequestDateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n" +
+      "\021StatusDescription\030\013 \001(\t\022\022\n\nTerminalNo\030\014" +
+      " \001(\r\022\017\n\007TraceNo\030\r \001(\r\032\310\001\n\005Sales\022\016\n\006Statu" +
+      "s\030\001 \001(\r\022\016\n\006Amount\030\002 \001(\004\022\022\n\nCardNumber\030\003 " +
+      "\001(\t\022\024\n\014MerchantName\030\004 \001(\t\022\017\n\007OrderId\030\005 \001" +
+      "(\004\022\027\n\017RequestDateTime\030\006 \001(\004\022\013\n\003RRN\030\007 \001(\004",
+      "\022\031\n\021StatusDescription\030\010 \001(\t\022\022\n\nTerminalN" +
+      "o\030\t \001(\r\022\017\n\007TraceNo\030\n \001(\r\032\200\002\n\nCardToCard\022" +
+      "\016\n\006Status\030\001 \001(\r\022\016\n\006Amount\030\002 \001(\004\022\030\n\020Sourc" +
+      "eCardNumber\030\003 \001(\t\022\026\n\016DestCardNumber\030\004 \001(" +
+      "\t\022\020\n\010BankName\030\005 \001(\t\022\024\n\014DestBankName\030\006 \001(" +
+      "\t\022\025\n\rCardOwnerName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(" +
+      "\004\022\027\n\017RequestDateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022" +
+      "\031\n\021StatusDescription\030\013 \001(\t\022\017\n\007TraceNo\030\r " +
+      "\001(\r\"B\n\004Type\022\010\n\004NONE\020\000\022\010\n\004BILL\020\001\022\t\n\005TOPUP" +
+      "\020\002\022\t\n\005SALES\020\003\022\020\n\014CARD_TO_CARD\020\004*+\n\006Gende",
+      "r\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002*<\n\006" +
+      "Device\022\022\n\016UNKNOWN_DEVICE\020\000\022\006\n\002PC\020\001\022\n\n\006TA" +
+      "BLET\020\002\022\n\n\006MOBILE\020\003*k\n\010Platform\022\024\n\020UNKNOW" +
+      "N_PLATFORM\020\000\022\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002\022\n\n\006MA" +
+      "C_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005LINUX\020\005\022\017\n\013BLACK_" +
+      "BERRY\020\006* \n\010Language\022\t\n\005EN_US\020\000\022\t\n\005FA_IR\020" +
+      "\001*\344\001\n\017RoomMessageType\022\010\n\004TEXT\020\000\022\t\n\005IMAGE" +
+      "\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005VIDEO\020\003\022\016\n\nVIDEO_T" +
+      "EXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUDIO_TEXT\020\006\022\t\n\005VOIC" +
+      "E\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEXT\020\016\022\010\n\004FILE\020\t\022\r\n\t",
+      "FILE_TEXT\020\n\022\014\n\010LOCATION\020\013\022\007\n\003LOG\020\014\022\013\n\007CO" +
+      "NTACT\020\r\022\n\n\006WALLET\020\017\022\013\n\007STICKER\020\020*]\n\021Room" +
+      "MessageStatus\022\n\n\006FAILED\020\000\022\013\n\007SENDING\020\001\022\010" +
+      "\n\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LIS" +
+      "TENED\020\005*5\n\023RoomMessageReaction\022\r\n\tTHUMBS" +
+      "_UP\020\000\022\017\n\013THUMBS_DOWN\020\001*\244\002\n\014ClientAction\022" +
+      "\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\rSENDING_IMAGE" +
+      "\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\rSENDING_VIDEO" +
+      "\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\rSENDING_AUDIO" +
+      "\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\rSENDING_VOICE",
+      "\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n\013SENDING_GIF\020" +
+      "\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SENDING_LOCATION\020" +
+      "\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010PAINTING\020\016* \n" +
+      "\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013Priv" +
+      "acyType\022\017\n\013USER_STATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014" +
+      "GROUP_INVITE\020\002\022\022\n\016CHANNEL_INVITE\020\003\022\021\n\rVO" +
+      "ICE_CALLING\020\004\022\021\n\rVIDEO_CALLING\020\005\022\022\n\016SCRE" +
+      "EN_SHARING\020\006\022\017\n\013SECRET_CHAT\020\007*?\n\014Privacy" +
+      "Level\022\r\n\tALLOW_ALL\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016AL" +
+      "LOW_CONTACTS\020\002B\035\n\016net.iGap.protoB\013ProtoG",
+      "lobalb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
