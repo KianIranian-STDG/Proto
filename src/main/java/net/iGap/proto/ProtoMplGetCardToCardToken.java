@@ -30,6 +30,11 @@ public final class ProtoMplGetCardToCardToken {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
+
+    /**
+     * <code>optional uint64 to_user_id = 2;</code>
+     */
+    long getToUserId();
   }
   /**
    * Protobuf type {@code proto.MplGetCardToCardToken}
@@ -43,6 +48,7 @@ public final class ProtoMplGetCardToCardToken {
       super(builder);
     }
     private MplGetCardToCardToken() {
+      toUserId_ = 0L;
     }
 
     @java.lang.Override
@@ -81,6 +87,11 @@ public final class ProtoMplGetCardToCardToken {
                 request_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 16: {
+
+              toUserId_ = input.readUInt64();
               break;
             }
           }
@@ -127,6 +138,15 @@ public final class ProtoMplGetCardToCardToken {
       return getRequest();
     }
 
+    public static final int TO_USER_ID_FIELD_NUMBER = 2;
+    private long toUserId_;
+    /**
+     * <code>optional uint64 to_user_id = 2;</code>
+     */
+    public long getToUserId() {
+      return toUserId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -142,6 +162,9 @@ public final class ProtoMplGetCardToCardToken {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
+      if (toUserId_ != 0L) {
+        output.writeUInt64(2, toUserId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -152,6 +175,10 @@ public final class ProtoMplGetCardToCardToken {
       if (request_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
+      }
+      if (toUserId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, toUserId_);
       }
       memoizedSize = size;
       return size;
@@ -174,6 +201,8 @@ public final class ProtoMplGetCardToCardToken {
         result = result && getRequest()
             .equals(other.getRequest());
       }
+      result = result && (getToUserId()
+          == other.getToUserId());
       return result;
     }
 
@@ -188,6 +217,9 @@ public final class ProtoMplGetCardToCardToken {
         hash = (37 * hash) + REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getRequest().hashCode();
       }
+      hash = (37 * hash) + TO_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getToUserId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,6 +344,8 @@ public final class ProtoMplGetCardToCardToken {
           request_ = null;
           requestBuilder_ = null;
         }
+        toUserId_ = 0L;
+
         return this;
       }
 
@@ -339,6 +373,7 @@ public final class ProtoMplGetCardToCardToken {
         } else {
           result.request_ = requestBuilder_.build();
         }
+        result.toUserId_ = toUserId_;
         onBuilt();
         return result;
       }
@@ -382,6 +417,9 @@ public final class ProtoMplGetCardToCardToken {
         if (other == net.iGap.proto.ProtoMplGetCardToCardToken.MplGetCardToCardToken.getDefaultInstance()) return this;
         if (other.hasRequest()) {
           mergeRequest(other.getRequest());
+        }
+        if (other.getToUserId() != 0L) {
+          setToUserId(other.getToUserId());
         }
         onChanged();
         return this;
@@ -524,6 +562,32 @@ public final class ProtoMplGetCardToCardToken {
           request_ = null;
         }
         return requestBuilder_;
+      }
+
+      private long toUserId_ ;
+      /**
+       * <code>optional uint64 to_user_id = 2;</code>
+       */
+      public long getToUserId() {
+        return toUserId_;
+      }
+      /**
+       * <code>optional uint64 to_user_id = 2;</code>
+       */
+      public Builder setToUserId(long value) {
+        
+        toUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 to_user_id = 2;</code>
+       */
+      public Builder clearToUserId() {
+        
+        toUserId_ = 0L;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1554,13 +1618,14 @@ public final class ProtoMplGetCardToCardToken {
   static {
     java.lang.String[] descriptorData = {
       "\n\033MplGetCardToCardToken.proto\022\005proto\032\rRe" +
-      "quest.proto\032\016Response.proto\"8\n\025MplGetCar" +
+      "quest.proto\032\016Response.proto\"L\n\025MplGetCar" +
       "dToCardToken\022\037\n\007request\030\001 \001(\0132\016.proto.Re" +
-      "quest\"\207\001\n\035MplGetCardToCardTokenResponse\022" +
-      "!\n\010response\030\001 \001(\0132\017.proto.Response\022\016\n\006st" +
-      "atus\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\023\n\013expire_time" +
-      "\030\004 \001(\r\022\017\n\007message\030\005 \001(\tB,\n\016net.iGap.prot" +
-      "oB\032ProtoMplGetCardToCardTokenb\006proto3"
+      "quest\022\022\n\nto_user_id\030\002 \001(\004\"\207\001\n\035MplGetCard" +
+      "ToCardTokenResponse\022!\n\010response\030\001 \001(\0132\017." +
+      "proto.Response\022\016\n\006status\030\002 \001(\r\022\r\n\005token\030" +
+      "\003 \001(\t\022\023\n\013expire_time\030\004 \001(\r\022\017\n\007message\030\005 " +
+      "\001(\tB,\n\016net.iGap.protoB\032ProtoMplGetCardTo" +
+      "CardTokenb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1581,7 +1646,7 @@ public final class ProtoMplGetCardToCardToken {
     internal_static_proto_MplGetCardToCardToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplGetCardToCardToken_descriptor,
-        new java.lang.String[] { "Request", });
+        new java.lang.String[] { "Request", "ToUserId", });
     internal_static_proto_MplGetCardToCardTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_MplGetCardToCardTokenResponse_fieldAccessorTable = new
