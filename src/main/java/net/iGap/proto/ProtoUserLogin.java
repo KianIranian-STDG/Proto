@@ -117,6 +117,11 @@ public final class ProtoUserLogin {
      * <code>optional .proto.Language language = 11;</code>
      */
     net.iGap.proto.ProtoGlobal.Language getLanguage();
+
+    /**
+     * <code>optional bytes symmetric_key = 12;</code>
+     */
+    com.google.protobuf.ByteString getSymmetricKey();
   }
   /**
    * Protobuf type {@code proto.UserLogin}
@@ -140,6 +145,7 @@ public final class ProtoUserLogin {
       device_ = 0;
       deviceName_ = "";
       language_ = 0;
+      symmetricKey_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -236,6 +242,11 @@ public final class ProtoUserLogin {
               int rawValue = input.readEnum();
 
               language_ = rawValue;
+              break;
+            }
+            case 98: {
+
+              symmetricKey_ = input.readBytes();
               break;
             }
           }
@@ -518,6 +529,15 @@ public final class ProtoUserLogin {
       return result == null ? net.iGap.proto.ProtoGlobal.Language.UNRECOGNIZED : result;
     }
 
+    public static final int SYMMETRIC_KEY_FIELD_NUMBER = 12;
+    private com.google.protobuf.ByteString symmetricKey_;
+    /**
+     * <code>optional bytes symmetric_key = 12;</code>
+     */
+    public com.google.protobuf.ByteString getSymmetricKey() {
+      return symmetricKey_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -562,6 +582,9 @@ public final class ProtoUserLogin {
       }
       if (language_ != net.iGap.proto.ProtoGlobal.Language.EN_US.getNumber()) {
         output.writeEnum(11, language_);
+      }
+      if (!symmetricKey_.isEmpty()) {
+        output.writeBytes(12, symmetricKey_);
       }
     }
 
@@ -609,6 +632,10 @@ public final class ProtoUserLogin {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, language_);
       }
+      if (!symmetricKey_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, symmetricKey_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -647,6 +674,8 @@ public final class ProtoUserLogin {
       result = result && getDeviceName()
           .equals(other.getDeviceName());
       result = result && language_ == other.language_;
+      result = result && getSymmetricKey()
+          .equals(other.getSymmetricKey());
       return result;
     }
 
@@ -681,6 +710,8 @@ public final class ProtoUserLogin {
       hash = (53 * hash) + getDeviceName().hashCode();
       hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
       hash = (53 * hash) + language_;
+      hash = (37 * hash) + SYMMETRIC_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getSymmetricKey().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -825,6 +856,8 @@ public final class ProtoUserLogin {
 
         language_ = 0;
 
+        symmetricKey_ = com.google.protobuf.ByteString.EMPTY;
+
         return this;
       }
 
@@ -862,6 +895,7 @@ public final class ProtoUserLogin {
         result.device_ = device_;
         result.deviceName_ = deviceName_;
         result.language_ = language_;
+        result.symmetricKey_ = symmetricKey_;
         onBuilt();
         return result;
       }
@@ -940,6 +974,9 @@ public final class ProtoUserLogin {
         }
         if (other.language_ != 0) {
           setLanguageValue(other.getLanguageValue());
+        }
+        if (other.getSymmetricKey() != com.google.protobuf.ByteString.EMPTY) {
+          setSymmetricKey(other.getSymmetricKey());
         }
         onChanged();
         return this;
@@ -1609,6 +1646,35 @@ public final class ProtoUserLogin {
       public Builder clearLanguage() {
         
         language_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString symmetricKey_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes symmetric_key = 12;</code>
+       */
+      public com.google.protobuf.ByteString getSymmetricKey() {
+        return symmetricKey_;
+      }
+      /**
+       * <code>optional bytes symmetric_key = 12;</code>
+       */
+      public Builder setSymmetricKey(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        symmetricKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes symmetric_key = 12;</code>
+       */
+      public Builder clearSymmetricKey() {
+        
+        symmetricKey_ = getDefaultInstance().getSymmetricKey();
         onChanged();
         return this;
       }
@@ -3035,7 +3101,7 @@ public final class ProtoUserLogin {
   static {
     java.lang.String[] descriptorData = {
       "\n\017UserLogin.proto\022\005proto\032\rRequest.proto\032" +
-      "\016Response.proto\032\014Global.proto\"\241\002\n\tUserLo" +
+      "\016Response.proto\032\014Global.proto\"\270\002\n\tUserLo" +
       "gin\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\r\n\005" +
       "token\030\002 \001(\t\022\020\n\010app_name\030\003 \001(\t\022\016\n\006app_id\030" +
       "\004 \001(\r\022\031\n\021app_build_version\030\005 \001(\r\022\023\n\013app_" +
@@ -3043,15 +3109,16 @@ public final class ProtoUserLogin {
       "Platform\022\030\n\020platform_version\030\010 \001(\t\022\035\n\006de" +
       "vice\030\t \001(\0162\r.proto.Device\022\023\n\013device_name" +
       "\030\n \001(\t\022!\n\010language\030\013 \001(\0162\017.proto.Languag" +
-      "e\"\257\002\n\021UserLoginResponse\022!\n\010response\030\001 \001(",
-      "\0132\017.proto.Response\022\031\n\021deprecated_client\030" +
-      "\002 \001(\010\022\033\n\023secondary_node_name\030\003 \001(\t\022\030\n\020up" +
-      "date_available\030\004 \001(\010\022+\n#chat_delete_mess" +
-      "age_for_both_period\030\005 \001(\r\022\025\n\rwallet_acti" +
-      "ve\030\006 \001(\010\022\022\n\nmpl_active\030\007 \001(\010\022!\n\031wallet_a" +
-      "greement_accepted\030\010 \001(\010\022\024\n\014access_token\030" +
-      "\t \001(\t\022\024\n\014contact_hash\030\n \001(\tB \n\016net.iGap." +
-      "protoB\016ProtoUserLoginb\006proto3"
+      "e\022\025\n\rsymmetric_key\030\014 \001(\014\"\257\002\n\021UserLoginRe",
+      "sponse\022!\n\010response\030\001 \001(\0132\017.proto.Respons" +
+      "e\022\031\n\021deprecated_client\030\002 \001(\010\022\033\n\023secondar" +
+      "y_node_name\030\003 \001(\t\022\030\n\020update_available\030\004 " +
+      "\001(\010\022+\n#chat_delete_message_for_both_peri" +
+      "od\030\005 \001(\r\022\025\n\rwallet_active\030\006 \001(\010\022\022\n\nmpl_a" +
+      "ctive\030\007 \001(\010\022!\n\031wallet_agreement_accepted" +
+      "\030\010 \001(\010\022\024\n\014access_token\030\t \001(\t\022\024\n\014contact_" +
+      "hash\030\n \001(\tB \n\016net.iGap.protoB\016ProtoUserL" +
+      "oginb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3073,7 +3140,7 @@ public final class ProtoUserLogin {
     internal_static_proto_UserLogin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserLogin_descriptor,
-        new java.lang.String[] { "Request", "Token", "AppName", "AppId", "AppBuildVersion", "AppVersion", "Platform", "PlatformVersion", "Device", "DeviceName", "Language", });
+        new java.lang.String[] { "Request", "Token", "AppName", "AppId", "AppBuildVersion", "AppVersion", "Platform", "PlatformVersion", "Device", "DeviceName", "Language", "SymmetricKey", });
     internal_static_proto_UserLoginResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_UserLoginResponse_fieldAccessorTable = new
