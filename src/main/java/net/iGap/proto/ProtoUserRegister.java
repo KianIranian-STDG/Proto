@@ -54,6 +54,11 @@ public final class ProtoUserRegister {
      * <code>optional .proto.UserRegister.PreferenceMethod preference_method = 4;</code>
      */
     net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod getPreferenceMethod();
+
+    /**
+     * <code>optional uint32 app_id = 5;</code>
+     */
+    int getAppId();
   }
   /**
    * Protobuf type {@code proto.UserRegister}
@@ -70,6 +75,7 @@ public final class ProtoUserRegister {
       phoneNumber_ = 0L;
       countryCode_ = "";
       preferenceMethod_ = 0;
+      appId_ = 0;
     }
 
     @java.lang.Override
@@ -125,6 +131,11 @@ public final class ProtoUserRegister {
               int rawValue = input.readEnum();
 
               preferenceMethod_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              appId_ = input.readUInt32();
               break;
             }
           }
@@ -337,6 +348,15 @@ public final class ProtoUserRegister {
       return result == null ? net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.UNRECOGNIZED : result;
     }
 
+    public static final int APP_ID_FIELD_NUMBER = 5;
+    private int appId_;
+    /**
+     * <code>optional uint32 app_id = 5;</code>
+     */
+    public int getAppId() {
+      return appId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -361,6 +381,9 @@ public final class ProtoUserRegister {
       if (preferenceMethod_ != net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.VERIFY_CODE_AUTO.getNumber()) {
         output.writeEnum(4, preferenceMethod_);
       }
+      if (appId_ != 0) {
+        output.writeUInt32(5, appId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -382,6 +405,10 @@ public final class ProtoUserRegister {
       if (preferenceMethod_ != net.iGap.proto.ProtoUserRegister.UserRegister.PreferenceMethod.VERIFY_CODE_AUTO.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, preferenceMethod_);
+      }
+      if (appId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, appId_);
       }
       memoizedSize = size;
       return size;
@@ -409,6 +436,8 @@ public final class ProtoUserRegister {
       result = result && getCountryCode()
           .equals(other.getCountryCode());
       result = result && preferenceMethod_ == other.preferenceMethod_;
+      result = result && (getAppId()
+          == other.getAppId());
       return result;
     }
 
@@ -430,6 +459,8 @@ public final class ProtoUserRegister {
       hash = (53 * hash) + getCountryCode().hashCode();
       hash = (37 * hash) + PREFERENCE_METHOD_FIELD_NUMBER;
       hash = (53 * hash) + preferenceMethod_;
+      hash = (37 * hash) + APP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAppId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -560,6 +591,8 @@ public final class ProtoUserRegister {
 
         preferenceMethod_ = 0;
 
+        appId_ = 0;
+
         return this;
       }
 
@@ -590,6 +623,7 @@ public final class ProtoUserRegister {
         result.phoneNumber_ = phoneNumber_;
         result.countryCode_ = countryCode_;
         result.preferenceMethod_ = preferenceMethod_;
+        result.appId_ = appId_;
         onBuilt();
         return result;
       }
@@ -643,6 +677,9 @@ public final class ProtoUserRegister {
         }
         if (other.preferenceMethod_ != 0) {
           setPreferenceMethodValue(other.getPreferenceMethodValue());
+        }
+        if (other.getAppId() != 0) {
+          setAppId(other.getAppId());
         }
         onChanged();
         return this;
@@ -922,6 +959,32 @@ public final class ProtoUserRegister {
       public Builder clearPreferenceMethod() {
         
         preferenceMethod_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int appId_ ;
+      /**
+       * <code>optional uint32 app_id = 5;</code>
+       */
+      public int getAppId() {
+        return appId_;
+      }
+      /**
+       * <code>optional uint32 app_id = 5;</code>
+       */
+      public Builder setAppId(int value) {
+        
+        appId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 app_id = 5;</code>
+       */
+      public Builder clearAppId() {
+        
+        appId_ = 0;
         onChanged();
         return this;
       }
@@ -2604,24 +2667,25 @@ public final class ProtoUserRegister {
   static {
     java.lang.String[] descriptorData = {
       "\n\022UserRegister.proto\022\005proto\032\rRequest.pro" +
-      "to\032\016Response.proto\"\361\001\n\014UserRegister\022\037\n\007r" +
+      "to\032\016Response.proto\"\201\002\n\014UserRegister\022\037\n\007r" +
       "equest\030\001 \001(\0132\016.proto.Request\022\024\n\014phone_nu" +
       "mber\030\002 \001(\004\022\024\n\014country_code\030\003 \001(\t\022?\n\021pref" +
       "erence_method\030\004 \001(\0162$.proto.UserRegister" +
-      ".PreferenceMethod\"S\n\020PreferenceMethod\022\024\n" +
-      "\020VERIFY_CODE_AUTO\020\000\022\023\n\017VERIFY_CODE_SMS\020\001" +
-      "\022\024\n\020VERIFY_CODE_CALL\020\002\"\223\003\n\024UserRegisterR" +
-      "esponse\022!\n\010response\030\001 \001(\0132\017.proto.Respon" +
-      "se\022\020\n\010username\030\002 \001(\t\022\017\n\007user_id\030\003 \001(\004\022\023\n",
-      "\013author_hash\030\004 \001(\t\0222\n\006method\030\005 \001(\0162\".pro" +
-      "to.UserRegisterResponse.Method\022\024\n\014resend" +
-      "_delay\030\006 \001(\r\022\022\n\nsms_number\030\007 \003(\004\022\031\n\021veri" +
-      "fy_code_regex\030\010 \001(\t\022\037\n\027verify_code_digit" +
-      "_count\030\t \001(\r\022\035\n\025call_method_supported\030\n " +
-      "\001(\010\"g\n\006Method\022\023\n\017VERIFY_CODE_SMS\020\000\022\026\n\022VE" +
-      "RIFY_CODE_SOCKET\020\001\022\032\n\026VERIFY_CODE_SMS_SO" +
-      "CKET\020\002\022\024\n\020VERIFY_CODE_CALL\020\003B#\n\016net.iGap" +
-      ".protoB\021ProtoUserRegisterb\006proto3"
+      ".PreferenceMethod\022\016\n\006app_id\030\005 \001(\r\"S\n\020Pre" +
+      "ferenceMethod\022\024\n\020VERIFY_CODE_AUTO\020\000\022\023\n\017V" +
+      "ERIFY_CODE_SMS\020\001\022\024\n\020VERIFY_CODE_CALL\020\002\"\223" +
+      "\003\n\024UserRegisterResponse\022!\n\010response\030\001 \001(" +
+      "\0132\017.proto.Response\022\020\n\010username\030\002 \001(\t\022\017\n\007",
+      "user_id\030\003 \001(\004\022\023\n\013author_hash\030\004 \001(\t\0222\n\006me" +
+      "thod\030\005 \001(\0162\".proto.UserRegisterResponse." +
+      "Method\022\024\n\014resend_delay\030\006 \001(\r\022\022\n\nsms_numb" +
+      "er\030\007 \003(\004\022\031\n\021verify_code_regex\030\010 \001(\t\022\037\n\027v" +
+      "erify_code_digit_count\030\t \001(\r\022\035\n\025call_met" +
+      "hod_supported\030\n \001(\010\"g\n\006Method\022\023\n\017VERIFY_" +
+      "CODE_SMS\020\000\022\026\n\022VERIFY_CODE_SOCKET\020\001\022\032\n\026VE" +
+      "RIFY_CODE_SMS_SOCKET\020\002\022\024\n\020VERIFY_CODE_CA" +
+      "LL\020\003B#\n\016net.iGap.protoB\021ProtoUserRegiste" +
+      "rb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2642,7 +2706,7 @@ public final class ProtoUserRegister {
     internal_static_proto_UserRegister_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserRegister_descriptor,
-        new java.lang.String[] { "Request", "PhoneNumber", "CountryCode", "PreferenceMethod", });
+        new java.lang.String[] { "Request", "PhoneNumber", "CountryCode", "PreferenceMethod", "AppId", });
     internal_static_proto_UserRegisterResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_UserRegisterResponse_fieldAccessorTable = new

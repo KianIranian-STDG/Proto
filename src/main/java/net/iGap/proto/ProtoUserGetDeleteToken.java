@@ -30,6 +30,11 @@ public final class ProtoUserGetDeleteToken {
      * <code>optional .proto.Request request = 1;</code>
      */
     net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
+
+    /**
+     * <code>optional uint32 app_id = 2;</code>
+     */
+    int getAppId();
   }
   /**
    * Protobuf type {@code proto.UserGetDeleteToken}
@@ -43,6 +48,7 @@ public final class ProtoUserGetDeleteToken {
       super(builder);
     }
     private UserGetDeleteToken() {
+      appId_ = 0;
     }
 
     @java.lang.Override
@@ -81,6 +87,11 @@ public final class ProtoUserGetDeleteToken {
                 request_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 16: {
+
+              appId_ = input.readUInt32();
               break;
             }
           }
@@ -127,6 +138,15 @@ public final class ProtoUserGetDeleteToken {
       return getRequest();
     }
 
+    public static final int APP_ID_FIELD_NUMBER = 2;
+    private int appId_;
+    /**
+     * <code>optional uint32 app_id = 2;</code>
+     */
+    public int getAppId() {
+      return appId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -142,6 +162,9 @@ public final class ProtoUserGetDeleteToken {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
+      if (appId_ != 0) {
+        output.writeUInt32(2, appId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -152,6 +175,10 @@ public final class ProtoUserGetDeleteToken {
       if (request_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
+      }
+      if (appId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, appId_);
       }
       memoizedSize = size;
       return size;
@@ -174,6 +201,8 @@ public final class ProtoUserGetDeleteToken {
         result = result && getRequest()
             .equals(other.getRequest());
       }
+      result = result && (getAppId()
+          == other.getAppId());
       return result;
     }
 
@@ -188,6 +217,8 @@ public final class ProtoUserGetDeleteToken {
         hash = (37 * hash) + REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getRequest().hashCode();
       }
+      hash = (37 * hash) + APP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAppId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,6 +343,8 @@ public final class ProtoUserGetDeleteToken {
           request_ = null;
           requestBuilder_ = null;
         }
+        appId_ = 0;
+
         return this;
       }
 
@@ -339,6 +372,7 @@ public final class ProtoUserGetDeleteToken {
         } else {
           result.request_ = requestBuilder_.build();
         }
+        result.appId_ = appId_;
         onBuilt();
         return result;
       }
@@ -382,6 +416,9 @@ public final class ProtoUserGetDeleteToken {
         if (other == net.iGap.proto.ProtoUserGetDeleteToken.UserGetDeleteToken.getDefaultInstance()) return this;
         if (other.hasRequest()) {
           mergeRequest(other.getRequest());
+        }
+        if (other.getAppId() != 0) {
+          setAppId(other.getAppId());
         }
         onChanged();
         return this;
@@ -524,6 +561,32 @@ public final class ProtoUserGetDeleteToken {
           request_ = null;
         }
         return requestBuilder_;
+      }
+
+      private int appId_ ;
+      /**
+       * <code>optional uint32 app_id = 2;</code>
+       */
+      public int getAppId() {
+        return appId_;
+      }
+      /**
+       * <code>optional uint32 app_id = 2;</code>
+       */
+      public Builder setAppId(int value) {
+        
+        appId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 app_id = 2;</code>
+       */
+      public Builder clearAppId() {
+        
+        appId_ = 0;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1668,14 +1731,14 @@ public final class ProtoUserGetDeleteToken {
   static {
     java.lang.String[] descriptorData = {
       "\n\030UserGetDeleteToken.proto\022\005proto\032\rReque" +
-      "st.proto\032\016Response.proto\"5\n\022UserGetDelet" +
-      "eToken\022\037\n\007request\030\001 \001(\0132\016.proto.Request\"" +
-      "\224\001\n\032UserGetDeleteTokenResponse\022!\n\010respon" +
-      "se\030\001 \001(\0132\017.proto.Response\022\024\n\014resend_dela" +
-      "y\030\002 \001(\r\022\022\n\nsms_number\030\003 \003(\004\022\023\n\013token_reg" +
-      "ex\030\004 \001(\t\022\024\n\014token_length\030\005 \001(\tB)\n\016net.iG" +
-      "ap.protoB\027ProtoUserGetDeleteTokenb\006proto" +
-      "3"
+      "st.proto\032\016Response.proto\"E\n\022UserGetDelet" +
+      "eToken\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022" +
+      "\016\n\006app_id\030\002 \001(\r\"\224\001\n\032UserGetDeleteTokenRe" +
+      "sponse\022!\n\010response\030\001 \001(\0132\017.proto.Respons" +
+      "e\022\024\n\014resend_delay\030\002 \001(\r\022\022\n\nsms_number\030\003 " +
+      "\003(\004\022\023\n\013token_regex\030\004 \001(\t\022\024\n\014token_length" +
+      "\030\005 \001(\tB)\n\016net.iGap.protoB\027ProtoUserGetDe" +
+      "leteTokenb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1696,7 +1759,7 @@ public final class ProtoUserGetDeleteToken {
     internal_static_proto_UserGetDeleteToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserGetDeleteToken_descriptor,
-        new java.lang.String[] { "Request", });
+        new java.lang.String[] { "Request", "AppId", });
     internal_static_proto_UserGetDeleteTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_UserGetDeleteTokenResponse_fieldAccessorTable = new
