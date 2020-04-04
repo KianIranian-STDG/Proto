@@ -23374,6 +23374,19 @@ public final class ProtoGlobal {
      * <code>optional uint32 app_id = 19;</code>
      */
     int getAppId();
+
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    boolean hasPermission();
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomAccess getPermission();
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder();
   }
   /**
    * Protobuf type {@code proto.Room}
@@ -23580,6 +23593,19 @@ public final class ProtoGlobal {
             case 152: {
 
               appId_ = input.readUInt32();
+              break;
+            }
+            case 162: {
+              net.iGap.proto.ProtoGlobal.RoomAccess.Builder subBuilder = null;
+              if (permission_ != null) {
+                subBuilder = permission_.toBuilder();
+              }
+              permission_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomAccess.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(permission_);
+                permission_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -24056,6 +24082,27 @@ public final class ProtoGlobal {
       return appId_;
     }
 
+    public static final int PERMISSION_FIELD_NUMBER = 20;
+    private net.iGap.proto.ProtoGlobal.RoomAccess permission_;
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    public boolean hasPermission() {
+      return permission_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+      return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 20;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder() {
+      return getPermission();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -24124,6 +24171,9 @@ public final class ProtoGlobal {
       }
       if (appId_ != 0) {
         output.writeUInt32(19, appId_);
+      }
+      if (permission_ != null) {
+        output.writeMessage(20, getPermission());
       }
     }
 
@@ -24205,6 +24255,10 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(19, appId_);
       }
+      if (permission_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(20, getPermission());
+      }
       memoizedSize = size;
       return size;
     }
@@ -24278,6 +24332,11 @@ public final class ProtoGlobal {
       }
       result = result && (getAppId()
           == other.getAppId());
+      result = result && (hasPermission() == other.hasPermission());
+      if (hasPermission()) {
+        result = result && getPermission()
+            .equals(other.getPermission());
+      }
       return result;
     }
 
@@ -24344,6 +24403,10 @@ public final class ProtoGlobal {
       }
       hash = (37 * hash) + APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAppId();
+      if (hasPermission()) {
+        hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getPermission().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -24528,6 +24591,12 @@ public final class ProtoGlobal {
         }
         appId_ = 0;
 
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
         return this;
       }
 
@@ -24597,6 +24666,11 @@ public final class ProtoGlobal {
           result.channelRoomExtra_ = channelRoomExtraBuilder_.build();
         }
         result.appId_ = appId_;
+        if (permissionBuilder_ == null) {
+          result.permission_ = permission_;
+        } else {
+          result.permission_ = permissionBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -24697,6 +24771,9 @@ public final class ProtoGlobal {
         }
         if (other.getAppId() != 0) {
           setAppId(other.getAppId());
+        }
+        if (other.hasPermission()) {
+          mergePermission(other.getPermission());
         }
         onChanged();
         return this;
@@ -26018,6 +26095,123 @@ public final class ProtoGlobal {
         appId_ = 0;
         onChanged();
         return this;
+      }
+
+      private net.iGap.proto.ProtoGlobal.RoomAccess permission_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomAccess, net.iGap.proto.ProtoGlobal.RoomAccess.Builder, net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder> permissionBuilder_;
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public boolean hasPermission() {
+        return permissionBuilder_ != null || permission_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+        if (permissionBuilder_ == null) {
+          return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+        } else {
+          return permissionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public Builder setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        if (permissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          permission_ = value;
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public Builder setPermission(
+          net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
+        if (permissionBuilder_ == null) {
+          permission_ = builderForValue.build();
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public Builder mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        if (permissionBuilder_ == null) {
+          if (permission_ != null) {
+            permission_ =
+              net.iGap.proto.ProtoGlobal.RoomAccess.newBuilder(permission_).mergeFrom(value).buildPartial();
+          } else {
+            permission_ = value;
+          }
+          onChanged();
+        } else {
+          permissionBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public Builder clearPermission() {
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+          onChanged();
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccess.Builder getPermissionBuilder() {
+        
+        onChanged();
+        return getPermissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder() {
+        if (permissionBuilder_ != null) {
+          return permissionBuilder_.getMessageOrBuilder();
+        } else {
+          return permission_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 20;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomAccess, net.iGap.proto.ProtoGlobal.RoomAccess.Builder, net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder> 
+          getPermissionFieldBuilder() {
+        if (permissionBuilder_ == null) {
+          permissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomAccess, net.iGap.proto.ProtoGlobal.RoomAccess.Builder, net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder>(
+                  getPermission(),
+                  getParentForChildren(),
+                  isClean());
+          permission_ = null;
+        }
+        return permissionBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -35713,6 +35907,948 @@ public final class ProtoGlobal {
     }
 
     public net.iGap.proto.ProtoGlobal.File getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RoomAccessOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomAccess)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional bool modify_room = 1;</code>
+     */
+    boolean getModifyRoom();
+
+    /**
+     * <code>optional bool post_message = 2;</code>
+     */
+    boolean getPostMessage();
+
+    /**
+     * <code>optional bool edit_message = 3;</code>
+     */
+    boolean getEditMessage();
+
+    /**
+     * <code>optional bool delete_message = 4;</code>
+     */
+    boolean getDeleteMessage();
+
+    /**
+     * <code>optional bool pin_message = 5;</code>
+     */
+    boolean getPinMessage();
+
+    /**
+     * <code>optional bool add_member = 6;</code>
+     */
+    boolean getAddMember();
+
+    /**
+     * <code>optional bool ban_member = 7;</code>
+     */
+    boolean getBanMember();
+
+    /**
+     * <code>optional bool get_member = 8;</code>
+     */
+    boolean getGetMember();
+
+    /**
+     * <code>optional bool add_admin = 9;</code>
+     */
+    boolean getAddAdmin();
+  }
+  /**
+   * Protobuf type {@code proto.RoomAccess}
+   */
+  public  static final class RoomAccess extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.RoomAccess)
+      RoomAccessOrBuilder {
+    // Use RoomAccess.newBuilder() to construct.
+    private RoomAccess(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoomAccess() {
+      modifyRoom_ = false;
+      postMessage_ = false;
+      editMessage_ = false;
+      deleteMessage_ = false;
+      pinMessage_ = false;
+      addMember_ = false;
+      banMember_ = false;
+      getMember_ = false;
+      addAdmin_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RoomAccess(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              modifyRoom_ = input.readBool();
+              break;
+            }
+            case 16: {
+
+              postMessage_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              editMessage_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              deleteMessage_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              pinMessage_ = input.readBool();
+              break;
+            }
+            case 48: {
+
+              addMember_ = input.readBool();
+              break;
+            }
+            case 56: {
+
+              banMember_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              getMember_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              addAdmin_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomAccess_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomAccess_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.RoomAccess.class, net.iGap.proto.ProtoGlobal.RoomAccess.Builder.class);
+    }
+
+    public static final int MODIFY_ROOM_FIELD_NUMBER = 1;
+    private boolean modifyRoom_;
+    /**
+     * <code>optional bool modify_room = 1;</code>
+     */
+    public boolean getModifyRoom() {
+      return modifyRoom_;
+    }
+
+    public static final int POST_MESSAGE_FIELD_NUMBER = 2;
+    private boolean postMessage_;
+    /**
+     * <code>optional bool post_message = 2;</code>
+     */
+    public boolean getPostMessage() {
+      return postMessage_;
+    }
+
+    public static final int EDIT_MESSAGE_FIELD_NUMBER = 3;
+    private boolean editMessage_;
+    /**
+     * <code>optional bool edit_message = 3;</code>
+     */
+    public boolean getEditMessage() {
+      return editMessage_;
+    }
+
+    public static final int DELETE_MESSAGE_FIELD_NUMBER = 4;
+    private boolean deleteMessage_;
+    /**
+     * <code>optional bool delete_message = 4;</code>
+     */
+    public boolean getDeleteMessage() {
+      return deleteMessage_;
+    }
+
+    public static final int PIN_MESSAGE_FIELD_NUMBER = 5;
+    private boolean pinMessage_;
+    /**
+     * <code>optional bool pin_message = 5;</code>
+     */
+    public boolean getPinMessage() {
+      return pinMessage_;
+    }
+
+    public static final int ADD_MEMBER_FIELD_NUMBER = 6;
+    private boolean addMember_;
+    /**
+     * <code>optional bool add_member = 6;</code>
+     */
+    public boolean getAddMember() {
+      return addMember_;
+    }
+
+    public static final int BAN_MEMBER_FIELD_NUMBER = 7;
+    private boolean banMember_;
+    /**
+     * <code>optional bool ban_member = 7;</code>
+     */
+    public boolean getBanMember() {
+      return banMember_;
+    }
+
+    public static final int GET_MEMBER_FIELD_NUMBER = 8;
+    private boolean getMember_;
+    /**
+     * <code>optional bool get_member = 8;</code>
+     */
+    public boolean getGetMember() {
+      return getMember_;
+    }
+
+    public static final int ADD_ADMIN_FIELD_NUMBER = 9;
+    private boolean addAdmin_;
+    /**
+     * <code>optional bool add_admin = 9;</code>
+     */
+    public boolean getAddAdmin() {
+      return addAdmin_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (modifyRoom_ != false) {
+        output.writeBool(1, modifyRoom_);
+      }
+      if (postMessage_ != false) {
+        output.writeBool(2, postMessage_);
+      }
+      if (editMessage_ != false) {
+        output.writeBool(3, editMessage_);
+      }
+      if (deleteMessage_ != false) {
+        output.writeBool(4, deleteMessage_);
+      }
+      if (pinMessage_ != false) {
+        output.writeBool(5, pinMessage_);
+      }
+      if (addMember_ != false) {
+        output.writeBool(6, addMember_);
+      }
+      if (banMember_ != false) {
+        output.writeBool(7, banMember_);
+      }
+      if (getMember_ != false) {
+        output.writeBool(8, getMember_);
+      }
+      if (addAdmin_ != false) {
+        output.writeBool(9, addAdmin_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (modifyRoom_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, modifyRoom_);
+      }
+      if (postMessage_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, postMessage_);
+      }
+      if (editMessage_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, editMessage_);
+      }
+      if (deleteMessage_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, deleteMessage_);
+      }
+      if (pinMessage_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, pinMessage_);
+      }
+      if (addMember_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, addMember_);
+      }
+      if (banMember_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, banMember_);
+      }
+      if (getMember_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, getMember_);
+      }
+      if (addAdmin_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, addAdmin_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomAccess)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.RoomAccess other = (net.iGap.proto.ProtoGlobal.RoomAccess) obj;
+
+      boolean result = true;
+      result = result && (getModifyRoom()
+          == other.getModifyRoom());
+      result = result && (getPostMessage()
+          == other.getPostMessage());
+      result = result && (getEditMessage()
+          == other.getEditMessage());
+      result = result && (getDeleteMessage()
+          == other.getDeleteMessage());
+      result = result && (getPinMessage()
+          == other.getPinMessage());
+      result = result && (getAddMember()
+          == other.getAddMember());
+      result = result && (getBanMember()
+          == other.getBanMember());
+      result = result && (getGetMember()
+          == other.getGetMember());
+      result = result && (getAddAdmin()
+          == other.getAddAdmin());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + MODIFY_ROOM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getModifyRoom());
+      hash = (37 * hash) + POST_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPostMessage());
+      hash = (37 * hash) + EDIT_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEditMessage());
+      hash = (37 * hash) + DELETE_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDeleteMessage());
+      hash = (37 * hash) + PIN_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPinMessage());
+      hash = (37 * hash) + ADD_MEMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getAddMember());
+      hash = (37 * hash) + BAN_MEMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getBanMember());
+      hash = (37 * hash) + GET_MEMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getGetMember());
+      hash = (37 * hash) + ADD_ADMIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getAddAdmin());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomAccess parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomAccess prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.RoomAccess}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomAccess)
+        net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomAccess_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomAccess_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomAccess.class, net.iGap.proto.ProtoGlobal.RoomAccess.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.RoomAccess.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        modifyRoom_ = false;
+
+        postMessage_ = false;
+
+        editMessage_ = false;
+
+        deleteMessage_ = false;
+
+        pinMessage_ = false;
+
+        addMember_ = false;
+
+        banMember_ = false;
+
+        getMember_ = false;
+
+        addAdmin_ = false;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomAccess_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomAccess getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomAccess build() {
+        net.iGap.proto.ProtoGlobal.RoomAccess result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomAccess buildPartial() {
+        net.iGap.proto.ProtoGlobal.RoomAccess result = new net.iGap.proto.ProtoGlobal.RoomAccess(this);
+        result.modifyRoom_ = modifyRoom_;
+        result.postMessage_ = postMessage_;
+        result.editMessage_ = editMessage_;
+        result.deleteMessage_ = deleteMessage_;
+        result.pinMessage_ = pinMessage_;
+        result.addMember_ = addMember_;
+        result.banMember_ = banMember_;
+        result.getMember_ = getMember_;
+        result.addAdmin_ = addAdmin_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.RoomAccess) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.RoomAccess)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomAccess other) {
+        if (other == net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance()) return this;
+        if (other.getModifyRoom() != false) {
+          setModifyRoom(other.getModifyRoom());
+        }
+        if (other.getPostMessage() != false) {
+          setPostMessage(other.getPostMessage());
+        }
+        if (other.getEditMessage() != false) {
+          setEditMessage(other.getEditMessage());
+        }
+        if (other.getDeleteMessage() != false) {
+          setDeleteMessage(other.getDeleteMessage());
+        }
+        if (other.getPinMessage() != false) {
+          setPinMessage(other.getPinMessage());
+        }
+        if (other.getAddMember() != false) {
+          setAddMember(other.getAddMember());
+        }
+        if (other.getBanMember() != false) {
+          setBanMember(other.getBanMember());
+        }
+        if (other.getGetMember() != false) {
+          setGetMember(other.getGetMember());
+        }
+        if (other.getAddAdmin() != false) {
+          setAddAdmin(other.getAddAdmin());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.RoomAccess parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.RoomAccess) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean modifyRoom_ ;
+      /**
+       * <code>optional bool modify_room = 1;</code>
+       */
+      public boolean getModifyRoom() {
+        return modifyRoom_;
+      }
+      /**
+       * <code>optional bool modify_room = 1;</code>
+       */
+      public Builder setModifyRoom(boolean value) {
+        
+        modifyRoom_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool modify_room = 1;</code>
+       */
+      public Builder clearModifyRoom() {
+        
+        modifyRoom_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean postMessage_ ;
+      /**
+       * <code>optional bool post_message = 2;</code>
+       */
+      public boolean getPostMessage() {
+        return postMessage_;
+      }
+      /**
+       * <code>optional bool post_message = 2;</code>
+       */
+      public Builder setPostMessage(boolean value) {
+        
+        postMessage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool post_message = 2;</code>
+       */
+      public Builder clearPostMessage() {
+        
+        postMessage_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean editMessage_ ;
+      /**
+       * <code>optional bool edit_message = 3;</code>
+       */
+      public boolean getEditMessage() {
+        return editMessage_;
+      }
+      /**
+       * <code>optional bool edit_message = 3;</code>
+       */
+      public Builder setEditMessage(boolean value) {
+        
+        editMessage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool edit_message = 3;</code>
+       */
+      public Builder clearEditMessage() {
+        
+        editMessage_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean deleteMessage_ ;
+      /**
+       * <code>optional bool delete_message = 4;</code>
+       */
+      public boolean getDeleteMessage() {
+        return deleteMessage_;
+      }
+      /**
+       * <code>optional bool delete_message = 4;</code>
+       */
+      public Builder setDeleteMessage(boolean value) {
+        
+        deleteMessage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool delete_message = 4;</code>
+       */
+      public Builder clearDeleteMessage() {
+        
+        deleteMessage_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean pinMessage_ ;
+      /**
+       * <code>optional bool pin_message = 5;</code>
+       */
+      public boolean getPinMessage() {
+        return pinMessage_;
+      }
+      /**
+       * <code>optional bool pin_message = 5;</code>
+       */
+      public Builder setPinMessage(boolean value) {
+        
+        pinMessage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool pin_message = 5;</code>
+       */
+      public Builder clearPinMessage() {
+        
+        pinMessage_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean addMember_ ;
+      /**
+       * <code>optional bool add_member = 6;</code>
+       */
+      public boolean getAddMember() {
+        return addMember_;
+      }
+      /**
+       * <code>optional bool add_member = 6;</code>
+       */
+      public Builder setAddMember(boolean value) {
+        
+        addMember_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool add_member = 6;</code>
+       */
+      public Builder clearAddMember() {
+        
+        addMember_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean banMember_ ;
+      /**
+       * <code>optional bool ban_member = 7;</code>
+       */
+      public boolean getBanMember() {
+        return banMember_;
+      }
+      /**
+       * <code>optional bool ban_member = 7;</code>
+       */
+      public Builder setBanMember(boolean value) {
+        
+        banMember_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool ban_member = 7;</code>
+       */
+      public Builder clearBanMember() {
+        
+        banMember_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean getMember_ ;
+      /**
+       * <code>optional bool get_member = 8;</code>
+       */
+      public boolean getGetMember() {
+        return getMember_;
+      }
+      /**
+       * <code>optional bool get_member = 8;</code>
+       */
+      public Builder setGetMember(boolean value) {
+        
+        getMember_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool get_member = 8;</code>
+       */
+      public Builder clearGetMember() {
+        
+        getMember_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean addAdmin_ ;
+      /**
+       * <code>optional bool add_admin = 9;</code>
+       */
+      public boolean getAddAdmin() {
+        return addAdmin_;
+      }
+      /**
+       * <code>optional bool add_admin = 9;</code>
+       */
+      public Builder setAddAdmin(boolean value) {
+        
+        addAdmin_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool add_admin = 9;</code>
+       */
+      public Builder clearAddAdmin() {
+        
+        addAdmin_ = false;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomAccess)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.RoomAccess)
+    private static final net.iGap.proto.ProtoGlobal.RoomAccess DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomAccess();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomAccess getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoomAccess>
+        PARSER = new com.google.protobuf.AbstractParser<RoomAccess>() {
+      public RoomAccess parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomAccess(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomAccess> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomAccess> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.RoomAccess getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -52263,6 +53399,11 @@ public final class ProtoGlobal {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_File_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomAccess_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomAccess_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_Wallpaper_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -52447,7 +53588,7 @@ public final class ProtoGlobal {
       "s_down_label\030\004 \001(\t\",\n\tExtraType\022\014\n\010NO_EX" +
       "TRA\020\000\022\021\n\rCHANNEL_EXTRA\020\001\"B\n\tRoomDraft\022\017\n" +
       "\007message\030\001 \001(\t\022\020\n\010reply_to\030\002 \001(\004\022\022\n\ndraf" +
-      "t_time\030\003 \001(\r\"\322\004\n\004Room\022\n\n\002id\030\001 \001(\004\022\036\n\004typ" +
+      "t_time\030\003 \001(\r\"\371\004\n\004Room\022\n\n\002id\030\001 \001(\004\022\036\n\004typ" +
       "e\030\002 \001(\0162\020.proto.Room.Type\022\r\n\005title\030\003 \001(\t" +
       "\022\020\n\010initials\030\004 \001(\t\022\r\n\005color\030\005 \001(\t\022\024\n\014unr" +
       "ead_count\030\006 \001(\r\022(\n\014last_message\030\007 \001(\0132\022.",
@@ -52461,163 +53602,169 @@ public final class ProtoGlobal {
       "(\0132\017.proto.ChatRoom\022*\n\020group_room_extra\030" +
       "\014 \001(\0132\020.proto.GroupRoom\022.\n\022channel_room_" +
       "extra\030\r \001(\0132\022.proto.ChannelRoom\022\016\n\006app_i",
-      "d\030\023 \001(\r\"(\n\004Type\022\010\n\004CHAT\020\000\022\t\n\005GROUP\020\001\022\013\n\007" +
-      "CHANNEL\020\002\"/\n\010ChatRoom\022#\n\004peer\030\001 \001(\0132\025.pr" +
-      "oto.RegisteredUser\"\321\004\n\tGroupRoom\022#\n\004type" +
-      "\030\001 \001(\0162\025.proto.GroupRoom.Type\022#\n\004role\030\002 " +
-      "\001(\0162\025.proto.GroupRoom.Role\022\032\n\022participan" +
-      "ts_count\030\003 \001(\r\022 \n\030participants_count_lab" +
-      "el\030\004 \001(\t\022 \n\030participants_count_limit\030\005 \001" +
-      "(\r\022&\n\036participants_count_limit_label\030\006 \001" +
-      "(\t\022\023\n\013description\030\007 \001(\t\022\024\n\014avatar_count\030" +
-      "\010 \001(\r\022\035\n\006avatar\030\t \001(\0132\r.proto.Avatar\0224\n\r",
-      "private_extra\030\n \001(\0132\035.proto.GroupRoom.Pr" +
-      "ivateExtra\0222\n\014public_extra\030\013 \001(\0132\034.proto" +
-      ".GroupRoom.PublicExtra\0329\n\014PrivateExtra\022\023" +
-      "\n\013invite_link\030\001 \001(\t\022\024\n\014invite_token\030\002 \001(" +
-      "\t\032\037\n\013PublicExtra\022\020\n\010username\030\001 \001(\t\")\n\004Ty" +
-      "pe\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n" +
-      "\004Role\022\n\n\006MEMBER\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMI" +
-      "N\020\002\022\t\n\005OWNER\020\003\"\340\004\n\013ChannelRoom\022%\n\004type\030\001" +
-      " \001(\0162\027.proto.ChannelRoom.Type\022%\n\004role\030\002 " +
-      "\001(\0162\027.proto.ChannelRoom.Role\022\032\n\022particip",
-      "ants_count\030\003 \001(\r\022 \n\030participants_count_l" +
-      "abel\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\024\n\014avata" +
-      "r_count\030\006 \001(\r\022\035\n\006avatar\030\007 \001(\0132\r.proto.Av" +
-      "atar\0226\n\rprivate_extra\030\010 \001(\0132\037.proto.Chan" +
-      "nelRoom.PrivateExtra\0224\n\014public_extra\030\t \001" +
-      "(\0132\036.proto.ChannelRoom.PublicExtra\022\021\n\tsi" +
-      "gnature\030\n \001(\010\022\017\n\007seen_id\030\013 \001(\004\022\020\n\010verifi" +
-      "ed\030\014 \001(\010\022\027\n\017reaction_status\030\r \001(\010\0329\n\014Pri" +
-      "vateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024\n\014invite" +
-      "_token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010username\030",
-      "\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013PUBLI" +
-      "C_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\tMODERATO" +
-      "R\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"f\n\tThumbnail\022\014" +
-      "\n\004size\030\001 \001(\003\022\r\n\005width\030\002 \001(\005\022\016\n\006height\030\003 " +
-      "\001(\005\022\020\n\010cache_id\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004m" +
-      "ime\030\006 \001(\t\"\232\002\n\004File\022\r\n\005token\030\001 \001(\t\022\014\n\004nam" +
-      "e\030\002 \001(\t\022\014\n\004size\030\003 \001(\003\022)\n\017large_thumbnail" +
-      "\030\004 \001(\0132\020.proto.Thumbnail\022)\n\017small_thumbn" +
-      "ail\030\005 \001(\0132\020.proto.Thumbnail\022,\n\022waveform_" +
-      "thumbnail\030\006 \001(\0132\020.proto.Thumbnail\022\r\n\005wid",
-      "th\030\007 \001(\005\022\016\n\006height\030\010 \001(\005\022\020\n\010duration\030\t \001" +
-      "(\001\022\020\n\010cache_id\030\n \001(\t\022\014\n\004mime\030\013 \001(\t\022\022\n\npu" +
-      "blic_url\030\014 \001(\t\"5\n\tWallpaper\022\031\n\004file\030\001 \001(" +
-      "\0132\013.proto.File\022\r\n\005color\030\002 \001(\t\"+\n\nPaginat" +
-      "ion\022\016\n\006offset\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\"Z\n\010Fa" +
-      "vorite\022\014\n\004name\030\001 \001(\t\022\021\n\ttextcolor\030\002 \001(\t\022" +
-      "\017\n\007bgcolor\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\r\n\005image" +
-      "\030\005 \001(\t\"\345\007\n\016DiscoveryField\022\020\n\010imageurl\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t\022:\n\nactiontype\030\003 \001(\0162&" +
-      ".proto.DiscoveryField.ButtonActionType\022\017",
-      "\n\007orderid\030\004 \001(\r\022\n\n\002id\030\005 \001(\r\022\r\n\005param\030\006 \001" +
-      "(\t\022\021\n\tagreement\030\007 \001(\010\022\017\n\007refresh\030\010 \001(\010\022\025" +
-      "\n\ragreementSlug\030\t \001(\t\"\216\006\n\020ButtonActionTy" +
-      "pe\022\010\n\004NONE\020\000\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_ACTIO" +
-      "N\020\002\022\021\n\rUSERNAME_LINK\020\003\022\014\n\010WEB_LINK\020\004\022\021\n\r" +
-      "WEB_VIEW_LINK\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n\rPAY_" +
-      "BY_WALLET\020\007\022\016\n\nPAY_DIRECT\020\010\022\021\n\rREQUEST_P" +
-      "HONE\020\t\022\024\n\020REQUEST_LOCATION\020\n\022\016\n\nSHOW_ALE" +
-      "RT\020\013\022\010\n\004PAGE\020\014\022\022\n\016FINANCIAL_MENU\020\r\022\r\n\tBI" +
-      "LL_MENU\020\016\022\025\n\021TRAFFIC_BILL_MENU\020\017\022\024\n\020MOBI",
-      "LE_BILL_MENU\020\020\022\023\n\017PHONE_BILL_MENU\020\021\022\016\n\nT" +
-      "OPUP_MENU\020\022\022\017\n\013WALLET_MENU\020\023\022\017\n\013NEARBY_M" +
-      "ENU\020\024\022\010\n\004CALL\020\025\022\020\n\014STICKER_SHOP\020\026\022\t\n\005IVA" +
-      "ND\020\027\022\013\n\007IVANDQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n\nIVAN" +
-      "DSCORE\020\032\022\020\n\014CARD_TO_CARD\020\033\022\024\n\020FAVORITE_C" +
-      "HANNEL\020\034\022\t\n\005MUSIC\020\035\022\013\n\007CHARITY\020\036\022\017\n\013FUN_" +
-      "SERVICE\020\037\022\021\n\rVIRTUAL_MONEY\020 \022\020\n\014CITY_SER" +
-      "VICE\020!\022\010\n\004POLL\020\"\022\031\n\025INTERNET_PACKAGE_MEN" +
-      "U\020#\022\025\n\021FINANCIAL_HISTORY\020$\022\021\n\rINVITE_FRI" +
-      "END\020%\022\010\n\004NEWS\020&\022\026\n\022ELECTRIC_BILL_MENU\020\'\022",
-      "\016\n\nBLOCKCHAIN\020(\022\014\n\010PARSLAND\020)\022\017\n\013POLL_RE" +
-      "SULT\020*\022\025\n\021VIRTUAL_GIFT_CARD\020+\022\017\n\013NEWS_DE" +
-      "TAIL\020,\"\340\001\n\tDiscovery\022.\n\005model\030\001 \001(\0162\037.pr" +
-      "oto.Discovery.DiscoveryModel\022\r\n\005scale\030\002 " +
-      "\001(\t\022.\n\017discoveryfields\030\003 \003(\0132\025.proto.Dis" +
-      "coveryField\"d\n\016DiscoveryModel\022\n\n\006MODEL1\020" +
-      "\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003\022\n\n" +
-      "\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\"z\n\tPol" +
-      "lField\022\020\n\010imageurl\030\001 \001(\t\022\017\n\007orderid\030\002 \001(" +
-      "\r\022\n\n\002id\030\003 \001(\r\022\017\n\007clicked\030\004 \001(\010\022\013\n\003sum\030\005 ",
-      "\001(\004\022\021\n\tclickable\030\006 \001(\010\022\r\n\005label\030\007 \001(\t\"x\n" +
-      "\004Poll\022.\n\005model\030\001 \001(\0162\037.proto.Discovery.D" +
-      "iscoveryModel\022\r\n\005scale\030\002 \001(\t\022\013\n\003max\030\003 \001(" +
-      "\r\022$\n\npollfields\030\004 \003(\0132\020.proto.PollField\"" +
-      ";\n\rIVandActivity\022\r\n\005title\030\001 \001(\t\022\r\n\005score" +
-      "\030\002 \001(\005\022\014\n\004time\030\003 \001(\r\"\222\002\n\007MplSale\022\026\n\016invo" +
-      "ice_number\030\001 \001(\004\022\024\n\014from_user_id\030\002 \001(\004\022\016" +
-      "\n\006amount\030\003 \001(\004\022\024\n\014trace_number\030\004 \001(\003\022\020\n\010" +
-      "pay_time\030\005 \001(\r\022\023\n\013description\030\006 \001(\t\022\023\n\013c" +
-      "ard_number\030\007 \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030",
-      "\t \001(\0162\025.proto.MplSale.Status\"C\n\006Status\022\022" +
-      "\n\016PENDING_VERIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILE" +
-      "D\020\002\022\014\n\010REVERSED\020\003\"\313\n\n\016MplTransaction\022\020\n\010" +
-      "order_id\030\001 \001(\004\022\r\n\005token\030\002 \001(\t\022\020\n\010pay_tim" +
-      "e\030\003 \001(\r\022(\n\004type\030\004 \001(\0162\032.proto.MplTransac" +
-      "tion.Type\022(\n\004bill\030\005 \001(\0132\032.proto.MplTrans" +
-      "action.Bill\022*\n\005topup\030\006 \001(\0132\033.proto.MplTr" +
-      "ansaction.Topup\022*\n\005sales\030\007 \001(\0132\033.proto.M" +
-      "plTransaction.Sales\0224\n\ncardtocard\030\010 \001(\0132" +
-      " .proto.MplTransaction.CardToCard\032\370\001\n\004Bi",
-      "ll\022\016\n\006BillId\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020\n\010Bil" +
-      "lType\030\003 \001(\t\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amount\030\005 " +
-      "\001(\004\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014MerchantName\030" +
-      "\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDateTim" +
-      "e\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescriptio" +
-      "n\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007TraceNo\030\r" +
-      " \001(\r\032\226\002\n\005Topup\022\035\n\025RequesterMobileNumber\030" +
-      "\001 \001(\004\022\032\n\022ChargeMobileNumber\030\002 \001(\004\022\021\n\tTop" +
-      "upType\030\003 \001(\r\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amount\030\005" +
-      " \001(\004\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014MerchantName",
-      "\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDateTi" +
-      "me\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescripti" +
-      "on\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007TraceNo\030" +
-      "\r \001(\r\032\310\001\n\005Sales\022\016\n\006Status\030\001 \001(\r\022\016\n\006Amoun" +
-      "t\030\002 \001(\004\022\022\n\nCardNumber\030\003 \001(\t\022\024\n\014MerchantN" +
-      "ame\030\004 \001(\t\022\017\n\007OrderId\030\005 \001(\004\022\027\n\017RequestDat" +
-      "eTime\030\006 \001(\004\022\013\n\003RRN\030\007 \001(\004\022\031\n\021StatusDescri" +
-      "ption\030\010 \001(\t\022\022\n\nTerminalNo\030\t \001(\r\022\017\n\007Trace" +
-      "No\030\n \001(\r\032\200\002\n\nCardToCard\022\016\n\006Status\030\001 \001(\r\022" +
-      "\016\n\006Amount\030\002 \001(\004\022\030\n\020SourceCardNumber\030\003 \001(",
-      "\t\022\026\n\016DestCardNumber\030\004 \001(\t\022\020\n\010BankName\030\005 " +
-      "\001(\t\022\024\n\014DestBankName\030\006 \001(\t\022\025\n\rCardOwnerNa" +
-      "me\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDate" +
+      "d\030\023 \001(\r\022%\n\npermission\030\024 \001(\0132\021.proto.Room" +
+      "Access\"(\n\004Type\022\010\n\004CHAT\020\000\022\t\n\005GROUP\020\001\022\013\n\007C" +
+      "HANNEL\020\002\"/\n\010ChatRoom\022#\n\004peer\030\001 \001(\0132\025.pro" +
+      "to.RegisteredUser\"\321\004\n\tGroupRoom\022#\n\004type\030" +
+      "\001 \001(\0162\025.proto.GroupRoom.Type\022#\n\004role\030\002 \001" +
+      "(\0162\025.proto.GroupRoom.Role\022\032\n\022participant" +
+      "s_count\030\003 \001(\r\022 \n\030participants_count_labe" +
+      "l\030\004 \001(\t\022 \n\030participants_count_limit\030\005 \001(" +
+      "\r\022&\n\036participants_count_limit_label\030\006 \001(" +
+      "\t\022\023\n\013description\030\007 \001(\t\022\024\n\014avatar_count\030\010",
+      " \001(\r\022\035\n\006avatar\030\t \001(\0132\r.proto.Avatar\0224\n\rp" +
+      "rivate_extra\030\n \001(\0132\035.proto.GroupRoom.Pri" +
+      "vateExtra\0222\n\014public_extra\030\013 \001(\0132\034.proto." +
+      "GroupRoom.PublicExtra\0329\n\014PrivateExtra\022\023\n" +
+      "\013invite_link\030\001 \001(\t\022\024\n\014invite_token\030\002 \001(\t" +
+      "\032\037\n\013PublicExtra\022\020\n\010username\030\001 \001(\t\")\n\004Typ" +
+      "e\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n\004" +
+      "Role\022\n\n\006MEMBER\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMIN" +
+      "\020\002\022\t\n\005OWNER\020\003\"\340\004\n\013ChannelRoom\022%\n\004type\030\001 " +
+      "\001(\0162\027.proto.ChannelRoom.Type\022%\n\004role\030\002 \001",
+      "(\0162\027.proto.ChannelRoom.Role\022\032\n\022participa" +
+      "nts_count\030\003 \001(\r\022 \n\030participants_count_la" +
+      "bel\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\024\n\014avatar" +
+      "_count\030\006 \001(\r\022\035\n\006avatar\030\007 \001(\0132\r.proto.Ava" +
+      "tar\0226\n\rprivate_extra\030\010 \001(\0132\037.proto.Chann" +
+      "elRoom.PrivateExtra\0224\n\014public_extra\030\t \001(" +
+      "\0132\036.proto.ChannelRoom.PublicExtra\022\021\n\tsig" +
+      "nature\030\n \001(\010\022\017\n\007seen_id\030\013 \001(\004\022\020\n\010verifie" +
+      "d\030\014 \001(\010\022\027\n\017reaction_status\030\r \001(\010\0329\n\014Priv" +
+      "ateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024\n\014invite_",
+      "token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010username\030\001" +
+      " \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013PUBLIC" +
+      "_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\tMODERATOR" +
+      "\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"f\n\tThumbnail\022\014\n" +
+      "\004size\030\001 \001(\003\022\r\n\005width\030\002 \001(\005\022\016\n\006height\030\003 \001" +
+      "(\005\022\020\n\010cache_id\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004mi" +
+      "me\030\006 \001(\t\"\232\002\n\004File\022\r\n\005token\030\001 \001(\t\022\014\n\004name" +
+      "\030\002 \001(\t\022\014\n\004size\030\003 \001(\003\022)\n\017large_thumbnail\030" +
+      "\004 \001(\0132\020.proto.Thumbnail\022)\n\017small_thumbna" +
+      "il\030\005 \001(\0132\020.proto.Thumbnail\022,\n\022waveform_t",
+      "humbnail\030\006 \001(\0132\020.proto.Thumbnail\022\r\n\005widt" +
+      "h\030\007 \001(\005\022\016\n\006height\030\010 \001(\005\022\020\n\010duration\030\t \001(" +
+      "\001\022\020\n\010cache_id\030\n \001(\t\022\014\n\004mime\030\013 \001(\t\022\022\n\npub" +
+      "lic_url\030\014 \001(\t\"\311\001\n\nRoomAccess\022\023\n\013modify_r" +
+      "oom\030\001 \001(\010\022\024\n\014post_message\030\002 \001(\010\022\024\n\014edit_" +
+      "message\030\003 \001(\010\022\026\n\016delete_message\030\004 \001(\010\022\023\n" +
+      "\013pin_message\030\005 \001(\010\022\022\n\nadd_member\030\006 \001(\010\022\022" +
+      "\n\nban_member\030\007 \001(\010\022\022\n\nget_member\030\010 \001(\010\022\021" +
+      "\n\tadd_admin\030\t \001(\010\"5\n\tWallpaper\022\031\n\004file\030\001" +
+      " \001(\0132\013.proto.File\022\r\n\005color\030\002 \001(\t\"+\n\nPagi",
+      "nation\022\016\n\006offset\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\"Z\n" +
+      "\010Favorite\022\014\n\004name\030\001 \001(\t\022\021\n\ttextcolor\030\002 \001" +
+      "(\t\022\017\n\007bgcolor\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\r\n\005im" +
+      "age\030\005 \001(\t\"\345\007\n\016DiscoveryField\022\020\n\010imageurl" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022:\n\nactiontype\030\003 \001(" +
+      "\0162&.proto.DiscoveryField.ButtonActionTyp" +
+      "e\022\017\n\007orderid\030\004 \001(\r\022\n\n\002id\030\005 \001(\r\022\r\n\005param\030" +
+      "\006 \001(\t\022\021\n\tagreement\030\007 \001(\010\022\017\n\007refresh\030\010 \001(" +
+      "\010\022\025\n\ragreementSlug\030\t \001(\t\"\216\006\n\020ButtonActio" +
+      "nType\022\010\n\004NONE\020\000\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_AC",
+      "TION\020\002\022\021\n\rUSERNAME_LINK\020\003\022\014\n\010WEB_LINK\020\004\022" +
+      "\021\n\rWEB_VIEW_LINK\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n\rP" +
+      "AY_BY_WALLET\020\007\022\016\n\nPAY_DIRECT\020\010\022\021\n\rREQUES" +
+      "T_PHONE\020\t\022\024\n\020REQUEST_LOCATION\020\n\022\016\n\nSHOW_" +
+      "ALERT\020\013\022\010\n\004PAGE\020\014\022\022\n\016FINANCIAL_MENU\020\r\022\r\n" +
+      "\tBILL_MENU\020\016\022\025\n\021TRAFFIC_BILL_MENU\020\017\022\024\n\020M" +
+      "OBILE_BILL_MENU\020\020\022\023\n\017PHONE_BILL_MENU\020\021\022\016" +
+      "\n\nTOPUP_MENU\020\022\022\017\n\013WALLET_MENU\020\023\022\017\n\013NEARB" +
+      "Y_MENU\020\024\022\010\n\004CALL\020\025\022\020\n\014STICKER_SHOP\020\026\022\t\n\005" +
+      "IVAND\020\027\022\013\n\007IVANDQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n\nI",
+      "VANDSCORE\020\032\022\020\n\014CARD_TO_CARD\020\033\022\024\n\020FAVORIT" +
+      "E_CHANNEL\020\034\022\t\n\005MUSIC\020\035\022\013\n\007CHARITY\020\036\022\017\n\013F" +
+      "UN_SERVICE\020\037\022\021\n\rVIRTUAL_MONEY\020 \022\020\n\014CITY_" +
+      "SERVICE\020!\022\010\n\004POLL\020\"\022\031\n\025INTERNET_PACKAGE_" +
+      "MENU\020#\022\025\n\021FINANCIAL_HISTORY\020$\022\021\n\rINVITE_" +
+      "FRIEND\020%\022\010\n\004NEWS\020&\022\026\n\022ELECTRIC_BILL_MENU" +
+      "\020\'\022\016\n\nBLOCKCHAIN\020(\022\014\n\010PARSLAND\020)\022\017\n\013POLL" +
+      "_RESULT\020*\022\025\n\021VIRTUAL_GIFT_CARD\020+\022\017\n\013NEWS" +
+      "_DETAIL\020,\"\340\001\n\tDiscovery\022.\n\005model\030\001 \001(\0162\037" +
+      ".proto.Discovery.DiscoveryModel\022\r\n\005scale",
+      "\030\002 \001(\t\022.\n\017discoveryfields\030\003 \003(\0132\025.proto." +
+      "DiscoveryField\"d\n\016DiscoveryModel\022\n\n\006MODE" +
+      "L1\020\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003" +
+      "\022\n\n\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\"z\n\t" +
+      "PollField\022\020\n\010imageurl\030\001 \001(\t\022\017\n\007orderid\030\002" +
+      " \001(\r\022\n\n\002id\030\003 \001(\r\022\017\n\007clicked\030\004 \001(\010\022\013\n\003sum" +
+      "\030\005 \001(\004\022\021\n\tclickable\030\006 \001(\010\022\r\n\005label\030\007 \001(\t" +
+      "\"x\n\004Poll\022.\n\005model\030\001 \001(\0162\037.proto.Discover" +
+      "y.DiscoveryModel\022\r\n\005scale\030\002 \001(\t\022\013\n\003max\030\003" +
+      " \001(\r\022$\n\npollfields\030\004 \003(\0132\020.proto.PollFie",
+      "ld\";\n\rIVandActivity\022\r\n\005title\030\001 \001(\t\022\r\n\005sc" +
+      "ore\030\002 \001(\005\022\014\n\004time\030\003 \001(\r\"\222\002\n\007MplSale\022\026\n\016i" +
+      "nvoice_number\030\001 \001(\004\022\024\n\014from_user_id\030\002 \001(" +
+      "\004\022\016\n\006amount\030\003 \001(\004\022\024\n\014trace_number\030\004 \001(\003\022" +
+      "\020\n\010pay_time\030\005 \001(\r\022\023\n\013description\030\006 \001(\t\022\023" +
+      "\n\013card_number\030\007 \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006stat" +
+      "us\030\t \001(\0162\025.proto.MplSale.Status\"C\n\006Statu" +
+      "s\022\022\n\016PENDING_VERIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FA" +
+      "ILED\020\002\022\014\n\010REVERSED\020\003\"\313\n\n\016MplTransaction\022" +
+      "\020\n\010order_id\030\001 \001(\004\022\r\n\005token\030\002 \001(\t\022\020\n\010pay_",
+      "time\030\003 \001(\r\022(\n\004type\030\004 \001(\0162\032.proto.MplTran" +
+      "saction.Type\022(\n\004bill\030\005 \001(\0132\032.proto.MplTr" +
+      "ansaction.Bill\022*\n\005topup\030\006 \001(\0132\033.proto.Mp" +
+      "lTransaction.Topup\022*\n\005sales\030\007 \001(\0132\033.prot" +
+      "o.MplTransaction.Sales\0224\n\ncardtocard\030\010 \001" +
+      "(\0132 .proto.MplTransaction.CardToCard\032\370\001\n" +
+      "\004Bill\022\016\n\006BillId\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020\n\010" +
+      "BillType\030\003 \001(\t\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amount" +
+      "\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014MerchantNa" +
+      "me\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDate",
       "Time\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescrip" +
-      "tion\030\013 \001(\t\022\017\n\007TraceNo\030\r \001(\r\"B\n\004Type\022\010\n\004N" +
-      "ONE\020\000\022\010\n\004BILL\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES\020\003\022\020\n" +
-      "\014CARD_TO_CARD\020\004*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010" +
-      "\n\004MALE\020\001\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOW" +
-      "N_DEVICE\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE" +
-      "\020\003*k\n\010Platform\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007",
-      "ANDROID\020\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOW" +
-      "S\020\004\022\t\n\005LINUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Langu" +
-      "age\022\t\n\005EN_US\020\000\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMessag" +
-      "eType\022\010\n\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT" +
-      "\020\002\022\t\n\005VIDEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005" +
-      "\022\016\n\nAUDIO_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010" +
-      "GIF_TEXT\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010L" +
-      "OCATION\020\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLE" +
-      "T\020\017\022\013\n\007STICKER\020\020*]\n\021RoomMessageStatus\022\n\n" +
-      "\006FAILED\020\000\022\013\n\007SENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tDELI",
-      "VERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LISTENED\020\005*5\n\023RoomM" +
-      "essageReaction\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUMBS_" +
-      "DOWN\020\001*\244\002\n\014ClientAction\022\n\n\006CANCEL\020\000\022\n\n\006T" +
-      "YPING\020\001\022\021\n\rSENDING_IMAGE\020\002\022\023\n\017CAPTURING_" +
-      "IMAGE\020\003\022\021\n\rSENDING_VIDEO\020\004\022\023\n\017CAPTURING_" +
-      "VIDEO\020\005\022\021\n\rSENDING_AUDIO\020\006\022\023\n\017RECORDING_" +
-      "VOICE\020\007\022\021\n\rSENDING_VOICE\020\010\022\024\n\020SENDING_DO" +
-      "CUMENT\020\t\022\017\n\013SENDING_GIF\020\n\022\020\n\014SENDING_FIL" +
-      "E\020\013\022\024\n\020SENDING_LOCATION\020\014\022\024\n\020CHOOSING_CO" +
-      "NTACT\020\r\022\014\n\010PAINTING\020\016* \n\010RoomMute\022\n\n\006UNM",
-      "UTE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013PrivacyType\022\017\n\013USER_" +
-      "STATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022" +
-      "\n\016CHANNEL_INVITE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n" +
-      "\rVIDEO_CALLING\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013" +
-      "SECRET_CHAT\020\007*?\n\014PrivacyLevel\022\r\n\tALLOW_A" +
-      "LL\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035" +
-      "\n\016net.iGap.protoB\013ProtoGlobalb\006proto3"
+      "tion\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007TraceN" +
+      "o\030\r \001(\r\032\226\002\n\005Topup\022\035\n\025RequesterMobileNumb" +
+      "er\030\001 \001(\004\022\032\n\022ChargeMobileNumber\030\002 \001(\004\022\021\n\t" +
+      "TopupType\030\003 \001(\r\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amoun" +
+      "t\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014MerchantN" +
+      "ame\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDat" +
+      "eTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescri" +
+      "ption\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007Trace" +
+      "No\030\r \001(\r\032\310\001\n\005Sales\022\016\n\006Status\030\001 \001(\r\022\016\n\006Am",
+      "ount\030\002 \001(\004\022\022\n\nCardNumber\030\003 \001(\t\022\024\n\014Mercha" +
+      "ntName\030\004 \001(\t\022\017\n\007OrderId\030\005 \001(\004\022\027\n\017Request" +
+      "DateTime\030\006 \001(\004\022\013\n\003RRN\030\007 \001(\004\022\031\n\021StatusDes" +
+      "cription\030\010 \001(\t\022\022\n\nTerminalNo\030\t \001(\r\022\017\n\007Tr" +
+      "aceNo\030\n \001(\r\032\200\002\n\nCardToCard\022\016\n\006Status\030\001 \001" +
+      "(\r\022\016\n\006Amount\030\002 \001(\004\022\030\n\020SourceCardNumber\030\003" +
+      " \001(\t\022\026\n\016DestCardNumber\030\004 \001(\t\022\020\n\010BankName" +
+      "\030\005 \001(\t\022\024\n\014DestBankName\030\006 \001(\t\022\025\n\rCardOwne" +
+      "rName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestD" +
+      "ateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDesc",
+      "ription\030\013 \001(\t\022\017\n\007TraceNo\030\r \001(\r\"B\n\004Type\022\010" +
+      "\n\004NONE\020\000\022\010\n\004BILL\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES\020\003" +
+      "\022\020\n\014CARD_TO_CARD\020\004*+\n\006Gender\022\013\n\007UNKNOWN\020" +
+      "\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016UNK" +
+      "NOWN_DEVICE\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOB" +
+      "ILE\020\003*k\n\010Platform\022\024\n\020UNKNOWN_PLATFORM\020\000\022" +
+      "\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WIN" +
+      "DOWS\020\004\022\t\n\005LINUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010La" +
+      "nguage\022\t\n\005EN_US\020\000\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMes" +
+      "sageType\022\010\n\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_T",
+      "EXT\020\002\022\t\n\005VIDEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDI" +
+      "O\020\005\022\016\n\nAUDIO_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022" +
+      "\014\n\010GIF_TEXT\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014" +
+      "\n\010LOCATION\020\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WA" +
+      "LLET\020\017\022\013\n\007STICKER\020\020*]\n\021RoomMessageStatus" +
+      "\022\n\n\006FAILED\020\000\022\013\n\007SENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tD" +
+      "ELIVERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LISTENED\020\005*5\n\023Ro" +
+      "omMessageReaction\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUM" +
+      "BS_DOWN\020\001*\244\002\n\014ClientAction\022\n\n\006CANCEL\020\000\022\n" +
+      "\n\006TYPING\020\001\022\021\n\rSENDING_IMAGE\020\002\022\023\n\017CAPTURI",
+      "NG_IMAGE\020\003\022\021\n\rSENDING_VIDEO\020\004\022\023\n\017CAPTURI" +
+      "NG_VIDEO\020\005\022\021\n\rSENDING_AUDIO\020\006\022\023\n\017RECORDI" +
+      "NG_VOICE\020\007\022\021\n\rSENDING_VOICE\020\010\022\024\n\020SENDING" +
+      "_DOCUMENT\020\t\022\017\n\013SENDING_GIF\020\n\022\020\n\014SENDING_" +
+      "FILE\020\013\022\024\n\020SENDING_LOCATION\020\014\022\024\n\020CHOOSING" +
+      "_CONTACT\020\r\022\014\n\010PAINTING\020\016* \n\010RoomMute\022\n\n\006" +
+      "UNMUTE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013PrivacyType\022\017\n\013US" +
+      "ER_STATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014GROUP_INVITE\020" +
+      "\002\022\022\n\016CHANNEL_INVITE\020\003\022\021\n\rVOICE_CALLING\020\004" +
+      "\022\021\n\rVIDEO_CALLING\020\005\022\022\n\016SCREEN_SHARING\020\006\022",
+      "\017\n\013SECRET_CHAT\020\007*?\n\014PrivacyLevel\022\r\n\tALLO" +
+      "W_ALL\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020" +
+      "\002B\035\n\016net.iGap.protoB\013ProtoGlobalb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -52744,7 +53891,7 @@ public final class ProtoGlobal {
     internal_static_proto_Room_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Room_descriptor,
-        new java.lang.String[] { "Id", "Type", "Title", "Initials", "Color", "UnreadCount", "LastMessage", "ReadOnly", "IsParticipant", "Draft", "FirstUnreadMessage", "RoomMute", "PinId", "PinnedMessage", "Priority", "ChatRoomExtra", "GroupRoomExtra", "ChannelRoomExtra", "AppId", });
+        new java.lang.String[] { "Id", "Type", "Title", "Initials", "Color", "UnreadCount", "LastMessage", "ReadOnly", "IsParticipant", "Draft", "FirstUnreadMessage", "RoomMute", "PinId", "PinnedMessage", "Priority", "ChatRoomExtra", "GroupRoomExtra", "ChannelRoomExtra", "AppId", "Permission", });
     internal_static_proto_ChatRoom_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_proto_ChatRoom_fieldAccessorTable = new
@@ -52799,62 +53946,68 @@ public final class ProtoGlobal {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_File_descriptor,
         new java.lang.String[] { "Token", "Name", "Size", "LargeThumbnail", "SmallThumbnail", "WaveformThumbnail", "Width", "Height", "Duration", "CacheId", "Mime", "PublicUrl", });
-    internal_static_proto_Wallpaper_descriptor =
+    internal_static_proto_RoomAccess_descriptor =
       getDescriptor().getMessageTypes().get(15);
+    internal_static_proto_RoomAccess_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomAccess_descriptor,
+        new java.lang.String[] { "ModifyRoom", "PostMessage", "EditMessage", "DeleteMessage", "PinMessage", "AddMember", "BanMember", "GetMember", "AddAdmin", });
+    internal_static_proto_Wallpaper_descriptor =
+      getDescriptor().getMessageTypes().get(16);
     internal_static_proto_Wallpaper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Wallpaper_descriptor,
         new java.lang.String[] { "File", "Color", });
     internal_static_proto_Pagination_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_proto_Pagination_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Pagination_descriptor,
         new java.lang.String[] { "Offset", "Limit", });
     internal_static_proto_Favorite_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_proto_Favorite_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Favorite_descriptor,
         new java.lang.String[] { "Name", "Textcolor", "Bgcolor", "Value", "Image", });
     internal_static_proto_DiscoveryField_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_proto_DiscoveryField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_DiscoveryField_descriptor,
         new java.lang.String[] { "Imageurl", "Value", "Actiontype", "Orderid", "Id", "Param", "Agreement", "Refresh", "AgreementSlug", });
     internal_static_proto_Discovery_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_proto_Discovery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Discovery_descriptor,
         new java.lang.String[] { "Model", "Scale", "Discoveryfields", });
     internal_static_proto_PollField_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_proto_PollField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_PollField_descriptor,
         new java.lang.String[] { "Imageurl", "Orderid", "Id", "Clicked", "Sum", "Clickable", "Label", });
     internal_static_proto_Poll_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_proto_Poll_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Poll_descriptor,
         new java.lang.String[] { "Model", "Scale", "Max", "Pollfields", });
     internal_static_proto_IVandActivity_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_proto_IVandActivity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_IVandActivity_descriptor,
         new java.lang.String[] { "Title", "Score", "Time", });
     internal_static_proto_MplSale_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_proto_MplSale_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplSale_descriptor,
         new java.lang.String[] { "InvoiceNumber", "FromUserId", "Amount", "TraceNumber", "PayTime", "Description", "CardNumber", "Rrn", "Status", });
     internal_static_proto_MplTransaction_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_proto_MplTransaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplTransaction_descriptor,

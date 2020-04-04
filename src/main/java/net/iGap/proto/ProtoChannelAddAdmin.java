@@ -40,6 +40,19 @@ public final class ProtoChannelAddAdmin {
      * <code>optional uint64 member_id = 3;</code>
      */
     long getMemberId();
+
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    boolean hasPermission();
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomAccess getPermission();
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ChannelAddAdmin}
@@ -105,6 +118,19 @@ public final class ProtoChannelAddAdmin {
               memberId_ = input.readUInt64();
               break;
             }
+            case 34: {
+              net.iGap.proto.ProtoGlobal.RoomAccess.Builder subBuilder = null;
+              if (permission_ != null) {
+                subBuilder = permission_.toBuilder();
+              }
+              permission_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomAccess.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(permission_);
+                permission_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -167,6 +193,27 @@ public final class ProtoChannelAddAdmin {
       return memberId_;
     }
 
+    public static final int PERMISSION_FIELD_NUMBER = 4;
+    private net.iGap.proto.ProtoGlobal.RoomAccess permission_;
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    public boolean hasPermission() {
+      return permission_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+      return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder() {
+      return getPermission();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -188,6 +235,9 @@ public final class ProtoChannelAddAdmin {
       if (memberId_ != 0L) {
         output.writeUInt64(3, memberId_);
       }
+      if (permission_ != null) {
+        output.writeMessage(4, getPermission());
+      }
     }
 
     public int getSerializedSize() {
@@ -206,6 +256,10 @@ public final class ProtoChannelAddAdmin {
       if (memberId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, memberId_);
+      }
+      if (permission_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getPermission());
       }
       memoizedSize = size;
       return size;
@@ -232,6 +286,11 @@ public final class ProtoChannelAddAdmin {
           == other.getRoomId());
       result = result && (getMemberId()
           == other.getMemberId());
+      result = result && (hasPermission() == other.hasPermission());
+      if (hasPermission()) {
+        result = result && getPermission()
+            .equals(other.getPermission());
+      }
       return result;
     }
 
@@ -252,6 +311,10 @@ public final class ProtoChannelAddAdmin {
       hash = (37 * hash) + MEMBER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMemberId());
+      if (hasPermission()) {
+        hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getPermission().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -380,6 +443,12 @@ public final class ProtoChannelAddAdmin {
 
         memberId_ = 0L;
 
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
         return this;
       }
 
@@ -409,6 +478,11 @@ public final class ProtoChannelAddAdmin {
         }
         result.roomId_ = roomId_;
         result.memberId_ = memberId_;
+        if (permissionBuilder_ == null) {
+          result.permission_ = permission_;
+        } else {
+          result.permission_ = permissionBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -458,6 +532,9 @@ public final class ProtoChannelAddAdmin {
         }
         if (other.getMemberId() != 0L) {
           setMemberId(other.getMemberId());
+        }
+        if (other.hasPermission()) {
+          mergePermission(other.getPermission());
         }
         onChanged();
         return this;
@@ -653,6 +730,123 @@ public final class ProtoChannelAddAdmin {
         onChanged();
         return this;
       }
+
+      private net.iGap.proto.ProtoGlobal.RoomAccess permission_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomAccess, net.iGap.proto.ProtoGlobal.RoomAccess.Builder, net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder> permissionBuilder_;
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public boolean hasPermission() {
+        return permissionBuilder_ != null || permission_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+        if (permissionBuilder_ == null) {
+          return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+        } else {
+          return permissionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public Builder setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        if (permissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          permission_ = value;
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public Builder setPermission(
+          net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
+        if (permissionBuilder_ == null) {
+          permission_ = builderForValue.build();
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public Builder mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        if (permissionBuilder_ == null) {
+          if (permission_ != null) {
+            permission_ =
+              net.iGap.proto.ProtoGlobal.RoomAccess.newBuilder(permission_).mergeFrom(value).buildPartial();
+          } else {
+            permission_ = value;
+          }
+          onChanged();
+        } else {
+          permissionBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public Builder clearPermission() {
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+          onChanged();
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccess.Builder getPermissionBuilder() {
+        
+        onChanged();
+        return getPermissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder() {
+        if (permissionBuilder_ != null) {
+          return permissionBuilder_.getMessageOrBuilder();
+        } else {
+          return permission_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomAccess, net.iGap.proto.ProtoGlobal.RoomAccess.Builder, net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder> 
+          getPermissionFieldBuilder() {
+        if (permissionBuilder_ == null) {
+          permissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomAccess, net.iGap.proto.ProtoGlobal.RoomAccess.Builder, net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder>(
+                  getPermission(),
+                  getParentForChildren(),
+                  isClean());
+          permission_ = null;
+        }
+        return permissionBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -728,6 +922,19 @@ public final class ProtoChannelAddAdmin {
      * <code>optional uint64 member_id = 3;</code>
      */
     long getMemberId();
+
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    boolean hasPermission();
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomAccess getPermission();
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ChannelAddAdminResponse}
@@ -793,6 +1000,19 @@ public final class ProtoChannelAddAdmin {
               memberId_ = input.readUInt64();
               break;
             }
+            case 34: {
+              net.iGap.proto.ProtoGlobal.RoomAccess.Builder subBuilder = null;
+              if (permission_ != null) {
+                subBuilder = permission_.toBuilder();
+              }
+              permission_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomAccess.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(permission_);
+                permission_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -855,6 +1075,27 @@ public final class ProtoChannelAddAdmin {
       return memberId_;
     }
 
+    public static final int PERMISSION_FIELD_NUMBER = 4;
+    private net.iGap.proto.ProtoGlobal.RoomAccess permission_;
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    public boolean hasPermission() {
+      return permission_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+      return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+    }
+    /**
+     * <code>optional .proto.RoomAccess permission = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder() {
+      return getPermission();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -876,6 +1117,9 @@ public final class ProtoChannelAddAdmin {
       if (memberId_ != 0L) {
         output.writeUInt64(3, memberId_);
       }
+      if (permission_ != null) {
+        output.writeMessage(4, getPermission());
+      }
     }
 
     public int getSerializedSize() {
@@ -894,6 +1138,10 @@ public final class ProtoChannelAddAdmin {
       if (memberId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, memberId_);
+      }
+      if (permission_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getPermission());
       }
       memoizedSize = size;
       return size;
@@ -920,6 +1168,11 @@ public final class ProtoChannelAddAdmin {
           == other.getRoomId());
       result = result && (getMemberId()
           == other.getMemberId());
+      result = result && (hasPermission() == other.hasPermission());
+      if (hasPermission()) {
+        result = result && getPermission()
+            .equals(other.getPermission());
+      }
       return result;
     }
 
@@ -940,6 +1193,10 @@ public final class ProtoChannelAddAdmin {
       hash = (37 * hash) + MEMBER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMemberId());
+      if (hasPermission()) {
+        hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getPermission().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1068,6 +1325,12 @@ public final class ProtoChannelAddAdmin {
 
         memberId_ = 0L;
 
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
         return this;
       }
 
@@ -1097,6 +1360,11 @@ public final class ProtoChannelAddAdmin {
         }
         result.roomId_ = roomId_;
         result.memberId_ = memberId_;
+        if (permissionBuilder_ == null) {
+          result.permission_ = permission_;
+        } else {
+          result.permission_ = permissionBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1146,6 +1414,9 @@ public final class ProtoChannelAddAdmin {
         }
         if (other.getMemberId() != 0L) {
           setMemberId(other.getMemberId());
+        }
+        if (other.hasPermission()) {
+          mergePermission(other.getPermission());
         }
         onChanged();
         return this;
@@ -1341,6 +1612,123 @@ public final class ProtoChannelAddAdmin {
         onChanged();
         return this;
       }
+
+      private net.iGap.proto.ProtoGlobal.RoomAccess permission_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomAccess, net.iGap.proto.ProtoGlobal.RoomAccess.Builder, net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder> permissionBuilder_;
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public boolean hasPermission() {
+        return permissionBuilder_ != null || permission_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccess getPermission() {
+        if (permissionBuilder_ == null) {
+          return permission_ == null ? net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+        } else {
+          return permissionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public Builder setPermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        if (permissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          permission_ = value;
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public Builder setPermission(
+          net.iGap.proto.ProtoGlobal.RoomAccess.Builder builderForValue) {
+        if (permissionBuilder_ == null) {
+          permission_ = builderForValue.build();
+          onChanged();
+        } else {
+          permissionBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public Builder mergePermission(net.iGap.proto.ProtoGlobal.RoomAccess value) {
+        if (permissionBuilder_ == null) {
+          if (permission_ != null) {
+            permission_ =
+              net.iGap.proto.ProtoGlobal.RoomAccess.newBuilder(permission_).mergeFrom(value).buildPartial();
+          } else {
+            permission_ = value;
+          }
+          onChanged();
+        } else {
+          permissionBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public Builder clearPermission() {
+        if (permissionBuilder_ == null) {
+          permission_ = null;
+          onChanged();
+        } else {
+          permission_ = null;
+          permissionBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccess.Builder getPermissionBuilder() {
+        
+        onChanged();
+        return getPermissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder() {
+        if (permissionBuilder_ != null) {
+          return permissionBuilder_.getMessageOrBuilder();
+        } else {
+          return permission_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomAccess.getDefaultInstance() : permission_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomAccess permission = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomAccess, net.iGap.proto.ProtoGlobal.RoomAccess.Builder, net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder> 
+          getPermissionFieldBuilder() {
+        if (permissionBuilder_ == null) {
+          permissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomAccess, net.iGap.proto.ProtoGlobal.RoomAccess.Builder, net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder>(
+                  getPermission(),
+                  getParentForChildren(),
+                  isClean());
+          permission_ = null;
+        }
+        return permissionBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1410,13 +1798,15 @@ public final class ProtoChannelAddAdmin {
   static {
     java.lang.String[] descriptorData = {
       "\n\025ChannelAddAdmin.proto\022\005proto\032\rRequest." +
-      "proto\032\016Response.proto\"V\n\017ChannelAddAdmin" +
-      "\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007roo" +
-      "m_id\030\002 \001(\004\022\021\n\tmember_id\030\003 \001(\004\"`\n\027Channel" +
-      "AddAdminResponse\022!\n\010response\030\001 \001(\0132\017.pro" +
-      "to.Response\022\017\n\007room_id\030\002 \001(\004\022\021\n\tmember_i" +
-      "d\030\003 \001(\004B&\n\016net.iGap.protoB\024ProtoChannelA" +
-      "ddAdminb\006proto3"
+      "proto\032\016Response.proto\032\014Global.proto\"}\n\017C" +
+      "hannelAddAdmin\022\037\n\007request\030\001 \001(\0132\016.proto." +
+      "Request\022\017\n\007room_id\030\002 \001(\004\022\021\n\tmember_id\030\003 " +
+      "\001(\004\022%\n\npermission\030\004 \001(\0132\021.proto.RoomAcce" +
+      "ss\"\207\001\n\027ChannelAddAdminResponse\022!\n\010respon" +
+      "se\030\001 \001(\0132\017.proto.Response\022\017\n\007room_id\030\002 \001" +
+      "(\004\022\021\n\tmember_id\030\003 \001(\004\022%\n\npermission\030\004 \001(" +
+      "\0132\021.proto.RoomAccessB&\n\016net.iGap.protoB\024" +
+      "ProtoChannelAddAdminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1431,21 +1821,23 @@ public final class ProtoChannelAddAdmin {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           net.iGap.proto.ProtoRequest.getDescriptor(),
           net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
         }, assigner);
     internal_static_proto_ChannelAddAdmin_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_ChannelAddAdmin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelAddAdmin_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "MemberId", });
+        new java.lang.String[] { "Request", "RoomId", "MemberId", "Permission", });
     internal_static_proto_ChannelAddAdminResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ChannelAddAdminResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelAddAdminResponse_descriptor,
-        new java.lang.String[] { "Response", "RoomId", "MemberId", });
+        new java.lang.String[] { "Response", "RoomId", "MemberId", "Permission", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
