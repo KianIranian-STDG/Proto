@@ -35912,6 +35912,692 @@ public final class ProtoGlobal {
 
   }
 
+  public interface PostMessageRightsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.PostMessageRights)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional bool send_text = 1;</code>
+     */
+    boolean getSendText();
+
+    /**
+     * <code>optional bool send_media = 3;</code>
+     */
+    boolean getSendMedia();
+
+    /**
+     * <code>optional bool send_gif = 4;</code>
+     */
+    boolean getSendGif();
+
+    /**
+     * <code>optional bool send_sticker = 5;</code>
+     */
+    boolean getSendSticker();
+
+    /**
+     * <code>optional bool send_link = 6;</code>
+     */
+    boolean getSendLink();
+  }
+  /**
+   * Protobuf type {@code proto.PostMessageRights}
+   */
+  public  static final class PostMessageRights extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.PostMessageRights)
+      PostMessageRightsOrBuilder {
+    // Use PostMessageRights.newBuilder() to construct.
+    private PostMessageRights(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PostMessageRights() {
+      sendText_ = false;
+      sendMedia_ = false;
+      sendGif_ = false;
+      sendSticker_ = false;
+      sendLink_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private PostMessageRights(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              sendText_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              sendMedia_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              sendGif_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              sendSticker_ = input.readBool();
+              break;
+            }
+            case 48: {
+
+              sendLink_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_PostMessageRights_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_PostMessageRights_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.PostMessageRights.class, net.iGap.proto.ProtoGlobal.PostMessageRights.Builder.class);
+    }
+
+    public static final int SEND_TEXT_FIELD_NUMBER = 1;
+    private boolean sendText_;
+    /**
+     * <code>optional bool send_text = 1;</code>
+     */
+    public boolean getSendText() {
+      return sendText_;
+    }
+
+    public static final int SEND_MEDIA_FIELD_NUMBER = 3;
+    private boolean sendMedia_;
+    /**
+     * <code>optional bool send_media = 3;</code>
+     */
+    public boolean getSendMedia() {
+      return sendMedia_;
+    }
+
+    public static final int SEND_GIF_FIELD_NUMBER = 4;
+    private boolean sendGif_;
+    /**
+     * <code>optional bool send_gif = 4;</code>
+     */
+    public boolean getSendGif() {
+      return sendGif_;
+    }
+
+    public static final int SEND_STICKER_FIELD_NUMBER = 5;
+    private boolean sendSticker_;
+    /**
+     * <code>optional bool send_sticker = 5;</code>
+     */
+    public boolean getSendSticker() {
+      return sendSticker_;
+    }
+
+    public static final int SEND_LINK_FIELD_NUMBER = 6;
+    private boolean sendLink_;
+    /**
+     * <code>optional bool send_link = 6;</code>
+     */
+    public boolean getSendLink() {
+      return sendLink_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (sendText_ != false) {
+        output.writeBool(1, sendText_);
+      }
+      if (sendMedia_ != false) {
+        output.writeBool(3, sendMedia_);
+      }
+      if (sendGif_ != false) {
+        output.writeBool(4, sendGif_);
+      }
+      if (sendSticker_ != false) {
+        output.writeBool(5, sendSticker_);
+      }
+      if (sendLink_ != false) {
+        output.writeBool(6, sendLink_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (sendText_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, sendText_);
+      }
+      if (sendMedia_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, sendMedia_);
+      }
+      if (sendGif_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, sendGif_);
+      }
+      if (sendSticker_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, sendSticker_);
+      }
+      if (sendLink_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, sendLink_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.PostMessageRights)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.PostMessageRights other = (net.iGap.proto.ProtoGlobal.PostMessageRights) obj;
+
+      boolean result = true;
+      result = result && (getSendText()
+          == other.getSendText());
+      result = result && (getSendMedia()
+          == other.getSendMedia());
+      result = result && (getSendGif()
+          == other.getSendGif());
+      result = result && (getSendSticker()
+          == other.getSendSticker());
+      result = result && (getSendLink()
+          == other.getSendLink());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + SEND_TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSendText());
+      hash = (37 * hash) + SEND_MEDIA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSendMedia());
+      hash = (37 * hash) + SEND_GIF_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSendGif());
+      hash = (37 * hash) + SEND_STICKER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSendSticker());
+      hash = (37 * hash) + SEND_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSendLink());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.PostMessageRights prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.PostMessageRights}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.PostMessageRights)
+        net.iGap.proto.ProtoGlobal.PostMessageRightsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_PostMessageRights_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_PostMessageRights_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.PostMessageRights.class, net.iGap.proto.ProtoGlobal.PostMessageRights.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.PostMessageRights.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        sendText_ = false;
+
+        sendMedia_ = false;
+
+        sendGif_ = false;
+
+        sendSticker_ = false;
+
+        sendLink_ = false;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_PostMessageRights_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.PostMessageRights getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.PostMessageRights.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.PostMessageRights build() {
+        net.iGap.proto.ProtoGlobal.PostMessageRights result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.PostMessageRights buildPartial() {
+        net.iGap.proto.ProtoGlobal.PostMessageRights result = new net.iGap.proto.ProtoGlobal.PostMessageRights(this);
+        result.sendText_ = sendText_;
+        result.sendMedia_ = sendMedia_;
+        result.sendGif_ = sendGif_;
+        result.sendSticker_ = sendSticker_;
+        result.sendLink_ = sendLink_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.PostMessageRights) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.PostMessageRights)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.PostMessageRights other) {
+        if (other == net.iGap.proto.ProtoGlobal.PostMessageRights.getDefaultInstance()) return this;
+        if (other.getSendText() != false) {
+          setSendText(other.getSendText());
+        }
+        if (other.getSendMedia() != false) {
+          setSendMedia(other.getSendMedia());
+        }
+        if (other.getSendGif() != false) {
+          setSendGif(other.getSendGif());
+        }
+        if (other.getSendSticker() != false) {
+          setSendSticker(other.getSendSticker());
+        }
+        if (other.getSendLink() != false) {
+          setSendLink(other.getSendLink());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.PostMessageRights parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.PostMessageRights) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean sendText_ ;
+      /**
+       * <code>optional bool send_text = 1;</code>
+       */
+      public boolean getSendText() {
+        return sendText_;
+      }
+      /**
+       * <code>optional bool send_text = 1;</code>
+       */
+      public Builder setSendText(boolean value) {
+        
+        sendText_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool send_text = 1;</code>
+       */
+      public Builder clearSendText() {
+        
+        sendText_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean sendMedia_ ;
+      /**
+       * <code>optional bool send_media = 3;</code>
+       */
+      public boolean getSendMedia() {
+        return sendMedia_;
+      }
+      /**
+       * <code>optional bool send_media = 3;</code>
+       */
+      public Builder setSendMedia(boolean value) {
+        
+        sendMedia_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool send_media = 3;</code>
+       */
+      public Builder clearSendMedia() {
+        
+        sendMedia_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean sendGif_ ;
+      /**
+       * <code>optional bool send_gif = 4;</code>
+       */
+      public boolean getSendGif() {
+        return sendGif_;
+      }
+      /**
+       * <code>optional bool send_gif = 4;</code>
+       */
+      public Builder setSendGif(boolean value) {
+        
+        sendGif_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool send_gif = 4;</code>
+       */
+      public Builder clearSendGif() {
+        
+        sendGif_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean sendSticker_ ;
+      /**
+       * <code>optional bool send_sticker = 5;</code>
+       */
+      public boolean getSendSticker() {
+        return sendSticker_;
+      }
+      /**
+       * <code>optional bool send_sticker = 5;</code>
+       */
+      public Builder setSendSticker(boolean value) {
+        
+        sendSticker_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool send_sticker = 5;</code>
+       */
+      public Builder clearSendSticker() {
+        
+        sendSticker_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean sendLink_ ;
+      /**
+       * <code>optional bool send_link = 6;</code>
+       */
+      public boolean getSendLink() {
+        return sendLink_;
+      }
+      /**
+       * <code>optional bool send_link = 6;</code>
+       */
+      public Builder setSendLink(boolean value) {
+        
+        sendLink_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool send_link = 6;</code>
+       */
+      public Builder clearSendLink() {
+        
+        sendLink_ = false;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.PostMessageRights)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.PostMessageRights)
+    private static final net.iGap.proto.ProtoGlobal.PostMessageRights DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.PostMessageRights();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.PostMessageRights getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PostMessageRights>
+        PARSER = new com.google.protobuf.AbstractParser<PostMessageRights>() {
+      public PostMessageRights parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PostMessageRights(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PostMessageRights> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostMessageRights> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.PostMessageRights getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface RoomAccessOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.RoomAccess)
       com.google.protobuf.MessageOrBuilder {
@@ -35922,9 +36608,17 @@ public final class ProtoGlobal {
     boolean getModifyRoom();
 
     /**
-     * <code>optional bool post_message = 2;</code>
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
      */
-    boolean getPostMessage();
+    boolean hasPostMessage();
+    /**
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.PostMessageRights getPostMessage();
+    /**
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.PostMessageRightsOrBuilder getPostMessageOrBuilder();
 
     /**
      * <code>optional bool edit_message = 3;</code>
@@ -35974,7 +36668,6 @@ public final class ProtoGlobal {
     }
     private RoomAccess() {
       modifyRoom_ = false;
-      postMessage_ = false;
       editMessage_ = false;
       deleteMessage_ = false;
       pinMessage_ = false;
@@ -36014,9 +36707,17 @@ public final class ProtoGlobal {
               modifyRoom_ = input.readBool();
               break;
             }
-            case 16: {
+            case 18: {
+              net.iGap.proto.ProtoGlobal.PostMessageRights.Builder subBuilder = null;
+              if (postMessage_ != null) {
+                subBuilder = postMessage_.toBuilder();
+              }
+              postMessage_ = input.readMessage(net.iGap.proto.ProtoGlobal.PostMessageRights.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(postMessage_);
+                postMessage_ = subBuilder.buildPartial();
+              }
 
-              postMessage_ = input.readBool();
               break;
             }
             case 24: {
@@ -36087,12 +36788,24 @@ public final class ProtoGlobal {
     }
 
     public static final int POST_MESSAGE_FIELD_NUMBER = 2;
-    private boolean postMessage_;
+    private net.iGap.proto.ProtoGlobal.PostMessageRights postMessage_;
     /**
-     * <code>optional bool post_message = 2;</code>
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
      */
-    public boolean getPostMessage() {
-      return postMessage_;
+    public boolean hasPostMessage() {
+      return postMessage_ != null;
+    }
+    /**
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.PostMessageRights getPostMessage() {
+      return postMessage_ == null ? net.iGap.proto.ProtoGlobal.PostMessageRights.getDefaultInstance() : postMessage_;
+    }
+    /**
+     * <code>optional .proto.PostMessageRights post_message = 2;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.PostMessageRightsOrBuilder getPostMessageOrBuilder() {
+      return getPostMessage();
     }
 
     public static final int EDIT_MESSAGE_FIELD_NUMBER = 3;
@@ -36173,8 +36886,8 @@ public final class ProtoGlobal {
       if (modifyRoom_ != false) {
         output.writeBool(1, modifyRoom_);
       }
-      if (postMessage_ != false) {
-        output.writeBool(2, postMessage_);
+      if (postMessage_ != null) {
+        output.writeMessage(2, getPostMessage());
       }
       if (editMessage_ != false) {
         output.writeBool(3, editMessage_);
@@ -36208,9 +36921,9 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, modifyRoom_);
       }
-      if (postMessage_ != false) {
+      if (postMessage_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, postMessage_);
+          .computeMessageSize(2, getPostMessage());
       }
       if (editMessage_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -36258,8 +36971,11 @@ public final class ProtoGlobal {
       boolean result = true;
       result = result && (getModifyRoom()
           == other.getModifyRoom());
-      result = result && (getPostMessage()
-          == other.getPostMessage());
+      result = result && (hasPostMessage() == other.hasPostMessage());
+      if (hasPostMessage()) {
+        result = result && getPostMessage()
+            .equals(other.getPostMessage());
+      }
       result = result && (getEditMessage()
           == other.getEditMessage());
       result = result && (getDeleteMessage()
@@ -36287,9 +37003,10 @@ public final class ProtoGlobal {
       hash = (37 * hash) + MODIFY_ROOM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getModifyRoom());
-      hash = (37 * hash) + POST_MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPostMessage());
+      if (hasPostMessage()) {
+        hash = (37 * hash) + POST_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getPostMessage().hashCode();
+      }
       hash = (37 * hash) + EDIT_MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEditMessage());
@@ -36431,8 +37148,12 @@ public final class ProtoGlobal {
         super.clear();
         modifyRoom_ = false;
 
-        postMessage_ = false;
-
+        if (postMessageBuilder_ == null) {
+          postMessage_ = null;
+        } else {
+          postMessage_ = null;
+          postMessageBuilder_ = null;
+        }
         editMessage_ = false;
 
         deleteMessage_ = false;
@@ -36470,7 +37191,11 @@ public final class ProtoGlobal {
       public net.iGap.proto.ProtoGlobal.RoomAccess buildPartial() {
         net.iGap.proto.ProtoGlobal.RoomAccess result = new net.iGap.proto.ProtoGlobal.RoomAccess(this);
         result.modifyRoom_ = modifyRoom_;
-        result.postMessage_ = postMessage_;
+        if (postMessageBuilder_ == null) {
+          result.postMessage_ = postMessage_;
+        } else {
+          result.postMessage_ = postMessageBuilder_.build();
+        }
         result.editMessage_ = editMessage_;
         result.deleteMessage_ = deleteMessage_;
         result.pinMessage_ = pinMessage_;
@@ -36522,8 +37247,8 @@ public final class ProtoGlobal {
         if (other.getModifyRoom() != false) {
           setModifyRoom(other.getModifyRoom());
         }
-        if (other.getPostMessage() != false) {
-          setPostMessage(other.getPostMessage());
+        if (other.hasPostMessage()) {
+          mergePostMessage(other.getPostMessage());
         }
         if (other.getEditMessage() != false) {
           setEditMessage(other.getEditMessage());
@@ -36598,30 +37323,121 @@ public final class ProtoGlobal {
         return this;
       }
 
-      private boolean postMessage_ ;
+      private net.iGap.proto.ProtoGlobal.PostMessageRights postMessage_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.PostMessageRights, net.iGap.proto.ProtoGlobal.PostMessageRights.Builder, net.iGap.proto.ProtoGlobal.PostMessageRightsOrBuilder> postMessageBuilder_;
       /**
-       * <code>optional bool post_message = 2;</code>
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
        */
-      public boolean getPostMessage() {
-        return postMessage_;
+      public boolean hasPostMessage() {
+        return postMessageBuilder_ != null || postMessage_ != null;
       }
       /**
-       * <code>optional bool post_message = 2;</code>
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
        */
-      public Builder setPostMessage(boolean value) {
-        
-        postMessage_ = value;
-        onChanged();
+      public net.iGap.proto.ProtoGlobal.PostMessageRights getPostMessage() {
+        if (postMessageBuilder_ == null) {
+          return postMessage_ == null ? net.iGap.proto.ProtoGlobal.PostMessageRights.getDefaultInstance() : postMessage_;
+        } else {
+          return postMessageBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
+       */
+      public Builder setPostMessage(net.iGap.proto.ProtoGlobal.PostMessageRights value) {
+        if (postMessageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          postMessage_ = value;
+          onChanged();
+        } else {
+          postMessageBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional bool post_message = 2;</code>
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
+       */
+      public Builder setPostMessage(
+          net.iGap.proto.ProtoGlobal.PostMessageRights.Builder builderForValue) {
+        if (postMessageBuilder_ == null) {
+          postMessage_ = builderForValue.build();
+          onChanged();
+        } else {
+          postMessageBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
+       */
+      public Builder mergePostMessage(net.iGap.proto.ProtoGlobal.PostMessageRights value) {
+        if (postMessageBuilder_ == null) {
+          if (postMessage_ != null) {
+            postMessage_ =
+              net.iGap.proto.ProtoGlobal.PostMessageRights.newBuilder(postMessage_).mergeFrom(value).buildPartial();
+          } else {
+            postMessage_ = value;
+          }
+          onChanged();
+        } else {
+          postMessageBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
        */
       public Builder clearPostMessage() {
-        
-        postMessage_ = false;
-        onChanged();
+        if (postMessageBuilder_ == null) {
+          postMessage_ = null;
+          onChanged();
+        } else {
+          postMessage_ = null;
+          postMessageBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PostMessageRights.Builder getPostMessageBuilder() {
+        
+        onChanged();
+        return getPostMessageFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.PostMessageRightsOrBuilder getPostMessageOrBuilder() {
+        if (postMessageBuilder_ != null) {
+          return postMessageBuilder_.getMessageOrBuilder();
+        } else {
+          return postMessage_ == null ?
+              net.iGap.proto.ProtoGlobal.PostMessageRights.getDefaultInstance() : postMessage_;
+        }
+      }
+      /**
+       * <code>optional .proto.PostMessageRights post_message = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.PostMessageRights, net.iGap.proto.ProtoGlobal.PostMessageRights.Builder, net.iGap.proto.ProtoGlobal.PostMessageRightsOrBuilder> 
+          getPostMessageFieldBuilder() {
+        if (postMessageBuilder_ == null) {
+          postMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.PostMessageRights, net.iGap.proto.ProtoGlobal.PostMessageRights.Builder, net.iGap.proto.ProtoGlobal.PostMessageRightsOrBuilder>(
+                  getPostMessage(),
+                  getParentForChildren(),
+                  isClean());
+          postMessage_ = null;
+        }
+        return postMessageBuilder_;
       }
 
       private boolean editMessage_ ;
@@ -53399,6 +54215,11 @@ public final class ProtoGlobal {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_File_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_PostMessageRights_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_PostMessageRights_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_RoomAccess_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -53645,126 +54466,130 @@ public final class ProtoGlobal {
       "humbnail\030\006 \001(\0132\020.proto.Thumbnail\022\r\n\005widt" +
       "h\030\007 \001(\005\022\016\n\006height\030\010 \001(\005\022\020\n\010duration\030\t \001(" +
       "\001\022\020\n\010cache_id\030\n \001(\t\022\014\n\004mime\030\013 \001(\t\022\022\n\npub" +
-      "lic_url\030\014 \001(\t\"\311\001\n\nRoomAccess\022\023\n\013modify_r" +
-      "oom\030\001 \001(\010\022\024\n\014post_message\030\002 \001(\010\022\024\n\014edit_" +
-      "message\030\003 \001(\010\022\026\n\016delete_message\030\004 \001(\010\022\023\n" +
-      "\013pin_message\030\005 \001(\010\022\022\n\nadd_member\030\006 \001(\010\022\022" +
-      "\n\nban_member\030\007 \001(\010\022\022\n\nget_member\030\010 \001(\010\022\021" +
-      "\n\tadd_admin\030\t \001(\010\"5\n\tWallpaper\022\031\n\004file\030\001" +
-      " \001(\0132\013.proto.File\022\r\n\005color\030\002 \001(\t\"+\n\nPagi",
-      "nation\022\016\n\006offset\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\"Z\n" +
-      "\010Favorite\022\014\n\004name\030\001 \001(\t\022\021\n\ttextcolor\030\002 \001" +
-      "(\t\022\017\n\007bgcolor\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\r\n\005im" +
-      "age\030\005 \001(\t\"\345\007\n\016DiscoveryField\022\020\n\010imageurl" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022:\n\nactiontype\030\003 \001(" +
-      "\0162&.proto.DiscoveryField.ButtonActionTyp" +
-      "e\022\017\n\007orderid\030\004 \001(\r\022\n\n\002id\030\005 \001(\r\022\r\n\005param\030" +
-      "\006 \001(\t\022\021\n\tagreement\030\007 \001(\010\022\017\n\007refresh\030\010 \001(" +
-      "\010\022\025\n\ragreementSlug\030\t \001(\t\"\216\006\n\020ButtonActio" +
-      "nType\022\010\n\004NONE\020\000\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_AC",
-      "TION\020\002\022\021\n\rUSERNAME_LINK\020\003\022\014\n\010WEB_LINK\020\004\022" +
-      "\021\n\rWEB_VIEW_LINK\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n\rP" +
-      "AY_BY_WALLET\020\007\022\016\n\nPAY_DIRECT\020\010\022\021\n\rREQUES" +
-      "T_PHONE\020\t\022\024\n\020REQUEST_LOCATION\020\n\022\016\n\nSHOW_" +
-      "ALERT\020\013\022\010\n\004PAGE\020\014\022\022\n\016FINANCIAL_MENU\020\r\022\r\n" +
-      "\tBILL_MENU\020\016\022\025\n\021TRAFFIC_BILL_MENU\020\017\022\024\n\020M" +
-      "OBILE_BILL_MENU\020\020\022\023\n\017PHONE_BILL_MENU\020\021\022\016" +
-      "\n\nTOPUP_MENU\020\022\022\017\n\013WALLET_MENU\020\023\022\017\n\013NEARB" +
-      "Y_MENU\020\024\022\010\n\004CALL\020\025\022\020\n\014STICKER_SHOP\020\026\022\t\n\005" +
-      "IVAND\020\027\022\013\n\007IVANDQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n\nI",
-      "VANDSCORE\020\032\022\020\n\014CARD_TO_CARD\020\033\022\024\n\020FAVORIT" +
-      "E_CHANNEL\020\034\022\t\n\005MUSIC\020\035\022\013\n\007CHARITY\020\036\022\017\n\013F" +
-      "UN_SERVICE\020\037\022\021\n\rVIRTUAL_MONEY\020 \022\020\n\014CITY_" +
-      "SERVICE\020!\022\010\n\004POLL\020\"\022\031\n\025INTERNET_PACKAGE_" +
-      "MENU\020#\022\025\n\021FINANCIAL_HISTORY\020$\022\021\n\rINVITE_" +
-      "FRIEND\020%\022\010\n\004NEWS\020&\022\026\n\022ELECTRIC_BILL_MENU" +
-      "\020\'\022\016\n\nBLOCKCHAIN\020(\022\014\n\010PARSLAND\020)\022\017\n\013POLL" +
-      "_RESULT\020*\022\025\n\021VIRTUAL_GIFT_CARD\020+\022\017\n\013NEWS" +
-      "_DETAIL\020,\"\340\001\n\tDiscovery\022.\n\005model\030\001 \001(\0162\037" +
-      ".proto.Discovery.DiscoveryModel\022\r\n\005scale",
-      "\030\002 \001(\t\022.\n\017discoveryfields\030\003 \003(\0132\025.proto." +
-      "DiscoveryField\"d\n\016DiscoveryModel\022\n\n\006MODE" +
-      "L1\020\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003" +
-      "\022\n\n\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\"z\n\t" +
-      "PollField\022\020\n\010imageurl\030\001 \001(\t\022\017\n\007orderid\030\002" +
-      " \001(\r\022\n\n\002id\030\003 \001(\r\022\017\n\007clicked\030\004 \001(\010\022\013\n\003sum" +
-      "\030\005 \001(\004\022\021\n\tclickable\030\006 \001(\010\022\r\n\005label\030\007 \001(\t" +
-      "\"x\n\004Poll\022.\n\005model\030\001 \001(\0162\037.proto.Discover" +
-      "y.DiscoveryModel\022\r\n\005scale\030\002 \001(\t\022\013\n\003max\030\003" +
-      " \001(\r\022$\n\npollfields\030\004 \003(\0132\020.proto.PollFie",
-      "ld\";\n\rIVandActivity\022\r\n\005title\030\001 \001(\t\022\r\n\005sc" +
-      "ore\030\002 \001(\005\022\014\n\004time\030\003 \001(\r\"\222\002\n\007MplSale\022\026\n\016i" +
-      "nvoice_number\030\001 \001(\004\022\024\n\014from_user_id\030\002 \001(" +
-      "\004\022\016\n\006amount\030\003 \001(\004\022\024\n\014trace_number\030\004 \001(\003\022" +
-      "\020\n\010pay_time\030\005 \001(\r\022\023\n\013description\030\006 \001(\t\022\023" +
-      "\n\013card_number\030\007 \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006stat" +
-      "us\030\t \001(\0162\025.proto.MplSale.Status\"C\n\006Statu" +
-      "s\022\022\n\016PENDING_VERIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FA" +
-      "ILED\020\002\022\014\n\010REVERSED\020\003\"\313\n\n\016MplTransaction\022" +
-      "\020\n\010order_id\030\001 \001(\004\022\r\n\005token\030\002 \001(\t\022\020\n\010pay_",
-      "time\030\003 \001(\r\022(\n\004type\030\004 \001(\0162\032.proto.MplTran" +
-      "saction.Type\022(\n\004bill\030\005 \001(\0132\032.proto.MplTr" +
-      "ansaction.Bill\022*\n\005topup\030\006 \001(\0132\033.proto.Mp" +
-      "lTransaction.Topup\022*\n\005sales\030\007 \001(\0132\033.prot" +
-      "o.MplTransaction.Sales\0224\n\ncardtocard\030\010 \001" +
-      "(\0132 .proto.MplTransaction.CardToCard\032\370\001\n" +
-      "\004Bill\022\016\n\006BillId\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020\n\010" +
-      "BillType\030\003 \001(\t\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amount" +
-      "\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014MerchantNa" +
-      "me\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDate",
-      "Time\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescrip" +
-      "tion\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007TraceN" +
-      "o\030\r \001(\r\032\226\002\n\005Topup\022\035\n\025RequesterMobileNumb" +
-      "er\030\001 \001(\004\022\032\n\022ChargeMobileNumber\030\002 \001(\004\022\021\n\t" +
-      "TopupType\030\003 \001(\r\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amoun" +
-      "t\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014MerchantN" +
-      "ame\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDat" +
-      "eTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescri" +
-      "ption\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007Trace" +
-      "No\030\r \001(\r\032\310\001\n\005Sales\022\016\n\006Status\030\001 \001(\r\022\016\n\006Am",
-      "ount\030\002 \001(\004\022\022\n\nCardNumber\030\003 \001(\t\022\024\n\014Mercha" +
-      "ntName\030\004 \001(\t\022\017\n\007OrderId\030\005 \001(\004\022\027\n\017Request" +
-      "DateTime\030\006 \001(\004\022\013\n\003RRN\030\007 \001(\004\022\031\n\021StatusDes" +
-      "cription\030\010 \001(\t\022\022\n\nTerminalNo\030\t \001(\r\022\017\n\007Tr" +
-      "aceNo\030\n \001(\r\032\200\002\n\nCardToCard\022\016\n\006Status\030\001 \001" +
-      "(\r\022\016\n\006Amount\030\002 \001(\004\022\030\n\020SourceCardNumber\030\003" +
-      " \001(\t\022\026\n\016DestCardNumber\030\004 \001(\t\022\020\n\010BankName" +
-      "\030\005 \001(\t\022\024\n\014DestBankName\030\006 \001(\t\022\025\n\rCardOwne" +
-      "rName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestD" +
-      "ateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDesc",
-      "ription\030\013 \001(\t\022\017\n\007TraceNo\030\r \001(\r\"B\n\004Type\022\010" +
-      "\n\004NONE\020\000\022\010\n\004BILL\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES\020\003" +
-      "\022\020\n\014CARD_TO_CARD\020\004*+\n\006Gender\022\013\n\007UNKNOWN\020" +
-      "\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016UNK" +
-      "NOWN_DEVICE\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOB" +
-      "ILE\020\003*k\n\010Platform\022\024\n\020UNKNOWN_PLATFORM\020\000\022" +
-      "\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WIN" +
-      "DOWS\020\004\022\t\n\005LINUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010La" +
-      "nguage\022\t\n\005EN_US\020\000\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMes" +
-      "sageType\022\010\n\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_T",
-      "EXT\020\002\022\t\n\005VIDEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDI" +
-      "O\020\005\022\016\n\nAUDIO_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022" +
-      "\014\n\010GIF_TEXT\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014" +
-      "\n\010LOCATION\020\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WA" +
-      "LLET\020\017\022\013\n\007STICKER\020\020*]\n\021RoomMessageStatus" +
-      "\022\n\n\006FAILED\020\000\022\013\n\007SENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tD" +
-      "ELIVERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LISTENED\020\005*5\n\023Ro" +
-      "omMessageReaction\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUM" +
-      "BS_DOWN\020\001*\244\002\n\014ClientAction\022\n\n\006CANCEL\020\000\022\n" +
-      "\n\006TYPING\020\001\022\021\n\rSENDING_IMAGE\020\002\022\023\n\017CAPTURI",
-      "NG_IMAGE\020\003\022\021\n\rSENDING_VIDEO\020\004\022\023\n\017CAPTURI" +
-      "NG_VIDEO\020\005\022\021\n\rSENDING_AUDIO\020\006\022\023\n\017RECORDI" +
-      "NG_VOICE\020\007\022\021\n\rSENDING_VOICE\020\010\022\024\n\020SENDING" +
-      "_DOCUMENT\020\t\022\017\n\013SENDING_GIF\020\n\022\020\n\014SENDING_" +
-      "FILE\020\013\022\024\n\020SENDING_LOCATION\020\014\022\024\n\020CHOOSING" +
-      "_CONTACT\020\r\022\014\n\010PAINTING\020\016* \n\010RoomMute\022\n\n\006" +
-      "UNMUTE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013PrivacyType\022\017\n\013US" +
-      "ER_STATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014GROUP_INVITE\020" +
-      "\002\022\022\n\016CHANNEL_INVITE\020\003\022\021\n\rVOICE_CALLING\020\004" +
-      "\022\021\n\rVIDEO_CALLING\020\005\022\022\n\016SCREEN_SHARING\020\006\022",
-      "\017\n\013SECRET_CHAT\020\007*?\n\014PrivacyLevel\022\r\n\tALLO" +
-      "W_ALL\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020" +
-      "\002B\035\n\016net.iGap.protoB\013ProtoGlobalb\006proto3"
+      "lic_url\030\014 \001(\t\"u\n\021PostMessageRights\022\021\n\tse" +
+      "nd_text\030\001 \001(\010\022\022\n\nsend_media\030\003 \001(\010\022\020\n\010sen" +
+      "d_gif\030\004 \001(\010\022\024\n\014send_sticker\030\005 \001(\010\022\021\n\tsen" +
+      "d_link\030\006 \001(\010\"\343\001\n\nRoomAccess\022\023\n\013modify_ro" +
+      "om\030\001 \001(\010\022.\n\014post_message\030\002 \001(\0132\030.proto.P" +
+      "ostMessageRights\022\024\n\014edit_message\030\003 \001(\010\022\026" +
+      "\n\016delete_message\030\004 \001(\010\022\023\n\013pin_message\030\005 ",
+      "\001(\010\022\022\n\nadd_member\030\006 \001(\010\022\022\n\nban_member\030\007 " +
+      "\001(\010\022\022\n\nget_member\030\010 \001(\010\022\021\n\tadd_admin\030\t \001" +
+      "(\010\"5\n\tWallpaper\022\031\n\004file\030\001 \001(\0132\013.proto.Fi" +
+      "le\022\r\n\005color\030\002 \001(\t\"+\n\nPagination\022\016\n\006offse" +
+      "t\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\"Z\n\010Favorite\022\014\n\004na" +
+      "me\030\001 \001(\t\022\021\n\ttextcolor\030\002 \001(\t\022\017\n\007bgcolor\030\003" +
+      " \001(\t\022\r\n\005value\030\004 \001(\t\022\r\n\005image\030\005 \001(\t\"\345\007\n\016D" +
+      "iscoveryField\022\020\n\010imageurl\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t\022:\n\nactiontype\030\003 \001(\0162&.proto.Disco" +
+      "veryField.ButtonActionType\022\017\n\007orderid\030\004 ",
+      "\001(\r\022\n\n\002id\030\005 \001(\r\022\r\n\005param\030\006 \001(\t\022\021\n\tagreem" +
+      "ent\030\007 \001(\010\022\017\n\007refresh\030\010 \001(\010\022\025\n\ragreementS" +
+      "lug\030\t \001(\t\"\216\006\n\020ButtonActionType\022\010\n\004NONE\020\000" +
+      "\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_ACTION\020\002\022\021\n\rUSERN" +
+      "AME_LINK\020\003\022\014\n\010WEB_LINK\020\004\022\021\n\rWEB_VIEW_LIN" +
+      "K\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n\rPAY_BY_WALLET\020\007\022" +
+      "\016\n\nPAY_DIRECT\020\010\022\021\n\rREQUEST_PHONE\020\t\022\024\n\020RE" +
+      "QUEST_LOCATION\020\n\022\016\n\nSHOW_ALERT\020\013\022\010\n\004PAGE" +
+      "\020\014\022\022\n\016FINANCIAL_MENU\020\r\022\r\n\tBILL_MENU\020\016\022\025\n" +
+      "\021TRAFFIC_BILL_MENU\020\017\022\024\n\020MOBILE_BILL_MENU",
+      "\020\020\022\023\n\017PHONE_BILL_MENU\020\021\022\016\n\nTOPUP_MENU\020\022\022" +
+      "\017\n\013WALLET_MENU\020\023\022\017\n\013NEARBY_MENU\020\024\022\010\n\004CAL" +
+      "L\020\025\022\020\n\014STICKER_SHOP\020\026\022\t\n\005IVAND\020\027\022\013\n\007IVAN" +
+      "DQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n\nIVANDSCORE\020\032\022\020\n\014" +
+      "CARD_TO_CARD\020\033\022\024\n\020FAVORITE_CHANNEL\020\034\022\t\n\005" +
+      "MUSIC\020\035\022\013\n\007CHARITY\020\036\022\017\n\013FUN_SERVICE\020\037\022\021\n" +
+      "\rVIRTUAL_MONEY\020 \022\020\n\014CITY_SERVICE\020!\022\010\n\004PO" +
+      "LL\020\"\022\031\n\025INTERNET_PACKAGE_MENU\020#\022\025\n\021FINAN" +
+      "CIAL_HISTORY\020$\022\021\n\rINVITE_FRIEND\020%\022\010\n\004NEW" +
+      "S\020&\022\026\n\022ELECTRIC_BILL_MENU\020\'\022\016\n\nBLOCKCHAI",
+      "N\020(\022\014\n\010PARSLAND\020)\022\017\n\013POLL_RESULT\020*\022\025\n\021VI" +
+      "RTUAL_GIFT_CARD\020+\022\017\n\013NEWS_DETAIL\020,\"\340\001\n\tD" +
+      "iscovery\022.\n\005model\030\001 \001(\0162\037.proto.Discover" +
+      "y.DiscoveryModel\022\r\n\005scale\030\002 \001(\t\022.\n\017disco" +
+      "veryfields\030\003 \003(\0132\025.proto.DiscoveryField\"" +
+      "d\n\016DiscoveryModel\022\n\n\006MODEL1\020\000\022\n\n\006MODEL2\020" +
+      "\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003\022\n\n\006MODEL5\020\004\022\n\n" +
+      "\006MODEL6\020\005\022\n\n\006MODEL7\020\006\"z\n\tPollField\022\020\n\010im" +
+      "ageurl\030\001 \001(\t\022\017\n\007orderid\030\002 \001(\r\022\n\n\002id\030\003 \001(" +
+      "\r\022\017\n\007clicked\030\004 \001(\010\022\013\n\003sum\030\005 \001(\004\022\021\n\tclick",
+      "able\030\006 \001(\010\022\r\n\005label\030\007 \001(\t\"x\n\004Poll\022.\n\005mod" +
+      "el\030\001 \001(\0162\037.proto.Discovery.DiscoveryMode" +
+      "l\022\r\n\005scale\030\002 \001(\t\022\013\n\003max\030\003 \001(\r\022$\n\npollfie" +
+      "lds\030\004 \003(\0132\020.proto.PollField\";\n\rIVandActi" +
+      "vity\022\r\n\005title\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004ti" +
+      "me\030\003 \001(\r\"\222\002\n\007MplSale\022\026\n\016invoice_number\030\001" +
+      " \001(\004\022\024\n\014from_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001" +
+      "(\004\022\024\n\014trace_number\030\004 \001(\003\022\020\n\010pay_time\030\005 \001" +
+      "(\r\022\023\n\013description\030\006 \001(\t\022\023\n\013card_number\030\007" +
+      " \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t \001(\0162\025.prot",
+      "o.MplSale.Status\"C\n\006Status\022\022\n\016PENDING_VE" +
+      "RIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002\022\014\n\010REVER" +
+      "SED\020\003\"\313\n\n\016MplTransaction\022\020\n\010order_id\030\001 \001" +
+      "(\004\022\r\n\005token\030\002 \001(\t\022\020\n\010pay_time\030\003 \001(\r\022(\n\004t" +
+      "ype\030\004 \001(\0162\032.proto.MplTransaction.Type\022(\n" +
+      "\004bill\030\005 \001(\0132\032.proto.MplTransaction.Bill\022" +
+      "*\n\005topup\030\006 \001(\0132\033.proto.MplTransaction.To" +
+      "pup\022*\n\005sales\030\007 \001(\0132\033.proto.MplTransactio" +
+      "n.Sales\0224\n\ncardtocard\030\010 \001(\0132 .proto.MplT" +
+      "ransaction.CardToCard\032\370\001\n\004Bill\022\016\n\006BillId",
+      "\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020\n\010BillType\030\003 \001(\t\022" +
+      "\016\n\006Status\030\004 \001(\r\022\016\n\006Amount\030\005 \001(\004\022\022\n\nCardN" +
+      "umber\030\006 \001(\t\022\024\n\014MerchantName\030\007 \001(\t\022\017\n\007Ord" +
+      "erId\030\010 \001(\004\022\027\n\017RequestDateTime\030\t \001(\004\022\013\n\003R" +
+      "RN\030\n \001(\004\022\031\n\021StatusDescription\030\013 \001(\t\022\022\n\nT" +
+      "erminalNo\030\014 \001(\r\022\017\n\007TraceNo\030\r \001(\r\032\226\002\n\005Top" +
+      "up\022\035\n\025RequesterMobileNumber\030\001 \001(\004\022\032\n\022Cha" +
+      "rgeMobileNumber\030\002 \001(\004\022\021\n\tTopupType\030\003 \001(\r" +
+      "\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amount\030\005 \001(\004\022\022\n\nCard" +
+      "Number\030\006 \001(\t\022\024\n\014MerchantName\030\007 \001(\t\022\017\n\007Or",
+      "derId\030\010 \001(\004\022\027\n\017RequestDateTime\030\t \001(\004\022\013\n\003" +
+      "RRN\030\n \001(\004\022\031\n\021StatusDescription\030\013 \001(\t\022\022\n\n" +
+      "TerminalNo\030\014 \001(\r\022\017\n\007TraceNo\030\r \001(\r\032\310\001\n\005Sa" +
+      "les\022\016\n\006Status\030\001 \001(\r\022\016\n\006Amount\030\002 \001(\004\022\022\n\nC" +
+      "ardNumber\030\003 \001(\t\022\024\n\014MerchantName\030\004 \001(\t\022\017\n" +
+      "\007OrderId\030\005 \001(\004\022\027\n\017RequestDateTime\030\006 \001(\004\022" +
+      "\013\n\003RRN\030\007 \001(\004\022\031\n\021StatusDescription\030\010 \001(\t\022" +
+      "\022\n\nTerminalNo\030\t \001(\r\022\017\n\007TraceNo\030\n \001(\r\032\200\002\n" +
+      "\nCardToCard\022\016\n\006Status\030\001 \001(\r\022\016\n\006Amount\030\002 " +
+      "\001(\004\022\030\n\020SourceCardNumber\030\003 \001(\t\022\026\n\016DestCar",
+      "dNumber\030\004 \001(\t\022\020\n\010BankName\030\005 \001(\t\022\024\n\014DestB" +
+      "ankName\030\006 \001(\t\022\025\n\rCardOwnerName\030\007 \001(\t\022\017\n\007" +
+      "OrderId\030\010 \001(\004\022\027\n\017RequestDateTime\030\t \001(\004\022\013" +
+      "\n\003RRN\030\n \001(\004\022\031\n\021StatusDescription\030\013 \001(\t\022\017" +
+      "\n\007TraceNo\030\r \001(\r\"B\n\004Type\022\010\n\004NONE\020\000\022\010\n\004BIL" +
+      "L\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES\020\003\022\020\n\014CARD_TO_CAR" +
+      "D\020\004*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020\001\022\n\n\006" +
+      "FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEVICE\020\000\022\006" +
+      "\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n\010Platfo" +
+      "rm\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDROID\020\001\022\007\n",
+      "\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005LINUX" +
+      "\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t\n\005EN_US" +
+      "\020\000\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMessageType\022\010\n\004TEX" +
+      "T\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005VIDEO\020" +
+      "\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUDIO_TE" +
+      "XT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEXT\020\016\022\010" +
+      "\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATION\020\013\022\007\n" +
+      "\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017\022\013\n\007STICK" +
+      "ER\020\020*]\n\021RoomMessageStatus\022\n\n\006FAILED\020\000\022\013\n" +
+      "\007SENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004S",
+      "EEN\020\004\022\014\n\010LISTENED\020\005*5\n\023RoomMessageReacti" +
+      "on\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUMBS_DOWN\020\001*\244\002\n\014C" +
+      "lientAction\022\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\rS" +
+      "ENDING_IMAGE\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\rS" +
+      "ENDING_VIDEO\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\rS" +
+      "ENDING_AUDIO\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\rS" +
+      "ENDING_VOICE\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n\013" +
+      "SENDING_GIF\020\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SENDI" +
+      "NG_LOCATION\020\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010P" +
+      "AINTING\020\016* \n\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MUT",
+      "E\020\001*\233\001\n\013PrivacyType\022\017\n\013USER_STATUS\020\000\022\n\n\006" +
+      "AVATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016CHANNEL_IN" +
+      "VITE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVIDEO_CALLI" +
+      "NG\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013SECRET_CHAT\020" +
+      "\007*?\n\014PrivacyLevel\022\r\n\tALLOW_ALL\020\000\022\014\n\010DENY" +
+      "_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016net.iGap.p" +
+      "rotoB\013ProtoGlobalb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -53946,68 +54771,74 @@ public final class ProtoGlobal {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_File_descriptor,
         new java.lang.String[] { "Token", "Name", "Size", "LargeThumbnail", "SmallThumbnail", "WaveformThumbnail", "Width", "Height", "Duration", "CacheId", "Mime", "PublicUrl", });
-    internal_static_proto_RoomAccess_descriptor =
+    internal_static_proto_PostMessageRights_descriptor =
       getDescriptor().getMessageTypes().get(15);
+    internal_static_proto_PostMessageRights_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_PostMessageRights_descriptor,
+        new java.lang.String[] { "SendText", "SendMedia", "SendGif", "SendSticker", "SendLink", });
+    internal_static_proto_RoomAccess_descriptor =
+      getDescriptor().getMessageTypes().get(16);
     internal_static_proto_RoomAccess_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomAccess_descriptor,
         new java.lang.String[] { "ModifyRoom", "PostMessage", "EditMessage", "DeleteMessage", "PinMessage", "AddMember", "BanMember", "GetMember", "AddAdmin", });
     internal_static_proto_Wallpaper_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_proto_Wallpaper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Wallpaper_descriptor,
         new java.lang.String[] { "File", "Color", });
     internal_static_proto_Pagination_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_proto_Pagination_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Pagination_descriptor,
         new java.lang.String[] { "Offset", "Limit", });
     internal_static_proto_Favorite_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_proto_Favorite_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Favorite_descriptor,
         new java.lang.String[] { "Name", "Textcolor", "Bgcolor", "Value", "Image", });
     internal_static_proto_DiscoveryField_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_proto_DiscoveryField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_DiscoveryField_descriptor,
         new java.lang.String[] { "Imageurl", "Value", "Actiontype", "Orderid", "Id", "Param", "Agreement", "Refresh", "AgreementSlug", });
     internal_static_proto_Discovery_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_proto_Discovery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Discovery_descriptor,
         new java.lang.String[] { "Model", "Scale", "Discoveryfields", });
     internal_static_proto_PollField_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_proto_PollField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_PollField_descriptor,
         new java.lang.String[] { "Imageurl", "Orderid", "Id", "Clicked", "Sum", "Clickable", "Label", });
     internal_static_proto_Poll_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_proto_Poll_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Poll_descriptor,
         new java.lang.String[] { "Model", "Scale", "Max", "Pollfields", });
     internal_static_proto_IVandActivity_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_proto_IVandActivity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_IVandActivity_descriptor,
         new java.lang.String[] { "Title", "Score", "Time", });
     internal_static_proto_MplSale_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_proto_MplSale_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplSale_descriptor,
         new java.lang.String[] { "InvoiceNumber", "FromUserId", "Amount", "TraceNumber", "PayTime", "Description", "CardNumber", "Rrn", "Status", });
     internal_static_proto_MplTransaction_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_proto_MplTransaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplTransaction_descriptor,
