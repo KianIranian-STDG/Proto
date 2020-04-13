@@ -2617,20 +2617,19 @@ public final class ProtoGroupAddAdmin {
   static {
     java.lang.String[] descriptorData = {
       "\n\023GroupAddAdmin.proto\022\005proto\032\rRequest.pr" +
-      "oto\032\016Response.proto\032\014Global.proto\"\253\002\n\rGr" +
-      "oupAddAdmin\022\037\n\007request\030\001 \001(\0132\016.proto.Req" +
-      "uest\022\017\n\007room_id\030\002 \001(\004\022\021\n\tmember_id\030\003 \001(\004" +
-      "\0224\n\npermission\030\004 \001(\0132 .proto.GroupAddAdm" +
-      "in.AdminRights\032\236\001\n\013AdminRights\022\023\n\013modify" +
-      "_room\030\001 \001(\010\022\026\n\016delete_message\030\002 \001(\010\022\023\n\013p" +
-      "in_message\030\003 \001(\010\022\022\n\nadd_member\030\004 \001(\010\022\022\n\n" +
-      "ban_member\030\005 \001(\010\022\022\n\nget_member\030\006 \001(\010\022\021\n\t" +
-      "add_admin\030\007 \001(\010\"\224\001\n\025GroupAddAdminRespons",
-      "e\022!\n\010response\030\001 \001(\0132\017.proto.Response\022\017\n\007" +
-      "room_id\030\002 \001(\004\022\021\n\tmember_id\030\003 \001(\004\0224\n\nperm" +
-      "ission\030\004 \001(\0132 .proto.GroupAddAdmin.Admin" +
-      "RightsB$\n\016net.iGap.protoB\022ProtoGroupAddA" +
-      "dminb\006proto3"
+      "oto\032\016Response.proto\"\253\002\n\rGroupAddAdmin\022\037\n" +
+      "\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007room_i" +
+      "d\030\002 \001(\004\022\021\n\tmember_id\030\003 \001(\004\0224\n\npermission" +
+      "\030\004 \001(\0132 .proto.GroupAddAdmin.AdminRights" +
+      "\032\236\001\n\013AdminRights\022\023\n\013modify_room\030\001 \001(\010\022\026\n" +
+      "\016delete_message\030\002 \001(\010\022\023\n\013pin_message\030\003 \001" +
+      "(\010\022\022\n\nadd_member\030\004 \001(\010\022\022\n\nban_member\030\005 \001" +
+      "(\010\022\022\n\nget_member\030\006 \001(\010\022\021\n\tadd_admin\030\007 \001(" +
+      "\010\"\224\001\n\025GroupAddAdminResponse\022!\n\010response\030",
+      "\001 \001(\0132\017.proto.Response\022\017\n\007room_id\030\002 \001(\004\022" +
+      "\021\n\tmember_id\030\003 \001(\004\0224\n\npermission\030\004 \001(\0132 " +
+      ".proto.GroupAddAdmin.AdminRightsB$\n\016net." +
+      "iGap.protoB\022ProtoGroupAddAdminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2645,7 +2644,6 @@ public final class ProtoGroupAddAdmin {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           net.iGap.proto.ProtoRequest.getDescriptor(),
           net.iGap.proto.ProtoResponse.getDescriptor(),
-          net.iGap.proto.ProtoGlobal.getDescriptor(),
         }, assigner);
     internal_static_proto_GroupAddAdmin_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2667,7 +2665,6 @@ public final class ProtoGroupAddAdmin {
         new java.lang.String[] { "Response", "RoomId", "MemberId", "Permission", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
-    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

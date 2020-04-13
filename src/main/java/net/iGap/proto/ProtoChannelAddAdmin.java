@@ -2745,21 +2745,21 @@ public final class ProtoChannelAddAdmin {
   static {
     java.lang.String[] descriptorData = {
       "\n\025ChannelAddAdmin.proto\022\005proto\032\rRequest." +
-      "proto\032\016Response.proto\032\014Global.proto\"\333\002\n\017" +
-      "ChannelAddAdmin\022\037\n\007request\030\001 \001(\0132\016.proto" +
-      ".Request\022\017\n\007room_id\030\002 \001(\004\022\021\n\tmember_id\030\003" +
-      " \001(\004\0226\n\npermission\030\004 \001(\0132\".proto.Channel" +
-      "AddAdmin.AdminRights\032\312\001\n\013AdminRights\022\023\n\013" +
-      "modify_room\030\001 \001(\010\022\024\n\014post_message\030\002 \001(\010\022" +
-      "\024\n\014edit_message\030\003 \001(\010\022\026\n\016delete_message\030" +
-      "\004 \001(\010\022\023\n\013pin_message\030\005 \001(\010\022\022\n\nadd_member" +
-      "\030\006 \001(\010\022\022\n\nban_member\030\007 \001(\010\022\022\n\nget_member",
-      "\030\010 \001(\010\022\021\n\tadd_admin\030\t \001(\010\"\230\001\n\027ChannelAdd" +
-      "AdminResponse\022!\n\010response\030\001 \001(\0132\017.proto." +
-      "Response\022\017\n\007room_id\030\002 \001(\004\022\021\n\tmember_id\030\003" +
-      " \001(\004\0226\n\npermission\030\004 \001(\0132\".proto.Channel" +
-      "AddAdmin.AdminRightsB&\n\016net.iGap.protoB\024" +
-      "ProtoChannelAddAdminb\006proto3"
+      "proto\032\016Response.proto\"\333\002\n\017ChannelAddAdmi" +
+      "n\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007ro" +
+      "om_id\030\002 \001(\004\022\021\n\tmember_id\030\003 \001(\004\0226\n\npermis" +
+      "sion\030\004 \001(\0132\".proto.ChannelAddAdmin.Admin" +
+      "Rights\032\312\001\n\013AdminRights\022\023\n\013modify_room\030\001 " +
+      "\001(\010\022\024\n\014post_message\030\002 \001(\010\022\024\n\014edit_messag" +
+      "e\030\003 \001(\010\022\026\n\016delete_message\030\004 \001(\010\022\023\n\013pin_m" +
+      "essage\030\005 \001(\010\022\022\n\nadd_member\030\006 \001(\010\022\022\n\nban_" +
+      "member\030\007 \001(\010\022\022\n\nget_member\030\010 \001(\010\022\021\n\tadd_",
+      "admin\030\t \001(\010\"\230\001\n\027ChannelAddAdminResponse\022" +
+      "!\n\010response\030\001 \001(\0132\017.proto.Response\022\017\n\007ro" +
+      "om_id\030\002 \001(\004\022\021\n\tmember_id\030\003 \001(\004\0226\n\npermis" +
+      "sion\030\004 \001(\0132\".proto.ChannelAddAdmin.Admin" +
+      "RightsB&\n\016net.iGap.protoB\024ProtoChannelAd" +
+      "dAdminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2774,7 +2774,6 @@ public final class ProtoChannelAddAdmin {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           net.iGap.proto.ProtoRequest.getDescriptor(),
           net.iGap.proto.ProtoResponse.getDescriptor(),
-          net.iGap.proto.ProtoGlobal.getDescriptor(),
         }, assigner);
     internal_static_proto_ChannelAddAdmin_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2796,7 +2795,6 @@ public final class ProtoChannelAddAdmin {
         new java.lang.String[] { "Response", "RoomId", "MemberId", "Permission", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
-    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
