@@ -2681,22 +2681,21 @@ public final class ProtoGroupChangeMemberRights {
   static {
     java.lang.String[] descriptorData = {
       "\n\035GroupChangeMemberRights.proto\022\005proto\032\r" +
-      "Request.proto\032\016Response.proto\032\014Global.pr" +
-      "oto\"\315\002\n\027GroupChangeMemberRights\022\037\n\007reque" +
-      "st\030\001 \001(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(" +
-      "\004\022\017\n\007user_id\030\003 \001(\004\022?\n\npermission\030\004 \001(\0132+" +
-      ".proto.GroupChangeMemberRights.MemberRig" +
-      "hts\032\255\001\n\014MemberRights\022\021\n\tsend_text\030\001 \001(\010\022" +
-      "\022\n\nsend_media\030\003 \001(\010\022\020\n\010send_gif\030\004 \001(\010\022\024\n" +
-      "\014send_sticker\030\005 \001(\010\022\021\n\tsend_link\030\006 \001(\010\022\023" +
-      "\n\013pin_message\030\007 \001(\010\022\022\n\nadd_member\030\010 \001(\010\022",
-      "\022\n\nget_member\030\t \001(\010\"\247\001\n\037GroupChangeMembe" +
-      "rRightsResponse\022!\n\010response\030\001 \001(\0132\017.prot" +
-      "o.Response\022\017\n\007room_id\030\002 \001(\004\022\017\n\007user_id\030\003" +
+      "Request.proto\032\016Response.proto\"\315\002\n\027GroupC" +
+      "hangeMemberRights\022\037\n\007request\030\001 \001(\0132\016.pro" +
+      "to.Request\022\017\n\007room_id\030\002 \001(\004\022\017\n\007user_id\030\003" +
       " \001(\004\022?\n\npermission\030\004 \001(\0132+.proto.GroupCh" +
-      "angeMemberRights.MemberRightsB.\n\016net.iGa" +
-      "p.protoB\034ProtoGroupChangeMemberRightsb\006p" +
-      "roto3"
+      "angeMemberRights.MemberRights\032\255\001\n\014Member" +
+      "Rights\022\021\n\tsend_text\030\001 \001(\010\022\022\n\nsend_media\030" +
+      "\003 \001(\010\022\020\n\010send_gif\030\004 \001(\010\022\024\n\014send_sticker\030" +
+      "\005 \001(\010\022\021\n\tsend_link\030\006 \001(\010\022\023\n\013pin_message\030" +
+      "\007 \001(\010\022\022\n\nadd_member\030\010 \001(\010\022\022\n\nget_member\030",
+      "\t \001(\010\"\247\001\n\037GroupChangeMemberRightsRespons" +
+      "e\022!\n\010response\030\001 \001(\0132\017.proto.Response\022\017\n\007" +
+      "room_id\030\002 \001(\004\022\017\n\007user_id\030\003 \001(\004\022?\n\npermis" +
+      "sion\030\004 \001(\0132+.proto.GroupChangeMemberRigh" +
+      "ts.MemberRightsB.\n\016net.iGap.protoB\034Proto" +
+      "GroupChangeMemberRightsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2711,7 +2710,6 @@ public final class ProtoGroupChangeMemberRights {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           net.iGap.proto.ProtoRequest.getDescriptor(),
           net.iGap.proto.ProtoResponse.getDescriptor(),
-          net.iGap.proto.ProtoGlobal.getDescriptor(),
         }, assigner);
     internal_static_proto_GroupChangeMemberRights_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2733,7 +2731,6 @@ public final class ProtoGroupChangeMemberRights {
         new java.lang.String[] { "Response", "RoomId", "UserId", "Permission", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
-    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

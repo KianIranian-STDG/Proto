@@ -26927,6 +26927,19 @@ public final class ProtoGlobal {
      * <code>optional .proto.GroupRoom.PublicExtra public_extra = 11;</code>
      */
     net.iGap.proto.ProtoGlobal.GroupRoom.PublicExtraOrBuilder getPublicExtraOrBuilder();
+
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    boolean hasRoomRights();
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getRoomRights();
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRightsOrBuilder getRoomRightsOrBuilder();
   }
   /**
    * Protobuf type {@code proto.GroupRoom}
@@ -27055,6 +27068,19 @@ public final class ProtoGlobal {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(publicExtra_);
                 publicExtra_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 98: {
+              net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder subBuilder = null;
+              if (roomRights_ != null) {
+                subBuilder = roomRights_.toBuilder();
+              }
+              roomRights_ = input.readMessage(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(roomRights_);
+                roomRights_ = subBuilder.buildPartial();
               }
 
               break;
@@ -28663,6 +28689,27 @@ public final class ProtoGlobal {
       return getPublicExtra();
     }
 
+    public static final int ROOM_RIGHTS_FIELD_NUMBER = 12;
+    private net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights roomRights_;
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    public boolean hasRoomRights() {
+      return roomRights_ != null;
+    }
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    public net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getRoomRights() {
+      return roomRights_ == null ? net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.getDefaultInstance() : roomRights_;
+    }
+    /**
+     * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+     */
+    public net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRightsOrBuilder getRoomRightsOrBuilder() {
+      return getRoomRights();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -28707,6 +28754,9 @@ public final class ProtoGlobal {
       }
       if (publicExtra_ != null) {
         output.writeMessage(11, getPublicExtra());
+      }
+      if (roomRights_ != null) {
+        output.writeMessage(12, getRoomRights());
       }
     }
 
@@ -28756,6 +28806,10 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getPublicExtra());
       }
+      if (roomRights_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getRoomRights());
+      }
       memoizedSize = size;
       return size;
     }
@@ -28801,6 +28855,11 @@ public final class ProtoGlobal {
         result = result && getPublicExtra()
             .equals(other.getPublicExtra());
       }
+      result = result && (hasRoomRights() == other.hasRoomRights());
+      if (hasRoomRights()) {
+        result = result && getRoomRights()
+            .equals(other.getRoomRights());
+      }
       return result;
     }
 
@@ -28838,6 +28897,10 @@ public final class ProtoGlobal {
       if (hasPublicExtra()) {
         hash = (37 * hash) + PUBLIC_EXTRA_FIELD_NUMBER;
         hash = (53 * hash) + getPublicExtra().hashCode();
+      }
+      if (hasRoomRights()) {
+        hash = (37 * hash) + ROOM_RIGHTS_FIELD_NUMBER;
+        hash = (53 * hash) + getRoomRights().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -28991,6 +29054,12 @@ public final class ProtoGlobal {
           publicExtra_ = null;
           publicExtraBuilder_ = null;
         }
+        if (roomRightsBuilder_ == null) {
+          roomRights_ = null;
+        } else {
+          roomRights_ = null;
+          roomRightsBuilder_ = null;
+        }
         return this;
       }
 
@@ -29035,6 +29104,11 @@ public final class ProtoGlobal {
           result.publicExtra_ = publicExtra_;
         } else {
           result.publicExtra_ = publicExtraBuilder_.build();
+        }
+        if (roomRightsBuilder_ == null) {
+          result.roomRights_ = roomRights_;
+        } else {
+          result.roomRights_ = roomRightsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -29112,6 +29186,9 @@ public final class ProtoGlobal {
         }
         if (other.hasPublicExtra()) {
           mergePublicExtra(other.getPublicExtra());
+        }
+        if (other.hasRoomRights()) {
+          mergeRoomRights(other.getRoomRights());
         }
         onChanged();
         return this;
@@ -29861,6 +29938,123 @@ public final class ProtoGlobal {
           publicExtra_ = null;
         }
         return publicExtraBuilder_;
+      }
+
+      private net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights roomRights_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights, net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder, net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRightsOrBuilder> roomRightsBuilder_;
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public boolean hasRoomRights() {
+        return roomRightsBuilder_ != null || roomRights_ != null;
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights getRoomRights() {
+        if (roomRightsBuilder_ == null) {
+          return roomRights_ == null ? net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.getDefaultInstance() : roomRights_;
+        } else {
+          return roomRightsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public Builder setRoomRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+        if (roomRightsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          roomRights_ = value;
+          onChanged();
+        } else {
+          roomRightsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public Builder setRoomRights(
+          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder builderForValue) {
+        if (roomRightsBuilder_ == null) {
+          roomRights_ = builderForValue.build();
+          onChanged();
+        } else {
+          roomRightsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public Builder mergeRoomRights(net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights value) {
+        if (roomRightsBuilder_ == null) {
+          if (roomRights_ != null) {
+            roomRights_ =
+              net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.newBuilder(roomRights_).mergeFrom(value).buildPartial();
+          } else {
+            roomRights_ = value;
+          }
+          onChanged();
+        } else {
+          roomRightsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public Builder clearRoomRights() {
+        if (roomRightsBuilder_ == null) {
+          roomRights_ = null;
+          onChanged();
+        } else {
+          roomRights_ = null;
+          roomRightsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder getRoomRightsBuilder() {
+        
+        onChanged();
+        return getRoomRightsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      public net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRightsOrBuilder getRoomRightsOrBuilder() {
+        if (roomRightsBuilder_ != null) {
+          return roomRightsBuilder_.getMessageOrBuilder();
+        } else {
+          return roomRights_ == null ?
+              net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.getDefaultInstance() : roomRights_;
+        }
+      }
+      /**
+       * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights, net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder, net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRightsOrBuilder> 
+          getRoomRightsFieldBuilder() {
+        if (roomRightsBuilder_ == null) {
+          roomRightsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights, net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRights.Builder, net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRightsOrBuilder>(
+                  getRoomRights(),
+                  getParentForChildren(),
+                  isClean());
+          roomRights_ = null;
+        }
+        return roomRightsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -54303,293 +54497,296 @@ public final class ProtoGlobal {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Global.proto\022\005proto\"/\n\023RoomMessageLoca" +
-      "tion\022\013\n\003lat\030\001 \001(\001\022\013\n\003lon\030\002 \001(\001\"\304\004\n\016RoomM" +
-      "essageLog\022(\n\004type\030\001 \001(\0162\032.proto.RoomMess" +
-      "ageLog.Type\0223\n\nextra_type\030\002 \001(\0162\037.proto." +
-      "RoomMessageLog.ExtraType\0225\n\013target_user\030" +
-      "\003 \001(\0132 .proto.RoomMessageLog.TargetUser\032" +
-      "\030\n\nTargetUser\022\n\n\002id\030\001 \001(\004\"\325\002\n\004Type\022\017\n\013US" +
-      "ER_JOINED\020\000\022\020\n\014USER_DELETED\020\001\022\020\n\014ROOM_CR" +
-      "EATED\020\002\022\020\n\014MEMBER_ADDED\020\003\022\021\n\rMEMBER_KICK" +
-      "ED\020\004\022\017\n\013MEMBER_LEFT\020\005\022\034\n\030ROOM_CONVERTED_",
-      "TO_PUBLIC\020\006\022\035\n\031ROOM_CONVERTED_TO_PRIVATE" +
-      "\020\007\022 \n\034MEMBER_JOINED_BY_INVITE_LINK\020\010\022\020\n\014" +
-      "ROOM_DELETED\020\t\022\025\n\021MISSED_VOICE_CALL\020\n\022\025\n" +
-      "\021MISSED_VIDEO_CALL\020\013\022\027\n\023MISSED_SCREEN_SH" +
-      "ARE\020\014\022\026\n\022MISSED_SECRET_CHAT\020\r\022\022\n\016PINNED_" +
-      "MESSAGE\020\016\"*\n\tExtraType\022\014\n\010NO_EXTRA\020\000\022\017\n\013" +
-      "TARGET_USER\020\001\"k\n\022RoomMessageContact\022\022\n\nf" +
-      "irst_name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\022\020\n\010ni" +
-      "ckname\030\003 \001(\t\022\r\n\005phone\030\004 \003(\t\022\r\n\005email\030\005 \003" +
-      "(\t\"\200\r\n\021RoomMessageWallet\022+\n\004type\030\001 \001(\0162\035",
-      ".proto.RoomMessageWallet.Type\022>\n\016money_t" +
-      "ransfer\030\002 \001(\0132&.proto.RoomMessageWallet." +
-      "MoneyTransfer\0229\n\014card_to_card\030\003 \001(\0132#.pr" +
-      "oto.RoomMessageWallet.CardToCard\022-\n\005topu" +
-      "p\030\004 \001(\0132\036.proto.RoomMessageWallet.Topup\022" +
-      "+\n\004bill\030\005 \001(\0132\035.proto.RoomMessageWallet." +
-      "Bill\032\300\001\n\rMoneyTransfer\022\024\n\014from_user_id\030\001" +
-      " \001(\004\022\022\n\nto_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001(\004" +
-      "\022\024\n\014trace_number\030\004 \001(\003\022\026\n\016invoice_number" +
-      "\030\005 \001(\003\022\020\n\010pay_time\030\006 \001(\r\022\023\n\013description\030",
-      "\007 \001(\t\022\023\n\013card_number\030\010 \001(\t\022\013\n\003rrn\030\t \001(\003\032" +
-      "\245\002\n\nCardToCard\022\024\n\014from_user_id\030\001 \001(\004\022\022\n\n" +
-      "to_user_id\030\002 \001(\004\022\020\n\010order_id\030\003 \001(\004\022\r\n\005to" +
-      "ken\030\004 \001(\t\022\016\n\006amount\030\005 \001(\004\022\032\n\022source_card" +
-      "_number\030\006 \001(\t\022\030\n\020dest_card_number\030\007 \001(\t\022" +
-      "\024\n\014request_time\030\010 \001(\r\022\013\n\003rrn\030\t \001(\t\022\024\n\014tr" +
-      "ace_number\030\n \001(\t\022\020\n\010bankName\030\013 \001(\t\022\024\n\014de" +
-      "stBankName\030\014 \001(\t\022\025\n\rcardOwnerName\030\r \001(\t\022" +
-      "\016\n\006status\030\016 \001(\010\032\357\003\n\005Topup\022\024\n\014from_user_i" +
-      "d\030\001 \001(\004\022\020\n\010order_id\030\002 \001(\004\022\020\n\010my_token\030\003 ",
-      "\001(\t\022\r\n\005token\030\004 \001(\004\022\016\n\006amount\030\005 \001(\004\022\037\n\027re" +
-      "quester_mobile_number\030\006 \001(\t\022\034\n\024charge_mo" +
-      "bile_number\030\007 \001(\t\0227\n\ntopup_type\030\010 \001(\0162#." +
-      "proto.RoomMessageWallet.Topup.Type\022\023\n\013ca" +
-      "rd_number\030\t \001(\t\022\025\n\rmerchant_name\030\n \001(\t\022\023" +
-      "\n\013terminal_no\030\013 \001(\004\022\013\n\003rrn\030\014 \001(\004\022\024\n\014trac" +
-      "e_number\030\r \001(\004\022\024\n\014request_time\030\016 \001(\r\022\016\n\006" +
-      "status\030\017 \001(\010\022\032\n\022status_description\030\020 \001(\t" +
-      "\"o\n\004Type\022\024\n\020IRANCELL_PREPAID\020\000\022\020\n\014IRANCE" +
-      "LL_WOW\020\001\022\022\n\016IRANCELL_WIMAX\020\002\022\025\n\021IRANCELL",
-      "_POSTPAID\020\003\022\007\n\003MCI\020\004\022\013\n\007RIGHTEL\020\005\032\271\002\n\004Bi" +
-      "ll\022\024\n\014from_user_id\030\001 \001(\004\022\020\n\010order_id\030\002 \001" +
-      "(\004\022\020\n\010my_token\030\003 \001(\t\022\r\n\005token\030\004 \001(\004\022\016\n\006a" +
-      "mount\030\005 \001(\004\022\016\n\006pay_id\030\006 \001(\t\022\017\n\007bill_id\030\007" +
-      " \001(\t\022\021\n\tbill_type\030\010 \001(\t\022\023\n\013card_number\030\t" +
-      " \001(\t\022\025\n\rmerchant_name\030\n \001(\t\022\023\n\013terminal_" +
-      "no\030\013 \001(\004\022\013\n\003rrn\030\014 \001(\004\022\024\n\014trace_number\030\r " +
-      "\001(\004\022\024\n\014request_time\030\016 \001(\r\022\016\n\006status\030\017 \001(" +
-      "\010\022\032\n\022status_description\030\020 \001(\t\"N\n\004Type\022\022\n" +
-      "\016MONEY_TRANSFER\020\000\022\013\n\007PAYMENT\020\001\022\020\n\014CARD_T",
-      "O_CARD\020\002\022\t\n\005TOPUP\020\003\022\010\n\004BILL\020\004\"=\n\026RoomMes" +
-      "sageForwardFrom\022\017\n\007room_id\030\001 \001(\004\022\022\n\nmess" +
-      "age_id\030\002 \001(\004\"\374\003\n\016RegisteredUser\022\n\n\002id\030\001 " +
-      "\001(\004\022\020\n\010username\030\002 \001(\t\022\r\n\005phone\030\003 \001(\004\022\022\n\n" +
-      "first_name\030\004 \001(\t\022\021\n\tlast_name\030\005 \001(\t\022\024\n\014d" +
-      "isplay_name\030\006 \001(\t\022\020\n\010initials\030\007 \001(\t\022\r\n\005c" +
-      "olor\030\010 \001(\t\022,\n\006status\030\t \001(\0162\034.proto.Regis" +
-      "teredUser.Status\022\021\n\tlast_seen\030\n \001(\r\022\024\n\014a" +
-      "vatar_count\030\013 \001(\r\022\035\n\006avatar\030\014 \001(\0132\r.prot" +
-      "o.Avatar\022\016\n\006mutual\030\r \001(\010\022\017\n\007deleted\030\016 \001(",
-      "\010\022\020\n\010cache_id\030\017 \001(\t\022\013\n\003bio\030\020 \001(\t\022\020\n\010veri" +
-      "fied\030\021 \001(\010\022\013\n\003bot\030\022 \001(\010\"\211\001\n\006Status\022\021\n\rLO" +
-      "NG_TIME_AGO\020\000\022\016\n\nLAST_MONTH\020\001\022\r\n\tLAST_WE" +
-      "EK\020\002\022\n\n\006ONLINE\020\003\022\013\n\007EXACTLY\020\004\022\014\n\010RECENTL" +
-      "Y\020\005\022\013\n\007SUPPORT\020\006\022\031\n\025SERVICE_NOTIFICATION" +
-      "S\020\007\"/\n\006Avatar\022\n\n\002id\030\001 \001(\004\022\031\n\004file\030\002 \001(\0132" +
-      "\013.proto.File\"\351\010\n\013RoomMessage\022\022\n\nmessage_" +
-      "id\030\001 \001(\004\022\027\n\017message_version\030\002 \001(\004\022(\n\006sta" +
-      "tus\030\003 \001(\0162\030.proto.RoomMessageStatus\022\026\n\016s" +
-      "tatus_version\030\004 \001(\004\022,\n\014message_type\030\005 \001(",
-      "\0162\026.proto.RoomMessageType\022\017\n\007message\030\006 \001" +
-      "(\t\022\037\n\nattachment\030\007 \001(\0132\013.proto.File\022)\n\006a" +
-      "uthor\030\010 \001(\0132\031.proto.RoomMessage.Author\022," +
-      "\n\010location\030\t \001(\0132\032.proto.RoomMessageLoca" +
-      "tion\022\"\n\003log\030\n \001(\0132\025.proto.RoomMessageLog" +
-      "\022*\n\007contact\030\013 \001(\0132\031.proto.RoomMessageCon" +
-      "tact\022(\n\006wallet\030\026 \001(\0132\030.proto.RoomMessage" +
-      "Wallet\022\016\n\006edited\030\014 \001(\010\022\023\n\013create_time\030\r " +
-      "\001(\r\022\023\n\013update_time\030\016 \001(\r\022\017\n\007deleted\030\017 \001(" +
-      "\010\022(\n\014forward_from\030\020 \001(\0132\022.proto.RoomMess",
-      "age\022$\n\010reply_to\030\021 \001(\0132\022.proto.RoomMessag" +
-      "e\022\033\n\023previous_message_id\030\022 \001(\004\022\021\n\trandom" +
-      "_id\030\025 \001(\004\022\027\n\017additional_type\030\027 \001(\r\022\027\n\017ad" +
-      "ditional_data\030\030 \001(\t\0220\n\nextra_type\030\023 \001(\0162" +
-      "\034.proto.RoomMessage.ExtraType\0226\n\rchannel" +
-      "_extra\030\024 \001(\0132\037.proto.RoomMessage.Channel" +
-      "Extra\032\266\001\n\006Author\022\014\n\004hash\030\001 \001(\t\022,\n\004user\030\002" +
-      " \001(\0132\036.proto.RoomMessage.Author.User\022,\n\004" +
-      "room\030\003 \001(\0132\036.proto.RoomMessage.Author.Ro" +
-      "om\032)\n\004User\022\017\n\007user_id\030\001 \001(\004\022\020\n\010cache_id\030",
-      "\002 \001(\t\032\027\n\004Room\022\017\n\007room_id\030\001 \001(\004\032j\n\014Channe" +
-      "lExtra\022\021\n\tsignature\030\001 \001(\t\022\023\n\013views_label" +
-      "\030\002 \001(\t\022\027\n\017thumbs_up_label\030\003 \001(\t\022\031\n\021thumb" +
-      "s_down_label\030\004 \001(\t\",\n\tExtraType\022\014\n\010NO_EX" +
-      "TRA\020\000\022\021\n\rCHANNEL_EXTRA\020\001\"B\n\tRoomDraft\022\017\n" +
-      "\007message\030\001 \001(\t\022\020\n\010reply_to\030\002 \001(\004\022\022\n\ndraf" +
-      "t_time\030\003 \001(\r\"\371\004\n\004Room\022\n\n\002id\030\001 \001(\004\022\036\n\004typ" +
-      "e\030\002 \001(\0162\020.proto.Room.Type\022\r\n\005title\030\003 \001(\t" +
-      "\022\020\n\010initials\030\004 \001(\t\022\r\n\005color\030\005 \001(\t\022\024\n\014unr" +
-      "ead_count\030\006 \001(\r\022(\n\014last_message\030\007 \001(\0132\022.",
-      "proto.RoomMessage\022\021\n\tread_only\030\010 \001(\010\022\026\n\016" +
-      "is_participant\030\t \001(\010\022\037\n\005draft\030\n \001(\0132\020.pr" +
-      "oto.RoomDraft\0220\n\024first_unread_message\030\016 " +
-      "\001(\0132\022.proto.RoomMessage\022\"\n\troom_mute\030\017 \001" +
-      "(\0162\017.proto.RoomMute\022\016\n\006pin_id\030\020 \001(\004\022*\n\016p" +
-      "inned_message\030\021 \001(\0132\022.proto.RoomMessage\022" +
-      "\020\n\010priority\030\022 \001(\r\022(\n\017chat_room_extra\030\013 \001" +
-      "(\0132\017.proto.ChatRoom\022*\n\020group_room_extra\030" +
-      "\014 \001(\0132\020.proto.GroupRoom\022.\n\022channel_room_" +
-      "extra\030\r \001(\0132\022.proto.ChannelRoom\022\016\n\006app_i",
-      "d\030\023 \001(\r\022%\n\npermission\030\024 \001(\0132\021.proto.Room" +
-      "Access\"(\n\004Type\022\010\n\004CHAT\020\000\022\t\n\005GROUP\020\001\022\013\n\007C" +
-      "HANNEL\020\002\"/\n\010ChatRoom\022#\n\004peer\030\001 \001(\0132\025.pro" +
-      "to.RegisteredUser\"\321\004\n\tGroupRoom\022#\n\004type\030" +
-      "\001 \001(\0162\025.proto.GroupRoom.Type\022#\n\004role\030\002 \001" +
-      "(\0162\025.proto.GroupRoom.Role\022\032\n\022participant" +
-      "s_count\030\003 \001(\r\022 \n\030participants_count_labe" +
-      "l\030\004 \001(\t\022 \n\030participants_count_limit\030\005 \001(" +
-      "\r\022&\n\036participants_count_limit_label\030\006 \001(" +
-      "\t\022\023\n\013description\030\007 \001(\t\022\024\n\014avatar_count\030\010",
-      " \001(\r\022\035\n\006avatar\030\t \001(\0132\r.proto.Avatar\0224\n\rp" +
-      "rivate_extra\030\n \001(\0132\035.proto.GroupRoom.Pri" +
-      "vateExtra\0222\n\014public_extra\030\013 \001(\0132\034.proto." +
-      "GroupRoom.PublicExtra\0329\n\014PrivateExtra\022\023\n" +
-      "\013invite_link\030\001 \001(\t\022\024\n\014invite_token\030\002 \001(\t" +
-      "\032\037\n\013PublicExtra\022\020\n\010username\030\001 \001(\t\")\n\004Typ" +
-      "e\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n\004" +
-      "Role\022\n\n\006MEMBER\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMIN" +
-      "\020\002\022\t\n\005OWNER\020\003\"\340\004\n\013ChannelRoom\022%\n\004type\030\001 " +
-      "\001(\0162\027.proto.ChannelRoom.Type\022%\n\004role\030\002 \001",
-      "(\0162\027.proto.ChannelRoom.Role\022\032\n\022participa" +
-      "nts_count\030\003 \001(\r\022 \n\030participants_count_la" +
-      "bel\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\024\n\014avatar" +
-      "_count\030\006 \001(\r\022\035\n\006avatar\030\007 \001(\0132\r.proto.Ava" +
-      "tar\0226\n\rprivate_extra\030\010 \001(\0132\037.proto.Chann" +
-      "elRoom.PrivateExtra\0224\n\014public_extra\030\t \001(" +
-      "\0132\036.proto.ChannelRoom.PublicExtra\022\021\n\tsig" +
-      "nature\030\n \001(\010\022\017\n\007seen_id\030\013 \001(\004\022\020\n\010verifie" +
-      "d\030\014 \001(\010\022\027\n\017reaction_status\030\r \001(\010\0329\n\014Priv" +
-      "ateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024\n\014invite_",
-      "token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010username\030\001" +
-      " \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013PUBLIC" +
-      "_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\tMODERATOR" +
-      "\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"f\n\tThumbnail\022\014\n" +
-      "\004size\030\001 \001(\003\022\r\n\005width\030\002 \001(\005\022\016\n\006height\030\003 \001" +
-      "(\005\022\020\n\010cache_id\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004mi" +
-      "me\030\006 \001(\t\"\232\002\n\004File\022\r\n\005token\030\001 \001(\t\022\014\n\004name" +
-      "\030\002 \001(\t\022\014\n\004size\030\003 \001(\003\022)\n\017large_thumbnail\030" +
-      "\004 \001(\0132\020.proto.Thumbnail\022)\n\017small_thumbna" +
-      "il\030\005 \001(\0132\020.proto.Thumbnail\022,\n\022waveform_t",
-      "humbnail\030\006 \001(\0132\020.proto.Thumbnail\022\r\n\005widt" +
-      "h\030\007 \001(\005\022\016\n\006height\030\010 \001(\005\022\020\n\010duration\030\t \001(" +
-      "\001\022\020\n\010cache_id\030\n \001(\t\022\014\n\004mime\030\013 \001(\t\022\022\n\npub" +
-      "lic_url\030\014 \001(\t\"u\n\021PostMessageRights\022\021\n\tse" +
-      "nd_text\030\001 \001(\010\022\022\n\nsend_media\030\003 \001(\010\022\020\n\010sen" +
-      "d_gif\030\004 \001(\010\022\024\n\014send_sticker\030\005 \001(\010\022\021\n\tsen" +
-      "d_link\030\006 \001(\010\"\343\001\n\nRoomAccess\022\023\n\013modify_ro" +
-      "om\030\001 \001(\010\022.\n\014post_message\030\002 \001(\0132\030.proto.P" +
-      "ostMessageRights\022\024\n\014edit_message\030\003 \001(\010\022\026" +
-      "\n\016delete_message\030\004 \001(\010\022\023\n\013pin_message\030\005 ",
-      "\001(\010\022\022\n\nadd_member\030\006 \001(\010\022\022\n\nban_member\030\007 " +
-      "\001(\010\022\022\n\nget_member\030\010 \001(\010\022\021\n\tadd_admin\030\t \001" +
-      "(\010\"5\n\tWallpaper\022\031\n\004file\030\001 \001(\0132\013.proto.Fi" +
-      "le\022\r\n\005color\030\002 \001(\t\"+\n\nPagination\022\016\n\006offse" +
-      "t\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\"Z\n\010Favorite\022\014\n\004na" +
-      "me\030\001 \001(\t\022\021\n\ttextcolor\030\002 \001(\t\022\017\n\007bgcolor\030\003" +
-      " \001(\t\022\r\n\005value\030\004 \001(\t\022\r\n\005image\030\005 \001(\t\"\345\007\n\016D" +
-      "iscoveryField\022\020\n\010imageurl\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\t\022:\n\nactiontype\030\003 \001(\0162&.proto.Disco" +
-      "veryField.ButtonActionType\022\017\n\007orderid\030\004 ",
-      "\001(\r\022\n\n\002id\030\005 \001(\r\022\r\n\005param\030\006 \001(\t\022\021\n\tagreem" +
-      "ent\030\007 \001(\010\022\017\n\007refresh\030\010 \001(\010\022\025\n\ragreementS" +
-      "lug\030\t \001(\t\"\216\006\n\020ButtonActionType\022\010\n\004NONE\020\000" +
-      "\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_ACTION\020\002\022\021\n\rUSERN" +
-      "AME_LINK\020\003\022\014\n\010WEB_LINK\020\004\022\021\n\rWEB_VIEW_LIN" +
-      "K\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n\rPAY_BY_WALLET\020\007\022" +
-      "\016\n\nPAY_DIRECT\020\010\022\021\n\rREQUEST_PHONE\020\t\022\024\n\020RE" +
-      "QUEST_LOCATION\020\n\022\016\n\nSHOW_ALERT\020\013\022\010\n\004PAGE" +
-      "\020\014\022\022\n\016FINANCIAL_MENU\020\r\022\r\n\tBILL_MENU\020\016\022\025\n" +
-      "\021TRAFFIC_BILL_MENU\020\017\022\024\n\020MOBILE_BILL_MENU",
-      "\020\020\022\023\n\017PHONE_BILL_MENU\020\021\022\016\n\nTOPUP_MENU\020\022\022" +
-      "\017\n\013WALLET_MENU\020\023\022\017\n\013NEARBY_MENU\020\024\022\010\n\004CAL" +
-      "L\020\025\022\020\n\014STICKER_SHOP\020\026\022\t\n\005IVAND\020\027\022\013\n\007IVAN" +
-      "DQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n\nIVANDSCORE\020\032\022\020\n\014" +
-      "CARD_TO_CARD\020\033\022\024\n\020FAVORITE_CHANNEL\020\034\022\t\n\005" +
-      "MUSIC\020\035\022\013\n\007CHARITY\020\036\022\017\n\013FUN_SERVICE\020\037\022\021\n" +
-      "\rVIRTUAL_MONEY\020 \022\020\n\014CITY_SERVICE\020!\022\010\n\004PO" +
-      "LL\020\"\022\031\n\025INTERNET_PACKAGE_MENU\020#\022\025\n\021FINAN" +
-      "CIAL_HISTORY\020$\022\021\n\rINVITE_FRIEND\020%\022\010\n\004NEW" +
-      "S\020&\022\026\n\022ELECTRIC_BILL_MENU\020\'\022\016\n\nBLOCKCHAI",
-      "N\020(\022\014\n\010PARSLAND\020)\022\017\n\013POLL_RESULT\020*\022\025\n\021VI" +
-      "RTUAL_GIFT_CARD\020+\022\017\n\013NEWS_DETAIL\020,\"\340\001\n\tD" +
-      "iscovery\022.\n\005model\030\001 \001(\0162\037.proto.Discover" +
-      "y.DiscoveryModel\022\r\n\005scale\030\002 \001(\t\022.\n\017disco" +
-      "veryfields\030\003 \003(\0132\025.proto.DiscoveryField\"" +
-      "d\n\016DiscoveryModel\022\n\n\006MODEL1\020\000\022\n\n\006MODEL2\020" +
-      "\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4\020\003\022\n\n\006MODEL5\020\004\022\n\n" +
-      "\006MODEL6\020\005\022\n\n\006MODEL7\020\006\"z\n\tPollField\022\020\n\010im" +
-      "ageurl\030\001 \001(\t\022\017\n\007orderid\030\002 \001(\r\022\n\n\002id\030\003 \001(" +
-      "\r\022\017\n\007clicked\030\004 \001(\010\022\013\n\003sum\030\005 \001(\004\022\021\n\tclick",
-      "able\030\006 \001(\010\022\r\n\005label\030\007 \001(\t\"x\n\004Poll\022.\n\005mod" +
-      "el\030\001 \001(\0162\037.proto.Discovery.DiscoveryMode" +
-      "l\022\r\n\005scale\030\002 \001(\t\022\013\n\003max\030\003 \001(\r\022$\n\npollfie" +
-      "lds\030\004 \003(\0132\020.proto.PollField\";\n\rIVandActi" +
-      "vity\022\r\n\005title\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004ti" +
-      "me\030\003 \001(\r\"\222\002\n\007MplSale\022\026\n\016invoice_number\030\001" +
-      " \001(\004\022\024\n\014from_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001" +
-      "(\004\022\024\n\014trace_number\030\004 \001(\003\022\020\n\010pay_time\030\005 \001" +
-      "(\r\022\023\n\013description\030\006 \001(\t\022\023\n\013card_number\030\007" +
-      " \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t \001(\0162\025.prot",
-      "o.MplSale.Status\"C\n\006Status\022\022\n\016PENDING_VE" +
-      "RIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002\022\014\n\010REVER" +
-      "SED\020\003\"\313\n\n\016MplTransaction\022\020\n\010order_id\030\001 \001" +
-      "(\004\022\r\n\005token\030\002 \001(\t\022\020\n\010pay_time\030\003 \001(\r\022(\n\004t" +
-      "ype\030\004 \001(\0162\032.proto.MplTransaction.Type\022(\n" +
-      "\004bill\030\005 \001(\0132\032.proto.MplTransaction.Bill\022" +
-      "*\n\005topup\030\006 \001(\0132\033.proto.MplTransaction.To" +
-      "pup\022*\n\005sales\030\007 \001(\0132\033.proto.MplTransactio" +
-      "n.Sales\0224\n\ncardtocard\030\010 \001(\0132 .proto.MplT" +
-      "ransaction.CardToCard\032\370\001\n\004Bill\022\016\n\006BillId",
-      "\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020\n\010BillType\030\003 \001(\t\022" +
-      "\016\n\006Status\030\004 \001(\r\022\016\n\006Amount\030\005 \001(\004\022\022\n\nCardN" +
-      "umber\030\006 \001(\t\022\024\n\014MerchantName\030\007 \001(\t\022\017\n\007Ord" +
-      "erId\030\010 \001(\004\022\027\n\017RequestDateTime\030\t \001(\004\022\013\n\003R" +
-      "RN\030\n \001(\004\022\031\n\021StatusDescription\030\013 \001(\t\022\022\n\nT" +
-      "erminalNo\030\014 \001(\r\022\017\n\007TraceNo\030\r \001(\r\032\226\002\n\005Top" +
-      "up\022\035\n\025RequesterMobileNumber\030\001 \001(\004\022\032\n\022Cha" +
-      "rgeMobileNumber\030\002 \001(\004\022\021\n\tTopupType\030\003 \001(\r" +
-      "\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amount\030\005 \001(\004\022\022\n\nCard" +
-      "Number\030\006 \001(\t\022\024\n\014MerchantName\030\007 \001(\t\022\017\n\007Or",
-      "derId\030\010 \001(\004\022\027\n\017RequestDateTime\030\t \001(\004\022\013\n\003" +
-      "RRN\030\n \001(\004\022\031\n\021StatusDescription\030\013 \001(\t\022\022\n\n" +
-      "TerminalNo\030\014 \001(\r\022\017\n\007TraceNo\030\r \001(\r\032\310\001\n\005Sa" +
-      "les\022\016\n\006Status\030\001 \001(\r\022\016\n\006Amount\030\002 \001(\004\022\022\n\nC" +
-      "ardNumber\030\003 \001(\t\022\024\n\014MerchantName\030\004 \001(\t\022\017\n" +
-      "\007OrderId\030\005 \001(\004\022\027\n\017RequestDateTime\030\006 \001(\004\022" +
-      "\013\n\003RRN\030\007 \001(\004\022\031\n\021StatusDescription\030\010 \001(\t\022" +
-      "\022\n\nTerminalNo\030\t \001(\r\022\017\n\007TraceNo\030\n \001(\r\032\200\002\n" +
-      "\nCardToCard\022\016\n\006Status\030\001 \001(\r\022\016\n\006Amount\030\002 " +
-      "\001(\004\022\030\n\020SourceCardNumber\030\003 \001(\t\022\026\n\016DestCar",
-      "dNumber\030\004 \001(\t\022\020\n\010BankName\030\005 \001(\t\022\024\n\014DestB" +
-      "ankName\030\006 \001(\t\022\025\n\rCardOwnerName\030\007 \001(\t\022\017\n\007" +
-      "OrderId\030\010 \001(\004\022\027\n\017RequestDateTime\030\t \001(\004\022\013" +
-      "\n\003RRN\030\n \001(\004\022\031\n\021StatusDescription\030\013 \001(\t\022\017" +
-      "\n\007TraceNo\030\r \001(\r\"B\n\004Type\022\010\n\004NONE\020\000\022\010\n\004BIL" +
-      "L\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES\020\003\022\020\n\014CARD_TO_CAR" +
-      "D\020\004*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020\001\022\n\n\006" +
-      "FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEVICE\020\000\022\006" +
-      "\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n\010Platfo" +
-      "rm\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDROID\020\001\022\007\n",
-      "\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005LINUX" +
-      "\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t\n\005EN_US" +
-      "\020\000\022\t\n\005FA_IR\020\001*\344\001\n\017RoomMessageType\022\010\n\004TEX" +
-      "T\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005VIDEO\020" +
-      "\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUDIO_TE" +
-      "XT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEXT\020\016\022\010" +
-      "\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATION\020\013\022\007\n" +
-      "\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017\022\013\n\007STICK" +
-      "ER\020\020*]\n\021RoomMessageStatus\022\n\n\006FAILED\020\000\022\013\n" +
-      "\007SENDING\020\001\022\010\n\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004S",
-      "EEN\020\004\022\014\n\010LISTENED\020\005*5\n\023RoomMessageReacti" +
-      "on\022\r\n\tTHUMBS_UP\020\000\022\017\n\013THUMBS_DOWN\020\001*\244\002\n\014C" +
-      "lientAction\022\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\rS" +
-      "ENDING_IMAGE\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\rS" +
-      "ENDING_VIDEO\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\rS" +
-      "ENDING_AUDIO\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\rS" +
-      "ENDING_VOICE\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n\013" +
-      "SENDING_GIF\020\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SENDI" +
-      "NG_LOCATION\020\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010P" +
-      "AINTING\020\016* \n\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MUT",
-      "E\020\001*\233\001\n\013PrivacyType\022\017\n\013USER_STATUS\020\000\022\n\n\006" +
-      "AVATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016CHANNEL_IN" +
-      "VITE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVIDEO_CALLI" +
-      "NG\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013SECRET_CHAT\020" +
-      "\007*?\n\014PrivacyLevel\022\r\n\tALLOW_ALL\020\000\022\014\n\010DENY" +
-      "_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016net.iGap.p" +
-      "rotoB\013ProtoGlobalb\006proto3"
+      "\n\014Global.proto\022\005proto\032\035GroupChangeMember" +
+      "Rights.proto\"/\n\023RoomMessageLocation\022\013\n\003l" +
+      "at\030\001 \001(\001\022\013\n\003lon\030\002 \001(\001\"\304\004\n\016RoomMessageLog" +
+      "\022(\n\004type\030\001 \001(\0162\032.proto.RoomMessageLog.Ty" +
+      "pe\0223\n\nextra_type\030\002 \001(\0162\037.proto.RoomMessa" +
+      "geLog.ExtraType\0225\n\013target_user\030\003 \001(\0132 .p" +
+      "roto.RoomMessageLog.TargetUser\032\030\n\nTarget" +
+      "User\022\n\n\002id\030\001 \001(\004\"\325\002\n\004Type\022\017\n\013USER_JOINED" +
+      "\020\000\022\020\n\014USER_DELETED\020\001\022\020\n\014ROOM_CREATED\020\002\022\020" +
+      "\n\014MEMBER_ADDED\020\003\022\021\n\rMEMBER_KICKED\020\004\022\017\n\013M",
+      "EMBER_LEFT\020\005\022\034\n\030ROOM_CONVERTED_TO_PUBLIC" +
+      "\020\006\022\035\n\031ROOM_CONVERTED_TO_PRIVATE\020\007\022 \n\034MEM" +
+      "BER_JOINED_BY_INVITE_LINK\020\010\022\020\n\014ROOM_DELE" +
+      "TED\020\t\022\025\n\021MISSED_VOICE_CALL\020\n\022\025\n\021MISSED_V" +
+      "IDEO_CALL\020\013\022\027\n\023MISSED_SCREEN_SHARE\020\014\022\026\n\022" +
+      "MISSED_SECRET_CHAT\020\r\022\022\n\016PINNED_MESSAGE\020\016" +
+      "\"*\n\tExtraType\022\014\n\010NO_EXTRA\020\000\022\017\n\013TARGET_US" +
+      "ER\020\001\"k\n\022RoomMessageContact\022\022\n\nfirst_name" +
+      "\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\022\020\n\010nickname\030\003 " +
+      "\001(\t\022\r\n\005phone\030\004 \003(\t\022\r\n\005email\030\005 \003(\t\"\200\r\n\021Ro",
+      "omMessageWallet\022+\n\004type\030\001 \001(\0162\035.proto.Ro" +
+      "omMessageWallet.Type\022>\n\016money_transfer\030\002" +
+      " \001(\0132&.proto.RoomMessageWallet.MoneyTran" +
+      "sfer\0229\n\014card_to_card\030\003 \001(\0132#.proto.RoomM" +
+      "essageWallet.CardToCard\022-\n\005topup\030\004 \001(\0132\036" +
+      ".proto.RoomMessageWallet.Topup\022+\n\004bill\030\005" +
+      " \001(\0132\035.proto.RoomMessageWallet.Bill\032\300\001\n\r" +
+      "MoneyTransfer\022\024\n\014from_user_id\030\001 \001(\004\022\022\n\nt" +
+      "o_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001(\004\022\024\n\014trace" +
+      "_number\030\004 \001(\003\022\026\n\016invoice_number\030\005 \001(\003\022\020\n",
+      "\010pay_time\030\006 \001(\r\022\023\n\013description\030\007 \001(\t\022\023\n\013" +
+      "card_number\030\010 \001(\t\022\013\n\003rrn\030\t \001(\003\032\245\002\n\nCardT" +
+      "oCard\022\024\n\014from_user_id\030\001 \001(\004\022\022\n\nto_user_i" +
+      "d\030\002 \001(\004\022\020\n\010order_id\030\003 \001(\004\022\r\n\005token\030\004 \001(\t" +
+      "\022\016\n\006amount\030\005 \001(\004\022\032\n\022source_card_number\030\006" +
+      " \001(\t\022\030\n\020dest_card_number\030\007 \001(\t\022\024\n\014reques" +
+      "t_time\030\010 \001(\r\022\013\n\003rrn\030\t \001(\t\022\024\n\014trace_numbe" +
+      "r\030\n \001(\t\022\020\n\010bankName\030\013 \001(\t\022\024\n\014destBankNam" +
+      "e\030\014 \001(\t\022\025\n\rcardOwnerName\030\r \001(\t\022\016\n\006status" +
+      "\030\016 \001(\010\032\357\003\n\005Topup\022\024\n\014from_user_id\030\001 \001(\004\022\020",
+      "\n\010order_id\030\002 \001(\004\022\020\n\010my_token\030\003 \001(\t\022\r\n\005to" +
+      "ken\030\004 \001(\004\022\016\n\006amount\030\005 \001(\004\022\037\n\027requester_m" +
+      "obile_number\030\006 \001(\t\022\034\n\024charge_mobile_numb" +
+      "er\030\007 \001(\t\0227\n\ntopup_type\030\010 \001(\0162#.proto.Roo" +
+      "mMessageWallet.Topup.Type\022\023\n\013card_number" +
+      "\030\t \001(\t\022\025\n\rmerchant_name\030\n \001(\t\022\023\n\013termina" +
+      "l_no\030\013 \001(\004\022\013\n\003rrn\030\014 \001(\004\022\024\n\014trace_number\030" +
+      "\r \001(\004\022\024\n\014request_time\030\016 \001(\r\022\016\n\006status\030\017 " +
+      "\001(\010\022\032\n\022status_description\030\020 \001(\t\"o\n\004Type\022" +
+      "\024\n\020IRANCELL_PREPAID\020\000\022\020\n\014IRANCELL_WOW\020\001\022",
+      "\022\n\016IRANCELL_WIMAX\020\002\022\025\n\021IRANCELL_POSTPAID" +
+      "\020\003\022\007\n\003MCI\020\004\022\013\n\007RIGHTEL\020\005\032\271\002\n\004Bill\022\024\n\014fro" +
+      "m_user_id\030\001 \001(\004\022\020\n\010order_id\030\002 \001(\004\022\020\n\010my_" +
+      "token\030\003 \001(\t\022\r\n\005token\030\004 \001(\004\022\016\n\006amount\030\005 \001" +
+      "(\004\022\016\n\006pay_id\030\006 \001(\t\022\017\n\007bill_id\030\007 \001(\t\022\021\n\tb" +
+      "ill_type\030\010 \001(\t\022\023\n\013card_number\030\t \001(\t\022\025\n\rm" +
+      "erchant_name\030\n \001(\t\022\023\n\013terminal_no\030\013 \001(\004\022" +
+      "\013\n\003rrn\030\014 \001(\004\022\024\n\014trace_number\030\r \001(\004\022\024\n\014re" +
+      "quest_time\030\016 \001(\r\022\016\n\006status\030\017 \001(\010\022\032\n\022stat" +
+      "us_description\030\020 \001(\t\"N\n\004Type\022\022\n\016MONEY_TR",
+      "ANSFER\020\000\022\013\n\007PAYMENT\020\001\022\020\n\014CARD_TO_CARD\020\002\022" +
+      "\t\n\005TOPUP\020\003\022\010\n\004BILL\020\004\"=\n\026RoomMessageForwa" +
+      "rdFrom\022\017\n\007room_id\030\001 \001(\004\022\022\n\nmessage_id\030\002 " +
+      "\001(\004\"\374\003\n\016RegisteredUser\022\n\n\002id\030\001 \001(\004\022\020\n\010us" +
+      "ername\030\002 \001(\t\022\r\n\005phone\030\003 \001(\004\022\022\n\nfirst_nam" +
+      "e\030\004 \001(\t\022\021\n\tlast_name\030\005 \001(\t\022\024\n\014display_na" +
+      "me\030\006 \001(\t\022\020\n\010initials\030\007 \001(\t\022\r\n\005color\030\010 \001(" +
+      "\t\022,\n\006status\030\t \001(\0162\034.proto.RegisteredUser" +
+      ".Status\022\021\n\tlast_seen\030\n \001(\r\022\024\n\014avatar_cou" +
+      "nt\030\013 \001(\r\022\035\n\006avatar\030\014 \001(\0132\r.proto.Avatar\022",
+      "\016\n\006mutual\030\r \001(\010\022\017\n\007deleted\030\016 \001(\010\022\020\n\010cach" +
+      "e_id\030\017 \001(\t\022\013\n\003bio\030\020 \001(\t\022\020\n\010verified\030\021 \001(" +
+      "\010\022\013\n\003bot\030\022 \001(\010\"\211\001\n\006Status\022\021\n\rLONG_TIME_A" +
+      "GO\020\000\022\016\n\nLAST_MONTH\020\001\022\r\n\tLAST_WEEK\020\002\022\n\n\006O" +
+      "NLINE\020\003\022\013\n\007EXACTLY\020\004\022\014\n\010RECENTLY\020\005\022\013\n\007SU" +
+      "PPORT\020\006\022\031\n\025SERVICE_NOTIFICATIONS\020\007\"/\n\006Av" +
+      "atar\022\n\n\002id\030\001 \001(\004\022\031\n\004file\030\002 \001(\0132\013.proto.F" +
+      "ile\"\351\010\n\013RoomMessage\022\022\n\nmessage_id\030\001 \001(\004\022" +
+      "\027\n\017message_version\030\002 \001(\004\022(\n\006status\030\003 \001(\016" +
+      "2\030.proto.RoomMessageStatus\022\026\n\016status_ver",
+      "sion\030\004 \001(\004\022,\n\014message_type\030\005 \001(\0162\026.proto" +
+      ".RoomMessageType\022\017\n\007message\030\006 \001(\t\022\037\n\natt" +
+      "achment\030\007 \001(\0132\013.proto.File\022)\n\006author\030\010 \001" +
+      "(\0132\031.proto.RoomMessage.Author\022,\n\010locatio" +
+      "n\030\t \001(\0132\032.proto.RoomMessageLocation\022\"\n\003l" +
+      "og\030\n \001(\0132\025.proto.RoomMessageLog\022*\n\007conta" +
+      "ct\030\013 \001(\0132\031.proto.RoomMessageContact\022(\n\006w" +
+      "allet\030\026 \001(\0132\030.proto.RoomMessageWallet\022\016\n" +
+      "\006edited\030\014 \001(\010\022\023\n\013create_time\030\r \001(\r\022\023\n\013up" +
+      "date_time\030\016 \001(\r\022\017\n\007deleted\030\017 \001(\010\022(\n\014forw",
+      "ard_from\030\020 \001(\0132\022.proto.RoomMessage\022$\n\010re" +
+      "ply_to\030\021 \001(\0132\022.proto.RoomMessage\022\033\n\023prev" +
+      "ious_message_id\030\022 \001(\004\022\021\n\trandom_id\030\025 \001(\004" +
+      "\022\027\n\017additional_type\030\027 \001(\r\022\027\n\017additional_" +
+      "data\030\030 \001(\t\0220\n\nextra_type\030\023 \001(\0162\034.proto.R" +
+      "oomMessage.ExtraType\0226\n\rchannel_extra\030\024 " +
+      "\001(\0132\037.proto.RoomMessage.ChannelExtra\032\266\001\n" +
+      "\006Author\022\014\n\004hash\030\001 \001(\t\022,\n\004user\030\002 \001(\0132\036.pr" +
+      "oto.RoomMessage.Author.User\022,\n\004room\030\003 \001(" +
+      "\0132\036.proto.RoomMessage.Author.Room\032)\n\004Use",
+      "r\022\017\n\007user_id\030\001 \001(\004\022\020\n\010cache_id\030\002 \001(\t\032\027\n\004" +
+      "Room\022\017\n\007room_id\030\001 \001(\004\032j\n\014ChannelExtra\022\021\n" +
+      "\tsignature\030\001 \001(\t\022\023\n\013views_label\030\002 \001(\t\022\027\n" +
+      "\017thumbs_up_label\030\003 \001(\t\022\031\n\021thumbs_down_la" +
+      "bel\030\004 \001(\t\",\n\tExtraType\022\014\n\010NO_EXTRA\020\000\022\021\n\r" +
+      "CHANNEL_EXTRA\020\001\"B\n\tRoomDraft\022\017\n\007message\030" +
+      "\001 \001(\t\022\020\n\010reply_to\030\002 \001(\004\022\022\n\ndraft_time\030\003 " +
+      "\001(\r\"\371\004\n\004Room\022\n\n\002id\030\001 \001(\004\022\036\n\004type\030\002 \001(\0162\020" +
+      ".proto.Room.Type\022\r\n\005title\030\003 \001(\t\022\020\n\010initi" +
+      "als\030\004 \001(\t\022\r\n\005color\030\005 \001(\t\022\024\n\014unread_count",
+      "\030\006 \001(\r\022(\n\014last_message\030\007 \001(\0132\022.proto.Roo" +
+      "mMessage\022\021\n\tread_only\030\010 \001(\010\022\026\n\016is_partic" +
+      "ipant\030\t \001(\010\022\037\n\005draft\030\n \001(\0132\020.proto.RoomD" +
+      "raft\0220\n\024first_unread_message\030\016 \001(\0132\022.pro" +
+      "to.RoomMessage\022\"\n\troom_mute\030\017 \001(\0162\017.prot" +
+      "o.RoomMute\022\016\n\006pin_id\030\020 \001(\004\022*\n\016pinned_mes" +
+      "sage\030\021 \001(\0132\022.proto.RoomMessage\022\020\n\010priori" +
+      "ty\030\022 \001(\r\022(\n\017chat_room_extra\030\013 \001(\0132\017.prot" +
+      "o.ChatRoom\022*\n\020group_room_extra\030\014 \001(\0132\020.p" +
+      "roto.GroupRoom\022.\n\022channel_room_extra\030\r \001",
+      "(\0132\022.proto.ChannelRoom\022\016\n\006app_id\030\023 \001(\r\022%" +
+      "\n\npermission\030\024 \001(\0132\021.proto.RoomAccess\"(\n" +
+      "\004Type\022\010\n\004CHAT\020\000\022\t\n\005GROUP\020\001\022\013\n\007CHANNEL\020\002\"" +
+      "/\n\010ChatRoom\022#\n\004peer\030\001 \001(\0132\025.proto.Regist" +
+      "eredUser\"\223\005\n\tGroupRoom\022#\n\004type\030\001 \001(\0162\025.p" +
+      "roto.GroupRoom.Type\022#\n\004role\030\002 \001(\0162\025.prot" +
+      "o.GroupRoom.Role\022\032\n\022participants_count\030\003" +
+      " \001(\r\022 \n\030participants_count_label\030\004 \001(\t\022 " +
+      "\n\030participants_count_limit\030\005 \001(\r\022&\n\036part" +
+      "icipants_count_limit_label\030\006 \001(\t\022\023\n\013desc",
+      "ription\030\007 \001(\t\022\024\n\014avatar_count\030\010 \001(\r\022\035\n\006a" +
+      "vatar\030\t \001(\0132\r.proto.Avatar\0224\n\rprivate_ex" +
+      "tra\030\n \001(\0132\035.proto.GroupRoom.PrivateExtra" +
+      "\0222\n\014public_extra\030\013 \001(\0132\034.proto.GroupRoom" +
+      ".PublicExtra\022@\n\013room_rights\030\014 \001(\0132+.prot" +
+      "o.GroupChangeMemberRights.MemberRights\0329" +
+      "\n\014PrivateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024\n\014i" +
+      "nvite_token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010user" +
+      "name\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013" +
+      "PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\tMOD",
+      "ERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"\340\004\n\013Chann" +
+      "elRoom\022%\n\004type\030\001 \001(\0162\027.proto.ChannelRoom" +
+      ".Type\022%\n\004role\030\002 \001(\0162\027.proto.ChannelRoom." +
+      "Role\022\032\n\022participants_count\030\003 \001(\r\022 \n\030part" +
+      "icipants_count_label\030\004 \001(\t\022\023\n\013descriptio" +
+      "n\030\005 \001(\t\022\024\n\014avatar_count\030\006 \001(\r\022\035\n\006avatar\030" +
+      "\007 \001(\0132\r.proto.Avatar\0226\n\rprivate_extra\030\010 " +
+      "\001(\0132\037.proto.ChannelRoom.PrivateExtra\0224\n\014" +
+      "public_extra\030\t \001(\0132\036.proto.ChannelRoom.P" +
+      "ublicExtra\022\021\n\tsignature\030\n \001(\010\022\017\n\007seen_id",
+      "\030\013 \001(\004\022\020\n\010verified\030\014 \001(\010\022\027\n\017reaction_sta" +
+      "tus\030\r \001(\010\0329\n\014PrivateExtra\022\023\n\013invite_link" +
+      "\030\001 \001(\t\022\024\n\014invite_token\030\002 \001(\t\032\037\n\013PublicEx" +
+      "tra\022\020\n\010username\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE" +
+      "_ROOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMB" +
+      "ER\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020" +
+      "\003\"f\n\tThumbnail\022\014\n\004size\030\001 \001(\003\022\r\n\005width\030\002 " +
+      "\001(\005\022\016\n\006height\030\003 \001(\005\022\020\n\010cache_id\030\004 \001(\t\022\014\n" +
+      "\004name\030\005 \001(\t\022\014\n\004mime\030\006 \001(\t\"\232\002\n\004File\022\r\n\005to" +
+      "ken\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004size\030\003 \001(\003\022)\n",
+      "\017large_thumbnail\030\004 \001(\0132\020.proto.Thumbnail" +
+      "\022)\n\017small_thumbnail\030\005 \001(\0132\020.proto.Thumbn" +
+      "ail\022,\n\022waveform_thumbnail\030\006 \001(\0132\020.proto." +
+      "Thumbnail\022\r\n\005width\030\007 \001(\005\022\016\n\006height\030\010 \001(\005" +
+      "\022\020\n\010duration\030\t \001(\001\022\020\n\010cache_id\030\n \001(\t\022\014\n\004" +
+      "mime\030\013 \001(\t\022\022\n\npublic_url\030\014 \001(\t\"u\n\021PostMe" +
+      "ssageRights\022\021\n\tsend_text\030\001 \001(\010\022\022\n\nsend_m" +
+      "edia\030\003 \001(\010\022\020\n\010send_gif\030\004 \001(\010\022\024\n\014send_sti" +
+      "cker\030\005 \001(\010\022\021\n\tsend_link\030\006 \001(\010\"\343\001\n\nRoomAc" +
+      "cess\022\023\n\013modify_room\030\001 \001(\010\022.\n\014post_messag",
+      "e\030\002 \001(\0132\030.proto.PostMessageRights\022\024\n\014edi" +
+      "t_message\030\003 \001(\010\022\026\n\016delete_message\030\004 \001(\010\022" +
+      "\023\n\013pin_message\030\005 \001(\010\022\022\n\nadd_member\030\006 \001(\010" +
+      "\022\022\n\nban_member\030\007 \001(\010\022\022\n\nget_member\030\010 \001(\010" +
+      "\022\021\n\tadd_admin\030\t \001(\010\"5\n\tWallpaper\022\031\n\004file" +
+      "\030\001 \001(\0132\013.proto.File\022\r\n\005color\030\002 \001(\t\"+\n\nPa" +
+      "gination\022\016\n\006offset\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\"" +
+      "Z\n\010Favorite\022\014\n\004name\030\001 \001(\t\022\021\n\ttextcolor\030\002" +
+      " \001(\t\022\017\n\007bgcolor\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\r\n\005" +
+      "image\030\005 \001(\t\"\345\007\n\016DiscoveryField\022\020\n\010imageu",
+      "rl\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022:\n\nactiontype\030\003 " +
+      "\001(\0162&.proto.DiscoveryField.ButtonActionT" +
+      "ype\022\017\n\007orderid\030\004 \001(\r\022\n\n\002id\030\005 \001(\r\022\r\n\005para" +
+      "m\030\006 \001(\t\022\021\n\tagreement\030\007 \001(\010\022\017\n\007refresh\030\010 " +
+      "\001(\010\022\025\n\ragreementSlug\030\t \001(\t\"\216\006\n\020ButtonAct" +
+      "ionType\022\010\n\004NONE\020\000\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_" +
+      "ACTION\020\002\022\021\n\rUSERNAME_LINK\020\003\022\014\n\010WEB_LINK\020" +
+      "\004\022\021\n\rWEB_VIEW_LINK\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n" +
+      "\rPAY_BY_WALLET\020\007\022\016\n\nPAY_DIRECT\020\010\022\021\n\rREQU" +
+      "EST_PHONE\020\t\022\024\n\020REQUEST_LOCATION\020\n\022\016\n\nSHO",
+      "W_ALERT\020\013\022\010\n\004PAGE\020\014\022\022\n\016FINANCIAL_MENU\020\r\022" +
+      "\r\n\tBILL_MENU\020\016\022\025\n\021TRAFFIC_BILL_MENU\020\017\022\024\n" +
+      "\020MOBILE_BILL_MENU\020\020\022\023\n\017PHONE_BILL_MENU\020\021" +
+      "\022\016\n\nTOPUP_MENU\020\022\022\017\n\013WALLET_MENU\020\023\022\017\n\013NEA" +
+      "RBY_MENU\020\024\022\010\n\004CALL\020\025\022\020\n\014STICKER_SHOP\020\026\022\t" +
+      "\n\005IVAND\020\027\022\013\n\007IVANDQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n" +
+      "\nIVANDSCORE\020\032\022\020\n\014CARD_TO_CARD\020\033\022\024\n\020FAVOR" +
+      "ITE_CHANNEL\020\034\022\t\n\005MUSIC\020\035\022\013\n\007CHARITY\020\036\022\017\n" +
+      "\013FUN_SERVICE\020\037\022\021\n\rVIRTUAL_MONEY\020 \022\020\n\014CIT" +
+      "Y_SERVICE\020!\022\010\n\004POLL\020\"\022\031\n\025INTERNET_PACKAG",
+      "E_MENU\020#\022\025\n\021FINANCIAL_HISTORY\020$\022\021\n\rINVIT" +
+      "E_FRIEND\020%\022\010\n\004NEWS\020&\022\026\n\022ELECTRIC_BILL_ME" +
+      "NU\020\'\022\016\n\nBLOCKCHAIN\020(\022\014\n\010PARSLAND\020)\022\017\n\013PO" +
+      "LL_RESULT\020*\022\025\n\021VIRTUAL_GIFT_CARD\020+\022\017\n\013NE" +
+      "WS_DETAIL\020,\"\340\001\n\tDiscovery\022.\n\005model\030\001 \001(\016" +
+      "2\037.proto.Discovery.DiscoveryModel\022\r\n\005sca" +
+      "le\030\002 \001(\t\022.\n\017discoveryfields\030\003 \003(\0132\025.prot" +
+      "o.DiscoveryField\"d\n\016DiscoveryModel\022\n\n\006MO" +
+      "DEL1\020\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4" +
+      "\020\003\022\n\n\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\"z",
+      "\n\tPollField\022\020\n\010imageurl\030\001 \001(\t\022\017\n\007orderid" +
+      "\030\002 \001(\r\022\n\n\002id\030\003 \001(\r\022\017\n\007clicked\030\004 \001(\010\022\013\n\003s" +
+      "um\030\005 \001(\004\022\021\n\tclickable\030\006 \001(\010\022\r\n\005label\030\007 \001" +
+      "(\t\"x\n\004Poll\022.\n\005model\030\001 \001(\0162\037.proto.Discov" +
+      "ery.DiscoveryModel\022\r\n\005scale\030\002 \001(\t\022\013\n\003max" +
+      "\030\003 \001(\r\022$\n\npollfields\030\004 \003(\0132\020.proto.PollF" +
+      "ield\";\n\rIVandActivity\022\r\n\005title\030\001 \001(\t\022\r\n\005" +
+      "score\030\002 \001(\005\022\014\n\004time\030\003 \001(\r\"\222\002\n\007MplSale\022\026\n" +
+      "\016invoice_number\030\001 \001(\004\022\024\n\014from_user_id\030\002 " +
+      "\001(\004\022\016\n\006amount\030\003 \001(\004\022\024\n\014trace_number\030\004 \001(",
+      "\003\022\020\n\010pay_time\030\005 \001(\r\022\023\n\013description\030\006 \001(\t" +
+      "\022\023\n\013card_number\030\007 \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006st" +
+      "atus\030\t \001(\0162\025.proto.MplSale.Status\"C\n\006Sta" +
+      "tus\022\022\n\016PENDING_VERIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006" +
+      "FAILED\020\002\022\014\n\010REVERSED\020\003\"\313\n\n\016MplTransactio" +
+      "n\022\020\n\010order_id\030\001 \001(\004\022\r\n\005token\030\002 \001(\t\022\020\n\010pa" +
+      "y_time\030\003 \001(\r\022(\n\004type\030\004 \001(\0162\032.proto.MplTr" +
+      "ansaction.Type\022(\n\004bill\030\005 \001(\0132\032.proto.Mpl" +
+      "Transaction.Bill\022*\n\005topup\030\006 \001(\0132\033.proto." +
+      "MplTransaction.Topup\022*\n\005sales\030\007 \001(\0132\033.pr",
+      "oto.MplTransaction.Sales\0224\n\ncardtocard\030\010" +
+      " \001(\0132 .proto.MplTransaction.CardToCard\032\370" +
+      "\001\n\004Bill\022\016\n\006BillId\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020" +
+      "\n\010BillType\030\003 \001(\t\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amou" +
+      "nt\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014Merchant" +
+      "Name\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestDa" +
+      "teTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDescr" +
+      "iption\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007Trac" +
+      "eNo\030\r \001(\r\032\226\002\n\005Topup\022\035\n\025RequesterMobileNu" +
+      "mber\030\001 \001(\004\022\032\n\022ChargeMobileNumber\030\002 \001(\004\022\021",
+      "\n\tTopupType\030\003 \001(\r\022\016\n\006Status\030\004 \001(\r\022\016\n\006Amo" +
+      "unt\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014Merchan" +
+      "tName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017RequestD" +
+      "ateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDesc" +
+      "ription\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007Tra" +
+      "ceNo\030\r \001(\r\032\310\001\n\005Sales\022\016\n\006Status\030\001 \001(\r\022\016\n\006" +
+      "Amount\030\002 \001(\004\022\022\n\nCardNumber\030\003 \001(\t\022\024\n\014Merc" +
+      "hantName\030\004 \001(\t\022\017\n\007OrderId\030\005 \001(\004\022\027\n\017Reque" +
+      "stDateTime\030\006 \001(\004\022\013\n\003RRN\030\007 \001(\004\022\031\n\021StatusD" +
+      "escription\030\010 \001(\t\022\022\n\nTerminalNo\030\t \001(\r\022\017\n\007",
+      "TraceNo\030\n \001(\r\032\200\002\n\nCardToCard\022\016\n\006Status\030\001" +
+      " \001(\r\022\016\n\006Amount\030\002 \001(\004\022\030\n\020SourceCardNumber" +
+      "\030\003 \001(\t\022\026\n\016DestCardNumber\030\004 \001(\t\022\020\n\010BankNa" +
+      "me\030\005 \001(\t\022\024\n\014DestBankName\030\006 \001(\t\022\025\n\rCardOw" +
+      "nerName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027\n\017Reques" +
+      "tDateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021StatusDe" +
+      "scription\030\013 \001(\t\022\017\n\007TraceNo\030\r \001(\r\"B\n\004Type" +
+      "\022\010\n\004NONE\020\000\022\010\n\004BILL\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES" +
+      "\020\003\022\020\n\014CARD_TO_CARD\020\004*+\n\006Gender\022\013\n\007UNKNOW" +
+      "N\020\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016U",
+      "NKNOWN_DEVICE\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006M" +
+      "OBILE\020\003*k\n\010Platform\022\024\n\020UNKNOWN_PLATFORM\020" +
+      "\000\022\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007W" +
+      "INDOWS\020\004\022\t\n\005LINUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010" +
+      "Language\022\t\n\005EN_US\020\000\022\t\n\005FA_IR\020\001*\344\001\n\017RoomM" +
+      "essageType\022\010\n\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE" +
+      "_TEXT\020\002\022\t\n\005VIDEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AU" +
+      "DIO\020\005\022\016\n\nAUDIO_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020" +
+      "\010\022\014\n\010GIF_TEXT\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n" +
+      "\022\014\n\010LOCATION\020\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006",
+      "WALLET\020\017\022\013\n\007STICKER\020\020*]\n\021RoomMessageStat" +
+      "us\022\n\n\006FAILED\020\000\022\013\n\007SENDING\020\001\022\010\n\004SENT\020\002\022\r\n" +
+      "\tDELIVERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LISTENED\020\005*5\n\023" +
+      "RoomMessageReaction\022\r\n\tTHUMBS_UP\020\000\022\017\n\013TH" +
+      "UMBS_DOWN\020\001*\244\002\n\014ClientAction\022\n\n\006CANCEL\020\000" +
+      "\022\n\n\006TYPING\020\001\022\021\n\rSENDING_IMAGE\020\002\022\023\n\017CAPTU" +
+      "RING_IMAGE\020\003\022\021\n\rSENDING_VIDEO\020\004\022\023\n\017CAPTU" +
+      "RING_VIDEO\020\005\022\021\n\rSENDING_AUDIO\020\006\022\023\n\017RECOR" +
+      "DING_VOICE\020\007\022\021\n\rSENDING_VOICE\020\010\022\024\n\020SENDI" +
+      "NG_DOCUMENT\020\t\022\017\n\013SENDING_GIF\020\n\022\020\n\014SENDIN",
+      "G_FILE\020\013\022\024\n\020SENDING_LOCATION\020\014\022\024\n\020CHOOSI" +
+      "NG_CONTACT\020\r\022\014\n\010PAINTING\020\016* \n\010RoomMute\022\n" +
+      "\n\006UNMUTE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013PrivacyType\022\017\n\013" +
+      "USER_STATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014GROUP_INVIT" +
+      "E\020\002\022\022\n\016CHANNEL_INVITE\020\003\022\021\n\rVOICE_CALLING" +
+      "\020\004\022\021\n\rVIDEO_CALLING\020\005\022\022\n\016SCREEN_SHARING\020" +
+      "\006\022\017\n\013SECRET_CHAT\020\007*?\n\014PrivacyLevel\022\r\n\tAL" +
+      "LOW_ALL\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016ALLOW_CONTACT" +
+      "S\020\002B\035\n\016net.iGap.protoB\013ProtoGlobalb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54602,6 +54799,7 @@ public final class ProtoGlobal {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          net.iGap.proto.ProtoGroupChangeMemberRights.getDescriptor(),
         }, assigner);
     internal_static_proto_RoomMessageLocation_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -54728,7 +54926,7 @@ public final class ProtoGlobal {
     internal_static_proto_GroupRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupRoom_descriptor,
-        new java.lang.String[] { "Type", "Role", "ParticipantsCount", "ParticipantsCountLabel", "ParticipantsCountLimit", "ParticipantsCountLimitLabel", "Description", "AvatarCount", "Avatar", "PrivateExtra", "PublicExtra", });
+        new java.lang.String[] { "Type", "Role", "ParticipantsCount", "ParticipantsCountLabel", "ParticipantsCountLimit", "ParticipantsCountLimitLabel", "Description", "AvatarCount", "Avatar", "PrivateExtra", "PublicExtra", "RoomRights", });
     internal_static_proto_GroupRoom_PrivateExtra_descriptor =
       internal_static_proto_GroupRoom_descriptor.getNestedTypes().get(0);
     internal_static_proto_GroupRoom_PrivateExtra_fieldAccessorTable = new
@@ -54867,6 +55065,7 @@ public final class ProtoGlobal {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplTransaction_CardToCard_descriptor,
         new java.lang.String[] { "Status", "Amount", "SourceCardNumber", "DestCardNumber", "BankName", "DestBankName", "CardOwnerName", "OrderId", "RequestDateTime", "RRN", "StatusDescription", "TraceNo", });
+    net.iGap.proto.ProtoGroupChangeMemberRights.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
