@@ -40,6 +40,11 @@ public final class ProtoUserIVandSetActivity {
      */
     com.google.protobuf.ByteString
         getPlancodeBytes();
+
+    /**
+     * <code>optional uint64 value = 3;</code>
+     */
+    long getValue();
   }
   /**
    * Protobuf type {@code proto.UserIVandSetActivity}
@@ -54,6 +59,7 @@ public final class ProtoUserIVandSetActivity {
     }
     private UserIVandSetActivity() {
       plancode_ = "";
+      value_ = 0L;
     }
 
     @java.lang.Override
@@ -98,6 +104,11 @@ public final class ProtoUserIVandSetActivity {
               java.lang.String s = input.readStringRequireUtf8();
 
               plancode_ = s;
+              break;
+            }
+            case 24: {
+
+              value_ = input.readUInt64();
               break;
             }
           }
@@ -178,6 +189,15 @@ public final class ProtoUserIVandSetActivity {
       }
     }
 
+    public static final int VALUE_FIELD_NUMBER = 3;
+    private long value_;
+    /**
+     * <code>optional uint64 value = 3;</code>
+     */
+    public long getValue() {
+      return value_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -196,6 +216,9 @@ public final class ProtoUserIVandSetActivity {
       if (!getPlancodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, plancode_);
       }
+      if (value_ != 0L) {
+        output.writeUInt64(3, value_);
+      }
     }
 
     public int getSerializedSize() {
@@ -209,6 +232,10 @@ public final class ProtoUserIVandSetActivity {
       }
       if (!getPlancodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, plancode_);
+      }
+      if (value_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, value_);
       }
       memoizedSize = size;
       return size;
@@ -233,6 +260,8 @@ public final class ProtoUserIVandSetActivity {
       }
       result = result && getPlancode()
           .equals(other.getPlancode());
+      result = result && (getValue()
+          == other.getValue());
       return result;
     }
 
@@ -249,6 +278,9 @@ public final class ProtoUserIVandSetActivity {
       }
       hash = (37 * hash) + PLANCODE_FIELD_NUMBER;
       hash = (53 * hash) + getPlancode().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getValue());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -375,6 +407,8 @@ public final class ProtoUserIVandSetActivity {
         }
         plancode_ = "";
 
+        value_ = 0L;
+
         return this;
       }
 
@@ -403,6 +437,7 @@ public final class ProtoUserIVandSetActivity {
           result.request_ = requestBuilder_.build();
         }
         result.plancode_ = plancode_;
+        result.value_ = value_;
         onBuilt();
         return result;
       }
@@ -450,6 +485,9 @@ public final class ProtoUserIVandSetActivity {
         if (!other.getPlancode().isEmpty()) {
           plancode_ = other.plancode_;
           onChanged();
+        }
+        if (other.getValue() != 0L) {
+          setValue(other.getValue());
         }
         onChanged();
         return this;
@@ -659,6 +697,32 @@ public final class ProtoUserIVandSetActivity {
   checkByteStringIsUtf8(value);
         
         plancode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long value_ ;
+      /**
+       * <code>optional uint64 value = 3;</code>
+       */
+      public long getValue() {
+        return value_;
+      }
+      /**
+       * <code>optional uint64 value = 3;</code>
+       */
+      public Builder setValue(long value) {
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 value = 3;</code>
+       */
+      public Builder clearValue() {
+        
+        value_ = 0L;
         onChanged();
         return this;
       }
@@ -1492,13 +1556,13 @@ public final class ProtoUserIVandSetActivity {
   static {
     java.lang.String[] descriptorData = {
       "\n\032UserIVandSetActivity.proto\022\005proto\032\rReq" +
-      "uest.proto\032\016Response.proto\"I\n\024UserIVandS" +
+      "uest.proto\032\016Response.proto\"X\n\024UserIVandS" +
       "etActivity\022\037\n\007request\030\001 \001(\0132\016.proto.Requ" +
-      "est\022\020\n\010plancode\030\002 \001(\t\"a\n\034UserIVandSetAct" +
-      "ivityResponse\022!\n\010response\030\001 \001(\0132\017.proto." +
-      "Response\022\017\n\007message\030\002 \001(\t\022\r\n\005state\030\003 \001(\010" +
-      "B+\n\016net.iGap.protoB\031ProtoUserIVandSetAct" +
-      "ivityb\006proto3"
+      "est\022\020\n\010plancode\030\002 \001(\t\022\r\n\005value\030\003 \001(\004\"a\n\034" +
+      "UserIVandSetActivityResponse\022!\n\010response" +
+      "\030\001 \001(\0132\017.proto.Response\022\017\n\007message\030\002 \001(\t" +
+      "\022\r\n\005state\030\003 \001(\010B+\n\016net.iGap.protoB\031Proto" +
+      "UserIVandSetActivityb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1519,7 +1583,7 @@ public final class ProtoUserIVandSetActivity {
     internal_static_proto_UserIVandSetActivity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserIVandSetActivity_descriptor,
-        new java.lang.String[] { "Request", "Plancode", });
+        new java.lang.String[] { "Request", "Plancode", "Value", });
     internal_static_proto_UserIVandSetActivityResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_UserIVandSetActivityResponse_fieldAccessorTable = new
