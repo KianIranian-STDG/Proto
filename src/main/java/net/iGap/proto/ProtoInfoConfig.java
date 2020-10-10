@@ -678,6 +678,15 @@ public final class ProtoInfoConfig {
      * <code>optional bool show_advertising = 13;</code>
      */
     boolean getShowAdvertising();
+
+    /**
+     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     */
+    int getDefaultTabValue();
+    /**
+     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     */
+    net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab getDefaultTab();
   }
   /**
    * Protobuf type {@code proto.InfoConfigResponse}
@@ -703,6 +712,7 @@ public final class ProtoInfoConfig {
       debugger_ = 0;
       baseUrl_ = "";
       showAdvertising_ = false;
+      defaultTab_ = 0;
     }
 
     @java.lang.Override
@@ -807,6 +817,12 @@ public final class ProtoInfoConfig {
             case 104: {
 
               showAdvertising_ = input.readBool();
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              defaultTab_ = rawValue;
               break;
             }
           }
@@ -931,6 +947,131 @@ public final class ProtoInfoConfig {
       }
 
       // @@protoc_insertion_point(enum_scope:proto.InfoConfigResponse.Debugger)
+    }
+
+    /**
+     * Protobuf enum {@code proto.InfoConfigResponse.Tab}
+     */
+    public enum Tab
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CONTACT = 0;</code>
+       */
+      CONTACT(0),
+      /**
+       * <code>CALL = 1;</code>
+       */
+      CALL(1),
+      /**
+       * <code>CHAT = 2;</code>
+       */
+      CHAT(2),
+      /**
+       * <code>ILAND = 3;</code>
+       */
+      ILAND(3),
+      /**
+       * <code>SETTING = 4;</code>
+       */
+      SETTING(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>CONTACT = 0;</code>
+       */
+      public static final int CONTACT_VALUE = 0;
+      /**
+       * <code>CALL = 1;</code>
+       */
+      public static final int CALL_VALUE = 1;
+      /**
+       * <code>CHAT = 2;</code>
+       */
+      public static final int CHAT_VALUE = 2;
+      /**
+       * <code>ILAND = 3;</code>
+       */
+      public static final int ILAND_VALUE = 3;
+      /**
+       * <code>SETTING = 4;</code>
+       */
+      public static final int SETTING_VALUE = 4;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Tab valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Tab forNumber(int value) {
+        switch (value) {
+          case 0: return CONTACT;
+          case 1: return CALL;
+          case 2: return CHAT;
+          case 3: return ILAND;
+          case 4: return SETTING;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Tab>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Tab> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Tab>() {
+              public Tab findValueByNumber(int number) {
+                return Tab.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final Tab[] VALUES = values();
+
+      public static Tab valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Tab(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.InfoConfigResponse.Tab)
     }
 
     private int bitField0_;
@@ -1121,6 +1262,22 @@ public final class ProtoInfoConfig {
       return showAdvertising_;
     }
 
+    public static final int DEFAULTTAB_FIELD_NUMBER = 14;
+    private int defaultTab_;
+    /**
+     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     */
+    public int getDefaultTabValue() {
+      return defaultTab_;
+    }
+    /**
+     * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+     */
+    public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab getDefaultTab() {
+      net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab result = net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.valueOf(defaultTab_);
+      return result == null ? net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1171,6 +1328,9 @@ public final class ProtoInfoConfig {
       }
       if (showAdvertising_ != false) {
         output.writeBool(13, showAdvertising_);
+      }
+      if (defaultTab_ != net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.CONTACT.getNumber()) {
+        output.writeEnum(14, defaultTab_);
       }
     }
 
@@ -1230,6 +1390,10 @@ public final class ProtoInfoConfig {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, showAdvertising_);
       }
+      if (defaultTab_ != net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.CONTACT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(14, defaultTab_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -1274,6 +1438,7 @@ public final class ProtoInfoConfig {
           .equals(other.getBaseUrl());
       result = result && (getShowAdvertising()
           == other.getShowAdvertising());
+      result = result && defaultTab_ == other.defaultTab_;
       return result;
     }
 
@@ -1320,6 +1485,8 @@ public final class ProtoInfoConfig {
       hash = (37 * hash) + SHOW_ADVERTISING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getShowAdvertising());
+      hash = (37 * hash) + DEFAULTTAB_FIELD_NUMBER;
+      hash = (53 * hash) + defaultTab_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1473,6 +1640,8 @@ public final class ProtoInfoConfig {
 
         showAdvertising_ = false;
 
+        defaultTab_ = 0;
+
         return this;
       }
 
@@ -1522,6 +1691,7 @@ public final class ProtoInfoConfig {
         result.debugger_ = debugger_;
         result.baseUrl_ = baseUrl_;
         result.showAdvertising_ = showAdvertising_;
+        result.defaultTab_ = defaultTab_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1626,6 +1796,9 @@ public final class ProtoInfoConfig {
         }
         if (other.getShowAdvertising() != false) {
           setShowAdvertising(other.getShowAdvertising());
+        }
+        if (other.defaultTab_ != 0) {
+          setDefaultTabValue(other.getDefaultTabValue());
         }
         onChanged();
         return this;
@@ -2354,6 +2527,50 @@ public final class ProtoInfoConfig {
       public Builder clearShowAdvertising() {
         
         showAdvertising_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int defaultTab_ = 0;
+      /**
+       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       */
+      public int getDefaultTabValue() {
+        return defaultTab_;
+      }
+      /**
+       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       */
+      public Builder setDefaultTabValue(int value) {
+        defaultTab_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       */
+      public net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab getDefaultTab() {
+        net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab result = net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.valueOf(defaultTab_);
+        return result == null ? net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       */
+      public Builder setDefaultTab(net.iGap.proto.ProtoInfoConfig.InfoConfigResponse.Tab value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        defaultTab_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.InfoConfigResponse.Tab defaultTab = 14;</code>
+       */
+      public Builder clearDefaultTab() {
+        
+        defaultTab_ = 0;
         onChanged();
         return this;
       }
@@ -3125,7 +3342,7 @@ public final class ProtoInfoConfig {
     java.lang.String[] descriptorData = {
       "\n\020InfoConfig.proto\022\005proto\032\rRequest.proto" +
       "\032\016Response.proto\"-\n\nInfoConfig\022\037\n\007reques" +
-      "t\030\001 \001(\0132\016.proto.Request\"\303\003\n\022InfoConfigRe" +
+      "t\030\001 \001(\0132\016.proto.Request\"\266\004\n\022InfoConfigRe" +
       "sponse\022!\n\010response\030\001 \001(\0132\017.proto.Respons" +
       "e\022\022\n\ndebug_mode\030\002 \001(\010\022\027\n\017default_timeout" +
       "\030\003 \001(\r\022\025\n\roptimize_mode\030\004 \001(\010\022\025\n\rmax_fil" +
@@ -3135,13 +3352,15 @@ public final class ProtoInfoConfig {
       "er_limit\030\t \001(\r\022*\n\rmicro_service\030\n \003(\0132\023.",
       "proto.MicroService\0224\n\010debugger\030\013 \001(\0162\".p" +
       "roto.InfoConfigResponse.Debugger\022\020\n\010base" +
-      "_url\030\014 \001(\t\022\030\n\020show_advertising\030\r \001(\010\"\'\n\010" +
-      "Debugger\022\017\n\013CRASHLYTICS\020\000\022\n\n\006SENTRY\020\001\"w\n" +
-      "\014MicroService\022\014\n\004name\030\001 \001(\t\0220\n\004type\030\002 \001(" +
-      "\0162\".proto.MicroService.ConnectionType\"\'\n" +
-      "\016ConnectionType\022\t\n\005HTTPS\020\000\022\n\n\006SOCKET\020\001B!" +
-      "\n\016net.iGap.protoB\017ProtoInfoConfigb\006proto" +
-      "3"
+      "_url\030\014 \001(\t\022\030\n\020show_advertising\030\r \001(\010\0221\n\n" +
+      "defaultTab\030\016 \001(\0162\035.proto.InfoConfigRespo" +
+      "nse.Tab\"\'\n\010Debugger\022\017\n\013CRASHLYTICS\020\000\022\n\n\006" +
+      "SENTRY\020\001\">\n\003Tab\022\013\n\007CONTACT\020\000\022\010\n\004CALL\020\001\022\010" +
+      "\n\004CHAT\020\002\022\t\n\005ILAND\020\003\022\013\n\007SETTING\020\004\"w\n\014Micr" +
+      "oService\022\014\n\004name\030\001 \001(\t\0220\n\004type\030\002 \001(\0162\".p" +
+      "roto.MicroService.ConnectionType\"\'\n\016Conn" +
+      "ectionType\022\t\n\005HTTPS\020\000\022\n\n\006SOCKET\020\001B!\n\016net",
+      ".iGap.protoB\017ProtoInfoConfigb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3168,7 +3387,7 @@ public final class ProtoInfoConfig {
     internal_static_proto_InfoConfigResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_InfoConfigResponse_descriptor,
-        new java.lang.String[] { "Response", "DebugMode", "DefaultTimeout", "OptimizeMode", "MaxFileSize", "CaptionLengthMax", "MessageLengthMax", "GroupAddMemberLimit", "ChannelAddMemberLimit", "MicroService", "Debugger", "BaseUrl", "ShowAdvertising", });
+        new java.lang.String[] { "Response", "DebugMode", "DefaultTimeout", "OptimizeMode", "MaxFileSize", "CaptionLengthMax", "MessageLengthMax", "GroupAddMemberLimit", "ChannelAddMemberLimit", "MicroService", "Debugger", "BaseUrl", "ShowAdvertising", "DefaultTab", });
     internal_static_proto_MicroService_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_MicroService_fieldAccessorTable = new
