@@ -40,6 +40,11 @@ public final class ProtoClientGetDiscovery {
      * <code>optional uint32 project_id = 3;</code>
      */
     int getProjectId();
+
+    /**
+     * <code>optional uint32 item_id = 4;</code>
+     */
+    int getItemId();
   }
   /**
    * Protobuf type {@code proto.ClientGetDiscovery}
@@ -55,6 +60,7 @@ public final class ProtoClientGetDiscovery {
     private ClientGetDiscovery() {
       pageId_ = 0;
       projectId_ = 0;
+      itemId_ = 0;
     }
 
     @java.lang.Override
@@ -103,6 +109,11 @@ public final class ProtoClientGetDiscovery {
             case 24: {
 
               projectId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              itemId_ = input.readUInt32();
               break;
             }
           }
@@ -167,6 +178,15 @@ public final class ProtoClientGetDiscovery {
       return projectId_;
     }
 
+    public static final int ITEM_ID_FIELD_NUMBER = 4;
+    private int itemId_;
+    /**
+     * <code>optional uint32 item_id = 4;</code>
+     */
+    public int getItemId() {
+      return itemId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -188,6 +208,9 @@ public final class ProtoClientGetDiscovery {
       if (projectId_ != 0) {
         output.writeUInt32(3, projectId_);
       }
+      if (itemId_ != 0) {
+        output.writeUInt32(4, itemId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -206,6 +229,10 @@ public final class ProtoClientGetDiscovery {
       if (projectId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, projectId_);
+      }
+      if (itemId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, itemId_);
       }
       memoizedSize = size;
       return size;
@@ -232,6 +259,8 @@ public final class ProtoClientGetDiscovery {
           == other.getPageId());
       result = result && (getProjectId()
           == other.getProjectId());
+      result = result && (getItemId()
+          == other.getItemId());
       return result;
     }
 
@@ -250,6 +279,8 @@ public final class ProtoClientGetDiscovery {
       hash = (53 * hash) + getPageId();
       hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProjectId();
+      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getItemId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,6 +409,8 @@ public final class ProtoClientGetDiscovery {
 
         projectId_ = 0;
 
+        itemId_ = 0;
+
         return this;
       }
 
@@ -407,6 +440,7 @@ public final class ProtoClientGetDiscovery {
         }
         result.pageId_ = pageId_;
         result.projectId_ = projectId_;
+        result.itemId_ = itemId_;
         onBuilt();
         return result;
       }
@@ -456,6 +490,9 @@ public final class ProtoClientGetDiscovery {
         }
         if (other.getProjectId() != 0) {
           setProjectId(other.getProjectId());
+        }
+        if (other.getItemId() != 0) {
+          setItemId(other.getItemId());
         }
         onChanged();
         return this;
@@ -648,6 +685,32 @@ public final class ProtoClientGetDiscovery {
       public Builder clearProjectId() {
         
         projectId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int itemId_ ;
+      /**
+       * <code>optional uint32 item_id = 4;</code>
+       */
+      public int getItemId() {
+        return itemId_;
+      }
+      /**
+       * <code>optional uint32 item_id = 4;</code>
+       */
+      public Builder setItemId(int value) {
+        
+        itemId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 item_id = 4;</code>
+       */
+      public Builder clearItemId() {
+        
+        itemId_ = 0;
         onChanged();
         return this;
       }
@@ -1789,14 +1852,14 @@ public final class ProtoClientGetDiscovery {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ClientGetDiscovery.proto\022\005proto\032\rReque" +
-      "st.proto\032\016Response.proto\032\014Global.proto\"Z" +
+      "st.proto\032\016Response.proto\032\014Global.proto\"k" +
       "\n\022ClientGetDiscovery\022\037\n\007request\030\001 \001(\0132\016." +
       "proto.Request\022\017\n\007page_id\030\002 \001(\r\022\022\n\nprojec" +
-      "t_id\030\003 \001(\r\"u\n\032ClientGetDiscoveryResponse" +
-      "\022!\n\010response\030\001 \001(\0132\017.proto.Response\022\r\n\005t" +
-      "itle\030\002 \001(\t\022%\n\013discoveries\030\003 \003(\0132\020.proto." +
-      "DiscoveryB)\n\016net.iGap.protoB\027ProtoClient" +
-      "GetDiscoveryb\006proto3"
+      "t_id\030\003 \001(\r\022\017\n\007item_id\030\004 \001(\r\"u\n\032ClientGet" +
+      "DiscoveryResponse\022!\n\010response\030\001 \001(\0132\017.pr" +
+      "oto.Response\022\r\n\005title\030\002 \001(\t\022%\n\013discoveri" +
+      "es\030\003 \003(\0132\020.proto.DiscoveryB)\n\016net.iGap.p" +
+      "rotoB\027ProtoClientGetDiscoveryb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1818,7 +1881,7 @@ public final class ProtoClientGetDiscovery {
     internal_static_proto_ClientGetDiscovery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientGetDiscovery_descriptor,
-        new java.lang.String[] { "Request", "PageId", "ProjectId", });
+        new java.lang.String[] { "Request", "PageId", "ProjectId", "ItemId", });
     internal_static_proto_ClientGetDiscoveryResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientGetDiscoveryResponse_fieldAccessorTable = new
