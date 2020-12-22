@@ -40,6 +40,15 @@ public final class ProtoMplGetBillToken {
      * <code>optional uint64 pay_id = 3;</code>
      */
     long getPayId();
+
+    /**
+     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+     */
+    net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type getType();
   }
   /**
    * Protobuf type {@code proto.MplGetBillToken}
@@ -55,6 +64,7 @@ public final class ProtoMplGetBillToken {
     private MplGetBillToken() {
       billId_ = 0L;
       payId_ = 0L;
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -105,6 +115,12 @@ public final class ProtoMplGetBillToken {
               payId_ = input.readUInt64();
               break;
             }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -126,6 +142,113 @@ public final class ProtoMplGetBillToken {
       return net.iGap.proto.ProtoMplGetBillToken.internal_static_proto_MplGetBillToken_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.class, net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.MplGetBillToken.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0),
+      /**
+       * <code>MID_TERM = 1;</code>
+       */
+      MID_TERM(1),
+      /**
+       * <code>LAST_TERM = 2;</code>
+       */
+      LAST_TERM(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>MID_TERM = 1;</code>
+       */
+      public static final int MID_TERM_VALUE = 1;
+      /**
+       * <code>LAST_TERM = 2;</code>
+       */
+      public static final int LAST_TERM_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 1: return MID_TERM;
+          case 2: return LAST_TERM;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.MplGetBillToken.Type)
     }
 
     public static final int REQUEST_FIELD_NUMBER = 1;
@@ -167,6 +290,22 @@ public final class ProtoMplGetBillToken {
       return payId_;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 4;
+    private int type_;
+    /**
+     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+     */
+    public net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type getType() {
+      net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type result = net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.valueOf(type_);
+      return result == null ? net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -188,6 +327,9 @@ public final class ProtoMplGetBillToken {
       if (payId_ != 0L) {
         output.writeUInt64(3, payId_);
       }
+      if (type_ != net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.NONE.getNumber()) {
+        output.writeEnum(4, type_);
+      }
     }
 
     public int getSerializedSize() {
@@ -206,6 +348,10 @@ public final class ProtoMplGetBillToken {
       if (payId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, payId_);
+      }
+      if (type_ != net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.NONE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, type_);
       }
       memoizedSize = size;
       return size;
@@ -232,6 +378,7 @@ public final class ProtoMplGetBillToken {
           == other.getBillId());
       result = result && (getPayId()
           == other.getPayId());
+      result = result && type_ == other.type_;
       return result;
     }
 
@@ -252,6 +399,8 @@ public final class ProtoMplGetBillToken {
       hash = (37 * hash) + PAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPayId());
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -380,6 +529,8 @@ public final class ProtoMplGetBillToken {
 
         payId_ = 0L;
 
+        type_ = 0;
+
         return this;
       }
 
@@ -409,6 +560,7 @@ public final class ProtoMplGetBillToken {
         }
         result.billId_ = billId_;
         result.payId_ = payId_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -458,6 +610,9 @@ public final class ProtoMplGetBillToken {
         }
         if (other.getPayId() != 0L) {
           setPayId(other.getPayId());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
         }
         onChanged();
         return this;
@@ -653,6 +808,50 @@ public final class ProtoMplGetBillToken {
         onChanged();
         return this;
       }
+
+      private int type_ = 0;
+      /**
+       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       */
+      public net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type getType() {
+        net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type result = net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       */
+      public Builder setType(net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.MplGetBillToken.Type type = 4;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -748,6 +947,21 @@ public final class ProtoMplGetBillToken {
      */
     com.google.protobuf.ByteString
         getMessageBytes();
+
+    /**
+     * <code>optional uint32 discount_amount = 6;</code>
+     */
+    int getDiscountAmount();
+
+    /**
+     * <code>optional uint32 original_amount = 7;</code>
+     */
+    int getOriginalAmount();
+
+    /**
+     * <code>optional uint32 new_pay_id = 8;</code>
+     */
+    int getNewPayId();
   }
   /**
    * Protobuf type {@code proto.MplGetBillTokenResponse}
@@ -765,6 +979,9 @@ public final class ProtoMplGetBillToken {
       token_ = "";
       expireTime_ = 0;
       message_ = "";
+      discountAmount_ = 0;
+      originalAmount_ = 0;
+      newPayId_ = 0;
     }
 
     @java.lang.Override
@@ -825,6 +1042,21 @@ public final class ProtoMplGetBillToken {
               java.lang.String s = input.readStringRequireUtf8();
 
               message_ = s;
+              break;
+            }
+            case 48: {
+
+              discountAmount_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              originalAmount_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              newPayId_ = input.readUInt32();
               break;
             }
           }
@@ -957,6 +1189,33 @@ public final class ProtoMplGetBillToken {
       }
     }
 
+    public static final int DISCOUNT_AMOUNT_FIELD_NUMBER = 6;
+    private int discountAmount_;
+    /**
+     * <code>optional uint32 discount_amount = 6;</code>
+     */
+    public int getDiscountAmount() {
+      return discountAmount_;
+    }
+
+    public static final int ORIGINAL_AMOUNT_FIELD_NUMBER = 7;
+    private int originalAmount_;
+    /**
+     * <code>optional uint32 original_amount = 7;</code>
+     */
+    public int getOriginalAmount() {
+      return originalAmount_;
+    }
+
+    public static final int NEW_PAY_ID_FIELD_NUMBER = 8;
+    private int newPayId_;
+    /**
+     * <code>optional uint32 new_pay_id = 8;</code>
+     */
+    public int getNewPayId() {
+      return newPayId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -984,6 +1243,15 @@ public final class ProtoMplGetBillToken {
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, message_);
       }
+      if (discountAmount_ != 0) {
+        output.writeUInt32(6, discountAmount_);
+      }
+      if (originalAmount_ != 0) {
+        output.writeUInt32(7, originalAmount_);
+      }
+      if (newPayId_ != 0) {
+        output.writeUInt32(8, newPayId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -1008,6 +1276,18 @@ public final class ProtoMplGetBillToken {
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, message_);
+      }
+      if (discountAmount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, discountAmount_);
+      }
+      if (originalAmount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, originalAmount_);
+      }
+      if (newPayId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, newPayId_);
       }
       memoizedSize = size;
       return size;
@@ -1038,6 +1318,12 @@ public final class ProtoMplGetBillToken {
           == other.getExpireTime());
       result = result && getMessage()
           .equals(other.getMessage());
+      result = result && (getDiscountAmount()
+          == other.getDiscountAmount());
+      result = result && (getOriginalAmount()
+          == other.getOriginalAmount());
+      result = result && (getNewPayId()
+          == other.getNewPayId());
       return result;
     }
 
@@ -1060,6 +1346,12 @@ public final class ProtoMplGetBillToken {
       hash = (53 * hash) + getExpireTime();
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + DISCOUNT_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getDiscountAmount();
+      hash = (37 * hash) + ORIGINAL_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getOriginalAmount();
+      hash = (37 * hash) + NEW_PAY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNewPayId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1192,6 +1484,12 @@ public final class ProtoMplGetBillToken {
 
         message_ = "";
 
+        discountAmount_ = 0;
+
+        originalAmount_ = 0;
+
+        newPayId_ = 0;
+
         return this;
       }
 
@@ -1223,6 +1521,9 @@ public final class ProtoMplGetBillToken {
         result.token_ = token_;
         result.expireTime_ = expireTime_;
         result.message_ = message_;
+        result.discountAmount_ = discountAmount_;
+        result.originalAmount_ = originalAmount_;
+        result.newPayId_ = newPayId_;
         onBuilt();
         return result;
       }
@@ -1280,6 +1581,15 @@ public final class ProtoMplGetBillToken {
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
           onChanged();
+        }
+        if (other.getDiscountAmount() != 0) {
+          setDiscountAmount(other.getDiscountAmount());
+        }
+        if (other.getOriginalAmount() != 0) {
+          setOriginalAmount(other.getOriginalAmount());
+        }
+        if (other.getNewPayId() != 0) {
+          setNewPayId(other.getNewPayId());
         }
         onChanged();
         return this;
@@ -1613,6 +1923,84 @@ public final class ProtoMplGetBillToken {
         onChanged();
         return this;
       }
+
+      private int discountAmount_ ;
+      /**
+       * <code>optional uint32 discount_amount = 6;</code>
+       */
+      public int getDiscountAmount() {
+        return discountAmount_;
+      }
+      /**
+       * <code>optional uint32 discount_amount = 6;</code>
+       */
+      public Builder setDiscountAmount(int value) {
+        
+        discountAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 discount_amount = 6;</code>
+       */
+      public Builder clearDiscountAmount() {
+        
+        discountAmount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int originalAmount_ ;
+      /**
+       * <code>optional uint32 original_amount = 7;</code>
+       */
+      public int getOriginalAmount() {
+        return originalAmount_;
+      }
+      /**
+       * <code>optional uint32 original_amount = 7;</code>
+       */
+      public Builder setOriginalAmount(int value) {
+        
+        originalAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 original_amount = 7;</code>
+       */
+      public Builder clearOriginalAmount() {
+        
+        originalAmount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int newPayId_ ;
+      /**
+       * <code>optional uint32 new_pay_id = 8;</code>
+       */
+      public int getNewPayId() {
+        return newPayId_;
+      }
+      /**
+       * <code>optional uint32 new_pay_id = 8;</code>
+       */
+      public Builder setNewPayId(int value) {
+        
+        newPayId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 new_pay_id = 8;</code>
+       */
+      public Builder clearNewPayId() {
+        
+        newPayId_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1682,14 +2070,18 @@ public final class ProtoMplGetBillToken {
   static {
     java.lang.String[] descriptorData = {
       "\n\025MplGetBillToken.proto\022\005proto\032\rRequest." +
-      "proto\032\016Response.proto\"S\n\017MplGetBillToken" +
-      "\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007bil" +
-      "l_id\030\002 \001(\004\022\016\n\006pay_id\030\003 \001(\004\"\201\001\n\027MplGetBil" +
-      "lTokenResponse\022!\n\010response\030\001 \001(\0132\017.proto" +
-      ".Response\022\016\n\006status\030\002 \001(\r\022\r\n\005token\030\003 \001(\t" +
-      "\022\023\n\013expire_time\030\004 \001(\r\022\017\n\007message\030\005 \001(\tB&" +
-      "\n\016net.iGap.protoB\024ProtoMplGetBillTokenb\006" +
-      "proto3"
+      "proto\032\016Response.proto\"\255\001\n\017MplGetBillToke" +
+      "n\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007bi" +
+      "ll_id\030\002 \001(\004\022\016\n\006pay_id\030\003 \001(\004\022)\n\004type\030\004 \001(" +
+      "\0162\033.proto.MplGetBillToken.Type\"-\n\004Type\022\010" +
+      "\n\004NONE\020\000\022\014\n\010MID_TERM\020\001\022\r\n\tLAST_TERM\020\002\"\307\001" +
+      "\n\027MplGetBillTokenResponse\022!\n\010response\030\001 " +
+      "\001(\0132\017.proto.Response\022\016\n\006status\030\002 \001(\r\022\r\n\005" +
+      "token\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\r\022\017\n\007mess" +
+      "age\030\005 \001(\t\022\027\n\017discount_amount\030\006 \001(\r\022\027\n\017or",
+      "iginal_amount\030\007 \001(\r\022\022\n\nnew_pay_id\030\010 \001(\rB" +
+      "&\n\016net.iGap.protoB\024ProtoMplGetBillTokenb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1710,13 +2102,13 @@ public final class ProtoMplGetBillToken {
     internal_static_proto_MplGetBillToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplGetBillToken_descriptor,
-        new java.lang.String[] { "Request", "BillId", "PayId", });
+        new java.lang.String[] { "Request", "BillId", "PayId", "Type", });
     internal_static_proto_MplGetBillTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_MplGetBillTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplGetBillTokenResponse_descriptor,
-        new java.lang.String[] { "Response", "Status", "Token", "ExpireTime", "Message", });
+        new java.lang.String[] { "Response", "Status", "Token", "ExpireTime", "Message", "DiscountAmount", "OriginalAmount", "NewPayId", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
   }
