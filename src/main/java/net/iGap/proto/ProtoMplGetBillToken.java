@@ -150,24 +150,32 @@ public final class ProtoMplGetBillToken {
     public enum Type
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>MID_TERM = 0;</code>
+       * <code>NONE = 0;</code>
        */
-      MID_TERM(0),
+      NONE(0),
       /**
-       * <code>LAST_TERM = 1;</code>
+       * <code>MID_TERM = 1;</code>
        */
-      LAST_TERM(1),
+      MID_TERM(1),
+      /**
+       * <code>LAST_TERM = 2;</code>
+       */
+      LAST_TERM(2),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>MID_TERM = 0;</code>
+       * <code>NONE = 0;</code>
        */
-      public static final int MID_TERM_VALUE = 0;
+      public static final int NONE_VALUE = 0;
       /**
-       * <code>LAST_TERM = 1;</code>
+       * <code>MID_TERM = 1;</code>
        */
-      public static final int LAST_TERM_VALUE = 1;
+      public static final int MID_TERM_VALUE = 1;
+      /**
+       * <code>LAST_TERM = 2;</code>
+       */
+      public static final int LAST_TERM_VALUE = 2;
 
 
       public final int getNumber() {
@@ -188,8 +196,9 @@ public final class ProtoMplGetBillToken {
 
       public static Type forNumber(int value) {
         switch (value) {
-          case 0: return MID_TERM;
-          case 1: return LAST_TERM;
+          case 0: return NONE;
+          case 1: return MID_TERM;
+          case 2: return LAST_TERM;
           default: return null;
         }
       }
@@ -318,7 +327,7 @@ public final class ProtoMplGetBillToken {
       if (payId_ != 0L) {
         output.writeUInt64(3, payId_);
       }
-      if (type_ != net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.MID_TERM.getNumber()) {
+      if (type_ != net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.NONE.getNumber()) {
         output.writeEnum(4, type_);
       }
     }
@@ -340,7 +349,7 @@ public final class ProtoMplGetBillToken {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, payId_);
       }
-      if (type_ != net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.MID_TERM.getNumber()) {
+      if (type_ != net.iGap.proto.ProtoMplGetBillToken.MplGetBillToken.Type.NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, type_);
       }
@@ -2061,17 +2070,18 @@ public final class ProtoMplGetBillToken {
   static {
     java.lang.String[] descriptorData = {
       "\n\025MplGetBillToken.proto\022\005proto\032\rRequest." +
-      "proto\032\016Response.proto\"\243\001\n\017MplGetBillToke" +
+      "proto\032\016Response.proto\"\255\001\n\017MplGetBillToke" +
       "n\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007bi" +
       "ll_id\030\002 \001(\004\022\016\n\006pay_id\030\003 \001(\004\022)\n\004type\030\004 \001(" +
-      "\0162\033.proto.MplGetBillToken.Type\"#\n\004Type\022\014" +
-      "\n\010MID_TERM\020\000\022\r\n\tLAST_TERM\020\001\"\307\001\n\027MplGetBi" +
-      "llTokenResponse\022!\n\010response\030\001 \001(\0132\017.prot" +
-      "o.Response\022\016\n\006status\030\002 \001(\r\022\r\n\005token\030\003 \001(" +
-      "\t\022\023\n\013expire_time\030\004 \001(\r\022\017\n\007message\030\005 \001(\t\022" +
-      "\027\n\017discount_amount\030\006 \001(\r\022\027\n\017original_amo",
-      "unt\030\007 \001(\r\022\022\n\nnew_pay_id\030\010 \001(\rB&\n\016net.iGa" +
-      "p.protoB\024ProtoMplGetBillTokenb\006proto3"
+      "\0162\033.proto.MplGetBillToken.Type\"-\n\004Type\022\010" +
+      "\n\004NONE\020\000\022\014\n\010MID_TERM\020\001\022\r\n\tLAST_TERM\020\002\"\307\001" +
+      "\n\027MplGetBillTokenResponse\022!\n\010response\030\001 " +
+      "\001(\0132\017.proto.Response\022\016\n\006status\030\002 \001(\r\022\r\n\005" +
+      "token\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\r\022\017\n\007mess" +
+      "age\030\005 \001(\t\022\027\n\017discount_amount\030\006 \001(\r\022\027\n\017or",
+      "iginal_amount\030\007 \001(\r\022\022\n\nnew_pay_id\030\010 \001(\rB" +
+      "&\n\016net.iGap.protoB\024ProtoMplGetBillTokenb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
