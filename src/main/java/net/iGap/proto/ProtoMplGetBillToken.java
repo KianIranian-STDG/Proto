@@ -962,6 +962,16 @@ public final class ProtoMplGetBillToken {
      * <code>optional uint32 new_pay_id = 8;</code>
      */
     int getNewPayId();
+
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    java.lang.String getOrganizationName();
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getOrganizationNameBytes();
   }
   /**
    * Protobuf type {@code proto.MplGetBillTokenResponse}
@@ -982,6 +992,7 @@ public final class ProtoMplGetBillToken {
       discountAmount_ = 0;
       originalAmount_ = 0;
       newPayId_ = 0;
+      organizationName_ = "";
     }
 
     @java.lang.Override
@@ -1057,6 +1068,12 @@ public final class ProtoMplGetBillToken {
             case 64: {
 
               newPayId_ = input.readUInt32();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              organizationName_ = s;
               break;
             }
           }
@@ -1216,6 +1233,40 @@ public final class ProtoMplGetBillToken {
       return newPayId_;
     }
 
+    public static final int ORGANIZATION_NAME_FIELD_NUMBER = 9;
+    private volatile java.lang.Object organizationName_;
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    public java.lang.String getOrganizationName() {
+      java.lang.Object ref = organizationName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string organization_name = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOrganizationNameBytes() {
+      java.lang.Object ref = organizationName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1251,6 +1302,9 @@ public final class ProtoMplGetBillToken {
       }
       if (newPayId_ != 0) {
         output.writeUInt32(8, newPayId_);
+      }
+      if (!getOrganizationNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, organizationName_);
       }
     }
 
@@ -1289,6 +1343,9 @@ public final class ProtoMplGetBillToken {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, newPayId_);
       }
+      if (!getOrganizationNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, organizationName_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -1324,6 +1381,8 @@ public final class ProtoMplGetBillToken {
           == other.getOriginalAmount());
       result = result && (getNewPayId()
           == other.getNewPayId());
+      result = result && getOrganizationName()
+          .equals(other.getOrganizationName());
       return result;
     }
 
@@ -1352,6 +1411,8 @@ public final class ProtoMplGetBillToken {
       hash = (53 * hash) + getOriginalAmount();
       hash = (37 * hash) + NEW_PAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNewPayId();
+      hash = (37 * hash) + ORGANIZATION_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganizationName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1490,6 +1551,8 @@ public final class ProtoMplGetBillToken {
 
         newPayId_ = 0;
 
+        organizationName_ = "";
+
         return this;
       }
 
@@ -1524,6 +1587,7 @@ public final class ProtoMplGetBillToken {
         result.discountAmount_ = discountAmount_;
         result.originalAmount_ = originalAmount_;
         result.newPayId_ = newPayId_;
+        result.organizationName_ = organizationName_;
         onBuilt();
         return result;
       }
@@ -1590,6 +1654,10 @@ public final class ProtoMplGetBillToken {
         }
         if (other.getNewPayId() != 0) {
           setNewPayId(other.getNewPayId());
+        }
+        if (!other.getOrganizationName().isEmpty()) {
+          organizationName_ = other.organizationName_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -2001,6 +2069,75 @@ public final class ProtoMplGetBillToken {
         onChanged();
         return this;
       }
+
+      private java.lang.Object organizationName_ = "";
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public java.lang.String getOrganizationName() {
+        java.lang.Object ref = organizationName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationNameBytes() {
+        java.lang.Object ref = organizationName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public Builder setOrganizationName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        organizationName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public Builder clearOrganizationName() {
+        
+        organizationName_ = getDefaultInstance().getOrganizationName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string organization_name = 9;</code>
+       */
+      public Builder setOrganizationNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        organizationName_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -2074,14 +2211,14 @@ public final class ProtoMplGetBillToken {
       "n\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007bi" +
       "ll_id\030\002 \001(\004\022\016\n\006pay_id\030\003 \001(\004\022)\n\004type\030\004 \001(" +
       "\0162\033.proto.MplGetBillToken.Type\"-\n\004Type\022\010" +
-      "\n\004NONE\020\000\022\014\n\010MID_TERM\020\001\022\r\n\tLAST_TERM\020\002\"\307\001" +
+      "\n\004NONE\020\000\022\014\n\010MID_TERM\020\001\022\r\n\tLAST_TERM\020\002\"\342\001" +
       "\n\027MplGetBillTokenResponse\022!\n\010response\030\001 " +
       "\001(\0132\017.proto.Response\022\016\n\006status\030\002 \001(\r\022\r\n\005" +
       "token\030\003 \001(\t\022\023\n\013expire_time\030\004 \001(\r\022\017\n\007mess" +
       "age\030\005 \001(\t\022\027\n\017discount_amount\030\006 \001(\r\022\027\n\017or",
-      "iginal_amount\030\007 \001(\r\022\022\n\nnew_pay_id\030\010 \001(\rB" +
-      "&\n\016net.iGap.protoB\024ProtoMplGetBillTokenb" +
-      "\006proto3"
+      "iginal_amount\030\007 \001(\r\022\022\n\nnew_pay_id\030\010 \001(\r\022" +
+      "\031\n\021organization_name\030\t \001(\tB&\n\016net.iGap.p" +
+      "rotoB\024ProtoMplGetBillTokenb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2108,7 +2245,7 @@ public final class ProtoMplGetBillToken {
     internal_static_proto_MplGetBillTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplGetBillTokenResponse_descriptor,
-        new java.lang.String[] { "Response", "Status", "Token", "ExpireTime", "Message", "DiscountAmount", "OriginalAmount", "NewPayId", });
+        new java.lang.String[] { "Response", "Status", "Token", "ExpireTime", "Message", "DiscountAmount", "OriginalAmount", "NewPayId", "OrganizationName", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
   }
