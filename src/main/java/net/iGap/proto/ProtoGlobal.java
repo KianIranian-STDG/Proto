@@ -551,6 +551,14 @@ public final class ProtoGlobal {
      * <code>STICKER = 16;</code>
      */
     STICKER(16),
+    /**
+     * <code>STORY = 17;</code>
+     */
+    STORY(17),
+    /**
+     * <code>STORY_REPLY = 18;</code>
+     */
+    STORY_REPLY(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -622,6 +630,14 @@ public final class ProtoGlobal {
      * <code>STICKER = 16;</code>
      */
     public static final int STICKER_VALUE = 16;
+    /**
+     * <code>STORY = 17;</code>
+     */
+    public static final int STORY_VALUE = 17;
+    /**
+     * <code>STORY_REPLY = 18;</code>
+     */
+    public static final int STORY_REPLY_VALUE = 18;
 
 
     public final int getNumber() {
@@ -659,6 +675,8 @@ public final class ProtoGlobal {
         case 13: return CONTACT;
         case 15: return WALLET;
         case 16: return STICKER;
+        case 17: return STORY;
+        case 18: return STORY_REPLY;
         default: return null;
       }
     }
@@ -2455,7 +2473,7 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       long getId();
     }
@@ -2530,7 +2548,7 @@ public final class ProtoGlobal {
       public static final int ID_FIELD_NUMBER = 1;
       private long id_;
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public long getId() {
         return id_;
@@ -2808,13 +2826,13 @@ public final class ProtoGlobal {
 
         private long id_ ;
         /**
-         * <code>optional uint64 id = 1;</code>
+         * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
          */
         public long getId() {
           return id_;
         }
         /**
-         * <code>optional uint64 id = 1;</code>
+         * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setId(long value) {
           
@@ -2823,7 +2841,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 id = 1;</code>
+         * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearId() {
           
@@ -4976,17 +4994,17 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       long getFromUserId();
 
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       long getToUserId();
 
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -5151,7 +5169,7 @@ public final class ProtoGlobal {
       public static final int FROM_USER_ID_FIELD_NUMBER = 1;
       private long fromUserId_;
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return fromUserId_;
@@ -5160,7 +5178,7 @@ public final class ProtoGlobal {
       public static final int TO_USER_ID_FIELD_NUMBER = 2;
       private long toUserId_;
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       public long getToUserId() {
         return toUserId_;
@@ -5169,7 +5187,7 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 3;
       private long amount_;
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
@@ -5692,13 +5710,13 @@ public final class ProtoGlobal {
 
         private long fromUserId_ ;
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getFromUserId() {
           return fromUserId_;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setFromUserId(long value) {
           
@@ -5707,7 +5725,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearFromUserId() {
           
@@ -5718,13 +5736,13 @@ public final class ProtoGlobal {
 
         private long toUserId_ ;
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public long getToUserId() {
           return toUserId_;
         }
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder setToUserId(long value) {
           
@@ -5733,7 +5751,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearToUserId() {
           
@@ -5744,13 +5762,13 @@ public final class ProtoGlobal {
 
         private long amount_ ;
         /**
-         * <code>optional uint64 amount = 3;</code>
+         * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return amount_;
         }
         /**
-         * <code>optional uint64 amount = 3;</code>
+         * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           
@@ -5759,7 +5777,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 amount = 3;</code>
+         * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           
@@ -6063,17 +6081,17 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       long getFromUserId();
 
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       long getToUserId();
 
       /**
-       * <code>optional uint64 order_id = 3;</code>
+       * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
@@ -6088,7 +6106,7 @@ public final class ProtoGlobal {
           getTokenBytes();
 
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -6329,7 +6347,7 @@ public final class ProtoGlobal {
       public static final int FROM_USER_ID_FIELD_NUMBER = 1;
       private long fromUserId_;
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return fromUserId_;
@@ -6338,7 +6356,7 @@ public final class ProtoGlobal {
       public static final int TO_USER_ID_FIELD_NUMBER = 2;
       private long toUserId_;
       /**
-       * <code>optional uint64 to_user_id = 2;</code>
+       * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
        */
       public long getToUserId() {
         return toUserId_;
@@ -6347,7 +6365,7 @@ public final class ProtoGlobal {
       public static final int ORDER_ID_FIELD_NUMBER = 3;
       private long orderId_;
       /**
-       * <code>optional uint64 order_id = 3;</code>
+       * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
@@ -6390,7 +6408,7 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
@@ -7149,13 +7167,13 @@ public final class ProtoGlobal {
 
         private long fromUserId_ ;
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getFromUserId() {
           return fromUserId_;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setFromUserId(long value) {
           
@@ -7164,7 +7182,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearFromUserId() {
           
@@ -7175,13 +7193,13 @@ public final class ProtoGlobal {
 
         private long toUserId_ ;
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public long getToUserId() {
           return toUserId_;
         }
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder setToUserId(long value) {
           
@@ -7190,7 +7208,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 to_user_id = 2;</code>
+         * <code>optional uint64 to_user_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearToUserId() {
           
@@ -7201,13 +7219,13 @@ public final class ProtoGlobal {
 
         private long orderId_ ;
         /**
-         * <code>optional uint64 order_id = 3;</code>
+         * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return orderId_;
         }
         /**
-         * <code>optional uint64 order_id = 3;</code>
+         * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           
@@ -7216,7 +7234,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 order_id = 3;</code>
+         * <code>optional uint64 order_id = 3 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           
@@ -7296,13 +7314,13 @@ public final class ProtoGlobal {
 
         private long amount_ ;
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return amount_;
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           
@@ -7311,7 +7329,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           
@@ -7908,12 +7926,12 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       long getFromUserId();
 
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
@@ -7928,12 +7946,12 @@ public final class ProtoGlobal {
           getMyTokenBytes();
 
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       long getToken();
 
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -7987,17 +8005,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       long getTerminalNo();
 
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       long getRrn();
 
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       long getTraceNumber();
 
@@ -8323,7 +8341,7 @@ public final class ProtoGlobal {
       public static final int FROM_USER_ID_FIELD_NUMBER = 1;
       private long fromUserId_;
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return fromUserId_;
@@ -8332,7 +8350,7 @@ public final class ProtoGlobal {
       public static final int ORDER_ID_FIELD_NUMBER = 2;
       private long orderId_;
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
@@ -8375,7 +8393,7 @@ public final class ProtoGlobal {
       public static final int TOKEN_FIELD_NUMBER = 4;
       private long token_;
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       public long getToken() {
         return token_;
@@ -8384,7 +8402,7 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
@@ -8545,7 +8563,7 @@ public final class ProtoGlobal {
       public static final int TERMINAL_NO_FIELD_NUMBER = 11;
       private long terminalNo_;
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       public long getTerminalNo() {
         return terminalNo_;
@@ -8554,7 +8572,7 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 12;
       private long rrn_;
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       public long getRrn() {
         return rrn_;
@@ -8563,7 +8581,7 @@ public final class ProtoGlobal {
       public static final int TRACE_NUMBER_FIELD_NUMBER = 13;
       private long traceNumber_;
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       public long getTraceNumber() {
         return traceNumber_;
@@ -9154,13 +9172,13 @@ public final class ProtoGlobal {
 
         private long fromUserId_ ;
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getFromUserId() {
           return fromUserId_;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setFromUserId(long value) {
           
@@ -9169,7 +9187,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearFromUserId() {
           
@@ -9180,13 +9198,13 @@ public final class ProtoGlobal {
 
         private long orderId_ ;
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return orderId_;
         }
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           
@@ -9195,7 +9213,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           
@@ -9275,13 +9293,13 @@ public final class ProtoGlobal {
 
         private long token_ ;
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public long getToken() {
           return token_;
         }
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public Builder setToken(long value) {
           
@@ -9290,7 +9308,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public Builder clearToken() {
           
@@ -9301,13 +9319,13 @@ public final class ProtoGlobal {
 
         private long amount_ ;
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return amount_;
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           
@@ -9316,7 +9334,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           
@@ -9647,13 +9665,13 @@ public final class ProtoGlobal {
 
         private long terminalNo_ ;
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public long getTerminalNo() {
           return terminalNo_;
         }
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public Builder setTerminalNo(long value) {
           
@@ -9662,7 +9680,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public Builder clearTerminalNo() {
           
@@ -9673,13 +9691,13 @@ public final class ProtoGlobal {
 
         private long rrn_ ;
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public long getRrn() {
           return rrn_;
         }
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public Builder setRrn(long value) {
           
@@ -9688,7 +9706,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public Builder clearRrn() {
           
@@ -9699,13 +9717,13 @@ public final class ProtoGlobal {
 
         private long traceNumber_ ;
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public long getTraceNumber() {
           return traceNumber_;
         }
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public Builder setTraceNumber(long value) {
           
@@ -9714,7 +9732,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public Builder clearTraceNumber() {
           
@@ -9897,12 +9915,12 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       long getFromUserId();
 
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
@@ -9917,12 +9935,12 @@ public final class ProtoGlobal {
           getMyTokenBytes();
 
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       long getToken();
 
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -9977,17 +9995,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       long getTerminalNo();
 
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       long getRrn();
 
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       long getTraceNumber();
 
@@ -10179,7 +10197,7 @@ public final class ProtoGlobal {
       public static final int FROM_USER_ID_FIELD_NUMBER = 1;
       private long fromUserId_;
       /**
-       * <code>optional uint64 from_user_id = 1;</code>
+       * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return fromUserId_;
@@ -10188,7 +10206,7 @@ public final class ProtoGlobal {
       public static final int ORDER_ID_FIELD_NUMBER = 2;
       private long orderId_;
       /**
-       * <code>optional uint64 order_id = 2;</code>
+       * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
@@ -10231,7 +10249,7 @@ public final class ProtoGlobal {
       public static final int TOKEN_FIELD_NUMBER = 4;
       private long token_;
       /**
-       * <code>optional uint64 token = 4;</code>
+       * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
        */
       public long getToken() {
         return token_;
@@ -10240,7 +10258,7 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 amount = 5;</code>
+       * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
@@ -10419,7 +10437,7 @@ public final class ProtoGlobal {
       public static final int TERMINAL_NO_FIELD_NUMBER = 11;
       private long terminalNo_;
       /**
-       * <code>optional uint64 terminal_no = 11;</code>
+       * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
        */
       public long getTerminalNo() {
         return terminalNo_;
@@ -10428,7 +10446,7 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 12;
       private long rrn_;
       /**
-       * <code>optional uint64 rrn = 12;</code>
+       * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
        */
       public long getRrn() {
         return rrn_;
@@ -10437,7 +10455,7 @@ public final class ProtoGlobal {
       public static final int TRACE_NUMBER_FIELD_NUMBER = 13;
       private long traceNumber_;
       /**
-       * <code>optional uint64 trace_number = 13;</code>
+       * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
        */
       public long getTraceNumber() {
         return traceNumber_;
@@ -11029,13 +11047,13 @@ public final class ProtoGlobal {
 
         private long fromUserId_ ;
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getFromUserId() {
           return fromUserId_;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder setFromUserId(long value) {
           
@@ -11044,7 +11062,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 from_user_id = 1;</code>
+         * <code>optional uint64 from_user_id = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearFromUserId() {
           
@@ -11055,13 +11073,13 @@ public final class ProtoGlobal {
 
         private long orderId_ ;
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return orderId_;
         }
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           
@@ -11070,7 +11088,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 order_id = 2;</code>
+         * <code>optional uint64 order_id = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           
@@ -11150,13 +11168,13 @@ public final class ProtoGlobal {
 
         private long token_ ;
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public long getToken() {
           return token_;
         }
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public Builder setToken(long value) {
           
@@ -11165,7 +11183,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 token = 4;</code>
+         * <code>optional uint64 token = 4 [jstype = JS_STRING];</code>
          */
         public Builder clearToken() {
           
@@ -11176,13 +11194,13 @@ public final class ProtoGlobal {
 
         private long amount_ ;
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return amount_;
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           
@@ -11191,7 +11209,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 amount = 5;</code>
+         * <code>optional uint64 amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           
@@ -11547,13 +11565,13 @@ public final class ProtoGlobal {
 
         private long terminalNo_ ;
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public long getTerminalNo() {
           return terminalNo_;
         }
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public Builder setTerminalNo(long value) {
           
@@ -11562,7 +11580,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 terminal_no = 11;</code>
+         * <code>optional uint64 terminal_no = 11 [jstype = JS_STRING];</code>
          */
         public Builder clearTerminalNo() {
           
@@ -11573,13 +11591,13 @@ public final class ProtoGlobal {
 
         private long rrn_ ;
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public long getRrn() {
           return rrn_;
         }
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public Builder setRrn(long value) {
           
@@ -11588,7 +11606,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 rrn = 12;</code>
+         * <code>optional uint64 rrn = 12 [jstype = JS_STRING];</code>
          */
         public Builder clearRrn() {
           
@@ -11599,13 +11617,13 @@ public final class ProtoGlobal {
 
         private long traceNumber_ ;
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public long getTraceNumber() {
           return traceNumber_;
         }
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public Builder setTraceNumber(long value) {
           
@@ -11614,7 +11632,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 trace_number = 13;</code>
+         * <code>optional uint64 trace_number = 13 [jstype = JS_STRING];</code>
          */
         public Builder clearTraceNumber() {
           
@@ -12845,12 +12863,12 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 room_id = 1;</code>
+     * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
      */
     long getRoomId();
 
     /**
-     * <code>optional uint64 message_id = 2;</code>
+     * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
      */
     long getMessageId();
   }
@@ -12931,7 +12949,7 @@ public final class ProtoGlobal {
     public static final int ROOM_ID_FIELD_NUMBER = 1;
     private long roomId_;
     /**
-     * <code>optional uint64 room_id = 1;</code>
+     * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
      */
     public long getRoomId() {
       return roomId_;
@@ -12940,7 +12958,7 @@ public final class ProtoGlobal {
     public static final int MESSAGE_ID_FIELD_NUMBER = 2;
     private long messageId_;
     /**
-     * <code>optional uint64 message_id = 2;</code>
+     * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
      */
     public long getMessageId() {
       return messageId_;
@@ -13236,13 +13254,13 @@ public final class ProtoGlobal {
 
       private long roomId_ ;
       /**
-       * <code>optional uint64 room_id = 1;</code>
+       * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
        */
       public long getRoomId() {
         return roomId_;
       }
       /**
-       * <code>optional uint64 room_id = 1;</code>
+       * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setRoomId(long value) {
         
@@ -13251,7 +13269,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 room_id = 1;</code>
+       * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearRoomId() {
         
@@ -13262,13 +13280,13 @@ public final class ProtoGlobal {
 
       private long messageId_ ;
       /**
-       * <code>optional uint64 message_id = 2;</code>
+       * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
        */
       public long getMessageId() {
         return messageId_;
       }
       /**
-       * <code>optional uint64 message_id = 2;</code>
+       * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
        */
       public Builder setMessageId(long value) {
         
@@ -13277,7 +13295,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 message_id = 2;</code>
+       * <code>optional uint64 message_id = 2 [jstype = JS_STRING];</code>
        */
       public Builder clearMessageId() {
         
@@ -13334,12 +13352,3384 @@ public final class ProtoGlobal {
 
   }
 
+  public interface RoomMessageStoryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageStory)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    int getStatusValue();
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageStory.Status getStatus();
+
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    boolean hasStory();
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.Story getStory();
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.StoryOrBuilder getStoryOrBuilder();
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageStory}
+   */
+  public  static final class RoomMessageStory extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageStory)
+      RoomMessageStoryOrBuilder {
+    // Use RoomMessageStory.newBuilder() to construct.
+    private RoomMessageStory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoomMessageStory() {
+      status_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RoomMessageStory(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 18: {
+              net.iGap.proto.ProtoGlobal.Story.Builder subBuilder = null;
+              if (story_ != null) {
+                subBuilder = story_.toBuilder();
+              }
+              story_ = input.readMessage(net.iGap.proto.ProtoGlobal.Story.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(story_);
+                story_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStory_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStory_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.RoomMessageStory.class, net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.RoomMessageStory.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ACTIVE = 0;</code>
+       */
+      ACTIVE(0),
+      /**
+       * <code>EXPIRED = 1;</code>
+       */
+      EXPIRED(1),
+      /**
+       * <code>PRIVATE = 2;</code>
+       */
+      PRIVATE(2),
+      /**
+       * <code>DELETED = 3;</code>
+       */
+      DELETED(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ACTIVE = 0;</code>
+       */
+      public static final int ACTIVE_VALUE = 0;
+      /**
+       * <code>EXPIRED = 1;</code>
+       */
+      public static final int EXPIRED_VALUE = 1;
+      /**
+       * <code>PRIVATE = 2;</code>
+       */
+      public static final int PRIVATE_VALUE = 2;
+      /**
+       * <code>DELETED = 3;</code>
+       */
+      public static final int DELETED_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return ACTIVE;
+          case 1: return EXPIRED;
+          case 2: return PRIVATE;
+          case 3: return DELETED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageStory.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Status[] VALUES = values();
+
+      public static Status valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.RoomMessageStory.Status)
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private int status_;
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageStory.Status getStatus() {
+      net.iGap.proto.ProtoGlobal.RoomMessageStory.Status result = net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.valueOf(status_);
+      return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.UNRECOGNIZED : result;
+    }
+
+    public static final int STORY_FIELD_NUMBER = 2;
+    private net.iGap.proto.ProtoGlobal.Story story_;
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    public boolean hasStory() {
+      return story_ != null;
+    }
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.Story getStory() {
+      return story_ == null ? net.iGap.proto.ProtoGlobal.Story.getDefaultInstance() : story_;
+    }
+    /**
+     * <code>optional .proto.Story story = 2;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.StoryOrBuilder getStoryOrBuilder() {
+      return getStory();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (status_ != net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.ACTIVE.getNumber()) {
+        output.writeEnum(1, status_);
+      }
+      if (story_ != null) {
+        output.writeMessage(2, getStory());
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.ACTIVE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, status_);
+      }
+      if (story_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getStory());
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessageStory)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.RoomMessageStory other = (net.iGap.proto.ProtoGlobal.RoomMessageStory) obj;
+
+      boolean result = true;
+      result = result && status_ == other.status_;
+      result = result && (hasStory() == other.hasStory());
+      if (hasStory()) {
+        result = result && getStory()
+            .equals(other.getStory());
+      }
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      if (hasStory()) {
+        hash = (37 * hash) + STORY_FIELD_NUMBER;
+        hash = (53 * hash) + getStory().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageStory prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageStory}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageStory)
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStory_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStory_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessageStory.class, net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageStory.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        status_ = 0;
+
+        if (storyBuilder_ == null) {
+          story_ = null;
+        } else {
+          story_ = null;
+          storyBuilder_ = null;
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStory_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageStory getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageStory.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageStory build() {
+        net.iGap.proto.ProtoGlobal.RoomMessageStory result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageStory buildPartial() {
+        net.iGap.proto.ProtoGlobal.RoomMessageStory result = new net.iGap.proto.ProtoGlobal.RoomMessageStory(this);
+        result.status_ = status_;
+        if (storyBuilder_ == null) {
+          result.story_ = story_;
+        } else {
+          result.story_ = storyBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessageStory) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessageStory)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessageStory other) {
+        if (other == net.iGap.proto.ProtoGlobal.RoomMessageStory.getDefaultInstance()) return this;
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        if (other.hasStory()) {
+          mergeStory(other.getStory());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.RoomMessageStory parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessageStory) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStory.Status getStatus() {
+        net.iGap.proto.ProtoGlobal.RoomMessageStory.Status result = net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.valueOf(status_);
+        return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageStory.Status.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public Builder setStatus(net.iGap.proto.ProtoGlobal.RoomMessageStory.Status value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory.Status status = 1;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private net.iGap.proto.ProtoGlobal.Story story_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Story, net.iGap.proto.ProtoGlobal.Story.Builder, net.iGap.proto.ProtoGlobal.StoryOrBuilder> storyBuilder_;
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public boolean hasStory() {
+        return storyBuilder_ != null || story_ != null;
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Story getStory() {
+        if (storyBuilder_ == null) {
+          return story_ == null ? net.iGap.proto.ProtoGlobal.Story.getDefaultInstance() : story_;
+        } else {
+          return storyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public Builder setStory(net.iGap.proto.ProtoGlobal.Story value) {
+        if (storyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          story_ = value;
+          onChanged();
+        } else {
+          storyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public Builder setStory(
+          net.iGap.proto.ProtoGlobal.Story.Builder builderForValue) {
+        if (storyBuilder_ == null) {
+          story_ = builderForValue.build();
+          onChanged();
+        } else {
+          storyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public Builder mergeStory(net.iGap.proto.ProtoGlobal.Story value) {
+        if (storyBuilder_ == null) {
+          if (story_ != null) {
+            story_ =
+              net.iGap.proto.ProtoGlobal.Story.newBuilder(story_).mergeFrom(value).buildPartial();
+          } else {
+            story_ = value;
+          }
+          onChanged();
+        } else {
+          storyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public Builder clearStory() {
+        if (storyBuilder_ == null) {
+          story_ = null;
+          onChanged();
+        } else {
+          story_ = null;
+          storyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Story.Builder getStoryBuilder() {
+        
+        onChanged();
+        return getStoryFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.StoryOrBuilder getStoryOrBuilder() {
+        if (storyBuilder_ != null) {
+          return storyBuilder_.getMessageOrBuilder();
+        } else {
+          return story_ == null ?
+              net.iGap.proto.ProtoGlobal.Story.getDefaultInstance() : story_;
+        }
+      }
+      /**
+       * <code>optional .proto.Story story = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Story, net.iGap.proto.ProtoGlobal.Story.Builder, net.iGap.proto.ProtoGlobal.StoryOrBuilder> 
+          getStoryFieldBuilder() {
+        if (storyBuilder_ == null) {
+          storyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Story, net.iGap.proto.ProtoGlobal.Story.Builder, net.iGap.proto.ProtoGlobal.StoryOrBuilder>(
+                  getStory(),
+                  getParentForChildren(),
+                  isClean());
+          story_ = null;
+        }
+        return storyBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageStory)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageStory)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageStory DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessageStory();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStory getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoomMessageStory>
+        PARSER = new com.google.protobuf.AbstractParser<RoomMessageStory>() {
+      public RoomMessageStory parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomMessageStory(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomMessageStory> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomMessageStory> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.RoomMessageStory getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RoomMessageStoryReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageStoryReply)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    long getStoryId();
+
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    java.lang.String getCaption();
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getCaptionBytes();
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageStoryReply}
+   */
+  public  static final class RoomMessageStoryReply extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageStoryReply)
+      RoomMessageStoryReplyOrBuilder {
+    // Use RoomMessageStoryReply.newBuilder() to construct.
+    private RoomMessageStoryReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoomMessageStoryReply() {
+      storyId_ = 0L;
+      caption_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RoomMessageStoryReply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              storyId_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              caption_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryReply_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryReply_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.class, net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.Builder.class);
+    }
+
+    public static final int STORY_ID_FIELD_NUMBER = 1;
+    private long storyId_;
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    public long getStoryId() {
+      return storyId_;
+    }
+
+    public static final int CAPTION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object caption_;
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    public java.lang.String getCaption() {
+      java.lang.Object ref = caption_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        caption_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string caption = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCaptionBytes() {
+      java.lang.Object ref = caption_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        caption_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (storyId_ != 0L) {
+        output.writeUInt64(1, storyId_);
+      }
+      if (!getCaptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, caption_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (storyId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, storyId_);
+      }
+      if (!getCaptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, caption_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessageStoryReply)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.RoomMessageStoryReply other = (net.iGap.proto.ProtoGlobal.RoomMessageStoryReply) obj;
+
+      boolean result = true;
+      result = result && (getStoryId()
+          == other.getStoryId());
+      result = result && getCaption()
+          .equals(other.getCaption());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + STORY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStoryId());
+      hash = (37 * hash) + CAPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getCaption().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageStoryReply prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageStoryReply}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageStoryReply)
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryReplyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryReply_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryReply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.class, net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        storyId_ = 0L;
+
+        caption_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryReply_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageStoryReply getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageStoryReply build() {
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryReply result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageStoryReply buildPartial() {
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryReply result = new net.iGap.proto.ProtoGlobal.RoomMessageStoryReply(this);
+        result.storyId_ = storyId_;
+        result.caption_ = caption_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessageStoryReply) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessageStoryReply)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessageStoryReply other) {
+        if (other == net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.getDefaultInstance()) return this;
+        if (other.getStoryId() != 0L) {
+          setStoryId(other.getStoryId());
+        }
+        if (!other.getCaption().isEmpty()) {
+          caption_ = other.caption_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryReply parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessageStoryReply) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long storyId_ ;
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public long getStoryId() {
+        return storyId_;
+      }
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder setStoryId(long value) {
+        
+        storyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder clearStoryId() {
+        
+        storyId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object caption_ = "";
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public java.lang.String getCaption() {
+        java.lang.Object ref = caption_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          caption_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCaptionBytes() {
+        java.lang.Object ref = caption_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          caption_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public Builder setCaption(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        caption_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public Builder clearCaption() {
+        
+        caption_ = getDefaultInstance().getCaption();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string caption = 2;</code>
+       */
+      public Builder setCaptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        caption_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageStoryReply)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageStoryReply)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageStoryReply DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessageStoryReply();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryReply getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoomMessageStoryReply>
+        PARSER = new com.google.protobuf.AbstractParser<RoomMessageStoryReply>() {
+      public RoomMessageStoryReply parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomMessageStoryReply(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomMessageStoryReply> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomMessageStoryReply> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.RoomMessageStoryReply getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RoomMessageStoryForwardOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageStoryForward)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    long getStoryId();
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageStoryForward}
+   */
+  public  static final class RoomMessageStoryForward extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageStoryForward)
+      RoomMessageStoryForwardOrBuilder {
+    // Use RoomMessageStoryForward.newBuilder() to construct.
+    private RoomMessageStoryForward(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoomMessageStoryForward() {
+      storyId_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RoomMessageStoryForward(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              storyId_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryForward_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryForward_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.class, net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.Builder.class);
+    }
+
+    public static final int STORY_ID_FIELD_NUMBER = 1;
+    private long storyId_;
+    /**
+     * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+     */
+    public long getStoryId() {
+      return storyId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (storyId_ != 0L) {
+        output.writeUInt64(1, storyId_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (storyId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, storyId_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessageStoryForward)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.RoomMessageStoryForward other = (net.iGap.proto.ProtoGlobal.RoomMessageStoryForward) obj;
+
+      boolean result = true;
+      result = result && (getStoryId()
+          == other.getStoryId());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + STORY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStoryId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageStoryForward prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageStoryForward}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageStoryForward)
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryForwardOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryForward_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryForward_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.class, net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        storyId_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageStoryForward_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageStoryForward getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageStoryForward build() {
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryForward result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageStoryForward buildPartial() {
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryForward result = new net.iGap.proto.ProtoGlobal.RoomMessageStoryForward(this);
+        result.storyId_ = storyId_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessageStoryForward) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessageStoryForward)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessageStoryForward other) {
+        if (other == net.iGap.proto.ProtoGlobal.RoomMessageStoryForward.getDefaultInstance()) return this;
+        if (other.getStoryId() != 0L) {
+          setStoryId(other.getStoryId());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.RoomMessageStoryForward parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessageStoryForward) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long storyId_ ;
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public long getStoryId() {
+        return storyId_;
+      }
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder setStoryId(long value) {
+        
+        storyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 story_id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder clearStoryId() {
+        
+        storyId_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageStoryForward)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageStoryForward)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageStoryForward DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessageStoryForward();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageStoryForward getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoomMessageStoryForward>
+        PARSER = new com.google.protobuf.AbstractParser<RoomMessageStoryForward>() {
+      public RoomMessageStoryForward parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomMessageStoryForward(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomMessageStoryForward> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomMessageStoryForward> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.RoomMessageStoryForward getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StoryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.Story)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+     */
+    long getId();
+
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    java.lang.String getFileToken();
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getFileTokenBytes();
+
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    boolean hasFileDetails();
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    net.iGap.proto.ProtoGlobal.File getFileDetails();
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    net.iGap.proto.ProtoGlobal.FileOrBuilder getFileDetailsOrBuilder();
+
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.Story.Type getType();
+
+    /**
+     * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+     */
+    long getUserId();
+
+    /**
+     * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+     */
+    long getRoomId();
+
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    java.lang.String getCaption();
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getCaptionBytes();
+
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    java.lang.String getLink();
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getLinkBytes();
+
+    /**
+     * <code>optional uint32 created_at = 9;</code>
+     */
+    int getCreatedAt();
+
+    /**
+     * <code>optional uint32 end_at = 10;</code>
+     */
+    int getEndAt();
+
+    /**
+     * <code>optional bool seen = 11;</code>
+     */
+    boolean getSeen();
+
+    /**
+     * <code>optional bool duplicated = 12;</code>
+     */
+    boolean getDuplicated();
+  }
+  /**
+   * Protobuf type {@code proto.Story}
+   */
+  public  static final class Story extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.Story)
+      StoryOrBuilder {
+    // Use Story.newBuilder() to construct.
+    private Story(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Story() {
+      id_ = 0L;
+      fileToken_ = "";
+      type_ = 0;
+      userId_ = 0L;
+      roomId_ = 0L;
+      caption_ = "";
+      link_ = "";
+      createdAt_ = 0;
+      endAt_ = 0;
+      seen_ = false;
+      duplicated_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Story(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fileToken_ = s;
+              break;
+            }
+            case 26: {
+              net.iGap.proto.ProtoGlobal.File.Builder subBuilder = null;
+              if (fileDetails_ != null) {
+                subBuilder = fileDetails_.toBuilder();
+              }
+              fileDetails_ = input.readMessage(net.iGap.proto.ProtoGlobal.File.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fileDetails_);
+                fileDetails_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              userId_ = input.readUInt64();
+              break;
+            }
+            case 48: {
+
+              roomId_ = input.readUInt64();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              caption_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              link_ = s;
+              break;
+            }
+            case 72: {
+
+              createdAt_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              endAt_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              seen_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              duplicated_ = input.readBool();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_Story_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_Story_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.Story.class, net.iGap.proto.ProtoGlobal.Story.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.Story.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>STORY = 0;</code>
+       */
+      STORY(0),
+      /**
+       * <code>LIVE = 1;</code>
+       */
+      LIVE(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>STORY = 0;</code>
+       */
+      public static final int STORY_VALUE = 0;
+      /**
+       * <code>LIVE = 1;</code>
+       */
+      public static final int LIVE_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return STORY;
+          case 1: return LIVE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.Story.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.Story.Type)
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    public static final int FILE_TOKEN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object fileToken_;
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    public java.lang.String getFileToken() {
+      java.lang.Object ref = fileToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string file_token = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFileTokenBytes() {
+      java.lang.Object ref = fileToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fileToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILE_DETAILS_FIELD_NUMBER = 3;
+    private net.iGap.proto.ProtoGlobal.File fileDetails_;
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    public boolean hasFileDetails() {
+      return fileDetails_ != null;
+    }
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.File getFileDetails() {
+      return fileDetails_ == null ? net.iGap.proto.ProtoGlobal.File.getDefaultInstance() : fileDetails_;
+    }
+    /**
+     * <code>optional .proto.File file_details = 3;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.FileOrBuilder getFileDetailsOrBuilder() {
+      return getFileDetails();
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 4;
+    private int type_;
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>optional .proto.Story.Type type = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.Story.Type getType() {
+      net.iGap.proto.ProtoGlobal.Story.Type result = net.iGap.proto.ProtoGlobal.Story.Type.valueOf(type_);
+      return result == null ? net.iGap.proto.ProtoGlobal.Story.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 5;
+    private long userId_;
+    /**
+     * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+     */
+    public long getUserId() {
+      return userId_;
+    }
+
+    public static final int ROOM_ID_FIELD_NUMBER = 6;
+    private long roomId_;
+    /**
+     * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+
+    public static final int CAPTION_FIELD_NUMBER = 7;
+    private volatile java.lang.Object caption_;
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    public java.lang.String getCaption() {
+      java.lang.Object ref = caption_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        caption_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string caption = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCaptionBytes() {
+      java.lang.Object ref = caption_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        caption_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LINK_FIELD_NUMBER = 8;
+    private volatile java.lang.Object link_;
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    public java.lang.String getLink() {
+      java.lang.Object ref = link_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        link_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string link = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLinkBytes() {
+      java.lang.Object ref = link_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        link_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 9;
+    private int createdAt_;
+    /**
+     * <code>optional uint32 created_at = 9;</code>
+     */
+    public int getCreatedAt() {
+      return createdAt_;
+    }
+
+    public static final int END_AT_FIELD_NUMBER = 10;
+    private int endAt_;
+    /**
+     * <code>optional uint32 end_at = 10;</code>
+     */
+    public int getEndAt() {
+      return endAt_;
+    }
+
+    public static final int SEEN_FIELD_NUMBER = 11;
+    private boolean seen_;
+    /**
+     * <code>optional bool seen = 11;</code>
+     */
+    public boolean getSeen() {
+      return seen_;
+    }
+
+    public static final int DUPLICATED_FIELD_NUMBER = 12;
+    private boolean duplicated_;
+    /**
+     * <code>optional bool duplicated = 12;</code>
+     */
+    public boolean getDuplicated() {
+      return duplicated_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeUInt64(1, id_);
+      }
+      if (!getFileTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, fileToken_);
+      }
+      if (fileDetails_ != null) {
+        output.writeMessage(3, getFileDetails());
+      }
+      if (type_ != net.iGap.proto.ProtoGlobal.Story.Type.STORY.getNumber()) {
+        output.writeEnum(4, type_);
+      }
+      if (userId_ != 0L) {
+        output.writeUInt64(5, userId_);
+      }
+      if (roomId_ != 0L) {
+        output.writeUInt64(6, roomId_);
+      }
+      if (!getCaptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, caption_);
+      }
+      if (!getLinkBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, link_);
+      }
+      if (createdAt_ != 0) {
+        output.writeUInt32(9, createdAt_);
+      }
+      if (endAt_ != 0) {
+        output.writeUInt32(10, endAt_);
+      }
+      if (seen_ != false) {
+        output.writeBool(11, seen_);
+      }
+      if (duplicated_ != false) {
+        output.writeBool(12, duplicated_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, id_);
+      }
+      if (!getFileTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, fileToken_);
+      }
+      if (fileDetails_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getFileDetails());
+      }
+      if (type_ != net.iGap.proto.ProtoGlobal.Story.Type.STORY.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, type_);
+      }
+      if (userId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, userId_);
+      }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, roomId_);
+      }
+      if (!getCaptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, caption_);
+      }
+      if (!getLinkBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, link_);
+      }
+      if (createdAt_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, createdAt_);
+      }
+      if (endAt_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, endAt_);
+      }
+      if (seen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, seen_);
+      }
+      if (duplicated_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, duplicated_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.Story)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.Story other = (net.iGap.proto.ProtoGlobal.Story) obj;
+
+      boolean result = true;
+      result = result && (getId()
+          == other.getId());
+      result = result && getFileToken()
+          .equals(other.getFileToken());
+      result = result && (hasFileDetails() == other.hasFileDetails());
+      if (hasFileDetails()) {
+        result = result && getFileDetails()
+            .equals(other.getFileDetails());
+      }
+      result = result && type_ == other.type_;
+      result = result && (getUserId()
+          == other.getUserId());
+      result = result && (getRoomId()
+          == other.getRoomId());
+      result = result && getCaption()
+          .equals(other.getCaption());
+      result = result && getLink()
+          .equals(other.getLink());
+      result = result && (getCreatedAt()
+          == other.getCreatedAt());
+      result = result && (getEndAt()
+          == other.getEndAt());
+      result = result && (getSeen()
+          == other.getSeen());
+      result = result && (getDuplicated()
+          == other.getDuplicated());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + FILE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getFileToken().hashCode();
+      if (hasFileDetails()) {
+        hash = (37 * hash) + FILE_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getFileDetails().hashCode();
+      }
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      hash = (37 * hash) + CAPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getCaption().hashCode();
+      hash = (37 * hash) + LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getLink().hashCode();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt();
+      hash = (37 * hash) + END_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getEndAt();
+      hash = (37 * hash) + SEEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSeen());
+      hash = (37 * hash) + DUPLICATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDuplicated());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Story parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.Story prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.Story}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.Story)
+        net.iGap.proto.ProtoGlobal.StoryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_Story_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_Story_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.Story.class, net.iGap.proto.ProtoGlobal.Story.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.Story.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+
+        fileToken_ = "";
+
+        if (fileDetailsBuilder_ == null) {
+          fileDetails_ = null;
+        } else {
+          fileDetails_ = null;
+          fileDetailsBuilder_ = null;
+        }
+        type_ = 0;
+
+        userId_ = 0L;
+
+        roomId_ = 0L;
+
+        caption_ = "";
+
+        link_ = "";
+
+        createdAt_ = 0;
+
+        endAt_ = 0;
+
+        seen_ = false;
+
+        duplicated_ = false;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_Story_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.Story getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.Story.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.Story build() {
+        net.iGap.proto.ProtoGlobal.Story result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.Story buildPartial() {
+        net.iGap.proto.ProtoGlobal.Story result = new net.iGap.proto.ProtoGlobal.Story(this);
+        result.id_ = id_;
+        result.fileToken_ = fileToken_;
+        if (fileDetailsBuilder_ == null) {
+          result.fileDetails_ = fileDetails_;
+        } else {
+          result.fileDetails_ = fileDetailsBuilder_.build();
+        }
+        result.type_ = type_;
+        result.userId_ = userId_;
+        result.roomId_ = roomId_;
+        result.caption_ = caption_;
+        result.link_ = link_;
+        result.createdAt_ = createdAt_;
+        result.endAt_ = endAt_;
+        result.seen_ = seen_;
+        result.duplicated_ = duplicated_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.Story) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.Story)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.Story other) {
+        if (other == net.iGap.proto.ProtoGlobal.Story.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (!other.getFileToken().isEmpty()) {
+          fileToken_ = other.fileToken_;
+          onChanged();
+        }
+        if (other.hasFileDetails()) {
+          mergeFileDetails(other.getFileDetails());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (!other.getCaption().isEmpty()) {
+          caption_ = other.caption_;
+          onChanged();
+        }
+        if (!other.getLink().isEmpty()) {
+          link_ = other.link_;
+          onChanged();
+        }
+        if (other.getCreatedAt() != 0) {
+          setCreatedAt(other.getCreatedAt());
+        }
+        if (other.getEndAt() != 0) {
+          setEndAt(other.getEndAt());
+        }
+        if (other.getSeen() != false) {
+          setSeen(other.getSeen());
+        }
+        if (other.getDuplicated() != false) {
+          setDuplicated(other.getDuplicated());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.Story parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.Story) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fileToken_ = "";
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public java.lang.String getFileToken() {
+        java.lang.Object ref = fileToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fileToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFileTokenBytes() {
+        java.lang.Object ref = fileToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fileToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public Builder setFileToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        fileToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public Builder clearFileToken() {
+        
+        fileToken_ = getDefaultInstance().getFileToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string file_token = 2;</code>
+       */
+      public Builder setFileTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        fileToken_ = value;
+        onChanged();
+        return this;
+      }
+
+      private net.iGap.proto.ProtoGlobal.File fileDetails_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.File, net.iGap.proto.ProtoGlobal.File.Builder, net.iGap.proto.ProtoGlobal.FileOrBuilder> fileDetailsBuilder_;
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public boolean hasFileDetails() {
+        return fileDetailsBuilder_ != null || fileDetails_ != null;
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.File getFileDetails() {
+        if (fileDetailsBuilder_ == null) {
+          return fileDetails_ == null ? net.iGap.proto.ProtoGlobal.File.getDefaultInstance() : fileDetails_;
+        } else {
+          return fileDetailsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public Builder setFileDetails(net.iGap.proto.ProtoGlobal.File value) {
+        if (fileDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fileDetails_ = value;
+          onChanged();
+        } else {
+          fileDetailsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public Builder setFileDetails(
+          net.iGap.proto.ProtoGlobal.File.Builder builderForValue) {
+        if (fileDetailsBuilder_ == null) {
+          fileDetails_ = builderForValue.build();
+          onChanged();
+        } else {
+          fileDetailsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public Builder mergeFileDetails(net.iGap.proto.ProtoGlobal.File value) {
+        if (fileDetailsBuilder_ == null) {
+          if (fileDetails_ != null) {
+            fileDetails_ =
+              net.iGap.proto.ProtoGlobal.File.newBuilder(fileDetails_).mergeFrom(value).buildPartial();
+          } else {
+            fileDetails_ = value;
+          }
+          onChanged();
+        } else {
+          fileDetailsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public Builder clearFileDetails() {
+        if (fileDetailsBuilder_ == null) {
+          fileDetails_ = null;
+          onChanged();
+        } else {
+          fileDetails_ = null;
+          fileDetailsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.File.Builder getFileDetailsBuilder() {
+        
+        onChanged();
+        return getFileDetailsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.FileOrBuilder getFileDetailsOrBuilder() {
+        if (fileDetailsBuilder_ != null) {
+          return fileDetailsBuilder_.getMessageOrBuilder();
+        } else {
+          return fileDetails_ == null ?
+              net.iGap.proto.ProtoGlobal.File.getDefaultInstance() : fileDetails_;
+        }
+      }
+      /**
+       * <code>optional .proto.File file_details = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.File, net.iGap.proto.ProtoGlobal.File.Builder, net.iGap.proto.ProtoGlobal.FileOrBuilder> 
+          getFileDetailsFieldBuilder() {
+        if (fileDetailsBuilder_ == null) {
+          fileDetailsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.File, net.iGap.proto.ProtoGlobal.File.Builder, net.iGap.proto.ProtoGlobal.FileOrBuilder>(
+                  getFileDetails(),
+                  getParentForChildren(),
+                  isClean());
+          fileDetails_ = null;
+        }
+        return fileDetailsBuilder_;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Story.Type getType() {
+        net.iGap.proto.ProtoGlobal.Story.Type result = net.iGap.proto.ProtoGlobal.Story.Type.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoGlobal.Story.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public Builder setType(net.iGap.proto.ProtoGlobal.Story.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Story.Type type = 4;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long userId_ ;
+      /**
+       * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+       */
+      public long getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+       */
+      public Builder setUserId(long value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 user_id = 5 [jstype = JS_STRING];</code>
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long roomId_ ;
+      /**
+       * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+       */
+      public long getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+       */
+      public Builder setRoomId(long value) {
+        
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 room_id = 6 [jstype = JS_STRING];</code>
+       */
+      public Builder clearRoomId() {
+        
+        roomId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object caption_ = "";
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public java.lang.String getCaption() {
+        java.lang.Object ref = caption_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          caption_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCaptionBytes() {
+        java.lang.Object ref = caption_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          caption_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public Builder setCaption(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        caption_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public Builder clearCaption() {
+        
+        caption_ = getDefaultInstance().getCaption();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string caption = 7;</code>
+       */
+      public Builder setCaptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        caption_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object link_ = "";
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public java.lang.String getLink() {
+        java.lang.Object ref = link_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          link_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLinkBytes() {
+        java.lang.Object ref = link_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          link_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public Builder setLink(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        link_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public Builder clearLink() {
+        
+        link_ = getDefaultInstance().getLink();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string link = 8;</code>
+       */
+      public Builder setLinkBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        link_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int createdAt_ ;
+      /**
+       * <code>optional uint32 created_at = 9;</code>
+       */
+      public int getCreatedAt() {
+        return createdAt_;
+      }
+      /**
+       * <code>optional uint32 created_at = 9;</code>
+       */
+      public Builder setCreatedAt(int value) {
+        
+        createdAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 created_at = 9;</code>
+       */
+      public Builder clearCreatedAt() {
+        
+        createdAt_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int endAt_ ;
+      /**
+       * <code>optional uint32 end_at = 10;</code>
+       */
+      public int getEndAt() {
+        return endAt_;
+      }
+      /**
+       * <code>optional uint32 end_at = 10;</code>
+       */
+      public Builder setEndAt(int value) {
+        
+        endAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 end_at = 10;</code>
+       */
+      public Builder clearEndAt() {
+        
+        endAt_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean seen_ ;
+      /**
+       * <code>optional bool seen = 11;</code>
+       */
+      public boolean getSeen() {
+        return seen_;
+      }
+      /**
+       * <code>optional bool seen = 11;</code>
+       */
+      public Builder setSeen(boolean value) {
+        
+        seen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool seen = 11;</code>
+       */
+      public Builder clearSeen() {
+        
+        seen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean duplicated_ ;
+      /**
+       * <code>optional bool duplicated = 12;</code>
+       */
+      public boolean getDuplicated() {
+        return duplicated_;
+      }
+      /**
+       * <code>optional bool duplicated = 12;</code>
+       */
+      public Builder setDuplicated(boolean value) {
+        
+        duplicated_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool duplicated = 12;</code>
+       */
+      public Builder clearDuplicated() {
+        
+        duplicated_ = false;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.Story)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.Story)
+    private static final net.iGap.proto.ProtoGlobal.Story DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.Story();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Story getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Story>
+        PARSER = new com.google.protobuf.AbstractParser<Story>() {
+      public Story parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Story(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Story> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Story> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.Story getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface RegisteredUserOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.RegisteredUser)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     long getId();
 
@@ -13354,7 +16744,7 @@ public final class ProtoGlobal {
         getUsernameBytes();
 
     /**
-     * <code>optional uint64 phone = 3;</code>
+     * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
      */
     long getPhone();
 
@@ -13821,7 +17211,7 @@ public final class ProtoGlobal {
     public static final int ID_FIELD_NUMBER = 1;
     private long id_;
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     public long getId() {
       return id_;
@@ -13864,7 +17254,7 @@ public final class ProtoGlobal {
     public static final int PHONE_FIELD_NUMBER = 3;
     private long phone_;
     /**
-     * <code>optional uint64 phone = 3;</code>
+     * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
      */
     public long getPhone() {
       return phone_;
@@ -14777,13 +18167,13 @@ public final class ProtoGlobal {
 
       private long id_ ;
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public long getId() {
         return id_;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setId(long value) {
         
@@ -14792,7 +18182,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearId() {
         
@@ -14872,13 +18262,13 @@ public final class ProtoGlobal {
 
       private long phone_ ;
       /**
-       * <code>optional uint64 phone = 3;</code>
+       * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
        */
       public long getPhone() {
         return phone_;
       }
       /**
-       * <code>optional uint64 phone = 3;</code>
+       * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
        */
       public Builder setPhone(long value) {
         
@@ -14887,7 +18277,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 phone = 3;</code>
+       * <code>optional uint64 phone = 3 [jstype = JS_STRING];</code>
        */
       public Builder clearPhone() {
         
@@ -15749,7 +19139,7 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     long getId();
 
@@ -15850,7 +19240,7 @@ public final class ProtoGlobal {
     public static final int ID_FIELD_NUMBER = 1;
     private long id_;
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     public long getId() {
       return id_;
@@ -16179,13 +19569,13 @@ public final class ProtoGlobal {
 
       private long id_ ;
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public long getId() {
         return id_;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setId(long value) {
         
@@ -16194,7 +19584,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearId() {
         
@@ -16373,12 +19763,17 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 message_id = 1;</code>
+     * <code>optional uint64 room_id = 26;</code>
+     */
+    long getRoomId();
+
+    /**
+     * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
      */
     long getMessageId();
 
     /**
-     * <code>optional uint64 message_version = 2;</code>
+     * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
      */
     long getMessageVersion();
 
@@ -16392,7 +19787,7 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.RoomMessageStatus getStatus();
 
     /**
-     * <code>optional uint64 status_version = 4;</code>
+     * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
      */
     long getStatusVersion();
 
@@ -16540,12 +19935,25 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.RoomMessageOrBuilder getReplyToOrBuilder();
 
     /**
-     * <code>optional uint64 previous_message_id = 18;</code>
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    boolean hasStory();
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageStory getStory();
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageStoryOrBuilder getStoryOrBuilder();
+
+    /**
+     * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
      */
     long getPreviousMessageId();
 
     /**
-     * <code>optional uint64 random_id = 21;</code>
+     * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
      */
     long getRandomId();
 
@@ -16598,6 +20006,7 @@ public final class ProtoGlobal {
       super(builder);
     }
     private RoomMessage() {
+      roomId_ = 0L;
       messageId_ = 0L;
       messageVersion_ = 0L;
       status_ = 0;
@@ -16835,6 +20244,24 @@ public final class ProtoGlobal {
               java.lang.String s = input.readStringRequireUtf8();
 
               additionalData_ = s;
+              break;
+            }
+            case 202: {
+              net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder subBuilder = null;
+              if (story_ != null) {
+                subBuilder = story_.toBuilder();
+              }
+              story_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageStory.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(story_);
+                story_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 208: {
+
+              roomId_ = input.readUInt64();
               break;
             }
           }
@@ -17098,7 +20525,7 @@ public final class ProtoGlobal {
           com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
          */
         long getUserId();
 
@@ -17190,7 +20617,7 @@ public final class ProtoGlobal {
         public static final int USER_ID_FIELD_NUMBER = 1;
         private long userId_;
         /**
-         * <code>optional uint64 user_id = 1;</code>
+         * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
          */
         public long getUserId() {
           return userId_;
@@ -17519,13 +20946,13 @@ public final class ProtoGlobal {
 
           private long userId_ ;
           /**
-           * <code>optional uint64 user_id = 1;</code>
+           * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
            */
           public long getUserId() {
             return userId_;
           }
           /**
-           * <code>optional uint64 user_id = 1;</code>
+           * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
            */
           public Builder setUserId(long value) {
             
@@ -17534,7 +20961,7 @@ public final class ProtoGlobal {
             return this;
           }
           /**
-           * <code>optional uint64 user_id = 1;</code>
+           * <code>optional uint64 user_id = 1 [jstype = JS_STRING];</code>
            */
           public Builder clearUserId() {
             
@@ -17665,7 +21092,7 @@ public final class ProtoGlobal {
           com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>optional uint64 room_id = 1;</code>
+         * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
          */
         long getRoomId();
       }
@@ -17740,7 +21167,7 @@ public final class ProtoGlobal {
         public static final int ROOM_ID_FIELD_NUMBER = 1;
         private long roomId_;
         /**
-         * <code>optional uint64 room_id = 1;</code>
+         * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
          */
         public long getRoomId() {
           return roomId_;
@@ -18018,13 +21445,13 @@ public final class ProtoGlobal {
 
           private long roomId_ ;
           /**
-           * <code>optional uint64 room_id = 1;</code>
+           * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
            */
           public long getRoomId() {
             return roomId_;
           }
           /**
-           * <code>optional uint64 room_id = 1;</code>
+           * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
            */
           public Builder setRoomId(long value) {
             
@@ -18033,7 +21460,7 @@ public final class ProtoGlobal {
             return this;
           }
           /**
-           * <code>optional uint64 room_id = 1;</code>
+           * <code>optional uint64 room_id = 1 [jstype = JS_STRING];</code>
            */
           public Builder clearRoomId() {
             
@@ -19760,10 +23187,19 @@ public final class ProtoGlobal {
 
     }
 
+    public static final int ROOM_ID_FIELD_NUMBER = 26;
+    private long roomId_;
+    /**
+     * <code>optional uint64 room_id = 26;</code>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+
     public static final int MESSAGE_ID_FIELD_NUMBER = 1;
     private long messageId_;
     /**
-     * <code>optional uint64 message_id = 1;</code>
+     * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
      */
     public long getMessageId() {
       return messageId_;
@@ -19772,7 +23208,7 @@ public final class ProtoGlobal {
     public static final int MESSAGE_VERSION_FIELD_NUMBER = 2;
     private long messageVersion_;
     /**
-     * <code>optional uint64 message_version = 2;</code>
+     * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
      */
     public long getMessageVersion() {
       return messageVersion_;
@@ -19797,7 +23233,7 @@ public final class ProtoGlobal {
     public static final int STATUS_VERSION_FIELD_NUMBER = 4;
     private long statusVersion_;
     /**
-     * <code>optional uint64 status_version = 4;</code>
+     * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
      */
     public long getStatusVersion() {
       return statusVersion_;
@@ -20057,10 +23493,31 @@ public final class ProtoGlobal {
       return getReplyTo();
     }
 
+    public static final int STORY_FIELD_NUMBER = 25;
+    private net.iGap.proto.ProtoGlobal.RoomMessageStory story_;
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    public boolean hasStory() {
+      return story_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageStory getStory() {
+      return story_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageStory.getDefaultInstance() : story_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageStory story = 25;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageStoryOrBuilder getStoryOrBuilder() {
+      return getStory();
+    }
+
     public static final int PREVIOUS_MESSAGE_ID_FIELD_NUMBER = 18;
     private long previousMessageId_;
     /**
-     * <code>optional uint64 previous_message_id = 18;</code>
+     * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
      */
     public long getPreviousMessageId() {
       return previousMessageId_;
@@ -20069,7 +23526,7 @@ public final class ProtoGlobal {
     public static final int RANDOM_ID_FIELD_NUMBER = 21;
     private long randomId_;
     /**
-     * <code>optional uint64 random_id = 21;</code>
+     * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
      */
     public long getRandomId() {
       return randomId_;
@@ -20239,6 +23696,12 @@ public final class ProtoGlobal {
       if (!getAdditionalDataBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 24, additionalData_);
       }
+      if (story_ != null) {
+        output.writeMessage(25, getStory());
+      }
+      if (roomId_ != 0L) {
+        output.writeUInt64(26, roomId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -20340,6 +23803,14 @@ public final class ProtoGlobal {
       if (!getAdditionalDataBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, additionalData_);
       }
+      if (story_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(25, getStory());
+      }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(26, roomId_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -20356,6 +23827,8 @@ public final class ProtoGlobal {
       net.iGap.proto.ProtoGlobal.RoomMessage other = (net.iGap.proto.ProtoGlobal.RoomMessage) obj;
 
       boolean result = true;
+      result = result && (getRoomId()
+          == other.getRoomId());
       result = result && (getMessageId()
           == other.getMessageId());
       result = result && (getMessageVersion()
@@ -20414,6 +23887,11 @@ public final class ProtoGlobal {
         result = result && getReplyTo()
             .equals(other.getReplyTo());
       }
+      result = result && (hasStory() == other.hasStory());
+      if (hasStory()) {
+        result = result && getStory()
+            .equals(other.getStory());
+      }
       result = result && (getPreviousMessageId()
           == other.getPreviousMessageId());
       result = result && (getRandomId()
@@ -20438,6 +23916,9 @@ public final class ProtoGlobal {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
       hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMessageId());
@@ -20494,6 +23975,10 @@ public final class ProtoGlobal {
       if (hasReplyTo()) {
         hash = (37 * hash) + REPLY_TO_FIELD_NUMBER;
         hash = (53 * hash) + getReplyTo().hashCode();
+      }
+      if (hasStory()) {
+        hash = (37 * hash) + STORY_FIELD_NUMBER;
+        hash = (53 * hash) + getStory().hashCode();
       }
       hash = (37 * hash) + PREVIOUS_MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -20629,6 +24114,8 @@ public final class ProtoGlobal {
       }
       public Builder clear() {
         super.clear();
+        roomId_ = 0L;
+
         messageId_ = 0L;
 
         messageVersion_ = 0L;
@@ -20697,6 +24184,12 @@ public final class ProtoGlobal {
           replyTo_ = null;
           replyToBuilder_ = null;
         }
+        if (storyBuilder_ == null) {
+          story_ = null;
+        } else {
+          story_ = null;
+          storyBuilder_ = null;
+        }
         previousMessageId_ = 0L;
 
         randomId_ = 0L;
@@ -20735,6 +24228,7 @@ public final class ProtoGlobal {
 
       public net.iGap.proto.ProtoGlobal.RoomMessage buildPartial() {
         net.iGap.proto.ProtoGlobal.RoomMessage result = new net.iGap.proto.ProtoGlobal.RoomMessage(this);
+        result.roomId_ = roomId_;
         result.messageId_ = messageId_;
         result.messageVersion_ = messageVersion_;
         result.status_ = status_;
@@ -20784,6 +24278,11 @@ public final class ProtoGlobal {
           result.replyTo_ = replyTo_;
         } else {
           result.replyTo_ = replyToBuilder_.build();
+        }
+        if (storyBuilder_ == null) {
+          result.story_ = story_;
+        } else {
+          result.story_ = storyBuilder_.build();
         }
         result.previousMessageId_ = previousMessageId_;
         result.randomId_ = randomId_;
@@ -20836,6 +24335,9 @@ public final class ProtoGlobal {
 
       public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessage other) {
         if (other == net.iGap.proto.ProtoGlobal.RoomMessage.getDefaultInstance()) return this;
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
         if (other.getMessageId() != 0L) {
           setMessageId(other.getMessageId());
         }
@@ -20891,6 +24393,9 @@ public final class ProtoGlobal {
         if (other.hasReplyTo()) {
           mergeReplyTo(other.getReplyTo());
         }
+        if (other.hasStory()) {
+          mergeStory(other.getStory());
+        }
         if (other.getPreviousMessageId() != 0L) {
           setPreviousMessageId(other.getPreviousMessageId());
         }
@@ -20936,15 +24441,41 @@ public final class ProtoGlobal {
         return this;
       }
 
+      private long roomId_ ;
+      /**
+       * <code>optional uint64 room_id = 26;</code>
+       */
+      public long getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>optional uint64 room_id = 26;</code>
+       */
+      public Builder setRoomId(long value) {
+        
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 room_id = 26;</code>
+       */
+      public Builder clearRoomId() {
+        
+        roomId_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private long messageId_ ;
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
        */
       public long getMessageId() {
         return messageId_;
       }
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setMessageId(long value) {
         
@@ -20953,7 +24484,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 message_id = 1;</code>
+       * <code>optional uint64 message_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearMessageId() {
         
@@ -20964,13 +24495,13 @@ public final class ProtoGlobal {
 
       private long messageVersion_ ;
       /**
-       * <code>optional uint64 message_version = 2;</code>
+       * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
        */
       public long getMessageVersion() {
         return messageVersion_;
       }
       /**
-       * <code>optional uint64 message_version = 2;</code>
+       * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
        */
       public Builder setMessageVersion(long value) {
         
@@ -20979,7 +24510,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 message_version = 2;</code>
+       * <code>optional uint64 message_version = 2 [jstype = JS_STRING];</code>
        */
       public Builder clearMessageVersion() {
         
@@ -21034,13 +24565,13 @@ public final class ProtoGlobal {
 
       private long statusVersion_ ;
       /**
-       * <code>optional uint64 status_version = 4;</code>
+       * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
        */
       public long getStatusVersion() {
         return statusVersion_;
       }
       /**
-       * <code>optional uint64 status_version = 4;</code>
+       * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
        */
       public Builder setStatusVersion(long value) {
         
@@ -21049,7 +24580,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 status_version = 4;</code>
+       * <code>optional uint64 status_version = 4 [jstype = JS_STRING];</code>
        */
       public Builder clearStatusVersion() {
         
@@ -22211,15 +25742,132 @@ public final class ProtoGlobal {
         return replyToBuilder_;
       }
 
+      private net.iGap.proto.ProtoGlobal.RoomMessageStory story_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageStory, net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStoryOrBuilder> storyBuilder_;
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public boolean hasStory() {
+        return storyBuilder_ != null || story_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStory getStory() {
+        if (storyBuilder_ == null) {
+          return story_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageStory.getDefaultInstance() : story_;
+        } else {
+          return storyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public Builder setStory(net.iGap.proto.ProtoGlobal.RoomMessageStory value) {
+        if (storyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          story_ = value;
+          onChanged();
+        } else {
+          storyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public Builder setStory(
+          net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder builderForValue) {
+        if (storyBuilder_ == null) {
+          story_ = builderForValue.build();
+          onChanged();
+        } else {
+          storyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public Builder mergeStory(net.iGap.proto.ProtoGlobal.RoomMessageStory value) {
+        if (storyBuilder_ == null) {
+          if (story_ != null) {
+            story_ =
+              net.iGap.proto.ProtoGlobal.RoomMessageStory.newBuilder(story_).mergeFrom(value).buildPartial();
+          } else {
+            story_ = value;
+          }
+          onChanged();
+        } else {
+          storyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public Builder clearStory() {
+        if (storyBuilder_ == null) {
+          story_ = null;
+          onChanged();
+        } else {
+          story_ = null;
+          storyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder getStoryBuilder() {
+        
+        onChanged();
+        return getStoryFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStoryOrBuilder getStoryOrBuilder() {
+        if (storyBuilder_ != null) {
+          return storyBuilder_.getMessageOrBuilder();
+        } else {
+          return story_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomMessageStory.getDefaultInstance() : story_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageStory story = 25;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageStory, net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStoryOrBuilder> 
+          getStoryFieldBuilder() {
+        if (storyBuilder_ == null) {
+          storyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageStory, net.iGap.proto.ProtoGlobal.RoomMessageStory.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStoryOrBuilder>(
+                  getStory(),
+                  getParentForChildren(),
+                  isClean());
+          story_ = null;
+        }
+        return storyBuilder_;
+      }
+
       private long previousMessageId_ ;
       /**
-       * <code>optional uint64 previous_message_id = 18;</code>
+       * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
        */
       public long getPreviousMessageId() {
         return previousMessageId_;
       }
       /**
-       * <code>optional uint64 previous_message_id = 18;</code>
+       * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
        */
       public Builder setPreviousMessageId(long value) {
         
@@ -22228,7 +25876,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 previous_message_id = 18;</code>
+       * <code>optional uint64 previous_message_id = 18 [jstype = JS_STRING];</code>
        */
       public Builder clearPreviousMessageId() {
         
@@ -22239,13 +25887,13 @@ public final class ProtoGlobal {
 
       private long randomId_ ;
       /**
-       * <code>optional uint64 random_id = 21;</code>
+       * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
        */
       public long getRandomId() {
         return randomId_;
       }
       /**
-       * <code>optional uint64 random_id = 21;</code>
+       * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
        */
       public Builder setRandomId(long value) {
         
@@ -22254,7 +25902,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 random_id = 21;</code>
+       * <code>optional uint64 random_id = 21 [jstype = JS_STRING];</code>
        */
       public Builder clearRandomId() {
         
@@ -22582,7 +26230,7 @@ public final class ProtoGlobal {
         getMessageBytes();
 
     /**
-     * <code>optional uint64 reply_to = 2;</code>
+     * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
      */
     long getReplyTo();
 
@@ -22709,7 +26357,7 @@ public final class ProtoGlobal {
     public static final int REPLY_TO_FIELD_NUMBER = 2;
     private long replyTo_;
     /**
-     * <code>optional uint64 reply_to = 2;</code>
+     * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
      */
     public long getReplyTo() {
       return replyTo_;
@@ -23099,13 +26747,13 @@ public final class ProtoGlobal {
 
       private long replyTo_ ;
       /**
-       * <code>optional uint64 reply_to = 2;</code>
+       * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
        */
       public long getReplyTo() {
         return replyTo_;
       }
       /**
-       * <code>optional uint64 reply_to = 2;</code>
+       * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
        */
       public Builder setReplyTo(long value) {
         
@@ -23114,7 +26762,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 reply_to = 2;</code>
+       * <code>optional uint64 reply_to = 2 [jstype = JS_STRING];</code>
        */
       public Builder clearReplyTo() {
         
@@ -23202,7 +26850,7 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     long getId();
 
@@ -23309,7 +26957,7 @@ public final class ProtoGlobal {
     net.iGap.proto.ProtoGlobal.RoomMute getRoomMute();
 
     /**
-     * <code>optional uint64 pin_id = 16;</code>
+     * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
      */
     long getPinId();
 
@@ -23741,7 +27389,7 @@ public final class ProtoGlobal {
     public static final int ID_FIELD_NUMBER = 1;
     private long id_;
     /**
-     * <code>optional uint64 id = 1;</code>
+     * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
      */
     public long getId() {
       return id_;
@@ -23974,7 +27622,7 @@ public final class ProtoGlobal {
     public static final int PIN_ID_FIELD_NUMBER = 16;
     private long pinId_;
     /**
-     * <code>optional uint64 pin_id = 16;</code>
+     * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
      */
     public long getPinId() {
       return pinId_;
@@ -24803,13 +28451,13 @@ public final class ProtoGlobal {
 
       private long id_ ;
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public long getId() {
         return id_;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setId(long value) {
         
@@ -24818,7 +28466,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 id = 1;</code>
+       * <code>optional uint64 id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearId() {
         
@@ -25553,13 +29201,13 @@ public final class ProtoGlobal {
 
       private long pinId_ ;
       /**
-       * <code>optional uint64 pin_id = 16;</code>
+       * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
        */
       public long getPinId() {
         return pinId_;
       }
       /**
-       * <code>optional uint64 pin_id = 16;</code>
+       * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
        */
       public Builder setPinId(long value) {
         
@@ -25568,7 +29216,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 pin_id = 16;</code>
+       * <code>optional uint64 pin_id = 16 [jstype = JS_STRING];</code>
        */
       public Builder clearPinId() {
         
@@ -30202,7 +33850,7 @@ public final class ProtoGlobal {
     boolean getSignature();
 
     /**
-     * <code>optional uint64 seen_id = 11;</code>
+     * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
      */
     long getSeenId();
 
@@ -31931,7 +35579,7 @@ public final class ProtoGlobal {
     public static final int SEEN_ID_FIELD_NUMBER = 11;
     private long seenId_;
     /**
-     * <code>optional uint64 seen_id = 11;</code>
+     * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
      */
     public long getSeenId() {
       return seenId_;
@@ -33126,13 +36774,13 @@ public final class ProtoGlobal {
 
       private long seenId_ ;
       /**
-       * <code>optional uint64 seen_id = 11;</code>
+       * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
        */
       public long getSeenId() {
         return seenId_;
       }
       /**
-       * <code>optional uint64 seen_id = 11;</code>
+       * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
        */
       public Builder setSeenId(long value) {
         
@@ -33141,7 +36789,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 seen_id = 11;</code>
+       * <code>optional uint64 seen_id = 11 [jstype = JS_STRING];</code>
        */
       public Builder clearSeenId() {
         
@@ -43025,7 +46673,7 @@ public final class ProtoGlobal {
     boolean getClicked();
 
     /**
-     * <code>optional uint64 sum = 5;</code>
+     * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
      */
     long getSum();
 
@@ -43214,7 +46862,7 @@ public final class ProtoGlobal {
     public static final int SUM_FIELD_NUMBER = 5;
     private long sum_;
     /**
-     * <code>optional uint64 sum = 5;</code>
+     * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
      */
     public long getSum() {
       return sum_;
@@ -43786,13 +47434,13 @@ public final class ProtoGlobal {
 
       private long sum_ ;
       /**
-       * <code>optional uint64 sum = 5;</code>
+       * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
        */
       public long getSum() {
         return sum_;
       }
       /**
-       * <code>optional uint64 sum = 5;</code>
+       * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
        */
       public Builder setSum(long value) {
         
@@ -43801,7 +47449,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 sum = 5;</code>
+       * <code>optional uint64 sum = 5 [jstype = JS_STRING];</code>
        */
       public Builder clearSum() {
         
@@ -45617,17 +49265,17 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 invoice_number = 1;</code>
+     * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
      */
     long getInvoiceNumber();
 
     /**
-     * <code>optional uint64 from_user_id = 2;</code>
+     * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
      */
     long getFromUserId();
 
     /**
-     * <code>optional uint64 amount = 3;</code>
+     * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
      */
     long getAmount();
 
@@ -45913,7 +49561,7 @@ public final class ProtoGlobal {
     public static final int INVOICE_NUMBER_FIELD_NUMBER = 1;
     private long invoiceNumber_;
     /**
-     * <code>optional uint64 invoice_number = 1;</code>
+     * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
      */
     public long getInvoiceNumber() {
       return invoiceNumber_;
@@ -45922,7 +49570,7 @@ public final class ProtoGlobal {
     public static final int FROM_USER_ID_FIELD_NUMBER = 2;
     private long fromUserId_;
     /**
-     * <code>optional uint64 from_user_id = 2;</code>
+     * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
      */
     public long getFromUserId() {
       return fromUserId_;
@@ -45931,7 +49579,7 @@ public final class ProtoGlobal {
     public static final int AMOUNT_FIELD_NUMBER = 3;
     private long amount_;
     /**
-     * <code>optional uint64 amount = 3;</code>
+     * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
      */
     public long getAmount() {
       return amount_;
@@ -46459,13 +50107,13 @@ public final class ProtoGlobal {
 
       private long invoiceNumber_ ;
       /**
-       * <code>optional uint64 invoice_number = 1;</code>
+       * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
        */
       public long getInvoiceNumber() {
         return invoiceNumber_;
       }
       /**
-       * <code>optional uint64 invoice_number = 1;</code>
+       * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
        */
       public Builder setInvoiceNumber(long value) {
         
@@ -46474,7 +50122,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 invoice_number = 1;</code>
+       * <code>optional uint64 invoice_number = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearInvoiceNumber() {
         
@@ -46485,13 +50133,13 @@ public final class ProtoGlobal {
 
       private long fromUserId_ ;
       /**
-       * <code>optional uint64 from_user_id = 2;</code>
+       * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
        */
       public long getFromUserId() {
         return fromUserId_;
       }
       /**
-       * <code>optional uint64 from_user_id = 2;</code>
+       * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
        */
       public Builder setFromUserId(long value) {
         
@@ -46500,7 +50148,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 from_user_id = 2;</code>
+       * <code>optional uint64 from_user_id = 2 [jstype = JS_STRING];</code>
        */
       public Builder clearFromUserId() {
         
@@ -46511,13 +50159,13 @@ public final class ProtoGlobal {
 
       private long amount_ ;
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
       }
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       public Builder setAmount(long value) {
         
@@ -46526,7 +50174,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 amount = 3;</code>
+       * <code>optional uint64 amount = 3 [jstype = JS_STRING];</code>
        */
       public Builder clearAmount() {
         
@@ -46848,7 +50496,7 @@ public final class ProtoGlobal {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint64 order_id = 1;</code>
+     * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
      */
     long getOrderId();
 
@@ -47233,7 +50881,7 @@ public final class ProtoGlobal {
       int getStatus();
 
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -47258,17 +50906,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       long getRequestDateTime();
 
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       long getRRN();
 
@@ -47552,7 +51200,7 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
@@ -47629,7 +51277,7 @@ public final class ProtoGlobal {
       public static final int ORDERID_FIELD_NUMBER = 8;
       private long orderId_;
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
@@ -47638,7 +51286,7 @@ public final class ProtoGlobal {
       public static final int REQUESTDATETIME_FIELD_NUMBER = 9;
       private long requestDateTime_;
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       public long getRequestDateTime() {
         return requestDateTime_;
@@ -47647,7 +51295,7 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 10;
       private long rRN_;
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       public long getRRN() {
         return rRN_;
@@ -48417,13 +52065,13 @@ public final class ProtoGlobal {
 
         private long amount_ ;
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return amount_;
         }
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           
@@ -48432,7 +52080,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           
@@ -48581,13 +52229,13 @@ public final class ProtoGlobal {
 
         private long orderId_ ;
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return orderId_;
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           
@@ -48596,7 +52244,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           
@@ -48607,13 +52255,13 @@ public final class ProtoGlobal {
 
         private long requestDateTime_ ;
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public long getRequestDateTime() {
           return requestDateTime_;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder setRequestDateTime(long value) {
           
@@ -48622,7 +52270,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder clearRequestDateTime() {
           
@@ -48633,13 +52281,13 @@ public final class ProtoGlobal {
 
         private long rRN_ ;
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public long getRRN() {
           return rRN_;
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder setRRN(long value) {
           
@@ -48648,7 +52296,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder clearRRN() {
           
@@ -48831,12 +52479,12 @@ public final class ProtoGlobal {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional uint64 RequesterMobileNumber = 1;</code>
+       * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
        */
       long getRequesterMobileNumber();
 
       /**
-       * <code>optional uint64 ChargeMobileNumber = 2;</code>
+       * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
        */
       long getChargeMobileNumber();
 
@@ -48851,7 +52499,7 @@ public final class ProtoGlobal {
       int getStatus();
 
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -48876,17 +52524,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       long getRequestDateTime();
 
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       long getRRN();
 
@@ -49056,7 +52704,7 @@ public final class ProtoGlobal {
       public static final int REQUESTERMOBILENUMBER_FIELD_NUMBER = 1;
       private long requesterMobileNumber_;
       /**
-       * <code>optional uint64 RequesterMobileNumber = 1;</code>
+       * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
        */
       public long getRequesterMobileNumber() {
         return requesterMobileNumber_;
@@ -49065,7 +52713,7 @@ public final class ProtoGlobal {
       public static final int CHARGEMOBILENUMBER_FIELD_NUMBER = 2;
       private long chargeMobileNumber_;
       /**
-       * <code>optional uint64 ChargeMobileNumber = 2;</code>
+       * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
        */
       public long getChargeMobileNumber() {
         return chargeMobileNumber_;
@@ -49092,7 +52740,7 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 5;
       private long amount_;
       /**
-       * <code>optional uint64 Amount = 5;</code>
+       * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
@@ -49169,7 +52817,7 @@ public final class ProtoGlobal {
       public static final int ORDERID_FIELD_NUMBER = 8;
       private long orderId_;
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
@@ -49178,7 +52826,7 @@ public final class ProtoGlobal {
       public static final int REQUESTDATETIME_FIELD_NUMBER = 9;
       private long requestDateTime_;
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       public long getRequestDateTime() {
         return requestDateTime_;
@@ -49187,7 +52835,7 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 10;
       private long rRN_;
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       public long getRRN() {
         return rRN_;
@@ -49726,13 +53374,13 @@ public final class ProtoGlobal {
 
         private long requesterMobileNumber_ ;
         /**
-         * <code>optional uint64 RequesterMobileNumber = 1;</code>
+         * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
          */
         public long getRequesterMobileNumber() {
           return requesterMobileNumber_;
         }
         /**
-         * <code>optional uint64 RequesterMobileNumber = 1;</code>
+         * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
          */
         public Builder setRequesterMobileNumber(long value) {
           
@@ -49741,7 +53389,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequesterMobileNumber = 1;</code>
+         * <code>optional uint64 RequesterMobileNumber = 1 [jstype = JS_STRING];</code>
          */
         public Builder clearRequesterMobileNumber() {
           
@@ -49752,13 +53400,13 @@ public final class ProtoGlobal {
 
         private long chargeMobileNumber_ ;
         /**
-         * <code>optional uint64 ChargeMobileNumber = 2;</code>
+         * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
          */
         public long getChargeMobileNumber() {
           return chargeMobileNumber_;
         }
         /**
-         * <code>optional uint64 ChargeMobileNumber = 2;</code>
+         * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
          */
         public Builder setChargeMobileNumber(long value) {
           
@@ -49767,7 +53415,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 ChargeMobileNumber = 2;</code>
+         * <code>optional uint64 ChargeMobileNumber = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearChargeMobileNumber() {
           
@@ -49830,13 +53478,13 @@ public final class ProtoGlobal {
 
         private long amount_ ;
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return amount_;
         }
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           
@@ -49845,7 +53493,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 Amount = 5;</code>
+         * <code>optional uint64 Amount = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           
@@ -49994,13 +53642,13 @@ public final class ProtoGlobal {
 
         private long orderId_ ;
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return orderId_;
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           
@@ -50009,7 +53657,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           
@@ -50020,13 +53668,13 @@ public final class ProtoGlobal {
 
         private long requestDateTime_ ;
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public long getRequestDateTime() {
           return requestDateTime_;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder setRequestDateTime(long value) {
           
@@ -50035,7 +53683,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder clearRequestDateTime() {
           
@@ -50046,13 +53694,13 @@ public final class ProtoGlobal {
 
         private long rRN_ ;
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public long getRRN() {
           return rRN_;
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder setRRN(long value) {
           
@@ -50061,7 +53709,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder clearRRN() {
           
@@ -50249,7 +53897,7 @@ public final class ProtoGlobal {
       int getStatus();
 
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -50274,17 +53922,17 @@ public final class ProtoGlobal {
           getMerchantNameBytes();
 
       /**
-       * <code>optional uint64 OrderId = 5;</code>
+       * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
       /**
-       * <code>optional uint64 RequestDateTime = 6;</code>
+       * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
        */
       long getRequestDateTime();
 
       /**
-       * <code>optional uint64 RRN = 7;</code>
+       * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
        */
       long getRRN();
 
@@ -50445,7 +54093,7 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 2;
       private long amount_;
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
@@ -50522,7 +54170,7 @@ public final class ProtoGlobal {
       public static final int ORDERID_FIELD_NUMBER = 5;
       private long orderId_;
       /**
-       * <code>optional uint64 OrderId = 5;</code>
+       * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
@@ -50531,7 +54179,7 @@ public final class ProtoGlobal {
       public static final int REQUESTDATETIME_FIELD_NUMBER = 6;
       private long requestDateTime_;
       /**
-       * <code>optional uint64 RequestDateTime = 6;</code>
+       * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
        */
       public long getRequestDateTime() {
         return requestDateTime_;
@@ -50540,7 +54188,7 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 7;
       private long rRN_;
       /**
-       * <code>optional uint64 RRN = 7;</code>
+       * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
        */
       public long getRRN() {
         return rRN_;
@@ -51052,13 +54700,13 @@ public final class ProtoGlobal {
 
         private long amount_ ;
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return amount_;
         }
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           
@@ -51067,7 +54715,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           
@@ -51216,13 +54864,13 @@ public final class ProtoGlobal {
 
         private long orderId_ ;
         /**
-         * <code>optional uint64 OrderId = 5;</code>
+         * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return orderId_;
         }
         /**
-         * <code>optional uint64 OrderId = 5;</code>
+         * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           
@@ -51231,7 +54879,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 OrderId = 5;</code>
+         * <code>optional uint64 OrderId = 5 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           
@@ -51242,13 +54890,13 @@ public final class ProtoGlobal {
 
         private long requestDateTime_ ;
         /**
-         * <code>optional uint64 RequestDateTime = 6;</code>
+         * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
          */
         public long getRequestDateTime() {
           return requestDateTime_;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 6;</code>
+         * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
          */
         public Builder setRequestDateTime(long value) {
           
@@ -51257,7 +54905,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 6;</code>
+         * <code>optional uint64 RequestDateTime = 6 [jstype = JS_STRING];</code>
          */
         public Builder clearRequestDateTime() {
           
@@ -51268,13 +54916,13 @@ public final class ProtoGlobal {
 
         private long rRN_ ;
         /**
-         * <code>optional uint64 RRN = 7;</code>
+         * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
          */
         public long getRRN() {
           return rRN_;
         }
         /**
-         * <code>optional uint64 RRN = 7;</code>
+         * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
          */
         public Builder setRRN(long value) {
           
@@ -51283,7 +54931,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RRN = 7;</code>
+         * <code>optional uint64 RRN = 7 [jstype = JS_STRING];</code>
          */
         public Builder clearRRN() {
           
@@ -51471,7 +55119,7 @@ public final class ProtoGlobal {
       int getStatus();
 
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       long getAmount();
 
@@ -51526,17 +55174,17 @@ public final class ProtoGlobal {
           getCardOwnerNameBytes();
 
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       long getOrderId();
 
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       long getRequestDateTime();
 
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       long getRRN();
 
@@ -51707,7 +55355,7 @@ public final class ProtoGlobal {
       public static final int AMOUNT_FIELD_NUMBER = 2;
       private long amount_;
       /**
-       * <code>optional uint64 Amount = 2;</code>
+       * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
        */
       public long getAmount() {
         return amount_;
@@ -51886,7 +55534,7 @@ public final class ProtoGlobal {
       public static final int ORDERID_FIELD_NUMBER = 8;
       private long orderId_;
       /**
-       * <code>optional uint64 OrderId = 8;</code>
+       * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
@@ -51895,7 +55543,7 @@ public final class ProtoGlobal {
       public static final int REQUESTDATETIME_FIELD_NUMBER = 9;
       private long requestDateTime_;
       /**
-       * <code>optional uint64 RequestDateTime = 9;</code>
+       * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
        */
       public long getRequestDateTime() {
         return requestDateTime_;
@@ -51904,7 +55552,7 @@ public final class ProtoGlobal {
       public static final int RRN_FIELD_NUMBER = 10;
       private long rRN_;
       /**
-       * <code>optional uint64 RRN = 10;</code>
+       * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
        */
       public long getRRN() {
         return rRN_;
@@ -52441,13 +56089,13 @@ public final class ProtoGlobal {
 
         private long amount_ ;
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public long getAmount() {
           return amount_;
         }
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public Builder setAmount(long value) {
           
@@ -52456,7 +56104,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 Amount = 2;</code>
+         * <code>optional uint64 Amount = 2 [jstype = JS_STRING];</code>
          */
         public Builder clearAmount() {
           
@@ -52812,13 +56460,13 @@ public final class ProtoGlobal {
 
         private long orderId_ ;
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public long getOrderId() {
           return orderId_;
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder setOrderId(long value) {
           
@@ -52827,7 +56475,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 OrderId = 8;</code>
+         * <code>optional uint64 OrderId = 8 [jstype = JS_STRING];</code>
          */
         public Builder clearOrderId() {
           
@@ -52838,13 +56486,13 @@ public final class ProtoGlobal {
 
         private long requestDateTime_ ;
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public long getRequestDateTime() {
           return requestDateTime_;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder setRequestDateTime(long value) {
           
@@ -52853,7 +56501,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RequestDateTime = 9;</code>
+         * <code>optional uint64 RequestDateTime = 9 [jstype = JS_STRING];</code>
          */
         public Builder clearRequestDateTime() {
           
@@ -52864,13 +56512,13 @@ public final class ProtoGlobal {
 
         private long rRN_ ;
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public long getRRN() {
           return rRN_;
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder setRRN(long value) {
           
@@ -52879,7 +56527,7 @@ public final class ProtoGlobal {
           return this;
         }
         /**
-         * <code>optional uint64 RRN = 10;</code>
+         * <code>optional uint64 RRN = 10 [jstype = JS_STRING];</code>
          */
         public Builder clearRRN() {
           
@@ -53034,7 +56682,7 @@ public final class ProtoGlobal {
     public static final int ORDER_ID_FIELD_NUMBER = 1;
     private long orderId_;
     /**
-     * <code>optional uint64 order_id = 1;</code>
+     * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
      */
     public long getOrderId() {
       return orderId_;
@@ -53625,13 +57273,13 @@ public final class ProtoGlobal {
 
       private long orderId_ ;
       /**
-       * <code>optional uint64 order_id = 1;</code>
+       * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
        */
       public long getOrderId() {
         return orderId_;
       }
       /**
-       * <code>optional uint64 order_id = 1;</code>
+       * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder setOrderId(long value) {
         
@@ -53640,7 +57288,7 @@ public final class ProtoGlobal {
         return this;
       }
       /**
-       * <code>optional uint64 order_id = 1;</code>
+       * <code>optional uint64 order_id = 1 [jstype = JS_STRING];</code>
        */
       public Builder clearOrderId() {
         
@@ -54355,6 +58003,26 @@ public final class ProtoGlobal {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_RoomMessageForwardFrom_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessageStory_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessageStory_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessageStoryReply_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessageStoryReply_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessageStoryForward_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessageStoryForward_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_Story_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_Story_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_RegisteredUser_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -54535,295 +58203,317 @@ public final class ProtoGlobal {
     java.lang.String[] descriptorData = {
       "\n\014Global.proto\022\005proto\032\035GroupChangeMember" +
       "Rights.proto\"/\n\023RoomMessageLocation\022\013\n\003l" +
-      "at\030\001 \001(\001\022\013\n\003lon\030\002 \001(\001\"\304\004\n\016RoomMessageLog" +
+      "at\030\001 \001(\001\022\013\n\003lon\030\002 \001(\001\"\310\004\n\016RoomMessageLog" +
       "\022(\n\004type\030\001 \001(\0162\032.proto.RoomMessageLog.Ty" +
       "pe\0223\n\nextra_type\030\002 \001(\0162\037.proto.RoomMessa" +
       "geLog.ExtraType\0225\n\013target_user\030\003 \001(\0132 .p" +
-      "roto.RoomMessageLog.TargetUser\032\030\n\nTarget" +
-      "User\022\n\n\002id\030\001 \001(\004\"\325\002\n\004Type\022\017\n\013USER_JOINED" +
-      "\020\000\022\020\n\014USER_DELETED\020\001\022\020\n\014ROOM_CREATED\020\002\022\020" +
-      "\n\014MEMBER_ADDED\020\003\022\021\n\rMEMBER_KICKED\020\004\022\017\n\013M",
-      "EMBER_LEFT\020\005\022\034\n\030ROOM_CONVERTED_TO_PUBLIC" +
-      "\020\006\022\035\n\031ROOM_CONVERTED_TO_PRIVATE\020\007\022 \n\034MEM" +
-      "BER_JOINED_BY_INVITE_LINK\020\010\022\020\n\014ROOM_DELE" +
-      "TED\020\t\022\025\n\021MISSED_VOICE_CALL\020\n\022\025\n\021MISSED_V" +
-      "IDEO_CALL\020\013\022\027\n\023MISSED_SCREEN_SHARE\020\014\022\026\n\022" +
-      "MISSED_SECRET_CHAT\020\r\022\022\n\016PINNED_MESSAGE\020\016" +
-      "\"*\n\tExtraType\022\014\n\010NO_EXTRA\020\000\022\017\n\013TARGET_US" +
-      "ER\020\001\"k\n\022RoomMessageContact\022\022\n\nfirst_name" +
-      "\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\022\020\n\010nickname\030\003 " +
-      "\001(\t\022\r\n\005phone\030\004 \003(\t\022\r\n\005email\030\005 \003(\t\"\200\r\n\021Ro",
-      "omMessageWallet\022+\n\004type\030\001 \001(\0162\035.proto.Ro" +
-      "omMessageWallet.Type\022>\n\016money_transfer\030\002" +
-      " \001(\0132&.proto.RoomMessageWallet.MoneyTran" +
-      "sfer\0229\n\014card_to_card\030\003 \001(\0132#.proto.RoomM" +
-      "essageWallet.CardToCard\022-\n\005topup\030\004 \001(\0132\036" +
-      ".proto.RoomMessageWallet.Topup\022+\n\004bill\030\005" +
-      " \001(\0132\035.proto.RoomMessageWallet.Bill\032\300\001\n\r" +
-      "MoneyTransfer\022\024\n\014from_user_id\030\001 \001(\004\022\022\n\nt" +
-      "o_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001(\004\022\024\n\014trace" +
-      "_number\030\004 \001(\003\022\026\n\016invoice_number\030\005 \001(\003\022\020\n",
-      "\010pay_time\030\006 \001(\r\022\023\n\013description\030\007 \001(\t\022\023\n\013" +
-      "card_number\030\010 \001(\t\022\013\n\003rrn\030\t \001(\003\032\245\002\n\nCardT" +
-      "oCard\022\024\n\014from_user_id\030\001 \001(\004\022\022\n\nto_user_i" +
-      "d\030\002 \001(\004\022\020\n\010order_id\030\003 \001(\004\022\r\n\005token\030\004 \001(\t" +
-      "\022\016\n\006amount\030\005 \001(\004\022\032\n\022source_card_number\030\006" +
-      " \001(\t\022\030\n\020dest_card_number\030\007 \001(\t\022\024\n\014reques" +
-      "t_time\030\010 \001(\r\022\013\n\003rrn\030\t \001(\t\022\024\n\014trace_numbe" +
-      "r\030\n \001(\t\022\020\n\010bankName\030\013 \001(\t\022\024\n\014destBankNam" +
-      "e\030\014 \001(\t\022\025\n\rcardOwnerName\030\r \001(\t\022\016\n\006status" +
-      "\030\016 \001(\010\032\357\003\n\005Topup\022\024\n\014from_user_id\030\001 \001(\004\022\020",
-      "\n\010order_id\030\002 \001(\004\022\020\n\010my_token\030\003 \001(\t\022\r\n\005to" +
-      "ken\030\004 \001(\004\022\016\n\006amount\030\005 \001(\004\022\037\n\027requester_m" +
-      "obile_number\030\006 \001(\t\022\034\n\024charge_mobile_numb" +
-      "er\030\007 \001(\t\0227\n\ntopup_type\030\010 \001(\0162#.proto.Roo" +
-      "mMessageWallet.Topup.Type\022\023\n\013card_number" +
-      "\030\t \001(\t\022\025\n\rmerchant_name\030\n \001(\t\022\023\n\013termina" +
-      "l_no\030\013 \001(\004\022\013\n\003rrn\030\014 \001(\004\022\024\n\014trace_number\030" +
-      "\r \001(\004\022\024\n\014request_time\030\016 \001(\r\022\016\n\006status\030\017 " +
-      "\001(\010\022\032\n\022status_description\030\020 \001(\t\"o\n\004Type\022" +
-      "\024\n\020IRANCELL_PREPAID\020\000\022\020\n\014IRANCELL_WOW\020\001\022",
-      "\022\n\016IRANCELL_WIMAX\020\002\022\025\n\021IRANCELL_POSTPAID" +
-      "\020\003\022\007\n\003MCI\020\004\022\013\n\007RIGHTEL\020\005\032\271\002\n\004Bill\022\024\n\014fro" +
-      "m_user_id\030\001 \001(\004\022\020\n\010order_id\030\002 \001(\004\022\020\n\010my_" +
-      "token\030\003 \001(\t\022\r\n\005token\030\004 \001(\004\022\016\n\006amount\030\005 \001" +
-      "(\004\022\016\n\006pay_id\030\006 \001(\t\022\017\n\007bill_id\030\007 \001(\t\022\021\n\tb" +
-      "ill_type\030\010 \001(\t\022\023\n\013card_number\030\t \001(\t\022\025\n\rm" +
-      "erchant_name\030\n \001(\t\022\023\n\013terminal_no\030\013 \001(\004\022" +
-      "\013\n\003rrn\030\014 \001(\004\022\024\n\014trace_number\030\r \001(\004\022\024\n\014re" +
-      "quest_time\030\016 \001(\r\022\016\n\006status\030\017 \001(\010\022\032\n\022stat" +
-      "us_description\030\020 \001(\t\"N\n\004Type\022\022\n\016MONEY_TR",
-      "ANSFER\020\000\022\013\n\007PAYMENT\020\001\022\020\n\014CARD_TO_CARD\020\002\022" +
-      "\t\n\005TOPUP\020\003\022\010\n\004BILL\020\004\"=\n\026RoomMessageForwa" +
-      "rdFrom\022\017\n\007room_id\030\001 \001(\004\022\022\n\nmessage_id\030\002 " +
-      "\001(\004\"\374\003\n\016RegisteredUser\022\n\n\002id\030\001 \001(\004\022\020\n\010us" +
-      "ername\030\002 \001(\t\022\r\n\005phone\030\003 \001(\004\022\022\n\nfirst_nam" +
-      "e\030\004 \001(\t\022\021\n\tlast_name\030\005 \001(\t\022\024\n\014display_na" +
-      "me\030\006 \001(\t\022\020\n\010initials\030\007 \001(\t\022\r\n\005color\030\010 \001(" +
-      "\t\022,\n\006status\030\t \001(\0162\034.proto.RegisteredUser" +
-      ".Status\022\021\n\tlast_seen\030\n \001(\r\022\024\n\014avatar_cou" +
-      "nt\030\013 \001(\r\022\035\n\006avatar\030\014 \001(\0132\r.proto.Avatar\022",
-      "\016\n\006mutual\030\r \001(\010\022\017\n\007deleted\030\016 \001(\010\022\020\n\010cach" +
-      "e_id\030\017 \001(\t\022\013\n\003bio\030\020 \001(\t\022\020\n\010verified\030\021 \001(" +
-      "\010\022\013\n\003bot\030\022 \001(\010\"\211\001\n\006Status\022\021\n\rLONG_TIME_A" +
-      "GO\020\000\022\016\n\nLAST_MONTH\020\001\022\r\n\tLAST_WEEK\020\002\022\n\n\006O" +
-      "NLINE\020\003\022\013\n\007EXACTLY\020\004\022\014\n\010RECENTLY\020\005\022\013\n\007SU" +
-      "PPORT\020\006\022\031\n\025SERVICE_NOTIFICATIONS\020\007\"/\n\006Av" +
-      "atar\022\n\n\002id\030\001 \001(\004\022\031\n\004file\030\002 \001(\0132\013.proto.F" +
-      "ile\"\351\010\n\013RoomMessage\022\022\n\nmessage_id\030\001 \001(\004\022" +
-      "\027\n\017message_version\030\002 \001(\004\022(\n\006status\030\003 \001(\016" +
-      "2\030.proto.RoomMessageStatus\022\026\n\016status_ver",
-      "sion\030\004 \001(\004\022,\n\014message_type\030\005 \001(\0162\026.proto" +
-      ".RoomMessageType\022\017\n\007message\030\006 \001(\t\022\037\n\natt" +
-      "achment\030\007 \001(\0132\013.proto.File\022)\n\006author\030\010 \001" +
-      "(\0132\031.proto.RoomMessage.Author\022,\n\010locatio" +
-      "n\030\t \001(\0132\032.proto.RoomMessageLocation\022\"\n\003l" +
-      "og\030\n \001(\0132\025.proto.RoomMessageLog\022*\n\007conta" +
-      "ct\030\013 \001(\0132\031.proto.RoomMessageContact\022(\n\006w" +
-      "allet\030\026 \001(\0132\030.proto.RoomMessageWallet\022\016\n" +
-      "\006edited\030\014 \001(\010\022\023\n\013create_time\030\r \001(\r\022\023\n\013up" +
-      "date_time\030\016 \001(\r\022\017\n\007deleted\030\017 \001(\010\022(\n\014forw",
-      "ard_from\030\020 \001(\0132\022.proto.RoomMessage\022$\n\010re" +
-      "ply_to\030\021 \001(\0132\022.proto.RoomMessage\022\033\n\023prev" +
-      "ious_message_id\030\022 \001(\004\022\021\n\trandom_id\030\025 \001(\004" +
-      "\022\027\n\017additional_type\030\027 \001(\r\022\027\n\017additional_" +
-      "data\030\030 \001(\t\0220\n\nextra_type\030\023 \001(\0162\034.proto.R" +
-      "oomMessage.ExtraType\0226\n\rchannel_extra\030\024 " +
-      "\001(\0132\037.proto.RoomMessage.ChannelExtra\032\266\001\n" +
-      "\006Author\022\014\n\004hash\030\001 \001(\t\022,\n\004user\030\002 \001(\0132\036.pr" +
-      "oto.RoomMessage.Author.User\022,\n\004room\030\003 \001(" +
-      "\0132\036.proto.RoomMessage.Author.Room\032)\n\004Use",
-      "r\022\017\n\007user_id\030\001 \001(\004\022\020\n\010cache_id\030\002 \001(\t\032\027\n\004" +
-      "Room\022\017\n\007room_id\030\001 \001(\004\032j\n\014ChannelExtra\022\021\n" +
-      "\tsignature\030\001 \001(\t\022\023\n\013views_label\030\002 \001(\t\022\027\n" +
-      "\017thumbs_up_label\030\003 \001(\t\022\031\n\021thumbs_down_la" +
-      "bel\030\004 \001(\t\",\n\tExtraType\022\014\n\010NO_EXTRA\020\000\022\021\n\r" +
-      "CHANNEL_EXTRA\020\001\"B\n\tRoomDraft\022\017\n\007message\030" +
-      "\001 \001(\t\022\020\n\010reply_to\030\002 \001(\004\022\022\n\ndraft_time\030\003 " +
-      "\001(\r\"\371\004\n\004Room\022\n\n\002id\030\001 \001(\004\022\036\n\004type\030\002 \001(\0162\020" +
-      ".proto.Room.Type\022\r\n\005title\030\003 \001(\t\022\020\n\010initi" +
-      "als\030\004 \001(\t\022\r\n\005color\030\005 \001(\t\022\024\n\014unread_count",
-      "\030\006 \001(\r\022(\n\014last_message\030\007 \001(\0132\022.proto.Roo" +
-      "mMessage\022\021\n\tread_only\030\010 \001(\010\022\026\n\016is_partic" +
-      "ipant\030\t \001(\010\022\037\n\005draft\030\n \001(\0132\020.proto.RoomD" +
-      "raft\0220\n\024first_unread_message\030\016 \001(\0132\022.pro" +
-      "to.RoomMessage\022\"\n\troom_mute\030\017 \001(\0162\017.prot" +
-      "o.RoomMute\022\016\n\006pin_id\030\020 \001(\004\022*\n\016pinned_mes" +
-      "sage\030\021 \001(\0132\022.proto.RoomMessage\022\020\n\010priori" +
-      "ty\030\022 \001(\r\022(\n\017chat_room_extra\030\013 \001(\0132\017.prot" +
-      "o.ChatRoom\022*\n\020group_room_extra\030\014 \001(\0132\020.p" +
-      "roto.GroupRoom\022.\n\022channel_room_extra\030\r \001",
-      "(\0132\022.proto.ChannelRoom\022\016\n\006app_id\030\023 \001(\r\022%" +
-      "\n\npermission\030\024 \001(\0132\021.proto.RoomAccess\"(\n" +
-      "\004Type\022\010\n\004CHAT\020\000\022\t\n\005GROUP\020\001\022\013\n\007CHANNEL\020\002\"" +
-      "/\n\010ChatRoom\022#\n\004peer\030\001 \001(\0132\025.proto.Regist" +
-      "eredUser\"\223\005\n\tGroupRoom\022#\n\004type\030\001 \001(\0162\025.p" +
-      "roto.GroupRoom.Type\022#\n\004role\030\002 \001(\0162\025.prot" +
-      "o.GroupRoom.Role\022\032\n\022participants_count\030\003" +
-      " \001(\r\022 \n\030participants_count_label\030\004 \001(\t\022 " +
-      "\n\030participants_count_limit\030\005 \001(\r\022&\n\036part" +
-      "icipants_count_limit_label\030\006 \001(\t\022\023\n\013desc",
-      "ription\030\007 \001(\t\022\024\n\014avatar_count\030\010 \001(\r\022\035\n\006a" +
-      "vatar\030\t \001(\0132\r.proto.Avatar\0224\n\rprivate_ex" +
-      "tra\030\n \001(\0132\035.proto.GroupRoom.PrivateExtra" +
-      "\0222\n\014public_extra\030\013 \001(\0132\034.proto.GroupRoom" +
-      ".PublicExtra\022@\n\013room_rights\030\014 \001(\0132+.prot" +
-      "o.GroupChangeMemberRights.MemberRights\0329" +
-      "\n\014PrivateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024\n\014i" +
-      "nvite_token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010user" +
-      "name\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013" +
-      "PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\tMOD",
-      "ERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"\340\004\n\013Chann" +
-      "elRoom\022%\n\004type\030\001 \001(\0162\027.proto.ChannelRoom" +
-      ".Type\022%\n\004role\030\002 \001(\0162\027.proto.ChannelRoom." +
-      "Role\022\032\n\022participants_count\030\003 \001(\r\022 \n\030part" +
-      "icipants_count_label\030\004 \001(\t\022\023\n\013descriptio" +
-      "n\030\005 \001(\t\022\024\n\014avatar_count\030\006 \001(\r\022\035\n\006avatar\030" +
-      "\007 \001(\0132\r.proto.Avatar\0226\n\rprivate_extra\030\010 " +
-      "\001(\0132\037.proto.ChannelRoom.PrivateExtra\0224\n\014" +
-      "public_extra\030\t \001(\0132\036.proto.ChannelRoom.P" +
-      "ublicExtra\022\021\n\tsignature\030\n \001(\010\022\017\n\007seen_id",
-      "\030\013 \001(\004\022\020\n\010verified\030\014 \001(\010\022\027\n\017reaction_sta" +
-      "tus\030\r \001(\010\0329\n\014PrivateExtra\022\023\n\013invite_link" +
-      "\030\001 \001(\t\022\024\n\014invite_token\030\002 \001(\t\032\037\n\013PublicEx" +
-      "tra\022\020\n\010username\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE" +
-      "_ROOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMB" +
-      "ER\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020" +
-      "\003\"f\n\tThumbnail\022\014\n\004size\030\001 \001(\003\022\r\n\005width\030\002 " +
-      "\001(\005\022\016\n\006height\030\003 \001(\005\022\020\n\010cache_id\030\004 \001(\t\022\014\n" +
-      "\004name\030\005 \001(\t\022\014\n\004mime\030\006 \001(\t\"\232\002\n\004File\022\r\n\005to" +
-      "ken\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004size\030\003 \001(\003\022)\n",
-      "\017large_thumbnail\030\004 \001(\0132\020.proto.Thumbnail" +
-      "\022)\n\017small_thumbnail\030\005 \001(\0132\020.proto.Thumbn" +
-      "ail\022,\n\022waveform_thumbnail\030\006 \001(\0132\020.proto." +
-      "Thumbnail\022\r\n\005width\030\007 \001(\005\022\016\n\006height\030\010 \001(\005" +
-      "\022\020\n\010duration\030\t \001(\001\022\020\n\010cache_id\030\n \001(\t\022\014\n\004" +
-      "mime\030\013 \001(\t\022\022\n\npublic_url\030\014 \001(\t\"u\n\021PostMe" +
-      "ssageRights\022\021\n\tsend_text\030\001 \001(\010\022\022\n\nsend_m" +
-      "edia\030\003 \001(\010\022\020\n\010send_gif\030\004 \001(\010\022\024\n\014send_sti" +
-      "cker\030\005 \001(\010\022\021\n\tsend_link\030\006 \001(\010\"\343\001\n\nRoomAc" +
-      "cess\022\023\n\013modify_room\030\001 \001(\010\022.\n\014post_messag",
-      "e\030\002 \001(\0132\030.proto.PostMessageRights\022\024\n\014edi" +
-      "t_message\030\003 \001(\010\022\026\n\016delete_message\030\004 \001(\010\022" +
-      "\023\n\013pin_message\030\005 \001(\010\022\022\n\nadd_member\030\006 \001(\010" +
-      "\022\022\n\nban_member\030\007 \001(\010\022\022\n\nget_member\030\010 \001(\010" +
-      "\022\021\n\tadd_admin\030\t \001(\010\"5\n\tWallpaper\022\031\n\004file" +
-      "\030\001 \001(\0132\013.proto.File\022\r\n\005color\030\002 \001(\t\"+\n\nPa" +
-      "gination\022\016\n\006offset\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\"" +
-      "Z\n\010Favorite\022\014\n\004name\030\001 \001(\t\022\021\n\ttextcolor\030\002" +
-      " \001(\t\022\017\n\007bgcolor\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\r\n\005" +
-      "image\030\005 \001(\t\"\345\007\n\016DiscoveryField\022\020\n\010imageu",
-      "rl\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022:\n\nactiontype\030\003 " +
-      "\001(\0162&.proto.DiscoveryField.ButtonActionT" +
-      "ype\022\017\n\007orderid\030\004 \001(\r\022\n\n\002id\030\005 \001(\r\022\r\n\005para" +
-      "m\030\006 \001(\t\022\021\n\tagreement\030\007 \001(\010\022\017\n\007refresh\030\010 " +
-      "\001(\010\022\025\n\ragreementSlug\030\t \001(\t\"\216\006\n\020ButtonAct" +
-      "ionType\022\010\n\004NONE\020\000\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_" +
-      "ACTION\020\002\022\021\n\rUSERNAME_LINK\020\003\022\014\n\010WEB_LINK\020" +
-      "\004\022\021\n\rWEB_VIEW_LINK\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n" +
-      "\rPAY_BY_WALLET\020\007\022\016\n\nPAY_DIRECT\020\010\022\021\n\rREQU" +
-      "EST_PHONE\020\t\022\024\n\020REQUEST_LOCATION\020\n\022\016\n\nSHO",
-      "W_ALERT\020\013\022\010\n\004PAGE\020\014\022\022\n\016FINANCIAL_MENU\020\r\022" +
-      "\r\n\tBILL_MENU\020\016\022\025\n\021TRAFFIC_BILL_MENU\020\017\022\024\n" +
-      "\020MOBILE_BILL_MENU\020\020\022\023\n\017PHONE_BILL_MENU\020\021" +
-      "\022\016\n\nTOPUP_MENU\020\022\022\017\n\013WALLET_MENU\020\023\022\017\n\013NEA" +
-      "RBY_MENU\020\024\022\010\n\004CALL\020\025\022\020\n\014STICKER_SHOP\020\026\022\t" +
-      "\n\005IVAND\020\027\022\013\n\007IVANDQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n" +
-      "\nIVANDSCORE\020\032\022\020\n\014CARD_TO_CARD\020\033\022\024\n\020FAVOR" +
-      "ITE_CHANNEL\020\034\022\t\n\005MUSIC\020\035\022\013\n\007CHARITY\020\036\022\017\n" +
-      "\013FUN_SERVICE\020\037\022\021\n\rVIRTUAL_MONEY\020 \022\020\n\014CIT" +
-      "Y_SERVICE\020!\022\010\n\004POLL\020\"\022\031\n\025INTERNET_PACKAG",
-      "E_MENU\020#\022\025\n\021FINANCIAL_HISTORY\020$\022\021\n\rINVIT" +
-      "E_FRIEND\020%\022\010\n\004NEWS\020&\022\026\n\022ELECTRIC_BILL_ME" +
-      "NU\020\'\022\016\n\nBLOCKCHAIN\020(\022\014\n\010PARSLAND\020)\022\017\n\013PO" +
-      "LL_RESULT\020*\022\025\n\021VIRTUAL_GIFT_CARD\020+\022\017\n\013NE" +
-      "WS_DETAIL\020,\"\223\002\n\tDiscovery\022.\n\005model\030\001 \001(\016" +
-      "2\037.proto.Discovery.DiscoveryModel\022\r\n\005sca" +
-      "le\030\002 \001(\t\022.\n\017discoveryfields\030\003 \003(\0132\025.prot" +
-      "o.DiscoveryField\"\226\001\n\016DiscoveryModel\022\n\n\006M" +
-      "ODEL1\020\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL" +
-      "4\020\003\022\n\n\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\022",
-      "\n\n\006MODEL8\020\007\022\n\n\006MODEL9\020\010\022\013\n\007MODEL10\020\t\022\013\n\007" +
-      "MODEL11\020\n\"z\n\tPollField\022\020\n\010imageurl\030\001 \001(\t" +
-      "\022\017\n\007orderid\030\002 \001(\r\022\n\n\002id\030\003 \001(\r\022\017\n\007clicked" +
-      "\030\004 \001(\010\022\013\n\003sum\030\005 \001(\004\022\021\n\tclickable\030\006 \001(\010\022\r" +
-      "\n\005label\030\007 \001(\t\"x\n\004Poll\022.\n\005model\030\001 \001(\0162\037.p" +
-      "roto.Discovery.DiscoveryModel\022\r\n\005scale\030\002" +
-      " \001(\t\022\013\n\003max\030\003 \001(\r\022$\n\npollfields\030\004 \003(\0132\020." +
-      "proto.PollField\";\n\rIVandActivity\022\r\n\005titl" +
-      "e\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004time\030\003 \001(\r\"\222\002\n" +
-      "\007MplSale\022\026\n\016invoice_number\030\001 \001(\004\022\024\n\014from",
-      "_user_id\030\002 \001(\004\022\016\n\006amount\030\003 \001(\004\022\024\n\014trace_" +
-      "number\030\004 \001(\003\022\020\n\010pay_time\030\005 \001(\r\022\023\n\013descri" +
-      "ption\030\006 \001(\t\022\023\n\013card_number\030\007 \001(\t\022\013\n\003rrn\030" +
-      "\010 \001(\003\022%\n\006status\030\t \001(\0162\025.proto.MplSale.St" +
-      "atus\"C\n\006Status\022\022\n\016PENDING_VERIFY\020\000\022\013\n\007SU" +
-      "CCESS\020\001\022\n\n\006FAILED\020\002\022\014\n\010REVERSED\020\003\"\313\n\n\016Mp" +
-      "lTransaction\022\020\n\010order_id\030\001 \001(\004\022\r\n\005token\030" +
-      "\002 \001(\t\022\020\n\010pay_time\030\003 \001(\r\022(\n\004type\030\004 \001(\0162\032." +
-      "proto.MplTransaction.Type\022(\n\004bill\030\005 \001(\0132" +
-      "\032.proto.MplTransaction.Bill\022*\n\005topup\030\006 \001",
-      "(\0132\033.proto.MplTransaction.Topup\022*\n\005sales" +
-      "\030\007 \001(\0132\033.proto.MplTransaction.Sales\0224\n\nc" +
-      "ardtocard\030\010 \001(\0132 .proto.MplTransaction.C" +
-      "ardToCard\032\370\001\n\004Bill\022\016\n\006BillId\030\001 \001(\t\022\r\n\005Pa" +
-      "yId\030\002 \001(\t\022\020\n\010BillType\030\003 \001(\t\022\016\n\006Status\030\004 " +
-      "\001(\r\022\016\n\006Amount\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t\022" +
-      "\024\n\014MerchantName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022\027" +
-      "\n\017RequestDateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n\021" +
-      "StatusDescription\030\013 \001(\t\022\022\n\nTerminalNo\030\014 " +
-      "\001(\r\022\017\n\007TraceNo\030\r \001(\r\032\226\002\n\005Topup\022\035\n\025Reques",
-      "terMobileNumber\030\001 \001(\004\022\032\n\022ChargeMobileNum" +
-      "ber\030\002 \001(\004\022\021\n\tTopupType\030\003 \001(\r\022\016\n\006Status\030\004" +
-      " \001(\r\022\016\n\006Amount\030\005 \001(\004\022\022\n\nCardNumber\030\006 \001(\t" +
-      "\022\024\n\014MerchantName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(\004\022" +
-      "\027\n\017RequestDateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022\031\n" +
-      "\021StatusDescription\030\013 \001(\t\022\022\n\nTerminalNo\030\014" +
-      " \001(\r\022\017\n\007TraceNo\030\r \001(\r\032\310\001\n\005Sales\022\016\n\006Statu" +
-      "s\030\001 \001(\r\022\016\n\006Amount\030\002 \001(\004\022\022\n\nCardNumber\030\003 " +
-      "\001(\t\022\024\n\014MerchantName\030\004 \001(\t\022\017\n\007OrderId\030\005 \001" +
-      "(\004\022\027\n\017RequestDateTime\030\006 \001(\004\022\013\n\003RRN\030\007 \001(\004",
-      "\022\031\n\021StatusDescription\030\010 \001(\t\022\022\n\nTerminalN" +
-      "o\030\t \001(\r\022\017\n\007TraceNo\030\n \001(\r\032\200\002\n\nCardToCard\022" +
-      "\016\n\006Status\030\001 \001(\r\022\016\n\006Amount\030\002 \001(\004\022\030\n\020Sourc" +
-      "eCardNumber\030\003 \001(\t\022\026\n\016DestCardNumber\030\004 \001(" +
-      "\t\022\020\n\010BankName\030\005 \001(\t\022\024\n\014DestBankName\030\006 \001(" +
-      "\t\022\025\n\rCardOwnerName\030\007 \001(\t\022\017\n\007OrderId\030\010 \001(" +
-      "\004\022\027\n\017RequestDateTime\030\t \001(\004\022\013\n\003RRN\030\n \001(\004\022" +
-      "\031\n\021StatusDescription\030\013 \001(\t\022\017\n\007TraceNo\030\r " +
-      "\001(\r\"B\n\004Type\022\010\n\004NONE\020\000\022\010\n\004BILL\020\001\022\t\n\005TOPUP" +
-      "\020\002\022\t\n\005SALES\020\003\022\020\n\014CARD_TO_CARD\020\004*+\n\006Gende",
-      "r\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002*<\n\006" +
-      "Device\022\022\n\016UNKNOWN_DEVICE\020\000\022\006\n\002PC\020\001\022\n\n\006TA" +
-      "BLET\020\002\022\n\n\006MOBILE\020\003*k\n\010Platform\022\024\n\020UNKNOW" +
-      "N_PLATFORM\020\000\022\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002\022\n\n\006MA" +
-      "C_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005LINUX\020\005\022\017\n\013BLACK_" +
-      "BERRY\020\006* \n\010Language\022\t\n\005EN_US\020\000\022\t\n\005FA_IR\020" +
-      "\001*\344\001\n\017RoomMessageType\022\010\n\004TEXT\020\000\022\t\n\005IMAGE" +
-      "\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005VIDEO\020\003\022\016\n\nVIDEO_T" +
-      "EXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUDIO_TEXT\020\006\022\t\n\005VOIC" +
-      "E\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEXT\020\016\022\010\n\004FILE\020\t\022\r\n\t",
-      "FILE_TEXT\020\n\022\014\n\010LOCATION\020\013\022\007\n\003LOG\020\014\022\013\n\007CO" +
-      "NTACT\020\r\022\n\n\006WALLET\020\017\022\013\n\007STICKER\020\020*]\n\021Room" +
-      "MessageStatus\022\n\n\006FAILED\020\000\022\013\n\007SENDING\020\001\022\010" +
-      "\n\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LIS" +
-      "TENED\020\005*5\n\023RoomMessageReaction\022\r\n\tTHUMBS" +
-      "_UP\020\000\022\017\n\013THUMBS_DOWN\020\001*\244\002\n\014ClientAction\022" +
-      "\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\rSENDING_IMAGE" +
-      "\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\rSENDING_VIDEO" +
-      "\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\rSENDING_AUDIO" +
-      "\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\rSENDING_VOICE",
-      "\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n\013SENDING_GIF\020" +
-      "\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SENDING_LOCATION\020" +
-      "\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010PAINTING\020\016* \n" +
-      "\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013Priv" +
-      "acyType\022\017\n\013USER_STATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014" +
-      "GROUP_INVITE\020\002\022\022\n\016CHANNEL_INVITE\020\003\022\021\n\rVO" +
-      "ICE_CALLING\020\004\022\021\n\rVIDEO_CALLING\020\005\022\022\n\016SCRE" +
-      "EN_SHARING\020\006\022\017\n\013SECRET_CHAT\020\007*?\n\014Privacy" +
-      "Level\022\r\n\tALLOW_ALL\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016AL" +
-      "LOW_CONTACTS\020\002B\035\n\016net.iGap.protoB\013ProtoG",
-      "lobalb\006proto3"
+      "roto.RoomMessageLog.TargetUser\032\034\n\nTarget" +
+      "User\022\016\n\002id\030\001 \001(\004B\0020\001\"\325\002\n\004Type\022\017\n\013USER_JO" +
+      "INED\020\000\022\020\n\014USER_DELETED\020\001\022\020\n\014ROOM_CREATED" +
+      "\020\002\022\020\n\014MEMBER_ADDED\020\003\022\021\n\rMEMBER_KICKED\020\004\022",
+      "\017\n\013MEMBER_LEFT\020\005\022\034\n\030ROOM_CONVERTED_TO_PU" +
+      "BLIC\020\006\022\035\n\031ROOM_CONVERTED_TO_PRIVATE\020\007\022 \n" +
+      "\034MEMBER_JOINED_BY_INVITE_LINK\020\010\022\020\n\014ROOM_" +
+      "DELETED\020\t\022\025\n\021MISSED_VOICE_CALL\020\n\022\025\n\021MISS" +
+      "ED_VIDEO_CALL\020\013\022\027\n\023MISSED_SCREEN_SHARE\020\014" +
+      "\022\026\n\022MISSED_SECRET_CHAT\020\r\022\022\n\016PINNED_MESSA" +
+      "GE\020\016\"*\n\tExtraType\022\014\n\010NO_EXTRA\020\000\022\017\n\013TARGE" +
+      "T_USER\020\001\"k\n\022RoomMessageContact\022\022\n\nfirst_" +
+      "name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\022\020\n\010nicknam" +
+      "e\030\003 \001(\t\022\r\n\005phone\030\004 \003(\t\022\r\n\005email\030\005 \003(\t\"\324\r",
+      "\n\021RoomMessageWallet\022+\n\004type\030\001 \001(\0162\035.prot" +
+      "o.RoomMessageWallet.Type\022>\n\016money_transf" +
+      "er\030\002 \001(\0132&.proto.RoomMessageWallet.Money" +
+      "Transfer\0229\n\014card_to_card\030\003 \001(\0132#.proto.R" +
+      "oomMessageWallet.CardToCard\022-\n\005topup\030\004 \001" +
+      "(\0132\036.proto.RoomMessageWallet.Topup\022+\n\004bi" +
+      "ll\030\005 \001(\0132\035.proto.RoomMessageWallet.Bill\032" +
+      "\314\001\n\rMoneyTransfer\022\030\n\014from_user_id\030\001 \001(\004B" +
+      "\0020\001\022\026\n\nto_user_id\030\002 \001(\004B\0020\001\022\022\n\006amount\030\003 " +
+      "\001(\004B\0020\001\022\024\n\014trace_number\030\004 \001(\003\022\026\n\016invoice",
+      "_number\030\005 \001(\003\022\020\n\010pay_time\030\006 \001(\r\022\023\n\013descr" +
+      "iption\030\007 \001(\t\022\023\n\013card_number\030\010 \001(\t\022\013\n\003rrn" +
+      "\030\t \001(\003\032\265\002\n\nCardToCard\022\030\n\014from_user_id\030\001 " +
+      "\001(\004B\0020\001\022\026\n\nto_user_id\030\002 \001(\004B\0020\001\022\024\n\010order" +
+      "_id\030\003 \001(\004B\0020\001\022\r\n\005token\030\004 \001(\t\022\022\n\006amount\030\005" +
+      " \001(\004B\0020\001\022\032\n\022source_card_number\030\006 \001(\t\022\030\n\020" +
+      "dest_card_number\030\007 \001(\t\022\024\n\014request_time\030\010" +
+      " \001(\r\022\013\n\003rrn\030\t \001(\t\022\024\n\014trace_number\030\n \001(\t\022" +
+      "\020\n\010bankName\030\013 \001(\t\022\024\n\014destBankName\030\014 \001(\t\022" +
+      "\025\n\rcardOwnerName\030\r \001(\t\022\016\n\006status\030\016 \001(\010\032\213",
+      "\004\n\005Topup\022\030\n\014from_user_id\030\001 \001(\004B\0020\001\022\024\n\010or" +
+      "der_id\030\002 \001(\004B\0020\001\022\020\n\010my_token\030\003 \001(\t\022\021\n\005to" +
+      "ken\030\004 \001(\004B\0020\001\022\022\n\006amount\030\005 \001(\004B\0020\001\022\037\n\027req" +
+      "uester_mobile_number\030\006 \001(\t\022\034\n\024charge_mob" +
+      "ile_number\030\007 \001(\t\0227\n\ntopup_type\030\010 \001(\0162#.p" +
+      "roto.RoomMessageWallet.Topup.Type\022\023\n\013car" +
+      "d_number\030\t \001(\t\022\025\n\rmerchant_name\030\n \001(\t\022\027\n" +
+      "\013terminal_no\030\013 \001(\004B\0020\001\022\017\n\003rrn\030\014 \001(\004B\0020\001\022" +
+      "\030\n\014trace_number\030\r \001(\004B\0020\001\022\024\n\014request_tim" +
+      "e\030\016 \001(\r\022\016\n\006status\030\017 \001(\010\022\032\n\022status_descri",
+      "ption\030\020 \001(\t\"o\n\004Type\022\024\n\020IRANCELL_PREPAID\020" +
+      "\000\022\020\n\014IRANCELL_WOW\020\001\022\022\n\016IRANCELL_WIMAX\020\002\022" +
+      "\025\n\021IRANCELL_POSTPAID\020\003\022\007\n\003MCI\020\004\022\013\n\007RIGHT" +
+      "EL\020\005\032\325\002\n\004Bill\022\030\n\014from_user_id\030\001 \001(\004B\0020\001\022" +
+      "\024\n\010order_id\030\002 \001(\004B\0020\001\022\020\n\010my_token\030\003 \001(\t\022" +
+      "\021\n\005token\030\004 \001(\004B\0020\001\022\022\n\006amount\030\005 \001(\004B\0020\001\022\016" +
+      "\n\006pay_id\030\006 \001(\t\022\017\n\007bill_id\030\007 \001(\t\022\021\n\tbill_" +
+      "type\030\010 \001(\t\022\023\n\013card_number\030\t \001(\t\022\025\n\rmerch" +
+      "ant_name\030\n \001(\t\022\027\n\013terminal_no\030\013 \001(\004B\0020\001\022" +
+      "\017\n\003rrn\030\014 \001(\004B\0020\001\022\030\n\014trace_number\030\r \001(\004B\002",
+      "0\001\022\024\n\014request_time\030\016 \001(\r\022\016\n\006status\030\017 \001(\010" +
+      "\022\032\n\022status_description\030\020 \001(\t\"N\n\004Type\022\022\n\016" +
+      "MONEY_TRANSFER\020\000\022\013\n\007PAYMENT\020\001\022\020\n\014CARD_TO" +
+      "_CARD\020\002\022\t\n\005TOPUP\020\003\022\010\n\004BILL\020\004\"E\n\026RoomMess" +
+      "ageForwardFrom\022\023\n\007room_id\030\001 \001(\004B\0020\001\022\026\n\nm" +
+      "essage_id\030\002 \001(\004B\0020\001\"\234\001\n\020RoomMessageStory" +
+      "\022.\n\006status\030\001 \001(\0162\036.proto.RoomMessageStor" +
+      "y.Status\022\033\n\005story\030\002 \001(\0132\014.proto.Story\";\n" +
+      "\006Status\022\n\n\006ACTIVE\020\000\022\013\n\007EXPIRED\020\001\022\013\n\007PRIV" +
+      "ATE\020\002\022\013\n\007DELETED\020\003\">\n\025RoomMessageStoryRe",
+      "ply\022\024\n\010story_id\030\001 \001(\004B\0020\001\022\017\n\007caption\030\002 \001" +
+      "(\t\"/\n\027RoomMessageStoryForward\022\024\n\010story_i" +
+      "d\030\001 \001(\004B\0020\001\"\233\002\n\005Story\022\016\n\002id\030\001 \001(\004B\0020\001\022\022\n" +
+      "\nfile_token\030\002 \001(\t\022!\n\014file_details\030\003 \001(\0132" +
+      "\013.proto.File\022\037\n\004type\030\004 \001(\0162\021.proto.Story" +
+      ".Type\022\023\n\007user_id\030\005 \001(\004B\0020\001\022\023\n\007room_id\030\006 " +
+      "\001(\004B\0020\001\022\017\n\007caption\030\007 \001(\t\022\014\n\004link\030\010 \001(\t\022\022" +
+      "\n\ncreated_at\030\t \001(\r\022\016\n\006end_at\030\n \001(\r\022\014\n\004se" +
+      "en\030\013 \001(\010\022\022\n\nduplicated\030\014 \001(\010\"\033\n\004Type\022\t\n\005" +
+      "STORY\020\000\022\010\n\004LIVE\020\001\"\204\004\n\016RegisteredUser\022\016\n\002",
+      "id\030\001 \001(\004B\0020\001\022\020\n\010username\030\002 \001(\t\022\021\n\005phone\030" +
+      "\003 \001(\004B\0020\001\022\022\n\nfirst_name\030\004 \001(\t\022\021\n\tlast_na" +
+      "me\030\005 \001(\t\022\024\n\014display_name\030\006 \001(\t\022\020\n\010initia" +
+      "ls\030\007 \001(\t\022\r\n\005color\030\010 \001(\t\022,\n\006status\030\t \001(\0162" +
+      "\034.proto.RegisteredUser.Status\022\021\n\tlast_se" +
+      "en\030\n \001(\r\022\024\n\014avatar_count\030\013 \001(\r\022\035\n\006avatar" +
+      "\030\014 \001(\0132\r.proto.Avatar\022\016\n\006mutual\030\r \001(\010\022\017\n" +
+      "\007deleted\030\016 \001(\010\022\020\n\010cache_id\030\017 \001(\t\022\013\n\003bio\030" +
+      "\020 \001(\t\022\020\n\010verified\030\021 \001(\010\022\013\n\003bot\030\022 \001(\010\"\211\001\n" +
+      "\006Status\022\021\n\rLONG_TIME_AGO\020\000\022\016\n\nLAST_MONTH",
+      "\020\001\022\r\n\tLAST_WEEK\020\002\022\n\n\006ONLINE\020\003\022\013\n\007EXACTLY" +
+      "\020\004\022\014\n\010RECENTLY\020\005\022\013\n\007SUPPORT\020\006\022\031\n\025SERVICE" +
+      "_NOTIFICATIONS\020\007\"3\n\006Avatar\022\016\n\002id\030\001 \001(\004B\002" +
+      "0\001\022\031\n\004file\030\002 \001(\0132\013.proto.File\"\276\t\n\013RoomMe" +
+      "ssage\022\017\n\007room_id\030\032 \001(\004\022\026\n\nmessage_id\030\001 \001" +
+      "(\004B\0020\001\022\033\n\017message_version\030\002 \001(\004B\0020\001\022(\n\006s" +
+      "tatus\030\003 \001(\0162\030.proto.RoomMessageStatus\022\032\n" +
+      "\016status_version\030\004 \001(\004B\0020\001\022,\n\014message_typ" +
+      "e\030\005 \001(\0162\026.proto.RoomMessageType\022\017\n\007messa" +
+      "ge\030\006 \001(\t\022\037\n\nattachment\030\007 \001(\0132\013.proto.Fil",
+      "e\022)\n\006author\030\010 \001(\0132\031.proto.RoomMessage.Au" +
+      "thor\022,\n\010location\030\t \001(\0132\032.proto.RoomMessa" +
+      "geLocation\022\"\n\003log\030\n \001(\0132\025.proto.RoomMess" +
+      "ageLog\022*\n\007contact\030\013 \001(\0132\031.proto.RoomMess" +
+      "ageContact\022(\n\006wallet\030\026 \001(\0132\030.proto.RoomM" +
+      "essageWallet\022\016\n\006edited\030\014 \001(\010\022\023\n\013create_t" +
+      "ime\030\r \001(\r\022\023\n\013update_time\030\016 \001(\r\022\017\n\007delete" +
+      "d\030\017 \001(\010\022(\n\014forward_from\030\020 \001(\0132\022.proto.Ro" +
+      "omMessage\022$\n\010reply_to\030\021 \001(\0132\022.proto.Room" +
+      "Message\022&\n\005story\030\031 \001(\0132\027.proto.RoomMessa",
+      "geStory\022\037\n\023previous_message_id\030\022 \001(\004B\0020\001" +
+      "\022\025\n\trandom_id\030\025 \001(\004B\0020\001\022\027\n\017additional_ty" +
+      "pe\030\027 \001(\r\022\027\n\017additional_data\030\030 \001(\t\0220\n\next" +
+      "ra_type\030\023 \001(\0162\034.proto.RoomMessage.ExtraT" +
+      "ype\0226\n\rchannel_extra\030\024 \001(\0132\037.proto.RoomM" +
+      "essage.ChannelExtra\032\276\001\n\006Author\022\014\n\004hash\030\001" +
+      " \001(\t\022,\n\004user\030\002 \001(\0132\036.proto.RoomMessage.A" +
+      "uthor.User\022,\n\004room\030\003 \001(\0132\036.proto.RoomMes" +
+      "sage.Author.Room\032-\n\004User\022\023\n\007user_id\030\001 \001(" +
+      "\004B\0020\001\022\020\n\010cache_id\030\002 \001(\t\032\033\n\004Room\022\023\n\007room_",
+      "id\030\001 \001(\004B\0020\001\032j\n\014ChannelExtra\022\021\n\tsignatur" +
+      "e\030\001 \001(\t\022\023\n\013views_label\030\002 \001(\t\022\027\n\017thumbs_u" +
+      "p_label\030\003 \001(\t\022\031\n\021thumbs_down_label\030\004 \001(\t" +
+      "\",\n\tExtraType\022\014\n\010NO_EXTRA\020\000\022\021\n\rCHANNEL_E" +
+      "XTRA\020\001\"F\n\tRoomDraft\022\017\n\007message\030\001 \001(\t\022\024\n\010" +
+      "reply_to\030\002 \001(\004B\0020\001\022\022\n\ndraft_time\030\003 \001(\r\"\201" +
+      "\005\n\004Room\022\016\n\002id\030\001 \001(\004B\0020\001\022\036\n\004type\030\002 \001(\0162\020." +
+      "proto.Room.Type\022\r\n\005title\030\003 \001(\t\022\020\n\010initia" +
+      "ls\030\004 \001(\t\022\r\n\005color\030\005 \001(\t\022\024\n\014unread_count\030" +
+      "\006 \001(\r\022(\n\014last_message\030\007 \001(\0132\022.proto.Room",
+      "Message\022\021\n\tread_only\030\010 \001(\010\022\026\n\016is_partici" +
+      "pant\030\t \001(\010\022\037\n\005draft\030\n \001(\0132\020.proto.RoomDr" +
+      "aft\0220\n\024first_unread_message\030\016 \001(\0132\022.prot" +
+      "o.RoomMessage\022\"\n\troom_mute\030\017 \001(\0162\017.proto" +
+      ".RoomMute\022\022\n\006pin_id\030\020 \001(\004B\0020\001\022*\n\016pinned_" +
+      "message\030\021 \001(\0132\022.proto.RoomMessage\022\020\n\010pri" +
+      "ority\030\022 \001(\r\022(\n\017chat_room_extra\030\013 \001(\0132\017.p" +
+      "roto.ChatRoom\022*\n\020group_room_extra\030\014 \001(\0132" +
+      "\020.proto.GroupRoom\022.\n\022channel_room_extra\030" +
+      "\r \001(\0132\022.proto.ChannelRoom\022\016\n\006app_id\030\023 \001(",
+      "\r\022%\n\npermission\030\024 \001(\0132\021.proto.RoomAccess" +
+      "\"(\n\004Type\022\010\n\004CHAT\020\000\022\t\n\005GROUP\020\001\022\013\n\007CHANNEL" +
+      "\020\002\"/\n\010ChatRoom\022#\n\004peer\030\001 \001(\0132\025.proto.Reg" +
+      "isteredUser\"\223\005\n\tGroupRoom\022#\n\004type\030\001 \001(\0162" +
+      "\025.proto.GroupRoom.Type\022#\n\004role\030\002 \001(\0162\025.p" +
+      "roto.GroupRoom.Role\022\032\n\022participants_coun" +
+      "t\030\003 \001(\r\022 \n\030participants_count_label\030\004 \001(" +
+      "\t\022 \n\030participants_count_limit\030\005 \001(\r\022&\n\036p" +
+      "articipants_count_limit_label\030\006 \001(\t\022\023\n\013d" +
+      "escription\030\007 \001(\t\022\024\n\014avatar_count\030\010 \001(\r\022\035",
+      "\n\006avatar\030\t \001(\0132\r.proto.Avatar\0224\n\rprivate" +
+      "_extra\030\n \001(\0132\035.proto.GroupRoom.PrivateEx" +
+      "tra\0222\n\014public_extra\030\013 \001(\0132\034.proto.GroupR" +
+      "oom.PublicExtra\022@\n\013room_rights\030\014 \001(\0132+.p" +
+      "roto.GroupChangeMemberRights.MemberRight" +
+      "s\0329\n\014PrivateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024" +
+      "\n\014invite_token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010u" +
+      "sername\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022" +
+      "\017\n\013PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\t" +
+      "MODERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"\344\004\n\013Ch",
+      "annelRoom\022%\n\004type\030\001 \001(\0162\027.proto.ChannelR" +
+      "oom.Type\022%\n\004role\030\002 \001(\0162\027.proto.ChannelRo" +
+      "om.Role\022\032\n\022participants_count\030\003 \001(\r\022 \n\030p" +
+      "articipants_count_label\030\004 \001(\t\022\023\n\013descrip" +
+      "tion\030\005 \001(\t\022\024\n\014avatar_count\030\006 \001(\r\022\035\n\006avat" +
+      "ar\030\007 \001(\0132\r.proto.Avatar\0226\n\rprivate_extra" +
+      "\030\010 \001(\0132\037.proto.ChannelRoom.PrivateExtra\022" +
+      "4\n\014public_extra\030\t \001(\0132\036.proto.ChannelRoo" +
+      "m.PublicExtra\022\021\n\tsignature\030\n \001(\010\022\023\n\007seen" +
+      "_id\030\013 \001(\004B\0020\001\022\020\n\010verified\030\014 \001(\010\022\027\n\017react",
+      "ion_status\030\r \001(\010\0329\n\014PrivateExtra\022\023\n\013invi" +
+      "te_link\030\001 \001(\t\022\024\n\014invite_token\030\002 \001(\t\032\037\n\013P" +
+      "ublicExtra\022\020\n\010username\030\001 \001(\t\")\n\004Type\022\020\n\014" +
+      "PRIVATE_ROOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n\004Role\022" +
+      "\n\n\006MEMBER\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n" +
+      "\005OWNER\020\003\"f\n\tThumbnail\022\014\n\004size\030\001 \001(\003\022\r\n\005w" +
+      "idth\030\002 \001(\005\022\016\n\006height\030\003 \001(\005\022\020\n\010cache_id\030\004" +
+      " \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004mime\030\006 \001(\t\"\232\002\n\004Fil" +
+      "e\022\r\n\005token\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004size\030\003" +
+      " \001(\003\022)\n\017large_thumbnail\030\004 \001(\0132\020.proto.Th",
+      "umbnail\022)\n\017small_thumbnail\030\005 \001(\0132\020.proto" +
+      ".Thumbnail\022,\n\022waveform_thumbnail\030\006 \001(\0132\020" +
+      ".proto.Thumbnail\022\r\n\005width\030\007 \001(\005\022\016\n\006heigh" +
+      "t\030\010 \001(\005\022\020\n\010duration\030\t \001(\001\022\020\n\010cache_id\030\n " +
+      "\001(\t\022\014\n\004mime\030\013 \001(\t\022\022\n\npublic_url\030\014 \001(\t\"u\n" +
+      "\021PostMessageRights\022\021\n\tsend_text\030\001 \001(\010\022\022\n" +
+      "\nsend_media\030\003 \001(\010\022\020\n\010send_gif\030\004 \001(\010\022\024\n\014s" +
+      "end_sticker\030\005 \001(\010\022\021\n\tsend_link\030\006 \001(\010\"\343\001\n" +
+      "\nRoomAccess\022\023\n\013modify_room\030\001 \001(\010\022.\n\014post" +
+      "_message\030\002 \001(\0132\030.proto.PostMessageRights",
+      "\022\024\n\014edit_message\030\003 \001(\010\022\026\n\016delete_message" +
+      "\030\004 \001(\010\022\023\n\013pin_message\030\005 \001(\010\022\022\n\nadd_membe" +
+      "r\030\006 \001(\010\022\022\n\nban_member\030\007 \001(\010\022\022\n\nget_membe" +
+      "r\030\010 \001(\010\022\021\n\tadd_admin\030\t \001(\010\"5\n\tWallpaper\022" +
+      "\031\n\004file\030\001 \001(\0132\013.proto.File\022\r\n\005color\030\002 \001(" +
+      "\t\"+\n\nPagination\022\016\n\006offset\030\001 \001(\r\022\r\n\005limit" +
+      "\030\002 \001(\r\"Z\n\010Favorite\022\014\n\004name\030\001 \001(\t\022\021\n\ttext" +
+      "color\030\002 \001(\t\022\017\n\007bgcolor\030\003 \001(\t\022\r\n\005value\030\004 " +
+      "\001(\t\022\r\n\005image\030\005 \001(\t\"\345\007\n\016DiscoveryField\022\020\n" +
+      "\010imageurl\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022:\n\naction",
+      "type\030\003 \001(\0162&.proto.DiscoveryField.Button" +
+      "ActionType\022\017\n\007orderid\030\004 \001(\r\022\n\n\002id\030\005 \001(\r\022" +
+      "\r\n\005param\030\006 \001(\t\022\021\n\tagreement\030\007 \001(\010\022\017\n\007ref" +
+      "resh\030\010 \001(\010\022\025\n\ragreementSlug\030\t \001(\t\"\216\006\n\020Bu" +
+      "ttonActionType\022\010\n\004NONE\020\000\022\r\n\tJOIN_LINK\020\001\022" +
+      "\016\n\nBOT_ACTION\020\002\022\021\n\rUSERNAME_LINK\020\003\022\014\n\010WE" +
+      "B_LINK\020\004\022\021\n\rWEB_VIEW_LINK\020\005\022\017\n\013STREAM_PL" +
+      "AY\020\006\022\021\n\rPAY_BY_WALLET\020\007\022\016\n\nPAY_DIRECT\020\010\022" +
+      "\021\n\rREQUEST_PHONE\020\t\022\024\n\020REQUEST_LOCATION\020\n" +
+      "\022\016\n\nSHOW_ALERT\020\013\022\010\n\004PAGE\020\014\022\022\n\016FINANCIAL_",
+      "MENU\020\r\022\r\n\tBILL_MENU\020\016\022\025\n\021TRAFFIC_BILL_ME" +
+      "NU\020\017\022\024\n\020MOBILE_BILL_MENU\020\020\022\023\n\017PHONE_BILL" +
+      "_MENU\020\021\022\016\n\nTOPUP_MENU\020\022\022\017\n\013WALLET_MENU\020\023" +
+      "\022\017\n\013NEARBY_MENU\020\024\022\010\n\004CALL\020\025\022\020\n\014STICKER_S" +
+      "HOP\020\026\022\t\n\005IVAND\020\027\022\013\n\007IVANDQR\020\030\022\r\n\tIVANDLI" +
+      "ST\020\031\022\016\n\nIVANDSCORE\020\032\022\020\n\014CARD_TO_CARD\020\033\022\024" +
+      "\n\020FAVORITE_CHANNEL\020\034\022\t\n\005MUSIC\020\035\022\013\n\007CHARI" +
+      "TY\020\036\022\017\n\013FUN_SERVICE\020\037\022\021\n\rVIRTUAL_MONEY\020 " +
+      "\022\020\n\014CITY_SERVICE\020!\022\010\n\004POLL\020\"\022\031\n\025INTERNET" +
+      "_PACKAGE_MENU\020#\022\025\n\021FINANCIAL_HISTORY\020$\022\021",
+      "\n\rINVITE_FRIEND\020%\022\010\n\004NEWS\020&\022\026\n\022ELECTRIC_" +
+      "BILL_MENU\020\'\022\016\n\nBLOCKCHAIN\020(\022\014\n\010PARSLAND\020" +
+      ")\022\017\n\013POLL_RESULT\020*\022\025\n\021VIRTUAL_GIFT_CARD\020" +
+      "+\022\017\n\013NEWS_DETAIL\020,\"\223\002\n\tDiscovery\022.\n\005mode" +
+      "l\030\001 \001(\0162\037.proto.Discovery.DiscoveryModel" +
+      "\022\r\n\005scale\030\002 \001(\t\022.\n\017discoveryfields\030\003 \003(\013" +
+      "2\025.proto.DiscoveryField\"\226\001\n\016DiscoveryMod" +
+      "el\022\n\n\006MODEL1\020\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n" +
+      "\n\006MODEL4\020\003\022\n\n\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MO" +
+      "DEL7\020\006\022\n\n\006MODEL8\020\007\022\n\n\006MODEL9\020\010\022\013\n\007MODEL1",
+      "0\020\t\022\013\n\007MODEL11\020\n\"~\n\tPollField\022\020\n\010imageur" +
+      "l\030\001 \001(\t\022\017\n\007orderid\030\002 \001(\r\022\n\n\002id\030\003 \001(\r\022\017\n\007" +
+      "clicked\030\004 \001(\010\022\017\n\003sum\030\005 \001(\004B\0020\001\022\021\n\tclicka" +
+      "ble\030\006 \001(\010\022\r\n\005label\030\007 \001(\t\"x\n\004Poll\022.\n\005mode" +
+      "l\030\001 \001(\0162\037.proto.Discovery.DiscoveryModel" +
+      "\022\r\n\005scale\030\002 \001(\t\022\013\n\003max\030\003 \001(\r\022$\n\npollfiel" +
+      "ds\030\004 \003(\0132\020.proto.PollField\";\n\rIVandActiv" +
+      "ity\022\r\n\005title\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004tim" +
+      "e\030\003 \001(\r\"\236\002\n\007MplSale\022\032\n\016invoice_number\030\001 " +
+      "\001(\004B\0020\001\022\030\n\014from_user_id\030\002 \001(\004B\0020\001\022\022\n\006amo",
+      "unt\030\003 \001(\004B\0020\001\022\024\n\014trace_number\030\004 \001(\003\022\020\n\010p" +
+      "ay_time\030\005 \001(\r\022\023\n\013description\030\006 \001(\t\022\023\n\013ca" +
+      "rd_number\030\007 \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t" +
+      " \001(\0162\025.proto.MplSale.Status\"C\n\006Status\022\022\n" +
+      "\016PENDING_VERIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED" +
+      "\020\002\022\014\n\010REVERSED\020\003\"\227\013\n\016MplTransaction\022\024\n\010o" +
+      "rder_id\030\001 \001(\004B\0020\001\022\r\n\005token\030\002 \001(\t\022\020\n\010pay_" +
+      "time\030\003 \001(\r\022(\n\004type\030\004 \001(\0162\032.proto.MplTran" +
+      "saction.Type\022(\n\004bill\030\005 \001(\0132\032.proto.MplTr" +
+      "ansaction.Bill\022*\n\005topup\030\006 \001(\0132\033.proto.Mp",
+      "lTransaction.Topup\022*\n\005sales\030\007 \001(\0132\033.prot" +
+      "o.MplTransaction.Sales\0224\n\ncardtocard\030\010 \001" +
+      "(\0132 .proto.MplTransaction.CardToCard\032\210\002\n" +
+      "\004Bill\022\016\n\006BillId\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020\n\010" +
+      "BillType\030\003 \001(\t\022\016\n\006Status\030\004 \001(\r\022\022\n\006Amount" +
+      "\030\005 \001(\004B\0020\001\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014Mercha" +
+      "ntName\030\007 \001(\t\022\023\n\007OrderId\030\010 \001(\004B\0020\001\022\033\n\017Req" +
+      "uestDateTime\030\t \001(\004B\0020\001\022\017\n\003RRN\030\n \001(\004B\0020\001\022" +
+      "\031\n\021StatusDescription\030\013 \001(\t\022\022\n\nTerminalNo" +
+      "\030\014 \001(\r\022\017\n\007TraceNo\030\r \001(\r\032\256\002\n\005Topup\022!\n\025Req",
+      "uesterMobileNumber\030\001 \001(\004B\0020\001\022\036\n\022ChargeMo" +
+      "bileNumber\030\002 \001(\004B\0020\001\022\021\n\tTopupType\030\003 \001(\r\022" +
+      "\016\n\006Status\030\004 \001(\r\022\022\n\006Amount\030\005 \001(\004B\0020\001\022\022\n\nC" +
+      "ardNumber\030\006 \001(\t\022\024\n\014MerchantName\030\007 \001(\t\022\023\n" +
+      "\007OrderId\030\010 \001(\004B\0020\001\022\033\n\017RequestDateTime\030\t " +
+      "\001(\004B\0020\001\022\017\n\003RRN\030\n \001(\004B\0020\001\022\031\n\021StatusDescri" +
+      "ption\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007Trace" +
+      "No\030\r \001(\r\032\330\001\n\005Sales\022\016\n\006Status\030\001 \001(\r\022\022\n\006Am" +
+      "ount\030\002 \001(\004B\0020\001\022\022\n\nCardNumber\030\003 \001(\t\022\024\n\014Me" +
+      "rchantName\030\004 \001(\t\022\023\n\007OrderId\030\005 \001(\004B\0020\001\022\033\n",
+      "\017RequestDateTime\030\006 \001(\004B\0020\001\022\017\n\003RRN\030\007 \001(\004B" +
+      "\0020\001\022\031\n\021StatusDescription\030\010 \001(\t\022\022\n\nTermin" +
+      "alNo\030\t \001(\r\022\017\n\007TraceNo\030\n \001(\r\032\220\002\n\nCardToCa" +
+      "rd\022\016\n\006Status\030\001 \001(\r\022\022\n\006Amount\030\002 \001(\004B\0020\001\022\030" +
+      "\n\020SourceCardNumber\030\003 \001(\t\022\026\n\016DestCardNumb" +
+      "er\030\004 \001(\t\022\020\n\010BankName\030\005 \001(\t\022\024\n\014DestBankNa" +
+      "me\030\006 \001(\t\022\025\n\rCardOwnerName\030\007 \001(\t\022\023\n\007Order" +
+      "Id\030\010 \001(\004B\0020\001\022\033\n\017RequestDateTime\030\t \001(\004B\0020" +
+      "\001\022\017\n\003RRN\030\n \001(\004B\0020\001\022\031\n\021StatusDescription\030" +
+      "\013 \001(\t\022\017\n\007TraceNo\030\r \001(\r\"B\n\004Type\022\010\n\004NONE\020\000",
+      "\022\010\n\004BILL\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES\020\003\022\020\n\014CARD" +
+      "_TO_CARD\020\004*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MAL" +
+      "E\020\001\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEV" +
+      "ICE\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n" +
+      "\010Platform\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDRO" +
+      "ID\020\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t" +
+      "\n\005LINUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t" +
+      "\n\005EN_US\020\000\022\t\n\005FA_IR\020\001*\200\002\n\017RoomMessageType" +
+      "\022\010\n\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n" +
+      "\005VIDEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nA",
+      "UDIO_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_T" +
+      "EXT\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATI" +
+      "ON\020\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017\022\013" +
+      "\n\007STICKER\020\020\022\t\n\005STORY\020\021\022\017\n\013STORY_REPLY\020\022*" +
+      "]\n\021RoomMessageStatus\022\n\n\006FAILED\020\000\022\013\n\007SEND" +
+      "ING\020\001\022\010\n\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004SEEN\020\004" +
+      "\022\014\n\010LISTENED\020\005*5\n\023RoomMessageReaction\022\r\n" +
+      "\tTHUMBS_UP\020\000\022\017\n\013THUMBS_DOWN\020\001*\244\002\n\014Client" +
+      "Action\022\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\rSENDIN" +
+      "G_IMAGE\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\rSENDIN",
+      "G_VIDEO\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\rSENDIN" +
+      "G_AUDIO\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\rSENDIN" +
+      "G_VOICE\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n\013SENDI" +
+      "NG_GIF\020\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SENDING_LO" +
+      "CATION\020\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010PAINTI" +
+      "NG\020\016* \n\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MUTE\020\001*\233" +
+      "\001\n\013PrivacyType\022\017\n\013USER_STATUS\020\000\022\n\n\006AVATA" +
+      "R\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016CHANNEL_INVITE\020" +
+      "\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVIDEO_CALLING\020\005\022" +
+      "\022\n\016SCREEN_SHARING\020\006\022\017\n\013SECRET_CHAT\020\007*?\n\014",
+      "PrivacyLevel\022\r\n\tALLOW_ALL\020\000\022\014\n\010DENY_ALL\020" +
+      "\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016net.iGap.protoB" +
+      "\013ProtoGlobalb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54898,24 +58588,48 @@ public final class ProtoGlobal {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomMessageForwardFrom_descriptor,
         new java.lang.String[] { "RoomId", "MessageId", });
-    internal_static_proto_RegisteredUser_descriptor =
+    internal_static_proto_RoomMessageStory_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_proto_RoomMessageStory_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessageStory_descriptor,
+        new java.lang.String[] { "Status", "Story", });
+    internal_static_proto_RoomMessageStoryReply_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_proto_RoomMessageStoryReply_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessageStoryReply_descriptor,
+        new java.lang.String[] { "StoryId", "Caption", });
+    internal_static_proto_RoomMessageStoryForward_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_proto_RoomMessageStoryForward_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessageStoryForward_descriptor,
+        new java.lang.String[] { "StoryId", });
+    internal_static_proto_Story_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_proto_Story_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_Story_descriptor,
+        new java.lang.String[] { "Id", "FileToken", "FileDetails", "Type", "UserId", "RoomId", "Caption", "Link", "CreatedAt", "EndAt", "Seen", "Duplicated", });
+    internal_static_proto_RegisteredUser_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_proto_RegisteredUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RegisteredUser_descriptor,
         new java.lang.String[] { "Id", "Username", "Phone", "FirstName", "LastName", "DisplayName", "Initials", "Color", "Status", "LastSeen", "AvatarCount", "Avatar", "Mutual", "Deleted", "CacheId", "Bio", "Verified", "Bot", });
     internal_static_proto_Avatar_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_proto_Avatar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Avatar_descriptor,
         new java.lang.String[] { "Id", "File", });
     internal_static_proto_RoomMessage_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_proto_RoomMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomMessage_descriptor,
-        new java.lang.String[] { "MessageId", "MessageVersion", "Status", "StatusVersion", "MessageType", "Message", "Attachment", "Author", "Location", "Log", "Contact", "Wallet", "Edited", "CreateTime", "UpdateTime", "Deleted", "ForwardFrom", "ReplyTo", "PreviousMessageId", "RandomId", "AdditionalType", "AdditionalData", "ExtraType", "ChannelExtra", });
+        new java.lang.String[] { "RoomId", "MessageId", "MessageVersion", "Status", "StatusVersion", "MessageType", "Message", "Attachment", "Author", "Location", "Log", "Contact", "Wallet", "Edited", "CreateTime", "UpdateTime", "Deleted", "ForwardFrom", "ReplyTo", "Story", "PreviousMessageId", "RandomId", "AdditionalType", "AdditionalData", "ExtraType", "ChannelExtra", });
     internal_static_proto_RoomMessage_Author_descriptor =
       internal_static_proto_RoomMessage_descriptor.getNestedTypes().get(0);
     internal_static_proto_RoomMessage_Author_fieldAccessorTable = new
@@ -54941,25 +58655,25 @@ public final class ProtoGlobal {
         internal_static_proto_RoomMessage_ChannelExtra_descriptor,
         new java.lang.String[] { "Signature", "ViewsLabel", "ThumbsUpLabel", "ThumbsDownLabel", });
     internal_static_proto_RoomDraft_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_proto_RoomDraft_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomDraft_descriptor,
         new java.lang.String[] { "Message", "ReplyTo", "DraftTime", });
     internal_static_proto_Room_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_proto_Room_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Room_descriptor,
         new java.lang.String[] { "Id", "Type", "Title", "Initials", "Color", "UnreadCount", "LastMessage", "ReadOnly", "IsParticipant", "Draft", "FirstUnreadMessage", "RoomMute", "PinId", "PinnedMessage", "Priority", "ChatRoomExtra", "GroupRoomExtra", "ChannelRoomExtra", "AppId", "Permission", });
     internal_static_proto_ChatRoom_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_proto_ChatRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatRoom_descriptor,
         new java.lang.String[] { "Peer", });
     internal_static_proto_GroupRoom_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_proto_GroupRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupRoom_descriptor,
@@ -54977,7 +58691,7 @@ public final class ProtoGlobal {
         internal_static_proto_GroupRoom_PublicExtra_descriptor,
         new java.lang.String[] { "Username", });
     internal_static_proto_ChannelRoom_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_proto_ChannelRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelRoom_descriptor,
@@ -54995,85 +58709,85 @@ public final class ProtoGlobal {
         internal_static_proto_ChannelRoom_PublicExtra_descriptor,
         new java.lang.String[] { "Username", });
     internal_static_proto_Thumbnail_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_proto_Thumbnail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Thumbnail_descriptor,
         new java.lang.String[] { "Size", "Width", "Height", "CacheId", "Name", "Mime", });
     internal_static_proto_File_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_proto_File_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_File_descriptor,
         new java.lang.String[] { "Token", "Name", "Size", "LargeThumbnail", "SmallThumbnail", "WaveformThumbnail", "Width", "Height", "Duration", "CacheId", "Mime", "PublicUrl", });
     internal_static_proto_PostMessageRights_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_proto_PostMessageRights_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_PostMessageRights_descriptor,
         new java.lang.String[] { "SendText", "SendMedia", "SendGif", "SendSticker", "SendLink", });
     internal_static_proto_RoomAccess_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_proto_RoomAccess_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomAccess_descriptor,
         new java.lang.String[] { "ModifyRoom", "PostMessage", "EditMessage", "DeleteMessage", "PinMessage", "AddMember", "BanMember", "GetMember", "AddAdmin", });
     internal_static_proto_Wallpaper_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_proto_Wallpaper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Wallpaper_descriptor,
         new java.lang.String[] { "File", "Color", });
     internal_static_proto_Pagination_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_proto_Pagination_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Pagination_descriptor,
         new java.lang.String[] { "Offset", "Limit", });
     internal_static_proto_Favorite_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_proto_Favorite_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Favorite_descriptor,
         new java.lang.String[] { "Name", "Textcolor", "Bgcolor", "Value", "Image", });
     internal_static_proto_DiscoveryField_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_proto_DiscoveryField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_DiscoveryField_descriptor,
         new java.lang.String[] { "Imageurl", "Value", "Actiontype", "Orderid", "Id", "Param", "Agreement", "Refresh", "AgreementSlug", });
     internal_static_proto_Discovery_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_proto_Discovery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Discovery_descriptor,
         new java.lang.String[] { "Model", "Scale", "Discoveryfields", });
     internal_static_proto_PollField_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_proto_PollField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_PollField_descriptor,
         new java.lang.String[] { "Imageurl", "Orderid", "Id", "Clicked", "Sum", "Clickable", "Label", });
     internal_static_proto_Poll_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_proto_Poll_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Poll_descriptor,
         new java.lang.String[] { "Model", "Scale", "Max", "Pollfields", });
     internal_static_proto_IVandActivity_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_proto_IVandActivity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_IVandActivity_descriptor,
         new java.lang.String[] { "Title", "Score", "Time", });
     internal_static_proto_MplSale_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_proto_MplSale_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplSale_descriptor,
         new java.lang.String[] { "InvoiceNumber", "FromUserId", "Amount", "TraceNumber", "PayTime", "Description", "CardNumber", "Rrn", "Status", });
     internal_static_proto_MplTransaction_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_proto_MplTransaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplTransaction_descriptor,
