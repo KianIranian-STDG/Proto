@@ -40,6 +40,11 @@ public final class ProtoGroupPinMessage {
      * <code>optional uint64 message_id = 3;</code>
      */
     long getMessageId();
+
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.GroupPinMessage}
@@ -55,6 +60,7 @@ public final class ProtoGroupPinMessage {
     private GroupPinMessage() {
       roomId_ = 0L;
       messageId_ = 0L;
+      documentId_ = 0L;
     }
 
     @java.lang.Override
@@ -103,6 +109,11 @@ public final class ProtoGroupPinMessage {
             case 24: {
 
               messageId_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              documentId_ = input.readUInt64();
               break;
             }
           }
@@ -167,6 +178,15 @@ public final class ProtoGroupPinMessage {
       return messageId_;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 4;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -188,6 +208,9 @@ public final class ProtoGroupPinMessage {
       if (messageId_ != 0L) {
         output.writeUInt64(3, messageId_);
       }
+      if (documentId_ != 0L) {
+        output.writeUInt64(4, documentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -206,6 +229,10 @@ public final class ProtoGroupPinMessage {
       if (messageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, messageId_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, documentId_);
       }
       memoizedSize = size;
       return size;
@@ -232,6 +259,8 @@ public final class ProtoGroupPinMessage {
           == other.getRoomId());
       result = result && (getMessageId()
           == other.getMessageId());
+      result = result && (getDocumentId()
+          == other.getDocumentId());
       return result;
     }
 
@@ -252,6 +281,9 @@ public final class ProtoGroupPinMessage {
       hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMessageId());
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -380,6 +412,8 @@ public final class ProtoGroupPinMessage {
 
         messageId_ = 0L;
 
+        documentId_ = 0L;
+
         return this;
       }
 
@@ -409,6 +443,7 @@ public final class ProtoGroupPinMessage {
         }
         result.roomId_ = roomId_;
         result.messageId_ = messageId_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -458,6 +493,9 @@ public final class ProtoGroupPinMessage {
         }
         if (other.getMessageId() != 0L) {
           setMessageId(other.getMessageId());
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
         }
         onChanged();
         return this;
@@ -650,6 +688,32 @@ public final class ProtoGroupPinMessage {
       public Builder clearMessageId() {
         
         messageId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
         onChanged();
         return this;
       }
@@ -1540,14 +1604,14 @@ public final class ProtoGroupPinMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\025GroupPinMessage.proto\022\005proto\032\rRequest." +
-      "proto\032\016Response.proto\032\014Global.proto\"W\n\017G" +
+      "proto\032\016Response.proto\032\014Global.proto\"l\n\017G" +
       "roupPinMessage\022\037\n\007request\030\001 \001(\0132\016.proto." +
       "Request\022\017\n\007room_id\030\002 \001(\004\022\022\n\nmessage_id\030\003" +
-      " \001(\004\"y\n\027GroupPinMessageResponse\022!\n\010respo" +
-      "nse\030\001 \001(\0132\017.proto.Response\022\017\n\007room_id\030\002 " +
-      "\001(\004\022*\n\016pinned_message\030\003 \001(\0132\022.proto.Room" +
-      "MessageB&\n\016net.iGap.protoB\024ProtoGroupPin" +
-      "Messageb\006proto3"
+      " \001(\004\022\023\n\013document_id\030\004 \001(\004\"y\n\027GroupPinMes" +
+      "sageResponse\022!\n\010response\030\001 \001(\0132\017.proto.R" +
+      "esponse\022\017\n\007room_id\030\002 \001(\004\022*\n\016pinned_messa" +
+      "ge\030\003 \001(\0132\022.proto.RoomMessageB&\n\016net.iGap" +
+      ".protoB\024ProtoGroupPinMessageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1569,7 +1633,7 @@ public final class ProtoGroupPinMessage {
     internal_static_proto_GroupPinMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupPinMessage_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "MessageId", });
+        new java.lang.String[] { "Request", "RoomId", "MessageId", "DocumentId", });
     internal_static_proto_GroupPinMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_GroupPinMessageResponse_fieldAccessorTable = new

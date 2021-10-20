@@ -45,6 +45,11 @@ public final class ProtoChatDeleteMessage {
      * <code>optional bool both = 4;</code>
      */
     boolean getBoth();
+
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatDeleteMessage}
@@ -61,6 +66,7 @@ public final class ProtoChatDeleteMessage {
       roomId_ = 0L;
       messageId_ = 0L;
       both_ = false;
+      documentId_ = 0L;
     }
 
     @java.lang.Override
@@ -114,6 +120,11 @@ public final class ProtoChatDeleteMessage {
             case 32: {
 
               both_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              documentId_ = input.readUInt64();
               break;
             }
           }
@@ -187,6 +198,15 @@ public final class ProtoChatDeleteMessage {
       return both_;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -211,6 +231,9 @@ public final class ProtoChatDeleteMessage {
       if (both_ != false) {
         output.writeBool(4, both_);
       }
+      if (documentId_ != 0L) {
+        output.writeUInt64(5, documentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -233,6 +256,10 @@ public final class ProtoChatDeleteMessage {
       if (both_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, both_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, documentId_);
       }
       memoizedSize = size;
       return size;
@@ -261,6 +288,8 @@ public final class ProtoChatDeleteMessage {
           == other.getMessageId());
       result = result && (getBoth()
           == other.getBoth());
+      result = result && (getDocumentId()
+          == other.getDocumentId());
       return result;
     }
 
@@ -284,6 +313,9 @@ public final class ProtoChatDeleteMessage {
       hash = (37 * hash) + BOTH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getBoth());
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -414,6 +446,8 @@ public final class ProtoChatDeleteMessage {
 
         both_ = false;
 
+        documentId_ = 0L;
+
         return this;
       }
 
@@ -444,6 +478,7 @@ public final class ProtoChatDeleteMessage {
         result.roomId_ = roomId_;
         result.messageId_ = messageId_;
         result.both_ = both_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -496,6 +531,9 @@ public final class ProtoChatDeleteMessage {
         }
         if (other.getBoth() != false) {
           setBoth(other.getBoth());
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
         }
         onChanged();
         return this;
@@ -717,6 +755,32 @@ public final class ProtoChatDeleteMessage {
         onChanged();
         return this;
       }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -797,6 +861,11 @@ public final class ProtoChatDeleteMessage {
      * <code>optional uint64 delete_version = 4;</code>
      */
     long getDeleteVersion();
+
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatDeleteMessageResponse}
@@ -813,6 +882,7 @@ public final class ProtoChatDeleteMessage {
       roomId_ = 0L;
       messageId_ = 0L;
       deleteVersion_ = 0L;
+      documentId_ = 0L;
     }
 
     @java.lang.Override
@@ -866,6 +936,11 @@ public final class ProtoChatDeleteMessage {
             case 32: {
 
               deleteVersion_ = input.readUInt64();
+              break;
+            }
+            case 40: {
+
+              documentId_ = input.readUInt64();
               break;
             }
           }
@@ -939,6 +1014,15 @@ public final class ProtoChatDeleteMessage {
       return deleteVersion_;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -963,6 +1047,9 @@ public final class ProtoChatDeleteMessage {
       if (deleteVersion_ != 0L) {
         output.writeUInt64(4, deleteVersion_);
       }
+      if (documentId_ != 0L) {
+        output.writeUInt64(5, documentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -985,6 +1072,10 @@ public final class ProtoChatDeleteMessage {
       if (deleteVersion_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, deleteVersion_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, documentId_);
       }
       memoizedSize = size;
       return size;
@@ -1013,6 +1104,8 @@ public final class ProtoChatDeleteMessage {
           == other.getMessageId());
       result = result && (getDeleteVersion()
           == other.getDeleteVersion());
+      result = result && (getDocumentId()
+          == other.getDocumentId());
       return result;
     }
 
@@ -1036,6 +1129,9 @@ public final class ProtoChatDeleteMessage {
       hash = (37 * hash) + DELETE_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDeleteVersion());
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1166,6 +1262,8 @@ public final class ProtoChatDeleteMessage {
 
         deleteVersion_ = 0L;
 
+        documentId_ = 0L;
+
         return this;
       }
 
@@ -1196,6 +1294,7 @@ public final class ProtoChatDeleteMessage {
         result.roomId_ = roomId_;
         result.messageId_ = messageId_;
         result.deleteVersion_ = deleteVersion_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -1248,6 +1347,9 @@ public final class ProtoChatDeleteMessage {
         }
         if (other.getDeleteVersion() != 0L) {
           setDeleteVersion(other.getDeleteVersion());
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
         }
         onChanged();
         return this;
@@ -1469,6 +1571,32 @@ public final class ProtoChatDeleteMessage {
         onChanged();
         return this;
       }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1538,14 +1666,15 @@ public final class ProtoChatDeleteMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ChatDeleteMessage.proto\022\005proto\032\rReques" +
-      "t.proto\032\016Response.proto\"g\n\021ChatDeleteMes" +
+      "t.proto\032\016Response.proto\"|\n\021ChatDeleteMes" +
       "sage\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n" +
       "\007room_id\030\002 \001(\004\022\022\n\nmessage_id\030\003 \001(\004\022\014\n\004bo" +
-      "th\030\004 \001(\010\"{\n\031ChatDeleteMessageResponse\022!\n" +
-      "\010response\030\001 \001(\0132\017.proto.Response\022\017\n\007room" +
-      "_id\030\002 \001(\004\022\022\n\nmessage_id\030\003 \001(\004\022\026\n\016delete_" +
-      "version\030\004 \001(\004B(\n\016net.iGap.protoB\026ProtoCh" +
-      "atDeleteMessageb\006proto3"
+      "th\030\004 \001(\010\022\023\n\013document_id\030\005 \001(\004\"\220\001\n\031ChatDe" +
+      "leteMessageResponse\022!\n\010response\030\001 \001(\0132\017." +
+      "proto.Response\022\017\n\007room_id\030\002 \001(\004\022\022\n\nmessa" +
+      "ge_id\030\003 \001(\004\022\026\n\016delete_version\030\004 \001(\004\022\023\n\013d" +
+      "ocument_id\030\005 \001(\004B(\n\016net.iGap.protoB\026Prot" +
+      "oChatDeleteMessageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1566,13 +1695,13 @@ public final class ProtoChatDeleteMessage {
     internal_static_proto_ChatDeleteMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatDeleteMessage_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "MessageId", "Both", });
+        new java.lang.String[] { "Request", "RoomId", "MessageId", "Both", "DocumentId", });
     internal_static_proto_ChatDeleteMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ChatDeleteMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatDeleteMessageResponse_descriptor,
-        new java.lang.String[] { "Response", "RoomId", "MessageId", "DeleteVersion", });
+        new java.lang.String[] { "Response", "RoomId", "MessageId", "DeleteVersion", "DocumentId", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
   }

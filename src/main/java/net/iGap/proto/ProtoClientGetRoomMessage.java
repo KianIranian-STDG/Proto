@@ -40,6 +40,11 @@ public final class ProtoClientGetRoomMessage {
      * <code>optional uint64 message_id = 3;</code>
      */
     long getMessageId();
+
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ClientGetRoomMessage}
@@ -55,6 +60,7 @@ public final class ProtoClientGetRoomMessage {
     private ClientGetRoomMessage() {
       roomId_ = 0L;
       messageId_ = 0L;
+      documentId_ = 0L;
     }
 
     @java.lang.Override
@@ -103,6 +109,11 @@ public final class ProtoClientGetRoomMessage {
             case 24: {
 
               messageId_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              documentId_ = input.readUInt64();
               break;
             }
           }
@@ -167,6 +178,15 @@ public final class ProtoClientGetRoomMessage {
       return messageId_;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 4;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -188,6 +208,9 @@ public final class ProtoClientGetRoomMessage {
       if (messageId_ != 0L) {
         output.writeUInt64(3, messageId_);
       }
+      if (documentId_ != 0L) {
+        output.writeUInt64(4, documentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -206,6 +229,10 @@ public final class ProtoClientGetRoomMessage {
       if (messageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, messageId_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, documentId_);
       }
       memoizedSize = size;
       return size;
@@ -232,6 +259,8 @@ public final class ProtoClientGetRoomMessage {
           == other.getRoomId());
       result = result && (getMessageId()
           == other.getMessageId());
+      result = result && (getDocumentId()
+          == other.getDocumentId());
       return result;
     }
 
@@ -252,6 +281,9 @@ public final class ProtoClientGetRoomMessage {
       hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMessageId());
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -380,6 +412,8 @@ public final class ProtoClientGetRoomMessage {
 
         messageId_ = 0L;
 
+        documentId_ = 0L;
+
         return this;
       }
 
@@ -409,6 +443,7 @@ public final class ProtoClientGetRoomMessage {
         }
         result.roomId_ = roomId_;
         result.messageId_ = messageId_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -458,6 +493,9 @@ public final class ProtoClientGetRoomMessage {
         }
         if (other.getMessageId() != 0L) {
           setMessageId(other.getMessageId());
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
         }
         onChanged();
         return this;
@@ -650,6 +688,32 @@ public final class ProtoClientGetRoomMessage {
       public Builder clearMessageId() {
         
         messageId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
         onChanged();
         return this;
       }
@@ -1477,13 +1541,13 @@ public final class ProtoClientGetRoomMessage {
     java.lang.String[] descriptorData = {
       "\n\032ClientGetRoomMessage.proto\022\005proto\032\rReq" +
       "uest.proto\032\016Response.proto\032\014Global.proto" +
-      "\"\\\n\024ClientGetRoomMessage\022\037\n\007request\030\001 \001(" +
+      "\"q\n\024ClientGetRoomMessage\022\037\n\007request\030\001 \001(" +
       "\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\004\022\022\n\nme" +
-      "ssage_id\030\003 \001(\004\"f\n\034ClientGetRoomMessageRe" +
-      "sponse\022!\n\010response\030\001 \001(\0132\017.proto.Respons" +
-      "e\022#\n\007message\030\002 \001(\0132\022.proto.RoomMessageB+" +
-      "\n\016net.iGap.protoB\031ProtoClientGetRoomMess" +
-      "ageb\006proto3"
+      "ssage_id\030\003 \001(\004\022\023\n\013document_id\030\004 \001(\004\"f\n\034C" +
+      "lientGetRoomMessageResponse\022!\n\010response\030" +
+      "\001 \001(\0132\017.proto.Response\022#\n\007message\030\002 \001(\0132" +
+      "\022.proto.RoomMessageB+\n\016net.iGap.protoB\031P" +
+      "rotoClientGetRoomMessageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1505,7 +1569,7 @@ public final class ProtoClientGetRoomMessage {
     internal_static_proto_ClientGetRoomMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientGetRoomMessage_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "MessageId", });
+        new java.lang.String[] { "Request", "RoomId", "MessageId", "DocumentId", });
     internal_static_proto_ClientGetRoomMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientGetRoomMessageResponse_fieldAccessorTable = new

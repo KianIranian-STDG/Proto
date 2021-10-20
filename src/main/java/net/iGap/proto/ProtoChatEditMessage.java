@@ -50,6 +50,11 @@ public final class ProtoChatEditMessage {
      */
     com.google.protobuf.ByteString
         getMessageBytes();
+
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatEditMessage}
@@ -66,6 +71,7 @@ public final class ProtoChatEditMessage {
       roomId_ = 0L;
       messageId_ = 0L;
       message_ = "";
+      documentId_ = 0L;
     }
 
     @java.lang.Override
@@ -120,6 +126,11 @@ public final class ProtoChatEditMessage {
               java.lang.String s = input.readStringRequireUtf8();
 
               message_ = s;
+              break;
+            }
+            case 40: {
+
+              documentId_ = input.readUInt64();
               break;
             }
           }
@@ -218,6 +229,15 @@ public final class ProtoChatEditMessage {
       }
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -242,6 +262,9 @@ public final class ProtoChatEditMessage {
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
       }
+      if (documentId_ != 0L) {
+        output.writeUInt64(5, documentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -263,6 +286,10 @@ public final class ProtoChatEditMessage {
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, documentId_);
       }
       memoizedSize = size;
       return size;
@@ -291,6 +318,8 @@ public final class ProtoChatEditMessage {
           == other.getMessageId());
       result = result && getMessage()
           .equals(other.getMessage());
+      result = result && (getDocumentId()
+          == other.getDocumentId());
       return result;
     }
 
@@ -313,6 +342,9 @@ public final class ProtoChatEditMessage {
           getMessageId());
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -443,6 +475,8 @@ public final class ProtoChatEditMessage {
 
         message_ = "";
 
+        documentId_ = 0L;
+
         return this;
       }
 
@@ -473,6 +507,7 @@ public final class ProtoChatEditMessage {
         result.roomId_ = roomId_;
         result.messageId_ = messageId_;
         result.message_ = message_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -526,6 +561,9 @@ public final class ProtoChatEditMessage {
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
           onChanged();
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
         }
         onChanged();
         return this;
@@ -790,6 +828,32 @@ public final class ProtoChatEditMessage {
         onChanged();
         return this;
       }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -889,6 +953,16 @@ public final class ProtoChatEditMessage {
      * <code>optional .proto.RoomMessageType message_type = 6;</code>
      */
     net.iGap.proto.ProtoGlobal.RoomMessageType getMessageType();
+
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    long getDocumentId();
+
+    /**
+     * <code>optional uint64 version_document_id = 8;</code>
+     */
+    long getVersionDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatEditMessageResponse}
@@ -907,6 +981,8 @@ public final class ProtoChatEditMessage {
       messageVersion_ = 0L;
       message_ = "";
       messageType_ = 0;
+      documentId_ = 0L;
+      versionDocumentId_ = 0L;
     }
 
     @java.lang.Override
@@ -972,6 +1048,16 @@ public final class ProtoChatEditMessage {
               int rawValue = input.readEnum();
 
               messageType_ = rawValue;
+              break;
+            }
+            case 56: {
+
+              documentId_ = input.readUInt64();
+              break;
+            }
+            case 64: {
+
+              versionDocumentId_ = input.readUInt64();
               break;
             }
           }
@@ -1095,6 +1181,24 @@ public final class ProtoChatEditMessage {
       return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageType.UNRECOGNIZED : result;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 7;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
+    public static final int VERSION_DOCUMENT_ID_FIELD_NUMBER = 8;
+    private long versionDocumentId_;
+    /**
+     * <code>optional uint64 version_document_id = 8;</code>
+     */
+    public long getVersionDocumentId() {
+      return versionDocumentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1124,6 +1228,12 @@ public final class ProtoChatEditMessage {
       }
       if (messageType_ != net.iGap.proto.ProtoGlobal.RoomMessageType.TEXT.getNumber()) {
         output.writeEnum(6, messageType_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(7, documentId_);
+      }
+      if (versionDocumentId_ != 0L) {
+        output.writeUInt64(8, versionDocumentId_);
       }
     }
 
@@ -1155,6 +1265,14 @@ public final class ProtoChatEditMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, messageType_);
       }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(7, documentId_);
+      }
+      if (versionDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(8, versionDocumentId_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -1185,6 +1303,10 @@ public final class ProtoChatEditMessage {
       result = result && getMessage()
           .equals(other.getMessage());
       result = result && messageType_ == other.messageType_;
+      result = result && (getDocumentId()
+          == other.getDocumentId());
+      result = result && (getVersionDocumentId()
+          == other.getVersionDocumentId());
       return result;
     }
 
@@ -1212,6 +1334,12 @@ public final class ProtoChatEditMessage {
       hash = (53 * hash) + getMessage().hashCode();
       hash = (37 * hash) + MESSAGE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + messageType_;
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
+      hash = (37 * hash) + VERSION_DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVersionDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1346,6 +1474,10 @@ public final class ProtoChatEditMessage {
 
         messageType_ = 0;
 
+        documentId_ = 0L;
+
+        versionDocumentId_ = 0L;
+
         return this;
       }
 
@@ -1378,6 +1510,8 @@ public final class ProtoChatEditMessage {
         result.messageVersion_ = messageVersion_;
         result.message_ = message_;
         result.messageType_ = messageType_;
+        result.documentId_ = documentId_;
+        result.versionDocumentId_ = versionDocumentId_;
         onBuilt();
         return result;
       }
@@ -1437,6 +1571,12 @@ public final class ProtoChatEditMessage {
         }
         if (other.messageType_ != 0) {
           setMessageTypeValue(other.getMessageTypeValue());
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
+        }
+        if (other.getVersionDocumentId() != 0L) {
+          setVersionDocumentId(other.getVersionDocumentId());
         }
         onChanged();
         return this;
@@ -1771,6 +1911,58 @@ public final class ProtoChatEditMessage {
         onChanged();
         return this;
       }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long versionDocumentId_ ;
+      /**
+       * <code>optional uint64 version_document_id = 8;</code>
+       */
+      public long getVersionDocumentId() {
+        return versionDocumentId_;
+      }
+      /**
+       * <code>optional uint64 version_document_id = 8;</code>
+       */
+      public Builder setVersionDocumentId(long value) {
+        
+        versionDocumentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 version_document_id = 8;</code>
+       */
+      public Builder clearVersionDocumentId() {
+        
+        versionDocumentId_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1840,16 +2032,18 @@ public final class ProtoChatEditMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\025ChatEditMessage.proto\022\005proto\032\rRequest." +
-      "proto\032\016Response.proto\032\014Global.proto\"h\n\017C" +
+      "proto\032\016Response.proto\032\014Global.proto\"}\n\017C" +
       "hatEditMessage\022\037\n\007request\030\001 \001(\0132\016.proto." +
       "Request\022\017\n\007room_id\030\002 \001(\004\022\022\n\nmessage_id\030\003" +
-      " \001(\004\022\017\n\007message\030\004 \001(\t\"\271\001\n\027ChatEditMessag" +
-      "eResponse\022!\n\010response\030\001 \001(\0132\017.proto.Resp" +
-      "onse\022\017\n\007room_id\030\002 \001(\004\022\022\n\nmessage_id\030\003 \001(" +
-      "\004\022\027\n\017message_version\030\004 \001(\004\022\017\n\007message\030\005 " +
-      "\001(\t\022,\n\014message_type\030\006 \001(\0162\026.proto.RoomMe" +
-      "ssageTypeB&\n\016net.iGap.protoB\024ProtoChatEd",
-      "itMessageb\006proto3"
+      " \001(\004\022\017\n\007message\030\004 \001(\t\022\023\n\013document_id\030\005 \001" +
+      "(\004\"\353\001\n\027ChatEditMessageResponse\022!\n\010respon" +
+      "se\030\001 \001(\0132\017.proto.Response\022\017\n\007room_id\030\002 \001" +
+      "(\004\022\022\n\nmessage_id\030\003 \001(\004\022\027\n\017message_versio" +
+      "n\030\004 \001(\004\022\017\n\007message\030\005 \001(\t\022,\n\014message_type" +
+      "\030\006 \001(\0162\026.proto.RoomMessageType\022\023\n\013docume",
+      "nt_id\030\007 \001(\004\022\033\n\023version_document_id\030\010 \001(\004" +
+      "B&\n\016net.iGap.protoB\024ProtoChatEditMessage" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1871,13 +2065,13 @@ public final class ProtoChatEditMessage {
     internal_static_proto_ChatEditMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatEditMessage_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "MessageId", "Message", });
+        new java.lang.String[] { "Request", "RoomId", "MessageId", "Message", "DocumentId", });
     internal_static_proto_ChatEditMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ChatEditMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatEditMessageResponse_descriptor,
-        new java.lang.String[] { "Response", "RoomId", "MessageId", "MessageVersion", "Message", "MessageType", });
+        new java.lang.String[] { "Response", "RoomId", "MessageId", "MessageVersion", "Message", "MessageType", "DocumentId", "VersionDocumentId", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();

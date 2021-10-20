@@ -59,6 +59,11 @@ public final class ProtoClientRoomReport {
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
+
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ClientRoomReport}
@@ -76,6 +81,7 @@ public final class ProtoClientRoomReport {
       messageId_ = 0L;
       reason_ = 0;
       description_ = "";
+      documentId_ = 0L;
     }
 
     @java.lang.Override
@@ -136,6 +142,11 @@ public final class ProtoClientRoomReport {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
+              break;
+            }
+            case 48: {
+
+              documentId_ = input.readUInt64();
               break;
             }
           }
@@ -375,6 +386,15 @@ public final class ProtoClientRoomReport {
       }
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 6;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -402,6 +422,9 @@ public final class ProtoClientRoomReport {
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
+      if (documentId_ != 0L) {
+        output.writeUInt64(6, documentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -427,6 +450,10 @@ public final class ProtoClientRoomReport {
       }
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, documentId_);
       }
       memoizedSize = size;
       return size;
@@ -456,6 +483,8 @@ public final class ProtoClientRoomReport {
       result = result && reason_ == other.reason_;
       result = result && getDescription()
           .equals(other.getDescription());
+      result = result && (getDocumentId()
+          == other.getDocumentId());
       return result;
     }
 
@@ -480,6 +509,9 @@ public final class ProtoClientRoomReport {
       hash = (53 * hash) + reason_;
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -612,6 +644,8 @@ public final class ProtoClientRoomReport {
 
         description_ = "";
 
+        documentId_ = 0L;
+
         return this;
       }
 
@@ -643,6 +677,7 @@ public final class ProtoClientRoomReport {
         result.messageId_ = messageId_;
         result.reason_ = reason_;
         result.description_ = description_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -699,6 +734,9 @@ public final class ProtoClientRoomReport {
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
           onChanged();
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
         }
         onChanged();
         return this;
@@ -1004,6 +1042,32 @@ public final class ProtoClientRoomReport {
   checkByteStringIsUtf8(value);
         
         description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
         onChanged();
         return this;
       }
@@ -1636,16 +1700,16 @@ public final class ProtoClientRoomReport {
   static {
     java.lang.String[] descriptorData = {
       "\n\026ClientRoomReport.proto\022\005proto\032\rRequest" +
-      ".proto\032\016Response.proto\"\346\001\n\020ClientRoomRep" +
+      ".proto\032\016Response.proto\"\373\001\n\020ClientRoomRep" +
       "ort\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007" +
       "room_id\030\002 \001(\004\022\022\n\nmessage_id\030\003 \001(\004\022.\n\006rea" +
       "son\030\004 \001(\0162\036.proto.ClientRoomReport.Reaso" +
-      "n\022\023\n\013description\030\005 \001(\t\"G\n\006Reason\022\t\n\005OTHE" +
-      "R\020\000\022\010\n\004SPAM\020\001\022\017\n\013PORNOGRAPHY\020\002\022\014\n\010VIOLEN" +
-      "CE\020\003\022\t\n\005ABUSE\020\004\"=\n\030ClientRoomReportRespo" +
-      "nse\022!\n\010response\030\001 \001(\0132\017.proto.ResponseB\'" +
-      "\n\016net.iGap.protoB\025ProtoClientRoomReportb",
-      "\006proto3"
+      "n\022\023\n\013description\030\005 \001(\t\022\023\n\013document_id\030\006 " +
+      "\001(\004\"G\n\006Reason\022\t\n\005OTHER\020\000\022\010\n\004SPAM\020\001\022\017\n\013PO" +
+      "RNOGRAPHY\020\002\022\014\n\010VIOLENCE\020\003\022\t\n\005ABUSE\020\004\"=\n\030" +
+      "ClientRoomReportResponse\022!\n\010response\030\001 \001" +
+      "(\0132\017.proto.ResponseB\'\n\016net.iGap.protoB\025P",
+      "rotoClientRoomReportb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1666,7 +1730,7 @@ public final class ProtoClientRoomReport {
     internal_static_proto_ClientRoomReport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientRoomReport_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "MessageId", "Reason", "Description", });
+        new java.lang.String[] { "Request", "RoomId", "MessageId", "Reason", "Description", "DocumentId", });
     internal_static_proto_ClientRoomReportResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientRoomReportResponse_fieldAccessorTable = new

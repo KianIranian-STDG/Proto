@@ -58,6 +58,11 @@ public final class ProtoClientSearchRoomHistory {
      * <code>optional uint64 offset_message_id = 5;</code>
      */
     long getOffsetMessageId();
+
+    /**
+     * <code>optional uint64 offset_document_id = 6;</code>
+     */
+    long getOffsetDocumentId();
   }
   /**
    * Protobuf type {@code proto.ClientSearchRoomHistory}
@@ -75,6 +80,7 @@ public final class ProtoClientSearchRoomHistory {
       offset_ = 0;
       filter_ = 0;
       offsetMessageId_ = 0L;
+      offsetDocumentId_ = 0L;
     }
 
     @java.lang.Override
@@ -134,6 +140,11 @@ public final class ProtoClientSearchRoomHistory {
             case 40: {
 
               offsetMessageId_ = input.readUInt64();
+              break;
+            }
+            case 48: {
+
+              offsetDocumentId_ = input.readUInt64();
               break;
             }
           }
@@ -370,6 +381,15 @@ public final class ProtoClientSearchRoomHistory {
       return offsetMessageId_;
     }
 
+    public static final int OFFSET_DOCUMENT_ID_FIELD_NUMBER = 6;
+    private long offsetDocumentId_;
+    /**
+     * <code>optional uint64 offset_document_id = 6;</code>
+     */
+    public long getOffsetDocumentId() {
+      return offsetDocumentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -397,6 +417,9 @@ public final class ProtoClientSearchRoomHistory {
       if (offsetMessageId_ != 0L) {
         output.writeUInt64(5, offsetMessageId_);
       }
+      if (offsetDocumentId_ != 0L) {
+        output.writeUInt64(6, offsetDocumentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -423,6 +446,10 @@ public final class ProtoClientSearchRoomHistory {
       if (offsetMessageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(5, offsetMessageId_);
+      }
+      if (offsetDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, offsetDocumentId_);
       }
       memoizedSize = size;
       return size;
@@ -452,6 +479,8 @@ public final class ProtoClientSearchRoomHistory {
       result = result && filter_ == other.filter_;
       result = result && (getOffsetMessageId()
           == other.getOffsetMessageId());
+      result = result && (getOffsetDocumentId()
+          == other.getOffsetDocumentId());
       return result;
     }
 
@@ -476,6 +505,9 @@ public final class ProtoClientSearchRoomHistory {
       hash = (37 * hash) + OFFSET_MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOffsetMessageId());
+      hash = (37 * hash) + OFFSET_DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOffsetDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -608,6 +640,8 @@ public final class ProtoClientSearchRoomHistory {
 
         offsetMessageId_ = 0L;
 
+        offsetDocumentId_ = 0L;
+
         return this;
       }
 
@@ -639,6 +673,7 @@ public final class ProtoClientSearchRoomHistory {
         result.offset_ = offset_;
         result.filter_ = filter_;
         result.offsetMessageId_ = offsetMessageId_;
+        result.offsetDocumentId_ = offsetDocumentId_;
         onBuilt();
         return result;
       }
@@ -694,6 +729,9 @@ public final class ProtoClientSearchRoomHistory {
         }
         if (other.getOffsetMessageId() != 0L) {
           setOffsetMessageId(other.getOffsetMessageId());
+        }
+        if (other.getOffsetDocumentId() != 0L) {
+          setOffsetDocumentId(other.getOffsetDocumentId());
         }
         onChanged();
         return this;
@@ -968,6 +1006,32 @@ public final class ProtoClientSearchRoomHistory {
       public Builder clearOffsetMessageId() {
         
         offsetMessageId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long offsetDocumentId_ ;
+      /**
+       * <code>optional uint64 offset_document_id = 6;</code>
+       */
+      public long getOffsetDocumentId() {
+        return offsetDocumentId_;
+      }
+      /**
+       * <code>optional uint64 offset_document_id = 6;</code>
+       */
+      public Builder setOffsetDocumentId(long value) {
+        
+        offsetDocumentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 offset_document_id = 6;</code>
+       */
+      public Builder clearOffsetDocumentId() {
+        
+        offsetDocumentId_ = 0L;
         onChanged();
         return this;
       }
@@ -2099,18 +2163,19 @@ public final class ProtoClientSearchRoomHistory {
     java.lang.String[] descriptorData = {
       "\n\035ClientSearchRoomHistory.proto\022\005proto\032\r" +
       "Request.proto\032\016Response.proto\032\014Global.pr" +
-      "oto\"\377\001\n\027ClientSearchRoomHistory\022\037\n\007reque" +
+      "oto\"\233\002\n\027ClientSearchRoomHistory\022\037\n\007reque" +
       "st\030\001 \001(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(" +
       "\004\022\016\n\006offset\030\003 \001(\r\0225\n\006filter\030\004 \001(\0162%.prot" +
       "o.ClientSearchRoomHistory.Filter\022\031\n\021offs" +
-      "et_message_id\030\005 \001(\004\"P\n\006Filter\022\t\n\005IMAGE\020\000" +
-      "\022\t\n\005VIDEO\020\001\022\t\n\005AUDIO\020\002\022\t\n\005VOICE\020\003\022\007\n\003GIF" +
-      "\020\004\022\010\n\004FILE\020\005\022\007\n\003URL\020\006\"\225\001\n\037ClientSearchRo" +
-      "omHistoryResponse\022!\n\010response\030\001 \001(\0132\017.pr",
-      "oto.Response\022\022\n\ntotalCount\030\002 \001(\r\022\027\n\017notD" +
-      "eletedCount\030\003 \001(\r\022\"\n\006result\030\004 \003(\0132\022.prot" +
-      "o.RoomMessageB.\n\016net.iGap.protoB\034ProtoCl" +
-      "ientSearchRoomHistoryb\006proto3"
+      "et_message_id\030\005 \001(\004\022\032\n\022offset_document_i" +
+      "d\030\006 \001(\004\"P\n\006Filter\022\t\n\005IMAGE\020\000\022\t\n\005VIDEO\020\001\022" +
+      "\t\n\005AUDIO\020\002\022\t\n\005VOICE\020\003\022\007\n\003GIF\020\004\022\010\n\004FILE\020\005" +
+      "\022\007\n\003URL\020\006\"\225\001\n\037ClientSearchRoomHistoryRes",
+      "ponse\022!\n\010response\030\001 \001(\0132\017.proto.Response" +
+      "\022\022\n\ntotalCount\030\002 \001(\r\022\027\n\017notDeletedCount\030" +
+      "\003 \001(\r\022\"\n\006result\030\004 \003(\0132\022.proto.RoomMessag" +
+      "eB.\n\016net.iGap.protoB\034ProtoClientSearchRo" +
+      "omHistoryb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2132,7 +2197,7 @@ public final class ProtoClientSearchRoomHistory {
     internal_static_proto_ClientSearchRoomHistory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientSearchRoomHistory_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "Offset", "Filter", "OffsetMessageId", });
+        new java.lang.String[] { "Request", "RoomId", "Offset", "Filter", "OffsetMessageId", "OffsetDocumentId", });
     internal_static_proto_ClientSearchRoomHistoryResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientSearchRoomHistoryResponse_fieldAccessorTable = new

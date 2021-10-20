@@ -40,6 +40,11 @@ public final class ProtoChannelPinMessage {
      * <code>optional uint64 message_id = 3;</code>
      */
     long getMessageId();
+
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChannelPinMessage}
@@ -55,6 +60,7 @@ public final class ProtoChannelPinMessage {
     private ChannelPinMessage() {
       roomId_ = 0L;
       messageId_ = 0L;
+      documentId_ = 0L;
     }
 
     @java.lang.Override
@@ -103,6 +109,11 @@ public final class ProtoChannelPinMessage {
             case 24: {
 
               messageId_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              documentId_ = input.readUInt64();
               break;
             }
           }
@@ -167,6 +178,15 @@ public final class ProtoChannelPinMessage {
       return messageId_;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 4;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 4;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -188,6 +208,9 @@ public final class ProtoChannelPinMessage {
       if (messageId_ != 0L) {
         output.writeUInt64(3, messageId_);
       }
+      if (documentId_ != 0L) {
+        output.writeUInt64(4, documentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -206,6 +229,10 @@ public final class ProtoChannelPinMessage {
       if (messageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, messageId_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, documentId_);
       }
       memoizedSize = size;
       return size;
@@ -232,6 +259,8 @@ public final class ProtoChannelPinMessage {
           == other.getRoomId());
       result = result && (getMessageId()
           == other.getMessageId());
+      result = result && (getDocumentId()
+          == other.getDocumentId());
       return result;
     }
 
@@ -252,6 +281,9 @@ public final class ProtoChannelPinMessage {
       hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMessageId());
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -380,6 +412,8 @@ public final class ProtoChannelPinMessage {
 
         messageId_ = 0L;
 
+        documentId_ = 0L;
+
         return this;
       }
 
@@ -409,6 +443,7 @@ public final class ProtoChannelPinMessage {
         }
         result.roomId_ = roomId_;
         result.messageId_ = messageId_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -458,6 +493,9 @@ public final class ProtoChannelPinMessage {
         }
         if (other.getMessageId() != 0L) {
           setMessageId(other.getMessageId());
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
         }
         onChanged();
         return this;
@@ -650,6 +688,32 @@ public final class ProtoChannelPinMessage {
       public Builder clearMessageId() {
         
         messageId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 4;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
         onChanged();
         return this;
       }
@@ -1540,14 +1604,15 @@ public final class ProtoChannelPinMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ChannelPinMessage.proto\022\005proto\032\rReques" +
-      "t.proto\032\016Response.proto\032\014Global.proto\"Y\n" +
+      "t.proto\032\016Response.proto\032\014Global.proto\"n\n" +
       "\021ChannelPinMessage\022\037\n\007request\030\001 \001(\0132\016.pr" +
       "oto.Request\022\017\n\007room_id\030\002 \001(\004\022\022\n\nmessage_" +
-      "id\030\003 \001(\004\"{\n\031ChannelPinMessageResponse\022!\n" +
-      "\010response\030\001 \001(\0132\017.proto.Response\022\017\n\007room" +
-      "_id\030\002 \001(\004\022*\n\016pinned_message\030\003 \001(\0132\022.prot" +
-      "o.RoomMessageB(\n\016net.iGap.protoB\026ProtoCh" +
-      "annelPinMessageb\006proto3"
+      "id\030\003 \001(\004\022\023\n\013document_id\030\004 \001(\004\"{\n\031Channel" +
+      "PinMessageResponse\022!\n\010response\030\001 \001(\0132\017.p" +
+      "roto.Response\022\017\n\007room_id\030\002 \001(\004\022*\n\016pinned" +
+      "_message\030\003 \001(\0132\022.proto.RoomMessageB(\n\016ne" +
+      "t.iGap.protoB\026ProtoChannelPinMessageb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1569,7 +1634,7 @@ public final class ProtoChannelPinMessage {
     internal_static_proto_ChannelPinMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelPinMessage_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "MessageId", });
+        new java.lang.String[] { "Request", "RoomId", "MessageId", "DocumentId", });
     internal_static_proto_ChannelPinMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ChannelPinMessageResponse_fieldAccessorTable = new

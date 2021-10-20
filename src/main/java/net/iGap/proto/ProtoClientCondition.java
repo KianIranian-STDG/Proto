@@ -168,29 +168,17 @@ public final class ProtoClientCondition {
       long getDeleteVersion();
 
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      java.util.List<java.lang.Long> getOfflineDeletedDeprecatedList();
+      @java.lang.Deprecated java.util.List<java.lang.Long> getOfflineDeletedDeprecatedList();
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      int getOfflineDeletedDeprecatedCount();
+      @java.lang.Deprecated int getOfflineDeletedDeprecatedCount();
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      long getOfflineDeletedDeprecated(int index);
+      @java.lang.Deprecated long getOfflineDeletedDeprecated(int index);
 
       /**
        * <code>repeated .proto.ClientCondition.Room.OfflineEdited offline_edited = 7;</code>
@@ -627,6 +615,11 @@ public final class ProtoClientCondition {
          */
         com.google.protobuf.ByteString
             getMessageBytes();
+
+        /**
+         * <code>optional uint64 document_id = 3;</code>
+         */
+        long getDocumentId();
       }
       /**
        * Protobuf type {@code proto.ClientCondition.Room.OfflineEdited}
@@ -642,6 +635,7 @@ public final class ProtoClientCondition {
         private OfflineEdited() {
           messageId_ = 0L;
           message_ = "";
+          documentId_ = 0L;
         }
 
         @java.lang.Override
@@ -678,6 +672,11 @@ public final class ProtoClientCondition {
                   java.lang.String s = input.readStringRequireUtf8();
 
                   message_ = s;
+                  break;
+                }
+                case 24: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }
@@ -746,6 +745,15 @@ public final class ProtoClientCondition {
           }
         }
 
+        public static final int DOCUMENT_ID_FIELD_NUMBER = 3;
+        private long documentId_;
+        /**
+         * <code>optional uint64 document_id = 3;</code>
+         */
+        public long getDocumentId() {
+          return documentId_;
+        }
+
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
@@ -764,6 +772,9 @@ public final class ProtoClientCondition {
           if (!getMessageBytes().isEmpty()) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
           }
+          if (documentId_ != 0L) {
+            output.writeUInt64(3, documentId_);
+          }
         }
 
         public int getSerializedSize() {
@@ -777,6 +788,10 @@ public final class ProtoClientCondition {
           }
           if (!getMessageBytes().isEmpty()) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+          }
+          if (documentId_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeUInt64Size(3, documentId_);
           }
           memoizedSize = size;
           return size;
@@ -798,6 +813,8 @@ public final class ProtoClientCondition {
               == other.getMessageId());
           result = result && getMessage()
               .equals(other.getMessage());
+          result = result && (getDocumentId()
+              == other.getDocumentId());
           return result;
         }
 
@@ -813,6 +830,9 @@ public final class ProtoClientCondition {
               getMessageId());
           hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
           hash = (53 * hash) + getMessage().hashCode();
+          hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getDocumentId());
           hash = (29 * hash) + unknownFields.hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -935,6 +955,8 @@ public final class ProtoClientCondition {
 
             message_ = "";
 
+            documentId_ = 0L;
+
             return this;
           }
 
@@ -959,6 +981,7 @@ public final class ProtoClientCondition {
             net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited result = new net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineEdited(this);
             result.messageId_ = messageId_;
             result.message_ = message_;
+            result.documentId_ = documentId_;
             onBuilt();
             return result;
           }
@@ -1006,6 +1029,9 @@ public final class ProtoClientCondition {
             if (!other.getMessage().isEmpty()) {
               message_ = other.message_;
               onChanged();
+            }
+            if (other.getDocumentId() != 0L) {
+              setDocumentId(other.getDocumentId());
             }
             onChanged();
             return this;
@@ -1127,6 +1153,32 @@ public final class ProtoClientCondition {
             onChanged();
             return this;
           }
+
+          private long documentId_ ;
+          /**
+           * <code>optional uint64 document_id = 3;</code>
+           */
+          public long getDocumentId() {
+            return documentId_;
+          }
+          /**
+           * <code>optional uint64 document_id = 3;</code>
+           */
+          public Builder setDocumentId(long value) {
+            
+            documentId_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>optional uint64 document_id = 3;</code>
+           */
+          public Builder clearDocumentId() {
+            
+            documentId_ = 0L;
+            onChanged();
+            return this;
+          }
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
             return this;
@@ -1189,6 +1241,11 @@ public final class ProtoClientCondition {
          * <code>optional bool both = 4;</code>
          */
         boolean getBoth();
+
+        /**
+         * <code>optional uint64 document_id = 5;</code>
+         */
+        long getDocumentId();
       }
       /**
        * Protobuf type {@code proto.ClientCondition.Room.OfflineDeleted}
@@ -1204,6 +1261,7 @@ public final class ProtoClientCondition {
         private OfflineDeleted() {
           messageId_ = 0L;
           both_ = false;
+          documentId_ = 0L;
         }
 
         @java.lang.Override
@@ -1239,6 +1297,11 @@ public final class ProtoClientCondition {
                 case 32: {
 
                   both_ = input.readBool();
+                  break;
+                }
+                case 40: {
+
+                  documentId_ = input.readUInt64();
                   break;
                 }
               }
@@ -1282,6 +1345,15 @@ public final class ProtoClientCondition {
           return both_;
         }
 
+        public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+        private long documentId_;
+        /**
+         * <code>optional uint64 document_id = 5;</code>
+         */
+        public long getDocumentId() {
+          return documentId_;
+        }
+
         private byte memoizedIsInitialized = -1;
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
@@ -1300,6 +1372,9 @@ public final class ProtoClientCondition {
           if (both_ != false) {
             output.writeBool(4, both_);
           }
+          if (documentId_ != 0L) {
+            output.writeUInt64(5, documentId_);
+          }
         }
 
         public int getSerializedSize() {
@@ -1314,6 +1389,10 @@ public final class ProtoClientCondition {
           if (both_ != false) {
             size += com.google.protobuf.CodedOutputStream
               .computeBoolSize(4, both_);
+          }
+          if (documentId_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeUInt64Size(5, documentId_);
           }
           memoizedSize = size;
           return size;
@@ -1335,6 +1414,8 @@ public final class ProtoClientCondition {
               == other.getMessageId());
           result = result && (getBoth()
               == other.getBoth());
+          result = result && (getDocumentId()
+              == other.getDocumentId());
           return result;
         }
 
@@ -1351,6 +1432,9 @@ public final class ProtoClientCondition {
           hash = (37 * hash) + BOTH_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
               getBoth());
+          hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getDocumentId());
           hash = (29 * hash) + unknownFields.hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -1473,6 +1557,8 @@ public final class ProtoClientCondition {
 
             both_ = false;
 
+            documentId_ = 0L;
+
             return this;
           }
 
@@ -1497,6 +1583,7 @@ public final class ProtoClientCondition {
             net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted result = new net.iGap.proto.ProtoClientCondition.ClientCondition.Room.OfflineDeleted(this);
             result.messageId_ = messageId_;
             result.both_ = both_;
+            result.documentId_ = documentId_;
             onBuilt();
             return result;
           }
@@ -1543,6 +1630,9 @@ public final class ProtoClientCondition {
             }
             if (other.getBoth() != false) {
               setBoth(other.getBoth());
+            }
+            if (other.getDocumentId() != 0L) {
+              setDocumentId(other.getDocumentId());
             }
             onChanged();
             return this;
@@ -1618,6 +1708,32 @@ public final class ProtoClientCondition {
           public Builder clearBoth() {
             
             both_ = false;
+            onChanged();
+            return this;
+          }
+
+          private long documentId_ ;
+          /**
+           * <code>optional uint64 document_id = 5;</code>
+           */
+          public long getDocumentId() {
+            return documentId_;
+          }
+          /**
+           * <code>optional uint64 document_id = 5;</code>
+           */
+          public Builder setDocumentId(long value) {
+            
+            documentId_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           * <code>optional uint64 document_id = 5;</code>
+           */
+          public Builder clearDocumentId() {
+            
+            documentId_ = 0L;
             onChanged();
             return this;
           }
@@ -1710,34 +1826,22 @@ public final class ProtoClientCondition {
       public static final int OFFLINE_DELETED_DEPRECATED_FIELD_NUMBER = 6;
       private java.util.List<java.lang.Long> offlineDeletedDeprecated_;
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      public java.util.List<java.lang.Long>
+      @java.lang.Deprecated public java.util.List<java.lang.Long>
           getOfflineDeletedDeprecatedList() {
         return offlineDeletedDeprecated_;
       }
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      public int getOfflineDeletedDeprecatedCount() {
+      @java.lang.Deprecated public int getOfflineDeletedDeprecatedCount() {
         return offlineDeletedDeprecated_.size();
       }
       /**
-       * <pre>
-       *DEPRECATED
-       * </pre>
-       *
-       * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+       * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
        */
-      public long getOfflineDeletedDeprecated(int index) {
+      @java.lang.Deprecated public long getOfflineDeletedDeprecated(int index) {
         return offlineDeletedDeprecated_.get(index);
       }
       private int offlineDeletedDeprecatedMemoizedSerializedSize = -1;
@@ -2654,44 +2758,28 @@ public final class ProtoClientCondition {
            }
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public java.util.List<java.lang.Long>
+        @java.lang.Deprecated public java.util.List<java.lang.Long>
             getOfflineDeletedDeprecatedList() {
           return java.util.Collections.unmodifiableList(offlineDeletedDeprecated_);
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public int getOfflineDeletedDeprecatedCount() {
+        @java.lang.Deprecated public int getOfflineDeletedDeprecatedCount() {
           return offlineDeletedDeprecated_.size();
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public long getOfflineDeletedDeprecated(int index) {
+        @java.lang.Deprecated public long getOfflineDeletedDeprecated(int index) {
           return offlineDeletedDeprecated_.get(index);
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public Builder setOfflineDeletedDeprecated(
+        @java.lang.Deprecated public Builder setOfflineDeletedDeprecated(
             int index, long value) {
           ensureOfflineDeletedDeprecatedIsMutable();
           offlineDeletedDeprecated_.set(index, value);
@@ -2699,26 +2787,18 @@ public final class ProtoClientCondition {
           return this;
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public Builder addOfflineDeletedDeprecated(long value) {
+        @java.lang.Deprecated public Builder addOfflineDeletedDeprecated(long value) {
           ensureOfflineDeletedDeprecatedIsMutable();
           offlineDeletedDeprecated_.add(value);
           onChanged();
           return this;
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public Builder addAllOfflineDeletedDeprecated(
+        @java.lang.Deprecated public Builder addAllOfflineDeletedDeprecated(
             java.lang.Iterable<? extends java.lang.Long> values) {
           ensureOfflineDeletedDeprecatedIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2727,13 +2807,9 @@ public final class ProtoClientCondition {
           return this;
         }
         /**
-         * <pre>
-         *DEPRECATED
-         * </pre>
-         *
-         * <code>repeated uint64 offline_deleted_deprecated = 6;</code>
+         * <code>repeated uint64 offline_deleted_deprecated = 6 [deprecated = true];</code>
          */
-        public Builder clearOfflineDeletedDeprecated() {
+        @java.lang.Deprecated public Builder clearOfflineDeletedDeprecated() {
           offlineDeletedDeprecated_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
@@ -4920,27 +4996,28 @@ public final class ProtoClientCondition {
   static {
     java.lang.String[] descriptorData = {
       "\n\025ClientCondition.proto\022\005proto\032\rRequest." +
-      "proto\032\016Response.proto\"\274\005\n\017ClientConditio" +
+      "proto\032\016Response.proto\"\352\005\n\017ClientConditio" +
       "n\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022*\n\005ro" +
-      "oms\030\002 \003(\0132\033.proto.ClientCondition.Room\032\333" +
-      "\004\n\004Room\022\017\n\007room_id\030\002 \001(\004\022\027\n\017message_vers" +
+      "oms\030\002 \003(\0132\033.proto.ClientCondition.Room\032\211" +
+      "\005\n\004Room\022\017\n\007room_id\030\002 \001(\004\022\027\n\017message_vers" +
       "ion\030\003 \001(\004\022\026\n\016status_version\030\004 \001(\004\022\026\n\016del" +
-      "ete_version\030\005 \001(\004\022\"\n\032offline_deleted_dep" +
-      "recated\030\006 \003(\004\022A\n\016offline_edited\030\007 \003(\0132)." +
-      "proto.ClientCondition.Room.OfflineEdited" +
-      "\022\024\n\014offline_seen\030\010 \003(\004\022\020\n\010clear_id\030\t \001(\004",
-      "\022\026\n\016cache_start_id\030\n \001(\004\022\024\n\014cache_end_id" +
-      "\030\013 \001(\004\022=\n\014offline_mute\030\014 \001(\0162\'.proto.Cli" +
-      "entCondition.Room.OfflineMute\022\030\n\020offline" +
-      "_listened\030\r \003(\004\022C\n\017offline_deleted\030\016 \003(\013" +
-      "2*.proto.ClientCondition.Room.OfflineDel" +
-      "eted\0324\n\rOfflineEdited\022\022\n\nmessage_id\030\001 \001(" +
-      "\004\022\017\n\007message\030\002 \001(\t\0322\n\016OfflineDeleted\022\022\n\n" +
-      "message_id\030\001 \001(\004\022\014\n\004both\030\004 \001(\010\"4\n\013Offlin" +
-      "eMute\022\r\n\tUNCHANGED\020\000\022\t\n\005MUTED\020\001\022\013\n\007UNMUT" +
-      "ED\020\002\"<\n\027ClientConditionResponse\022!\n\010respo",
-      "nse\030\001 \001(\0132\017.proto.ResponseB&\n\016net.iGap.p" +
-      "rotoB\024ProtoClientConditionb\006proto3"
+      "ete_version\030\005 \001(\004\022&\n\032offline_deleted_dep" +
+      "recated\030\006 \003(\004B\002\030\001\022A\n\016offline_edited\030\007 \003(" +
+      "\0132).proto.ClientCondition.Room.OfflineEd" +
+      "ited\022\024\n\014offline_seen\030\010 \003(\004\022\020\n\010clear_id\030\t",
+      " \001(\004\022\026\n\016cache_start_id\030\n \001(\004\022\024\n\014cache_en" +
+      "d_id\030\013 \001(\004\022=\n\014offline_mute\030\014 \001(\0162\'.proto" +
+      ".ClientCondition.Room.OfflineMute\022\030\n\020off" +
+      "line_listened\030\r \003(\004\022C\n\017offline_deleted\030\016" +
+      " \003(\0132*.proto.ClientCondition.Room.Offlin" +
+      "eDeleted\032I\n\rOfflineEdited\022\022\n\nmessage_id\030" +
+      "\001 \001(\004\022\017\n\007message\030\002 \001(\t\022\023\n\013document_id\030\003 " +
+      "\001(\004\032G\n\016OfflineDeleted\022\022\n\nmessage_id\030\001 \001(" +
+      "\004\022\014\n\004both\030\004 \001(\010\022\023\n\013document_id\030\005 \001(\004\"4\n\013" +
+      "OfflineMute\022\r\n\tUNCHANGED\020\000\022\t\n\005MUTED\020\001\022\013\n",
+      "\007UNMUTED\020\002\"<\n\027ClientConditionResponse\022!\n" +
+      "\010response\030\001 \001(\0132\017.proto.ResponseB&\n\016net." +
+      "iGap.protoB\024ProtoClientConditionb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4973,13 +5050,13 @@ public final class ProtoClientCondition {
     internal_static_proto_ClientCondition_Room_OfflineEdited_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientCondition_Room_OfflineEdited_descriptor,
-        new java.lang.String[] { "MessageId", "Message", });
+        new java.lang.String[] { "MessageId", "Message", "DocumentId", });
     internal_static_proto_ClientCondition_Room_OfflineDeleted_descriptor =
       internal_static_proto_ClientCondition_Room_descriptor.getNestedTypes().get(1);
     internal_static_proto_ClientCondition_Room_OfflineDeleted_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientCondition_Room_OfflineDeleted_descriptor,
-        new java.lang.String[] { "MessageId", "Both", });
+        new java.lang.String[] { "MessageId", "Both", "DocumentId", });
     internal_static_proto_ClientConditionResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientConditionResponse_fieldAccessorTable = new

@@ -54,6 +54,11 @@ public final class ProtoClientGetRoomHistory {
      * <code>optional uint32 limit = 5;</code>
      */
     int getLimit();
+
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ClientGetRoomHistory}
@@ -71,6 +76,7 @@ public final class ProtoClientGetRoomHistory {
       firstMessageId_ = 0L;
       direction_ = 0;
       limit_ = 0;
+      documentId_ = 0L;
     }
 
     @java.lang.Override
@@ -130,6 +136,11 @@ public final class ProtoClientGetRoomHistory {
             case 40: {
 
               limit_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              documentId_ = input.readUInt64();
               break;
             }
           }
@@ -317,6 +328,15 @@ public final class ProtoClientGetRoomHistory {
       return limit_;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 6;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 6;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -344,6 +364,9 @@ public final class ProtoClientGetRoomHistory {
       if (limit_ != 0) {
         output.writeUInt32(5, limit_);
       }
+      if (documentId_ != 0L) {
+        output.writeUInt64(6, documentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -370,6 +393,10 @@ public final class ProtoClientGetRoomHistory {
       if (limit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, limit_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, documentId_);
       }
       memoizedSize = size;
       return size;
@@ -399,6 +426,8 @@ public final class ProtoClientGetRoomHistory {
       result = result && direction_ == other.direction_;
       result = result && (getLimit()
           == other.getLimit());
+      result = result && (getDocumentId()
+          == other.getDocumentId());
       return result;
     }
 
@@ -423,6 +452,9 @@ public final class ProtoClientGetRoomHistory {
       hash = (53 * hash) + direction_;
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit();
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -555,6 +587,8 @@ public final class ProtoClientGetRoomHistory {
 
         limit_ = 0;
 
+        documentId_ = 0L;
+
         return this;
       }
 
@@ -586,6 +620,7 @@ public final class ProtoClientGetRoomHistory {
         result.firstMessageId_ = firstMessageId_;
         result.direction_ = direction_;
         result.limit_ = limit_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -641,6 +676,9 @@ public final class ProtoClientGetRoomHistory {
         }
         if (other.getLimit() != 0) {
           setLimit(other.getLimit());
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
         }
         onChanged();
         return this;
@@ -903,6 +941,32 @@ public final class ProtoClientGetRoomHistory {
       public Builder clearLimit() {
         
         limit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 6;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
         onChanged();
         return this;
       }
@@ -1908,16 +1972,16 @@ public final class ProtoClientGetRoomHistory {
     java.lang.String[] descriptorData = {
       "\n\032ClientGetRoomHistory.proto\022\005proto\032\rReq" +
       "uest.proto\032\016Response.proto\032\014Global.proto" +
-      "\"\312\001\n\024ClientGetRoomHistory\022\037\n\007request\030\001 \001" +
+      "\"\337\001\n\024ClientGetRoomHistory\022\037\n\007request\030\001 \001" +
       "(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\004\022\030\n\020f" +
       "irst_message_id\030\003 \001(\004\0228\n\tdirection\030\004 \001(\016" +
       "2%.proto.ClientGetRoomHistory.Direction\022" +
-      "\r\n\005limit\030\005 \001(\r\"\035\n\tDirection\022\006\n\002UP\020\000\022\010\n\004D" +
-      "OWN\020\001\"f\n\034ClientGetRoomHistoryResponse\022!\n" +
-      "\010response\030\001 \001(\0132\017.proto.Response\022#\n\007mess" +
-      "age\030\002 \003(\0132\022.proto.RoomMessageB+\n\016net.iGa",
-      "p.protoB\031ProtoClientGetRoomHistoryb\006prot" +
-      "o3"
+      "\r\n\005limit\030\005 \001(\r\022\023\n\013document_id\030\006 \001(\004\"\035\n\tD" +
+      "irection\022\006\n\002UP\020\000\022\010\n\004DOWN\020\001\"f\n\034ClientGetR" +
+      "oomHistoryResponse\022!\n\010response\030\001 \001(\0132\017.p" +
+      "roto.Response\022#\n\007message\030\002 \003(\0132\022.proto.R",
+      "oomMessageB+\n\016net.iGap.protoB\031ProtoClien" +
+      "tGetRoomHistoryb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1939,7 +2003,7 @@ public final class ProtoClientGetRoomHistory {
     internal_static_proto_ClientGetRoomHistory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientGetRoomHistory_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "FirstMessageId", "Direction", "Limit", });
+        new java.lang.String[] { "Request", "RoomId", "FirstMessageId", "Direction", "Limit", "DocumentId", });
     internal_static_proto_ClientGetRoomHistoryResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientGetRoomHistoryResponse_fieldAccessorTable = new

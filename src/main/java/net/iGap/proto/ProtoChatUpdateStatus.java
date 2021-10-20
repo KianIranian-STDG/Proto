@@ -49,6 +49,11 @@ public final class ProtoChatUpdateStatus {
      * <code>optional .proto.RoomMessageStatus status = 4;</code>
      */
     net.iGap.proto.ProtoGlobal.RoomMessageStatus getStatus();
+
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    long getDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatUpdateStatus}
@@ -65,6 +70,7 @@ public final class ProtoChatUpdateStatus {
       roomId_ = 0L;
       messageId_ = 0L;
       status_ = 0;
+      documentId_ = 0L;
     }
 
     @java.lang.Override
@@ -119,6 +125,11 @@ public final class ProtoChatUpdateStatus {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              documentId_ = input.readUInt64();
               break;
             }
           }
@@ -199,6 +210,15 @@ public final class ProtoChatUpdateStatus {
       return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageStatus.UNRECOGNIZED : result;
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 5;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 5;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -223,6 +243,9 @@ public final class ProtoChatUpdateStatus {
       if (status_ != net.iGap.proto.ProtoGlobal.RoomMessageStatus.FAILED.getNumber()) {
         output.writeEnum(4, status_);
       }
+      if (documentId_ != 0L) {
+        output.writeUInt64(5, documentId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -245,6 +268,10 @@ public final class ProtoChatUpdateStatus {
       if (status_ != net.iGap.proto.ProtoGlobal.RoomMessageStatus.FAILED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, status_);
+      }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, documentId_);
       }
       memoizedSize = size;
       return size;
@@ -272,6 +299,8 @@ public final class ProtoChatUpdateStatus {
       result = result && (getMessageId()
           == other.getMessageId());
       result = result && status_ == other.status_;
+      result = result && (getDocumentId()
+          == other.getDocumentId());
       return result;
     }
 
@@ -294,6 +323,9 @@ public final class ProtoChatUpdateStatus {
           getMessageId());
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -424,6 +456,8 @@ public final class ProtoChatUpdateStatus {
 
         status_ = 0;
 
+        documentId_ = 0L;
+
         return this;
       }
 
@@ -454,6 +488,7 @@ public final class ProtoChatUpdateStatus {
         result.roomId_ = roomId_;
         result.messageId_ = messageId_;
         result.status_ = status_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -506,6 +541,9 @@ public final class ProtoChatUpdateStatus {
         }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
         }
         onChanged();
         return this;
@@ -745,6 +783,32 @@ public final class ProtoChatUpdateStatus {
         onChanged();
         return this;
       }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 5;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -844,6 +908,16 @@ public final class ProtoChatUpdateStatus {
      */
     com.google.protobuf.ByteString
         getUpdaterAuthorHashBytes();
+
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    long getDocumentId();
+
+    /**
+     * <code>optional uint64 version_document_id = 8;</code>
+     */
+    long getVersionDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatUpdateStatusResponse}
@@ -862,6 +936,8 @@ public final class ProtoChatUpdateStatus {
       status_ = 0;
       statusVersion_ = 0L;
       updaterAuthorHash_ = "";
+      documentId_ = 0L;
+      versionDocumentId_ = 0L;
     }
 
     @java.lang.Override
@@ -927,6 +1003,16 @@ public final class ProtoChatUpdateStatus {
               java.lang.String s = input.readStringRequireUtf8();
 
               updaterAuthorHash_ = s;
+              break;
+            }
+            case 56: {
+
+              documentId_ = input.readUInt64();
+              break;
+            }
+            case 64: {
+
+              versionDocumentId_ = input.readUInt64();
               break;
             }
           }
@@ -1050,6 +1136,24 @@ public final class ProtoChatUpdateStatus {
       }
     }
 
+    public static final int DOCUMENT_ID_FIELD_NUMBER = 7;
+    private long documentId_;
+    /**
+     * <code>optional uint64 document_id = 7;</code>
+     */
+    public long getDocumentId() {
+      return documentId_;
+    }
+
+    public static final int VERSION_DOCUMENT_ID_FIELD_NUMBER = 8;
+    private long versionDocumentId_;
+    /**
+     * <code>optional uint64 version_document_id = 8;</code>
+     */
+    public long getVersionDocumentId() {
+      return versionDocumentId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1079,6 +1183,12 @@ public final class ProtoChatUpdateStatus {
       }
       if (!getUpdaterAuthorHashBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, updaterAuthorHash_);
+      }
+      if (documentId_ != 0L) {
+        output.writeUInt64(7, documentId_);
+      }
+      if (versionDocumentId_ != 0L) {
+        output.writeUInt64(8, versionDocumentId_);
       }
     }
 
@@ -1110,6 +1220,14 @@ public final class ProtoChatUpdateStatus {
       if (!getUpdaterAuthorHashBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, updaterAuthorHash_);
       }
+      if (documentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(7, documentId_);
+      }
+      if (versionDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(8, versionDocumentId_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -1140,6 +1258,10 @@ public final class ProtoChatUpdateStatus {
           == other.getStatusVersion());
       result = result && getUpdaterAuthorHash()
           .equals(other.getUpdaterAuthorHash());
+      result = result && (getDocumentId()
+          == other.getDocumentId());
+      result = result && (getVersionDocumentId()
+          == other.getVersionDocumentId());
       return result;
     }
 
@@ -1167,6 +1289,12 @@ public final class ProtoChatUpdateStatus {
           getStatusVersion());
       hash = (37 * hash) + UPDATER_AUTHOR_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getUpdaterAuthorHash().hashCode();
+      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDocumentId());
+      hash = (37 * hash) + VERSION_DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVersionDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1301,6 +1429,10 @@ public final class ProtoChatUpdateStatus {
 
         updaterAuthorHash_ = "";
 
+        documentId_ = 0L;
+
+        versionDocumentId_ = 0L;
+
         return this;
       }
 
@@ -1333,6 +1465,8 @@ public final class ProtoChatUpdateStatus {
         result.status_ = status_;
         result.statusVersion_ = statusVersion_;
         result.updaterAuthorHash_ = updaterAuthorHash_;
+        result.documentId_ = documentId_;
+        result.versionDocumentId_ = versionDocumentId_;
         onBuilt();
         return result;
       }
@@ -1392,6 +1526,12 @@ public final class ProtoChatUpdateStatus {
         if (!other.getUpdaterAuthorHash().isEmpty()) {
           updaterAuthorHash_ = other.updaterAuthorHash_;
           onChanged();
+        }
+        if (other.getDocumentId() != 0L) {
+          setDocumentId(other.getDocumentId());
+        }
+        if (other.getVersionDocumentId() != 0L) {
+          setVersionDocumentId(other.getVersionDocumentId());
         }
         onChanged();
         return this;
@@ -1726,6 +1866,58 @@ public final class ProtoChatUpdateStatus {
         onChanged();
         return this;
       }
+
+      private long documentId_ ;
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public long getDocumentId() {
+        return documentId_;
+      }
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public Builder setDocumentId(long value) {
+        
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 document_id = 7;</code>
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long versionDocumentId_ ;
+      /**
+       * <code>optional uint64 version_document_id = 8;</code>
+       */
+      public long getVersionDocumentId() {
+        return versionDocumentId_;
+      }
+      /**
+       * <code>optional uint64 version_document_id = 8;</code>
+       */
+      public Builder setVersionDocumentId(long value) {
+        
+        versionDocumentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 version_document_id = 8;</code>
+       */
+      public Builder clearVersionDocumentId() {
+        
+        versionDocumentId_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1795,17 +1987,19 @@ public final class ProtoChatUpdateStatus {
   static {
     java.lang.String[] descriptorData = {
       "\n\026ChatUpdateStatus.proto\022\005proto\032\rRequest" +
-      ".proto\032\016Response.proto\032\014Global.proto\"\202\001\n" +
+      ".proto\032\016Response.proto\032\014Global.proto\"\227\001\n" +
       "\020ChatUpdateStatus\022\037\n\007request\030\001 \001(\0132\016.pro" +
       "to.Request\022\017\n\007room_id\030\002 \001(\004\022\022\n\nmessage_i" +
       "d\030\003 \001(\004\022(\n\006status\030\004 \001(\0162\030.proto.RoomMess" +
-      "ageStatus\"\301\001\n\030ChatUpdateStatusResponse\022!" +
-      "\n\010response\030\001 \001(\0132\017.proto.Response\022\017\n\007roo" +
-      "m_id\030\002 \001(\004\022\022\n\nmessage_id\030\003 \001(\004\022(\n\006status" +
-      "\030\004 \001(\0162\030.proto.RoomMessageStatus\022\026\n\016stat" +
-      "us_version\030\005 \001(\004\022\033\n\023updater_author_hash\030",
-      "\006 \001(\tB\'\n\016net.iGap.protoB\025ProtoChatUpdate" +
-      "Statusb\006proto3"
+      "ageStatus\022\023\n\013document_id\030\005 \001(\004\"\363\001\n\030ChatU" +
+      "pdateStatusResponse\022!\n\010response\030\001 \001(\0132\017." +
+      "proto.Response\022\017\n\007room_id\030\002 \001(\004\022\022\n\nmessa" +
+      "ge_id\030\003 \001(\004\022(\n\006status\030\004 \001(\0162\030.proto.Room" +
+      "MessageStatus\022\026\n\016status_version\030\005 \001(\004\022\033\n",
+      "\023updater_author_hash\030\006 \001(\t\022\023\n\013document_i" +
+      "d\030\007 \001(\004\022\033\n\023version_document_id\030\010 \001(\004B\'\n\016" +
+      "net.iGap.protoB\025ProtoChatUpdateStatusb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1827,13 +2021,13 @@ public final class ProtoChatUpdateStatus {
     internal_static_proto_ChatUpdateStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatUpdateStatus_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "MessageId", "Status", });
+        new java.lang.String[] { "Request", "RoomId", "MessageId", "Status", "DocumentId", });
     internal_static_proto_ChatUpdateStatusResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ChatUpdateStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatUpdateStatusResponse_descriptor,
-        new java.lang.String[] { "Response", "RoomId", "MessageId", "Status", "StatusVersion", "UpdaterAuthorHash", });
+        new java.lang.String[] { "Response", "RoomId", "MessageId", "Status", "StatusVersion", "UpdaterAuthorHash", "DocumentId", "VersionDocumentId", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
