@@ -773,13 +773,13 @@ public final class ProtoStoryGetStories {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
+     * <code>optional .proto.Originator originator = 1;</code>
      */
     int getOriginatorValue();
     /**
-     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
+     * <code>optional .proto.Originator originator = 1;</code>
      */
-    net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator getOriginator();
+    net.iGap.proto.ProtoGlobal.Originator getOriginator();
 
     /**
      * <code>optional uint64 originator_id = 2 [jstype = JS_STRING];</code>
@@ -937,119 +937,21 @@ public final class ProtoStoryGetStories {
               net.iGap.proto.ProtoStoryGetStories.GroupedStories.class, net.iGap.proto.ProtoStoryGetStories.GroupedStories.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code proto.GroupedStories.Originator}
-     */
-    public enum Originator
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>User = 0;</code>
-       */
-      User(0),
-      /**
-       * <code>Room = 1;</code>
-       */
-      Room(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>User = 0;</code>
-       */
-      public static final int User_VALUE = 0;
-      /**
-       * <code>Room = 1;</code>
-       */
-      public static final int Room_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Originator valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static Originator forNumber(int value) {
-        switch (value) {
-          case 0: return User;
-          case 1: return Room;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Originator>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Originator> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Originator>() {
-              public Originator findValueByNumber(int number) {
-                return Originator.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return net.iGap.proto.ProtoStoryGetStories.GroupedStories.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Originator[] VALUES = values();
-
-      public static Originator valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Originator(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:proto.GroupedStories.Originator)
-    }
-
     private int bitField0_;
     public static final int ORIGINATOR_FIELD_NUMBER = 1;
     private int originator_;
     /**
-     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
+     * <code>optional .proto.Originator originator = 1;</code>
      */
     public int getOriginatorValue() {
       return originator_;
     }
     /**
-     * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
+     * <code>optional .proto.Originator originator = 1;</code>
      */
-    public net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator getOriginator() {
-      net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator result = net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.valueOf(originator_);
-      return result == null ? net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.UNRECOGNIZED : result;
+    public net.iGap.proto.ProtoGlobal.Originator getOriginator() {
+      net.iGap.proto.ProtoGlobal.Originator result = net.iGap.proto.ProtoGlobal.Originator.valueOf(originator_);
+      return result == null ? net.iGap.proto.ProtoGlobal.Originator.UNRECOGNIZED : result;
     }
 
     public static final int ORIGINATOR_ID_FIELD_NUMBER = 2;
@@ -1160,7 +1062,7 @@ public final class ProtoStoryGetStories {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (originator_ != net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.User.getNumber()) {
+      if (originator_ != net.iGap.proto.ProtoGlobal.Originator.USER.getNumber()) {
         output.writeEnum(1, originator_);
       }
       if (originatorId_ != 0L) {
@@ -1185,7 +1087,7 @@ public final class ProtoStoryGetStories {
       if (size != -1) return size;
 
       size = 0;
-      if (originator_ != net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.User.getNumber()) {
+      if (originator_ != net.iGap.proto.ProtoGlobal.Originator.USER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, originator_);
       }
@@ -1548,13 +1450,13 @@ public final class ProtoStoryGetStories {
 
       private int originator_ = 0;
       /**
-       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
+       * <code>optional .proto.Originator originator = 1;</code>
        */
       public int getOriginatorValue() {
         return originator_;
       }
       /**
-       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
+       * <code>optional .proto.Originator originator = 1;</code>
        */
       public Builder setOriginatorValue(int value) {
         originator_ = value;
@@ -1562,16 +1464,16 @@ public final class ProtoStoryGetStories {
         return this;
       }
       /**
-       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
+       * <code>optional .proto.Originator originator = 1;</code>
        */
-      public net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator getOriginator() {
-        net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator result = net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.valueOf(originator_);
-        return result == null ? net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator.UNRECOGNIZED : result;
+      public net.iGap.proto.ProtoGlobal.Originator getOriginator() {
+        net.iGap.proto.ProtoGlobal.Originator result = net.iGap.proto.ProtoGlobal.Originator.valueOf(originator_);
+        return result == null ? net.iGap.proto.ProtoGlobal.Originator.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
+       * <code>optional .proto.Originator originator = 1;</code>
        */
-      public Builder setOriginator(net.iGap.proto.ProtoStoryGetStories.GroupedStories.Originator value) {
+      public Builder setOriginator(net.iGap.proto.ProtoGlobal.Originator value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1581,7 +1483,7 @@ public final class ProtoStoryGetStories {
         return this;
       }
       /**
-       * <code>optional .proto.GroupedStories.Originator originator = 1;</code>
+       * <code>optional .proto.Originator originator = 1;</code>
        */
       public Builder clearOriginator() {
         
@@ -3049,17 +2951,16 @@ public final class ProtoStoryGetStories {
       "proto\032\016Response.proto\032\014Global.proto\"Y\n\017S" +
       "toryGetStories\022\037\n\007request\030\001 \001(\0132\016.proto." +
       "Request\022%\n\npagination\030\002 \001(\0132\021.proto.Pagi" +
-      "nation\"\351\001\n\016GroupedStories\0224\n\noriginator\030" +
-      "\001 \001(\0162 .proto.GroupedStories.Originator\022" +
-      "\031\n\roriginator_id\030\002 \001(\004B\0020\001\022\027\n\017originator" +
-      "_name\030\003 \001(\t\022\036\n\026seen_all_group_stories\030\004 " +
-      "\001(\010\022\035\n\007stories\030\005 \003(\0132\014.proto.Story\022\014\n\004se" +
-      "lf\030\006 \001(\010\" \n\nOriginator\022\010\n\004User\020\000\022\010\n\004Room",
-      "\020\001\"\206\001\n\027StoryGetStoriesResponse\022!\n\010respon" +
-      "se\030\001 \001(\0132\017.proto.Response\022\030\n\020seen_all_st" +
-      "ories\030\002 \001(\010\022.\n\017grouped_stories\030\003 \003(\0132\025.p" +
-      "roto.GroupedStoriesB&\n\016net.iGap.protoB\024P" +
-      "rotoStoryGetStoriesb\006proto3"
+      "nation\"\270\001\n\016GroupedStories\022%\n\noriginator\030" +
+      "\001 \001(\0162\021.proto.Originator\022\031\n\roriginator_i" +
+      "d\030\002 \001(\004B\0020\001\022\027\n\017originator_name\030\003 \001(\t\022\036\n\026" +
+      "seen_all_group_stories\030\004 \001(\010\022\035\n\007stories\030" +
+      "\005 \003(\0132\014.proto.Story\022\014\n\004self\030\006 \001(\010\"\206\001\n\027St" +
+      "oryGetStoriesResponse\022!\n\010response\030\001 \001(\0132",
+      "\017.proto.Response\022\030\n\020seen_all_stories\030\002 \001" +
+      "(\010\022.\n\017grouped_stories\030\003 \003(\0132\025.proto.Grou" +
+      "pedStoriesB&\n\016net.iGap.protoB\024ProtoStory" +
+      "GetStoriesb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
