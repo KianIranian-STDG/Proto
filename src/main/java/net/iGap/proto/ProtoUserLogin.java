@@ -1808,6 +1808,11 @@ public final class ProtoUserLogin {
      * <code>optional int32 role = 11;</code>
      */
     int getRole();
+
+    /**
+     * <code>optional bool need_fcm_token = 12;</code>
+     */
+    boolean getNeedFcmToken();
   }
   /**
    * Protobuf type {@code proto.UserLoginResponse}
@@ -1831,6 +1836,7 @@ public final class ProtoUserLogin {
       accessToken_ = "";
       contactHash_ = "";
       role_ = 0;
+      needFcmToken_ = false;
     }
 
     @java.lang.Override
@@ -1922,6 +1928,11 @@ public final class ProtoUserLogin {
             case 88: {
 
               role_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              needFcmToken_ = input.readBool();
               break;
             }
           }
@@ -2133,6 +2144,15 @@ public final class ProtoUserLogin {
       return role_;
     }
 
+    public static final int NEED_FCM_TOKEN_FIELD_NUMBER = 12;
+    private boolean needFcmToken_;
+    /**
+     * <code>optional bool need_fcm_token = 12;</code>
+     */
+    public boolean getNeedFcmToken() {
+      return needFcmToken_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2177,6 +2197,9 @@ public final class ProtoUserLogin {
       }
       if (role_ != 0) {
         output.writeInt32(11, role_);
+      }
+      if (needFcmToken_ != false) {
+        output.writeBool(12, needFcmToken_);
       }
     }
 
@@ -2226,6 +2249,10 @@ public final class ProtoUserLogin {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, role_);
       }
+      if (needFcmToken_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, needFcmToken_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -2267,6 +2294,8 @@ public final class ProtoUserLogin {
           .equals(other.getContactHash());
       result = result && (getRole()
           == other.getRole());
+      result = result && (getNeedFcmToken()
+          == other.getNeedFcmToken());
       return result;
     }
 
@@ -2306,6 +2335,9 @@ public final class ProtoUserLogin {
       hash = (53 * hash) + getContactHash().hashCode();
       hash = (37 * hash) + ROLE_FIELD_NUMBER;
       hash = (53 * hash) + getRole();
+      hash = (37 * hash) + NEED_FCM_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getNeedFcmToken());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2450,6 +2482,8 @@ public final class ProtoUserLogin {
 
         role_ = 0;
 
+        needFcmToken_ = false;
+
         return this;
       }
 
@@ -2487,6 +2521,7 @@ public final class ProtoUserLogin {
         result.accessToken_ = accessToken_;
         result.contactHash_ = contactHash_;
         result.role_ = role_;
+        result.needFcmToken_ = needFcmToken_;
         onBuilt();
         return result;
       }
@@ -2563,6 +2598,9 @@ public final class ProtoUserLogin {
         }
         if (other.getRole() != 0) {
           setRole(other.getRole());
+        }
+        if (other.getNeedFcmToken() != false) {
+          setNeedFcmToken(other.getNeedFcmToken());
         }
         onChanged();
         return this;
@@ -3095,6 +3133,32 @@ public final class ProtoUserLogin {
         onChanged();
         return this;
       }
+
+      private boolean needFcmToken_ ;
+      /**
+       * <code>optional bool need_fcm_token = 12;</code>
+       */
+      public boolean getNeedFcmToken() {
+        return needFcmToken_;
+      }
+      /**
+       * <code>optional bool need_fcm_token = 12;</code>
+       */
+      public Builder setNeedFcmToken(boolean value) {
+        
+        needFcmToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool need_fcm_token = 12;</code>
+       */
+      public Builder clearNeedFcmToken() {
+        
+        needFcmToken_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -3172,7 +3236,7 @@ public final class ProtoUserLogin {
       "Platform\022\030\n\020platform_version\030\010 \001(\t\022\035\n\006de" +
       "vice\030\t \001(\0162\r.proto.Device\022\023\n\013device_name" +
       "\030\n \001(\t\022!\n\010language\030\013 \001(\0162\017.proto.Languag" +
-      "e\022\025\n\rsymmetric_key\030\014 \001(\014\"\275\002\n\021UserLoginRe",
+      "e\022\025\n\rsymmetric_key\030\014 \001(\014\"\325\002\n\021UserLoginRe",
       "sponse\022!\n\010response\030\001 \001(\0132\017.proto.Respons" +
       "e\022\031\n\021deprecated_client\030\002 \001(\010\022\033\n\023secondar" +
       "y_node_name\030\003 \001(\t\022\030\n\020update_available\030\004 " +
@@ -3180,8 +3244,9 @@ public final class ProtoUserLogin {
       "od\030\005 \001(\r\022\025\n\rwallet_active\030\006 \001(\010\022\022\n\nmpl_a" +
       "ctive\030\007 \001(\010\022!\n\031wallet_agreement_accepted" +
       "\030\010 \001(\010\022\024\n\014access_token\030\t \001(\t\022\024\n\014contact_" +
-      "hash\030\n \001(\t\022\014\n\004role\030\013 \001(\005B \n\016net.iGap.pro" +
-      "toB\016ProtoUserLoginb\006proto3"
+      "hash\030\n \001(\t\022\014\n\004role\030\013 \001(\005\022\026\n\016need_fcm_tok" +
+      "en\030\014 \001(\010B \n\016net.iGap.protoB\016ProtoUserLog" +
+      "inb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3209,7 +3274,7 @@ public final class ProtoUserLogin {
     internal_static_proto_UserLoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserLoginResponse_descriptor,
-        new java.lang.String[] { "Response", "DeprecatedClient", "SecondaryNodeName", "UpdateAvailable", "ChatDeleteMessageForBothPeriod", "WalletActive", "MplActive", "WalletAgreementAccepted", "AccessToken", "ContactHash", "Role", });
+        new java.lang.String[] { "Response", "DeprecatedClient", "SecondaryNodeName", "UpdateAvailable", "ChatDeleteMessageForBothPeriod", "WalletActive", "MplActive", "WalletAgreementAccepted", "AccessToken", "ContactHash", "Role", "NeedFcmToken", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
