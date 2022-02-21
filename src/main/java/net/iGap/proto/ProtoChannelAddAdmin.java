@@ -202,6 +202,21 @@ public final class ProtoChannelAddAdmin {
        * <code>optional bool add_admin = 9;</code>
        */
       boolean getAddAdmin();
+
+      /**
+       * <code>optional bool add_story = 10;</code>
+       */
+      boolean getAddStory();
+
+      /**
+       * <code>optional bool delete_story = 11;</code>
+       */
+      boolean getDeleteStory();
+
+      /**
+       * <code>optional bool show_story_views = 12;</code>
+       */
+      boolean getShowStoryViews();
     }
     /**
      * Protobuf type {@code proto.ChannelAddAdmin.AdminRights}
@@ -224,6 +239,9 @@ public final class ProtoChannelAddAdmin {
         banMember_ = false;
         getMember_ = false;
         addAdmin_ = false;
+        addStory_ = false;
+        deleteStory_ = false;
+        showStoryViews_ = false;
       }
 
       @java.lang.Override
@@ -294,6 +312,21 @@ public final class ProtoChannelAddAdmin {
               case 72: {
 
                 addAdmin_ = input.readBool();
+                break;
+              }
+              case 80: {
+
+                addStory_ = input.readBool();
+                break;
+              }
+              case 88: {
+
+                deleteStory_ = input.readBool();
+                break;
+              }
+              case 96: {
+
+                showStoryViews_ = input.readBool();
                 break;
               }
             }
@@ -400,6 +433,33 @@ public final class ProtoChannelAddAdmin {
         return addAdmin_;
       }
 
+      public static final int ADD_STORY_FIELD_NUMBER = 10;
+      private boolean addStory_;
+      /**
+       * <code>optional bool add_story = 10;</code>
+       */
+      public boolean getAddStory() {
+        return addStory_;
+      }
+
+      public static final int DELETE_STORY_FIELD_NUMBER = 11;
+      private boolean deleteStory_;
+      /**
+       * <code>optional bool delete_story = 11;</code>
+       */
+      public boolean getDeleteStory() {
+        return deleteStory_;
+      }
+
+      public static final int SHOW_STORY_VIEWS_FIELD_NUMBER = 12;
+      private boolean showStoryViews_;
+      /**
+       * <code>optional bool show_story_views = 12;</code>
+       */
+      public boolean getShowStoryViews() {
+        return showStoryViews_;
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -438,6 +498,15 @@ public final class ProtoChannelAddAdmin {
         }
         if (addAdmin_ != false) {
           output.writeBool(9, addAdmin_);
+        }
+        if (addStory_ != false) {
+          output.writeBool(10, addStory_);
+        }
+        if (deleteStory_ != false) {
+          output.writeBool(11, deleteStory_);
+        }
+        if (showStoryViews_ != false) {
+          output.writeBool(12, showStoryViews_);
         }
       }
 
@@ -482,6 +551,18 @@ public final class ProtoChannelAddAdmin {
           size += com.google.protobuf.CodedOutputStream
             .computeBoolSize(9, addAdmin_);
         }
+        if (addStory_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(10, addStory_);
+        }
+        if (deleteStory_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(11, deleteStory_);
+        }
+        if (showStoryViews_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(12, showStoryViews_);
+        }
         memoizedSize = size;
         return size;
       }
@@ -516,6 +597,12 @@ public final class ProtoChannelAddAdmin {
             == other.getGetMember());
         result = result && (getAddAdmin()
             == other.getAddAdmin());
+        result = result && (getAddStory()
+            == other.getAddStory());
+        result = result && (getDeleteStory()
+            == other.getDeleteStory());
+        result = result && (getShowStoryViews()
+            == other.getShowStoryViews());
         return result;
       }
 
@@ -553,6 +640,15 @@ public final class ProtoChannelAddAdmin {
         hash = (37 * hash) + ADD_ADMIN_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getAddAdmin());
+        hash = (37 * hash) + ADD_STORY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getAddStory());
+        hash = (37 * hash) + DELETE_STORY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getDeleteStory());
+        hash = (37 * hash) + SHOW_STORY_VIEWS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getShowStoryViews());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -689,6 +785,12 @@ public final class ProtoChannelAddAdmin {
 
           addAdmin_ = false;
 
+          addStory_ = false;
+
+          deleteStory_ = false;
+
+          showStoryViews_ = false;
+
           return this;
         }
 
@@ -720,6 +822,9 @@ public final class ProtoChannelAddAdmin {
           result.banMember_ = banMember_;
           result.getMember_ = getMember_;
           result.addAdmin_ = addAdmin_;
+          result.addStory_ = addStory_;
+          result.deleteStory_ = deleteStory_;
+          result.showStoryViews_ = showStoryViews_;
           onBuilt();
           return result;
         }
@@ -787,6 +892,15 @@ public final class ProtoChannelAddAdmin {
           }
           if (other.getAddAdmin() != false) {
             setAddAdmin(other.getAddAdmin());
+          }
+          if (other.getAddStory() != false) {
+            setAddStory(other.getAddStory());
+          }
+          if (other.getDeleteStory() != false) {
+            setDeleteStory(other.getDeleteStory());
+          }
+          if (other.getShowStoryViews() != false) {
+            setShowStoryViews(other.getShowStoryViews());
           }
           onChanged();
           return this;
@@ -1044,6 +1158,84 @@ public final class ProtoChannelAddAdmin {
         public Builder clearAddAdmin() {
           
           addAdmin_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean addStory_ ;
+        /**
+         * <code>optional bool add_story = 10;</code>
+         */
+        public boolean getAddStory() {
+          return addStory_;
+        }
+        /**
+         * <code>optional bool add_story = 10;</code>
+         */
+        public Builder setAddStory(boolean value) {
+          
+          addStory_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional bool add_story = 10;</code>
+         */
+        public Builder clearAddStory() {
+          
+          addStory_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean deleteStory_ ;
+        /**
+         * <code>optional bool delete_story = 11;</code>
+         */
+        public boolean getDeleteStory() {
+          return deleteStory_;
+        }
+        /**
+         * <code>optional bool delete_story = 11;</code>
+         */
+        public Builder setDeleteStory(boolean value) {
+          
+          deleteStory_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional bool delete_story = 11;</code>
+         */
+        public Builder clearDeleteStory() {
+          
+          deleteStory_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean showStoryViews_ ;
+        /**
+         * <code>optional bool show_story_views = 12;</code>
+         */
+        public boolean getShowStoryViews() {
+          return showStoryViews_;
+        }
+        /**
+         * <code>optional bool show_story_views = 12;</code>
+         */
+        public Builder setShowStoryViews(boolean value) {
+          
+          showStoryViews_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional bool show_story_views = 12;</code>
+         */
+        public Builder clearShowStoryViews() {
+          
+          showStoryViews_ = false;
           onChanged();
           return this;
         }
@@ -2745,21 +2937,23 @@ public final class ProtoChannelAddAdmin {
   static {
     java.lang.String[] descriptorData = {
       "\n\025ChannelAddAdmin.proto\022\005proto\032\rRequest." +
-      "proto\032\016Response.proto\"\333\002\n\017ChannelAddAdmi" +
+      "proto\032\016Response.proto\"\236\003\n\017ChannelAddAdmi" +
       "n\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007ro" +
       "om_id\030\002 \001(\004\022\021\n\tmember_id\030\003 \001(\004\0226\n\npermis" +
       "sion\030\004 \001(\0132\".proto.ChannelAddAdmin.Admin" +
-      "Rights\032\312\001\n\013AdminRights\022\023\n\013modify_room\030\001 " +
+      "Rights\032\215\002\n\013AdminRights\022\023\n\013modify_room\030\001 " +
       "\001(\010\022\024\n\014post_message\030\002 \001(\010\022\024\n\014edit_messag" +
       "e\030\003 \001(\010\022\026\n\016delete_message\030\004 \001(\010\022\023\n\013pin_m" +
       "essage\030\005 \001(\010\022\022\n\nadd_member\030\006 \001(\010\022\022\n\nban_" +
       "member\030\007 \001(\010\022\022\n\nget_member\030\010 \001(\010\022\021\n\tadd_",
-      "admin\030\t \001(\010\"\230\001\n\027ChannelAddAdminResponse\022" +
-      "!\n\010response\030\001 \001(\0132\017.proto.Response\022\017\n\007ro" +
-      "om_id\030\002 \001(\004\022\021\n\tmember_id\030\003 \001(\004\0226\n\npermis" +
-      "sion\030\004 \001(\0132\".proto.ChannelAddAdmin.Admin" +
-      "RightsB&\n\016net.iGap.protoB\024ProtoChannelAd" +
-      "dAdminb\006proto3"
+      "admin\030\t \001(\010\022\021\n\tadd_story\030\n \001(\010\022\024\n\014delete" +
+      "_story\030\013 \001(\010\022\030\n\020show_story_views\030\014 \001(\010\"\230" +
+      "\001\n\027ChannelAddAdminResponse\022!\n\010response\030\001" +
+      " \001(\0132\017.proto.Response\022\017\n\007room_id\030\002 \001(\004\022\021" +
+      "\n\tmember_id\030\003 \001(\004\0226\n\npermission\030\004 \001(\0132\"." +
+      "proto.ChannelAddAdmin.AdminRightsB&\n\016net" +
+      ".iGap.protoB\024ProtoChannelAddAdminb\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2786,7 +2980,7 @@ public final class ProtoChannelAddAdmin {
     internal_static_proto_ChannelAddAdmin_AdminRights_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelAddAdmin_AdminRights_descriptor,
-        new java.lang.String[] { "ModifyRoom", "PostMessage", "EditMessage", "DeleteMessage", "PinMessage", "AddMember", "BanMember", "GetMember", "AddAdmin", });
+        new java.lang.String[] { "ModifyRoom", "PostMessage", "EditMessage", "DeleteMessage", "PinMessage", "AddMember", "BanMember", "GetMember", "AddAdmin", "AddStory", "DeleteStory", "ShowStoryViews", });
     internal_static_proto_ChannelAddAdminResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ChannelAddAdminResponse_fieldAccessorTable = new
