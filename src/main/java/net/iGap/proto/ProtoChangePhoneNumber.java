@@ -32,21 +32,21 @@ public final class ProtoChangePhoneNumber {
     net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     java.lang.String getPhoneNumber();
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     com.google.protobuf.ByteString
         getPhoneNumberBytes();
 
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     java.lang.String getCountryCode();
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     com.google.protobuf.ByteString
         getCountryCodeBytes();
@@ -161,10 +161,10 @@ public final class ProtoChangePhoneNumber {
       return getRequest();
     }
 
-    public static final int PHONENUMBER_FIELD_NUMBER = 2;
+    public static final int PHONE_NUMBER_FIELD_NUMBER = 2;
     private volatile java.lang.Object phoneNumber_;
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     public java.lang.String getPhoneNumber() {
       java.lang.Object ref = phoneNumber_;
@@ -179,7 +179,7 @@ public final class ProtoChangePhoneNumber {
       }
     }
     /**
-     * <code>optional string phoneNumber = 2;</code>
+     * <code>optional string phone_number = 2;</code>
      */
     public com.google.protobuf.ByteString
         getPhoneNumberBytes() {
@@ -195,10 +195,10 @@ public final class ProtoChangePhoneNumber {
       }
     }
 
-    public static final int COUNTRYCODE_FIELD_NUMBER = 3;
+    public static final int COUNTRY_CODE_FIELD_NUMBER = 3;
     private volatile java.lang.Object countryCode_;
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     public java.lang.String getCountryCode() {
       java.lang.Object ref = countryCode_;
@@ -213,7 +213,7 @@ public final class ProtoChangePhoneNumber {
       }
     }
     /**
-     * <code>optional string countryCode = 3;</code>
+     * <code>optional string country_code = 3;</code>
      */
     public com.google.protobuf.ByteString
         getCountryCodeBytes() {
@@ -306,9 +306,9 @@ public final class ProtoChangePhoneNumber {
         hash = (37 * hash) + REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getRequest().hashCode();
       }
-      hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
+      hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getPhoneNumber().hashCode();
-      hash = (37 * hash) + COUNTRYCODE_FIELD_NUMBER;
+      hash = (37 * hash) + COUNTRY_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCountryCode().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -664,7 +664,7 @@ public final class ProtoChangePhoneNumber {
 
       private java.lang.Object phoneNumber_ = "";
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public java.lang.String getPhoneNumber() {
         java.lang.Object ref = phoneNumber_;
@@ -679,7 +679,7 @@ public final class ProtoChangePhoneNumber {
         }
       }
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public com.google.protobuf.ByteString
           getPhoneNumberBytes() {
@@ -695,7 +695,7 @@ public final class ProtoChangePhoneNumber {
         }
       }
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public Builder setPhoneNumber(
           java.lang.String value) {
@@ -708,7 +708,7 @@ public final class ProtoChangePhoneNumber {
         return this;
       }
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public Builder clearPhoneNumber() {
         
@@ -717,7 +717,7 @@ public final class ProtoChangePhoneNumber {
         return this;
       }
       /**
-       * <code>optional string phoneNumber = 2;</code>
+       * <code>optional string phone_number = 2;</code>
        */
       public Builder setPhoneNumberBytes(
           com.google.protobuf.ByteString value) {
@@ -733,7 +733,7 @@ public final class ProtoChangePhoneNumber {
 
       private java.lang.Object countryCode_ = "";
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public java.lang.String getCountryCode() {
         java.lang.Object ref = countryCode_;
@@ -748,7 +748,7 @@ public final class ProtoChangePhoneNumber {
         }
       }
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public com.google.protobuf.ByteString
           getCountryCodeBytes() {
@@ -764,7 +764,7 @@ public final class ProtoChangePhoneNumber {
         }
       }
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public Builder setCountryCode(
           java.lang.String value) {
@@ -777,7 +777,7 @@ public final class ProtoChangePhoneNumber {
         return this;
       }
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public Builder clearCountryCode() {
         
@@ -786,7 +786,7 @@ public final class ProtoChangePhoneNumber {
         return this;
       }
       /**
-       * <code>optional string countryCode = 3;</code>
+       * <code>optional string country_code = 3;</code>
        */
       public Builder setCountryCodeBytes(
           com.google.protobuf.ByteString value) {
@@ -1428,12 +1428,12 @@ public final class ProtoChangePhoneNumber {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ChangePhoneNumber.proto\022\005proto\032\rReques" +
-      "t.proto\032\016Response.proto\"^\n\021ChangePhoneNu" +
-      "mber\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\023\n" +
-      "\013phoneNumber\030\002 \001(\t\022\023\n\013countryCode\030\003 \001(\t\"" +
-      ">\n\031ChangePhoneNumberResponse\022!\n\010response" +
-      "\030\001 \001(\0132\017.proto.ResponseB(\n\016net.iGap.prot" +
-      "oB\026ProtoChangePhoneNumberb\006proto3"
+      "t.proto\032\016Response.proto\"`\n\021ChangePhoneNu" +
+      "mber\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\024\n" +
+      "\014phone_number\030\002 \001(\t\022\024\n\014country_code\030\003 \001(" +
+      "\t\">\n\031ChangePhoneNumberResponse\022!\n\010respon" +
+      "se\030\001 \001(\0132\017.proto.ResponseB(\n\016net.iGap.pr" +
+      "otoB\026ProtoChangePhoneNumberb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

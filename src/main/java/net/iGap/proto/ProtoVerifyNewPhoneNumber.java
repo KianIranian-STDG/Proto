@@ -32,11 +32,11 @@ public final class ProtoVerifyNewPhoneNumber {
     net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     java.lang.String getVerifyCode();
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     com.google.protobuf.ByteString
         getVerifyCodeBytes();
@@ -144,10 +144,10 @@ public final class ProtoVerifyNewPhoneNumber {
       return getRequest();
     }
 
-    public static final int VERIFYCODE_FIELD_NUMBER = 2;
+    public static final int VERIFY_CODE_FIELD_NUMBER = 2;
     private volatile java.lang.Object verifyCode_;
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     public java.lang.String getVerifyCode() {
       java.lang.Object ref = verifyCode_;
@@ -162,7 +162,7 @@ public final class ProtoVerifyNewPhoneNumber {
       }
     }
     /**
-     * <code>optional string verifyCode = 2;</code>
+     * <code>optional string verify_code = 2;</code>
      */
     public com.google.protobuf.ByteString
         getVerifyCodeBytes() {
@@ -247,7 +247,7 @@ public final class ProtoVerifyNewPhoneNumber {
         hash = (37 * hash) + REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getRequest().hashCode();
       }
-      hash = (37 * hash) + VERIFYCODE_FIELD_NUMBER;
+      hash = (37 * hash) + VERIFY_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getVerifyCode().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -596,7 +596,7 @@ public final class ProtoVerifyNewPhoneNumber {
 
       private java.lang.Object verifyCode_ = "";
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public java.lang.String getVerifyCode() {
         java.lang.Object ref = verifyCode_;
@@ -611,7 +611,7 @@ public final class ProtoVerifyNewPhoneNumber {
         }
       }
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public com.google.protobuf.ByteString
           getVerifyCodeBytes() {
@@ -627,7 +627,7 @@ public final class ProtoVerifyNewPhoneNumber {
         }
       }
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public Builder setVerifyCode(
           java.lang.String value) {
@@ -640,7 +640,7 @@ public final class ProtoVerifyNewPhoneNumber {
         return this;
       }
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public Builder clearVerifyCode() {
         
@@ -649,7 +649,7 @@ public final class ProtoVerifyNewPhoneNumber {
         return this;
       }
       /**
-       * <code>optional string verifyCode = 2;</code>
+       * <code>optional string verify_code = 2;</code>
        */
       public Builder setVerifyCodeBytes(
           com.google.protobuf.ByteString value) {
@@ -1291,12 +1291,12 @@ public final class ProtoVerifyNewPhoneNumber {
   static {
     java.lang.String[] descriptorData = {
       "\n\032VerifyNewPhoneNumber.proto\022\005proto\032\rReq" +
-      "uest.proto\032\016Response.proto\"K\n\024VerifyNewP" +
+      "uest.proto\032\016Response.proto\"L\n\024VerifyNewP" +
       "honeNumber\022\037\n\007request\030\001 \001(\0132\016.proto.Requ" +
-      "est\022\022\n\nverifyCode\030\002 \001(\t\"A\n\034VerifyNewPhon" +
-      "eNumberResponse\022!\n\010response\030\001 \001(\0132\017.prot" +
-      "o.ResponseB+\n\016net.iGap.protoB\031ProtoVerif" +
-      "yNewPhoneNumberb\006proto3"
+      "est\022\023\n\013verify_code\030\002 \001(\t\"A\n\034VerifyNewPho" +
+      "neNumberResponse\022!\n\010response\030\001 \001(\0132\017.pro" +
+      "to.ResponseB+\n\016net.iGap.protoB\031ProtoVeri" +
+      "fyNewPhoneNumberb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

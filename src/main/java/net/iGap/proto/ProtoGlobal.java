@@ -1275,131 +1275,6 @@ public final class ProtoGlobal {
   }
 
   /**
-   * Protobuf enum {@code proto.RoomType}
-   */
-  public enum RoomType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>CHAT = 0;</code>
-     */
-    CHAT(0),
-    /**
-     * <code>PRIVATE_GROUP = 1;</code>
-     */
-    PRIVATE_GROUP(1),
-    /**
-     * <code>PUBLIC_GROUP = 2;</code>
-     */
-    PUBLIC_GROUP(2),
-    /**
-     * <code>PRIVATE_CHANNEL = 3;</code>
-     */
-    PRIVATE_CHANNEL(3),
-    /**
-     * <code>PUBLIC_CHANNEL = 4;</code>
-     */
-    PUBLIC_CHANNEL(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>CHAT = 0;</code>
-     */
-    public static final int CHAT_VALUE = 0;
-    /**
-     * <code>PRIVATE_GROUP = 1;</code>
-     */
-    public static final int PRIVATE_GROUP_VALUE = 1;
-    /**
-     * <code>PUBLIC_GROUP = 2;</code>
-     */
-    public static final int PUBLIC_GROUP_VALUE = 2;
-    /**
-     * <code>PRIVATE_CHANNEL = 3;</code>
-     */
-    public static final int PRIVATE_CHANNEL_VALUE = 3;
-    /**
-     * <code>PUBLIC_CHANNEL = 4;</code>
-     */
-    public static final int PUBLIC_CHANNEL_VALUE = 4;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static RoomType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static RoomType forNumber(int value) {
-      switch (value) {
-        case 0: return CHAT;
-        case 1: return PRIVATE_GROUP;
-        case 2: return PUBLIC_GROUP;
-        case 3: return PRIVATE_CHANNEL;
-        case 4: return PUBLIC_CHANNEL;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<RoomType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        RoomType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<RoomType>() {
-            public RoomType findValueByNumber(int number) {
-              return RoomType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(9);
-    }
-
-    private static final RoomType[] VALUES = values();
-
-    public static RoomType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private RoomType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:proto.RoomType)
-  }
-
-  /**
    * Protobuf enum {@code proto.RoomMute}
    */
   public enum RoomMute
@@ -1471,7 +1346,7 @@ public final class ProtoGlobal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(10);
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(9);
     }
 
     private static final RoomMute[] VALUES = values();
@@ -1623,7 +1498,7 @@ public final class ProtoGlobal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(11);
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(10);
     }
 
     private static final PrivacyType[] VALUES = values();
@@ -1730,7 +1605,7 @@ public final class ProtoGlobal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(12);
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(11);
     }
 
     private static final PrivacyLevel[] VALUES = values();
@@ -59292,17 +59167,15 @@ public final class ProtoGlobal {
       "ECORDING_VOICE\020\007\022\021\n\rSENDING_VOICE\020\010\022\024\n\020S" +
       "ENDING_DOCUMENT\020\t\022\017\n\013SENDING_GIF\020\n\022\020\n\014SE",
       "NDING_FILE\020\013\022\024\n\020SENDING_LOCATION\020\014\022\024\n\020CH" +
-      "OOSING_CONTACT\020\r\022\014\n\010PAINTING\020\016*b\n\010RoomTy" +
-      "pe\022\010\n\004CHAT\020\000\022\021\n\rPRIVATE_GROUP\020\001\022\020\n\014PUBLI" +
-      "C_GROUP\020\002\022\023\n\017PRIVATE_CHANNEL\020\003\022\022\n\016PUBLIC" +
-      "_CHANNEL\020\004* \n\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MU" +
-      "TE\020\001*\233\001\n\013PrivacyType\022\017\n\013USER_STATUS\020\000\022\n\n" +
-      "\006AVATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016CHANNEL_I" +
-      "NVITE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVIDEO_CALL" +
-      "ING\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013SECRET_CHAT" +
-      "\020\007*?\n\014PrivacyLevel\022\r\n\tALLOW_ALL\020\000\022\014\n\010DEN",
-      "Y_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016net.iGap." +
-      "protoB\013ProtoGlobalb\006proto3"
+      "OOSING_CONTACT\020\r\022\014\n\010PAINTING\020\016* \n\010RoomMu" +
+      "te\022\n\n\006UNMUTE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013PrivacyType" +
+      "\022\017\n\013USER_STATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014GROUP_I" +
+      "NVITE\020\002\022\022\n\016CHANNEL_INVITE\020\003\022\021\n\rVOICE_CAL" +
+      "LING\020\004\022\021\n\rVIDEO_CALLING\020\005\022\022\n\016SCREEN_SHAR" +
+      "ING\020\006\022\017\n\013SECRET_CHAT\020\007*?\n\014PrivacyLevel\022\r" +
+      "\n\tALLOW_ALL\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016ALLOW_CON" +
+      "TACTS\020\002B\035\n\016net.iGap.protoB\013ProtoGlobalb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
