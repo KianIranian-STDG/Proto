@@ -32,14 +32,9 @@ public final class ProtoChangePhoneNumber {
     net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional string phone_number = 2;</code>
+     * <code>optional uint64 phone_number = 2;</code>
      */
-    java.lang.String getPhoneNumber();
-    /**
-     * <code>optional string phone_number = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getPhoneNumberBytes();
+    long getPhoneNumber();
 
     /**
      * <code>optional string country_code = 3;</code>
@@ -63,7 +58,7 @@ public final class ProtoChangePhoneNumber {
       super(builder);
     }
     private ChangePhoneNumber() {
-      phoneNumber_ = "";
+      phoneNumber_ = 0L;
       countryCode_ = "";
     }
 
@@ -105,10 +100,9 @@ public final class ProtoChangePhoneNumber {
 
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              phoneNumber_ = s;
+              phoneNumber_ = input.readUInt64();
               break;
             }
             case 26: {
@@ -162,37 +156,12 @@ public final class ProtoChangePhoneNumber {
     }
 
     public static final int PHONE_NUMBER_FIELD_NUMBER = 2;
-    private volatile java.lang.Object phoneNumber_;
+    private long phoneNumber_;
     /**
-     * <code>optional string phone_number = 2;</code>
+     * <code>optional uint64 phone_number = 2;</code>
      */
-    public java.lang.String getPhoneNumber() {
-      java.lang.Object ref = phoneNumber_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        phoneNumber_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string phone_number = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPhoneNumberBytes() {
-      java.lang.Object ref = phoneNumber_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        phoneNumber_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getPhoneNumber() {
+      return phoneNumber_;
     }
 
     public static final int COUNTRY_CODE_FIELD_NUMBER = 3;
@@ -244,8 +213,8 @@ public final class ProtoChangePhoneNumber {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
-      if (!getPhoneNumberBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, phoneNumber_);
+      if (phoneNumber_ != 0L) {
+        output.writeUInt64(2, phoneNumber_);
       }
       if (!getCountryCodeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, countryCode_);
@@ -261,8 +230,9 @@ public final class ProtoChangePhoneNumber {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
-      if (!getPhoneNumberBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, phoneNumber_);
+      if (phoneNumber_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, phoneNumber_);
       }
       if (!getCountryCodeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, countryCode_);
@@ -288,8 +258,8 @@ public final class ProtoChangePhoneNumber {
         result = result && getRequest()
             .equals(other.getRequest());
       }
-      result = result && getPhoneNumber()
-          .equals(other.getPhoneNumber());
+      result = result && (getPhoneNumber()
+          == other.getPhoneNumber());
       result = result && getCountryCode()
           .equals(other.getCountryCode());
       return result;
@@ -307,7 +277,8 @@ public final class ProtoChangePhoneNumber {
         hash = (53 * hash) + getRequest().hashCode();
       }
       hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
-      hash = (53 * hash) + getPhoneNumber().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPhoneNumber());
       hash = (37 * hash) + COUNTRY_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCountryCode().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -434,7 +405,7 @@ public final class ProtoChangePhoneNumber {
           request_ = null;
           requestBuilder_ = null;
         }
-        phoneNumber_ = "";
+        phoneNumber_ = 0L;
 
         countryCode_ = "";
 
@@ -511,9 +482,8 @@ public final class ProtoChangePhoneNumber {
         if (other.hasRequest()) {
           mergeRequest(other.getRequest());
         }
-        if (!other.getPhoneNumber().isEmpty()) {
-          phoneNumber_ = other.phoneNumber_;
-          onChanged();
+        if (other.getPhoneNumber() != 0L) {
+          setPhoneNumber(other.getPhoneNumber());
         }
         if (!other.getCountryCode().isEmpty()) {
           countryCode_ = other.countryCode_;
@@ -662,71 +632,28 @@ public final class ProtoChangePhoneNumber {
         return requestBuilder_;
       }
 
-      private java.lang.Object phoneNumber_ = "";
+      private long phoneNumber_ ;
       /**
-       * <code>optional string phone_number = 2;</code>
+       * <code>optional uint64 phone_number = 2;</code>
        */
-      public java.lang.String getPhoneNumber() {
-        java.lang.Object ref = phoneNumber_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          phoneNumber_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getPhoneNumber() {
+        return phoneNumber_;
       }
       /**
-       * <code>optional string phone_number = 2;</code>
+       * <code>optional uint64 phone_number = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getPhoneNumberBytes() {
-        java.lang.Object ref = phoneNumber_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          phoneNumber_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string phone_number = 2;</code>
-       */
-      public Builder setPhoneNumber(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setPhoneNumber(long value) {
+        
         phoneNumber_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string phone_number = 2;</code>
+       * <code>optional uint64 phone_number = 2;</code>
        */
       public Builder clearPhoneNumber() {
         
-        phoneNumber_ = getDefaultInstance().getPhoneNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string phone_number = 2;</code>
-       */
-      public Builder setPhoneNumberBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        phoneNumber_ = value;
+        phoneNumber_ = 0L;
         onChanged();
         return this;
       }
@@ -1430,7 +1357,7 @@ public final class ProtoChangePhoneNumber {
       "\n\027ChangePhoneNumber.proto\022\005proto\032\rReques" +
       "t.proto\032\016Response.proto\"`\n\021ChangePhoneNu" +
       "mber\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\024\n" +
-      "\014phone_number\030\002 \001(\t\022\024\n\014country_code\030\003 \001(" +
+      "\014phone_number\030\002 \001(\004\022\024\n\014country_code\030\003 \001(" +
       "\t\">\n\031ChangePhoneNumberResponse\022!\n\010respon" +
       "se\030\001 \001(\0132\017.proto.ResponseB(\n\016net.iGap.pr" +
       "otoB\026ProtoChangePhoneNumberb\006proto3"
