@@ -1039,13 +1039,13 @@ public final class ProtoClientSearch {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>optional .proto.ClientSearchResponse.Info.Category info = 1;</code>
+       * <code>optional .proto.ClientSearchResponse.Info.Category category = 1;</code>
        */
-      int getInfoValue();
+      int getCategoryValue();
       /**
-       * <code>optional .proto.ClientSearchResponse.Info.Category info = 1;</code>
+       * <code>optional .proto.ClientSearchResponse.Info.Category category = 1;</code>
        */
-      net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category getInfo();
+      net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category getCategory();
 
       /**
        * <code>optional .proto.ClientSearchResponse.Info.Type type = 2;</code>
@@ -1094,7 +1094,7 @@ public final class ProtoClientSearch {
         super(builder);
       }
       private Info() {
-        info_ = 0;
+        category_ = 0;
         type_ = 0;
       }
 
@@ -1126,7 +1126,7 @@ public final class ProtoClientSearch {
               case 8: {
                 int rawValue = input.readEnum();
 
-                info_ = rawValue;
+                category_ = rawValue;
                 break;
               }
               case 16: {
@@ -1380,19 +1380,19 @@ public final class ProtoClientSearch {
         // @@protoc_insertion_point(enum_scope:proto.ClientSearchResponse.Info.Type)
       }
 
-      public static final int INFO_FIELD_NUMBER = 1;
-      private int info_;
+      public static final int CATEGORY_FIELD_NUMBER = 1;
+      private int category_;
       /**
-       * <code>optional .proto.ClientSearchResponse.Info.Category info = 1;</code>
+       * <code>optional .proto.ClientSearchResponse.Info.Category category = 1;</code>
        */
-      public int getInfoValue() {
-        return info_;
+      public int getCategoryValue() {
+        return category_;
       }
       /**
-       * <code>optional .proto.ClientSearchResponse.Info.Category info = 1;</code>
+       * <code>optional .proto.ClientSearchResponse.Info.Category category = 1;</code>
        */
-      public net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category getInfo() {
-        net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category result = net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.valueOf(info_);
+      public net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category getCategory() {
+        net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category result = net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.valueOf(category_);
         return result == null ? net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.UNRECOGNIZED : result;
       }
 
@@ -1466,8 +1466,8 @@ public final class ProtoClientSearch {
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (info_ != net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.MINE.getNumber()) {
-          output.writeEnum(1, info_);
+        if (category_ != net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.MINE.getNumber()) {
+          output.writeEnum(1, category_);
         }
         if (type_ != net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Type.USER.getNumber()) {
           output.writeEnum(2, type_);
@@ -1485,9 +1485,9 @@ public final class ProtoClientSearch {
         if (size != -1) return size;
 
         size = 0;
-        if (info_ != net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.MINE.getNumber()) {
+        if (category_ != net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.MINE.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(1, info_);
+            .computeEnumSize(1, category_);
         }
         if (type_ != net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Type.USER.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
@@ -1517,7 +1517,7 @@ public final class ProtoClientSearch {
         net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info other = (net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info) obj;
 
         boolean result = true;
-        result = result && info_ == other.info_;
+        result = result && category_ == other.category_;
         result = result && type_ == other.type_;
         result = result && (hasUser() == other.hasUser());
         if (hasUser()) {
@@ -1539,8 +1539,8 @@ public final class ProtoClientSearch {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptorForType().hashCode();
-        hash = (37 * hash) + INFO_FIELD_NUMBER;
-        hash = (53 * hash) + info_;
+        hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+        hash = (53 * hash) + category_;
         hash = (37 * hash) + TYPE_FIELD_NUMBER;
         hash = (53 * hash) + type_;
         if (hasUser()) {
@@ -1669,7 +1669,7 @@ public final class ProtoClientSearch {
         }
         public Builder clear() {
           super.clear();
-          info_ = 0;
+          category_ = 0;
 
           type_ = 0;
 
@@ -1707,7 +1707,7 @@ public final class ProtoClientSearch {
 
         public net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info buildPartial() {
           net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info result = new net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info(this);
-          result.info_ = info_;
+          result.category_ = category_;
           result.type_ = type_;
           if (userBuilder_ == null) {
             result.user_ = user_;
@@ -1760,8 +1760,8 @@ public final class ProtoClientSearch {
 
         public Builder mergeFrom(net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info other) {
           if (other == net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.getDefaultInstance()) return this;
-          if (other.info_ != 0) {
-            setInfoValue(other.getInfoValue());
+          if (other.category_ != 0) {
+            setCategoryValue(other.getCategoryValue());
           }
           if (other.type_ != 0) {
             setTypeValue(other.getTypeValue());
@@ -1798,46 +1798,46 @@ public final class ProtoClientSearch {
           return this;
         }
 
-        private int info_ = 0;
+        private int category_ = 0;
         /**
-         * <code>optional .proto.ClientSearchResponse.Info.Category info = 1;</code>
+         * <code>optional .proto.ClientSearchResponse.Info.Category category = 1;</code>
          */
-        public int getInfoValue() {
-          return info_;
+        public int getCategoryValue() {
+          return category_;
         }
         /**
-         * <code>optional .proto.ClientSearchResponse.Info.Category info = 1;</code>
+         * <code>optional .proto.ClientSearchResponse.Info.Category category = 1;</code>
          */
-        public Builder setInfoValue(int value) {
-          info_ = value;
+        public Builder setCategoryValue(int value) {
+          category_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.ClientSearchResponse.Info.Category info = 1;</code>
+         * <code>optional .proto.ClientSearchResponse.Info.Category category = 1;</code>
          */
-        public net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category getInfo() {
-          net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category result = net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.valueOf(info_);
+        public net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category getCategory() {
+          net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category result = net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.valueOf(category_);
           return result == null ? net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category.UNRECOGNIZED : result;
         }
         /**
-         * <code>optional .proto.ClientSearchResponse.Info.Category info = 1;</code>
+         * <code>optional .proto.ClientSearchResponse.Info.Category category = 1;</code>
          */
-        public Builder setInfo(net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category value) {
+        public Builder setCategory(net.iGap.proto.ProtoClientSearch.ClientSearchResponse.Info.Category value) {
           if (value == null) {
             throw new NullPointerException();
           }
           
-          info_ = value.getNumber();
+          category_ = value.getNumber();
           onChanged();
           return this;
         }
         /**
-         * <code>optional .proto.ClientSearchResponse.Info.Category info = 1;</code>
+         * <code>optional .proto.ClientSearchResponse.Info.Category category = 1;</code>
          */
-        public Builder clearInfo() {
+        public Builder clearCategory() {
           
-          info_ = 0;
+          category_ = 0;
           onChanged();
           return this;
         }
@@ -2999,17 +2999,17 @@ public final class ProtoClientSearch {
       "to\032\016Response.proto\032\014Global.proto\"e\n\014Clie" +
       "ntSearch\022\037\n\007request\030\001 \001(\0132\016.proto.Reques" +
       "t\022\r\n\005query\030\002 \001(\t\022%\n\npagination\030\003 \001(\0132\021.p" +
-      "roto.Pagination\"\336\002\n\024ClientSearchResponse" +
+      "roto.Pagination\"\342\002\n\024ClientSearchResponse" +
       "\022!\n\010response\030\001 \001(\0132\017.proto.Response\022.\n\004i" +
       "nfo\030\002 \003(\0132 .proto.ClientSearchResponse.I" +
-      "nfo\032\362\001\n\004Info\0227\n\004info\030\001 \001(\0162).proto.Clien" +
-      "tSearchResponse.Info.Category\0223\n\004type\030\002 " +
-      "\001(\0162%.proto.ClientSearchResponse.Info.Ty",
-      "pe\022#\n\004user\030\003 \001(\0132\025.proto.RegisteredUser\022" +
-      "\031\n\004room\030\004 \001(\0132\013.proto.Room\" \n\010Category\022\010" +
-      "\n\004MINE\020\000\022\n\n\006GLOBAL\020\001\"\032\n\004Type\022\010\n\004USER\020\000\022\010" +
-      "\n\004ROOM\020\001B#\n\016net.iGap.protoB\021ProtoClientS" +
-      "earchb\006proto3"
+      "nfo\032\366\001\n\004Info\022;\n\010category\030\001 \001(\0162).proto.C" +
+      "lientSearchResponse.Info.Category\0223\n\004typ" +
+      "e\030\002 \001(\0162%.proto.ClientSearchResponse.Inf",
+      "o.Type\022#\n\004user\030\003 \001(\0132\025.proto.RegisteredU" +
+      "ser\022\031\n\004room\030\004 \001(\0132\013.proto.Room\" \n\010Catego" +
+      "ry\022\010\n\004MINE\020\000\022\n\n\006GLOBAL\020\001\"\032\n\004Type\022\010\n\004USER" +
+      "\020\000\022\010\n\004ROOM\020\001B#\n\016net.iGap.protoB\021ProtoCli" +
+      "entSearchb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3043,7 +3043,7 @@ public final class ProtoClientSearch {
     internal_static_proto_ClientSearchResponse_Info_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientSearchResponse_Info_descriptor,
-        new java.lang.String[] { "Info", "Type", "User", "Room", });
+        new java.lang.String[] { "Category", "Type", "User", "Room", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
