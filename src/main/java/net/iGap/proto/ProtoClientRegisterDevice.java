@@ -49,6 +49,16 @@ public final class ProtoClientRegisterDevice {
      * <code>optional .proto.ClientRegisterDevice.Type type = 3;</code>
      */
     net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type getType();
+
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    java.lang.String getMetrix();
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getMetrixBytes();
   }
   /**
    * Protobuf type {@code proto.ClientRegisterDevice}
@@ -64,6 +74,7 @@ public final class ProtoClientRegisterDevice {
     private ClientRegisterDevice() {
       token_ = "";
       type_ = 0;
+      metrix_ = "";
     }
 
     @java.lang.Override
@@ -114,6 +125,12 @@ public final class ProtoClientRegisterDevice {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              metrix_ = s;
               break;
             }
           }
@@ -326,6 +343,40 @@ public final class ProtoClientRegisterDevice {
       return result == null ? net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.UNRECOGNIZED : result;
     }
 
+    public static final int METRIX_FIELD_NUMBER = 4;
+    private volatile java.lang.Object metrix_;
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    public java.lang.String getMetrix() {
+      java.lang.Object ref = metrix_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metrix_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string metrix = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMetrixBytes() {
+      java.lang.Object ref = metrix_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metrix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -347,6 +398,9 @@ public final class ProtoClientRegisterDevice {
       if (type_ != net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.GENERIC.getNumber()) {
         output.writeEnum(3, type_);
       }
+      if (!getMetrixBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, metrix_);
+      }
     }
 
     public int getSerializedSize() {
@@ -364,6 +418,9 @@ public final class ProtoClientRegisterDevice {
       if (type_ != net.iGap.proto.ProtoClientRegisterDevice.ClientRegisterDevice.Type.GENERIC.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, type_);
+      }
+      if (!getMetrixBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, metrix_);
       }
       memoizedSize = size;
       return size;
@@ -389,6 +446,8 @@ public final class ProtoClientRegisterDevice {
       result = result && getToken()
           .equals(other.getToken());
       result = result && type_ == other.type_;
+      result = result && getMetrix()
+          .equals(other.getMetrix());
       return result;
     }
 
@@ -407,6 +466,8 @@ public final class ProtoClientRegisterDevice {
       hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      hash = (37 * hash) + METRIX_FIELD_NUMBER;
+      hash = (53 * hash) + getMetrix().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -535,6 +596,8 @@ public final class ProtoClientRegisterDevice {
 
         type_ = 0;
 
+        metrix_ = "";
+
         return this;
       }
 
@@ -564,6 +627,7 @@ public final class ProtoClientRegisterDevice {
         }
         result.token_ = token_;
         result.type_ = type_;
+        result.metrix_ = metrix_;
         onBuilt();
         return result;
       }
@@ -614,6 +678,10 @@ public final class ProtoClientRegisterDevice {
         }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
+        }
+        if (!other.getMetrix().isEmpty()) {
+          metrix_ = other.metrix_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -867,6 +935,75 @@ public final class ProtoClientRegisterDevice {
       public Builder clearType() {
         
         type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object metrix_ = "";
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public java.lang.String getMetrix() {
+        java.lang.Object ref = metrix_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          metrix_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMetrixBytes() {
+        java.lang.Object ref = metrix_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          metrix_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public Builder setMetrix(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        metrix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public Builder clearMetrix() {
+        
+        metrix_ = getDefaultInstance().getMetrix();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string metrix = 4;</code>
+       */
+      public Builder setMetrixBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        metrix_ = value;
         onChanged();
         return this;
       }
@@ -1499,14 +1636,15 @@ public final class ProtoClientRegisterDevice {
   static {
     java.lang.String[] descriptorData = {
       "\n\032ClientRegisterDevice.proto\022\005proto\032\rReq" +
-      "uest.proto\032\016Response.proto\"\252\001\n\024ClientReg" +
+      "uest.proto\032\016Response.proto\"\272\001\n\024ClientReg" +
       "isterDevice\022\037\n\007request\030\001 \001(\0132\016.proto.Req" +
       "uest\022\r\n\005token\030\002 \001(\t\022.\n\004type\030\003 \001(\0162 .prot" +
-      "o.ClientRegisterDevice.Type\"2\n\004Type\022\013\n\007G" +
-      "ENERIC\020\000\022\013\n\007ANDROID\020\001\022\007\n\003IOS\020\002\022\007\n\003WEB\020\003\"" +
-      "A\n\034ClientRegisterDeviceResponse\022!\n\010respo" +
-      "nse\030\001 \001(\0132\017.proto.ResponseB+\n\016net.iGap.p" +
-      "rotoB\031ProtoClientRegisterDeviceb\006proto3"
+      "o.ClientRegisterDevice.Type\022\016\n\006metrix\030\004 " +
+      "\001(\t\"2\n\004Type\022\013\n\007GENERIC\020\000\022\013\n\007ANDROID\020\001\022\007\n" +
+      "\003IOS\020\002\022\007\n\003WEB\020\003\"A\n\034ClientRegisterDeviceR" +
+      "esponse\022!\n\010response\030\001 \001(\0132\017.proto.Respon" +
+      "seB+\n\016net.iGap.protoB\031ProtoClientRegiste" +
+      "rDeviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1527,7 +1665,7 @@ public final class ProtoClientRegisterDevice {
     internal_static_proto_ClientRegisterDevice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientRegisterDevice_descriptor,
-        new java.lang.String[] { "Request", "Token", "Type", });
+        new java.lang.String[] { "Request", "Token", "Type", "Metrix", });
     internal_static_proto_ClientRegisterDeviceResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientRegisterDeviceResponse_fieldAccessorTable = new
