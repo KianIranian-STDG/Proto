@@ -32,11 +32,16 @@ public final class ProtoGroupRoomMemberMention {
     net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional int64 room_id = 2;</code>
+     */
+    long getRoomId();
+
+    /**
+     * <code>optional string query = 3;</code>
      */
     java.lang.String getQuery();
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional string query = 3;</code>
      */
     com.google.protobuf.ByteString
         getQueryBytes();
@@ -53,6 +58,7 @@ public final class ProtoGroupRoomMemberMention {
       super(builder);
     }
     private GroupRoomMemberMention() {
+      roomId_ = 0L;
       query_ = "";
     }
 
@@ -94,7 +100,12 @@ public final class ProtoGroupRoomMemberMention {
 
               break;
             }
-            case 18: {
+            case 16: {
+
+              roomId_ = input.readInt64();
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               query_ = s;
@@ -144,10 +155,19 @@ public final class ProtoGroupRoomMemberMention {
       return getRequest();
     }
 
-    public static final int QUERY_FIELD_NUMBER = 2;
+    public static final int ROOM_ID_FIELD_NUMBER = 2;
+    private long roomId_;
+    /**
+     * <code>optional int64 room_id = 2;</code>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+
+    public static final int QUERY_FIELD_NUMBER = 3;
     private volatile java.lang.Object query_;
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional string query = 3;</code>
      */
     public java.lang.String getQuery() {
       java.lang.Object ref = query_;
@@ -162,7 +182,7 @@ public final class ProtoGroupRoomMemberMention {
       }
     }
     /**
-     * <code>optional string query = 2;</code>
+     * <code>optional string query = 3;</code>
      */
     public com.google.protobuf.ByteString
         getQueryBytes() {
@@ -193,8 +213,11 @@ public final class ProtoGroupRoomMemberMention {
       if (request_ != null) {
         output.writeMessage(1, getRequest());
       }
+      if (roomId_ != 0L) {
+        output.writeInt64(2, roomId_);
+      }
       if (!getQueryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, query_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, query_);
       }
     }
 
@@ -207,8 +230,12 @@ public final class ProtoGroupRoomMemberMention {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRequest());
       }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, roomId_);
+      }
       if (!getQueryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, query_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, query_);
       }
       memoizedSize = size;
       return size;
@@ -231,6 +258,8 @@ public final class ProtoGroupRoomMemberMention {
         result = result && getRequest()
             .equals(other.getRequest());
       }
+      result = result && (getRoomId()
+          == other.getRoomId());
       result = result && getQuery()
           .equals(other.getQuery());
       return result;
@@ -247,6 +276,9 @@ public final class ProtoGroupRoomMemberMention {
         hash = (37 * hash) + REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getRequest().hashCode();
       }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -373,6 +405,8 @@ public final class ProtoGroupRoomMemberMention {
           request_ = null;
           requestBuilder_ = null;
         }
+        roomId_ = 0L;
+
         query_ = "";
 
         return this;
@@ -402,6 +436,7 @@ public final class ProtoGroupRoomMemberMention {
         } else {
           result.request_ = requestBuilder_.build();
         }
+        result.roomId_ = roomId_;
         result.query_ = query_;
         onBuilt();
         return result;
@@ -446,6 +481,9 @@ public final class ProtoGroupRoomMemberMention {
         if (other == net.iGap.proto.ProtoGroupRoomMemberMention.GroupRoomMemberMention.getDefaultInstance()) return this;
         if (other.hasRequest()) {
           mergeRequest(other.getRequest());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
         }
         if (!other.getQuery().isEmpty()) {
           query_ = other.query_;
@@ -594,9 +632,35 @@ public final class ProtoGroupRoomMemberMention {
         return requestBuilder_;
       }
 
+      private long roomId_ ;
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public long getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public Builder setRoomId(long value) {
+        
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public Builder clearRoomId() {
+        
+        roomId_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object query_ = "";
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional string query = 3;</code>
        */
       public java.lang.String getQuery() {
         java.lang.Object ref = query_;
@@ -611,7 +675,7 @@ public final class ProtoGroupRoomMemberMention {
         }
       }
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional string query = 3;</code>
        */
       public com.google.protobuf.ByteString
           getQueryBytes() {
@@ -627,7 +691,7 @@ public final class ProtoGroupRoomMemberMention {
         }
       }
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional string query = 3;</code>
        */
       public Builder setQuery(
           java.lang.String value) {
@@ -640,7 +704,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional string query = 3;</code>
        */
       public Builder clearQuery() {
         
@@ -649,7 +713,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>optional string query = 2;</code>
+       * <code>optional string query = 3;</code>
        */
       public Builder setQueryBytes(
           com.google.protobuf.ByteString value) {
@@ -729,25 +793,30 @@ public final class ProtoGroupRoomMemberMention {
     net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>optional int64 room_id = 2;</code>
+     */
+    long getRoomId();
+
+    /**
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     java.util.List<net.iGap.proto.ProtoGlobal.RegisteredUser> 
         getUsersList();
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     net.iGap.proto.ProtoGlobal.RegisteredUser getUsers(int index);
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     int getUsersCount();
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     java.util.List<? extends net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder> 
         getUsersOrBuilderList();
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder getUsersOrBuilder(
         int index);
@@ -764,6 +833,7 @@ public final class ProtoGroupRoomMemberMention {
       super(builder);
     }
     private GroupRoomMemberMentionResponse() {
+      roomId_ = 0L;
       users_ = java.util.Collections.emptyList();
     }
 
@@ -805,10 +875,15 @@ public final class ProtoGroupRoomMemberMention {
 
               break;
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            case 16: {
+
+              roomId_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 users_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.RegisteredUser>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               users_.add(
                   input.readMessage(net.iGap.proto.ProtoGlobal.RegisteredUser.parser(), extensionRegistry));
@@ -822,7 +897,7 @@ public final class ProtoGroupRoomMemberMention {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           users_ = java.util.Collections.unmodifiableList(users_);
         }
         makeExtensionsImmutable();
@@ -862,35 +937,44 @@ public final class ProtoGroupRoomMemberMention {
       return getResponse();
     }
 
-    public static final int USERS_FIELD_NUMBER = 2;
+    public static final int ROOM_ID_FIELD_NUMBER = 2;
+    private long roomId_;
+    /**
+     * <code>optional int64 room_id = 2;</code>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+
+    public static final int USERS_FIELD_NUMBER = 3;
     private java.util.List<net.iGap.proto.ProtoGlobal.RegisteredUser> users_;
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     public java.util.List<net.iGap.proto.ProtoGlobal.RegisteredUser> getUsersList() {
       return users_;
     }
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     public java.util.List<? extends net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder> 
         getUsersOrBuilderList() {
       return users_;
     }
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     public int getUsersCount() {
       return users_.size();
     }
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     public net.iGap.proto.ProtoGlobal.RegisteredUser getUsers(int index) {
       return users_.get(index);
     }
     /**
-     * <code>repeated .proto.RegisteredUser users = 2;</code>
+     * <code>repeated .proto.RegisteredUser users = 3;</code>
      */
     public net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder getUsersOrBuilder(
         int index) {
@@ -912,8 +996,11 @@ public final class ProtoGroupRoomMemberMention {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
+      if (roomId_ != 0L) {
+        output.writeInt64(2, roomId_);
+      }
       for (int i = 0; i < users_.size(); i++) {
-        output.writeMessage(2, users_.get(i));
+        output.writeMessage(3, users_.get(i));
       }
     }
 
@@ -926,9 +1013,13 @@ public final class ProtoGroupRoomMemberMention {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
       }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, roomId_);
+      }
       for (int i = 0; i < users_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, users_.get(i));
+          .computeMessageSize(3, users_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -951,6 +1042,8 @@ public final class ProtoGroupRoomMemberMention {
         result = result && getResponse()
             .equals(other.getResponse());
       }
+      result = result && (getRoomId()
+          == other.getRoomId());
       result = result && getUsersList()
           .equals(other.getUsersList());
       return result;
@@ -967,6 +1060,9 @@ public final class ProtoGroupRoomMemberMention {
         hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getResponse().hashCode();
       }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
       if (getUsersCount() > 0) {
         hash = (37 * hash) + USERS_FIELD_NUMBER;
         hash = (53 * hash) + getUsersList().hashCode();
@@ -1096,9 +1192,11 @@ public final class ProtoGroupRoomMemberMention {
           response_ = null;
           responseBuilder_ = null;
         }
+        roomId_ = 0L;
+
         if (usersBuilder_ == null) {
           users_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           usersBuilder_.clear();
         }
@@ -1131,10 +1229,11 @@ public final class ProtoGroupRoomMemberMention {
         } else {
           result.response_ = responseBuilder_.build();
         }
+        result.roomId_ = roomId_;
         if (usersBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
             users_ = java.util.Collections.unmodifiableList(users_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.users_ = users_;
         } else {
@@ -1185,11 +1284,14 @@ public final class ProtoGroupRoomMemberMention {
         if (other.hasResponse()) {
           mergeResponse(other.getResponse());
         }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
         if (usersBuilder_ == null) {
           if (!other.users_.isEmpty()) {
             if (users_.isEmpty()) {
               users_ = other.users_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureUsersIsMutable();
               users_.addAll(other.users_);
@@ -1202,7 +1304,7 @@ public final class ProtoGroupRoomMemberMention {
               usersBuilder_.dispose();
               usersBuilder_ = null;
               users_ = other.users_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               usersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUsersFieldBuilder() : null;
@@ -1355,12 +1457,38 @@ public final class ProtoGroupRoomMemberMention {
         return responseBuilder_;
       }
 
+      private long roomId_ ;
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public long getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public Builder setRoomId(long value) {
+        
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 room_id = 2;</code>
+       */
+      public Builder clearRoomId() {
+        
+        roomId_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<net.iGap.proto.ProtoGlobal.RegisteredUser> users_ =
         java.util.Collections.emptyList();
       private void ensureUsersIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           users_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.RegisteredUser>(users_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1368,7 +1496,7 @@ public final class ProtoGroupRoomMemberMention {
           net.iGap.proto.ProtoGlobal.RegisteredUser, net.iGap.proto.ProtoGlobal.RegisteredUser.Builder, net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder> usersBuilder_;
 
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public java.util.List<net.iGap.proto.ProtoGlobal.RegisteredUser> getUsersList() {
         if (usersBuilder_ == null) {
@@ -1378,7 +1506,7 @@ public final class ProtoGroupRoomMemberMention {
         }
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public int getUsersCount() {
         if (usersBuilder_ == null) {
@@ -1388,7 +1516,7 @@ public final class ProtoGroupRoomMemberMention {
         }
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public net.iGap.proto.ProtoGlobal.RegisteredUser getUsers(int index) {
         if (usersBuilder_ == null) {
@@ -1398,7 +1526,7 @@ public final class ProtoGroupRoomMemberMention {
         }
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public Builder setUsers(
           int index, net.iGap.proto.ProtoGlobal.RegisteredUser value) {
@@ -1415,7 +1543,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public Builder setUsers(
           int index, net.iGap.proto.ProtoGlobal.RegisteredUser.Builder builderForValue) {
@@ -1429,7 +1557,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public Builder addUsers(net.iGap.proto.ProtoGlobal.RegisteredUser value) {
         if (usersBuilder_ == null) {
@@ -1445,7 +1573,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public Builder addUsers(
           int index, net.iGap.proto.ProtoGlobal.RegisteredUser value) {
@@ -1462,7 +1590,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public Builder addUsers(
           net.iGap.proto.ProtoGlobal.RegisteredUser.Builder builderForValue) {
@@ -1476,7 +1604,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public Builder addUsers(
           int index, net.iGap.proto.ProtoGlobal.RegisteredUser.Builder builderForValue) {
@@ -1490,7 +1618,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public Builder addAllUsers(
           java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.RegisteredUser> values) {
@@ -1505,12 +1633,12 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public Builder clearUsers() {
         if (usersBuilder_ == null) {
           users_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           usersBuilder_.clear();
@@ -1518,7 +1646,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public Builder removeUsers(int index) {
         if (usersBuilder_ == null) {
@@ -1531,14 +1659,14 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public net.iGap.proto.ProtoGlobal.RegisteredUser.Builder getUsersBuilder(
           int index) {
         return getUsersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder getUsersOrBuilder(
           int index) {
@@ -1548,7 +1676,7 @@ public final class ProtoGroupRoomMemberMention {
         }
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public java.util.List<? extends net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder> 
            getUsersOrBuilderList() {
@@ -1559,14 +1687,14 @@ public final class ProtoGroupRoomMemberMention {
         }
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public net.iGap.proto.ProtoGlobal.RegisteredUser.Builder addUsersBuilder() {
         return getUsersFieldBuilder().addBuilder(
             net.iGap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance());
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public net.iGap.proto.ProtoGlobal.RegisteredUser.Builder addUsersBuilder(
           int index) {
@@ -1574,7 +1702,7 @@ public final class ProtoGroupRoomMemberMention {
             index, net.iGap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance());
       }
       /**
-       * <code>repeated .proto.RegisteredUser users = 2;</code>
+       * <code>repeated .proto.RegisteredUser users = 3;</code>
        */
       public java.util.List<net.iGap.proto.ProtoGlobal.RegisteredUser.Builder> 
            getUsersBuilderList() {
@@ -1587,7 +1715,7 @@ public final class ProtoGroupRoomMemberMention {
           usersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               net.iGap.proto.ProtoGlobal.RegisteredUser, net.iGap.proto.ProtoGlobal.RegisteredUser.Builder, net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder>(
                   users_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
           users_ = null;
@@ -1664,12 +1792,13 @@ public final class ProtoGroupRoomMemberMention {
     java.lang.String[] descriptorData = {
       "\n\034GroupRoomMemberMention.proto\022\005proto\032\rR" +
       "equest.proto\032\016Response.proto\032\014Global.pro" +
-      "to\"H\n\026GroupRoomMemberMention\022\037\n\007request\030" +
-      "\001 \001(\0132\016.proto.Request\022\r\n\005query\030\002 \001(\t\"i\n\036" +
-      "GroupRoomMemberMentionResponse\022!\n\010respon" +
-      "se\030\001 \001(\0132\017.proto.Response\022$\n\005users\030\002 \003(\013" +
-      "2\025.proto.RegisteredUserB-\n\016net.iGap.prot" +
-      "oB\033ProtoGroupRoomMemberMentionb\006proto3"
+      "to\"Y\n\026GroupRoomMemberMention\022\037\n\007request\030" +
+      "\001 \001(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\003\022\r" +
+      "\n\005query\030\003 \001(\t\"z\n\036GroupRoomMemberMentionR" +
+      "esponse\022!\n\010response\030\001 \001(\0132\017.proto.Respon" +
+      "se\022\017\n\007room_id\030\002 \001(\003\022$\n\005users\030\003 \003(\0132\025.pro" +
+      "to.RegisteredUserB-\n\016net.iGap.protoB\033Pro" +
+      "toGroupRoomMemberMentionb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1691,13 +1820,13 @@ public final class ProtoGroupRoomMemberMention {
     internal_static_proto_GroupRoomMemberMention_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupRoomMemberMention_descriptor,
-        new java.lang.String[] { "Request", "Query", });
+        new java.lang.String[] { "Request", "RoomId", "Query", });
     internal_static_proto_GroupRoomMemberMentionResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_GroupRoomMemberMentionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupRoomMemberMentionResponse_descriptor,
-        new java.lang.String[] { "Response", "Users", });
+        new java.lang.String[] { "Response", "RoomId", "Users", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
