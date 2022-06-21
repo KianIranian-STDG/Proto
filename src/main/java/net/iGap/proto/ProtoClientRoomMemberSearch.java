@@ -148,7 +148,7 @@ public final class ProtoClientRoomMemberSearch {
     net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional int64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2;</code>
      */
     long getRoomId();
 
@@ -228,7 +228,7 @@ public final class ProtoClientRoomMemberSearch {
             }
             case 16: {
 
-              roomId_ = input.readInt64();
+              roomId_ = input.readUInt64();
               break;
             }
             case 26: {
@@ -290,7 +290,7 @@ public final class ProtoClientRoomMemberSearch {
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional int64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2;</code>
      */
     public long getRoomId() {
       return roomId_;
@@ -362,7 +362,7 @@ public final class ProtoClientRoomMemberSearch {
         output.writeMessage(1, getRequest());
       }
       if (roomId_ != 0L) {
-        output.writeInt64(2, roomId_);
+        output.writeUInt64(2, roomId_);
       }
       if (!getQueryBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, query_);
@@ -383,7 +383,7 @@ public final class ProtoClientRoomMemberSearch {
       }
       if (roomId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, roomId_);
+          .computeUInt64Size(2, roomId_);
       }
       if (!getQueryBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, query_);
@@ -798,13 +798,13 @@ public final class ProtoClientRoomMemberSearch {
 
       private long roomId_ ;
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public long getRoomId() {
         return roomId_;
       }
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public Builder setRoomId(long value) {
         
@@ -813,7 +813,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public Builder clearRoomId() {
         
@@ -1001,7 +1001,7 @@ public final class ProtoClientRoomMemberSearch {
     net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional int64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2;</code>
      */
     long getRoomId();
 
@@ -1085,7 +1085,7 @@ public final class ProtoClientRoomMemberSearch {
             }
             case 16: {
 
-              roomId_ = input.readInt64();
+              roomId_ = input.readUInt64();
               break;
             }
             case 26: {
@@ -1994,7 +1994,7 @@ public final class ProtoClientRoomMemberSearch {
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional int64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2;</code>
      */
     public long getRoomId() {
       return roomId_;
@@ -2051,7 +2051,7 @@ public final class ProtoClientRoomMemberSearch {
         output.writeMessage(1, getResponse());
       }
       if (roomId_ != 0L) {
-        output.writeInt64(2, roomId_);
+        output.writeUInt64(2, roomId_);
       }
       for (int i = 0; i < infos_.size(); i++) {
         output.writeMessage(3, infos_.get(i));
@@ -2069,7 +2069,7 @@ public final class ProtoClientRoomMemberSearch {
       }
       if (roomId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, roomId_);
+          .computeUInt64Size(2, roomId_);
       }
       for (int i = 0; i < infos_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -2513,13 +2513,13 @@ public final class ProtoClientRoomMemberSearch {
 
       private long roomId_ ;
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public long getRoomId() {
         return roomId_;
       }
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public Builder setRoomId(long value) {
         
@@ -2528,7 +2528,7 @@ public final class ProtoClientRoomMemberSearch {
         return this;
       }
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public Builder clearRoomId() {
         
@@ -2852,11 +2852,11 @@ public final class ProtoClientRoomMemberSearch {
       "\n\034ClientRoomMemberSearch.proto\022\005proto\032\rR" +
       "equest.proto\032\016Response.proto\032\014Global.pro" +
       "to\"t\n\026ClientRoomMemberSearch\022\037\n\007request\030" +
-      "\001 \001(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\003\022\r" +
+      "\001 \001(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\004\022\r" +
       "\n\005query\030\003 \001(\t\022\031\n\004role\030\004 \001(\0162\013.proto.Role" +
       "\"\377\001\n\036ClientRoomMemberSearchResponse\022!\n\010r" +
       "esponse\030\001 \001(\0132\017.proto.Response\022\017\n\007room_i" +
-      "d\030\002 \001(\003\0229\n\005infos\030\003 \003(\0132*.proto.ClientRoo" +
+      "d\030\002 \001(\004\0229\n\005infos\030\003 \003(\0132*.proto.ClientRoo" +
       "mMemberSearchResponse.Info\032n\n\004Info\022#\n\004us" +
       "er\030\001 \001(\0132\025.proto.RegisteredUser\022&\n\013room_",
       "access\030\002 \001(\0132\021.proto.RoomAccess\022\031\n\004role\030" +

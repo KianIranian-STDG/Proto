@@ -32,7 +32,7 @@ public final class ProtoGroupRoomMemberMention {
     net.iGap.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional int64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2;</code>
      */
     long getRoomId();
 
@@ -102,7 +102,7 @@ public final class ProtoGroupRoomMemberMention {
             }
             case 16: {
 
-              roomId_ = input.readInt64();
+              roomId_ = input.readUInt64();
               break;
             }
             case 26: {
@@ -158,7 +158,7 @@ public final class ProtoGroupRoomMemberMention {
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional int64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2;</code>
      */
     public long getRoomId() {
       return roomId_;
@@ -214,7 +214,7 @@ public final class ProtoGroupRoomMemberMention {
         output.writeMessage(1, getRequest());
       }
       if (roomId_ != 0L) {
-        output.writeInt64(2, roomId_);
+        output.writeUInt64(2, roomId_);
       }
       if (!getQueryBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, query_);
@@ -232,7 +232,7 @@ public final class ProtoGroupRoomMemberMention {
       }
       if (roomId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, roomId_);
+          .computeUInt64Size(2, roomId_);
       }
       if (!getQueryBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, query_);
@@ -634,13 +634,13 @@ public final class ProtoGroupRoomMemberMention {
 
       private long roomId_ ;
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public long getRoomId() {
         return roomId_;
       }
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public Builder setRoomId(long value) {
         
@@ -649,7 +649,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public Builder clearRoomId() {
         
@@ -793,7 +793,7 @@ public final class ProtoGroupRoomMemberMention {
     net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional int64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2;</code>
      */
     long getRoomId();
 
@@ -877,7 +877,7 @@ public final class ProtoGroupRoomMemberMention {
             }
             case 16: {
 
-              roomId_ = input.readInt64();
+              roomId_ = input.readUInt64();
               break;
             }
             case 26: {
@@ -940,7 +940,7 @@ public final class ProtoGroupRoomMemberMention {
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional int64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2;</code>
      */
     public long getRoomId() {
       return roomId_;
@@ -997,7 +997,7 @@ public final class ProtoGroupRoomMemberMention {
         output.writeMessage(1, getResponse());
       }
       if (roomId_ != 0L) {
-        output.writeInt64(2, roomId_);
+        output.writeUInt64(2, roomId_);
       }
       for (int i = 0; i < users_.size(); i++) {
         output.writeMessage(3, users_.get(i));
@@ -1015,7 +1015,7 @@ public final class ProtoGroupRoomMemberMention {
       }
       if (roomId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, roomId_);
+          .computeUInt64Size(2, roomId_);
       }
       for (int i = 0; i < users_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -1459,13 +1459,13 @@ public final class ProtoGroupRoomMemberMention {
 
       private long roomId_ ;
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public long getRoomId() {
         return roomId_;
       }
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public Builder setRoomId(long value) {
         
@@ -1474,7 +1474,7 @@ public final class ProtoGroupRoomMemberMention {
         return this;
       }
       /**
-       * <code>optional int64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2;</code>
        */
       public Builder clearRoomId() {
         
@@ -1793,10 +1793,10 @@ public final class ProtoGroupRoomMemberMention {
       "\n\034GroupRoomMemberMention.proto\022\005proto\032\rR" +
       "equest.proto\032\016Response.proto\032\014Global.pro" +
       "to\"Y\n\026GroupRoomMemberMention\022\037\n\007request\030" +
-      "\001 \001(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\003\022\r" +
+      "\001 \001(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\004\022\r" +
       "\n\005query\030\003 \001(\t\"z\n\036GroupRoomMemberMentionR" +
       "esponse\022!\n\010response\030\001 \001(\0132\017.proto.Respon" +
-      "se\022\017\n\007room_id\030\002 \001(\003\022$\n\005users\030\003 \003(\0132\025.pro" +
+      "se\022\017\n\007room_id\030\002 \001(\004\022$\n\005users\030\003 \003(\0132\025.pro" +
       "to.RegisteredUserB-\n\016net.iGap.protoB\033Pro" +
       "toGroupRoomMemberMentionb\006proto3"
     };
