@@ -27,6 +27,16 @@ public final class ProtoRequest {
      */
     com.google.protobuf.ByteString
         getIdBytes();
+
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
   }
   /**
    * Protobuf type {@code proto.Request}
@@ -41,6 +51,7 @@ public final class ProtoRequest {
     }
     private Request() {
       id_ = "";
+      token_ = "";
     }
 
     @java.lang.Override
@@ -72,6 +83,12 @@ public final class ProtoRequest {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
               break;
             }
           }
@@ -131,6 +148,40 @@ public final class ProtoRequest {
       }
     }
 
+    public static final int TOKEN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string token = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -146,6 +197,9 @@ public final class ProtoRequest {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      }
     }
 
     public int getSerializedSize() {
@@ -155,6 +209,9 @@ public final class ProtoRequest {
       size = 0;
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
       }
       memoizedSize = size;
       return size;
@@ -174,6 +231,8 @@ public final class ProtoRequest {
       boolean result = true;
       result = result && getId()
           .equals(other.getId());
+      result = result && getToken()
+          .equals(other.getToken());
       return result;
     }
 
@@ -186,6 +245,8 @@ public final class ProtoRequest {
       hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +367,8 @@ public final class ProtoRequest {
         super.clear();
         id_ = "";
 
+        token_ = "";
+
         return this;
       }
 
@@ -329,6 +392,7 @@ public final class ProtoRequest {
       public net.iGap.proto.ProtoRequest.Request buildPartial() {
         net.iGap.proto.ProtoRequest.Request result = new net.iGap.proto.ProtoRequest.Request(this);
         result.id_ = id_;
+        result.token_ = token_;
         onBuilt();
         return result;
       }
@@ -372,6 +436,10 @@ public final class ProtoRequest {
         if (other == net.iGap.proto.ProtoRequest.Request.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
           onChanged();
         }
         onChanged();
@@ -468,6 +536,75 @@ public final class ProtoRequest {
         onChanged();
         return this;
       }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string token = 2;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -531,9 +668,9 @@ public final class ProtoRequest {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rRequest.proto\022\005proto\"\025\n\007Request\022\n\n\002id\030" +
-      "\001 \001(\tB\036\n\016net.iGap.protoB\014ProtoRequestb\006p" +
-      "roto3"
+      "\n\rRequest.proto\022\005proto\"$\n\007Request\022\n\n\002id\030" +
+      "\001 \001(\t\022\r\n\005token\030\002 \001(\tB\036\n\016net.iGap.protoB\014" +
+      "ProtoRequestb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -552,7 +689,7 @@ public final class ProtoRequest {
     internal_static_proto_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Request_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "Token", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

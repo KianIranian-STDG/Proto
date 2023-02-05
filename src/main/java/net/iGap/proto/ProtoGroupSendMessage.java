@@ -115,6 +115,21 @@ public final class ProtoGroupSendMessage {
     long getRandomId();
 
     /**
+     * <code>optional uint32 additional_type = 11;</code>
+     */
+    int getAdditionalType();
+
+    /**
+     * <code>optional string additional_data = 12;</code>
+     */
+    java.lang.String getAdditionalData();
+    /**
+     * <code>optional string additional_data = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getAdditionalDataBytes();
+
+    /**
      * <code>optional .proto.RoomMessageStoryReply story_reply = 13;</code>
      */
     boolean hasStoryReply();
@@ -141,19 +156,80 @@ public final class ProtoGroupSendMessage {
     net.iGap.proto.ProtoGlobal.RoomMessageStoryForwardOrBuilder getStoryForwardOrBuilder();
 
     /**
-     * <code>optional uint32 additional_type = 11;</code>
+     * <code>optional .proto.Mention mentions = 15;</code>
      */
-    int getAdditionalType();
+    boolean hasMentions();
+    /**
+     * <code>optional .proto.Mention mentions = 15;</code>
+     */
+    net.iGap.proto.ProtoGlobal.Mention getMentions();
+    /**
+     * <code>optional .proto.Mention mentions = 15;</code>
+     */
+    net.iGap.proto.ProtoGlobal.MentionOrBuilder getMentionsOrBuilder();
 
     /**
-     * <code>optional string additional_data = 12;</code>
+     * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
      */
-    java.lang.String getAdditionalData();
+    boolean hasSticker();
     /**
-     * <code>optional string additional_data = 12;</code>
+     * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
      */
-    com.google.protobuf.ByteString
-        getAdditionalDataBytes();
+    net.iGap.proto.ProtoGlobal.RoomMessageSticker getSticker();
+    /**
+     * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder getStickerOrBuilder();
+
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+     */
+    boolean hasCardToCard();
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageCardToCard getCardToCard();
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder getCardToCardOrBuilder();
+
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> 
+        getBotActionListsList();
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageBotActionList getBotActionLists(int index);
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    int getBotActionListsCount();
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> 
+        getBotActionListsOrBuilderList();
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder getBotActionListsOrBuilder(
+        int index);
+
+    /**
+     * <code>optional .proto.TextSigns text_signs = 19;</code>
+     */
+    boolean hasTextSigns();
+    /**
+     * <code>optional .proto.TextSigns text_signs = 19;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSigns getTextSigns();
+    /**
+     * <code>optional .proto.TextSigns text_signs = 19;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder();
   }
   /**
    * Protobuf type {@code proto.GroupSendMessage}
@@ -175,6 +251,7 @@ public final class ProtoGroupSendMessage {
       randomId_ = 0L;
       additionalType_ = 0;
       additionalData_ = "";
+      botActionLists_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -324,6 +401,67 @@ public final class ProtoGroupSendMessage {
 
               break;
             }
+            case 122: {
+              net.iGap.proto.ProtoGlobal.Mention.Builder subBuilder = null;
+              if (mentions_ != null) {
+                subBuilder = mentions_.toBuilder();
+              }
+              mentions_ = input.readMessage(net.iGap.proto.ProtoGlobal.Mention.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mentions_);
+                mentions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 130: {
+              net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder subBuilder = null;
+              if (sticker_ != null) {
+                subBuilder = sticker_.toBuilder();
+              }
+              sticker_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageSticker.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sticker_);
+                sticker_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 138: {
+              net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder subBuilder = null;
+              if (cardToCard_ != null) {
+                subBuilder = cardToCard_.toBuilder();
+              }
+              cardToCard_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cardToCard_);
+                cardToCard_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 146: {
+              if (!((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
+                botActionLists_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList>();
+                mutable_bitField0_ |= 0x00020000;
+              }
+              botActionLists_.add(
+                  input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.parser(), extensionRegistry));
+              break;
+            }
+            case 154: {
+              net.iGap.proto.ProtoGlobal.TextSigns.Builder subBuilder = null;
+              if (textSigns_ != null) {
+                subBuilder = textSigns_.toBuilder();
+              }
+              textSigns_ = input.readMessage(net.iGap.proto.ProtoGlobal.TextSigns.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(textSigns_);
+                textSigns_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -332,6 +470,9 @@ public final class ProtoGroupSendMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
+          botActionLists_ = java.util.Collections.unmodifiableList(botActionLists_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -347,6 +488,7 @@ public final class ProtoGroupSendMessage {
               net.iGap.proto.ProtoGroupSendMessage.GroupSendMessage.class, net.iGap.proto.ProtoGroupSendMessage.GroupSendMessage.Builder.class);
     }
 
+    private int bitField0_;
     public static final int REQUEST_FIELD_NUMBER = 1;
     private net.iGap.proto.ProtoRequest.Request request_;
     /**
@@ -542,6 +684,49 @@ public final class ProtoGroupSendMessage {
       return randomId_;
     }
 
+    public static final int ADDITIONAL_TYPE_FIELD_NUMBER = 11;
+    private int additionalType_;
+    /**
+     * <code>optional uint32 additional_type = 11;</code>
+     */
+    public int getAdditionalType() {
+      return additionalType_;
+    }
+
+    public static final int ADDITIONAL_DATA_FIELD_NUMBER = 12;
+    private volatile java.lang.Object additionalData_;
+    /**
+     * <code>optional string additional_data = 12;</code>
+     */
+    public java.lang.String getAdditionalData() {
+      java.lang.Object ref = additionalData_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        additionalData_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string additional_data = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalDataBytes() {
+      java.lang.Object ref = additionalData_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        additionalData_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int STORY_REPLY_FIELD_NUMBER = 13;
     private net.iGap.proto.ProtoGlobal.RoomMessageStoryReply storyReply_;
     /**
@@ -584,47 +769,123 @@ public final class ProtoGroupSendMessage {
       return getStoryForward();
     }
 
-    public static final int ADDITIONAL_TYPE_FIELD_NUMBER = 11;
-    private int additionalType_;
+    public static final int MENTIONS_FIELD_NUMBER = 15;
+    private net.iGap.proto.ProtoGlobal.Mention mentions_;
     /**
-     * <code>optional uint32 additional_type = 11;</code>
+     * <code>optional .proto.Mention mentions = 15;</code>
      */
-    public int getAdditionalType() {
-      return additionalType_;
+    public boolean hasMentions() {
+      return mentions_ != null;
+    }
+    /**
+     * <code>optional .proto.Mention mentions = 15;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.Mention getMentions() {
+      return mentions_ == null ? net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
+    }
+    /**
+     * <code>optional .proto.Mention mentions = 15;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.MentionOrBuilder getMentionsOrBuilder() {
+      return getMentions();
     }
 
-    public static final int ADDITIONAL_DATA_FIELD_NUMBER = 12;
-    private volatile java.lang.Object additionalData_;
+    public static final int STICKER_FIELD_NUMBER = 16;
+    private net.iGap.proto.ProtoGlobal.RoomMessageSticker sticker_;
     /**
-     * <code>optional string additional_data = 12;</code>
+     * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
      */
-    public java.lang.String getAdditionalData() {
-      java.lang.Object ref = additionalData_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        additionalData_ = s;
-        return s;
-      }
+    public boolean hasSticker() {
+      return sticker_ != null;
     }
     /**
-     * <code>optional string additional_data = 12;</code>
+     * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
      */
-    public com.google.protobuf.ByteString
-        getAdditionalDataBytes() {
-      java.lang.Object ref = additionalData_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        additionalData_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public net.iGap.proto.ProtoGlobal.RoomMessageSticker getSticker() {
+      return sticker_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageSticker.getDefaultInstance() : sticker_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder getStickerOrBuilder() {
+      return getSticker();
+    }
+
+    public static final int CARD_TO_CARD_FIELD_NUMBER = 17;
+    private net.iGap.proto.ProtoGlobal.RoomMessageCardToCard cardToCard_;
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+     */
+    public boolean hasCardToCard() {
+      return cardToCard_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard getCardToCard() {
+      return cardToCard_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.getDefaultInstance() : cardToCard_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder getCardToCardOrBuilder() {
+      return getCardToCard();
+    }
+
+    public static final int BOT_ACTION_LISTS_FIELD_NUMBER = 18;
+    private java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> botActionLists_;
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    public java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> getBotActionListsList() {
+      return botActionLists_;
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    public java.util.List<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> 
+        getBotActionListsOrBuilderList() {
+      return botActionLists_;
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    public int getBotActionListsCount() {
+      return botActionLists_.size();
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList getBotActionLists(int index) {
+      return botActionLists_.get(index);
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder getBotActionListsOrBuilder(
+        int index) {
+      return botActionLists_.get(index);
+    }
+
+    public static final int TEXT_SIGNS_FIELD_NUMBER = 19;
+    private net.iGap.proto.ProtoGlobal.TextSigns textSigns_;
+    /**
+     * <code>optional .proto.TextSigns text_signs = 19;</code>
+     */
+    public boolean hasTextSigns() {
+      return textSigns_ != null;
+    }
+    /**
+     * <code>optional .proto.TextSigns text_signs = 19;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+      return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+    }
+    /**
+     * <code>optional .proto.TextSigns text_signs = 19;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+      return getTextSigns();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -680,6 +941,21 @@ public final class ProtoGroupSendMessage {
       }
       if (storyForward_ != null) {
         output.writeMessage(14, getStoryForward());
+      }
+      if (mentions_ != null) {
+        output.writeMessage(15, getMentions());
+      }
+      if (sticker_ != null) {
+        output.writeMessage(16, getSticker());
+      }
+      if (cardToCard_ != null) {
+        output.writeMessage(17, getCardToCard());
+      }
+      for (int i = 0; i < botActionLists_.size(); i++) {
+        output.writeMessage(18, botActionLists_.get(i));
+      }
+      if (textSigns_ != null) {
+        output.writeMessage(19, getTextSigns());
       }
     }
 
@@ -741,6 +1017,26 @@ public final class ProtoGroupSendMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getStoryForward());
       }
+      if (mentions_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getMentions());
+      }
+      if (sticker_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, getSticker());
+      }
+      if (cardToCard_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, getCardToCard());
+      }
+      for (int i = 0; i < botActionLists_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, botActionLists_.get(i));
+      }
+      if (textSigns_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(19, getTextSigns());
+      }
       memoizedSize = size;
       return size;
     }
@@ -788,6 +1084,10 @@ public final class ProtoGroupSendMessage {
       }
       result = result && (getRandomId()
           == other.getRandomId());
+      result = result && (getAdditionalType()
+          == other.getAdditionalType());
+      result = result && getAdditionalData()
+          .equals(other.getAdditionalData());
       result = result && (hasStoryReply() == other.hasStoryReply());
       if (hasStoryReply()) {
         result = result && getStoryReply()
@@ -798,10 +1098,28 @@ public final class ProtoGroupSendMessage {
         result = result && getStoryForward()
             .equals(other.getStoryForward());
       }
-      result = result && (getAdditionalType()
-          == other.getAdditionalType());
-      result = result && getAdditionalData()
-          .equals(other.getAdditionalData());
+      result = result && (hasMentions() == other.hasMentions());
+      if (hasMentions()) {
+        result = result && getMentions()
+            .equals(other.getMentions());
+      }
+      result = result && (hasSticker() == other.hasSticker());
+      if (hasSticker()) {
+        result = result && getSticker()
+            .equals(other.getSticker());
+      }
+      result = result && (hasCardToCard() == other.hasCardToCard());
+      if (hasCardToCard()) {
+        result = result && getCardToCard()
+            .equals(other.getCardToCard());
+      }
+      result = result && getBotActionListsList()
+          .equals(other.getBotActionListsList());
+      result = result && (hasTextSigns() == other.hasTextSigns());
+      if (hasTextSigns()) {
+        result = result && getTextSigns()
+            .equals(other.getTextSigns());
+      }
       return result;
     }
 
@@ -843,6 +1161,10 @@ public final class ProtoGroupSendMessage {
       hash = (37 * hash) + RANDOM_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRandomId());
+      hash = (37 * hash) + ADDITIONAL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalType();
+      hash = (37 * hash) + ADDITIONAL_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalData().hashCode();
       if (hasStoryReply()) {
         hash = (37 * hash) + STORY_REPLY_FIELD_NUMBER;
         hash = (53 * hash) + getStoryReply().hashCode();
@@ -851,10 +1173,26 @@ public final class ProtoGroupSendMessage {
         hash = (37 * hash) + STORY_FORWARD_FIELD_NUMBER;
         hash = (53 * hash) + getStoryForward().hashCode();
       }
-      hash = (37 * hash) + ADDITIONAL_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getAdditionalType();
-      hash = (37 * hash) + ADDITIONAL_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getAdditionalData().hashCode();
+      if (hasMentions()) {
+        hash = (37 * hash) + MENTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getMentions().hashCode();
+      }
+      if (hasSticker()) {
+        hash = (37 * hash) + STICKER_FIELD_NUMBER;
+        hash = (53 * hash) + getSticker().hashCode();
+      }
+      if (hasCardToCard()) {
+        hash = (37 * hash) + CARD_TO_CARD_FIELD_NUMBER;
+        hash = (53 * hash) + getCardToCard().hashCode();
+      }
+      if (getBotActionListsCount() > 0) {
+        hash = (37 * hash) + BOT_ACTION_LISTS_FIELD_NUMBER;
+        hash = (53 * hash) + getBotActionListsList().hashCode();
+      }
+      if (hasTextSigns()) {
+        hash = (37 * hash) + TEXT_SIGNS_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSigns().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -969,6 +1307,7 @@ public final class ProtoGroupSendMessage {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getBotActionListsFieldBuilder();
         }
       }
       public Builder clear() {
@@ -1009,6 +1348,10 @@ public final class ProtoGroupSendMessage {
         }
         randomId_ = 0L;
 
+        additionalType_ = 0;
+
+        additionalData_ = "";
+
         if (storyReplyBuilder_ == null) {
           storyReply_ = null;
         } else {
@@ -1021,10 +1364,36 @@ public final class ProtoGroupSendMessage {
           storyForward_ = null;
           storyForwardBuilder_ = null;
         }
-        additionalType_ = 0;
-
-        additionalData_ = "";
-
+        if (mentionsBuilder_ == null) {
+          mentions_ = null;
+        } else {
+          mentions_ = null;
+          mentionsBuilder_ = null;
+        }
+        if (stickerBuilder_ == null) {
+          sticker_ = null;
+        } else {
+          sticker_ = null;
+          stickerBuilder_ = null;
+        }
+        if (cardToCardBuilder_ == null) {
+          cardToCard_ = null;
+        } else {
+          cardToCard_ = null;
+          cardToCardBuilder_ = null;
+        }
+        if (botActionListsBuilder_ == null) {
+          botActionLists_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00020000);
+        } else {
+          botActionListsBuilder_.clear();
+        }
+        if (textSignsBuilder_ == null) {
+          textSigns_ = null;
+        } else {
+          textSigns_ = null;
+          textSignsBuilder_ = null;
+        }
         return this;
       }
 
@@ -1047,6 +1416,8 @@ public final class ProtoGroupSendMessage {
 
       public net.iGap.proto.ProtoGroupSendMessage.GroupSendMessage buildPartial() {
         net.iGap.proto.ProtoGroupSendMessage.GroupSendMessage result = new net.iGap.proto.ProtoGroupSendMessage.GroupSendMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (requestBuilder_ == null) {
           result.request_ = request_;
         } else {
@@ -1073,6 +1444,8 @@ public final class ProtoGroupSendMessage {
           result.forwardFrom_ = forwardFromBuilder_.build();
         }
         result.randomId_ = randomId_;
+        result.additionalType_ = additionalType_;
+        result.additionalData_ = additionalData_;
         if (storyReplyBuilder_ == null) {
           result.storyReply_ = storyReply_;
         } else {
@@ -1083,8 +1456,36 @@ public final class ProtoGroupSendMessage {
         } else {
           result.storyForward_ = storyForwardBuilder_.build();
         }
-        result.additionalType_ = additionalType_;
-        result.additionalData_ = additionalData_;
+        if (mentionsBuilder_ == null) {
+          result.mentions_ = mentions_;
+        } else {
+          result.mentions_ = mentionsBuilder_.build();
+        }
+        if (stickerBuilder_ == null) {
+          result.sticker_ = sticker_;
+        } else {
+          result.sticker_ = stickerBuilder_.build();
+        }
+        if (cardToCardBuilder_ == null) {
+          result.cardToCard_ = cardToCard_;
+        } else {
+          result.cardToCard_ = cardToCardBuilder_.build();
+        }
+        if (botActionListsBuilder_ == null) {
+          if (((bitField0_ & 0x00020000) == 0x00020000)) {
+            botActionLists_ = java.util.Collections.unmodifiableList(botActionLists_);
+            bitField0_ = (bitField0_ & ~0x00020000);
+          }
+          result.botActionLists_ = botActionLists_;
+        } else {
+          result.botActionLists_ = botActionListsBuilder_.build();
+        }
+        if (textSignsBuilder_ == null) {
+          result.textSigns_ = textSigns_;
+        } else {
+          result.textSigns_ = textSignsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1158,18 +1559,56 @@ public final class ProtoGroupSendMessage {
         if (other.getRandomId() != 0L) {
           setRandomId(other.getRandomId());
         }
-        if (other.hasStoryReply()) {
-          mergeStoryReply(other.getStoryReply());
-        }
-        if (other.hasStoryForward()) {
-          mergeStoryForward(other.getStoryForward());
-        }
         if (other.getAdditionalType() != 0) {
           setAdditionalType(other.getAdditionalType());
         }
         if (!other.getAdditionalData().isEmpty()) {
           additionalData_ = other.additionalData_;
           onChanged();
+        }
+        if (other.hasStoryReply()) {
+          mergeStoryReply(other.getStoryReply());
+        }
+        if (other.hasStoryForward()) {
+          mergeStoryForward(other.getStoryForward());
+        }
+        if (other.hasMentions()) {
+          mergeMentions(other.getMentions());
+        }
+        if (other.hasSticker()) {
+          mergeSticker(other.getSticker());
+        }
+        if (other.hasCardToCard()) {
+          mergeCardToCard(other.getCardToCard());
+        }
+        if (botActionListsBuilder_ == null) {
+          if (!other.botActionLists_.isEmpty()) {
+            if (botActionLists_.isEmpty()) {
+              botActionLists_ = other.botActionLists_;
+              bitField0_ = (bitField0_ & ~0x00020000);
+            } else {
+              ensureBotActionListsIsMutable();
+              botActionLists_.addAll(other.botActionLists_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.botActionLists_.isEmpty()) {
+            if (botActionListsBuilder_.isEmpty()) {
+              botActionListsBuilder_.dispose();
+              botActionListsBuilder_ = null;
+              botActionLists_ = other.botActionLists_;
+              bitField0_ = (bitField0_ & ~0x00020000);
+              botActionListsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBotActionListsFieldBuilder() : null;
+            } else {
+              botActionListsBuilder_.addAllMessages(other.botActionLists_);
+            }
+          }
+        }
+        if (other.hasTextSigns()) {
+          mergeTextSigns(other.getTextSigns());
         }
         onChanged();
         return this;
@@ -1196,6 +1635,7 @@ public final class ProtoGroupSendMessage {
         }
         return this;
       }
+      private int bitField0_;
 
       private net.iGap.proto.ProtoRequest.Request request_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1925,6 +2365,101 @@ public final class ProtoGroupSendMessage {
         return this;
       }
 
+      private int additionalType_ ;
+      /**
+       * <code>optional uint32 additional_type = 11;</code>
+       */
+      public int getAdditionalType() {
+        return additionalType_;
+      }
+      /**
+       * <code>optional uint32 additional_type = 11;</code>
+       */
+      public Builder setAdditionalType(int value) {
+        
+        additionalType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 additional_type = 11;</code>
+       */
+      public Builder clearAdditionalType() {
+        
+        additionalType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object additionalData_ = "";
+      /**
+       * <code>optional string additional_data = 12;</code>
+       */
+      public java.lang.String getAdditionalData() {
+        java.lang.Object ref = additionalData_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          additionalData_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string additional_data = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAdditionalDataBytes() {
+        java.lang.Object ref = additionalData_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          additionalData_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string additional_data = 12;</code>
+       */
+      public Builder setAdditionalData(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        additionalData_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string additional_data = 12;</code>
+       */
+      public Builder clearAdditionalData() {
+        
+        additionalData_ = getDefaultInstance().getAdditionalData();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string additional_data = 12;</code>
+       */
+      public Builder setAdditionalDataBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        additionalData_ = value;
+        onChanged();
+        return this;
+      }
+
       private net.iGap.proto.ProtoGlobal.RoomMessageStoryReply storyReply_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           net.iGap.proto.ProtoGlobal.RoomMessageStoryReply, net.iGap.proto.ProtoGlobal.RoomMessageStoryReply.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStoryReplyOrBuilder> storyReplyBuilder_;
@@ -2159,99 +2694,712 @@ public final class ProtoGroupSendMessage {
         return storyForwardBuilder_;
       }
 
-      private int additionalType_ ;
+      private net.iGap.proto.ProtoGlobal.Mention mentions_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Mention, net.iGap.proto.ProtoGlobal.Mention.Builder, net.iGap.proto.ProtoGlobal.MentionOrBuilder> mentionsBuilder_;
       /**
-       * <code>optional uint32 additional_type = 11;</code>
+       * <code>optional .proto.Mention mentions = 15;</code>
        */
-      public int getAdditionalType() {
-        return additionalType_;
+      public boolean hasMentions() {
+        return mentionsBuilder_ != null || mentions_ != null;
       }
       /**
-       * <code>optional uint32 additional_type = 11;</code>
+       * <code>optional .proto.Mention mentions = 15;</code>
        */
-      public Builder setAdditionalType(int value) {
-        
-        additionalType_ = value;
-        onChanged();
+      public net.iGap.proto.ProtoGlobal.Mention getMentions() {
+        if (mentionsBuilder_ == null) {
+          return mentions_ == null ? net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
+        } else {
+          return mentionsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.Mention mentions = 15;</code>
+       */
+      public Builder setMentions(net.iGap.proto.ProtoGlobal.Mention value) {
+        if (mentionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mentions_ = value;
+          onChanged();
+        } else {
+          mentionsBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional uint32 additional_type = 11;</code>
+       * <code>optional .proto.Mention mentions = 15;</code>
        */
-      public Builder clearAdditionalType() {
-        
-        additionalType_ = 0;
-        onChanged();
+      public Builder setMentions(
+          net.iGap.proto.ProtoGlobal.Mention.Builder builderForValue) {
+        if (mentionsBuilder_ == null) {
+          mentions_ = builderForValue.build();
+          onChanged();
+        } else {
+          mentionsBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
+      }
+      /**
+       * <code>optional .proto.Mention mentions = 15;</code>
+       */
+      public Builder mergeMentions(net.iGap.proto.ProtoGlobal.Mention value) {
+        if (mentionsBuilder_ == null) {
+          if (mentions_ != null) {
+            mentions_ =
+              net.iGap.proto.ProtoGlobal.Mention.newBuilder(mentions_).mergeFrom(value).buildPartial();
+          } else {
+            mentions_ = value;
+          }
+          onChanged();
+        } else {
+          mentionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Mention mentions = 15;</code>
+       */
+      public Builder clearMentions() {
+        if (mentionsBuilder_ == null) {
+          mentions_ = null;
+          onChanged();
+        } else {
+          mentions_ = null;
+          mentionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Mention mentions = 15;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Mention.Builder getMentionsBuilder() {
+        
+        onChanged();
+        return getMentionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Mention mentions = 15;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.MentionOrBuilder getMentionsOrBuilder() {
+        if (mentionsBuilder_ != null) {
+          return mentionsBuilder_.getMessageOrBuilder();
+        } else {
+          return mentions_ == null ?
+              net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
+        }
+      }
+      /**
+       * <code>optional .proto.Mention mentions = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Mention, net.iGap.proto.ProtoGlobal.Mention.Builder, net.iGap.proto.ProtoGlobal.MentionOrBuilder> 
+          getMentionsFieldBuilder() {
+        if (mentionsBuilder_ == null) {
+          mentionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Mention, net.iGap.proto.ProtoGlobal.Mention.Builder, net.iGap.proto.ProtoGlobal.MentionOrBuilder>(
+                  getMentions(),
+                  getParentForChildren(),
+                  isClean());
+          mentions_ = null;
+        }
+        return mentionsBuilder_;
       }
 
-      private java.lang.Object additionalData_ = "";
+      private net.iGap.proto.ProtoGlobal.RoomMessageSticker sticker_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageSticker, net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder> stickerBuilder_;
       /**
-       * <code>optional string additional_data = 12;</code>
+       * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
        */
-      public java.lang.String getAdditionalData() {
-        java.lang.Object ref = additionalData_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          additionalData_ = s;
-          return s;
+      public boolean hasSticker() {
+        return stickerBuilder_ != null || sticker_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageSticker getSticker() {
+        if (stickerBuilder_ == null) {
+          return sticker_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageSticker.getDefaultInstance() : sticker_;
         } else {
-          return (java.lang.String) ref;
+          return stickerBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional string additional_data = 12;</code>
+       * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
        */
-      public com.google.protobuf.ByteString
-          getAdditionalDataBytes() {
-        java.lang.Object ref = additionalData_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          additionalData_ = b;
-          return b;
+      public Builder setSticker(net.iGap.proto.ProtoGlobal.RoomMessageSticker value) {
+        if (stickerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sticker_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          stickerBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
+       */
+      public Builder setSticker(
+          net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder builderForValue) {
+        if (stickerBuilder_ == null) {
+          sticker_ = builderForValue.build();
+          onChanged();
+        } else {
+          stickerBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
+       */
+      public Builder mergeSticker(net.iGap.proto.ProtoGlobal.RoomMessageSticker value) {
+        if (stickerBuilder_ == null) {
+          if (sticker_ != null) {
+            sticker_ =
+              net.iGap.proto.ProtoGlobal.RoomMessageSticker.newBuilder(sticker_).mergeFrom(value).buildPartial();
+          } else {
+            sticker_ = value;
+          }
+          onChanged();
+        } else {
+          stickerBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
+       */
+      public Builder clearSticker() {
+        if (stickerBuilder_ == null) {
+          sticker_ = null;
+          onChanged();
+        } else {
+          sticker_ = null;
+          stickerBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder getStickerBuilder() {
+        
+        onChanged();
+        return getStickerFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder getStickerOrBuilder() {
+        if (stickerBuilder_ != null) {
+          return stickerBuilder_.getMessageOrBuilder();
+        } else {
+          return sticker_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomMessageSticker.getDefaultInstance() : sticker_;
         }
       }
       /**
-       * <code>optional string additional_data = 12;</code>
+       * <code>optional .proto.RoomMessageSticker sticker = 16;</code>
        */
-      public Builder setAdditionalData(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        additionalData_ = value;
-        onChanged();
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageSticker, net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder> 
+          getStickerFieldBuilder() {
+        if (stickerBuilder_ == null) {
+          stickerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageSticker, net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder>(
+                  getSticker(),
+                  getParentForChildren(),
+                  isClean());
+          sticker_ = null;
+        }
+        return stickerBuilder_;
+      }
+
+      private net.iGap.proto.ProtoGlobal.RoomMessageCardToCard cardToCard_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageCardToCard, net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder, net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder> cardToCardBuilder_;
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+       */
+      public boolean hasCardToCard() {
+        return cardToCardBuilder_ != null || cardToCard_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard getCardToCard() {
+        if (cardToCardBuilder_ == null) {
+          return cardToCard_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.getDefaultInstance() : cardToCard_;
+        } else {
+          return cardToCardBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+       */
+      public Builder setCardToCard(net.iGap.proto.ProtoGlobal.RoomMessageCardToCard value) {
+        if (cardToCardBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cardToCard_ = value;
+          onChanged();
+        } else {
+          cardToCardBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>optional string additional_data = 12;</code>
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
        */
-      public Builder clearAdditionalData() {
-        
-        additionalData_ = getDefaultInstance().getAdditionalData();
-        onChanged();
+      public Builder setCardToCard(
+          net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder builderForValue) {
+        if (cardToCardBuilder_ == null) {
+          cardToCard_ = builderForValue.build();
+          onChanged();
+        } else {
+          cardToCardBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>optional string additional_data = 12;</code>
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
        */
-      public Builder setAdditionalDataBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        additionalData_ = value;
-        onChanged();
+      public Builder mergeCardToCard(net.iGap.proto.ProtoGlobal.RoomMessageCardToCard value) {
+        if (cardToCardBuilder_ == null) {
+          if (cardToCard_ != null) {
+            cardToCard_ =
+              net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.newBuilder(cardToCard_).mergeFrom(value).buildPartial();
+          } else {
+            cardToCard_ = value;
+          }
+          onChanged();
+        } else {
+          cardToCardBuilder_.mergeFrom(value);
+        }
+
         return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+       */
+      public Builder clearCardToCard() {
+        if (cardToCardBuilder_ == null) {
+          cardToCard_ = null;
+          onChanged();
+        } else {
+          cardToCard_ = null;
+          cardToCardBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder getCardToCardBuilder() {
+        
+        onChanged();
+        return getCardToCardFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder getCardToCardOrBuilder() {
+        if (cardToCardBuilder_ != null) {
+          return cardToCardBuilder_.getMessageOrBuilder();
+        } else {
+          return cardToCard_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.getDefaultInstance() : cardToCard_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageCardToCard, net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder, net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder> 
+          getCardToCardFieldBuilder() {
+        if (cardToCardBuilder_ == null) {
+          cardToCardBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageCardToCard, net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder, net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder>(
+                  getCardToCard(),
+                  getParentForChildren(),
+                  isClean());
+          cardToCard_ = null;
+        }
+        return cardToCardBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> botActionLists_ =
+        java.util.Collections.emptyList();
+      private void ensureBotActionListsIsMutable() {
+        if (!((bitField0_ & 0x00020000) == 0x00020000)) {
+          botActionLists_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList>(botActionLists_);
+          bitField0_ |= 0x00020000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageBotActionList, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder, net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> botActionListsBuilder_;
+
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> getBotActionListsList() {
+        if (botActionListsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(botActionLists_);
+        } else {
+          return botActionListsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public int getBotActionListsCount() {
+        if (botActionListsBuilder_ == null) {
+          return botActionLists_.size();
+        } else {
+          return botActionListsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList getBotActionLists(int index) {
+        if (botActionListsBuilder_ == null) {
+          return botActionLists_.get(index);
+        } else {
+          return botActionListsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public Builder setBotActionLists(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList value) {
+        if (botActionListsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBotActionListsIsMutable();
+          botActionLists_.set(index, value);
+          onChanged();
+        } else {
+          botActionListsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public Builder setBotActionLists(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder builderForValue) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          botActionLists_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          botActionListsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public Builder addBotActionLists(net.iGap.proto.ProtoGlobal.RoomMessageBotActionList value) {
+        if (botActionListsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBotActionListsIsMutable();
+          botActionLists_.add(value);
+          onChanged();
+        } else {
+          botActionListsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public Builder addBotActionLists(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList value) {
+        if (botActionListsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBotActionListsIsMutable();
+          botActionLists_.add(index, value);
+          onChanged();
+        } else {
+          botActionListsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public Builder addBotActionLists(
+          net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder builderForValue) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          botActionLists_.add(builderForValue.build());
+          onChanged();
+        } else {
+          botActionListsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public Builder addBotActionLists(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder builderForValue) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          botActionLists_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          botActionListsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public Builder addAllBotActionLists(
+          java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> values) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, botActionLists_);
+          onChanged();
+        } else {
+          botActionListsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public Builder clearBotActionLists() {
+        if (botActionListsBuilder_ == null) {
+          botActionLists_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00020000);
+          onChanged();
+        } else {
+          botActionListsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public Builder removeBotActionLists(int index) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          botActionLists_.remove(index);
+          onChanged();
+        } else {
+          botActionListsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder getBotActionListsBuilder(
+          int index) {
+        return getBotActionListsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder getBotActionListsOrBuilder(
+          int index) {
+        if (botActionListsBuilder_ == null) {
+          return botActionLists_.get(index);  } else {
+          return botActionListsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> 
+           getBotActionListsOrBuilderList() {
+        if (botActionListsBuilder_ != null) {
+          return botActionListsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(botActionLists_);
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder addBotActionListsBuilder() {
+        return getBotActionListsFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder addBotActionListsBuilder(
+          int index) {
+        return getBotActionListsFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 18;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder> 
+           getBotActionListsBuilderList() {
+        return getBotActionListsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageBotActionList, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder, net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> 
+          getBotActionListsFieldBuilder() {
+        if (botActionListsBuilder_ == null) {
+          botActionListsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageBotActionList, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder, net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder>(
+                  botActionLists_,
+                  ((bitField0_ & 0x00020000) == 0x00020000),
+                  getParentForChildren(),
+                  isClean());
+          botActionLists_ = null;
+        }
+        return botActionListsBuilder_;
+      }
+
+      private net.iGap.proto.ProtoGlobal.TextSigns textSigns_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> textSignsBuilder_;
+      /**
+       * <code>optional .proto.TextSigns text_signs = 19;</code>
+       */
+      public boolean hasTextSigns() {
+        return textSignsBuilder_ != null || textSigns_ != null;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 19;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+        if (textSignsBuilder_ == null) {
+          return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+        } else {
+          return textSignsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 19;</code>
+       */
+      public Builder setTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+        if (textSignsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          textSigns_ = value;
+          onChanged();
+        } else {
+          textSignsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 19;</code>
+       */
+      public Builder setTextSigns(
+          net.iGap.proto.ProtoGlobal.TextSigns.Builder builderForValue) {
+        if (textSignsBuilder_ == null) {
+          textSigns_ = builderForValue.build();
+          onChanged();
+        } else {
+          textSignsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 19;</code>
+       */
+      public Builder mergeTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+        if (textSignsBuilder_ == null) {
+          if (textSigns_ != null) {
+            textSigns_ =
+              net.iGap.proto.ProtoGlobal.TextSigns.newBuilder(textSigns_).mergeFrom(value).buildPartial();
+          } else {
+            textSigns_ = value;
+          }
+          onChanged();
+        } else {
+          textSignsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 19;</code>
+       */
+      public Builder clearTextSigns() {
+        if (textSignsBuilder_ == null) {
+          textSigns_ = null;
+          onChanged();
+        } else {
+          textSigns_ = null;
+          textSignsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 19;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.Builder getTextSignsBuilder() {
+        
+        onChanged();
+        return getTextSignsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 19;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+        if (textSignsBuilder_ != null) {
+          return textSignsBuilder_.getMessageOrBuilder();
+        } else {
+          return textSigns_ == null ?
+              net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+        }
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 19;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> 
+          getTextSignsFieldBuilder() {
+        if (textSignsBuilder_ == null) {
+          textSignsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder>(
+                  getTextSigns(),
+                  getParentForChildren(),
+                  isClean());
+          textSigns_ = null;
+        }
+        return textSignsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3140,7 +4288,7 @@ public final class ProtoGroupSendMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\026GroupSendMessage.proto\022\005proto\032\rRequest" +
-      ".proto\032\016Response.proto\032\014Global.proto\"\347\003\n" +
+      ".proto\032\016Response.proto\032\014Global.proto\"\312\005\n" +
       "\020GroupSendMessage\022\037\n\007request\030\001 \001(\0132\016.pro" +
       "to.Request\022,\n\014message_type\030\002 \001(\0162\026.proto" +
       ".RoomMessageType\022\017\n\007room_id\030\003 \001(\004\022\017\n\007mes" +
@@ -3149,15 +4297,21 @@ public final class ProtoGroupSendMessage {
       "contact\030\007 \001(\0132\031.proto.RoomMessageContact" +
       "\022\020\n\010reply_to\030\010 \001(\004\0223\n\014forward_from\030\t \001(\013" +
       "2\035.proto.RoomMessageForwardFrom\022\021\n\trando",
-      "m_id\030\n \001(\004\0221\n\013story_reply\030\r \001(\0132\034.proto." +
-      "RoomMessageStoryReply\0225\n\rstory_forward\030\016" +
-      " \001(\0132\036.proto.RoomMessageStoryForward\022\027\n\017" +
-      "additional_type\030\013 \001(\r\022\027\n\017additional_data" +
-      "\030\014 \001(\t\"x\n\030GroupSendMessageResponse\022!\n\010re" +
-      "sponse\030\001 \001(\0132\017.proto.Response\022\017\n\007room_id" +
-      "\030\002 \001(\004\022(\n\014room_message\030\003 \001(\0132\022.proto.Roo" +
-      "mMessageB\'\n\016net.iGap.protoB\025ProtoGroupSe" +
-      "ndMessageb\006proto3"
+      "m_id\030\n \001(\004\022\027\n\017additional_type\030\013 \001(\r\022\027\n\017a" +
+      "dditional_data\030\014 \001(\t\0221\n\013story_reply\030\r \001(" +
+      "\0132\034.proto.RoomMessageStoryReply\0225\n\rstory" +
+      "_forward\030\016 \001(\0132\036.proto.RoomMessageStoryF" +
+      "orward\022 \n\010mentions\030\017 \001(\0132\016.proto.Mention" +
+      "\022*\n\007sticker\030\020 \001(\0132\031.proto.RoomMessageSti" +
+      "cker\0222\n\014card_to_card\030\021 \001(\0132\034.proto.RoomM" +
+      "essageCardToCard\0229\n\020bot_action_lists\030\022 \003" +
+      "(\0132\037.proto.RoomMessageBotActionList\022$\n\nt" +
+      "ext_signs\030\023 \001(\0132\020.proto.TextSigns\"x\n\030Gro",
+      "upSendMessageResponse\022!\n\010response\030\001 \001(\0132" +
+      "\017.proto.Response\022\017\n\007room_id\030\002 \001(\004\022(\n\014roo" +
+      "m_message\030\003 \001(\0132\022.proto.RoomMessageB\'\n\016n" +
+      "et.iGap.protoB\025ProtoGroupSendMessageb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3179,7 +4333,7 @@ public final class ProtoGroupSendMessage {
     internal_static_proto_GroupSendMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupSendMessage_descriptor,
-        new java.lang.String[] { "Request", "MessageType", "RoomId", "Message", "Attachment", "Location", "Contact", "ReplyTo", "ForwardFrom", "RandomId", "StoryReply", "StoryForward", "AdditionalType", "AdditionalData", });
+        new java.lang.String[] { "Request", "MessageType", "RoomId", "Message", "Attachment", "Location", "Contact", "ReplyTo", "ForwardFrom", "RandomId", "AdditionalType", "AdditionalData", "StoryReply", "StoryForward", "Mentions", "Sticker", "CardToCard", "BotActionLists", "TextSigns", });
     internal_static_proto_GroupSendMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_GroupSendMessageResponse_fieldAccessorTable = new

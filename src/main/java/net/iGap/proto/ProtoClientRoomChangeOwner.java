@@ -720,9 +720,9 @@ public final class ProtoClientRoomChangeOwner {
     net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional uint64 user_id = 2;</code>
+     * <code>optional uint64 old_owner_id = 2;</code>
      */
-    long getUserId();
+    long getOldOwnerId();
 
     /**
      * <code>optional uint64 room_id = 3;</code>
@@ -741,6 +741,11 @@ public final class ProtoClientRoomChangeOwner {
      * <code>optional .proto.RoomAccess permission = 4;</code>
      */
     net.iGap.proto.ProtoGlobal.RoomAccessOrBuilder getPermissionOrBuilder();
+
+    /**
+     * <code>optional uint64 new_owner_id = 5;</code>
+     */
+    long getNewOwnerId();
   }
   /**
    * Protobuf type {@code proto.ClientRoomChangeOwnerResponse}
@@ -754,8 +759,9 @@ public final class ProtoClientRoomChangeOwner {
       super(builder);
     }
     private ClientRoomChangeOwnerResponse() {
-      userId_ = 0L;
+      oldOwnerId_ = 0L;
       roomId_ = 0L;
+      newOwnerId_ = 0L;
     }
 
     @java.lang.Override
@@ -798,7 +804,7 @@ public final class ProtoClientRoomChangeOwner {
             }
             case 16: {
 
-              userId_ = input.readUInt64();
+              oldOwnerId_ = input.readUInt64();
               break;
             }
             case 24: {
@@ -817,6 +823,11 @@ public final class ProtoClientRoomChangeOwner {
                 permission_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 40: {
+
+              newOwnerId_ = input.readUInt64();
               break;
             }
           }
@@ -863,13 +874,13 @@ public final class ProtoClientRoomChangeOwner {
       return getResponse();
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 2;
-    private long userId_;
+    public static final int OLD_OWNER_ID_FIELD_NUMBER = 2;
+    private long oldOwnerId_;
     /**
-     * <code>optional uint64 user_id = 2;</code>
+     * <code>optional uint64 old_owner_id = 2;</code>
      */
-    public long getUserId() {
-      return userId_;
+    public long getOldOwnerId() {
+      return oldOwnerId_;
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 3;
@@ -902,6 +913,15 @@ public final class ProtoClientRoomChangeOwner {
       return getPermission();
     }
 
+    public static final int NEW_OWNER_ID_FIELD_NUMBER = 5;
+    private long newOwnerId_;
+    /**
+     * <code>optional uint64 new_owner_id = 5;</code>
+     */
+    public long getNewOwnerId() {
+      return newOwnerId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -917,14 +937,17 @@ public final class ProtoClientRoomChangeOwner {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
-      if (userId_ != 0L) {
-        output.writeUInt64(2, userId_);
+      if (oldOwnerId_ != 0L) {
+        output.writeUInt64(2, oldOwnerId_);
       }
       if (roomId_ != 0L) {
         output.writeUInt64(3, roomId_);
       }
       if (permission_ != null) {
         output.writeMessage(4, getPermission());
+      }
+      if (newOwnerId_ != 0L) {
+        output.writeUInt64(5, newOwnerId_);
       }
     }
 
@@ -937,9 +960,9 @@ public final class ProtoClientRoomChangeOwner {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
       }
-      if (userId_ != 0L) {
+      if (oldOwnerId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, userId_);
+          .computeUInt64Size(2, oldOwnerId_);
       }
       if (roomId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -948,6 +971,10 @@ public final class ProtoClientRoomChangeOwner {
       if (permission_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getPermission());
+      }
+      if (newOwnerId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, newOwnerId_);
       }
       memoizedSize = size;
       return size;
@@ -970,8 +997,8 @@ public final class ProtoClientRoomChangeOwner {
         result = result && getResponse()
             .equals(other.getResponse());
       }
-      result = result && (getUserId()
-          == other.getUserId());
+      result = result && (getOldOwnerId()
+          == other.getOldOwnerId());
       result = result && (getRoomId()
           == other.getRoomId());
       result = result && (hasPermission() == other.hasPermission());
@@ -979,6 +1006,8 @@ public final class ProtoClientRoomChangeOwner {
         result = result && getPermission()
             .equals(other.getPermission());
       }
+      result = result && (getNewOwnerId()
+          == other.getNewOwnerId());
       return result;
     }
 
@@ -993,9 +1022,9 @@ public final class ProtoClientRoomChangeOwner {
         hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getResponse().hashCode();
       }
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (37 * hash) + OLD_OWNER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUserId());
+          getOldOwnerId());
       hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomId());
@@ -1003,6 +1032,9 @@ public final class ProtoClientRoomChangeOwner {
         hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
         hash = (53 * hash) + getPermission().hashCode();
       }
+      hash = (37 * hash) + NEW_OWNER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getNewOwnerId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1127,7 +1159,7 @@ public final class ProtoClientRoomChangeOwner {
           response_ = null;
           responseBuilder_ = null;
         }
-        userId_ = 0L;
+        oldOwnerId_ = 0L;
 
         roomId_ = 0L;
 
@@ -1137,6 +1169,8 @@ public final class ProtoClientRoomChangeOwner {
           permission_ = null;
           permissionBuilder_ = null;
         }
+        newOwnerId_ = 0L;
+
         return this;
       }
 
@@ -1164,13 +1198,14 @@ public final class ProtoClientRoomChangeOwner {
         } else {
           result.response_ = responseBuilder_.build();
         }
-        result.userId_ = userId_;
+        result.oldOwnerId_ = oldOwnerId_;
         result.roomId_ = roomId_;
         if (permissionBuilder_ == null) {
           result.permission_ = permission_;
         } else {
           result.permission_ = permissionBuilder_.build();
         }
+        result.newOwnerId_ = newOwnerId_;
         onBuilt();
         return result;
       }
@@ -1215,14 +1250,17 @@ public final class ProtoClientRoomChangeOwner {
         if (other.hasResponse()) {
           mergeResponse(other.getResponse());
         }
-        if (other.getUserId() != 0L) {
-          setUserId(other.getUserId());
+        if (other.getOldOwnerId() != 0L) {
+          setOldOwnerId(other.getOldOwnerId());
         }
         if (other.getRoomId() != 0L) {
           setRoomId(other.getRoomId());
         }
         if (other.hasPermission()) {
           mergePermission(other.getPermission());
+        }
+        if (other.getNewOwnerId() != 0L) {
+          setNewOwnerId(other.getNewOwnerId());
         }
         onChanged();
         return this;
@@ -1367,28 +1405,28 @@ public final class ProtoClientRoomChangeOwner {
         return responseBuilder_;
       }
 
-      private long userId_ ;
+      private long oldOwnerId_ ;
       /**
-       * <code>optional uint64 user_id = 2;</code>
+       * <code>optional uint64 old_owner_id = 2;</code>
        */
-      public long getUserId() {
-        return userId_;
+      public long getOldOwnerId() {
+        return oldOwnerId_;
       }
       /**
-       * <code>optional uint64 user_id = 2;</code>
+       * <code>optional uint64 old_owner_id = 2;</code>
        */
-      public Builder setUserId(long value) {
+      public Builder setOldOwnerId(long value) {
         
-        userId_ = value;
+        oldOwnerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 user_id = 2;</code>
+       * <code>optional uint64 old_owner_id = 2;</code>
        */
-      public Builder clearUserId() {
+      public Builder clearOldOwnerId() {
         
-        userId_ = 0L;
+        oldOwnerId_ = 0L;
         onChanged();
         return this;
       }
@@ -1535,6 +1573,32 @@ public final class ProtoClientRoomChangeOwner {
         }
         return permissionBuilder_;
       }
+
+      private long newOwnerId_ ;
+      /**
+       * <code>optional uint64 new_owner_id = 5;</code>
+       */
+      public long getNewOwnerId() {
+        return newOwnerId_;
+      }
+      /**
+       * <code>optional uint64 new_owner_id = 5;</code>
+       */
+      public Builder setNewOwnerId(long value) {
+        
+        newOwnerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 new_owner_id = 5;</code>
+       */
+      public Builder clearNewOwnerId() {
+        
+        newOwnerId_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1607,12 +1671,12 @@ public final class ProtoClientRoomChangeOwner {
       "quest.proto\032\016Response.proto\032\014Global.prot" +
       "o\"Z\n\025ClientRoomChangeOwner\022\037\n\007request\030\001 " +
       "\001(\0132\016.proto.Request\022\017\n\007user_id\030\002 \001(\004\022\017\n\007" +
-      "room_id\030\003 \001(\004\"\213\001\n\035ClientRoomChangeOwnerR" +
+      "room_id\030\003 \001(\004\"\246\001\n\035ClientRoomChangeOwnerR" +
       "esponse\022!\n\010response\030\001 \001(\0132\017.proto.Respon" +
-      "se\022\017\n\007user_id\030\002 \001(\004\022\017\n\007room_id\030\003 \001(\004\022%\n\n" +
-      "permission\030\004 \001(\0132\021.proto.RoomAccessB,\n\016n" +
-      "et.iGap.protoB\032ProtoClientRoomChangeOwne" +
-      "rb\006proto3"
+      "se\022\024\n\014old_owner_id\030\002 \001(\004\022\017\n\007room_id\030\003 \001(" +
+      "\004\022%\n\npermission\030\004 \001(\0132\021.proto.RoomAccess" +
+      "\022\024\n\014new_owner_id\030\005 \001(\004B,\n\016net.iGap.proto" +
+      "B\032ProtoClientRoomChangeOwnerb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1640,7 +1704,7 @@ public final class ProtoClientRoomChangeOwner {
     internal_static_proto_ClientRoomChangeOwnerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientRoomChangeOwnerResponse_descriptor,
-        new java.lang.String[] { "Response", "UserId", "RoomId", "Permission", });
+        new java.lang.String[] { "Response", "OldOwnerId", "RoomId", "Permission", "NewOwnerId", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();

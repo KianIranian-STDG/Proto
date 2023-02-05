@@ -42,7 +42,7 @@ public final class ProtoClientGetRoomMessage {
     long getMessageId();
 
     /**
-     * <code>optional uint64 document_id = 4;</code>
+     * <code>optional uint64 documentId = 4;</code>
      */
     long getDocumentId();
   }
@@ -178,10 +178,10 @@ public final class ProtoClientGetRoomMessage {
       return messageId_;
     }
 
-    public static final int DOCUMENT_ID_FIELD_NUMBER = 4;
+    public static final int DOCUMENTID_FIELD_NUMBER = 4;
     private long documentId_;
     /**
-     * <code>optional uint64 document_id = 4;</code>
+     * <code>optional uint64 documentId = 4;</code>
      */
     public long getDocumentId() {
       return documentId_;
@@ -281,7 +281,7 @@ public final class ProtoClientGetRoomMessage {
       hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMessageId());
-      hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
+      hash = (37 * hash) + DOCUMENTID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -694,13 +694,13 @@ public final class ProtoClientGetRoomMessage {
 
       private long documentId_ ;
       /**
-       * <code>optional uint64 document_id = 4;</code>
+       * <code>optional uint64 documentId = 4;</code>
        */
       public long getDocumentId() {
         return documentId_;
       }
       /**
-       * <code>optional uint64 document_id = 4;</code>
+       * <code>optional uint64 documentId = 4;</code>
        */
       public Builder setDocumentId(long value) {
         
@@ -709,7 +709,7 @@ public final class ProtoClientGetRoomMessage {
         return this;
       }
       /**
-       * <code>optional uint64 document_id = 4;</code>
+       * <code>optional uint64 documentId = 4;</code>
        */
       public Builder clearDocumentId() {
         
@@ -1541,13 +1541,13 @@ public final class ProtoClientGetRoomMessage {
     java.lang.String[] descriptorData = {
       "\n\032ClientGetRoomMessage.proto\022\005proto\032\rReq" +
       "uest.proto\032\016Response.proto\032\014Global.proto" +
-      "\"q\n\024ClientGetRoomMessage\022\037\n\007request\030\001 \001(" +
+      "\"p\n\024ClientGetRoomMessage\022\037\n\007request\030\001 \001(" +
       "\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\004\022\022\n\nme" +
-      "ssage_id\030\003 \001(\004\022\023\n\013document_id\030\004 \001(\004\"f\n\034C" +
-      "lientGetRoomMessageResponse\022!\n\010response\030" +
-      "\001 \001(\0132\017.proto.Response\022#\n\007message\030\002 \001(\0132" +
-      "\022.proto.RoomMessageB+\n\016net.iGap.protoB\031P" +
-      "rotoClientGetRoomMessageb\006proto3"
+      "ssage_id\030\003 \001(\004\022\022\n\ndocumentId\030\004 \001(\004\"f\n\034Cl" +
+      "ientGetRoomMessageResponse\022!\n\010response\030\001" +
+      " \001(\0132\017.proto.Response\022#\n\007message\030\002 \001(\0132\022" +
+      ".proto.RoomMessageB+\n\016net.iGap.protoB\031Pr" +
+      "otoClientGetRoomMessageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

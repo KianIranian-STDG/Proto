@@ -720,14 +720,27 @@ public final class ProtoClientPinRoom {
     net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2 [deprecated = true];</code>
      */
-    long getRoomId();
+    @java.lang.Deprecated long getRoomId();
 
     /**
      * <code>optional uint64 pin_id = 3;</code>
      */
     long getPinId();
+
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    boolean hasRoom();
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.Room getRoom();
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomOrBuilder getRoomOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ClientPinRoomResponse}
@@ -793,6 +806,19 @@ public final class ProtoClientPinRoom {
               pinId_ = input.readUInt64();
               break;
             }
+            case 34: {
+              net.iGap.proto.ProtoGlobal.Room.Builder subBuilder = null;
+              if (room_ != null) {
+                subBuilder = room_.toBuilder();
+              }
+              room_ = input.readMessage(net.iGap.proto.ProtoGlobal.Room.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(room_);
+                room_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -840,9 +866,9 @@ public final class ProtoClientPinRoom {
     public static final int ROOM_ID_FIELD_NUMBER = 2;
     private long roomId_;
     /**
-     * <code>optional uint64 room_id = 2;</code>
+     * <code>optional uint64 room_id = 2 [deprecated = true];</code>
      */
-    public long getRoomId() {
+    @java.lang.Deprecated public long getRoomId() {
       return roomId_;
     }
 
@@ -853,6 +879,27 @@ public final class ProtoClientPinRoom {
      */
     public long getPinId() {
       return pinId_;
+    }
+
+    public static final int ROOM_FIELD_NUMBER = 4;
+    private net.iGap.proto.ProtoGlobal.Room room_;
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    public boolean hasRoom() {
+      return room_ != null;
+    }
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.Room getRoom() {
+      return room_ == null ? net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
+    }
+    /**
+     * <code>optional .proto.Room room = 4;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomOrBuilder getRoomOrBuilder() {
+      return getRoom();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -876,6 +923,9 @@ public final class ProtoClientPinRoom {
       if (pinId_ != 0L) {
         output.writeUInt64(3, pinId_);
       }
+      if (room_ != null) {
+        output.writeMessage(4, getRoom());
+      }
     }
 
     public int getSerializedSize() {
@@ -894,6 +944,10 @@ public final class ProtoClientPinRoom {
       if (pinId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(3, pinId_);
+      }
+      if (room_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getRoom());
       }
       memoizedSize = size;
       return size;
@@ -920,6 +974,11 @@ public final class ProtoClientPinRoom {
           == other.getRoomId());
       result = result && (getPinId()
           == other.getPinId());
+      result = result && (hasRoom() == other.hasRoom());
+      if (hasRoom()) {
+        result = result && getRoom()
+            .equals(other.getRoom());
+      }
       return result;
     }
 
@@ -940,6 +999,10 @@ public final class ProtoClientPinRoom {
       hash = (37 * hash) + PIN_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPinId());
+      if (hasRoom()) {
+        hash = (37 * hash) + ROOM_FIELD_NUMBER;
+        hash = (53 * hash) + getRoom().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1068,6 +1131,12 @@ public final class ProtoClientPinRoom {
 
         pinId_ = 0L;
 
+        if (roomBuilder_ == null) {
+          room_ = null;
+        } else {
+          room_ = null;
+          roomBuilder_ = null;
+        }
         return this;
       }
 
@@ -1097,6 +1166,11 @@ public final class ProtoClientPinRoom {
         }
         result.roomId_ = roomId_;
         result.pinId_ = pinId_;
+        if (roomBuilder_ == null) {
+          result.room_ = room_;
+        } else {
+          result.room_ = roomBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1146,6 +1220,9 @@ public final class ProtoClientPinRoom {
         }
         if (other.getPinId() != 0L) {
           setPinId(other.getPinId());
+        }
+        if (other.hasRoom()) {
+          mergeRoom(other.getRoom());
         }
         onChanged();
         return this;
@@ -1292,24 +1369,24 @@ public final class ProtoClientPinRoom {
 
       private long roomId_ ;
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2 [deprecated = true];</code>
        */
-      public long getRoomId() {
+      @java.lang.Deprecated public long getRoomId() {
         return roomId_;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2 [deprecated = true];</code>
        */
-      public Builder setRoomId(long value) {
+      @java.lang.Deprecated public Builder setRoomId(long value) {
         
         roomId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 room_id = 2;</code>
+       * <code>optional uint64 room_id = 2 [deprecated = true];</code>
        */
-      public Builder clearRoomId() {
+      @java.lang.Deprecated public Builder clearRoomId() {
         
         roomId_ = 0L;
         onChanged();
@@ -1340,6 +1417,123 @@ public final class ProtoClientPinRoom {
         pinId_ = 0L;
         onChanged();
         return this;
+      }
+
+      private net.iGap.proto.ProtoGlobal.Room room_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Room, net.iGap.proto.ProtoGlobal.Room.Builder, net.iGap.proto.ProtoGlobal.RoomOrBuilder> roomBuilder_;
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public boolean hasRoom() {
+        return roomBuilder_ != null || room_ != null;
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Room getRoom() {
+        if (roomBuilder_ == null) {
+          return room_ == null ? net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
+        } else {
+          return roomBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public Builder setRoom(net.iGap.proto.ProtoGlobal.Room value) {
+        if (roomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          room_ = value;
+          onChanged();
+        } else {
+          roomBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public Builder setRoom(
+          net.iGap.proto.ProtoGlobal.Room.Builder builderForValue) {
+        if (roomBuilder_ == null) {
+          room_ = builderForValue.build();
+          onChanged();
+        } else {
+          roomBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public Builder mergeRoom(net.iGap.proto.ProtoGlobal.Room value) {
+        if (roomBuilder_ == null) {
+          if (room_ != null) {
+            room_ =
+              net.iGap.proto.ProtoGlobal.Room.newBuilder(room_).mergeFrom(value).buildPartial();
+          } else {
+            room_ = value;
+          }
+          onChanged();
+        } else {
+          roomBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public Builder clearRoom() {
+        if (roomBuilder_ == null) {
+          room_ = null;
+          onChanged();
+        } else {
+          room_ = null;
+          roomBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Room.Builder getRoomBuilder() {
+        
+        onChanged();
+        return getRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomOrBuilder getRoomOrBuilder() {
+        if (roomBuilder_ != null) {
+          return roomBuilder_.getMessageOrBuilder();
+        } else {
+          return room_ == null ?
+              net.iGap.proto.ProtoGlobal.Room.getDefaultInstance() : room_;
+        }
+      }
+      /**
+       * <code>optional .proto.Room room = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.Room, net.iGap.proto.ProtoGlobal.Room.Builder, net.iGap.proto.ProtoGlobal.RoomOrBuilder> 
+          getRoomFieldBuilder() {
+        if (roomBuilder_ == null) {
+          roomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.Room, net.iGap.proto.ProtoGlobal.Room.Builder, net.iGap.proto.ProtoGlobal.RoomOrBuilder>(
+                  getRoom(),
+                  getParentForChildren(),
+                  isClean());
+          room_ = null;
+        }
+        return roomBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1410,12 +1604,14 @@ public final class ProtoClientPinRoom {
   static {
     java.lang.String[] descriptorData = {
       "\n\023ClientPinRoom.proto\022\005proto\032\rRequest.pr" +
-      "oto\032\016Response.proto\"N\n\rClientPinRoom\022\037\n\007" +
-      "request\030\001 \001(\0132\016.proto.Request\022\017\n\007room_id" +
-      "\030\002 \001(\004\022\013\n\003pin\030\003 \001(\010\"[\n\025ClientPinRoomResp" +
-      "onse\022!\n\010response\030\001 \001(\0132\017.proto.Response\022" +
-      "\017\n\007room_id\030\002 \001(\004\022\016\n\006pin_id\030\003 \001(\004B$\n\016net." +
-      "iGap.protoB\022ProtoClientPinRoomb\006proto3"
+      "oto\032\016Response.proto\032\014Global.proto\"N\n\rCli" +
+      "entPinRoom\022\037\n\007request\030\001 \001(\0132\016.proto.Requ" +
+      "est\022\017\n\007room_id\030\002 \001(\004\022\013\n\003pin\030\003 \001(\010\"z\n\025Cli" +
+      "entPinRoomResponse\022!\n\010response\030\001 \001(\0132\017.p" +
+      "roto.Response\022\023\n\007room_id\030\002 \001(\004B\002\030\001\022\016\n\006pi" +
+      "n_id\030\003 \001(\004\022\031\n\004room\030\004 \001(\0132\013.proto.RoomB$\n" +
+      "\016net.iGap.protoB\022ProtoClientPinRoomb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1430,6 +1626,7 @@ public final class ProtoClientPinRoom {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           net.iGap.proto.ProtoRequest.getDescriptor(),
           net.iGap.proto.ProtoResponse.getDescriptor(),
+          net.iGap.proto.ProtoGlobal.getDescriptor(),
         }, assigner);
     internal_static_proto_ClientPinRoom_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1442,9 +1639,10 @@ public final class ProtoClientPinRoom {
     internal_static_proto_ClientPinRoomResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientPinRoomResponse_descriptor,
-        new java.lang.String[] { "Response", "RoomId", "PinId", });
+        new java.lang.String[] { "Response", "RoomId", "PinId", "Room", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
+    net.iGap.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

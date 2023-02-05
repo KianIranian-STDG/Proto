@@ -55,6 +55,19 @@ public final class ProtoChannelEditMessage {
      * <code>optional uint64 document_id = 5;</code>
      */
     long getDocumentId();
+
+    /**
+     * <code>optional .proto.TextSigns text_signs = 6;</code>
+     */
+    boolean hasTextSigns();
+    /**
+     * <code>optional .proto.TextSigns text_signs = 6;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSigns getTextSigns();
+    /**
+     * <code>optional .proto.TextSigns text_signs = 6;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ChannelEditMessage}
@@ -131,6 +144,19 @@ public final class ProtoChannelEditMessage {
             case 40: {
 
               documentId_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              net.iGap.proto.ProtoGlobal.TextSigns.Builder subBuilder = null;
+              if (textSigns_ != null) {
+                subBuilder = textSigns_.toBuilder();
+              }
+              textSigns_ = input.readMessage(net.iGap.proto.ProtoGlobal.TextSigns.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(textSigns_);
+                textSigns_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -238,6 +264,27 @@ public final class ProtoChannelEditMessage {
       return documentId_;
     }
 
+    public static final int TEXT_SIGNS_FIELD_NUMBER = 6;
+    private net.iGap.proto.ProtoGlobal.TextSigns textSigns_;
+    /**
+     * <code>optional .proto.TextSigns text_signs = 6;</code>
+     */
+    public boolean hasTextSigns() {
+      return textSigns_ != null;
+    }
+    /**
+     * <code>optional .proto.TextSigns text_signs = 6;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+      return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+    }
+    /**
+     * <code>optional .proto.TextSigns text_signs = 6;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+      return getTextSigns();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -265,6 +312,9 @@ public final class ProtoChannelEditMessage {
       if (documentId_ != 0L) {
         output.writeUInt64(5, documentId_);
       }
+      if (textSigns_ != null) {
+        output.writeMessage(6, getTextSigns());
+      }
     }
 
     public int getSerializedSize() {
@@ -290,6 +340,10 @@ public final class ProtoChannelEditMessage {
       if (documentId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(5, documentId_);
+      }
+      if (textSigns_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getTextSigns());
       }
       memoizedSize = size;
       return size;
@@ -320,6 +374,11 @@ public final class ProtoChannelEditMessage {
           .equals(other.getMessage());
       result = result && (getDocumentId()
           == other.getDocumentId());
+      result = result && (hasTextSigns() == other.hasTextSigns());
+      if (hasTextSigns()) {
+        result = result && getTextSigns()
+            .equals(other.getTextSigns());
+      }
       return result;
     }
 
@@ -345,6 +404,10 @@ public final class ProtoChannelEditMessage {
       hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDocumentId());
+      if (hasTextSigns()) {
+        hash = (37 * hash) + TEXT_SIGNS_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSigns().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -477,6 +540,12 @@ public final class ProtoChannelEditMessage {
 
         documentId_ = 0L;
 
+        if (textSignsBuilder_ == null) {
+          textSigns_ = null;
+        } else {
+          textSigns_ = null;
+          textSignsBuilder_ = null;
+        }
         return this;
       }
 
@@ -508,6 +577,11 @@ public final class ProtoChannelEditMessage {
         result.messageId_ = messageId_;
         result.message_ = message_;
         result.documentId_ = documentId_;
+        if (textSignsBuilder_ == null) {
+          result.textSigns_ = textSigns_;
+        } else {
+          result.textSigns_ = textSignsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -564,6 +638,9 @@ public final class ProtoChannelEditMessage {
         }
         if (other.getDocumentId() != 0L) {
           setDocumentId(other.getDocumentId());
+        }
+        if (other.hasTextSigns()) {
+          mergeTextSigns(other.getTextSigns());
         }
         onChanged();
         return this;
@@ -854,6 +931,123 @@ public final class ProtoChannelEditMessage {
         onChanged();
         return this;
       }
+
+      private net.iGap.proto.ProtoGlobal.TextSigns textSigns_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> textSignsBuilder_;
+      /**
+       * <code>optional .proto.TextSigns text_signs = 6;</code>
+       */
+      public boolean hasTextSigns() {
+        return textSignsBuilder_ != null || textSigns_ != null;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 6;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+        if (textSignsBuilder_ == null) {
+          return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+        } else {
+          return textSignsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 6;</code>
+       */
+      public Builder setTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+        if (textSignsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          textSigns_ = value;
+          onChanged();
+        } else {
+          textSignsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 6;</code>
+       */
+      public Builder setTextSigns(
+          net.iGap.proto.ProtoGlobal.TextSigns.Builder builderForValue) {
+        if (textSignsBuilder_ == null) {
+          textSigns_ = builderForValue.build();
+          onChanged();
+        } else {
+          textSignsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 6;</code>
+       */
+      public Builder mergeTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+        if (textSignsBuilder_ == null) {
+          if (textSigns_ != null) {
+            textSigns_ =
+              net.iGap.proto.ProtoGlobal.TextSigns.newBuilder(textSigns_).mergeFrom(value).buildPartial();
+          } else {
+            textSigns_ = value;
+          }
+          onChanged();
+        } else {
+          textSignsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 6;</code>
+       */
+      public Builder clearTextSigns() {
+        if (textSignsBuilder_ == null) {
+          textSigns_ = null;
+          onChanged();
+        } else {
+          textSigns_ = null;
+          textSignsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 6;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.Builder getTextSignsBuilder() {
+        
+        onChanged();
+        return getTextSignsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 6;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+        if (textSignsBuilder_ != null) {
+          return textSignsBuilder_.getMessageOrBuilder();
+        } else {
+          return textSigns_ == null ?
+              net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+        }
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> 
+          getTextSignsFieldBuilder() {
+        if (textSignsBuilder_ == null) {
+          textSignsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder>(
+                  getTextSigns(),
+                  getParentForChildren(),
+                  isClean());
+          textSigns_ = null;
+        }
+        return textSignsBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -958,6 +1152,19 @@ public final class ProtoChannelEditMessage {
      * <code>optional uint64 document_id = 7;</code>
      */
     long getDocumentId();
+
+    /**
+     * <code>optional .proto.TextSigns text_signs = 8;</code>
+     */
+    boolean hasTextSigns();
+    /**
+     * <code>optional .proto.TextSigns text_signs = 8;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSigns getTextSigns();
+    /**
+     * <code>optional .proto.TextSigns text_signs = 8;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ChannelEditMessageResponse}
@@ -1047,6 +1254,19 @@ public final class ProtoChannelEditMessage {
             case 56: {
 
               documentId_ = input.readUInt64();
+              break;
+            }
+            case 66: {
+              net.iGap.proto.ProtoGlobal.TextSigns.Builder subBuilder = null;
+              if (textSigns_ != null) {
+                subBuilder = textSigns_.toBuilder();
+              }
+              textSigns_ = input.readMessage(net.iGap.proto.ProtoGlobal.TextSigns.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(textSigns_);
+                textSigns_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -1179,6 +1399,27 @@ public final class ProtoChannelEditMessage {
       return documentId_;
     }
 
+    public static final int TEXT_SIGNS_FIELD_NUMBER = 8;
+    private net.iGap.proto.ProtoGlobal.TextSigns textSigns_;
+    /**
+     * <code>optional .proto.TextSigns text_signs = 8;</code>
+     */
+    public boolean hasTextSigns() {
+      return textSigns_ != null;
+    }
+    /**
+     * <code>optional .proto.TextSigns text_signs = 8;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+      return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+    }
+    /**
+     * <code>optional .proto.TextSigns text_signs = 8;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+      return getTextSigns();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1211,6 +1452,9 @@ public final class ProtoChannelEditMessage {
       }
       if (documentId_ != 0L) {
         output.writeUInt64(7, documentId_);
+      }
+      if (textSigns_ != null) {
+        output.writeMessage(8, getTextSigns());
       }
     }
 
@@ -1246,6 +1490,10 @@ public final class ProtoChannelEditMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(7, documentId_);
       }
+      if (textSigns_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getTextSigns());
+      }
       memoizedSize = size;
       return size;
     }
@@ -1278,6 +1526,11 @@ public final class ProtoChannelEditMessage {
       result = result && messageType_ == other.messageType_;
       result = result && (getDocumentId()
           == other.getDocumentId());
+      result = result && (hasTextSigns() == other.hasTextSigns());
+      if (hasTextSigns()) {
+        result = result && getTextSigns()
+            .equals(other.getTextSigns());
+      }
       return result;
     }
 
@@ -1308,6 +1561,10 @@ public final class ProtoChannelEditMessage {
       hash = (37 * hash) + DOCUMENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDocumentId());
+      if (hasTextSigns()) {
+        hash = (37 * hash) + TEXT_SIGNS_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSigns().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1444,6 +1701,12 @@ public final class ProtoChannelEditMessage {
 
         documentId_ = 0L;
 
+        if (textSignsBuilder_ == null) {
+          textSigns_ = null;
+        } else {
+          textSigns_ = null;
+          textSignsBuilder_ = null;
+        }
         return this;
       }
 
@@ -1477,6 +1740,11 @@ public final class ProtoChannelEditMessage {
         result.message_ = message_;
         result.messageType_ = messageType_;
         result.documentId_ = documentId_;
+        if (textSignsBuilder_ == null) {
+          result.textSigns_ = textSigns_;
+        } else {
+          result.textSigns_ = textSignsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1539,6 +1807,9 @@ public final class ProtoChannelEditMessage {
         }
         if (other.getDocumentId() != 0L) {
           setDocumentId(other.getDocumentId());
+        }
+        if (other.hasTextSigns()) {
+          mergeTextSigns(other.getTextSigns());
         }
         onChanged();
         return this;
@@ -1899,6 +2170,123 @@ public final class ProtoChannelEditMessage {
         onChanged();
         return this;
       }
+
+      private net.iGap.proto.ProtoGlobal.TextSigns textSigns_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> textSignsBuilder_;
+      /**
+       * <code>optional .proto.TextSigns text_signs = 8;</code>
+       */
+      public boolean hasTextSigns() {
+        return textSignsBuilder_ != null || textSigns_ != null;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 8;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+        if (textSignsBuilder_ == null) {
+          return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+        } else {
+          return textSignsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 8;</code>
+       */
+      public Builder setTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+        if (textSignsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          textSigns_ = value;
+          onChanged();
+        } else {
+          textSignsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 8;</code>
+       */
+      public Builder setTextSigns(
+          net.iGap.proto.ProtoGlobal.TextSigns.Builder builderForValue) {
+        if (textSignsBuilder_ == null) {
+          textSigns_ = builderForValue.build();
+          onChanged();
+        } else {
+          textSignsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 8;</code>
+       */
+      public Builder mergeTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+        if (textSignsBuilder_ == null) {
+          if (textSigns_ != null) {
+            textSigns_ =
+              net.iGap.proto.ProtoGlobal.TextSigns.newBuilder(textSigns_).mergeFrom(value).buildPartial();
+          } else {
+            textSigns_ = value;
+          }
+          onChanged();
+        } else {
+          textSignsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 8;</code>
+       */
+      public Builder clearTextSigns() {
+        if (textSignsBuilder_ == null) {
+          textSigns_ = null;
+          onChanged();
+        } else {
+          textSigns_ = null;
+          textSignsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 8;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.Builder getTextSignsBuilder() {
+        
+        onChanged();
+        return getTextSignsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 8;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+        if (textSignsBuilder_ != null) {
+          return textSignsBuilder_.getMessageOrBuilder();
+        } else {
+          return textSigns_ == null ?
+              net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+        }
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> 
+          getTextSignsFieldBuilder() {
+        if (textSignsBuilder_ == null) {
+          textSignsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder>(
+                  getTextSigns(),
+                  getParentForChildren(),
+                  isClean());
+          textSigns_ = null;
+        }
+        return textSignsBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1968,17 +2356,19 @@ public final class ProtoChannelEditMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ChannelEditMessage.proto\022\005proto\032\rReque" +
-      "st.proto\032\016Response.proto\032\014Global.proto\"\200" +
+      "st.proto\032\016Response.proto\032\014Global.proto\"\246" +
       "\001\n\022ChannelEditMessage\022\037\n\007request\030\001 \001(\0132\016" +
       ".proto.Request\022\017\n\007room_id\030\002 \001(\004\022\022\n\nmessa" +
       "ge_id\030\003 \001(\004\022\017\n\007message\030\004 \001(\t\022\023\n\013document" +
-      "_id\030\005 \001(\004\"\321\001\n\032ChannelEditMessageResponse" +
-      "\022!\n\010response\030\001 \001(\0132\017.proto.Response\022\017\n\007r" +
-      "oom_id\030\002 \001(\004\022\022\n\nmessage_id\030\003 \001(\004\022\027\n\017mess" +
-      "age_version\030\004 \001(\004\022\017\n\007message\030\005 \001(\t\022,\n\014me" +
-      "ssage_type\030\006 \001(\0162\026.proto.RoomMessageType",
-      "\022\023\n\013document_id\030\007 \001(\004B)\n\016net.iGap.protoB" +
-      "\027ProtoChannelEditMessageb\006proto3"
+      "_id\030\005 \001(\004\022$\n\ntext_signs\030\006 \001(\0132\020.proto.Te" +
+      "xtSigns\"\367\001\n\032ChannelEditMessageResponse\022!" +
+      "\n\010response\030\001 \001(\0132\017.proto.Response\022\017\n\007roo" +
+      "m_id\030\002 \001(\004\022\022\n\nmessage_id\030\003 \001(\004\022\027\n\017messag" +
+      "e_version\030\004 \001(\004\022\017\n\007message\030\005 \001(\t\022,\n\014mess",
+      "age_type\030\006 \001(\0162\026.proto.RoomMessageType\022\023" +
+      "\n\013document_id\030\007 \001(\004\022$\n\ntext_signs\030\010 \001(\0132" +
+      "\020.proto.TextSignsB)\n\016net.iGap.protoB\027Pro" +
+      "toChannelEditMessageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2000,13 +2390,13 @@ public final class ProtoChannelEditMessage {
     internal_static_proto_ChannelEditMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelEditMessage_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "MessageId", "Message", "DocumentId", });
+        new java.lang.String[] { "Request", "RoomId", "MessageId", "Message", "DocumentId", "TextSigns", });
     internal_static_proto_ChannelEditMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ChannelEditMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelEditMessageResponse_descriptor,
-        new java.lang.String[] { "Response", "RoomId", "MessageId", "MessageVersion", "Message", "MessageType", "DocumentId", });
+        new java.lang.String[] { "Response", "RoomId", "MessageId", "MessageVersion", "Message", "MessageType", "DocumentId", "TextSigns", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();

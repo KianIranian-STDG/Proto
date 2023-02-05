@@ -37,9 +37,14 @@ public final class ProtoChatClearMessage {
     long getRoomId();
 
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    long getClearId();
+    long getClearMessageId();
+
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    long getClearDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatClearMessage}
@@ -54,7 +59,8 @@ public final class ProtoChatClearMessage {
     }
     private ChatClearMessage() {
       roomId_ = 0L;
-      clearId_ = 0L;
+      clearMessageId_ = 0L;
+      clearDocumentId_ = 0L;
     }
 
     @java.lang.Override
@@ -102,7 +108,12 @@ public final class ProtoChatClearMessage {
             }
             case 24: {
 
-              clearId_ = input.readUInt64();
+              clearMessageId_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              clearDocumentId_ = input.readUInt64();
               break;
             }
           }
@@ -158,13 +169,22 @@ public final class ProtoChatClearMessage {
       return roomId_;
     }
 
-    public static final int CLEAR_ID_FIELD_NUMBER = 3;
-    private long clearId_;
+    public static final int CLEAR_MESSAGE_ID_FIELD_NUMBER = 3;
+    private long clearMessageId_;
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    public long getClearId() {
-      return clearId_;
+    public long getClearMessageId() {
+      return clearMessageId_;
+    }
+
+    public static final int CLEAR_DOCUMENT_ID_FIELD_NUMBER = 4;
+    private long clearDocumentId_;
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    public long getClearDocumentId() {
+      return clearDocumentId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -185,8 +205,11 @@ public final class ProtoChatClearMessage {
       if (roomId_ != 0L) {
         output.writeUInt64(2, roomId_);
       }
-      if (clearId_ != 0L) {
-        output.writeUInt64(3, clearId_);
+      if (clearMessageId_ != 0L) {
+        output.writeUInt64(3, clearMessageId_);
+      }
+      if (clearDocumentId_ != 0L) {
+        output.writeUInt64(4, clearDocumentId_);
       }
     }
 
@@ -203,9 +226,13 @@ public final class ProtoChatClearMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, roomId_);
       }
-      if (clearId_ != 0L) {
+      if (clearMessageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, clearId_);
+          .computeUInt64Size(3, clearMessageId_);
+      }
+      if (clearDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, clearDocumentId_);
       }
       memoizedSize = size;
       return size;
@@ -230,8 +257,10 @@ public final class ProtoChatClearMessage {
       }
       result = result && (getRoomId()
           == other.getRoomId());
-      result = result && (getClearId()
-          == other.getClearId());
+      result = result && (getClearMessageId()
+          == other.getClearMessageId());
+      result = result && (getClearDocumentId()
+          == other.getClearDocumentId());
       return result;
     }
 
@@ -249,9 +278,12 @@ public final class ProtoChatClearMessage {
       hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomId());
-      hash = (37 * hash) + CLEAR_ID_FIELD_NUMBER;
+      hash = (37 * hash) + CLEAR_MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getClearId());
+          getClearMessageId());
+      hash = (37 * hash) + CLEAR_DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getClearDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,7 +410,9 @@ public final class ProtoChatClearMessage {
         }
         roomId_ = 0L;
 
-        clearId_ = 0L;
+        clearMessageId_ = 0L;
+
+        clearDocumentId_ = 0L;
 
         return this;
       }
@@ -408,7 +442,8 @@ public final class ProtoChatClearMessage {
           result.request_ = requestBuilder_.build();
         }
         result.roomId_ = roomId_;
-        result.clearId_ = clearId_;
+        result.clearMessageId_ = clearMessageId_;
+        result.clearDocumentId_ = clearDocumentId_;
         onBuilt();
         return result;
       }
@@ -456,8 +491,11 @@ public final class ProtoChatClearMessage {
         if (other.getRoomId() != 0L) {
           setRoomId(other.getRoomId());
         }
-        if (other.getClearId() != 0L) {
-          setClearId(other.getClearId());
+        if (other.getClearMessageId() != 0L) {
+          setClearMessageId(other.getClearMessageId());
+        }
+        if (other.getClearDocumentId() != 0L) {
+          setClearDocumentId(other.getClearDocumentId());
         }
         onChanged();
         return this;
@@ -628,28 +666,54 @@ public final class ProtoChatClearMessage {
         return this;
       }
 
-      private long clearId_ ;
+      private long clearMessageId_ ;
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public long getClearId() {
-        return clearId_;
+      public long getClearMessageId() {
+        return clearMessageId_;
       }
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public Builder setClearId(long value) {
+      public Builder setClearMessageId(long value) {
         
-        clearId_ = value;
+        clearMessageId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public Builder clearClearId() {
+      public Builder clearClearMessageId() {
         
-        clearId_ = 0L;
+        clearMessageId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long clearDocumentId_ ;
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public long getClearDocumentId() {
+        return clearDocumentId_;
+      }
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public Builder setClearDocumentId(long value) {
+        
+        clearDocumentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public Builder clearClearDocumentId() {
+        
+        clearDocumentId_ = 0L;
         onChanged();
         return this;
       }
@@ -725,9 +789,14 @@ public final class ProtoChatClearMessage {
     long getRoomId();
 
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    long getClearId();
+    long getClearMessageId();
+
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    long getClearDocumentId();
   }
   /**
    * Protobuf type {@code proto.ChatClearMessageResponse}
@@ -742,7 +811,8 @@ public final class ProtoChatClearMessage {
     }
     private ChatClearMessageResponse() {
       roomId_ = 0L;
-      clearId_ = 0L;
+      clearMessageId_ = 0L;
+      clearDocumentId_ = 0L;
     }
 
     @java.lang.Override
@@ -790,7 +860,12 @@ public final class ProtoChatClearMessage {
             }
             case 24: {
 
-              clearId_ = input.readUInt64();
+              clearMessageId_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              clearDocumentId_ = input.readUInt64();
               break;
             }
           }
@@ -846,13 +921,22 @@ public final class ProtoChatClearMessage {
       return roomId_;
     }
 
-    public static final int CLEAR_ID_FIELD_NUMBER = 3;
-    private long clearId_;
+    public static final int CLEAR_MESSAGE_ID_FIELD_NUMBER = 3;
+    private long clearMessageId_;
     /**
-     * <code>optional uint64 clear_id = 3;</code>
+     * <code>optional uint64 clear_message_id = 3;</code>
      */
-    public long getClearId() {
-      return clearId_;
+    public long getClearMessageId() {
+      return clearMessageId_;
+    }
+
+    public static final int CLEAR_DOCUMENT_ID_FIELD_NUMBER = 4;
+    private long clearDocumentId_;
+    /**
+     * <code>optional uint64 clear_document_id = 4;</code>
+     */
+    public long getClearDocumentId() {
+      return clearDocumentId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -873,8 +957,11 @@ public final class ProtoChatClearMessage {
       if (roomId_ != 0L) {
         output.writeUInt64(2, roomId_);
       }
-      if (clearId_ != 0L) {
-        output.writeUInt64(3, clearId_);
+      if (clearMessageId_ != 0L) {
+        output.writeUInt64(3, clearMessageId_);
+      }
+      if (clearDocumentId_ != 0L) {
+        output.writeUInt64(4, clearDocumentId_);
       }
     }
 
@@ -891,9 +978,13 @@ public final class ProtoChatClearMessage {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, roomId_);
       }
-      if (clearId_ != 0L) {
+      if (clearMessageId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, clearId_);
+          .computeUInt64Size(3, clearMessageId_);
+      }
+      if (clearDocumentId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, clearDocumentId_);
       }
       memoizedSize = size;
       return size;
@@ -918,8 +1009,10 @@ public final class ProtoChatClearMessage {
       }
       result = result && (getRoomId()
           == other.getRoomId());
-      result = result && (getClearId()
-          == other.getClearId());
+      result = result && (getClearMessageId()
+          == other.getClearMessageId());
+      result = result && (getClearDocumentId()
+          == other.getClearDocumentId());
       return result;
     }
 
@@ -937,9 +1030,12 @@ public final class ProtoChatClearMessage {
       hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRoomId());
-      hash = (37 * hash) + CLEAR_ID_FIELD_NUMBER;
+      hash = (37 * hash) + CLEAR_MESSAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getClearId());
+          getClearMessageId());
+      hash = (37 * hash) + CLEAR_DOCUMENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getClearDocumentId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1066,7 +1162,9 @@ public final class ProtoChatClearMessage {
         }
         roomId_ = 0L;
 
-        clearId_ = 0L;
+        clearMessageId_ = 0L;
+
+        clearDocumentId_ = 0L;
 
         return this;
       }
@@ -1096,7 +1194,8 @@ public final class ProtoChatClearMessage {
           result.response_ = responseBuilder_.build();
         }
         result.roomId_ = roomId_;
-        result.clearId_ = clearId_;
+        result.clearMessageId_ = clearMessageId_;
+        result.clearDocumentId_ = clearDocumentId_;
         onBuilt();
         return result;
       }
@@ -1144,8 +1243,11 @@ public final class ProtoChatClearMessage {
         if (other.getRoomId() != 0L) {
           setRoomId(other.getRoomId());
         }
-        if (other.getClearId() != 0L) {
-          setClearId(other.getClearId());
+        if (other.getClearMessageId() != 0L) {
+          setClearMessageId(other.getClearMessageId());
+        }
+        if (other.getClearDocumentId() != 0L) {
+          setClearDocumentId(other.getClearDocumentId());
         }
         onChanged();
         return this;
@@ -1316,28 +1418,54 @@ public final class ProtoChatClearMessage {
         return this;
       }
 
-      private long clearId_ ;
+      private long clearMessageId_ ;
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public long getClearId() {
-        return clearId_;
+      public long getClearMessageId() {
+        return clearMessageId_;
       }
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public Builder setClearId(long value) {
+      public Builder setClearMessageId(long value) {
         
-        clearId_ = value;
+        clearMessageId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint64 clear_id = 3;</code>
+       * <code>optional uint64 clear_message_id = 3;</code>
        */
-      public Builder clearClearId() {
+      public Builder clearClearMessageId() {
         
-        clearId_ = 0L;
+        clearMessageId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long clearDocumentId_ ;
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public long getClearDocumentId() {
+        return clearDocumentId_;
+      }
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public Builder setClearDocumentId(long value) {
+        
+        clearDocumentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 clear_document_id = 4;</code>
+       */
+      public Builder clearClearDocumentId() {
+        
+        clearDocumentId_ = 0L;
         onChanged();
         return this;
       }
@@ -1410,13 +1538,15 @@ public final class ProtoChatClearMessage {
   static {
     java.lang.String[] descriptorData = {
       "\n\026ChatClearMessage.proto\022\005proto\032\rRequest" +
-      ".proto\032\016Response.proto\"V\n\020ChatClearMessa" +
+      ".proto\032\016Response.proto\"y\n\020ChatClearMessa" +
       "ge\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\017\n\007r" +
-      "oom_id\030\002 \001(\004\022\020\n\010clear_id\030\003 \001(\004\"`\n\030ChatCl" +
-      "earMessageResponse\022!\n\010response\030\001 \001(\0132\017.p" +
-      "roto.Response\022\017\n\007room_id\030\002 \001(\004\022\020\n\010clear_" +
-      "id\030\003 \001(\004B\'\n\016net.iGap.protoB\025ProtoChatCle" +
-      "arMessageb\006proto3"
+      "oom_id\030\002 \001(\004\022\030\n\020clear_message_id\030\003 \001(\004\022\031" +
+      "\n\021clear_document_id\030\004 \001(\004\"\203\001\n\030ChatClearM" +
+      "essageResponse\022!\n\010response\030\001 \001(\0132\017.proto" +
+      ".Response\022\017\n\007room_id\030\002 \001(\004\022\030\n\020clear_mess" +
+      "age_id\030\003 \001(\004\022\031\n\021clear_document_id\030\004 \001(\004B" +
+      "\'\n\016net.iGap.protoB\025ProtoChatClearMessage" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1437,13 +1567,13 @@ public final class ProtoChatClearMessage {
     internal_static_proto_ChatClearMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatClearMessage_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "ClearId", });
+        new java.lang.String[] { "Request", "RoomId", "ClearMessageId", "ClearDocumentId", });
     internal_static_proto_ChatClearMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ChatClearMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatClearMessageResponse_descriptor,
-        new java.lang.String[] { "Response", "RoomId", "ClearId", });
+        new java.lang.String[] { "Response", "RoomId", "ClearMessageId", "ClearDocumentId", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
   }

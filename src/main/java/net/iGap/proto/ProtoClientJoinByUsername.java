@@ -727,6 +727,16 @@ public final class ProtoClientJoinByUsername {
      * <code>optional .proto.Response response = 1;</code>
      */
     net.iGap.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
+
+    /**
+     * <code>optional uint64 room_id = 2;</code>
+     */
+    long getRoomId();
+
+    /**
+     * <code>optional uint64 user_id = 3;</code>
+     */
+    long getUserId();
   }
   /**
    * Protobuf type {@code proto.ClientJoinByUsernameResponse}
@@ -740,6 +750,8 @@ public final class ProtoClientJoinByUsername {
       super(builder);
     }
     private ClientJoinByUsernameResponse() {
+      roomId_ = 0L;
+      userId_ = 0L;
     }
 
     @java.lang.Override
@@ -778,6 +790,16 @@ public final class ProtoClientJoinByUsername {
                 response_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 16: {
+
+              roomId_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              userId_ = input.readUInt64();
               break;
             }
           }
@@ -824,6 +846,24 @@ public final class ProtoClientJoinByUsername {
       return getResponse();
     }
 
+    public static final int ROOM_ID_FIELD_NUMBER = 2;
+    private long roomId_;
+    /**
+     * <code>optional uint64 room_id = 2;</code>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 3;
+    private long userId_;
+    /**
+     * <code>optional uint64 user_id = 3;</code>
+     */
+    public long getUserId() {
+      return userId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -839,6 +879,12 @@ public final class ProtoClientJoinByUsername {
       if (response_ != null) {
         output.writeMessage(1, getResponse());
       }
+      if (roomId_ != 0L) {
+        output.writeUInt64(2, roomId_);
+      }
+      if (userId_ != 0L) {
+        output.writeUInt64(3, userId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -849,6 +895,14 @@ public final class ProtoClientJoinByUsername {
       if (response_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getResponse());
+      }
+      if (roomId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, roomId_);
+      }
+      if (userId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, userId_);
       }
       memoizedSize = size;
       return size;
@@ -871,6 +925,10 @@ public final class ProtoClientJoinByUsername {
         result = result && getResponse()
             .equals(other.getResponse());
       }
+      result = result && (getRoomId()
+          == other.getRoomId());
+      result = result && (getUserId()
+          == other.getUserId());
       return result;
     }
 
@@ -885,6 +943,12 @@ public final class ProtoClientJoinByUsername {
         hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getResponse().hashCode();
       }
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRoomId());
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1009,6 +1073,10 @@ public final class ProtoClientJoinByUsername {
           response_ = null;
           responseBuilder_ = null;
         }
+        roomId_ = 0L;
+
+        userId_ = 0L;
+
         return this;
       }
 
@@ -1036,6 +1104,8 @@ public final class ProtoClientJoinByUsername {
         } else {
           result.response_ = responseBuilder_.build();
         }
+        result.roomId_ = roomId_;
+        result.userId_ = userId_;
         onBuilt();
         return result;
       }
@@ -1079,6 +1149,12 @@ public final class ProtoClientJoinByUsername {
         if (other == net.iGap.proto.ProtoClientJoinByUsername.ClientJoinByUsernameResponse.getDefaultInstance()) return this;
         if (other.hasResponse()) {
           mergeResponse(other.getResponse());
+        }
+        if (other.getRoomId() != 0L) {
+          setRoomId(other.getRoomId());
+        }
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
         }
         onChanged();
         return this;
@@ -1222,6 +1298,58 @@ public final class ProtoClientJoinByUsername {
         }
         return responseBuilder_;
       }
+
+      private long roomId_ ;
+      /**
+       * <code>optional uint64 room_id = 2;</code>
+       */
+      public long getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>optional uint64 room_id = 2;</code>
+       */
+      public Builder setRoomId(long value) {
+        
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 room_id = 2;</code>
+       */
+      public Builder clearRoomId() {
+        
+        roomId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long userId_ ;
+      /**
+       * <code>optional uint64 user_id = 3;</code>
+       */
+      public long getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>optional uint64 user_id = 3;</code>
+       */
+      public Builder setUserId(long value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 user_id = 3;</code>
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1293,10 +1421,11 @@ public final class ProtoClientJoinByUsername {
       "\n\032ClientJoinByUsername.proto\022\005proto\032\rReq" +
       "uest.proto\032\016Response.proto\"I\n\024ClientJoin" +
       "ByUsername\022\037\n\007request\030\001 \001(\0132\016.proto.Requ" +
-      "est\022\020\n\010username\030\002 \001(\t\"A\n\034ClientJoinByUse" +
+      "est\022\020\n\010username\030\002 \001(\t\"c\n\034ClientJoinByUse" +
       "rnameResponse\022!\n\010response\030\001 \001(\0132\017.proto." +
-      "ResponseB+\n\016net.iGap.protoB\031ProtoClientJ" +
-      "oinByUsernameb\006proto3"
+      "Response\022\017\n\007room_id\030\002 \001(\004\022\017\n\007user_id\030\003 \001" +
+      "(\004B+\n\016net.iGap.protoB\031ProtoClientJoinByU" +
+      "sernameb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1323,7 +1452,7 @@ public final class ProtoClientJoinByUsername {
     internal_static_proto_ClientJoinByUsernameResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientJoinByUsernameResponse_descriptor,
-        new java.lang.String[] { "Response", });
+        new java.lang.String[] { "Response", "RoomId", "UserId", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
   }

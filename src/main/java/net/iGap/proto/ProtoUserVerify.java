@@ -45,6 +45,16 @@ public final class ProtoUserVerify {
      */
     com.google.protobuf.ByteString
         getUsernameBytes();
+
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    java.lang.String getPhoneHash();
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getPhoneHashBytes();
   }
   /**
    * Protobuf type {@code proto.UserVerify}
@@ -60,6 +70,7 @@ public final class ProtoUserVerify {
     private UserVerify() {
       code_ = 0;
       username_ = "";
+      phoneHash_ = "";
     }
 
     @java.lang.Override
@@ -109,6 +120,12 @@ public final class ProtoUserVerify {
               java.lang.String s = input.readStringRequireUtf8();
 
               username_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              phoneHash_ = s;
               break;
             }
           }
@@ -198,6 +215,40 @@ public final class ProtoUserVerify {
       }
     }
 
+    public static final int PHONE_HASH_FIELD_NUMBER = 4;
+    private volatile java.lang.Object phoneHash_;
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    public java.lang.String getPhoneHash() {
+      java.lang.Object ref = phoneHash_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phoneHash_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string phone_hash = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPhoneHashBytes() {
+      java.lang.Object ref = phoneHash_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        phoneHash_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -219,6 +270,9 @@ public final class ProtoUserVerify {
       if (!getUsernameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, username_);
       }
+      if (!getPhoneHashBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, phoneHash_);
+      }
     }
 
     public int getSerializedSize() {
@@ -236,6 +290,9 @@ public final class ProtoUserVerify {
       }
       if (!getUsernameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, username_);
+      }
+      if (!getPhoneHashBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, phoneHash_);
       }
       memoizedSize = size;
       return size;
@@ -262,6 +319,8 @@ public final class ProtoUserVerify {
           == other.getCode());
       result = result && getUsername()
           .equals(other.getUsername());
+      result = result && getPhoneHash()
+          .equals(other.getPhoneHash());
       return result;
     }
 
@@ -280,6 +339,8 @@ public final class ProtoUserVerify {
       hash = (53 * hash) + getCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
       hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + PHONE_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneHash().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -408,6 +469,8 @@ public final class ProtoUserVerify {
 
         username_ = "";
 
+        phoneHash_ = "";
+
         return this;
       }
 
@@ -437,6 +500,7 @@ public final class ProtoUserVerify {
         }
         result.code_ = code_;
         result.username_ = username_;
+        result.phoneHash_ = phoneHash_;
         onBuilt();
         return result;
       }
@@ -486,6 +550,10 @@ public final class ProtoUserVerify {
         }
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
+          onChanged();
+        }
+        if (!other.getPhoneHash().isEmpty()) {
+          phoneHash_ = other.phoneHash_;
           onChanged();
         }
         onChanged();
@@ -722,6 +790,75 @@ public final class ProtoUserVerify {
   checkByteStringIsUtf8(value);
         
         username_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object phoneHash_ = "";
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public java.lang.String getPhoneHash() {
+        java.lang.Object ref = phoneHash_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          phoneHash_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPhoneHashBytes() {
+        java.lang.Object ref = phoneHash_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          phoneHash_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public Builder setPhoneHash(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        phoneHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public Builder clearPhoneHash() {
+        
+        phoneHash_ = getDefaultInstance().getPhoneHash();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string phone_hash = 4;</code>
+       */
+      public Builder setPhoneHashBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        phoneHash_ = value;
         onChanged();
         return this;
       }
@@ -1555,12 +1692,13 @@ public final class ProtoUserVerify {
   static {
     java.lang.String[] descriptorData = {
       "\n\020UserVerify.proto\022\005proto\032\rRequest.proto" +
-      "\032\016Response.proto\"M\n\nUserVerify\022\037\n\007reques" +
+      "\032\016Response.proto\"a\n\nUserVerify\022\037\n\007reques" +
       "t\030\001 \001(\0132\016.proto.Request\022\014\n\004code\030\002 \001(\r\022\020\n" +
-      "\010username\030\003 \001(\t\"X\n\022UserVerifyResponse\022!\n" +
-      "\010response\030\001 \001(\0132\017.proto.Response\022\r\n\005toke" +
-      "n\030\002 \001(\t\022\020\n\010new_user\030\003 \001(\010B!\n\016net.iGap.pr" +
-      "otoB\017ProtoUserVerifyb\006proto3"
+      "\010username\030\003 \001(\t\022\022\n\nphone_hash\030\004 \001(\t\"X\n\022U" +
+      "serVerifyResponse\022!\n\010response\030\001 \001(\0132\017.pr" +
+      "oto.Response\022\r\n\005token\030\002 \001(\t\022\020\n\010new_user\030" +
+      "\003 \001(\010B!\n\016net.iGap.protoB\017ProtoUserVerify" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1581,7 +1719,7 @@ public final class ProtoUserVerify {
     internal_static_proto_UserVerify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserVerify_descriptor,
-        new java.lang.String[] { "Request", "Code", "Username", });
+        new java.lang.String[] { "Request", "Code", "Username", "PhoneHash", });
     internal_static_proto_UserVerifyResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_UserVerifyResponse_fieldAccessorTable = new

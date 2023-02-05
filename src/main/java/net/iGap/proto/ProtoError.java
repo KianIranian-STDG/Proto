@@ -55,6 +55,11 @@ public final class ProtoError {
      */
     com.google.protobuf.ByteString
         getMessageBytes();
+
+    /**
+     * <code>optional uint64 request_action_id = 6;</code>
+     */
+    long getRequestActionId();
   }
   /**
    * Protobuf type {@code proto.ErrorResponse}
@@ -72,6 +77,7 @@ public final class ProtoError {
       minorCode_ = 0;
       wait_ = 0;
       message_ = "";
+      requestActionId_ = 0L;
     }
 
     @java.lang.Override
@@ -131,6 +137,11 @@ public final class ProtoError {
               java.lang.String s = input.readStringRequireUtf8();
 
               message_ = s;
+              break;
+            }
+            case 48: {
+
+              requestActionId_ = input.readUInt64();
               break;
             }
           }
@@ -238,6 +249,15 @@ public final class ProtoError {
       }
     }
 
+    public static final int REQUEST_ACTION_ID_FIELD_NUMBER = 6;
+    private long requestActionId_;
+    /**
+     * <code>optional uint64 request_action_id = 6;</code>
+     */
+    public long getRequestActionId() {
+      return requestActionId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -265,6 +285,9 @@ public final class ProtoError {
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, message_);
       }
+      if (requestActionId_ != 0L) {
+        output.writeUInt64(6, requestActionId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -290,6 +313,10 @@ public final class ProtoError {
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, message_);
+      }
+      if (requestActionId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, requestActionId_);
       }
       memoizedSize = size;
       return size;
@@ -320,6 +347,8 @@ public final class ProtoError {
           == other.getWait());
       result = result && getMessage()
           .equals(other.getMessage());
+      result = result && (getRequestActionId()
+          == other.getRequestActionId());
       return result;
     }
 
@@ -342,6 +371,9 @@ public final class ProtoError {
       hash = (53 * hash) + getWait();
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + REQUEST_ACTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRequestActionId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -474,6 +506,8 @@ public final class ProtoError {
 
         message_ = "";
 
+        requestActionId_ = 0L;
+
         return this;
       }
 
@@ -505,6 +539,7 @@ public final class ProtoError {
         result.minorCode_ = minorCode_;
         result.wait_ = wait_;
         result.message_ = message_;
+        result.requestActionId_ = requestActionId_;
         onBuilt();
         return result;
       }
@@ -561,6 +596,9 @@ public final class ProtoError {
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
           onChanged();
+        }
+        if (other.getRequestActionId() != 0L) {
+          setRequestActionId(other.getRequestActionId());
         }
         onChanged();
         return this;
@@ -851,6 +889,32 @@ public final class ProtoError {
         onChanged();
         return this;
       }
+
+      private long requestActionId_ ;
+      /**
+       * <code>optional uint64 request_action_id = 6;</code>
+       */
+      public long getRequestActionId() {
+        return requestActionId_;
+      }
+      /**
+       * <code>optional uint64 request_action_id = 6;</code>
+       */
+      public Builder setRequestActionId(long value) {
+        
+        requestActionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 request_action_id = 6;</code>
+       */
+      public Builder clearRequestActionId() {
+        
+        requestActionId_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -914,11 +978,12 @@ public final class ProtoError {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Error.proto\022\005proto\032\016Response.proto\"y\n\r" +
-      "ErrorResponse\022!\n\010response\030\001 \001(\0132\017.proto." +
-      "Response\022\022\n\nmajor_code\030\002 \001(\r\022\022\n\nminor_co" +
-      "de\030\003 \001(\r\022\014\n\004wait\030\004 \001(\r\022\017\n\007message\030\005 \001(\tB" +
-      "\034\n\016net.iGap.protoB\nProtoErrorb\006proto3"
+      "\n\013Error.proto\022\005proto\032\016Response.proto\"\224\001\n" +
+      "\rErrorResponse\022!\n\010response\030\001 \001(\0132\017.proto" +
+      ".Response\022\022\n\nmajor_code\030\002 \001(\r\022\022\n\nminor_c" +
+      "ode\030\003 \001(\r\022\014\n\004wait\030\004 \001(\r\022\017\n\007message\030\005 \001(\t" +
+      "\022\031\n\021request_action_id\030\006 \001(\004B\034\n\016net.iGap." +
+      "protoB\nProtoErrorb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -938,7 +1003,7 @@ public final class ProtoError {
     internal_static_proto_ErrorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ErrorResponse_descriptor,
-        new java.lang.String[] { "Response", "MajorCode", "MinorCode", "Wait", "Message", });
+        new java.lang.String[] { "Response", "MajorCode", "MinorCode", "Wait", "Message", "RequestActionId", });
     net.iGap.proto.ProtoResponse.getDescriptor();
   }
 

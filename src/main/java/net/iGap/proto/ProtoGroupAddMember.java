@@ -156,6 +156,11 @@ public final class ProtoGroupAddMember {
        * <code>optional uint64 start_message_id = 2;</code>
        */
       long getStartMessageId();
+
+      /**
+       * <code>optional uint64 start_document_id = 3;</code>
+       */
+      long getStartDocumentId();
     }
     /**
      * Protobuf type {@code proto.GroupAddMember.Member}
@@ -171,6 +176,7 @@ public final class ProtoGroupAddMember {
       private Member() {
         userId_ = 0L;
         startMessageId_ = 0L;
+        startDocumentId_ = 0L;
       }
 
       @java.lang.Override
@@ -206,6 +212,11 @@ public final class ProtoGroupAddMember {
               case 16: {
 
                 startMessageId_ = input.readUInt64();
+                break;
+              }
+              case 24: {
+
+                startDocumentId_ = input.readUInt64();
                 break;
               }
             }
@@ -249,6 +260,15 @@ public final class ProtoGroupAddMember {
         return startMessageId_;
       }
 
+      public static final int START_DOCUMENT_ID_FIELD_NUMBER = 3;
+      private long startDocumentId_;
+      /**
+       * <code>optional uint64 start_document_id = 3;</code>
+       */
+      public long getStartDocumentId() {
+        return startDocumentId_;
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -267,6 +287,9 @@ public final class ProtoGroupAddMember {
         if (startMessageId_ != 0L) {
           output.writeUInt64(2, startMessageId_);
         }
+        if (startDocumentId_ != 0L) {
+          output.writeUInt64(3, startDocumentId_);
+        }
       }
 
       public int getSerializedSize() {
@@ -281,6 +304,10 @@ public final class ProtoGroupAddMember {
         if (startMessageId_ != 0L) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(2, startMessageId_);
+        }
+        if (startDocumentId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(3, startDocumentId_);
         }
         memoizedSize = size;
         return size;
@@ -302,6 +329,8 @@ public final class ProtoGroupAddMember {
             == other.getUserId());
         result = result && (getStartMessageId()
             == other.getStartMessageId());
+        result = result && (getStartDocumentId()
+            == other.getStartDocumentId());
         return result;
       }
 
@@ -318,6 +347,9 @@ public final class ProtoGroupAddMember {
         hash = (37 * hash) + START_MESSAGE_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getStartMessageId());
+        hash = (37 * hash) + START_DOCUMENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getStartDocumentId());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -440,6 +472,8 @@ public final class ProtoGroupAddMember {
 
           startMessageId_ = 0L;
 
+          startDocumentId_ = 0L;
+
           return this;
         }
 
@@ -464,6 +498,7 @@ public final class ProtoGroupAddMember {
           net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member result = new net.iGap.proto.ProtoGroupAddMember.GroupAddMember.Member(this);
           result.userId_ = userId_;
           result.startMessageId_ = startMessageId_;
+          result.startDocumentId_ = startDocumentId_;
           onBuilt();
           return result;
         }
@@ -510,6 +545,9 @@ public final class ProtoGroupAddMember {
           }
           if (other.getStartMessageId() != 0L) {
             setStartMessageId(other.getStartMessageId());
+          }
+          if (other.getStartDocumentId() != 0L) {
+            setStartDocumentId(other.getStartDocumentId());
           }
           onChanged();
           return this;
@@ -585,6 +623,32 @@ public final class ProtoGroupAddMember {
         public Builder clearStartMessageId() {
           
           startMessageId_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long startDocumentId_ ;
+        /**
+         * <code>optional uint64 start_document_id = 3;</code>
+         */
+        public long getStartDocumentId() {
+          return startDocumentId_;
+        }
+        /**
+         * <code>optional uint64 start_document_id = 3;</code>
+         */
+        public Builder setStartDocumentId(long value) {
+          
+          startDocumentId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 start_document_id = 3;</code>
+         */
+        public Builder clearStartDocumentId() {
+          
+          startDocumentId_ = 0L;
           onChanged();
           return this;
         }
@@ -2131,16 +2195,17 @@ public final class ProtoGroupAddMember {
   static {
     java.lang.String[] descriptorData = {
       "\n\024GroupAddMember.proto\022\005proto\032\rRequest.p" +
-      "roto\032\016Response.proto\032\014Global.proto\"\245\001\n\016G" +
+      "roto\032\016Response.proto\032\014Global.proto\"\300\001\n\016G" +
       "roupAddMember\022\037\n\007request\030\001 \001(\0132\016.proto.R" +
       "equest\022\017\n\007room_id\030\002 \001(\004\022,\n\006member\030\003 \001(\0132" +
-      "\034.proto.GroupAddMember.Member\0323\n\006Member\022" +
+      "\034.proto.GroupAddMember.Member\032N\n\006Member\022" +
       "\017\n\007user_id\030\001 \001(\004\022\030\n\020start_message_id\030\002 \001" +
-      "(\004\"\202\001\n\026GroupAddMemberResponse\022!\n\010respons" +
-      "e\030\001 \001(\0132\017.proto.Response\022\017\n\007room_id\030\002 \001(" +
-      "\004\022\017\n\007user_id\030\003 \001(\004\022#\n\004role\030\004 \001(\0162\025.proto" +
-      ".GroupRoom.RoleB%\n\016net.iGap.protoB\023Proto",
-      "GroupAddMemberb\006proto3"
+      "(\004\022\031\n\021start_document_id\030\003 \001(\004\"\202\001\n\026GroupA" +
+      "ddMemberResponse\022!\n\010response\030\001 \001(\0132\017.pro" +
+      "to.Response\022\017\n\007room_id\030\002 \001(\004\022\017\n\007user_id\030" +
+      "\003 \001(\004\022#\n\004role\030\004 \001(\0162\025.proto.GroupRoom.Ro",
+      "leB%\n\016net.iGap.protoB\023ProtoGroupAddMembe" +
+      "rb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2168,7 +2233,7 @@ public final class ProtoGroupAddMember {
     internal_static_proto_GroupAddMember_Member_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupAddMember_Member_descriptor,
-        new java.lang.String[] { "UserId", "StartMessageId", });
+        new java.lang.String[] { "UserId", "StartMessageId", "StartDocumentId", });
     internal_static_proto_GroupAddMemberResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_GroupAddMemberResponse_fieldAccessorTable = new

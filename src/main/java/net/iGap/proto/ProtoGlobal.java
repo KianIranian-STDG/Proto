@@ -559,6 +559,14 @@ public final class ProtoGlobal {
      * <code>STORY_REPLY = 18;</code>
      */
     STORY_REPLY(18),
+    /**
+     * <code>CARD_TO_CARD = 19;</code>
+     */
+    CARD_TO_CARD(19),
+    /**
+     * <code>BOT = 20;</code>
+     */
+    BOT(20),
     UNRECOGNIZED(-1),
     ;
 
@@ -638,6 +646,14 @@ public final class ProtoGlobal {
      * <code>STORY_REPLY = 18;</code>
      */
     public static final int STORY_REPLY_VALUE = 18;
+    /**
+     * <code>CARD_TO_CARD = 19;</code>
+     */
+    public static final int CARD_TO_CARD_VALUE = 19;
+    /**
+     * <code>BOT = 20;</code>
+     */
+    public static final int BOT_VALUE = 20;
 
 
     public final int getNumber() {
@@ -677,6 +693,8 @@ public final class ProtoGlobal {
         case 16: return STICKER;
         case 17: return STORY;
         case 18: return STORY_REPLY;
+        case 19: return CARD_TO_CARD;
+        case 20: return BOT;
         default: return null;
       }
     }
@@ -962,6 +980,175 @@ public final class ProtoGlobal {
   }
 
   /**
+   * Protobuf enum {@code proto.SearchType}
+   */
+  public enum SearchType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SEARCH_ALL_TYPES = 0;</code>
+     */
+    SEARCH_ALL_TYPES(0),
+    /**
+     * <code>SEARCH_IMAGE = 1;</code>
+     */
+    SEARCH_IMAGE(1),
+    /**
+     * <code>SEARCH_VIDEO = 2;</code>
+     */
+    SEARCH_VIDEO(2),
+    /**
+     * <code>SEARCH_AUDIO = 3;</code>
+     */
+    SEARCH_AUDIO(3),
+    /**
+     * <code>SEARCH_FILE = 4;</code>
+     */
+    SEARCH_FILE(4),
+    /**
+     * <code>SEARCH_VOICE = 5;</code>
+     */
+    SEARCH_VOICE(5),
+    /**
+     * <code>SEARCH_GIF = 6;</code>
+     */
+    SEARCH_GIF(6),
+    /**
+     * <code>SEARCH_CONTACT = 7;</code>
+     */
+    SEARCH_CONTACT(7),
+    /**
+     * <pre>
+     * video &amp; image &amp; gif
+     * </pre>
+     *
+     * <code>SEARCH_MEDIA = 8;</code>
+     */
+    SEARCH_MEDIA(8),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>SEARCH_ALL_TYPES = 0;</code>
+     */
+    public static final int SEARCH_ALL_TYPES_VALUE = 0;
+    /**
+     * <code>SEARCH_IMAGE = 1;</code>
+     */
+    public static final int SEARCH_IMAGE_VALUE = 1;
+    /**
+     * <code>SEARCH_VIDEO = 2;</code>
+     */
+    public static final int SEARCH_VIDEO_VALUE = 2;
+    /**
+     * <code>SEARCH_AUDIO = 3;</code>
+     */
+    public static final int SEARCH_AUDIO_VALUE = 3;
+    /**
+     * <code>SEARCH_FILE = 4;</code>
+     */
+    public static final int SEARCH_FILE_VALUE = 4;
+    /**
+     * <code>SEARCH_VOICE = 5;</code>
+     */
+    public static final int SEARCH_VOICE_VALUE = 5;
+    /**
+     * <code>SEARCH_GIF = 6;</code>
+     */
+    public static final int SEARCH_GIF_VALUE = 6;
+    /**
+     * <code>SEARCH_CONTACT = 7;</code>
+     */
+    public static final int SEARCH_CONTACT_VALUE = 7;
+    /**
+     * <pre>
+     * video &amp; image &amp; gif
+     * </pre>
+     *
+     * <code>SEARCH_MEDIA = 8;</code>
+     */
+    public static final int SEARCH_MEDIA_VALUE = 8;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SearchType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SearchType forNumber(int value) {
+      switch (value) {
+        case 0: return SEARCH_ALL_TYPES;
+        case 1: return SEARCH_IMAGE;
+        case 2: return SEARCH_VIDEO;
+        case 3: return SEARCH_AUDIO;
+        case 4: return SEARCH_FILE;
+        case 5: return SEARCH_VOICE;
+        case 6: return SEARCH_GIF;
+        case 7: return SEARCH_CONTACT;
+        case 8: return SEARCH_MEDIA;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SearchType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SearchType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SearchType>() {
+            public SearchType findValueByNumber(int number) {
+              return SearchType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(7);
+    }
+
+    private static final SearchType[] VALUES = values();
+
+    public static SearchType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SearchType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:proto.SearchType)
+  }
+
+  /**
    * Protobuf enum {@code proto.Originator}
    */
   public enum Originator
@@ -1033,7 +1220,7 @@ public final class ProtoGlobal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(7);
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final Originator[] VALUES = values();
@@ -1248,7 +1435,7 @@ public final class ProtoGlobal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(8);
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(9);
     }
 
     private static final ClientAction[] VALUES = values();
@@ -1373,7 +1560,7 @@ public final class ProtoGlobal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(9);
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(10);
     }
 
     private static final RoomType[] VALUES = values();
@@ -1471,7 +1658,7 @@ public final class ProtoGlobal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(10);
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(11);
     }
 
     private static final RoomMute[] VALUES = values();
@@ -1623,7 +1810,7 @@ public final class ProtoGlobal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(11);
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(12);
     }
 
     private static final PrivacyType[] VALUES = values();
@@ -1730,7 +1917,7 @@ public final class ProtoGlobal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(12);
+      return net.iGap.proto.ProtoGlobal.getDescriptor().getEnumTypes().get(13);
     }
 
     private static final PrivacyLevel[] VALUES = values();
@@ -17320,6 +17507,11 @@ public final class ProtoGlobal {
      * <code>optional bool bot = 18;</code>
      */
     boolean getBot();
+
+    /**
+     * <code>optional bool mxb_enable = 19;</code>
+     */
+    boolean getMxbEnable();
   }
   /**
    * Protobuf type {@code proto.RegisteredUser}
@@ -17350,6 +17542,7 @@ public final class ProtoGlobal {
       bio_ = "";
       verified_ = false;
       bot_ = false;
+      mxbEnable_ = false;
     }
 
     @java.lang.Override
@@ -17482,6 +17675,11 @@ public final class ProtoGlobal {
             case 144: {
 
               bot_ = input.readBool();
+              break;
+            }
+            case 152: {
+
+              mxbEnable_ = input.readBool();
               break;
             }
           }
@@ -18040,6 +18238,15 @@ public final class ProtoGlobal {
       return bot_;
     }
 
+    public static final int MXB_ENABLE_FIELD_NUMBER = 19;
+    private boolean mxbEnable_;
+    /**
+     * <code>optional bool mxb_enable = 19;</code>
+     */
+    public boolean getMxbEnable() {
+      return mxbEnable_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -18105,6 +18312,9 @@ public final class ProtoGlobal {
       }
       if (bot_ != false) {
         output.writeBool(18, bot_);
+      }
+      if (mxbEnable_ != false) {
+        output.writeBool(19, mxbEnable_);
       }
     }
 
@@ -18177,6 +18387,10 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(18, bot_);
       }
+      if (mxbEnable_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(19, mxbEnable_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -18231,6 +18445,8 @@ public final class ProtoGlobal {
           == other.getVerified());
       result = result && (getBot()
           == other.getBot());
+      result = result && (getMxbEnable()
+          == other.getMxbEnable());
       return result;
     }
 
@@ -18285,6 +18501,9 @@ public final class ProtoGlobal {
       hash = (37 * hash) + BOT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getBot());
+      hash = (37 * hash) + MXB_ENABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getMxbEnable());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -18443,6 +18662,8 @@ public final class ProtoGlobal {
 
         bot_ = false;
 
+        mxbEnable_ = false;
+
         return this;
       }
 
@@ -18487,6 +18708,7 @@ public final class ProtoGlobal {
         result.bio_ = bio_;
         result.verified_ = verified_;
         result.bot_ = bot_;
+        result.mxbEnable_ = mxbEnable_;
         onBuilt();
         return result;
       }
@@ -18589,6 +18811,9 @@ public final class ProtoGlobal {
         }
         if (other.getBot() != false) {
           setBot(other.getBot());
+        }
+        if (other.getMxbEnable() != false) {
+          setMxbEnable(other.getMxbEnable());
         }
         onChanged();
         return this;
@@ -19536,6 +19761,32 @@ public final class ProtoGlobal {
         onChanged();
         return this;
       }
+
+      private boolean mxbEnable_ ;
+      /**
+       * <code>optional bool mxb_enable = 19;</code>
+       */
+      public boolean getMxbEnable() {
+        return mxbEnable_;
+      }
+      /**
+       * <code>optional bool mxb_enable = 19;</code>
+       */
+      public Builder setMxbEnable(boolean value) {
+        
+        mxbEnable_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool mxb_enable = 19;</code>
+       */
+      public Builder clearMxbEnable() {
+        
+        mxbEnable_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -20454,6 +20705,82 @@ public final class ProtoGlobal {
      * <code>optional uint64 version_document_id = 28;</code>
      */
     long getVersionDocumentId();
+
+    /**
+     * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+     */
+    boolean hasGroupExtra();
+    /**
+     * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra getGroupExtra();
+    /**
+     * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtraOrBuilder getGroupExtraOrBuilder();
+
+    /**
+     * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+     */
+    boolean hasSticker();
+    /**
+     * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageSticker getSticker();
+    /**
+     * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder getStickerOrBuilder();
+
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+     */
+    boolean hasCardToCard();
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageCardToCard getCardToCard();
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder getCardToCardOrBuilder();
+
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> 
+        getBotActionListsList();
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageBotActionList getBotActionLists(int index);
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    int getBotActionListsCount();
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> 
+        getBotActionListsOrBuilderList();
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder getBotActionListsOrBuilder(
+        int index);
+
+    /**
+     * <code>optional .proto.TextSigns text_signs = 33;</code>
+     */
+    boolean hasTextSigns();
+    /**
+     * <code>optional .proto.TextSigns text_signs = 33;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSigns getTextSigns();
+    /**
+     * <code>optional .proto.TextSigns text_signs = 33;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder();
   }
   /**
    * Protobuf type {@code proto.RoomMessage}
@@ -20485,6 +20812,7 @@ public final class ProtoGlobal {
       extraType_ = 0;
       documentId_ = 0L;
       versionDocumentId_ = 0L;
+      botActionLists_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -20498,6 +20826,7 @@ public final class ProtoGlobal {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
+      int mutable_bitField1_ = 0;
       try {
         boolean done = false;
         while (!done) {
@@ -20737,6 +21066,67 @@ public final class ProtoGlobal {
               versionDocumentId_ = input.readUInt64();
               break;
             }
+            case 234: {
+              net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.Builder subBuilder = null;
+              if (groupExtra_ != null) {
+                subBuilder = groupExtra_.toBuilder();
+              }
+              groupExtra_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(groupExtra_);
+                groupExtra_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 242: {
+              net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder subBuilder = null;
+              if (sticker_ != null) {
+                subBuilder = sticker_.toBuilder();
+              }
+              sticker_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageSticker.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sticker_);
+                sticker_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 250: {
+              net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder subBuilder = null;
+              if (cardToCard_ != null) {
+                subBuilder = cardToCard_.toBuilder();
+              }
+              cardToCard_ = input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cardToCard_);
+                cardToCard_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 258: {
+              if (!((mutable_bitField0_ & 0x80000000) == 0x80000000)) {
+                botActionLists_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList>();
+                mutable_bitField0_ |= 0x80000000;
+              }
+              botActionLists_.add(
+                  input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.parser(), extensionRegistry));
+              break;
+            }
+            case 266: {
+              net.iGap.proto.ProtoGlobal.TextSigns.Builder subBuilder = null;
+              if (textSigns_ != null) {
+                subBuilder = textSigns_.toBuilder();
+              }
+              textSigns_ = input.readMessage(net.iGap.proto.ProtoGlobal.TextSigns.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(textSigns_);
+                textSigns_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -20745,6 +21135,9 @@ public final class ProtoGlobal {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x80000000) == 0x80000000)) {
+          botActionLists_ = java.util.Collections.unmodifiableList(botActionLists_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -23660,6 +24053,567 @@ public final class ProtoGlobal {
 
     }
 
+    public interface GroupExtraOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.RoomMessage.GroupExtra)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .proto.Mention mentions = 1;</code>
+       */
+      boolean hasMentions();
+      /**
+       * <code>optional .proto.Mention mentions = 1;</code>
+       */
+      net.iGap.proto.ProtoGlobal.Mention getMentions();
+      /**
+       * <code>optional .proto.Mention mentions = 1;</code>
+       */
+      net.iGap.proto.ProtoGlobal.MentionOrBuilder getMentionsOrBuilder();
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessage.GroupExtra}
+     */
+    public  static final class GroupExtra extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:proto.RoomMessage.GroupExtra)
+        GroupExtraOrBuilder {
+      // Use GroupExtra.newBuilder() to construct.
+      private GroupExtra(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private GroupExtra() {
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private GroupExtra(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                net.iGap.proto.ProtoGlobal.Mention.Builder subBuilder = null;
+                if (mentions_ != null) {
+                  subBuilder = mentions_.toBuilder();
+                }
+                mentions_ = input.readMessage(net.iGap.proto.ProtoGlobal.Mention.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(mentions_);
+                  mentions_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessage_GroupExtra_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessage_GroupExtra_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.class, net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.Builder.class);
+      }
+
+      public static final int MENTIONS_FIELD_NUMBER = 1;
+      private net.iGap.proto.ProtoGlobal.Mention mentions_;
+      /**
+       * <code>optional .proto.Mention mentions = 1;</code>
+       */
+      public boolean hasMentions() {
+        return mentions_ != null;
+      }
+      /**
+       * <code>optional .proto.Mention mentions = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.Mention getMentions() {
+        return mentions_ == null ? net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
+      }
+      /**
+       * <code>optional .proto.Mention mentions = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.MentionOrBuilder getMentionsOrBuilder() {
+        return getMentions();
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (mentions_ != null) {
+          output.writeMessage(1, getMentions());
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (mentions_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, getMentions());
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra other = (net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra) obj;
+
+        boolean result = true;
+        result = result && (hasMentions() == other.hasMentions());
+        if (hasMentions()) {
+          result = result && getMentions()
+              .equals(other.getMentions());
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        if (hasMentions()) {
+          hash = (37 * hash) + MENTIONS_FIELD_NUMBER;
+          hash = (53 * hash) + getMentions().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code proto.RoomMessage.GroupExtra}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.RoomMessage.GroupExtra)
+          net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtraOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessage_GroupExtra_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessage_GroupExtra_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.class, net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.Builder.class);
+        }
+
+        // Construct using net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          if (mentionsBuilder_ == null) {
+            mentions_ = null;
+          } else {
+            mentions_ = null;
+            mentionsBuilder_ = null;
+          }
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessage_GroupExtra_descriptor;
+        }
+
+        public net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.getDefaultInstance();
+        }
+
+        public net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra build() {
+          net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra buildPartial() {
+          net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra result = new net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra(this);
+          if (mentionsBuilder_ == null) {
+            result.mentions_ = mentions_;
+          } else {
+            result.mentions_ = mentionsBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra) {
+            return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra other) {
+          if (other == net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.getDefaultInstance()) return this;
+          if (other.hasMentions()) {
+            mergeMentions(other.getMentions());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private net.iGap.proto.ProtoGlobal.Mention mentions_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            net.iGap.proto.ProtoGlobal.Mention, net.iGap.proto.ProtoGlobal.Mention.Builder, net.iGap.proto.ProtoGlobal.MentionOrBuilder> mentionsBuilder_;
+        /**
+         * <code>optional .proto.Mention mentions = 1;</code>
+         */
+        public boolean hasMentions() {
+          return mentionsBuilder_ != null || mentions_ != null;
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 1;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.Mention getMentions() {
+          if (mentionsBuilder_ == null) {
+            return mentions_ == null ? net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
+          } else {
+            return mentionsBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 1;</code>
+         */
+        public Builder setMentions(net.iGap.proto.ProtoGlobal.Mention value) {
+          if (mentionsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            mentions_ = value;
+            onChanged();
+          } else {
+            mentionsBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 1;</code>
+         */
+        public Builder setMentions(
+            net.iGap.proto.ProtoGlobal.Mention.Builder builderForValue) {
+          if (mentionsBuilder_ == null) {
+            mentions_ = builderForValue.build();
+            onChanged();
+          } else {
+            mentionsBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 1;</code>
+         */
+        public Builder mergeMentions(net.iGap.proto.ProtoGlobal.Mention value) {
+          if (mentionsBuilder_ == null) {
+            if (mentions_ != null) {
+              mentions_ =
+                net.iGap.proto.ProtoGlobal.Mention.newBuilder(mentions_).mergeFrom(value).buildPartial();
+            } else {
+              mentions_ = value;
+            }
+            onChanged();
+          } else {
+            mentionsBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 1;</code>
+         */
+        public Builder clearMentions() {
+          if (mentionsBuilder_ == null) {
+            mentions_ = null;
+            onChanged();
+          } else {
+            mentions_ = null;
+            mentionsBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 1;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.Mention.Builder getMentionsBuilder() {
+          
+          onChanged();
+          return getMentionsFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 1;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.MentionOrBuilder getMentionsOrBuilder() {
+          if (mentionsBuilder_ != null) {
+            return mentionsBuilder_.getMessageOrBuilder();
+          } else {
+            return mentions_ == null ?
+                net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance() : mentions_;
+          }
+        }
+        /**
+         * <code>optional .proto.Mention mentions = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            net.iGap.proto.ProtoGlobal.Mention, net.iGap.proto.ProtoGlobal.Mention.Builder, net.iGap.proto.ProtoGlobal.MentionOrBuilder> 
+            getMentionsFieldBuilder() {
+          if (mentionsBuilder_ == null) {
+            mentionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                net.iGap.proto.ProtoGlobal.Mention, net.iGap.proto.ProtoGlobal.Mention.Builder, net.iGap.proto.ProtoGlobal.MentionOrBuilder>(
+                    getMentions(),
+                    getParentForChildren(),
+                    isClean());
+            mentions_ = null;
+          }
+          return mentionsBuilder_;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:proto.RoomMessage.GroupExtra)
+      }
+
+      // @@protoc_insertion_point(class_scope:proto.RoomMessage.GroupExtra)
+      private static final net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra();
+      }
+
+      public static net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<GroupExtra>
+          PARSER = new com.google.protobuf.AbstractParser<GroupExtra>() {
+        public GroupExtra parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new GroupExtra(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<GroupExtra> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<GroupExtra> getParserForType() {
+        return PARSER;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
     public static final int ROOM_ID_FIELD_NUMBER = 26;
     private long roomId_;
     /**
@@ -24103,6 +25057,125 @@ public final class ProtoGlobal {
       return versionDocumentId_;
     }
 
+    public static final int GROUP_EXTRA_FIELD_NUMBER = 29;
+    private net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra groupExtra_;
+    /**
+     * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+     */
+    public boolean hasGroupExtra() {
+      return groupExtra_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra getGroupExtra() {
+      return groupExtra_ == null ? net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.getDefaultInstance() : groupExtra_;
+    }
+    /**
+     * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtraOrBuilder getGroupExtraOrBuilder() {
+      return getGroupExtra();
+    }
+
+    public static final int STICKER_FIELD_NUMBER = 30;
+    private net.iGap.proto.ProtoGlobal.RoomMessageSticker sticker_;
+    /**
+     * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+     */
+    public boolean hasSticker() {
+      return sticker_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageSticker getSticker() {
+      return sticker_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageSticker.getDefaultInstance() : sticker_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder getStickerOrBuilder() {
+      return getSticker();
+    }
+
+    public static final int CARD_TO_CARD_FIELD_NUMBER = 31;
+    private net.iGap.proto.ProtoGlobal.RoomMessageCardToCard cardToCard_;
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+     */
+    public boolean hasCardToCard() {
+      return cardToCard_ != null;
+    }
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard getCardToCard() {
+      return cardToCard_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.getDefaultInstance() : cardToCard_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder getCardToCardOrBuilder() {
+      return getCardToCard();
+    }
+
+    public static final int BOT_ACTION_LISTS_FIELD_NUMBER = 32;
+    private java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> botActionLists_;
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    public java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> getBotActionListsList() {
+      return botActionLists_;
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    public java.util.List<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> 
+        getBotActionListsOrBuilderList() {
+      return botActionLists_;
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    public int getBotActionListsCount() {
+      return botActionLists_.size();
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList getBotActionLists(int index) {
+      return botActionLists_.get(index);
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder getBotActionListsOrBuilder(
+        int index) {
+      return botActionLists_.get(index);
+    }
+
+    public static final int TEXT_SIGNS_FIELD_NUMBER = 33;
+    private net.iGap.proto.ProtoGlobal.TextSigns textSigns_;
+    /**
+     * <code>optional .proto.TextSigns text_signs = 33;</code>
+     */
+    public boolean hasTextSigns() {
+      return textSigns_ != null;
+    }
+    /**
+     * <code>optional .proto.TextSigns text_signs = 33;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+      return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+    }
+    /**
+     * <code>optional .proto.TextSigns text_signs = 33;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+      return getTextSigns();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -24198,6 +25271,21 @@ public final class ProtoGlobal {
       }
       if (versionDocumentId_ != 0L) {
         output.writeUInt64(28, versionDocumentId_);
+      }
+      if (groupExtra_ != null) {
+        output.writeMessage(29, getGroupExtra());
+      }
+      if (sticker_ != null) {
+        output.writeMessage(30, getSticker());
+      }
+      if (cardToCard_ != null) {
+        output.writeMessage(31, getCardToCard());
+      }
+      for (int i = 0; i < botActionLists_.size(); i++) {
+        output.writeMessage(32, botActionLists_.get(i));
+      }
+      if (textSigns_ != null) {
+        output.writeMessage(33, getTextSigns());
       }
     }
 
@@ -24316,6 +25404,26 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(28, versionDocumentId_);
       }
+      if (groupExtra_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(29, getGroupExtra());
+      }
+      if (sticker_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(30, getSticker());
+      }
+      if (cardToCard_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(31, getCardToCard());
+      }
+      for (int i = 0; i < botActionLists_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(32, botActionLists_.get(i));
+      }
+      if (textSigns_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(33, getTextSigns());
+      }
       memoizedSize = size;
       return size;
     }
@@ -24415,6 +25523,28 @@ public final class ProtoGlobal {
           == other.getDocumentId());
       result = result && (getVersionDocumentId()
           == other.getVersionDocumentId());
+      result = result && (hasGroupExtra() == other.hasGroupExtra());
+      if (hasGroupExtra()) {
+        result = result && getGroupExtra()
+            .equals(other.getGroupExtra());
+      }
+      result = result && (hasSticker() == other.hasSticker());
+      if (hasSticker()) {
+        result = result && getSticker()
+            .equals(other.getSticker());
+      }
+      result = result && (hasCardToCard() == other.hasCardToCard());
+      if (hasCardToCard()) {
+        result = result && getCardToCard()
+            .equals(other.getCardToCard());
+      }
+      result = result && getBotActionListsList()
+          .equals(other.getBotActionListsList());
+      result = result && (hasTextSigns() == other.hasTextSigns());
+      if (hasTextSigns()) {
+        result = result && getTextSigns()
+            .equals(other.getTextSigns());
+      }
       return result;
     }
 
@@ -24511,6 +25641,26 @@ public final class ProtoGlobal {
       hash = (37 * hash) + VERSION_DOCUMENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getVersionDocumentId());
+      if (hasGroupExtra()) {
+        hash = (37 * hash) + GROUP_EXTRA_FIELD_NUMBER;
+        hash = (53 * hash) + getGroupExtra().hashCode();
+      }
+      if (hasSticker()) {
+        hash = (37 * hash) + STICKER_FIELD_NUMBER;
+        hash = (53 * hash) + getSticker().hashCode();
+      }
+      if (hasCardToCard()) {
+        hash = (37 * hash) + CARD_TO_CARD_FIELD_NUMBER;
+        hash = (53 * hash) + getCardToCard().hashCode();
+      }
+      if (getBotActionListsCount() > 0) {
+        hash = (37 * hash) + BOT_ACTION_LISTS_FIELD_NUMBER;
+        hash = (53 * hash) + getBotActionListsList().hashCode();
+      }
+      if (hasTextSigns()) {
+        hash = (37 * hash) + TEXT_SIGNS_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSigns().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -24625,6 +25775,7 @@ public final class ProtoGlobal {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getBotActionListsFieldBuilder();
         }
       }
       public Builder clear() {
@@ -24725,6 +25876,36 @@ public final class ProtoGlobal {
 
         versionDocumentId_ = 0L;
 
+        if (groupExtraBuilder_ == null) {
+          groupExtra_ = null;
+        } else {
+          groupExtra_ = null;
+          groupExtraBuilder_ = null;
+        }
+        if (stickerBuilder_ == null) {
+          sticker_ = null;
+        } else {
+          sticker_ = null;
+          stickerBuilder_ = null;
+        }
+        if (cardToCardBuilder_ == null) {
+          cardToCard_ = null;
+        } else {
+          cardToCard_ = null;
+          cardToCardBuilder_ = null;
+        }
+        if (botActionListsBuilder_ == null) {
+          botActionLists_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x80000000);
+        } else {
+          botActionListsBuilder_.clear();
+        }
+        if (textSignsBuilder_ == null) {
+          textSigns_ = null;
+        } else {
+          textSigns_ = null;
+          textSignsBuilder_ = null;
+        }
         return this;
       }
 
@@ -24747,6 +25928,9 @@ public final class ProtoGlobal {
 
       public net.iGap.proto.ProtoGlobal.RoomMessage buildPartial() {
         net.iGap.proto.ProtoGlobal.RoomMessage result = new net.iGap.proto.ProtoGlobal.RoomMessage(this);
+        int from_bitField0_ = bitField0_;
+        int from_bitField1_ = bitField1_;
+        int to_bitField0_ = 0;
         result.roomId_ = roomId_;
         result.messageId_ = messageId_;
         result.messageVersion_ = messageVersion_;
@@ -24815,6 +25999,36 @@ public final class ProtoGlobal {
         }
         result.documentId_ = documentId_;
         result.versionDocumentId_ = versionDocumentId_;
+        if (groupExtraBuilder_ == null) {
+          result.groupExtra_ = groupExtra_;
+        } else {
+          result.groupExtra_ = groupExtraBuilder_.build();
+        }
+        if (stickerBuilder_ == null) {
+          result.sticker_ = sticker_;
+        } else {
+          result.sticker_ = stickerBuilder_.build();
+        }
+        if (cardToCardBuilder_ == null) {
+          result.cardToCard_ = cardToCard_;
+        } else {
+          result.cardToCard_ = cardToCardBuilder_.build();
+        }
+        if (botActionListsBuilder_ == null) {
+          if (((bitField0_ & 0x80000000) == 0x80000000)) {
+            botActionLists_ = java.util.Collections.unmodifiableList(botActionLists_);
+            bitField0_ = (bitField0_ & ~0x80000000);
+          }
+          result.botActionLists_ = botActionLists_;
+        } else {
+          result.botActionLists_ = botActionListsBuilder_.build();
+        }
+        if (textSignsBuilder_ == null) {
+          result.textSigns_ = textSigns_;
+        } else {
+          result.textSigns_ = textSignsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -24942,6 +26156,44 @@ public final class ProtoGlobal {
         if (other.getVersionDocumentId() != 0L) {
           setVersionDocumentId(other.getVersionDocumentId());
         }
+        if (other.hasGroupExtra()) {
+          mergeGroupExtra(other.getGroupExtra());
+        }
+        if (other.hasSticker()) {
+          mergeSticker(other.getSticker());
+        }
+        if (other.hasCardToCard()) {
+          mergeCardToCard(other.getCardToCard());
+        }
+        if (botActionListsBuilder_ == null) {
+          if (!other.botActionLists_.isEmpty()) {
+            if (botActionLists_.isEmpty()) {
+              botActionLists_ = other.botActionLists_;
+              bitField0_ = (bitField0_ & ~0x80000000);
+            } else {
+              ensureBotActionListsIsMutable();
+              botActionLists_.addAll(other.botActionLists_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.botActionLists_.isEmpty()) {
+            if (botActionListsBuilder_.isEmpty()) {
+              botActionListsBuilder_.dispose();
+              botActionListsBuilder_ = null;
+              botActionLists_ = other.botActionLists_;
+              bitField0_ = (bitField0_ & ~0x80000000);
+              botActionListsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBotActionListsFieldBuilder() : null;
+            } else {
+              botActionListsBuilder_.addAllMessages(other.botActionLists_);
+            }
+          }
+        }
+        if (other.hasTextSigns()) {
+          mergeTextSigns(other.getTextSigns());
+        }
         onChanged();
         return this;
       }
@@ -24967,6 +26219,8 @@ public final class ProtoGlobal {
         }
         return this;
       }
+      private int bitField0_;
+      private int bitField1_;
 
       private long roomId_ ;
       /**
@@ -26744,6 +27998,714 @@ public final class ProtoGlobal {
         versionDocumentId_ = 0L;
         onChanged();
         return this;
+      }
+
+      private net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra groupExtra_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra, net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.Builder, net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtraOrBuilder> groupExtraBuilder_;
+      /**
+       * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+       */
+      public boolean hasGroupExtra() {
+        return groupExtraBuilder_ != null || groupExtra_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra getGroupExtra() {
+        if (groupExtraBuilder_ == null) {
+          return groupExtra_ == null ? net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.getDefaultInstance() : groupExtra_;
+        } else {
+          return groupExtraBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+       */
+      public Builder setGroupExtra(net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra value) {
+        if (groupExtraBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          groupExtra_ = value;
+          onChanged();
+        } else {
+          groupExtraBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+       */
+      public Builder setGroupExtra(
+          net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.Builder builderForValue) {
+        if (groupExtraBuilder_ == null) {
+          groupExtra_ = builderForValue.build();
+          onChanged();
+        } else {
+          groupExtraBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+       */
+      public Builder mergeGroupExtra(net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra value) {
+        if (groupExtraBuilder_ == null) {
+          if (groupExtra_ != null) {
+            groupExtra_ =
+              net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.newBuilder(groupExtra_).mergeFrom(value).buildPartial();
+          } else {
+            groupExtra_ = value;
+          }
+          onChanged();
+        } else {
+          groupExtraBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+       */
+      public Builder clearGroupExtra() {
+        if (groupExtraBuilder_ == null) {
+          groupExtra_ = null;
+          onChanged();
+        } else {
+          groupExtra_ = null;
+          groupExtraBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.Builder getGroupExtraBuilder() {
+        
+        onChanged();
+        return getGroupExtraFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtraOrBuilder getGroupExtraOrBuilder() {
+        if (groupExtraBuilder_ != null) {
+          return groupExtraBuilder_.getMessageOrBuilder();
+        } else {
+          return groupExtra_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.getDefaultInstance() : groupExtra_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessage.GroupExtra group_extra = 29;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra, net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.Builder, net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtraOrBuilder> 
+          getGroupExtraFieldBuilder() {
+        if (groupExtraBuilder_ == null) {
+          groupExtraBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra, net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtra.Builder, net.iGap.proto.ProtoGlobal.RoomMessage.GroupExtraOrBuilder>(
+                  getGroupExtra(),
+                  getParentForChildren(),
+                  isClean());
+          groupExtra_ = null;
+        }
+        return groupExtraBuilder_;
+      }
+
+      private net.iGap.proto.ProtoGlobal.RoomMessageSticker sticker_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageSticker, net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder> stickerBuilder_;
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+       */
+      public boolean hasSticker() {
+        return stickerBuilder_ != null || sticker_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageSticker getSticker() {
+        if (stickerBuilder_ == null) {
+          return sticker_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageSticker.getDefaultInstance() : sticker_;
+        } else {
+          return stickerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+       */
+      public Builder setSticker(net.iGap.proto.ProtoGlobal.RoomMessageSticker value) {
+        if (stickerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sticker_ = value;
+          onChanged();
+        } else {
+          stickerBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+       */
+      public Builder setSticker(
+          net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder builderForValue) {
+        if (stickerBuilder_ == null) {
+          sticker_ = builderForValue.build();
+          onChanged();
+        } else {
+          stickerBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+       */
+      public Builder mergeSticker(net.iGap.proto.ProtoGlobal.RoomMessageSticker value) {
+        if (stickerBuilder_ == null) {
+          if (sticker_ != null) {
+            sticker_ =
+              net.iGap.proto.ProtoGlobal.RoomMessageSticker.newBuilder(sticker_).mergeFrom(value).buildPartial();
+          } else {
+            sticker_ = value;
+          }
+          onChanged();
+        } else {
+          stickerBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+       */
+      public Builder clearSticker() {
+        if (stickerBuilder_ == null) {
+          sticker_ = null;
+          onChanged();
+        } else {
+          sticker_ = null;
+          stickerBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder getStickerBuilder() {
+        
+        onChanged();
+        return getStickerFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder getStickerOrBuilder() {
+        if (stickerBuilder_ != null) {
+          return stickerBuilder_.getMessageOrBuilder();
+        } else {
+          return sticker_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomMessageSticker.getDefaultInstance() : sticker_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker sticker = 30;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageSticker, net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder> 
+          getStickerFieldBuilder() {
+        if (stickerBuilder_ == null) {
+          stickerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageSticker, net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder, net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder>(
+                  getSticker(),
+                  getParentForChildren(),
+                  isClean());
+          sticker_ = null;
+        }
+        return stickerBuilder_;
+      }
+
+      private net.iGap.proto.ProtoGlobal.RoomMessageCardToCard cardToCard_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageCardToCard, net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder, net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder> cardToCardBuilder_;
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+       */
+      public boolean hasCardToCard() {
+        return cardToCardBuilder_ != null || cardToCard_ != null;
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard getCardToCard() {
+        if (cardToCardBuilder_ == null) {
+          return cardToCard_ == null ? net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.getDefaultInstance() : cardToCard_;
+        } else {
+          return cardToCardBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+       */
+      public Builder setCardToCard(net.iGap.proto.ProtoGlobal.RoomMessageCardToCard value) {
+        if (cardToCardBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cardToCard_ = value;
+          onChanged();
+        } else {
+          cardToCardBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+       */
+      public Builder setCardToCard(
+          net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder builderForValue) {
+        if (cardToCardBuilder_ == null) {
+          cardToCard_ = builderForValue.build();
+          onChanged();
+        } else {
+          cardToCardBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+       */
+      public Builder mergeCardToCard(net.iGap.proto.ProtoGlobal.RoomMessageCardToCard value) {
+        if (cardToCardBuilder_ == null) {
+          if (cardToCard_ != null) {
+            cardToCard_ =
+              net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.newBuilder(cardToCard_).mergeFrom(value).buildPartial();
+          } else {
+            cardToCard_ = value;
+          }
+          onChanged();
+        } else {
+          cardToCardBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+       */
+      public Builder clearCardToCard() {
+        if (cardToCardBuilder_ == null) {
+          cardToCard_ = null;
+          onChanged();
+        } else {
+          cardToCard_ = null;
+          cardToCardBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder getCardToCardBuilder() {
+        
+        onChanged();
+        return getCardToCardFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder getCardToCardOrBuilder() {
+        if (cardToCardBuilder_ != null) {
+          return cardToCardBuilder_.getMessageOrBuilder();
+        } else {
+          return cardToCard_ == null ?
+              net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.getDefaultInstance() : cardToCard_;
+        }
+      }
+      /**
+       * <code>optional .proto.RoomMessageCardToCard card_to_card = 31;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageCardToCard, net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder, net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder> 
+          getCardToCardFieldBuilder() {
+        if (cardToCardBuilder_ == null) {
+          cardToCardBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageCardToCard, net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder, net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder>(
+                  getCardToCard(),
+                  getParentForChildren(),
+                  isClean());
+          cardToCard_ = null;
+        }
+        return cardToCardBuilder_;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> botActionLists_ =
+        java.util.Collections.emptyList();
+      private void ensureBotActionListsIsMutable() {
+        if (!((bitField0_ & 0x80000000) == 0x80000000)) {
+          botActionLists_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList>(botActionLists_);
+          bitField0_ |= 0x80000000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageBotActionList, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder, net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> botActionListsBuilder_;
+
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> getBotActionListsList() {
+        if (botActionListsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(botActionLists_);
+        } else {
+          return botActionListsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public int getBotActionListsCount() {
+        if (botActionListsBuilder_ == null) {
+          return botActionLists_.size();
+        } else {
+          return botActionListsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList getBotActionLists(int index) {
+        if (botActionListsBuilder_ == null) {
+          return botActionLists_.get(index);
+        } else {
+          return botActionListsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public Builder setBotActionLists(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList value) {
+        if (botActionListsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBotActionListsIsMutable();
+          botActionLists_.set(index, value);
+          onChanged();
+        } else {
+          botActionListsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public Builder setBotActionLists(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder builderForValue) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          botActionLists_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          botActionListsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public Builder addBotActionLists(net.iGap.proto.ProtoGlobal.RoomMessageBotActionList value) {
+        if (botActionListsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBotActionListsIsMutable();
+          botActionLists_.add(value);
+          onChanged();
+        } else {
+          botActionListsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public Builder addBotActionLists(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList value) {
+        if (botActionListsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBotActionListsIsMutable();
+          botActionLists_.add(index, value);
+          onChanged();
+        } else {
+          botActionListsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public Builder addBotActionLists(
+          net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder builderForValue) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          botActionLists_.add(builderForValue.build());
+          onChanged();
+        } else {
+          botActionListsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public Builder addBotActionLists(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder builderForValue) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          botActionLists_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          botActionListsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public Builder addAllBotActionLists(
+          java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionList> values) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, botActionLists_);
+          onChanged();
+        } else {
+          botActionListsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public Builder clearBotActionLists() {
+        if (botActionListsBuilder_ == null) {
+          botActionLists_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x80000000);
+          onChanged();
+        } else {
+          botActionListsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public Builder removeBotActionLists(int index) {
+        if (botActionListsBuilder_ == null) {
+          ensureBotActionListsIsMutable();
+          botActionLists_.remove(index);
+          onChanged();
+        } else {
+          botActionListsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder getBotActionListsBuilder(
+          int index) {
+        return getBotActionListsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder getBotActionListsOrBuilder(
+          int index) {
+        if (botActionListsBuilder_ == null) {
+          return botActionLists_.get(index);  } else {
+          return botActionListsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> 
+           getBotActionListsOrBuilderList() {
+        if (botActionListsBuilder_ != null) {
+          return botActionListsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(botActionLists_);
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder addBotActionListsBuilder() {
+        return getBotActionListsFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder addBotActionListsBuilder(
+          int index) {
+        return getBotActionListsFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotActionList bot_action_lists = 32;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder> 
+           getBotActionListsBuilderList() {
+        return getBotActionListsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageBotActionList, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder, net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder> 
+          getBotActionListsFieldBuilder() {
+        if (botActionListsBuilder_ == null) {
+          botActionListsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageBotActionList, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder, net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder>(
+                  botActionLists_,
+                  ((bitField0_ & 0x80000000) == 0x80000000),
+                  getParentForChildren(),
+                  isClean());
+          botActionLists_ = null;
+        }
+        return botActionListsBuilder_;
+      }
+
+      private net.iGap.proto.ProtoGlobal.TextSigns textSigns_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> textSignsBuilder_;
+      /**
+       * <code>optional .proto.TextSigns text_signs = 33;</code>
+       */
+      public boolean hasTextSigns() {
+        return textSignsBuilder_ != null || textSigns_ != null;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 33;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns getTextSigns() {
+        if (textSignsBuilder_ == null) {
+          return textSigns_ == null ? net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+        } else {
+          return textSignsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 33;</code>
+       */
+      public Builder setTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+        if (textSignsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          textSigns_ = value;
+          onChanged();
+        } else {
+          textSignsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 33;</code>
+       */
+      public Builder setTextSigns(
+          net.iGap.proto.ProtoGlobal.TextSigns.Builder builderForValue) {
+        if (textSignsBuilder_ == null) {
+          textSigns_ = builderForValue.build();
+          onChanged();
+        } else {
+          textSignsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 33;</code>
+       */
+      public Builder mergeTextSigns(net.iGap.proto.ProtoGlobal.TextSigns value) {
+        if (textSignsBuilder_ == null) {
+          if (textSigns_ != null) {
+            textSigns_ =
+              net.iGap.proto.ProtoGlobal.TextSigns.newBuilder(textSigns_).mergeFrom(value).buildPartial();
+          } else {
+            textSigns_ = value;
+          }
+          onChanged();
+        } else {
+          textSignsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 33;</code>
+       */
+      public Builder clearTextSigns() {
+        if (textSignsBuilder_ == null) {
+          textSigns_ = null;
+          onChanged();
+        } else {
+          textSigns_ = null;
+          textSignsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 33;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.Builder getTextSignsBuilder() {
+        
+        onChanged();
+        return getTextSignsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 33;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSignsOrBuilder getTextSignsOrBuilder() {
+        if (textSignsBuilder_ != null) {
+          return textSignsBuilder_.getMessageOrBuilder();
+        } else {
+          return textSigns_ == null ?
+              net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance() : textSigns_;
+        }
+      }
+      /**
+       * <code>optional .proto.TextSigns text_signs = 33;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder> 
+          getTextSignsFieldBuilder() {
+        if (textSignsBuilder_ == null) {
+          textSignsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.TextSigns, net.iGap.proto.ProtoGlobal.TextSigns.Builder, net.iGap.proto.ProtoGlobal.TextSignsOrBuilder>(
+                  getTextSigns(),
+                  getParentForChildren(),
+                  isClean());
+          textSigns_ = null;
+        }
+        return textSignsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -30505,6 +32467,19 @@ public final class ProtoGlobal {
      * <code>optional .proto.RegisteredUser peer = 1;</code>
      */
     net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder getPeerOrBuilder();
+
+    /**
+     * <code>optional .proto.BotInfo botInfo = 2;</code>
+     */
+    boolean hasBotInfo();
+    /**
+     * <code>optional .proto.BotInfo botInfo = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.BotInfo getBotInfo();
+    /**
+     * <code>optional .proto.BotInfo botInfo = 2;</code>
+     */
+    net.iGap.proto.ProtoGlobal.BotInfoOrBuilder getBotInfoOrBuilder();
   }
   /**
    * Protobuf type {@code proto.ChatRoom}
@@ -30558,6 +32533,19 @@ public final class ProtoGlobal {
 
               break;
             }
+            case 18: {
+              net.iGap.proto.ProtoGlobal.BotInfo.Builder subBuilder = null;
+              if (botInfo_ != null) {
+                subBuilder = botInfo_.toBuilder();
+              }
+              botInfo_ = input.readMessage(net.iGap.proto.ProtoGlobal.BotInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(botInfo_);
+                botInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -30602,6 +32590,27 @@ public final class ProtoGlobal {
       return getPeer();
     }
 
+    public static final int BOTINFO_FIELD_NUMBER = 2;
+    private net.iGap.proto.ProtoGlobal.BotInfo botInfo_;
+    /**
+     * <code>optional .proto.BotInfo botInfo = 2;</code>
+     */
+    public boolean hasBotInfo() {
+      return botInfo_ != null;
+    }
+    /**
+     * <code>optional .proto.BotInfo botInfo = 2;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.BotInfo getBotInfo() {
+      return botInfo_ == null ? net.iGap.proto.ProtoGlobal.BotInfo.getDefaultInstance() : botInfo_;
+    }
+    /**
+     * <code>optional .proto.BotInfo botInfo = 2;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.BotInfoOrBuilder getBotInfoOrBuilder() {
+      return getBotInfo();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -30617,6 +32626,9 @@ public final class ProtoGlobal {
       if (peer_ != null) {
         output.writeMessage(1, getPeer());
       }
+      if (botInfo_ != null) {
+        output.writeMessage(2, getBotInfo());
+      }
     }
 
     public int getSerializedSize() {
@@ -30627,6 +32639,10 @@ public final class ProtoGlobal {
       if (peer_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPeer());
+      }
+      if (botInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getBotInfo());
       }
       memoizedSize = size;
       return size;
@@ -30649,6 +32665,11 @@ public final class ProtoGlobal {
         result = result && getPeer()
             .equals(other.getPeer());
       }
+      result = result && (hasBotInfo() == other.hasBotInfo());
+      if (hasBotInfo()) {
+        result = result && getBotInfo()
+            .equals(other.getBotInfo());
+      }
       return result;
     }
 
@@ -30662,6 +32683,10 @@ public final class ProtoGlobal {
       if (hasPeer()) {
         hash = (37 * hash) + PEER_FIELD_NUMBER;
         hash = (53 * hash) + getPeer().hashCode();
+      }
+      if (hasBotInfo()) {
+        hash = (37 * hash) + BOTINFO_FIELD_NUMBER;
+        hash = (53 * hash) + getBotInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -30787,6 +32812,12 @@ public final class ProtoGlobal {
           peer_ = null;
           peerBuilder_ = null;
         }
+        if (botInfoBuilder_ == null) {
+          botInfo_ = null;
+        } else {
+          botInfo_ = null;
+          botInfoBuilder_ = null;
+        }
         return this;
       }
 
@@ -30813,6 +32844,11 @@ public final class ProtoGlobal {
           result.peer_ = peer_;
         } else {
           result.peer_ = peerBuilder_.build();
+        }
+        if (botInfoBuilder_ == null) {
+          result.botInfo_ = botInfo_;
+        } else {
+          result.botInfo_ = botInfoBuilder_.build();
         }
         onBuilt();
         return result;
@@ -30857,6 +32893,9 @@ public final class ProtoGlobal {
         if (other == net.iGap.proto.ProtoGlobal.ChatRoom.getDefaultInstance()) return this;
         if (other.hasPeer()) {
           mergePeer(other.getPeer());
+        }
+        if (other.hasBotInfo()) {
+          mergeBotInfo(other.getBotInfo());
         }
         onChanged();
         return this;
@@ -30999,6 +33038,123 @@ public final class ProtoGlobal {
           peer_ = null;
         }
         return peerBuilder_;
+      }
+
+      private net.iGap.proto.ProtoGlobal.BotInfo botInfo_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.BotInfo, net.iGap.proto.ProtoGlobal.BotInfo.Builder, net.iGap.proto.ProtoGlobal.BotInfoOrBuilder> botInfoBuilder_;
+      /**
+       * <code>optional .proto.BotInfo botInfo = 2;</code>
+       */
+      public boolean hasBotInfo() {
+        return botInfoBuilder_ != null || botInfo_ != null;
+      }
+      /**
+       * <code>optional .proto.BotInfo botInfo = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.BotInfo getBotInfo() {
+        if (botInfoBuilder_ == null) {
+          return botInfo_ == null ? net.iGap.proto.ProtoGlobal.BotInfo.getDefaultInstance() : botInfo_;
+        } else {
+          return botInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .proto.BotInfo botInfo = 2;</code>
+       */
+      public Builder setBotInfo(net.iGap.proto.ProtoGlobal.BotInfo value) {
+        if (botInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          botInfo_ = value;
+          onChanged();
+        } else {
+          botInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.BotInfo botInfo = 2;</code>
+       */
+      public Builder setBotInfo(
+          net.iGap.proto.ProtoGlobal.BotInfo.Builder builderForValue) {
+        if (botInfoBuilder_ == null) {
+          botInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          botInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.BotInfo botInfo = 2;</code>
+       */
+      public Builder mergeBotInfo(net.iGap.proto.ProtoGlobal.BotInfo value) {
+        if (botInfoBuilder_ == null) {
+          if (botInfo_ != null) {
+            botInfo_ =
+              net.iGap.proto.ProtoGlobal.BotInfo.newBuilder(botInfo_).mergeFrom(value).buildPartial();
+          } else {
+            botInfo_ = value;
+          }
+          onChanged();
+        } else {
+          botInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.BotInfo botInfo = 2;</code>
+       */
+      public Builder clearBotInfo() {
+        if (botInfoBuilder_ == null) {
+          botInfo_ = null;
+          onChanged();
+        } else {
+          botInfo_ = null;
+          botInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .proto.BotInfo botInfo = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.BotInfo.Builder getBotInfoBuilder() {
+        
+        onChanged();
+        return getBotInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .proto.BotInfo botInfo = 2;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.BotInfoOrBuilder getBotInfoOrBuilder() {
+        if (botInfoBuilder_ != null) {
+          return botInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return botInfo_ == null ?
+              net.iGap.proto.ProtoGlobal.BotInfo.getDefaultInstance() : botInfo_;
+        }
+      }
+      /**
+       * <code>optional .proto.BotInfo botInfo = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.BotInfo, net.iGap.proto.ProtoGlobal.BotInfo.Builder, net.iGap.proto.ProtoGlobal.BotInfoOrBuilder> 
+          getBotInfoFieldBuilder() {
+        if (botInfoBuilder_ == null) {
+          botInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.BotInfo, net.iGap.proto.ProtoGlobal.BotInfo.Builder, net.iGap.proto.ProtoGlobal.BotInfoOrBuilder>(
+                  getBotInfo(),
+                  getParentForChildren(),
+                  isClean());
+          botInfo_ = null;
+        }
+        return botInfoBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -31167,6 +33323,11 @@ public final class ProtoGlobal {
      * <code>optional .proto.GroupChangeMemberRights.MemberRights room_rights = 12;</code>
      */
     net.iGap.proto.ProtoGroupChangeMemberRights.GroupChangeMemberRights.MemberRightsOrBuilder getRoomRightsOrBuilder();
+
+    /**
+     * <code>optional bool is_mention = 13;</code>
+     */
+    boolean getIsMention();
   }
   /**
    * Protobuf type {@code proto.GroupRoom}
@@ -31188,6 +33349,7 @@ public final class ProtoGlobal {
       participantsCountLimitLabel_ = "";
       description_ = "";
       avatarCount_ = 0;
+      isMention_ = false;
     }
 
     @java.lang.Override
@@ -31310,6 +33472,11 @@ public final class ProtoGlobal {
                 roomRights_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 104: {
+
+              isMention_ = input.readBool();
               break;
             }
           }
@@ -32937,6 +35104,15 @@ public final class ProtoGlobal {
       return getRoomRights();
     }
 
+    public static final int IS_MENTION_FIELD_NUMBER = 13;
+    private boolean isMention_;
+    /**
+     * <code>optional bool is_mention = 13;</code>
+     */
+    public boolean getIsMention() {
+      return isMention_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -32984,6 +35160,9 @@ public final class ProtoGlobal {
       }
       if (roomRights_ != null) {
         output.writeMessage(12, getRoomRights());
+      }
+      if (isMention_ != false) {
+        output.writeBool(13, isMention_);
       }
     }
 
@@ -33037,6 +35216,10 @@ public final class ProtoGlobal {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getRoomRights());
       }
+      if (isMention_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(13, isMention_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -33087,6 +35270,8 @@ public final class ProtoGlobal {
         result = result && getRoomRights()
             .equals(other.getRoomRights());
       }
+      result = result && (getIsMention()
+          == other.getIsMention());
       return result;
     }
 
@@ -33129,6 +35314,9 @@ public final class ProtoGlobal {
         hash = (37 * hash) + ROOM_RIGHTS_FIELD_NUMBER;
         hash = (53 * hash) + getRoomRights().hashCode();
       }
+      hash = (37 * hash) + IS_MENTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsMention());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -33287,6 +35475,8 @@ public final class ProtoGlobal {
           roomRights_ = null;
           roomRightsBuilder_ = null;
         }
+        isMention_ = false;
+
         return this;
       }
 
@@ -33337,6 +35527,7 @@ public final class ProtoGlobal {
         } else {
           result.roomRights_ = roomRightsBuilder_.build();
         }
+        result.isMention_ = isMention_;
         onBuilt();
         return result;
       }
@@ -33416,6 +35607,9 @@ public final class ProtoGlobal {
         }
         if (other.hasRoomRights()) {
           mergeRoomRights(other.getRoomRights());
+        }
+        if (other.getIsMention() != false) {
+          setIsMention(other.getIsMention());
         }
         onChanged();
         return this;
@@ -34282,6 +36476,32 @@ public final class ProtoGlobal {
           roomRights_ = null;
         }
         return roomRightsBuilder_;
+      }
+
+      private boolean isMention_ ;
+      /**
+       * <code>optional bool is_mention = 13;</code>
+       */
+      public boolean getIsMention() {
+        return isMention_;
+      }
+      /**
+       * <code>optional bool is_mention = 13;</code>
+       */
+      public Builder setIsMention(boolean value) {
+        
+        isMention_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool is_mention = 13;</code>
+       */
+      public Builder clearIsMention() {
+        
+        isMention_ = false;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -58732,6 +60952,9057 @@ public final class ProtoGlobal {
 
   }
 
+  public interface BotInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.BotInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint64 id = 1;</code>
+     */
+    long getId();
+
+    /**
+     * <code>optional string welcomeMessage = 2;</code>
+     */
+    java.lang.String getWelcomeMessage();
+    /**
+     * <code>optional string welcomeMessage = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getWelcomeMessageBytes();
+
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    java.util.List<net.iGap.proto.ProtoGlobal.BotInfo.BotAction> 
+        getActionsList();
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    net.iGap.proto.ProtoGlobal.BotInfo.BotAction getActions(int index);
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    int getActionsCount();
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder> 
+        getActionsOrBuilderList();
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder getActionsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code proto.BotInfo}
+   */
+  public  static final class BotInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.BotInfo)
+      BotInfoOrBuilder {
+    // Use BotInfo.newBuilder() to construct.
+    private BotInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BotInfo() {
+      id_ = 0L;
+      welcomeMessage_ = "";
+      actions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private BotInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              id_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              welcomeMessage_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                actions_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.BotInfo.BotAction>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              actions_.add(
+                  input.readMessage(net.iGap.proto.ProtoGlobal.BotInfo.BotAction.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          actions_ = java.util.Collections.unmodifiableList(actions_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.BotInfo.class, net.iGap.proto.ProtoGlobal.BotInfo.Builder.class);
+    }
+
+    public interface BotActionOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.BotInfo.BotAction)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional string key = 1;</code>
+       */
+      java.lang.String getKey();
+      /**
+       * <code>optional string key = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getKeyBytes();
+
+      /**
+       * <code>optional string value = 2;</code>
+       */
+      java.lang.String getValue();
+      /**
+       * <code>optional string value = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getValueBytes();
+    }
+    /**
+     * Protobuf type {@code proto.BotInfo.BotAction}
+     */
+    public  static final class BotAction extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:proto.BotInfo.BotAction)
+        BotActionOrBuilder {
+      // Use BotAction.newBuilder() to construct.
+      private BotAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private BotAction() {
+        key_ = "";
+        value_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private BotAction(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                key_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                value_ = s;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_BotAction_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_BotAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.BotInfo.BotAction.class, net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder.class);
+      }
+
+      public static final int KEY_FIELD_NUMBER = 1;
+      private volatile java.lang.Object key_;
+      /**
+       * <code>optional string key = 1;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>optional string key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VALUE_FIELD_NUMBER = 2;
+      private volatile java.lang.Object value_;
+      /**
+       * <code>optional string value = 2;</code>
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>optional string value = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getKeyBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+        }
+        if (!getValueBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getKeyBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+        }
+        if (!getValueBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoGlobal.BotInfo.BotAction)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoGlobal.BotInfo.BotAction other = (net.iGap.proto.ProtoGlobal.BotInfo.BotAction) obj;
+
+        boolean result = true;
+        result = result && getKey()
+            .equals(other.getKey());
+        result = result && getValue()
+            .equals(other.getValue());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getKey().hashCode();
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(net.iGap.proto.ProtoGlobal.BotInfo.BotAction prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code proto.BotInfo.BotAction}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.BotInfo.BotAction)
+          net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_BotAction_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_BotAction_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoGlobal.BotInfo.BotAction.class, net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder.class);
+        }
+
+        // Construct using net.iGap.proto.ProtoGlobal.BotInfo.BotAction.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          key_ = "";
+
+          value_ = "";
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_BotAction_descriptor;
+        }
+
+        public net.iGap.proto.ProtoGlobal.BotInfo.BotAction getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoGlobal.BotInfo.BotAction.getDefaultInstance();
+        }
+
+        public net.iGap.proto.ProtoGlobal.BotInfo.BotAction build() {
+          net.iGap.proto.ProtoGlobal.BotInfo.BotAction result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public net.iGap.proto.ProtoGlobal.BotInfo.BotAction buildPartial() {
+          net.iGap.proto.ProtoGlobal.BotInfo.BotAction result = new net.iGap.proto.ProtoGlobal.BotInfo.BotAction(this);
+          result.key_ = key_;
+          result.value_ = value_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoGlobal.BotInfo.BotAction) {
+            return mergeFrom((net.iGap.proto.ProtoGlobal.BotInfo.BotAction)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoGlobal.BotInfo.BotAction other) {
+          if (other == net.iGap.proto.ProtoGlobal.BotInfo.BotAction.getDefaultInstance()) return this;
+          if (!other.getKey().isEmpty()) {
+            key_ = other.key_;
+            onChanged();
+          }
+          if (!other.getValue().isEmpty()) {
+            value_ = other.value_;
+            onChanged();
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoGlobal.BotInfo.BotAction parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoGlobal.BotInfo.BotAction) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object key_ = "";
+        /**
+         * <code>optional string key = 1;</code>
+         */
+        public java.lang.String getKey() {
+          java.lang.Object ref = key_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            key_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string key = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getKeyBytes() {
+          java.lang.Object ref = key_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            key_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string key = 1;</code>
+         */
+        public Builder setKey(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          key_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string key = 1;</code>
+         */
+        public Builder clearKey() {
+          
+          key_ = getDefaultInstance().getKey();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string key = 1;</code>
+         */
+        public Builder setKeyBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          key_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object value_ = "";
+        /**
+         * <code>optional string value = 2;</code>
+         */
+        public java.lang.String getValue() {
+          java.lang.Object ref = value_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            value_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string value = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getValueBytes() {
+          java.lang.Object ref = value_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            value_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string value = 2;</code>
+         */
+        public Builder setValue(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          value_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string value = 2;</code>
+         */
+        public Builder clearValue() {
+          
+          value_ = getDefaultInstance().getValue();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string value = 2;</code>
+         */
+        public Builder setValueBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          value_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:proto.BotInfo.BotAction)
+      }
+
+      // @@protoc_insertion_point(class_scope:proto.BotInfo.BotAction)
+      private static final net.iGap.proto.ProtoGlobal.BotInfo.BotAction DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.BotInfo.BotAction();
+      }
+
+      public static net.iGap.proto.ProtoGlobal.BotInfo.BotAction getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BotAction>
+          PARSER = new com.google.protobuf.AbstractParser<BotAction>() {
+        public BotAction parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new BotAction(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<BotAction> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BotAction> getParserForType() {
+        return PARSER;
+      }
+
+      public net.iGap.proto.ProtoGlobal.BotInfo.BotAction getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>optional uint64 id = 1;</code>
+     */
+    public long getId() {
+      return id_;
+    }
+
+    public static final int WELCOMEMESSAGE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object welcomeMessage_;
+    /**
+     * <code>optional string welcomeMessage = 2;</code>
+     */
+    public java.lang.String getWelcomeMessage() {
+      java.lang.Object ref = welcomeMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        welcomeMessage_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string welcomeMessage = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getWelcomeMessageBytes() {
+      java.lang.Object ref = welcomeMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        welcomeMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACTIONS_FIELD_NUMBER = 3;
+    private java.util.List<net.iGap.proto.ProtoGlobal.BotInfo.BotAction> actions_;
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    public java.util.List<net.iGap.proto.ProtoGlobal.BotInfo.BotAction> getActionsList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    public java.util.List<? extends net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder> 
+        getActionsOrBuilderList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    public int getActionsCount() {
+      return actions_.size();
+    }
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.BotInfo.BotAction getActions(int index) {
+      return actions_.get(index);
+    }
+    /**
+     * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder getActionsOrBuilder(
+        int index) {
+      return actions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeUInt64(1, id_);
+      }
+      if (!getWelcomeMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, welcomeMessage_);
+      }
+      for (int i = 0; i < actions_.size(); i++) {
+        output.writeMessage(3, actions_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, id_);
+      }
+      if (!getWelcomeMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, welcomeMessage_);
+      }
+      for (int i = 0; i < actions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, actions_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.BotInfo)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.BotInfo other = (net.iGap.proto.ProtoGlobal.BotInfo) obj;
+
+      boolean result = true;
+      result = result && (getId()
+          == other.getId());
+      result = result && getWelcomeMessage()
+          .equals(other.getWelcomeMessage());
+      result = result && getActionsList()
+          .equals(other.getActionsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + WELCOMEMESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getWelcomeMessage().hashCode();
+      if (getActionsCount() > 0) {
+        hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getActionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.BotInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.BotInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.BotInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.BotInfo)
+        net.iGap.proto.ProtoGlobal.BotInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.BotInfo.class, net.iGap.proto.ProtoGlobal.BotInfo.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.BotInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getActionsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+
+        welcomeMessage_ = "";
+
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          actionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_BotInfo_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.BotInfo getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.BotInfo.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.BotInfo build() {
+        net.iGap.proto.ProtoGlobal.BotInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.BotInfo buildPartial() {
+        net.iGap.proto.ProtoGlobal.BotInfo result = new net.iGap.proto.ProtoGlobal.BotInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.id_ = id_;
+        result.welcomeMessage_ = welcomeMessage_;
+        if (actionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            actions_ = java.util.Collections.unmodifiableList(actions_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.actions_ = actions_;
+        } else {
+          result.actions_ = actionsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.BotInfo) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.BotInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.BotInfo other) {
+        if (other == net.iGap.proto.ProtoGlobal.BotInfo.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (!other.getWelcomeMessage().isEmpty()) {
+          welcomeMessage_ = other.welcomeMessage_;
+          onChanged();
+        }
+        if (actionsBuilder_ == null) {
+          if (!other.actions_.isEmpty()) {
+            if (actions_.isEmpty()) {
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureActionsIsMutable();
+              actions_.addAll(other.actions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.actions_.isEmpty()) {
+            if (actionsBuilder_.isEmpty()) {
+              actionsBuilder_.dispose();
+              actionsBuilder_ = null;
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              actionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getActionsFieldBuilder() : null;
+            } else {
+              actionsBuilder_.addAllMessages(other.actions_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.BotInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.BotInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long id_ ;
+      /**
+       * <code>optional uint64 id = 1;</code>
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>optional uint64 id = 1;</code>
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object welcomeMessage_ = "";
+      /**
+       * <code>optional string welcomeMessage = 2;</code>
+       */
+      public java.lang.String getWelcomeMessage() {
+        java.lang.Object ref = welcomeMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          welcomeMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string welcomeMessage = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getWelcomeMessageBytes() {
+        java.lang.Object ref = welcomeMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          welcomeMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string welcomeMessage = 2;</code>
+       */
+      public Builder setWelcomeMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        welcomeMessage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string welcomeMessage = 2;</code>
+       */
+      public Builder clearWelcomeMessage() {
+        
+        welcomeMessage_ = getDefaultInstance().getWelcomeMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string welcomeMessage = 2;</code>
+       */
+      public Builder setWelcomeMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        welcomeMessage_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<net.iGap.proto.ProtoGlobal.BotInfo.BotAction> actions_ =
+        java.util.Collections.emptyList();
+      private void ensureActionsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          actions_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.BotInfo.BotAction>(actions_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.BotInfo.BotAction, net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder, net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder> actionsBuilder_;
+
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.BotInfo.BotAction> getActionsList() {
+        if (actionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(actions_);
+        } else {
+          return actionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public int getActionsCount() {
+        if (actionsBuilder_ == null) {
+          return actions_.size();
+        } else {
+          return actionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.BotInfo.BotAction getActions(int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);
+        } else {
+          return actionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public Builder setActions(
+          int index, net.iGap.proto.ProtoGlobal.BotInfo.BotAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.set(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public Builder setActions(
+          int index, net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public Builder addActions(net.iGap.proto.ProtoGlobal.BotInfo.BotAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public Builder addActions(
+          int index, net.iGap.proto.ProtoGlobal.BotInfo.BotAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public Builder addActions(
+          net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public Builder addActions(
+          int index, net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public Builder addAllActions(
+          java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.BotInfo.BotAction> values) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, actions_);
+          onChanged();
+        } else {
+          actionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public Builder clearActions() {
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          actionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public Builder removeActions(int index) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.remove(index);
+          onChanged();
+        } else {
+          actionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder getActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder getActionsOrBuilder(
+          int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);  } else {
+          return actionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder> 
+           getActionsOrBuilderList() {
+        if (actionsBuilder_ != null) {
+          return actionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(actions_);
+        }
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder addActionsBuilder() {
+        return getActionsFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGlobal.BotInfo.BotAction.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder addActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGlobal.BotInfo.BotAction.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.BotInfo.BotAction actions = 3;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder> 
+           getActionsBuilderList() {
+        return getActionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.BotInfo.BotAction, net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder, net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder> 
+          getActionsFieldBuilder() {
+        if (actionsBuilder_ == null) {
+          actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.BotInfo.BotAction, net.iGap.proto.ProtoGlobal.BotInfo.BotAction.Builder, net.iGap.proto.ProtoGlobal.BotInfo.BotActionOrBuilder>(
+                  actions_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          actions_ = null;
+        }
+        return actionsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.BotInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.BotInfo)
+    private static final net.iGap.proto.ProtoGlobal.BotInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.BotInfo();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.BotInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BotInfo>
+        PARSER = new com.google.protobuf.AbstractParser<BotInfo>() {
+      public BotInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BotInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BotInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BotInfo> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.BotInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MentionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.Mention)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated uint64 userIds = 1;</code>
+     */
+    java.util.List<java.lang.Long> getUserIdsList();
+    /**
+     * <code>repeated uint64 userIds = 1;</code>
+     */
+    int getUserIdsCount();
+    /**
+     * <code>repeated uint64 userIds = 1;</code>
+     */
+    long getUserIds(int index);
+  }
+  /**
+   * Protobuf type {@code proto.Mention}
+   */
+  public  static final class Mention extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.Mention)
+      MentionOrBuilder {
+    // Use Mention.newBuilder() to construct.
+    private Mention(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Mention() {
+      userIds_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Mention(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                userIds_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              userIds_.add(input.readUInt64());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                userIds_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                userIds_.add(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          userIds_ = java.util.Collections.unmodifiableList(userIds_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_Mention_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_Mention_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.Mention.class, net.iGap.proto.ProtoGlobal.Mention.Builder.class);
+    }
+
+    public static final int USERIDS_FIELD_NUMBER = 1;
+    private java.util.List<java.lang.Long> userIds_;
+    /**
+     * <code>repeated uint64 userIds = 1;</code>
+     */
+    public java.util.List<java.lang.Long>
+        getUserIdsList() {
+      return userIds_;
+    }
+    /**
+     * <code>repeated uint64 userIds = 1;</code>
+     */
+    public int getUserIdsCount() {
+      return userIds_.size();
+    }
+    /**
+     * <code>repeated uint64 userIds = 1;</code>
+     */
+    public long getUserIds(int index) {
+      return userIds_.get(index);
+    }
+    private int userIdsMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (getUserIdsList().size() > 0) {
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(userIdsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < userIds_.size(); i++) {
+        output.writeUInt64NoTag(userIds_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < userIds_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt64SizeNoTag(userIds_.get(i));
+        }
+        size += dataSize;
+        if (!getUserIdsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        userIdsMemoizedSerializedSize = dataSize;
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.Mention)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.Mention other = (net.iGap.proto.ProtoGlobal.Mention) obj;
+
+      boolean result = true;
+      result = result && getUserIdsList()
+          .equals(other.getUserIdsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (getUserIdsCount() > 0) {
+        hash = (37 * hash) + USERIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getUserIdsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Mention parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Mention parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Mention parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.Mention parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Mention parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Mention parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Mention parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Mention parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.Mention parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.Mention parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.Mention prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.Mention}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.Mention)
+        net.iGap.proto.ProtoGlobal.MentionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_Mention_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_Mention_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.Mention.class, net.iGap.proto.ProtoGlobal.Mention.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.Mention.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        userIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_Mention_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.Mention getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.Mention build() {
+        net.iGap.proto.ProtoGlobal.Mention result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.Mention buildPartial() {
+        net.iGap.proto.ProtoGlobal.Mention result = new net.iGap.proto.ProtoGlobal.Mention(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          userIds_ = java.util.Collections.unmodifiableList(userIds_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.userIds_ = userIds_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.Mention) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.Mention)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.Mention other) {
+        if (other == net.iGap.proto.ProtoGlobal.Mention.getDefaultInstance()) return this;
+        if (!other.userIds_.isEmpty()) {
+          if (userIds_.isEmpty()) {
+            userIds_ = other.userIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureUserIdsIsMutable();
+            userIds_.addAll(other.userIds_);
+          }
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.Mention parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.Mention) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<java.lang.Long> userIds_ = java.util.Collections.emptyList();
+      private void ensureUserIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          userIds_ = new java.util.ArrayList<java.lang.Long>(userIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint64 userIds = 1;</code>
+       */
+      public java.util.List<java.lang.Long>
+          getUserIdsList() {
+        return java.util.Collections.unmodifiableList(userIds_);
+      }
+      /**
+       * <code>repeated uint64 userIds = 1;</code>
+       */
+      public int getUserIdsCount() {
+        return userIds_.size();
+      }
+      /**
+       * <code>repeated uint64 userIds = 1;</code>
+       */
+      public long getUserIds(int index) {
+        return userIds_.get(index);
+      }
+      /**
+       * <code>repeated uint64 userIds = 1;</code>
+       */
+      public Builder setUserIds(
+          int index, long value) {
+        ensureUserIdsIsMutable();
+        userIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 userIds = 1;</code>
+       */
+      public Builder addUserIds(long value) {
+        ensureUserIdsIsMutable();
+        userIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 userIds = 1;</code>
+       */
+      public Builder addAllUserIds(
+          java.lang.Iterable<? extends java.lang.Long> values) {
+        ensureUserIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, userIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint64 userIds = 1;</code>
+       */
+      public Builder clearUserIds() {
+        userIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.Mention)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.Mention)
+    private static final net.iGap.proto.ProtoGlobal.Mention DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.Mention();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.Mention getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Mention>
+        PARSER = new com.google.protobuf.AbstractParser<Mention>() {
+      public Mention parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Mention(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Mention> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Mention> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.Mention getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RoomMessageStickerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageSticker)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .proto.RoomMessageSticker.StickerTypeEnum type = 1;</code>
+     */
+    int getTypeValue();
+    /**
+     * <code>optional .proto.RoomMessageSticker.StickerTypeEnum type = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum getType();
+
+    /**
+     * <code>optional string message = 2;</code>
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>optional string message = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>optional string id = 3;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>optional string id = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>optional string name = 4;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional string path = 5;</code>
+     */
+    java.lang.String getPath();
+    /**
+     * <code>optional string path = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getPathBytes();
+
+    /**
+     * <code>optional string token = 6;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <code>optional string token = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+
+    /**
+     * <code>optional string group_id = 7;</code>
+     */
+    java.lang.String getGroupId();
+    /**
+     * <code>optional string group_id = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getGroupIdBytes();
+
+    /**
+     * <code>optional string file_name = 8;</code>
+     */
+    java.lang.String getFileName();
+    /**
+     * <code>optional string file_name = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getFileNameBytes();
+
+    /**
+     * <code>optional int64 file_size = 9;</code>
+     */
+    long getFileSize();
+
+    /**
+     * <code>optional string gift_id = 10;</code>
+     */
+    java.lang.String getGiftId();
+    /**
+     * <code>optional string gift_id = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getGiftIdBytes();
+
+    /**
+     * <code>optional int64 gift_amount = 11;</code>
+     */
+    long getGiftAmount();
+
+    /**
+     * <code>optional bool is_favorite = 12;</code>
+     */
+    boolean getIsFavorite();
+
+    /**
+     * <code>optional int32 sort = 13;</code>
+     */
+    int getSort();
+
+    /**
+     * <code>optional int64 ref_id = 14;</code>
+     */
+    long getRefId();
+
+    /**
+     * <code>repeated string tags = 15;</code>
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <code>repeated string tags = 15;</code>
+     */
+    int getTagsCount();
+    /**
+     * <code>repeated string tags = 15;</code>
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <code>repeated string tags = 15;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageSticker}
+   */
+  public  static final class RoomMessageSticker extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageSticker)
+      RoomMessageStickerOrBuilder {
+    // Use RoomMessageSticker.newBuilder() to construct.
+    private RoomMessageSticker(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoomMessageSticker() {
+      type_ = 0;
+      message_ = "";
+      id_ = "";
+      name_ = "";
+      path_ = "";
+      token_ = "";
+      groupId_ = "";
+      fileName_ = "";
+      fileSize_ = 0L;
+      giftId_ = "";
+      giftAmount_ = 0L;
+      isFavorite_ = false;
+      sort_ = 0;
+      refId_ = 0L;
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RoomMessageSticker(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              path_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              groupId_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fileName_ = s;
+              break;
+            }
+            case 72: {
+
+              fileSize_ = input.readInt64();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              giftId_ = s;
+              break;
+            }
+            case 88: {
+
+              giftAmount_ = input.readInt64();
+              break;
+            }
+            case 96: {
+
+              isFavorite_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              sort_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              refId_ = input.readInt64();
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00004000;
+              }
+              tags_.add(s);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageSticker_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageSticker_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.RoomMessageSticker.class, net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.RoomMessageSticker.StickerTypeEnum}
+     */
+    public enum StickerTypeEnum
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>STICKER = 0;</code>
+       */
+      STICKER(0),
+      /**
+       * <code>GIFT_STICKER = 1;</code>
+       */
+      GIFT_STICKER(1),
+      /**
+       * <code>MOTION_STICKER = 2;</code>
+       */
+      MOTION_STICKER(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>STICKER = 0;</code>
+       */
+      public static final int STICKER_VALUE = 0;
+      /**
+       * <code>GIFT_STICKER = 1;</code>
+       */
+      public static final int GIFT_STICKER_VALUE = 1;
+      /**
+       * <code>MOTION_STICKER = 2;</code>
+       */
+      public static final int MOTION_STICKER_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static StickerTypeEnum valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static StickerTypeEnum forNumber(int value) {
+        switch (value) {
+          case 0: return STICKER;
+          case 1: return GIFT_STICKER;
+          case 2: return MOTION_STICKER;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<StickerTypeEnum>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          StickerTypeEnum> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<StickerTypeEnum>() {
+              public StickerTypeEnum findValueByNumber(int number) {
+                return StickerTypeEnum.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageSticker.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final StickerTypeEnum[] VALUES = values();
+
+      public static StickerTypeEnum valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private StickerTypeEnum(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.RoomMessageSticker.StickerTypeEnum)
+    }
+
+    private int bitField0_;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <code>optional .proto.RoomMessageSticker.StickerTypeEnum type = 1;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageSticker.StickerTypeEnum type = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum getType() {
+      net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum result = net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum.valueOf(type_);
+      return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum.UNRECOGNIZED : result;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object message_;
+    /**
+     * <code>optional string message = 2;</code>
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string message = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>optional string id = 3;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string id = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>optional string name = 4;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PATH_FIELD_NUMBER = 5;
+    private volatile java.lang.Object path_;
+    /**
+     * <code>optional string path = 5;</code>
+     */
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string path = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 6;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>optional string token = 6;</code>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string token = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object groupId_;
+    /**
+     * <code>optional string group_id = 7;</code>
+     */
+    public java.lang.String getGroupId() {
+      java.lang.Object ref = groupId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string group_id = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGroupIdBytes() {
+      java.lang.Object ref = groupId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILE_NAME_FIELD_NUMBER = 8;
+    private volatile java.lang.Object fileName_;
+    /**
+     * <code>optional string file_name = 8;</code>
+     */
+    public java.lang.String getFileName() {
+      java.lang.Object ref = fileName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fileName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string file_name = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFileNameBytes() {
+      java.lang.Object ref = fileName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fileName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILE_SIZE_FIELD_NUMBER = 9;
+    private long fileSize_;
+    /**
+     * <code>optional int64 file_size = 9;</code>
+     */
+    public long getFileSize() {
+      return fileSize_;
+    }
+
+    public static final int GIFT_ID_FIELD_NUMBER = 10;
+    private volatile java.lang.Object giftId_;
+    /**
+     * <code>optional string gift_id = 10;</code>
+     */
+    public java.lang.String getGiftId() {
+      java.lang.Object ref = giftId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        giftId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string gift_id = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGiftIdBytes() {
+      java.lang.Object ref = giftId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        giftId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GIFT_AMOUNT_FIELD_NUMBER = 11;
+    private long giftAmount_;
+    /**
+     * <code>optional int64 gift_amount = 11;</code>
+     */
+    public long getGiftAmount() {
+      return giftAmount_;
+    }
+
+    public static final int IS_FAVORITE_FIELD_NUMBER = 12;
+    private boolean isFavorite_;
+    /**
+     * <code>optional bool is_favorite = 12;</code>
+     */
+    public boolean getIsFavorite() {
+      return isFavorite_;
+    }
+
+    public static final int SORT_FIELD_NUMBER = 13;
+    private int sort_;
+    /**
+     * <code>optional int32 sort = 13;</code>
+     */
+    public int getSort() {
+      return sort_;
+    }
+
+    public static final int REF_ID_FIELD_NUMBER = 14;
+    private long refId_;
+    /**
+     * <code>optional int64 ref_id = 14;</code>
+     */
+    public long getRefId() {
+      return refId_;
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 15;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <code>repeated string tags = 15;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <code>repeated string tags = 15;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated string tags = 15;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated string tags = 15;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (type_ != net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum.STICKER.getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      }
+      if (!getPathBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, path_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, token_);
+      }
+      if (!getGroupIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, groupId_);
+      }
+      if (!getFileNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, fileName_);
+      }
+      if (fileSize_ != 0L) {
+        output.writeInt64(9, fileSize_);
+      }
+      if (!getGiftIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, giftId_);
+      }
+      if (giftAmount_ != 0L) {
+        output.writeInt64(11, giftAmount_);
+      }
+      if (isFavorite_ != false) {
+        output.writeBool(12, isFavorite_);
+      }
+      if (sort_ != 0) {
+        output.writeInt32(13, sort_);
+      }
+      if (refId_ != 0L) {
+        output.writeInt64(14, refId_);
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, tags_.getRaw(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_ != net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum.STICKER.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+      }
+      if (!getPathBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, path_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, token_);
+      }
+      if (!getGroupIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, groupId_);
+      }
+      if (!getFileNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, fileName_);
+      }
+      if (fileSize_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, fileSize_);
+      }
+      if (!getGiftIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, giftId_);
+      }
+      if (giftAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(11, giftAmount_);
+      }
+      if (isFavorite_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isFavorite_);
+      }
+      if (sort_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, sort_);
+      }
+      if (refId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(14, refId_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessageSticker)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.RoomMessageSticker other = (net.iGap.proto.ProtoGlobal.RoomMessageSticker) obj;
+
+      boolean result = true;
+      result = result && type_ == other.type_;
+      result = result && getMessage()
+          .equals(other.getMessage());
+      result = result && getId()
+          .equals(other.getId());
+      result = result && getName()
+          .equals(other.getName());
+      result = result && getPath()
+          .equals(other.getPath());
+      result = result && getToken()
+          .equals(other.getToken());
+      result = result && getGroupId()
+          .equals(other.getGroupId());
+      result = result && getFileName()
+          .equals(other.getFileName());
+      result = result && (getFileSize()
+          == other.getFileSize());
+      result = result && getGiftId()
+          .equals(other.getGiftId());
+      result = result && (getGiftAmount()
+          == other.getGiftAmount());
+      result = result && (getIsFavorite()
+          == other.getIsFavorite());
+      result = result && (getSort()
+          == other.getSort());
+      result = result && (getRefId()
+          == other.getRefId());
+      result = result && getTagsList()
+          .equals(other.getTagsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId().hashCode();
+      hash = (37 * hash) + FILE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFileName().hashCode();
+      hash = (37 * hash) + FILE_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFileSize());
+      hash = (37 * hash) + GIFT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGiftId().hashCode();
+      hash = (37 * hash) + GIFT_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGiftAmount());
+      hash = (37 * hash) + IS_FAVORITE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFavorite());
+      hash = (37 * hash) + SORT_FIELD_NUMBER;
+      hash = (53 * hash) + getSort();
+      hash = (37 * hash) + REF_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRefId());
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageSticker prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageSticker}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageSticker)
+        net.iGap.proto.ProtoGlobal.RoomMessageStickerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageSticker_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageSticker_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessageSticker.class, net.iGap.proto.ProtoGlobal.RoomMessageSticker.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageSticker.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        message_ = "";
+
+        id_ = "";
+
+        name_ = "";
+
+        path_ = "";
+
+        token_ = "";
+
+        groupId_ = "";
+
+        fileName_ = "";
+
+        fileSize_ = 0L;
+
+        giftId_ = "";
+
+        giftAmount_ = 0L;
+
+        isFavorite_ = false;
+
+        sort_ = 0;
+
+        refId_ = 0L;
+
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00004000);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageSticker_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageSticker getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageSticker.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageSticker build() {
+        net.iGap.proto.ProtoGlobal.RoomMessageSticker result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageSticker buildPartial() {
+        net.iGap.proto.ProtoGlobal.RoomMessageSticker result = new net.iGap.proto.ProtoGlobal.RoomMessageSticker(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.type_ = type_;
+        result.message_ = message_;
+        result.id_ = id_;
+        result.name_ = name_;
+        result.path_ = path_;
+        result.token_ = token_;
+        result.groupId_ = groupId_;
+        result.fileName_ = fileName_;
+        result.fileSize_ = fileSize_;
+        result.giftId_ = giftId_;
+        result.giftAmount_ = giftAmount_;
+        result.isFavorite_ = isFavorite_;
+        result.sort_ = sort_;
+        result.refId_ = refId_;
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00004000);
+        }
+        result.tags_ = tags_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessageSticker) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessageSticker)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessageSticker other) {
+        if (other == net.iGap.proto.ProtoGlobal.RoomMessageSticker.getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          onChanged();
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (!other.getGroupId().isEmpty()) {
+          groupId_ = other.groupId_;
+          onChanged();
+        }
+        if (!other.getFileName().isEmpty()) {
+          fileName_ = other.fileName_;
+          onChanged();
+        }
+        if (other.getFileSize() != 0L) {
+          setFileSize(other.getFileSize());
+        }
+        if (!other.getGiftId().isEmpty()) {
+          giftId_ = other.giftId_;
+          onChanged();
+        }
+        if (other.getGiftAmount() != 0L) {
+          setGiftAmount(other.getGiftAmount());
+        }
+        if (other.getIsFavorite() != false) {
+          setIsFavorite(other.getIsFavorite());
+        }
+        if (other.getSort() != 0) {
+          setSort(other.getSort());
+        }
+        if (other.getRefId() != 0L) {
+          setRefId(other.getRefId());
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00004000);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.RoomMessageSticker parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessageSticker) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int type_ = 0;
+      /**
+       * <code>optional .proto.RoomMessageSticker.StickerTypeEnum type = 1;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker.StickerTypeEnum type = 1;</code>
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker.StickerTypeEnum type = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum getType() {
+        net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum result = net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker.StickerTypeEnum type = 1;</code>
+       */
+      public Builder setType(net.iGap.proto.ProtoGlobal.RoomMessageSticker.StickerTypeEnum value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageSticker.StickerTypeEnum type = 1;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>optional string message = 2;</code>
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string message = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string message = 2;</code>
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string message = 2;</code>
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string message = 2;</code>
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>optional string id = 3;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string id = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string id = 3;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string id = 3;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string id = 3;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 4;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 4;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 4;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 4;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object path_ = "";
+      /**
+       * <code>optional string path = 5;</code>
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string path = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string path = 5;</code>
+       */
+      public Builder setPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        path_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string path = 5;</code>
+       */
+      public Builder clearPath() {
+        
+        path_ = getDefaultInstance().getPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string path = 5;</code>
+       */
+      public Builder setPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        path_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>optional string token = 6;</code>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string token = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string token = 6;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string token = 6;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string token = 6;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object groupId_ = "";
+      /**
+       * <code>optional string group_id = 7;</code>
+       */
+      public java.lang.String getGroupId() {
+        java.lang.Object ref = groupId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          groupId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string group_id = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGroupIdBytes() {
+        java.lang.Object ref = groupId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          groupId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string group_id = 7;</code>
+       */
+      public Builder setGroupId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string group_id = 7;</code>
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = getDefaultInstance().getGroupId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string group_id = 7;</code>
+       */
+      public Builder setGroupIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fileName_ = "";
+      /**
+       * <code>optional string file_name = 8;</code>
+       */
+      public java.lang.String getFileName() {
+        java.lang.Object ref = fileName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fileName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string file_name = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFileNameBytes() {
+        java.lang.Object ref = fileName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fileName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string file_name = 8;</code>
+       */
+      public Builder setFileName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        fileName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string file_name = 8;</code>
+       */
+      public Builder clearFileName() {
+        
+        fileName_ = getDefaultInstance().getFileName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string file_name = 8;</code>
+       */
+      public Builder setFileNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        fileName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long fileSize_ ;
+      /**
+       * <code>optional int64 file_size = 9;</code>
+       */
+      public long getFileSize() {
+        return fileSize_;
+      }
+      /**
+       * <code>optional int64 file_size = 9;</code>
+       */
+      public Builder setFileSize(long value) {
+        
+        fileSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 file_size = 9;</code>
+       */
+      public Builder clearFileSize() {
+        
+        fileSize_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object giftId_ = "";
+      /**
+       * <code>optional string gift_id = 10;</code>
+       */
+      public java.lang.String getGiftId() {
+        java.lang.Object ref = giftId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          giftId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string gift_id = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGiftIdBytes() {
+        java.lang.Object ref = giftId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          giftId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string gift_id = 10;</code>
+       */
+      public Builder setGiftId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        giftId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string gift_id = 10;</code>
+       */
+      public Builder clearGiftId() {
+        
+        giftId_ = getDefaultInstance().getGiftId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string gift_id = 10;</code>
+       */
+      public Builder setGiftIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        giftId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long giftAmount_ ;
+      /**
+       * <code>optional int64 gift_amount = 11;</code>
+       */
+      public long getGiftAmount() {
+        return giftAmount_;
+      }
+      /**
+       * <code>optional int64 gift_amount = 11;</code>
+       */
+      public Builder setGiftAmount(long value) {
+        
+        giftAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 gift_amount = 11;</code>
+       */
+      public Builder clearGiftAmount() {
+        
+        giftAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFavorite_ ;
+      /**
+       * <code>optional bool is_favorite = 12;</code>
+       */
+      public boolean getIsFavorite() {
+        return isFavorite_;
+      }
+      /**
+       * <code>optional bool is_favorite = 12;</code>
+       */
+      public Builder setIsFavorite(boolean value) {
+        
+        isFavorite_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool is_favorite = 12;</code>
+       */
+      public Builder clearIsFavorite() {
+        
+        isFavorite_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int sort_ ;
+      /**
+       * <code>optional int32 sort = 13;</code>
+       */
+      public int getSort() {
+        return sort_;
+      }
+      /**
+       * <code>optional int32 sort = 13;</code>
+       */
+      public Builder setSort(int value) {
+        
+        sort_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 sort = 13;</code>
+       */
+      public Builder clearSort() {
+        
+        sort_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long refId_ ;
+      /**
+       * <code>optional int64 ref_id = 14;</code>
+       */
+      public long getRefId() {
+        return refId_;
+      }
+      /**
+       * <code>optional int64 ref_id = 14;</code>
+       */
+      public Builder setRefId(long value) {
+        
+        refId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 ref_id = 14;</code>
+       */
+      public Builder clearRefId() {
+        
+        refId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00004000) == 0x00004000)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00004000;
+         }
+      }
+      /**
+       * <code>repeated string tags = 15;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string tags = 15;</code>
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <code>repeated string tags = 15;</code>
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <code>repeated string tags = 15;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <code>repeated string tags = 15;</code>
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 15;</code>
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 15;</code>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 15;</code>
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00004000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tags = 15;</code>
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageSticker)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageSticker)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageSticker DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessageSticker();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageSticker getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoomMessageSticker>
+        PARSER = new com.google.protobuf.AbstractParser<RoomMessageSticker>() {
+      public RoomMessageSticker parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomMessageSticker(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomMessageSticker> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomMessageSticker> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.RoomMessageSticker getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RoomMessageCardToCardOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageCardToCard)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string message = 1;</code>
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>optional string message = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>optional string label = 2;</code>
+     */
+    java.lang.String getLabel();
+    /**
+     * <code>optional string label = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getLabelBytes();
+
+    /**
+     * <code>optional string image_url = 3;</code>
+     */
+    java.lang.String getImageUrl();
+    /**
+     * <code>optional string image_url = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getImageUrlBytes();
+
+    /**
+     * <code>optional string action_type = 4;</code>
+     */
+    java.lang.String getActionType();
+    /**
+     * <code>optional string action_type = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getActionTypeBytes();
+
+    /**
+     * <code>optional string card_number = 5;</code>
+     */
+    java.lang.String getCardNumber();
+    /**
+     * <code>optional string card_number = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getCardNumberBytes();
+
+    /**
+     * <code>optional int64 amount = 6;</code>
+     */
+    long getAmount();
+
+    /**
+     * <code>optional int64 user_id = 7;</code>
+     */
+    long getUserId();
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageCardToCard}
+   */
+  public  static final class RoomMessageCardToCard extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageCardToCard)
+      RoomMessageCardToCardOrBuilder {
+    // Use RoomMessageCardToCard.newBuilder() to construct.
+    private RoomMessageCardToCard(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoomMessageCardToCard() {
+      message_ = "";
+      label_ = "";
+      imageUrl_ = "";
+      actionType_ = "";
+      cardNumber_ = "";
+      amount_ = 0L;
+      userId_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RoomMessageCardToCard(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              label_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              imageUrl_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              actionType_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cardNumber_ = s;
+              break;
+            }
+            case 48: {
+
+              amount_ = input.readInt64();
+              break;
+            }
+            case 56: {
+
+              userId_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageCardToCard_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageCardToCard_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.class, net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder.class);
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object message_;
+    /**
+     * <code>optional string message = 1;</code>
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string message = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LABEL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object label_;
+    /**
+     * <code>optional string label = 2;</code>
+     */
+    public java.lang.String getLabel() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        label_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string label = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLabelBytes() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        label_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IMAGE_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object imageUrl_;
+    /**
+     * <code>optional string image_url = 3;</code>
+     */
+    public java.lang.String getImageUrl() {
+      java.lang.Object ref = imageUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string image_url = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getImageUrlBytes() {
+      java.lang.Object ref = imageUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        imageUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ACTION_TYPE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object actionType_;
+    /**
+     * <code>optional string action_type = 4;</code>
+     */
+    public java.lang.String getActionType() {
+      java.lang.Object ref = actionType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        actionType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string action_type = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getActionTypeBytes() {
+      java.lang.Object ref = actionType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        actionType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CARD_NUMBER_FIELD_NUMBER = 5;
+    private volatile java.lang.Object cardNumber_;
+    /**
+     * <code>optional string card_number = 5;</code>
+     */
+    public java.lang.String getCardNumber() {
+      java.lang.Object ref = cardNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cardNumber_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string card_number = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCardNumberBytes() {
+      java.lang.Object ref = cardNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cardNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 6;
+    private long amount_;
+    /**
+     * <code>optional int64 amount = 6;</code>
+     */
+    public long getAmount() {
+      return amount_;
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 7;
+    private long userId_;
+    /**
+     * <code>optional int64 user_id = 7;</code>
+     */
+    public long getUserId() {
+      return userId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+      }
+      if (!getLabelBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, label_);
+      }
+      if (!getImageUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, imageUrl_);
+      }
+      if (!getActionTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, actionType_);
+      }
+      if (!getCardNumberBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, cardNumber_);
+      }
+      if (amount_ != 0L) {
+        output.writeInt64(6, amount_);
+      }
+      if (userId_ != 0L) {
+        output.writeInt64(7, userId_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+      }
+      if (!getLabelBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, label_);
+      }
+      if (!getImageUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, imageUrl_);
+      }
+      if (!getActionTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, actionType_);
+      }
+      if (!getCardNumberBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, cardNumber_);
+      }
+      if (amount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, amount_);
+      }
+      if (userId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, userId_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessageCardToCard)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.RoomMessageCardToCard other = (net.iGap.proto.ProtoGlobal.RoomMessageCardToCard) obj;
+
+      boolean result = true;
+      result = result && getMessage()
+          .equals(other.getMessage());
+      result = result && getLabel()
+          .equals(other.getLabel());
+      result = result && getImageUrl()
+          .equals(other.getImageUrl());
+      result = result && getActionType()
+          .equals(other.getActionType());
+      result = result && getCardNumber()
+          .equals(other.getCardNumber());
+      result = result && (getAmount()
+          == other.getAmount());
+      result = result && (getUserId()
+          == other.getUserId());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLabel().hashCode();
+      hash = (37 * hash) + IMAGE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getImageUrl().hashCode();
+      hash = (37 * hash) + ACTION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getActionType().hashCode();
+      hash = (37 * hash) + CARD_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getCardNumber().hashCode();
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAmount());
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageCardToCard prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageCardToCard}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageCardToCard)
+        net.iGap.proto.ProtoGlobal.RoomMessageCardToCardOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageCardToCard_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageCardToCard_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.class, net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        message_ = "";
+
+        label_ = "";
+
+        imageUrl_ = "";
+
+        actionType_ = "";
+
+        cardNumber_ = "";
+
+        amount_ = 0L;
+
+        userId_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageCardToCard_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard build() {
+        net.iGap.proto.ProtoGlobal.RoomMessageCardToCard result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard buildPartial() {
+        net.iGap.proto.ProtoGlobal.RoomMessageCardToCard result = new net.iGap.proto.ProtoGlobal.RoomMessageCardToCard(this);
+        result.message_ = message_;
+        result.label_ = label_;
+        result.imageUrl_ = imageUrl_;
+        result.actionType_ = actionType_;
+        result.cardNumber_ = cardNumber_;
+        result.amount_ = amount_;
+        result.userId_ = userId_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessageCardToCard) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessageCardToCard)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessageCardToCard other) {
+        if (other == net.iGap.proto.ProtoGlobal.RoomMessageCardToCard.getDefaultInstance()) return this;
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        if (!other.getLabel().isEmpty()) {
+          label_ = other.label_;
+          onChanged();
+        }
+        if (!other.getImageUrl().isEmpty()) {
+          imageUrl_ = other.imageUrl_;
+          onChanged();
+        }
+        if (!other.getActionType().isEmpty()) {
+          actionType_ = other.actionType_;
+          onChanged();
+        }
+        if (!other.getCardNumber().isEmpty()) {
+          cardNumber_ = other.cardNumber_;
+          onChanged();
+        }
+        if (other.getAmount() != 0L) {
+          setAmount(other.getAmount());
+        }
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.RoomMessageCardToCard parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessageCardToCard) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>optional string message = 1;</code>
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string message = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string message = 1;</code>
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string message = 1;</code>
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string message = 1;</code>
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object label_ = "";
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public java.lang.String getLabel() {
+        java.lang.Object ref = label_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          label_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLabelBytes() {
+        java.lang.Object ref = label_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          label_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public Builder setLabel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        label_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public Builder clearLabel() {
+        
+        label_ = getDefaultInstance().getLabel();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public Builder setLabelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        label_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object imageUrl_ = "";
+      /**
+       * <code>optional string image_url = 3;</code>
+       */
+      public java.lang.String getImageUrl() {
+        java.lang.Object ref = imageUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          imageUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string image_url = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getImageUrlBytes() {
+        java.lang.Object ref = imageUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          imageUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string image_url = 3;</code>
+       */
+      public Builder setImageUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        imageUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string image_url = 3;</code>
+       */
+      public Builder clearImageUrl() {
+        
+        imageUrl_ = getDefaultInstance().getImageUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string image_url = 3;</code>
+       */
+      public Builder setImageUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        imageUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object actionType_ = "";
+      /**
+       * <code>optional string action_type = 4;</code>
+       */
+      public java.lang.String getActionType() {
+        java.lang.Object ref = actionType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          actionType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string action_type = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getActionTypeBytes() {
+        java.lang.Object ref = actionType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          actionType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string action_type = 4;</code>
+       */
+      public Builder setActionType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        actionType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string action_type = 4;</code>
+       */
+      public Builder clearActionType() {
+        
+        actionType_ = getDefaultInstance().getActionType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string action_type = 4;</code>
+       */
+      public Builder setActionTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        actionType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object cardNumber_ = "";
+      /**
+       * <code>optional string card_number = 5;</code>
+       */
+      public java.lang.String getCardNumber() {
+        java.lang.Object ref = cardNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cardNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string card_number = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCardNumberBytes() {
+        java.lang.Object ref = cardNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cardNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string card_number = 5;</code>
+       */
+      public Builder setCardNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cardNumber_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string card_number = 5;</code>
+       */
+      public Builder clearCardNumber() {
+        
+        cardNumber_ = getDefaultInstance().getCardNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string card_number = 5;</code>
+       */
+      public Builder setCardNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cardNumber_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long amount_ ;
+      /**
+       * <code>optional int64 amount = 6;</code>
+       */
+      public long getAmount() {
+        return amount_;
+      }
+      /**
+       * <code>optional int64 amount = 6;</code>
+       */
+      public Builder setAmount(long value) {
+        
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 amount = 6;</code>
+       */
+      public Builder clearAmount() {
+        
+        amount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long userId_ ;
+      /**
+       * <code>optional int64 user_id = 7;</code>
+       */
+      public long getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>optional int64 user_id = 7;</code>
+       */
+      public Builder setUserId(long value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 user_id = 7;</code>
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageCardToCard)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageCardToCard)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageCardToCard DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessageCardToCard();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageCardToCard getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoomMessageCardToCard>
+        PARSER = new com.google.protobuf.AbstractParser<RoomMessageCardToCard>() {
+      public RoomMessageCardToCard parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomMessageCardToCard(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomMessageCardToCard> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomMessageCardToCard> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.RoomMessageCardToCard getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RoomMessageBotActionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageBotAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .proto.RoomMessageBotAction.BotActionEnum action = 1;</code>
+     */
+    int getActionValue();
+    /**
+     * <code>optional .proto.RoomMessageBotAction.BotActionEnum action = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum getAction();
+
+    /**
+     * <code>optional string label = 2;</code>
+     */
+    java.lang.String getLabel();
+    /**
+     * <code>optional string label = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getLabelBytes();
+
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    java.lang.String getValue();
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageBotAction}
+   */
+  public  static final class RoomMessageBotAction extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageBotAction)
+      RoomMessageBotActionOrBuilder {
+    // Use RoomMessageBotAction.newBuilder() to construct.
+    private RoomMessageBotAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoomMessageBotAction() {
+      action_ = 0;
+      label_ = "";
+      value_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RoomMessageBotAction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+
+              action_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              label_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotAction_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.RoomMessageBotAction.class, net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code proto.RoomMessageBotAction.BotActionEnum}
+     */
+    public enum BotActionEnum
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NONE = 0;</code>
+       */
+      NONE(0),
+      /**
+       * <code>JOIN_LINK = 1;</code>
+       */
+      JOIN_LINK(1),
+      /**
+       * <code>BOT_ACTION = 2;</code>
+       */
+      BOT_ACTION(2),
+      /**
+       * <code>USERNAME_LINK = 3;</code>
+       */
+      USERNAME_LINK(3),
+      /**
+       * <code>WEB_LINK = 4;</code>
+       */
+      WEB_LINK(4),
+      /**
+       * <code>WEBVIEW_LINK = 5;</code>
+       */
+      WEBVIEW_LINK(5),
+      /**
+       * <code>STREAM_PLAY = 6;</code>
+       */
+      STREAM_PLAY(6),
+      /**
+       * <code>PAY_BY_WALLET = 7;</code>
+       */
+      PAY_BY_WALLET(7),
+      /**
+       * <code>PAY_DIRECT = 8;</code>
+       */
+      PAY_DIRECT(8),
+      /**
+       * <code>REQUEST_PHONE = 9;</code>
+       */
+      REQUEST_PHONE(9),
+      /**
+       * <code>REQUEST_LOCATION = 10;</code>
+       */
+      REQUEST_LOCATION(10),
+      /**
+       * <code>SHOW_ALERT = 11;</code>
+       */
+      SHOW_ALERT(11),
+      /**
+       * <code>PAGE = 12;</code>
+       */
+      PAGE(12),
+      /**
+       * <code>FINANCIAL_MENU = 13;</code>
+       */
+      FINANCIAL_MENU(13),
+      /**
+       * <code>BILL_MENU = 14;</code>
+       */
+      BILL_MENU(14),
+      /**
+       * <code>TRAFFIC_BILL_MENU = 15;</code>
+       */
+      TRAFFIC_BILL_MENU(15),
+      /**
+       * <code>MOBILE_BILL_MENU = 16;</code>
+       */
+      MOBILE_BILL_MENU(16),
+      /**
+       * <code>PHONE_BILL_MENU = 17;</code>
+       */
+      PHONE_BILL_MENU(17),
+      /**
+       * <code>TOPUP_MENU = 18;</code>
+       */
+      TOPUP_MENU(18),
+      /**
+       * <code>WALLET_MENU = 19;</code>
+       */
+      WALLET_MENU(19),
+      /**
+       * <code>NEARBY_MENU = 20;</code>
+       */
+      NEARBY_MENU(20),
+      /**
+       * <code>CALL = 21;</code>
+       */
+      CALL(21),
+      /**
+       * <code>STICKER_SHOP = 22;</code>
+       */
+      STICKER_SHOP(22),
+      /**
+       * <code>IVAN = 23;</code>
+       */
+      IVAN(23),
+      /**
+       * <code>IVANQR = 24;</code>
+       */
+      IVANQR(24),
+      /**
+       * <code>IVANDLIST = 25;</code>
+       */
+      IVANDLIST(25),
+      /**
+       * <code>IVANDSCORE = 26;</code>
+       */
+      IVANDSCORE(26),
+      /**
+       * <code>CARD_TO_CARD = 27;</code>
+       */
+      CARD_TO_CARD(27),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>NONE = 0;</code>
+       */
+      public static final int NONE_VALUE = 0;
+      /**
+       * <code>JOIN_LINK = 1;</code>
+       */
+      public static final int JOIN_LINK_VALUE = 1;
+      /**
+       * <code>BOT_ACTION = 2;</code>
+       */
+      public static final int BOT_ACTION_VALUE = 2;
+      /**
+       * <code>USERNAME_LINK = 3;</code>
+       */
+      public static final int USERNAME_LINK_VALUE = 3;
+      /**
+       * <code>WEB_LINK = 4;</code>
+       */
+      public static final int WEB_LINK_VALUE = 4;
+      /**
+       * <code>WEBVIEW_LINK = 5;</code>
+       */
+      public static final int WEBVIEW_LINK_VALUE = 5;
+      /**
+       * <code>STREAM_PLAY = 6;</code>
+       */
+      public static final int STREAM_PLAY_VALUE = 6;
+      /**
+       * <code>PAY_BY_WALLET = 7;</code>
+       */
+      public static final int PAY_BY_WALLET_VALUE = 7;
+      /**
+       * <code>PAY_DIRECT = 8;</code>
+       */
+      public static final int PAY_DIRECT_VALUE = 8;
+      /**
+       * <code>REQUEST_PHONE = 9;</code>
+       */
+      public static final int REQUEST_PHONE_VALUE = 9;
+      /**
+       * <code>REQUEST_LOCATION = 10;</code>
+       */
+      public static final int REQUEST_LOCATION_VALUE = 10;
+      /**
+       * <code>SHOW_ALERT = 11;</code>
+       */
+      public static final int SHOW_ALERT_VALUE = 11;
+      /**
+       * <code>PAGE = 12;</code>
+       */
+      public static final int PAGE_VALUE = 12;
+      /**
+       * <code>FINANCIAL_MENU = 13;</code>
+       */
+      public static final int FINANCIAL_MENU_VALUE = 13;
+      /**
+       * <code>BILL_MENU = 14;</code>
+       */
+      public static final int BILL_MENU_VALUE = 14;
+      /**
+       * <code>TRAFFIC_BILL_MENU = 15;</code>
+       */
+      public static final int TRAFFIC_BILL_MENU_VALUE = 15;
+      /**
+       * <code>MOBILE_BILL_MENU = 16;</code>
+       */
+      public static final int MOBILE_BILL_MENU_VALUE = 16;
+      /**
+       * <code>PHONE_BILL_MENU = 17;</code>
+       */
+      public static final int PHONE_BILL_MENU_VALUE = 17;
+      /**
+       * <code>TOPUP_MENU = 18;</code>
+       */
+      public static final int TOPUP_MENU_VALUE = 18;
+      /**
+       * <code>WALLET_MENU = 19;</code>
+       */
+      public static final int WALLET_MENU_VALUE = 19;
+      /**
+       * <code>NEARBY_MENU = 20;</code>
+       */
+      public static final int NEARBY_MENU_VALUE = 20;
+      /**
+       * <code>CALL = 21;</code>
+       */
+      public static final int CALL_VALUE = 21;
+      /**
+       * <code>STICKER_SHOP = 22;</code>
+       */
+      public static final int STICKER_SHOP_VALUE = 22;
+      /**
+       * <code>IVAN = 23;</code>
+       */
+      public static final int IVAN_VALUE = 23;
+      /**
+       * <code>IVANQR = 24;</code>
+       */
+      public static final int IVANQR_VALUE = 24;
+      /**
+       * <code>IVANDLIST = 25;</code>
+       */
+      public static final int IVANDLIST_VALUE = 25;
+      /**
+       * <code>IVANDSCORE = 26;</code>
+       */
+      public static final int IVANDSCORE_VALUE = 26;
+      /**
+       * <code>CARD_TO_CARD = 27;</code>
+       */
+      public static final int CARD_TO_CARD_VALUE = 27;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static BotActionEnum valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static BotActionEnum forNumber(int value) {
+        switch (value) {
+          case 0: return NONE;
+          case 1: return JOIN_LINK;
+          case 2: return BOT_ACTION;
+          case 3: return USERNAME_LINK;
+          case 4: return WEB_LINK;
+          case 5: return WEBVIEW_LINK;
+          case 6: return STREAM_PLAY;
+          case 7: return PAY_BY_WALLET;
+          case 8: return PAY_DIRECT;
+          case 9: return REQUEST_PHONE;
+          case 10: return REQUEST_LOCATION;
+          case 11: return SHOW_ALERT;
+          case 12: return PAGE;
+          case 13: return FINANCIAL_MENU;
+          case 14: return BILL_MENU;
+          case 15: return TRAFFIC_BILL_MENU;
+          case 16: return MOBILE_BILL_MENU;
+          case 17: return PHONE_BILL_MENU;
+          case 18: return TOPUP_MENU;
+          case 19: return WALLET_MENU;
+          case 20: return NEARBY_MENU;
+          case 21: return CALL;
+          case 22: return STICKER_SHOP;
+          case 23: return IVAN;
+          case 24: return IVANQR;
+          case 25: return IVANDLIST;
+          case 26: return IVANDSCORE;
+          case 27: return CARD_TO_CARD;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<BotActionEnum>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          BotActionEnum> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BotActionEnum>() {
+              public BotActionEnum findValueByNumber(int number) {
+                return BotActionEnum.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageBotAction.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final BotActionEnum[] VALUES = values();
+
+      public static BotActionEnum valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private BotActionEnum(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.RoomMessageBotAction.BotActionEnum)
+    }
+
+    public static final int ACTION_FIELD_NUMBER = 1;
+    private int action_;
+    /**
+     * <code>optional .proto.RoomMessageBotAction.BotActionEnum action = 1;</code>
+     */
+    public int getActionValue() {
+      return action_;
+    }
+    /**
+     * <code>optional .proto.RoomMessageBotAction.BotActionEnum action = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum getAction() {
+      net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum result = net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum.valueOf(action_);
+      return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum.UNRECOGNIZED : result;
+    }
+
+    public static final int LABEL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object label_;
+    /**
+     * <code>optional string label = 2;</code>
+     */
+    public java.lang.String getLabel() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        label_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string label = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLabelBytes() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        label_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object value_;
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string value = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (action_ != net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum.NONE.getNumber()) {
+        output.writeEnum(1, action_);
+      }
+      if (!getLabelBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, label_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, value_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (action_ != net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum.NONE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, action_);
+      }
+      if (!getLabelBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, label_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, value_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessageBotAction)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.RoomMessageBotAction other = (net.iGap.proto.ProtoGlobal.RoomMessageBotAction) obj;
+
+      boolean result = true;
+      result = result && action_ == other.action_;
+      result = result && getLabel()
+          .equals(other.getLabel());
+      result = result && getValue()
+          .equals(other.getValue());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + action_;
+      hash = (37 * hash) + LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLabel().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageBotAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageBotAction}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageBotAction)
+        net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotAction_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessageBotAction.class, net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageBotAction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        action_ = 0;
+
+        label_ = "";
+
+        value_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotAction_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotAction getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageBotAction.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotAction build() {
+        net.iGap.proto.ProtoGlobal.RoomMessageBotAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotAction buildPartial() {
+        net.iGap.proto.ProtoGlobal.RoomMessageBotAction result = new net.iGap.proto.ProtoGlobal.RoomMessageBotAction(this);
+        result.action_ = action_;
+        result.label_ = label_;
+        result.value_ = value_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessageBotAction) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessageBotAction)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessageBotAction other) {
+        if (other == net.iGap.proto.ProtoGlobal.RoomMessageBotAction.getDefaultInstance()) return this;
+        if (other.action_ != 0) {
+          setActionValue(other.getActionValue());
+        }
+        if (!other.getLabel().isEmpty()) {
+          label_ = other.label_;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.RoomMessageBotAction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessageBotAction) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int action_ = 0;
+      /**
+       * <code>optional .proto.RoomMessageBotAction.BotActionEnum action = 1;</code>
+       */
+      public int getActionValue() {
+        return action_;
+      }
+      /**
+       * <code>optional .proto.RoomMessageBotAction.BotActionEnum action = 1;</code>
+       */
+      public Builder setActionValue(int value) {
+        action_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageBotAction.BotActionEnum action = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum getAction() {
+        net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum result = net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum.valueOf(action_);
+        return result == null ? net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.RoomMessageBotAction.BotActionEnum action = 1;</code>
+       */
+      public Builder setAction(net.iGap.proto.ProtoGlobal.RoomMessageBotAction.BotActionEnum value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        action_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.RoomMessageBotAction.BotActionEnum action = 1;</code>
+       */
+      public Builder clearAction() {
+        
+        action_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object label_ = "";
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public java.lang.String getLabel() {
+        java.lang.Object ref = label_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          label_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLabelBytes() {
+        java.lang.Object ref = label_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          label_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public Builder setLabel(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        label_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public Builder clearLabel() {
+        
+        label_ = getDefaultInstance().getLabel();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string label = 2;</code>
+       */
+      public Builder setLabelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        label_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public Builder clearValue() {
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string value = 3;</code>
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageBotAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageBotAction)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageBotAction DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessageBotAction();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoomMessageBotAction>
+        PARSER = new com.google.protobuf.AbstractParser<RoomMessageBotAction>() {
+      public RoomMessageBotAction parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomMessageBotAction(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomMessageBotAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomMessageBotAction> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.RoomMessageBotAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RoomMessageBotActionListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.RoomMessageBotActionList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotAction> 
+        getActionsList();
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageBotAction getActions(int index);
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    int getActionsCount();
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder> 
+        getActionsOrBuilderList();
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder getActionsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code proto.RoomMessageBotActionList}
+   */
+  public  static final class RoomMessageBotActionList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.RoomMessageBotActionList)
+      RoomMessageBotActionListOrBuilder {
+    // Use RoomMessageBotActionList.newBuilder() to construct.
+    private RoomMessageBotActionList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoomMessageBotActionList() {
+      actions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private RoomMessageBotActionList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                actions_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.RoomMessageBotAction>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              actions_.add(
+                  input.readMessage(net.iGap.proto.ProtoGlobal.RoomMessageBotAction.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          actions_ = java.util.Collections.unmodifiableList(actions_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotActionList_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotActionList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.class, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder.class);
+    }
+
+    public static final int ACTIONS_FIELD_NUMBER = 1;
+    private java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotAction> actions_;
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    public java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotAction> getActionsList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    public java.util.List<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder> 
+        getActionsOrBuilderList() {
+      return actions_;
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    public int getActionsCount() {
+      return actions_.size();
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageBotAction getActions(int index) {
+      return actions_.get(index);
+    }
+    /**
+     * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder getActionsOrBuilder(
+        int index) {
+      return actions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < actions_.size(); i++) {
+        output.writeMessage(1, actions_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < actions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, actions_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.RoomMessageBotActionList)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.RoomMessageBotActionList other = (net.iGap.proto.ProtoGlobal.RoomMessageBotActionList) obj;
+
+      boolean result = true;
+      result = result && getActionsList()
+          .equals(other.getActionsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (getActionsCount() > 0) {
+        hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getActionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.RoomMessageBotActionList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.RoomMessageBotActionList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.RoomMessageBotActionList)
+        net.iGap.proto.ProtoGlobal.RoomMessageBotActionListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotActionList_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotActionList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.class, net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getActionsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          actionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_RoomMessageBotActionList_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList build() {
+        net.iGap.proto.ProtoGlobal.RoomMessageBotActionList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList buildPartial() {
+        net.iGap.proto.ProtoGlobal.RoomMessageBotActionList result = new net.iGap.proto.ProtoGlobal.RoomMessageBotActionList(this);
+        int from_bitField0_ = bitField0_;
+        if (actionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            actions_ = java.util.Collections.unmodifiableList(actions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.actions_ = actions_;
+        } else {
+          result.actions_ = actionsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.RoomMessageBotActionList) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.RoomMessageBotActionList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.RoomMessageBotActionList other) {
+        if (other == net.iGap.proto.ProtoGlobal.RoomMessageBotActionList.getDefaultInstance()) return this;
+        if (actionsBuilder_ == null) {
+          if (!other.actions_.isEmpty()) {
+            if (actions_.isEmpty()) {
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureActionsIsMutable();
+              actions_.addAll(other.actions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.actions_.isEmpty()) {
+            if (actionsBuilder_.isEmpty()) {
+              actionsBuilder_.dispose();
+              actionsBuilder_ = null;
+              actions_ = other.actions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              actionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getActionsFieldBuilder() : null;
+            } else {
+              actionsBuilder_.addAllMessages(other.actions_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.RoomMessageBotActionList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.RoomMessageBotActionList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotAction> actions_ =
+        java.util.Collections.emptyList();
+      private void ensureActionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          actions_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.RoomMessageBotAction>(actions_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageBotAction, net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder, net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder> actionsBuilder_;
+
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotAction> getActionsList() {
+        if (actionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(actions_);
+        } else {
+          return actionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public int getActionsCount() {
+        if (actionsBuilder_ == null) {
+          return actions_.size();
+        } else {
+          return actionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotAction getActions(int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);
+        } else {
+          return actionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public Builder setActions(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.set(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public Builder setActions(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public Builder addActions(net.iGap.proto.ProtoGlobal.RoomMessageBotAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public Builder addActions(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureActionsIsMutable();
+          actions_.add(index, value);
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public Builder addActions(
+          net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public Builder addActions(
+          int index, net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          actionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public Builder addAllActions(
+          java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotAction> values) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, actions_);
+          onChanged();
+        } else {
+          actionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public Builder clearActions() {
+        if (actionsBuilder_ == null) {
+          actions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          actionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public Builder removeActions(int index) {
+        if (actionsBuilder_ == null) {
+          ensureActionsIsMutable();
+          actions_.remove(index);
+          onChanged();
+        } else {
+          actionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder getActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder getActionsOrBuilder(
+          int index) {
+        if (actionsBuilder_ == null) {
+          return actions_.get(index);  } else {
+          return actionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder> 
+           getActionsOrBuilderList() {
+        if (actionsBuilder_ != null) {
+          return actionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(actions_);
+        }
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder addActionsBuilder() {
+        return getActionsFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGlobal.RoomMessageBotAction.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder addActionsBuilder(
+          int index) {
+        return getActionsFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGlobal.RoomMessageBotAction.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.RoomMessageBotAction actions = 1;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder> 
+           getActionsBuilderList() {
+        return getActionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.RoomMessageBotAction, net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder, net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder> 
+          getActionsFieldBuilder() {
+        if (actionsBuilder_ == null) {
+          actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.RoomMessageBotAction, net.iGap.proto.ProtoGlobal.RoomMessageBotAction.Builder, net.iGap.proto.ProtoGlobal.RoomMessageBotActionOrBuilder>(
+                  actions_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          actions_ = null;
+        }
+        return actionsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.RoomMessageBotActionList)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.RoomMessageBotActionList)
+    private static final net.iGap.proto.ProtoGlobal.RoomMessageBotActionList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.RoomMessageBotActionList();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.RoomMessageBotActionList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoomMessageBotActionList>
+        PARSER = new com.google.protobuf.AbstractParser<RoomMessageBotActionList>() {
+      public RoomMessageBotActionList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomMessageBotActionList(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomMessageBotActionList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomMessageBotActionList> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.RoomMessageBotActionList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TextSignsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.TextSigns)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    java.util.List<net.iGap.proto.ProtoGlobal.TextSigns.TextSign> 
+        getTextSignList();
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSigns.TextSign getTextSign(int index);
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    int getTextSignCount();
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    java.util.List<? extends net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder> 
+        getTextSignOrBuilderList();
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder getTextSignOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code proto.TextSigns}
+   */
+  public  static final class TextSigns extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.TextSigns)
+      TextSignsOrBuilder {
+    // Use TextSigns.newBuilder() to construct.
+    private TextSigns(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TextSigns() {
+      textSign_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private TextSigns(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                textSign_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.TextSigns.TextSign>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              textSign_.add(
+                  input.readMessage(net.iGap.proto.ProtoGlobal.TextSigns.TextSign.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          textSign_ = java.util.Collections.unmodifiableList(textSign_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              net.iGap.proto.ProtoGlobal.TextSigns.class, net.iGap.proto.ProtoGlobal.TextSigns.Builder.class);
+    }
+
+    public interface TextSignOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:proto.TextSigns.TextSign)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .proto.TextSigns.TextSign.Type type = 1;</code>
+       */
+      int getTypeValue();
+      /**
+       * <code>optional .proto.TextSigns.TextSign.Type type = 1;</code>
+       */
+      net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type getType();
+
+      /**
+       * <code>optional int32 start_index = 2;</code>
+       */
+      int getStartIndex();
+
+      /**
+       * <code>optional int32 end_index = 3;</code>
+       */
+      int getEndIndex();
+
+      /**
+       * <code>optional string link = 4;</code>
+       */
+      java.lang.String getLink();
+      /**
+       * <code>optional string link = 4;</code>
+       */
+      com.google.protobuf.ByteString
+          getLinkBytes();
+
+      /**
+       * <code>optional int64 user_id = 5;</code>
+       */
+      long getUserId();
+    }
+    /**
+     * Protobuf type {@code proto.TextSigns.TextSign}
+     */
+    public  static final class TextSign extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:proto.TextSigns.TextSign)
+        TextSignOrBuilder {
+      // Use TextSign.newBuilder() to construct.
+      private TextSign(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private TextSign() {
+        type_ = 0;
+        startIndex_ = 0;
+        endIndex_ = 0;
+        link_ = "";
+        userId_ = 0L;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      }
+      private TextSign(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!input.skipField(tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+
+                type_ = rawValue;
+                break;
+              }
+              case 16: {
+
+                startIndex_ = input.readInt32();
+                break;
+              }
+              case 24: {
+
+                endIndex_ = input.readInt32();
+                break;
+              }
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                link_ = s;
+                break;
+              }
+              case 40: {
+
+                userId_ = input.readInt64();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_TextSign_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_TextSign_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.TextSigns.TextSign.class, net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder.class);
+      }
+
+      /**
+       * Protobuf enum {@code proto.TextSigns.TextSign.Type}
+       */
+      public enum Type
+          implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         * <code>UNKNOWN = 0;</code>
+         */
+        UNKNOWN(0),
+        /**
+         * <code>IGAP_DEEP_LINK = 1;</code>
+         */
+        IGAP_DEEP_LINK(1),
+        /**
+         * <code>IGAP_LINK = 2;</code>
+         */
+        IGAP_LINK(2),
+        /**
+         * <code>WEB_LINK = 3;</code>
+         */
+        WEB_LINK(3),
+        /**
+         * <code>BOT_COMMAND = 4;</code>
+         */
+        BOT_COMMAND(4),
+        /**
+         * <code>IGAP_RESOLVE = 5;</code>
+         */
+        IGAP_RESOLVE(5),
+        /**
+         * <code>DIGIT_LINK = 6;</code>
+         */
+        DIGIT_LINK(6),
+        /**
+         * <code>MENTION = 7;</code>
+         */
+        MENTION(7),
+        /**
+         * <code>HASHTAG = 8;</code>
+         */
+        HASHTAG(8),
+        /**
+         * <code>BOLD = 9;</code>
+         */
+        BOLD(9),
+        /**
+         * <code>ITALIC = 10;</code>
+         */
+        ITALIC(10),
+        /**
+         * <code>UNDERLINE = 11;</code>
+         */
+        UNDERLINE(11),
+        /**
+         * <code>STRIKE = 12;</code>
+         */
+        STRIKE(12),
+        /**
+         * <code>SPOILER = 13;</code>
+         */
+        SPOILER(13),
+        /**
+         * <code>EMAIL = 14;</code>
+         */
+        EMAIL(14),
+        /**
+         * <code>PHONE = 15;</code>
+         */
+        PHONE(15),
+        /**
+         * <code>BANK_CARD = 16;</code>
+         */
+        BANK_CARD(16),
+        /**
+         * <code>TEXT_URL = 17;</code>
+         */
+        TEXT_URL(17),
+        /**
+         * <code>CODE = 18;</code>
+         */
+        CODE(18),
+        /**
+         * <code>MENTION_NAME = 19;</code>
+         */
+        MENTION_NAME(19),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         * <code>UNKNOWN = 0;</code>
+         */
+        public static final int UNKNOWN_VALUE = 0;
+        /**
+         * <code>IGAP_DEEP_LINK = 1;</code>
+         */
+        public static final int IGAP_DEEP_LINK_VALUE = 1;
+        /**
+         * <code>IGAP_LINK = 2;</code>
+         */
+        public static final int IGAP_LINK_VALUE = 2;
+        /**
+         * <code>WEB_LINK = 3;</code>
+         */
+        public static final int WEB_LINK_VALUE = 3;
+        /**
+         * <code>BOT_COMMAND = 4;</code>
+         */
+        public static final int BOT_COMMAND_VALUE = 4;
+        /**
+         * <code>IGAP_RESOLVE = 5;</code>
+         */
+        public static final int IGAP_RESOLVE_VALUE = 5;
+        /**
+         * <code>DIGIT_LINK = 6;</code>
+         */
+        public static final int DIGIT_LINK_VALUE = 6;
+        /**
+         * <code>MENTION = 7;</code>
+         */
+        public static final int MENTION_VALUE = 7;
+        /**
+         * <code>HASHTAG = 8;</code>
+         */
+        public static final int HASHTAG_VALUE = 8;
+        /**
+         * <code>BOLD = 9;</code>
+         */
+        public static final int BOLD_VALUE = 9;
+        /**
+         * <code>ITALIC = 10;</code>
+         */
+        public static final int ITALIC_VALUE = 10;
+        /**
+         * <code>UNDERLINE = 11;</code>
+         */
+        public static final int UNDERLINE_VALUE = 11;
+        /**
+         * <code>STRIKE = 12;</code>
+         */
+        public static final int STRIKE_VALUE = 12;
+        /**
+         * <code>SPOILER = 13;</code>
+         */
+        public static final int SPOILER_VALUE = 13;
+        /**
+         * <code>EMAIL = 14;</code>
+         */
+        public static final int EMAIL_VALUE = 14;
+        /**
+         * <code>PHONE = 15;</code>
+         */
+        public static final int PHONE_VALUE = 15;
+        /**
+         * <code>BANK_CARD = 16;</code>
+         */
+        public static final int BANK_CARD_VALUE = 16;
+        /**
+         * <code>TEXT_URL = 17;</code>
+         */
+        public static final int TEXT_URL_VALUE = 17;
+        /**
+         * <code>CODE = 18;</code>
+         */
+        public static final int CODE_VALUE = 18;
+        /**
+         * <code>MENTION_NAME = 19;</code>
+         */
+        public static final int MENTION_NAME_VALUE = 19;
+
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static Type valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static Type forNumber(int value) {
+          switch (value) {
+            case 0: return UNKNOWN;
+            case 1: return IGAP_DEEP_LINK;
+            case 2: return IGAP_LINK;
+            case 3: return WEB_LINK;
+            case 4: return BOT_COMMAND;
+            case 5: return IGAP_RESOLVE;
+            case 6: return DIGIT_LINK;
+            case 7: return MENTION;
+            case 8: return HASHTAG;
+            case 9: return BOLD;
+            case 10: return ITALIC;
+            case 11: return UNDERLINE;
+            case 12: return STRIKE;
+            case 13: return SPOILER;
+            case 14: return EMAIL;
+            case 15: return PHONE;
+            case 16: return BANK_CARD;
+            case 17: return TEXT_URL;
+            case 18: return CODE;
+            case 19: return MENTION_NAME;
+            default: return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<Type>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+            Type> internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+                public Type findValueByNumber(int number) {
+                  return Type.forNumber(number);
+                }
+              };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor
+            getValueDescriptor() {
+          return getDescriptor().getValues().get(ordinal());
+        }
+        public final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptorForType() {
+          return getDescriptor();
+        }
+        public static final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoGlobal.TextSigns.TextSign.getDescriptor().getEnumTypes().get(0);
+        }
+
+        private static final Type[] VALUES = values();
+
+        public static Type valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private Type(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:proto.TextSigns.TextSign.Type)
+      }
+
+      public static final int TYPE_FIELD_NUMBER = 1;
+      private int type_;
+      /**
+       * <code>optional .proto.TextSigns.TextSign.Type type = 1;</code>
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>optional .proto.TextSigns.TextSign.Type type = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type getType() {
+        net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type result = net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type.valueOf(type_);
+        return result == null ? net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type.UNRECOGNIZED : result;
+      }
+
+      public static final int START_INDEX_FIELD_NUMBER = 2;
+      private int startIndex_;
+      /**
+       * <code>optional int32 start_index = 2;</code>
+       */
+      public int getStartIndex() {
+        return startIndex_;
+      }
+
+      public static final int END_INDEX_FIELD_NUMBER = 3;
+      private int endIndex_;
+      /**
+       * <code>optional int32 end_index = 3;</code>
+       */
+      public int getEndIndex() {
+        return endIndex_;
+      }
+
+      public static final int LINK_FIELD_NUMBER = 4;
+      private volatile java.lang.Object link_;
+      /**
+       * <code>optional string link = 4;</code>
+       */
+      public java.lang.String getLink() {
+        java.lang.Object ref = link_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          link_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>optional string link = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLinkBytes() {
+        java.lang.Object ref = link_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          link_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int USER_ID_FIELD_NUMBER = 5;
+      private long userId_;
+      /**
+       * <code>optional int64 user_id = 5;</code>
+       */
+      public long getUserId() {
+        return userId_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (type_ != net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type.UNKNOWN.getNumber()) {
+          output.writeEnum(1, type_);
+        }
+        if (startIndex_ != 0) {
+          output.writeInt32(2, startIndex_);
+        }
+        if (endIndex_ != 0) {
+          output.writeInt32(3, endIndex_);
+        }
+        if (!getLinkBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, link_);
+        }
+        if (userId_ != 0L) {
+          output.writeInt64(5, userId_);
+        }
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (type_ != net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type.UNKNOWN.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, type_);
+        }
+        if (startIndex_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(2, startIndex_);
+        }
+        if (endIndex_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(3, endIndex_);
+        }
+        if (!getLinkBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, link_);
+        }
+        if (userId_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(5, userId_);
+        }
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof net.iGap.proto.ProtoGlobal.TextSigns.TextSign)) {
+          return super.equals(obj);
+        }
+        net.iGap.proto.ProtoGlobal.TextSigns.TextSign other = (net.iGap.proto.ProtoGlobal.TextSigns.TextSign) obj;
+
+        boolean result = true;
+        result = result && type_ == other.type_;
+        result = result && (getStartIndex()
+            == other.getStartIndex());
+        result = result && (getEndIndex()
+            == other.getEndIndex());
+        result = result && getLink()
+            .equals(other.getLink());
+        result = result && (getUserId()
+            == other.getUserId());
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+        hash = (37 * hash) + START_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getStartIndex();
+        hash = (37 * hash) + END_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getEndIndex();
+        hash = (37 * hash) + LINK_FIELD_NUMBER;
+        hash = (53 * hash) + getLink().hashCode();
+        hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUserId());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(net.iGap.proto.ProtoGlobal.TextSigns.TextSign prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code proto.TextSigns.TextSign}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:proto.TextSigns.TextSign)
+          net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_TextSign_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_TextSign_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  net.iGap.proto.ProtoGlobal.TextSigns.TextSign.class, net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder.class);
+        }
+
+        // Construct using net.iGap.proto.ProtoGlobal.TextSigns.TextSign.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          type_ = 0;
+
+          startIndex_ = 0;
+
+          endIndex_ = 0;
+
+          link_ = "";
+
+          userId_ = 0L;
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_TextSign_descriptor;
+        }
+
+        public net.iGap.proto.ProtoGlobal.TextSigns.TextSign getDefaultInstanceForType() {
+          return net.iGap.proto.ProtoGlobal.TextSigns.TextSign.getDefaultInstance();
+        }
+
+        public net.iGap.proto.ProtoGlobal.TextSigns.TextSign build() {
+          net.iGap.proto.ProtoGlobal.TextSigns.TextSign result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public net.iGap.proto.ProtoGlobal.TextSigns.TextSign buildPartial() {
+          net.iGap.proto.ProtoGlobal.TextSigns.TextSign result = new net.iGap.proto.ProtoGlobal.TextSigns.TextSign(this);
+          result.type_ = type_;
+          result.startIndex_ = startIndex_;
+          result.endIndex_ = endIndex_;
+          result.link_ = link_;
+          result.userId_ = userId_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof net.iGap.proto.ProtoGlobal.TextSigns.TextSign) {
+            return mergeFrom((net.iGap.proto.ProtoGlobal.TextSigns.TextSign)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(net.iGap.proto.ProtoGlobal.TextSigns.TextSign other) {
+          if (other == net.iGap.proto.ProtoGlobal.TextSigns.TextSign.getDefaultInstance()) return this;
+          if (other.type_ != 0) {
+            setTypeValue(other.getTypeValue());
+          }
+          if (other.getStartIndex() != 0) {
+            setStartIndex(other.getStartIndex());
+          }
+          if (other.getEndIndex() != 0) {
+            setEndIndex(other.getEndIndex());
+          }
+          if (!other.getLink().isEmpty()) {
+            link_ = other.link_;
+            onChanged();
+          }
+          if (other.getUserId() != 0L) {
+            setUserId(other.getUserId());
+          }
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          net.iGap.proto.ProtoGlobal.TextSigns.TextSign parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (net.iGap.proto.ProtoGlobal.TextSigns.TextSign) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int type_ = 0;
+        /**
+         * <code>optional .proto.TextSigns.TextSign.Type type = 1;</code>
+         */
+        public int getTypeValue() {
+          return type_;
+        }
+        /**
+         * <code>optional .proto.TextSigns.TextSign.Type type = 1;</code>
+         */
+        public Builder setTypeValue(int value) {
+          type_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .proto.TextSigns.TextSign.Type type = 1;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type getType() {
+          net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type result = net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type.valueOf(type_);
+          return result == null ? net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>optional .proto.TextSigns.TextSign.Type type = 1;</code>
+         */
+        public Builder setType(net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Type value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          type_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .proto.TextSigns.TextSign.Type type = 1;</code>
+         */
+        public Builder clearType() {
+          
+          type_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int startIndex_ ;
+        /**
+         * <code>optional int32 start_index = 2;</code>
+         */
+        public int getStartIndex() {
+          return startIndex_;
+        }
+        /**
+         * <code>optional int32 start_index = 2;</code>
+         */
+        public Builder setStartIndex(int value) {
+          
+          startIndex_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int32 start_index = 2;</code>
+         */
+        public Builder clearStartIndex() {
+          
+          startIndex_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int endIndex_ ;
+        /**
+         * <code>optional int32 end_index = 3;</code>
+         */
+        public int getEndIndex() {
+          return endIndex_;
+        }
+        /**
+         * <code>optional int32 end_index = 3;</code>
+         */
+        public Builder setEndIndex(int value) {
+          
+          endIndex_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int32 end_index = 3;</code>
+         */
+        public Builder clearEndIndex() {
+          
+          endIndex_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object link_ = "";
+        /**
+         * <code>optional string link = 4;</code>
+         */
+        public java.lang.String getLink() {
+          java.lang.Object ref = link_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            link_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string link = 4;</code>
+         */
+        public com.google.protobuf.ByteString
+            getLinkBytes() {
+          java.lang.Object ref = link_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            link_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string link = 4;</code>
+         */
+        public Builder setLink(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          link_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string link = 4;</code>
+         */
+        public Builder clearLink() {
+          
+          link_ = getDefaultInstance().getLink();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string link = 4;</code>
+         */
+        public Builder setLinkBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          link_ = value;
+          onChanged();
+          return this;
+        }
+
+        private long userId_ ;
+        /**
+         * <code>optional int64 user_id = 5;</code>
+         */
+        public long getUserId() {
+          return userId_;
+        }
+        /**
+         * <code>optional int64 user_id = 5;</code>
+         */
+        public Builder setUserId(long value) {
+          
+          userId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int64 user_id = 5;</code>
+         */
+        public Builder clearUserId() {
+          
+          userId_ = 0L;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return this;
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:proto.TextSigns.TextSign)
+      }
+
+      // @@protoc_insertion_point(class_scope:proto.TextSigns.TextSign)
+      private static final net.iGap.proto.ProtoGlobal.TextSigns.TextSign DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.TextSigns.TextSign();
+      }
+
+      public static net.iGap.proto.ProtoGlobal.TextSigns.TextSign getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TextSign>
+          PARSER = new com.google.protobuf.AbstractParser<TextSign>() {
+        public TextSign parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TextSign(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<TextSign> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TextSign> getParserForType() {
+        return PARSER;
+      }
+
+      public net.iGap.proto.ProtoGlobal.TextSigns.TextSign getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int TEXT_SIGN_FIELD_NUMBER = 1;
+    private java.util.List<net.iGap.proto.ProtoGlobal.TextSigns.TextSign> textSign_;
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    public java.util.List<net.iGap.proto.ProtoGlobal.TextSigns.TextSign> getTextSignList() {
+      return textSign_;
+    }
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    public java.util.List<? extends net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder> 
+        getTextSignOrBuilderList() {
+      return textSign_;
+    }
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    public int getTextSignCount() {
+      return textSign_.size();
+    }
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSigns.TextSign getTextSign(int index) {
+      return textSign_.get(index);
+    }
+    /**
+     * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+     */
+    public net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder getTextSignOrBuilder(
+        int index) {
+      return textSign_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < textSign_.size(); i++) {
+        output.writeMessage(1, textSign_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < textSign_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, textSign_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof net.iGap.proto.ProtoGlobal.TextSigns)) {
+        return super.equals(obj);
+      }
+      net.iGap.proto.ProtoGlobal.TextSigns other = (net.iGap.proto.ProtoGlobal.TextSigns) obj;
+
+      boolean result = true;
+      result = result && getTextSignList()
+          .equals(other.getTextSignList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (getTextSignCount() > 0) {
+        hash = (37 * hash) + TEXT_SIGN_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSignList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static net.iGap.proto.ProtoGlobal.TextSigns parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(net.iGap.proto.ProtoGlobal.TextSigns prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.TextSigns}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.TextSigns)
+        net.iGap.proto.ProtoGlobal.TextSignsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                net.iGap.proto.ProtoGlobal.TextSigns.class, net.iGap.proto.ProtoGlobal.TextSigns.Builder.class);
+      }
+
+      // Construct using net.iGap.proto.ProtoGlobal.TextSigns.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTextSignFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (textSignBuilder_ == null) {
+          textSign_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          textSignBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return net.iGap.proto.ProtoGlobal.internal_static_proto_TextSigns_descriptor;
+      }
+
+      public net.iGap.proto.ProtoGlobal.TextSigns getDefaultInstanceForType() {
+        return net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance();
+      }
+
+      public net.iGap.proto.ProtoGlobal.TextSigns build() {
+        net.iGap.proto.ProtoGlobal.TextSigns result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public net.iGap.proto.ProtoGlobal.TextSigns buildPartial() {
+        net.iGap.proto.ProtoGlobal.TextSigns result = new net.iGap.proto.ProtoGlobal.TextSigns(this);
+        int from_bitField0_ = bitField0_;
+        if (textSignBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            textSign_ = java.util.Collections.unmodifiableList(textSign_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.textSign_ = textSign_;
+        } else {
+          result.textSign_ = textSignBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof net.iGap.proto.ProtoGlobal.TextSigns) {
+          return mergeFrom((net.iGap.proto.ProtoGlobal.TextSigns)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(net.iGap.proto.ProtoGlobal.TextSigns other) {
+        if (other == net.iGap.proto.ProtoGlobal.TextSigns.getDefaultInstance()) return this;
+        if (textSignBuilder_ == null) {
+          if (!other.textSign_.isEmpty()) {
+            if (textSign_.isEmpty()) {
+              textSign_ = other.textSign_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTextSignIsMutable();
+              textSign_.addAll(other.textSign_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.textSign_.isEmpty()) {
+            if (textSignBuilder_.isEmpty()) {
+              textSignBuilder_.dispose();
+              textSignBuilder_ = null;
+              textSign_ = other.textSign_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              textSignBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTextSignFieldBuilder() : null;
+            } else {
+              textSignBuilder_.addAllMessages(other.textSign_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        net.iGap.proto.ProtoGlobal.TextSigns parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (net.iGap.proto.ProtoGlobal.TextSigns) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<net.iGap.proto.ProtoGlobal.TextSigns.TextSign> textSign_ =
+        java.util.Collections.emptyList();
+      private void ensureTextSignIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          textSign_ = new java.util.ArrayList<net.iGap.proto.ProtoGlobal.TextSigns.TextSign>(textSign_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns.TextSign, net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder, net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder> textSignBuilder_;
+
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.TextSigns.TextSign> getTextSignList() {
+        if (textSignBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(textSign_);
+        } else {
+          return textSignBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public int getTextSignCount() {
+        if (textSignBuilder_ == null) {
+          return textSign_.size();
+        } else {
+          return textSignBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.TextSign getTextSign(int index) {
+        if (textSignBuilder_ == null) {
+          return textSign_.get(index);
+        } else {
+          return textSignBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public Builder setTextSign(
+          int index, net.iGap.proto.ProtoGlobal.TextSigns.TextSign value) {
+        if (textSignBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTextSignIsMutable();
+          textSign_.set(index, value);
+          onChanged();
+        } else {
+          textSignBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public Builder setTextSign(
+          int index, net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder builderForValue) {
+        if (textSignBuilder_ == null) {
+          ensureTextSignIsMutable();
+          textSign_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          textSignBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public Builder addTextSign(net.iGap.proto.ProtoGlobal.TextSigns.TextSign value) {
+        if (textSignBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTextSignIsMutable();
+          textSign_.add(value);
+          onChanged();
+        } else {
+          textSignBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public Builder addTextSign(
+          int index, net.iGap.proto.ProtoGlobal.TextSigns.TextSign value) {
+        if (textSignBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTextSignIsMutable();
+          textSign_.add(index, value);
+          onChanged();
+        } else {
+          textSignBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public Builder addTextSign(
+          net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder builderForValue) {
+        if (textSignBuilder_ == null) {
+          ensureTextSignIsMutable();
+          textSign_.add(builderForValue.build());
+          onChanged();
+        } else {
+          textSignBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public Builder addTextSign(
+          int index, net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder builderForValue) {
+        if (textSignBuilder_ == null) {
+          ensureTextSignIsMutable();
+          textSign_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          textSignBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public Builder addAllTextSign(
+          java.lang.Iterable<? extends net.iGap.proto.ProtoGlobal.TextSigns.TextSign> values) {
+        if (textSignBuilder_ == null) {
+          ensureTextSignIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, textSign_);
+          onChanged();
+        } else {
+          textSignBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public Builder clearTextSign() {
+        if (textSignBuilder_ == null) {
+          textSign_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          textSignBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public Builder removeTextSign(int index) {
+        if (textSignBuilder_ == null) {
+          ensureTextSignIsMutable();
+          textSign_.remove(index);
+          onChanged();
+        } else {
+          textSignBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder getTextSignBuilder(
+          int index) {
+        return getTextSignFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder getTextSignOrBuilder(
+          int index) {
+        if (textSignBuilder_ == null) {
+          return textSign_.get(index);  } else {
+          return textSignBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public java.util.List<? extends net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder> 
+           getTextSignOrBuilderList() {
+        if (textSignBuilder_ != null) {
+          return textSignBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(textSign_);
+        }
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder addTextSignBuilder() {
+        return getTextSignFieldBuilder().addBuilder(
+            net.iGap.proto.ProtoGlobal.TextSigns.TextSign.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder addTextSignBuilder(
+          int index) {
+        return getTextSignFieldBuilder().addBuilder(
+            index, net.iGap.proto.ProtoGlobal.TextSigns.TextSign.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.TextSigns.TextSign text_sign = 1;</code>
+       */
+      public java.util.List<net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder> 
+           getTextSignBuilderList() {
+        return getTextSignFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          net.iGap.proto.ProtoGlobal.TextSigns.TextSign, net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder, net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder> 
+          getTextSignFieldBuilder() {
+        if (textSignBuilder_ == null) {
+          textSignBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              net.iGap.proto.ProtoGlobal.TextSigns.TextSign, net.iGap.proto.ProtoGlobal.TextSigns.TextSign.Builder, net.iGap.proto.ProtoGlobal.TextSigns.TextSignOrBuilder>(
+                  textSign_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          textSign_ = null;
+        }
+        return textSignBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.TextSigns)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.TextSigns)
+    private static final net.iGap.proto.ProtoGlobal.TextSigns DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new net.iGap.proto.ProtoGlobal.TextSigns();
+    }
+
+    public static net.iGap.proto.ProtoGlobal.TextSigns getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TextSigns>
+        PARSER = new com.google.protobuf.AbstractParser<TextSigns>() {
+      public TextSigns parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TextSigns(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TextSigns> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TextSigns> getParserForType() {
+      return PARSER;
+    }
+
+    public net.iGap.proto.ProtoGlobal.TextSigns getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_RoomMessageLocation_descriptor;
   private static final 
@@ -58837,6 +70108,11 @@ public final class ProtoGlobal {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_RoomMessage_ChannelExtra_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessage_GroupExtra_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessage_GroupExtra_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_RoomDraft_descriptor;
   private static final 
@@ -58972,6 +70248,51 @@ public final class ProtoGlobal {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_MplTransaction_CardToCard_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_BotInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_BotInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_BotInfo_BotAction_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_BotInfo_BotAction_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_Mention_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_Mention_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessageSticker_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessageSticker_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessageCardToCard_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessageCardToCard_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessageBotAction_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessageBotAction_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_RoomMessageBotActionList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_RoomMessageBotActionList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_TextSigns_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_TextSigns_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_TextSigns_TextSign_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_TextSigns_TextSign_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -59063,7 +70384,7 @@ public final class ProtoGlobal {
       " \001(\r\022\014\n\004seen\030\013 \001(\010\022\022\n\nduplicated\030\014 \001(\010\022%",
       "\n\noriginator\030\r \001(\0162\021.proto.Originator\022\r\n" +
       "\005views\030\016 \001(\r\"\033\n\004Type\022\t\n\005STORY\020\000\022\010\n\004LIVE\020" +
-      "\001\"\204\004\n\016RegisteredUser\022\016\n\002id\030\001 \001(\004B\0020\001\022\020\n\010" +
+      "\001\"\230\004\n\016RegisteredUser\022\016\n\002id\030\001 \001(\004B\0020\001\022\020\n\010" +
       "username\030\002 \001(\t\022\021\n\005phone\030\003 \001(\004B\0020\001\022\022\n\nfir" +
       "st_name\030\004 \001(\t\022\021\n\tlast_name\030\005 \001(\t\022\024\n\014disp" +
       "lay_name\030\006 \001(\t\022\020\n\010initials\030\007 \001(\t\022\r\n\005colo" +
@@ -59072,237 +70393,297 @@ public final class ProtoGlobal {
       "ar_count\030\013 \001(\r\022\035\n\006avatar\030\014 \001(\0132\r.proto.A" +
       "vatar\022\016\n\006mutual\030\r \001(\010\022\017\n\007deleted\030\016 \001(\010\022\020",
       "\n\010cache_id\030\017 \001(\t\022\013\n\003bio\030\020 \001(\t\022\020\n\010verifie" +
-      "d\030\021 \001(\010\022\013\n\003bot\030\022 \001(\010\"\211\001\n\006Status\022\021\n\rLONG_" +
-      "TIME_AGO\020\000\022\016\n\nLAST_MONTH\020\001\022\r\n\tLAST_WEEK\020" +
-      "\002\022\n\n\006ONLINE\020\003\022\013\n\007EXACTLY\020\004\022\014\n\010RECENTLY\020\005" +
-      "\022\013\n\007SUPPORT\020\006\022\031\n\025SERVICE_NOTIFICATIONS\020\007" +
-      "\"3\n\006Avatar\022\016\n\002id\030\001 \001(\004B\0020\001\022\031\n\004file\030\002 \001(\013" +
-      "2\013.proto.File\"\360\t\n\013RoomMessage\022\017\n\007room_id" +
-      "\030\032 \001(\004\022\026\n\nmessage_id\030\001 \001(\004B\0020\001\022\033\n\017messag" +
-      "e_version\030\002 \001(\004B\0020\001\022(\n\006status\030\003 \001(\0162\030.pr" +
-      "oto.RoomMessageStatus\022\032\n\016status_version\030",
-      "\004 \001(\004B\0020\001\022,\n\014message_type\030\005 \001(\0162\026.proto." +
-      "RoomMessageType\022\017\n\007message\030\006 \001(\t\022\037\n\natta" +
-      "chment\030\007 \001(\0132\013.proto.File\022)\n\006author\030\010 \001(" +
-      "\0132\031.proto.RoomMessage.Author\022,\n\010location" +
-      "\030\t \001(\0132\032.proto.RoomMessageLocation\022\"\n\003lo" +
-      "g\030\n \001(\0132\025.proto.RoomMessageLog\022*\n\007contac" +
-      "t\030\013 \001(\0132\031.proto.RoomMessageContact\022(\n\006wa" +
-      "llet\030\026 \001(\0132\030.proto.RoomMessageWallet\022\016\n\006" +
-      "edited\030\014 \001(\010\022\023\n\013create_time\030\r \001(\r\022\023\n\013upd" +
-      "ate_time\030\016 \001(\r\022\017\n\007deleted\030\017 \001(\010\022(\n\014forwa",
-      "rd_from\030\020 \001(\0132\022.proto.RoomMessage\022$\n\010rep" +
-      "ly_to\030\021 \001(\0132\022.proto.RoomMessage\022&\n\005story" +
-      "\030\031 \001(\0132\027.proto.RoomMessageStory\022\037\n\023previ" +
-      "ous_message_id\030\022 \001(\004B\0020\001\022\025\n\trandom_id\030\025 " +
-      "\001(\004B\0020\001\022\027\n\017additional_type\030\027 \001(\r\022\027\n\017addi" +
-      "tional_data\030\030 \001(\t\0220\n\nextra_type\030\023 \001(\0162\034." +
-      "proto.RoomMessage.ExtraType\0226\n\rchannel_e" +
-      "xtra\030\024 \001(\0132\037.proto.RoomMessage.ChannelEx" +
-      "tra\022\023\n\013document_id\030\033 \001(\004\022\033\n\023version_docu" +
-      "ment_id\030\034 \001(\004\032\276\001\n\006Author\022\014\n\004hash\030\001 \001(\t\022,",
-      "\n\004user\030\002 \001(\0132\036.proto.RoomMessage.Author." +
-      "User\022,\n\004room\030\003 \001(\0132\036.proto.RoomMessage.A" +
-      "uthor.Room\032-\n\004User\022\023\n\007user_id\030\001 \001(\004B\0020\001\022" +
-      "\020\n\010cache_id\030\002 \001(\t\032\033\n\004Room\022\023\n\007room_id\030\001 \001" +
-      "(\004B\0020\001\032j\n\014ChannelExtra\022\021\n\tsignature\030\001 \001(" +
-      "\t\022\023\n\013views_label\030\002 \001(\t\022\027\n\017thumbs_up_labe" +
-      "l\030\003 \001(\t\022\031\n\021thumbs_down_label\030\004 \001(\t\",\n\tEx" +
-      "traType\022\014\n\010NO_EXTRA\020\000\022\021\n\rCHANNEL_EXTRA\020\001" +
-      "\"F\n\tRoomDraft\022\017\n\007message\030\001 \001(\t\022\024\n\010reply_" +
-      "to\030\002 \001(\004B\0020\001\022\022\n\ndraft_time\030\003 \001(\r\"\201\005\n\004Roo",
-      "m\022\016\n\002id\030\001 \001(\004B\0020\001\022\036\n\004type\030\002 \001(\0162\020.proto." +
-      "Room.Type\022\r\n\005title\030\003 \001(\t\022\020\n\010initials\030\004 \001" +
-      "(\t\022\r\n\005color\030\005 \001(\t\022\024\n\014unread_count\030\006 \001(\r\022" +
-      "(\n\014last_message\030\007 \001(\0132\022.proto.RoomMessag" +
-      "e\022\021\n\tread_only\030\010 \001(\010\022\026\n\016is_participant\030\t" +
-      " \001(\010\022\037\n\005draft\030\n \001(\0132\020.proto.RoomDraft\0220\n" +
-      "\024first_unread_message\030\016 \001(\0132\022.proto.Room" +
-      "Message\022\"\n\troom_mute\030\017 \001(\0162\017.proto.RoomM" +
-      "ute\022\022\n\006pin_id\030\020 \001(\004B\0020\001\022*\n\016pinned_messag" +
-      "e\030\021 \001(\0132\022.proto.RoomMessage\022\020\n\010priority\030",
-      "\022 \001(\r\022(\n\017chat_room_extra\030\013 \001(\0132\017.proto.C" +
-      "hatRoom\022*\n\020group_room_extra\030\014 \001(\0132\020.prot" +
-      "o.GroupRoom\022.\n\022channel_room_extra\030\r \001(\0132" +
-      "\022.proto.ChannelRoom\022\016\n\006app_id\030\023 \001(\r\022%\n\np" +
-      "ermission\030\024 \001(\0132\021.proto.RoomAccess\"(\n\004Ty" +
-      "pe\022\010\n\004CHAT\020\000\022\t\n\005GROUP\020\001\022\013\n\007CHANNEL\020\002\"/\n\010" +
-      "ChatRoom\022#\n\004peer\030\001 \001(\0132\025.proto.Registere" +
-      "dUser\"\223\005\n\tGroupRoom\022#\n\004type\030\001 \001(\0162\025.prot" +
-      "o.GroupRoom.Type\022#\n\004role\030\002 \001(\0162\025.proto.G" +
-      "roupRoom.Role\022\032\n\022participants_count\030\003 \001(",
-      "\r\022 \n\030participants_count_label\030\004 \001(\t\022 \n\030p" +
-      "articipants_count_limit\030\005 \001(\r\022&\n\036partici" +
-      "pants_count_limit_label\030\006 \001(\t\022\023\n\013descrip" +
-      "tion\030\007 \001(\t\022\024\n\014avatar_count\030\010 \001(\r\022\035\n\006avat" +
-      "ar\030\t \001(\0132\r.proto.Avatar\0224\n\rprivate_extra" +
-      "\030\n \001(\0132\035.proto.GroupRoom.PrivateExtra\0222\n" +
-      "\014public_extra\030\013 \001(\0132\034.proto.GroupRoom.Pu" +
-      "blicExtra\022@\n\013room_rights\030\014 \001(\0132+.proto.G" +
-      "roupChangeMemberRights.MemberRights\0329\n\014P" +
-      "rivateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024\n\014invi",
-      "te_token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010usernam" +
-      "e\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022\017\n\013PUB" +
-      "LIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\tMODERA" +
-      "TOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"\344\004\n\013ChannelR" +
-      "oom\022%\n\004type\030\001 \001(\0162\027.proto.ChannelRoom.Ty" +
-      "pe\022%\n\004role\030\002 \001(\0162\027.proto.ChannelRoom.Rol" +
-      "e\022\032\n\022participants_count\030\003 \001(\r\022 \n\030partici" +
-      "pants_count_label\030\004 \001(\t\022\023\n\013description\030\005" +
-      " \001(\t\022\024\n\014avatar_count\030\006 \001(\r\022\035\n\006avatar\030\007 \001" +
-      "(\0132\r.proto.Avatar\0226\n\rprivate_extra\030\010 \001(\013",
-      "2\037.proto.ChannelRoom.PrivateExtra\0224\n\014pub" +
-      "lic_extra\030\t \001(\0132\036.proto.ChannelRoom.Publ" +
-      "icExtra\022\021\n\tsignature\030\n \001(\010\022\023\n\007seen_id\030\013 " +
-      "\001(\004B\0020\001\022\020\n\010verified\030\014 \001(\010\022\027\n\017reaction_st" +
-      "atus\030\r \001(\010\0329\n\014PrivateExtra\022\023\n\013invite_lin" +
-      "k\030\001 \001(\t\022\024\n\014invite_token\030\002 \001(\t\032\037\n\013PublicE" +
-      "xtra\022\020\n\010username\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVAT" +
-      "E_ROOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEM" +
-      "BER\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER" +
-      "\020\003\"f\n\tThumbnail\022\014\n\004size\030\001 \001(\003\022\r\n\005width\030\002",
-      " \001(\005\022\016\n\006height\030\003 \001(\005\022\020\n\010cache_id\030\004 \001(\t\022\014" +
-      "\n\004name\030\005 \001(\t\022\014\n\004mime\030\006 \001(\t\"\232\002\n\004File\022\r\n\005t" +
-      "oken\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004size\030\003 \001(\003\022)" +
-      "\n\017large_thumbnail\030\004 \001(\0132\020.proto.Thumbnai" +
-      "l\022)\n\017small_thumbnail\030\005 \001(\0132\020.proto.Thumb" +
-      "nail\022,\n\022waveform_thumbnail\030\006 \001(\0132\020.proto" +
-      ".Thumbnail\022\r\n\005width\030\007 \001(\005\022\016\n\006height\030\010 \001(" +
-      "\005\022\020\n\010duration\030\t \001(\001\022\020\n\010cache_id\030\n \001(\t\022\014\n" +
-      "\004mime\030\013 \001(\t\022\022\n\npublic_url\030\014 \001(\t\"u\n\021PostM" +
-      "essageRights\022\021\n\tsend_text\030\001 \001(\010\022\022\n\nsend_",
-      "media\030\003 \001(\010\022\020\n\010send_gif\030\004 \001(\010\022\024\n\014send_st" +
-      "icker\030\005 \001(\010\022\021\n\tsend_link\030\006 \001(\010\"\246\002\n\nRoomA" +
-      "ccess\022\023\n\013modify_room\030\001 \001(\010\022.\n\014post_messa" +
-      "ge\030\002 \001(\0132\030.proto.PostMessageRights\022\024\n\014ed" +
-      "it_message\030\003 \001(\010\022\026\n\016delete_message\030\004 \001(\010" +
-      "\022\023\n\013pin_message\030\005 \001(\010\022\022\n\nadd_member\030\006 \001(" +
-      "\010\022\022\n\nban_member\030\007 \001(\010\022\022\n\nget_member\030\010 \001(" +
-      "\010\022\021\n\tadd_admin\030\t \001(\010\022\021\n\tadd_story\030\n \001(\010\022" +
-      "\024\n\014delete_story\030\013 \001(\010\022\030\n\020show_story_view" +
-      "s\030\014 \001(\010\"5\n\tWallpaper\022\031\n\004file\030\001 \001(\0132\013.pro",
-      "to.File\022\r\n\005color\030\002 \001(\t\"+\n\nPagination\022\016\n\006" +
-      "offset\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\"Z\n\010Favorite\022" +
-      "\014\n\004name\030\001 \001(\t\022\021\n\ttextcolor\030\002 \001(\t\022\017\n\007bgco" +
-      "lor\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\r\n\005image\030\005 \001(\t\"" +
-      "\360\007\n\016DiscoveryField\022\020\n\010imageurl\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t\022:\n\nactiontype\030\003 \001(\0162&.proto." +
-      "DiscoveryField.ButtonActionType\022\017\n\007order" +
-      "id\030\004 \001(\r\022\n\n\002id\030\005 \001(\r\022\r\n\005param\030\006 \001(\t\022\021\n\ta" +
-      "greement\030\007 \001(\010\022\017\n\007refresh\030\010 \001(\010\022\025\n\ragree" +
-      "mentSlug\030\t \001(\t\"\231\006\n\020ButtonActionType\022\010\n\004N",
-      "ONE\020\000\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_ACTION\020\002\022\021\n\r" +
-      "USERNAME_LINK\020\003\022\014\n\010WEB_LINK\020\004\022\021\n\rWEB_VIE" +
-      "W_LINK\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n\rPAY_BY_WALL" +
-      "ET\020\007\022\016\n\nPAY_DIRECT\020\010\022\021\n\rREQUEST_PHONE\020\t\022" +
-      "\024\n\020REQUEST_LOCATION\020\n\022\016\n\nSHOW_ALERT\020\013\022\010\n" +
-      "\004PAGE\020\014\022\022\n\016FINANCIAL_MENU\020\r\022\r\n\tBILL_MENU" +
-      "\020\016\022\025\n\021TRAFFIC_BILL_MENU\020\017\022\024\n\020MOBILE_BILL" +
-      "_MENU\020\020\022\023\n\017PHONE_BILL_MENU\020\021\022\016\n\nTOPUP_ME" +
-      "NU\020\022\022\017\n\013WALLET_MENU\020\023\022\017\n\013NEARBY_MENU\020\024\022\010" +
-      "\n\004CALL\020\025\022\020\n\014STICKER_SHOP\020\026\022\t\n\005IVAND\020\027\022\013\n",
-      "\007IVANDQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n\nIVANDSCORE\020" +
-      "\032\022\020\n\014CARD_TO_CARD\020\033\022\024\n\020FAVORITE_CHANNEL\020" +
-      "\034\022\t\n\005MUSIC\020\035\022\013\n\007CHARITY\020\036\022\017\n\013FUN_SERVICE" +
-      "\020\037\022\021\n\rVIRTUAL_MONEY\020 \022\020\n\014CITY_SERVICE\020!\022" +
-      "\010\n\004POLL\020\"\022\031\n\025INTERNET_PACKAGE_MENU\020#\022\025\n\021" +
-      "FINANCIAL_HISTORY\020$\022\021\n\rINVITE_FRIEND\020%\022\010" +
-      "\n\004NEWS\020&\022\026\n\022ELECTRIC_BILL_MENU\020\'\022\016\n\nBLOC" +
-      "KCHAIN\020(\022\014\n\010PARSLAND\020)\022\017\n\013POLL_RESULT\020*\022" +
-      "\025\n\021VIRTUAL_GIFT_CARD\020+\022\017\n\013NEWS_DETAIL\020,\022" +
-      "\t\n\005QRPAY\020-\"\223\002\n\tDiscovery\022.\n\005model\030\001 \001(\0162",
-      "\037.proto.Discovery.DiscoveryModel\022\r\n\005scal" +
-      "e\030\002 \001(\t\022.\n\017discoveryfields\030\003 \003(\0132\025.proto" +
-      ".DiscoveryField\"\226\001\n\016DiscoveryModel\022\n\n\006MO" +
-      "DEL1\020\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006MODEL4" +
-      "\020\003\022\n\n\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MODEL7\020\006\022\n" +
-      "\n\006MODEL8\020\007\022\n\n\006MODEL9\020\010\022\013\n\007MODEL10\020\t\022\013\n\007M" +
-      "ODEL11\020\n\"~\n\tPollField\022\020\n\010imageurl\030\001 \001(\t\022" +
-      "\017\n\007orderid\030\002 \001(\r\022\n\n\002id\030\003 \001(\r\022\017\n\007clicked\030" +
-      "\004 \001(\010\022\017\n\003sum\030\005 \001(\004B\0020\001\022\021\n\tclickable\030\006 \001(" +
-      "\010\022\r\n\005label\030\007 \001(\t\"x\n\004Poll\022.\n\005model\030\001 \001(\0162",
-      "\037.proto.Discovery.DiscoveryModel\022\r\n\005scal" +
-      "e\030\002 \001(\t\022\013\n\003max\030\003 \001(\r\022$\n\npollfields\030\004 \003(\013" +
-      "2\020.proto.PollField\";\n\rIVandActivity\022\r\n\005t" +
-      "itle\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004time\030\003 \001(\r\"" +
-      "\236\002\n\007MplSale\022\032\n\016invoice_number\030\001 \001(\004B\0020\001\022" +
-      "\030\n\014from_user_id\030\002 \001(\004B\0020\001\022\022\n\006amount\030\003 \001(" +
-      "\004B\0020\001\022\024\n\014trace_number\030\004 \001(\003\022\020\n\010pay_time\030" +
-      "\005 \001(\r\022\023\n\013description\030\006 \001(\t\022\023\n\013card_numbe" +
-      "r\030\007 \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t \001(\0162\025.p" +
-      "roto.MplSale.Status\"C\n\006Status\022\022\n\016PENDING",
-      "_VERIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002\022\014\n\010RE" +
-      "VERSED\020\003\"\227\013\n\016MplTransaction\022\024\n\010order_id\030" +
-      "\001 \001(\004B\0020\001\022\r\n\005token\030\002 \001(\t\022\020\n\010pay_time\030\003 \001" +
-      "(\r\022(\n\004type\030\004 \001(\0162\032.proto.MplTransaction." +
-      "Type\022(\n\004bill\030\005 \001(\0132\032.proto.MplTransactio" +
-      "n.Bill\022*\n\005topup\030\006 \001(\0132\033.proto.MplTransac" +
-      "tion.Topup\022*\n\005sales\030\007 \001(\0132\033.proto.MplTra" +
-      "nsaction.Sales\0224\n\ncardtocard\030\010 \001(\0132 .pro" +
-      "to.MplTransaction.CardToCard\032\210\002\n\004Bill\022\016\n" +
-      "\006BillId\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020\n\010BillType",
-      "\030\003 \001(\t\022\016\n\006Status\030\004 \001(\r\022\022\n\006Amount\030\005 \001(\004B\002" +
-      "0\001\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014MerchantName\030\007" +
-      " \001(\t\022\023\n\007OrderId\030\010 \001(\004B\0020\001\022\033\n\017RequestDate" +
-      "Time\030\t \001(\004B\0020\001\022\017\n\003RRN\030\n \001(\004B\0020\001\022\031\n\021Statu" +
-      "sDescription\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017" +
-      "\n\007TraceNo\030\r \001(\r\032\256\002\n\005Topup\022!\n\025RequesterMo" +
-      "bileNumber\030\001 \001(\004B\0020\001\022\036\n\022ChargeMobileNumb" +
-      "er\030\002 \001(\004B\0020\001\022\021\n\tTopupType\030\003 \001(\r\022\016\n\006Statu" +
-      "s\030\004 \001(\r\022\022\n\006Amount\030\005 \001(\004B\0020\001\022\022\n\nCardNumbe" +
-      "r\030\006 \001(\t\022\024\n\014MerchantName\030\007 \001(\t\022\023\n\007OrderId",
+      "d\030\021 \001(\010\022\013\n\003bot\030\022 \001(\010\022\022\n\nmxb_enable\030\023 \001(\010" +
+      "\"\211\001\n\006Status\022\021\n\rLONG_TIME_AGO\020\000\022\016\n\nLAST_M" +
+      "ONTH\020\001\022\r\n\tLAST_WEEK\020\002\022\n\n\006ONLINE\020\003\022\013\n\007EXA" +
+      "CTLY\020\004\022\014\n\010RECENTLY\020\005\022\013\n\007SUPPORT\020\006\022\031\n\025SER" +
+      "VICE_NOTIFICATIONS\020\007\"3\n\006Avatar\022\016\n\002id\030\001 \001" +
+      "(\004B\0020\001\022\031\n\004file\030\002 \001(\0132\013.proto.File\"\225\014\n\013Ro" +
+      "omMessage\022\017\n\007room_id\030\032 \001(\004\022\026\n\nmessage_id" +
+      "\030\001 \001(\004B\0020\001\022\033\n\017message_version\030\002 \001(\004B\0020\001\022" +
+      "(\n\006status\030\003 \001(\0162\030.proto.RoomMessageStatu",
+      "s\022\032\n\016status_version\030\004 \001(\004B\0020\001\022,\n\014message" +
+      "_type\030\005 \001(\0162\026.proto.RoomMessageType\022\017\n\007m" +
+      "essage\030\006 \001(\t\022\037\n\nattachment\030\007 \001(\0132\013.proto" +
+      ".File\022)\n\006author\030\010 \001(\0132\031.proto.RoomMessag" +
+      "e.Author\022,\n\010location\030\t \001(\0132\032.proto.RoomM" +
+      "essageLocation\022\"\n\003log\030\n \001(\0132\025.proto.Room" +
+      "MessageLog\022*\n\007contact\030\013 \001(\0132\031.proto.Room" +
+      "MessageContact\022(\n\006wallet\030\026 \001(\0132\030.proto.R" +
+      "oomMessageWallet\022\016\n\006edited\030\014 \001(\010\022\023\n\013crea" +
+      "te_time\030\r \001(\r\022\023\n\013update_time\030\016 \001(\r\022\017\n\007de",
+      "leted\030\017 \001(\010\022(\n\014forward_from\030\020 \001(\0132\022.prot" +
+      "o.RoomMessage\022$\n\010reply_to\030\021 \001(\0132\022.proto." +
+      "RoomMessage\022&\n\005story\030\031 \001(\0132\027.proto.RoomM" +
+      "essageStory\022\037\n\023previous_message_id\030\022 \001(\004" +
+      "B\0020\001\022\025\n\trandom_id\030\025 \001(\004B\0020\001\022\027\n\017additiona" +
+      "l_type\030\027 \001(\r\022\027\n\017additional_data\030\030 \001(\t\0220\n" +
+      "\nextra_type\030\023 \001(\0162\034.proto.RoomMessage.Ex" +
+      "traType\0226\n\rchannel_extra\030\024 \001(\0132\037.proto.R" +
+      "oomMessage.ChannelExtra\022\023\n\013document_id\030\033" +
+      " \001(\004\022\033\n\023version_document_id\030\034 \001(\004\0222\n\013gro",
+      "up_extra\030\035 \001(\0132\035.proto.RoomMessage.Group" +
+      "Extra\022*\n\007sticker\030\036 \001(\0132\031.proto.RoomMessa" +
+      "geSticker\0222\n\014card_to_card\030\037 \001(\0132\034.proto." +
+      "RoomMessageCardToCard\0229\n\020bot_action_list" +
+      "s\030  \003(\0132\037.proto.RoomMessageBotActionList" +
+      "\022$\n\ntext_signs\030! \001(\0132\020.proto.TextSigns\032\276" +
+      "\001\n\006Author\022\014\n\004hash\030\001 \001(\t\022,\n\004user\030\002 \001(\0132\036." +
+      "proto.RoomMessage.Author.User\022,\n\004room\030\003 " +
+      "\001(\0132\036.proto.RoomMessage.Author.Room\032-\n\004U" +
+      "ser\022\023\n\007user_id\030\001 \001(\004B\0020\001\022\020\n\010cache_id\030\002 \001",
+      "(\t\032\033\n\004Room\022\023\n\007room_id\030\001 \001(\004B\0020\001\032j\n\014Chann" +
+      "elExtra\022\021\n\tsignature\030\001 \001(\t\022\023\n\013views_labe" +
+      "l\030\002 \001(\t\022\027\n\017thumbs_up_label\030\003 \001(\t\022\031\n\021thum" +
+      "bs_down_label\030\004 \001(\t\032.\n\nGroupExtra\022 \n\010men" +
+      "tions\030\001 \001(\0132\016.proto.Mention\",\n\tExtraType" +
+      "\022\014\n\010NO_EXTRA\020\000\022\021\n\rCHANNEL_EXTRA\020\001\"F\n\tRoo" +
+      "mDraft\022\017\n\007message\030\001 \001(\t\022\024\n\010reply_to\030\002 \001(" +
+      "\004B\0020\001\022\022\n\ndraft_time\030\003 \001(\r\"\201\005\n\004Room\022\016\n\002id" +
+      "\030\001 \001(\004B\0020\001\022\036\n\004type\030\002 \001(\0162\020.proto.Room.Ty" +
+      "pe\022\r\n\005title\030\003 \001(\t\022\020\n\010initials\030\004 \001(\t\022\r\n\005c",
+      "olor\030\005 \001(\t\022\024\n\014unread_count\030\006 \001(\r\022(\n\014last" +
+      "_message\030\007 \001(\0132\022.proto.RoomMessage\022\021\n\tre" +
+      "ad_only\030\010 \001(\010\022\026\n\016is_participant\030\t \001(\010\022\037\n" +
+      "\005draft\030\n \001(\0132\020.proto.RoomDraft\0220\n\024first_" +
+      "unread_message\030\016 \001(\0132\022.proto.RoomMessage" +
+      "\022\"\n\troom_mute\030\017 \001(\0162\017.proto.RoomMute\022\022\n\006" +
+      "pin_id\030\020 \001(\004B\0020\001\022*\n\016pinned_message\030\021 \001(\013" +
+      "2\022.proto.RoomMessage\022\020\n\010priority\030\022 \001(\r\022(" +
+      "\n\017chat_room_extra\030\013 \001(\0132\017.proto.ChatRoom" +
+      "\022*\n\020group_room_extra\030\014 \001(\0132\020.proto.Group",
+      "Room\022.\n\022channel_room_extra\030\r \001(\0132\022.proto" +
+      ".ChannelRoom\022\016\n\006app_id\030\023 \001(\r\022%\n\npermissi" +
+      "on\030\024 \001(\0132\021.proto.RoomAccess\"(\n\004Type\022\010\n\004C" +
+      "HAT\020\000\022\t\n\005GROUP\020\001\022\013\n\007CHANNEL\020\002\"P\n\010ChatRoo" +
+      "m\022#\n\004peer\030\001 \001(\0132\025.proto.RegisteredUser\022\037" +
+      "\n\007botInfo\030\002 \001(\0132\016.proto.BotInfo\"\247\005\n\tGrou" +
+      "pRoom\022#\n\004type\030\001 \001(\0162\025.proto.GroupRoom.Ty" +
+      "pe\022#\n\004role\030\002 \001(\0162\025.proto.GroupRoom.Role\022" +
+      "\032\n\022participants_count\030\003 \001(\r\022 \n\030participa" +
+      "nts_count_label\030\004 \001(\t\022 \n\030participants_co",
+      "unt_limit\030\005 \001(\r\022&\n\036participants_count_li" +
+      "mit_label\030\006 \001(\t\022\023\n\013description\030\007 \001(\t\022\024\n\014" +
+      "avatar_count\030\010 \001(\r\022\035\n\006avatar\030\t \001(\0132\r.pro" +
+      "to.Avatar\0224\n\rprivate_extra\030\n \001(\0132\035.proto" +
+      ".GroupRoom.PrivateExtra\0222\n\014public_extra\030" +
+      "\013 \001(\0132\034.proto.GroupRoom.PublicExtra\022@\n\013r" +
+      "oom_rights\030\014 \001(\0132+.proto.GroupChangeMemb" +
+      "erRights.MemberRights\022\022\n\nis_mention\030\r \001(" +
+      "\010\0329\n\014PrivateExtra\022\023\n\013invite_link\030\001 \001(\t\022\024" +
+      "\n\014invite_token\030\002 \001(\t\032\037\n\013PublicExtra\022\020\n\010u",
+      "sername\030\001 \001(\t\")\n\004Type\022\020\n\014PRIVATE_ROOM\020\000\022" +
+      "\017\n\013PUBLIC_ROOM\020\001\"7\n\004Role\022\n\n\006MEMBER\020\000\022\r\n\t" +
+      "MODERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n\005OWNER\020\003\"\344\004\n\013Ch" +
+      "annelRoom\022%\n\004type\030\001 \001(\0162\027.proto.ChannelR" +
+      "oom.Type\022%\n\004role\030\002 \001(\0162\027.proto.ChannelRo" +
+      "om.Role\022\032\n\022participants_count\030\003 \001(\r\022 \n\030p" +
+      "articipants_count_label\030\004 \001(\t\022\023\n\013descrip" +
+      "tion\030\005 \001(\t\022\024\n\014avatar_count\030\006 \001(\r\022\035\n\006avat" +
+      "ar\030\007 \001(\0132\r.proto.Avatar\0226\n\rprivate_extra" +
+      "\030\010 \001(\0132\037.proto.ChannelRoom.PrivateExtra\022",
+      "4\n\014public_extra\030\t \001(\0132\036.proto.ChannelRoo" +
+      "m.PublicExtra\022\021\n\tsignature\030\n \001(\010\022\023\n\007seen" +
+      "_id\030\013 \001(\004B\0020\001\022\020\n\010verified\030\014 \001(\010\022\027\n\017react" +
+      "ion_status\030\r \001(\010\0329\n\014PrivateExtra\022\023\n\013invi" +
+      "te_link\030\001 \001(\t\022\024\n\014invite_token\030\002 \001(\t\032\037\n\013P" +
+      "ublicExtra\022\020\n\010username\030\001 \001(\t\")\n\004Type\022\020\n\014" +
+      "PRIVATE_ROOM\020\000\022\017\n\013PUBLIC_ROOM\020\001\"7\n\004Role\022" +
+      "\n\n\006MEMBER\020\000\022\r\n\tMODERATOR\020\001\022\t\n\005ADMIN\020\002\022\t\n" +
+      "\005OWNER\020\003\"f\n\tThumbnail\022\014\n\004size\030\001 \001(\003\022\r\n\005w" +
+      "idth\030\002 \001(\005\022\016\n\006height\030\003 \001(\005\022\020\n\010cache_id\030\004",
+      " \001(\t\022\014\n\004name\030\005 \001(\t\022\014\n\004mime\030\006 \001(\t\"\232\002\n\004Fil" +
+      "e\022\r\n\005token\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\014\n\004size\030\003" +
+      " \001(\003\022)\n\017large_thumbnail\030\004 \001(\0132\020.proto.Th" +
+      "umbnail\022)\n\017small_thumbnail\030\005 \001(\0132\020.proto" +
+      ".Thumbnail\022,\n\022waveform_thumbnail\030\006 \001(\0132\020" +
+      ".proto.Thumbnail\022\r\n\005width\030\007 \001(\005\022\016\n\006heigh" +
+      "t\030\010 \001(\005\022\020\n\010duration\030\t \001(\001\022\020\n\010cache_id\030\n " +
+      "\001(\t\022\014\n\004mime\030\013 \001(\t\022\022\n\npublic_url\030\014 \001(\t\"u\n" +
+      "\021PostMessageRights\022\021\n\tsend_text\030\001 \001(\010\022\022\n" +
+      "\nsend_media\030\003 \001(\010\022\020\n\010send_gif\030\004 \001(\010\022\024\n\014s",
+      "end_sticker\030\005 \001(\010\022\021\n\tsend_link\030\006 \001(\010\"\246\002\n" +
+      "\nRoomAccess\022\023\n\013modify_room\030\001 \001(\010\022.\n\014post" +
+      "_message\030\002 \001(\0132\030.proto.PostMessageRights" +
+      "\022\024\n\014edit_message\030\003 \001(\010\022\026\n\016delete_message" +
+      "\030\004 \001(\010\022\023\n\013pin_message\030\005 \001(\010\022\022\n\nadd_membe" +
+      "r\030\006 \001(\010\022\022\n\nban_member\030\007 \001(\010\022\022\n\nget_membe" +
+      "r\030\010 \001(\010\022\021\n\tadd_admin\030\t \001(\010\022\021\n\tadd_story\030" +
+      "\n \001(\010\022\024\n\014delete_story\030\013 \001(\010\022\030\n\020show_stor" +
+      "y_views\030\014 \001(\010\"5\n\tWallpaper\022\031\n\004file\030\001 \001(\013" +
+      "2\013.proto.File\022\r\n\005color\030\002 \001(\t\"+\n\nPaginati",
+      "on\022\016\n\006offset\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\"Z\n\010Fav" +
+      "orite\022\014\n\004name\030\001 \001(\t\022\021\n\ttextcolor\030\002 \001(\t\022\017" +
+      "\n\007bgcolor\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022\r\n\005image\030" +
+      "\005 \001(\t\"\360\007\n\016DiscoveryField\022\020\n\010imageurl\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\t\022:\n\nactiontype\030\003 \001(\0162&." +
+      "proto.DiscoveryField.ButtonActionType\022\017\n" +
+      "\007orderid\030\004 \001(\r\022\n\n\002id\030\005 \001(\r\022\r\n\005param\030\006 \001(" +
+      "\t\022\021\n\tagreement\030\007 \001(\010\022\017\n\007refresh\030\010 \001(\010\022\025\n" +
+      "\ragreementSlug\030\t \001(\t\"\231\006\n\020ButtonActionTyp" +
+      "e\022\010\n\004NONE\020\000\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_ACTION",
+      "\020\002\022\021\n\rUSERNAME_LINK\020\003\022\014\n\010WEB_LINK\020\004\022\021\n\rW" +
+      "EB_VIEW_LINK\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n\rPAY_B" +
+      "Y_WALLET\020\007\022\016\n\nPAY_DIRECT\020\010\022\021\n\rREQUEST_PH" +
+      "ONE\020\t\022\024\n\020REQUEST_LOCATION\020\n\022\016\n\nSHOW_ALER" +
+      "T\020\013\022\010\n\004PAGE\020\014\022\022\n\016FINANCIAL_MENU\020\r\022\r\n\tBIL" +
+      "L_MENU\020\016\022\025\n\021TRAFFIC_BILL_MENU\020\017\022\024\n\020MOBIL" +
+      "E_BILL_MENU\020\020\022\023\n\017PHONE_BILL_MENU\020\021\022\016\n\nTO" +
+      "PUP_MENU\020\022\022\017\n\013WALLET_MENU\020\023\022\017\n\013NEARBY_ME" +
+      "NU\020\024\022\010\n\004CALL\020\025\022\020\n\014STICKER_SHOP\020\026\022\t\n\005IVAN" +
+      "D\020\027\022\013\n\007IVANDQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n\nIVAND",
+      "SCORE\020\032\022\020\n\014CARD_TO_CARD\020\033\022\024\n\020FAVORITE_CH" +
+      "ANNEL\020\034\022\t\n\005MUSIC\020\035\022\013\n\007CHARITY\020\036\022\017\n\013FUN_S" +
+      "ERVICE\020\037\022\021\n\rVIRTUAL_MONEY\020 \022\020\n\014CITY_SERV" +
+      "ICE\020!\022\010\n\004POLL\020\"\022\031\n\025INTERNET_PACKAGE_MENU" +
+      "\020#\022\025\n\021FINANCIAL_HISTORY\020$\022\021\n\rINVITE_FRIE" +
+      "ND\020%\022\010\n\004NEWS\020&\022\026\n\022ELECTRIC_BILL_MENU\020\'\022\016" +
+      "\n\nBLOCKCHAIN\020(\022\014\n\010PARSLAND\020)\022\017\n\013POLL_RES" +
+      "ULT\020*\022\025\n\021VIRTUAL_GIFT_CARD\020+\022\017\n\013NEWS_DET" +
+      "AIL\020,\022\t\n\005QRPAY\020-\"\223\002\n\tDiscovery\022.\n\005model\030" +
+      "\001 \001(\0162\037.proto.Discovery.DiscoveryModel\022\r",
+      "\n\005scale\030\002 \001(\t\022.\n\017discoveryfields\030\003 \003(\0132\025" +
+      ".proto.DiscoveryField\"\226\001\n\016DiscoveryModel" +
+      "\022\n\n\006MODEL1\020\000\022\n\n\006MODEL2\020\001\022\n\n\006MODEL3\020\002\022\n\n\006" +
+      "MODEL4\020\003\022\n\n\006MODEL5\020\004\022\n\n\006MODEL6\020\005\022\n\n\006MODE" +
+      "L7\020\006\022\n\n\006MODEL8\020\007\022\n\n\006MODEL9\020\010\022\013\n\007MODEL10\020" +
+      "\t\022\013\n\007MODEL11\020\n\"~\n\tPollField\022\020\n\010imageurl\030" +
+      "\001 \001(\t\022\017\n\007orderid\030\002 \001(\r\022\n\n\002id\030\003 \001(\r\022\017\n\007cl" +
+      "icked\030\004 \001(\010\022\017\n\003sum\030\005 \001(\004B\0020\001\022\021\n\tclickabl" +
+      "e\030\006 \001(\010\022\r\n\005label\030\007 \001(\t\"x\n\004Poll\022.\n\005model\030" +
+      "\001 \001(\0162\037.proto.Discovery.DiscoveryModel\022\r",
+      "\n\005scale\030\002 \001(\t\022\013\n\003max\030\003 \001(\r\022$\n\npollfields" +
+      "\030\004 \003(\0132\020.proto.PollField\";\n\rIVandActivit" +
+      "y\022\r\n\005title\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\014\n\004time\030" +
+      "\003 \001(\r\"\236\002\n\007MplSale\022\032\n\016invoice_number\030\001 \001(" +
+      "\004B\0020\001\022\030\n\014from_user_id\030\002 \001(\004B\0020\001\022\022\n\006amoun" +
+      "t\030\003 \001(\004B\0020\001\022\024\n\014trace_number\030\004 \001(\003\022\020\n\010pay" +
+      "_time\030\005 \001(\r\022\023\n\013description\030\006 \001(\t\022\023\n\013card" +
+      "_number\030\007 \001(\t\022\013\n\003rrn\030\010 \001(\003\022%\n\006status\030\t \001" +
+      "(\0162\025.proto.MplSale.Status\"C\n\006Status\022\022\n\016P" +
+      "ENDING_VERIFY\020\000\022\013\n\007SUCCESS\020\001\022\n\n\006FAILED\020\002",
+      "\022\014\n\010REVERSED\020\003\"\227\013\n\016MplTransaction\022\024\n\010ord" +
+      "er_id\030\001 \001(\004B\0020\001\022\r\n\005token\030\002 \001(\t\022\020\n\010pay_ti" +
+      "me\030\003 \001(\r\022(\n\004type\030\004 \001(\0162\032.proto.MplTransa" +
+      "ction.Type\022(\n\004bill\030\005 \001(\0132\032.proto.MplTran" +
+      "saction.Bill\022*\n\005topup\030\006 \001(\0132\033.proto.MplT" +
+      "ransaction.Topup\022*\n\005sales\030\007 \001(\0132\033.proto." +
+      "MplTransaction.Sales\0224\n\ncardtocard\030\010 \001(\013" +
+      "2 .proto.MplTransaction.CardToCard\032\210\002\n\004B" +
+      "ill\022\016\n\006BillId\030\001 \001(\t\022\r\n\005PayId\030\002 \001(\t\022\020\n\010Bi" +
+      "llType\030\003 \001(\t\022\016\n\006Status\030\004 \001(\r\022\022\n\006Amount\030\005",
+      " \001(\004B\0020\001\022\022\n\nCardNumber\030\006 \001(\t\022\024\n\014Merchant" +
+      "Name\030\007 \001(\t\022\023\n\007OrderId\030\010 \001(\004B\0020\001\022\033\n\017Reque" +
+      "stDateTime\030\t \001(\004B\0020\001\022\017\n\003RRN\030\n \001(\004B\0020\001\022\031\n" +
+      "\021StatusDescription\030\013 \001(\t\022\022\n\nTerminalNo\030\014" +
+      " \001(\r\022\017\n\007TraceNo\030\r \001(\r\032\256\002\n\005Topup\022!\n\025Reque" +
+      "sterMobileNumber\030\001 \001(\004B\0020\001\022\036\n\022ChargeMobi" +
+      "leNumber\030\002 \001(\004B\0020\001\022\021\n\tTopupType\030\003 \001(\r\022\016\n" +
+      "\006Status\030\004 \001(\r\022\022\n\006Amount\030\005 \001(\004B\0020\001\022\022\n\nCar" +
+      "dNumber\030\006 \001(\t\022\024\n\014MerchantName\030\007 \001(\t\022\023\n\007O" +
+      "rderId\030\010 \001(\004B\0020\001\022\033\n\017RequestDateTime\030\t \001(",
+      "\004B\0020\001\022\017\n\003RRN\030\n \001(\004B\0020\001\022\031\n\021StatusDescript" +
+      "ion\030\013 \001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007TraceNo" +
+      "\030\r \001(\r\032\330\001\n\005Sales\022\016\n\006Status\030\001 \001(\r\022\022\n\006Amou" +
+      "nt\030\002 \001(\004B\0020\001\022\022\n\nCardNumber\030\003 \001(\t\022\024\n\014Merc" +
+      "hantName\030\004 \001(\t\022\023\n\007OrderId\030\005 \001(\004B\0020\001\022\033\n\017R" +
+      "equestDateTime\030\006 \001(\004B\0020\001\022\017\n\003RRN\030\007 \001(\004B\0020" +
+      "\001\022\031\n\021StatusDescription\030\010 \001(\t\022\022\n\nTerminal" +
+      "No\030\t \001(\r\022\017\n\007TraceNo\030\n \001(\r\032\220\002\n\nCardToCard" +
+      "\022\016\n\006Status\030\001 \001(\r\022\022\n\006Amount\030\002 \001(\004B\0020\001\022\030\n\020" +
+      "SourceCardNumber\030\003 \001(\t\022\026\n\016DestCardNumber",
+      "\030\004 \001(\t\022\020\n\010BankName\030\005 \001(\t\022\024\n\014DestBankName" +
+      "\030\006 \001(\t\022\025\n\rCardOwnerName\030\007 \001(\t\022\023\n\007OrderId" +
       "\030\010 \001(\004B\0020\001\022\033\n\017RequestDateTime\030\t \001(\004B\0020\001\022" +
       "\017\n\003RRN\030\n \001(\004B\0020\001\022\031\n\021StatusDescription\030\013 " +
-      "\001(\t\022\022\n\nTerminalNo\030\014 \001(\r\022\017\n\007TraceNo\030\r \001(\r" +
-      "\032\330\001\n\005Sales\022\016\n\006Status\030\001 \001(\r\022\022\n\006Amount\030\002 \001" +
-      "(\004B\0020\001\022\022\n\nCardNumber\030\003 \001(\t\022\024\n\014MerchantNa" +
-      "me\030\004 \001(\t\022\023\n\007OrderId\030\005 \001(\004B\0020\001\022\033\n\017Request" +
-      "DateTime\030\006 \001(\004B\0020\001\022\017\n\003RRN\030\007 \001(\004B\0020\001\022\031\n\021S" +
-      "tatusDescription\030\010 \001(\t\022\022\n\nTerminalNo\030\t \001" +
-      "(\r\022\017\n\007TraceNo\030\n \001(\r\032\220\002\n\nCardToCard\022\016\n\006St" +
-      "atus\030\001 \001(\r\022\022\n\006Amount\030\002 \001(\004B\0020\001\022\030\n\020Source",
-      "CardNumber\030\003 \001(\t\022\026\n\016DestCardNumber\030\004 \001(\t" +
-      "\022\020\n\010BankName\030\005 \001(\t\022\024\n\014DestBankName\030\006 \001(\t" +
-      "\022\025\n\rCardOwnerName\030\007 \001(\t\022\023\n\007OrderId\030\010 \001(\004" +
-      "B\0020\001\022\033\n\017RequestDateTime\030\t \001(\004B\0020\001\022\017\n\003RRN" +
-      "\030\n \001(\004B\0020\001\022\031\n\021StatusDescription\030\013 \001(\t\022\017\n" +
-      "\007TraceNo\030\r \001(\r\"B\n\004Type\022\010\n\004NONE\020\000\022\010\n\004BILL" +
-      "\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES\020\003\022\020\n\014CARD_TO_CARD" +
-      "\020\004*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020\001\022\n\n\006F" +
-      "EMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEVICE\020\000\022\006\n" +
-      "\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n\010Platfor",
-      "m\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDROID\020\001\022\007\n\003" +
-      "IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005LINUX\020" +
-      "\005\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t\n\005EN_US\020" +
-      "\000\022\t\n\005FA_IR\020\001*\200\002\n\017RoomMessageType\022\010\n\004TEXT" +
-      "\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005VIDEO\020\003" +
-      "\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUDIO_TEX" +
-      "T\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEXT\020\016\022\010\n" +
-      "\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATION\020\013\022\007\n\003" +
-      "LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017\022\013\n\007STICKE" +
-      "R\020\020\022\t\n\005STORY\020\021\022\017\n\013STORY_REPLY\020\022*]\n\021RoomM",
-      "essageStatus\022\n\n\006FAILED\020\000\022\013\n\007SENDING\020\001\022\010\n" +
-      "\004SENT\020\002\022\r\n\tDELIVERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LIST" +
-      "ENED\020\005*5\n\023RoomMessageReaction\022\r\n\tTHUMBS_" +
-      "UP\020\000\022\017\n\013THUMBS_DOWN\020\001* \n\nOriginator\022\010\n\004U" +
-      "SER\020\000\022\010\n\004ROOM\020\001*\244\002\n\014ClientAction\022\n\n\006CANC" +
-      "EL\020\000\022\n\n\006TYPING\020\001\022\021\n\rSENDING_IMAGE\020\002\022\023\n\017C" +
-      "APTURING_IMAGE\020\003\022\021\n\rSENDING_VIDEO\020\004\022\023\n\017C" +
-      "APTURING_VIDEO\020\005\022\021\n\rSENDING_AUDIO\020\006\022\023\n\017R" +
-      "ECORDING_VOICE\020\007\022\021\n\rSENDING_VOICE\020\010\022\024\n\020S" +
-      "ENDING_DOCUMENT\020\t\022\017\n\013SENDING_GIF\020\n\022\020\n\014SE",
-      "NDING_FILE\020\013\022\024\n\020SENDING_LOCATION\020\014\022\024\n\020CH" +
-      "OOSING_CONTACT\020\r\022\014\n\010PAINTING\020\016*b\n\010RoomTy" +
-      "pe\022\010\n\004CHAT\020\000\022\021\n\rPRIVATE_GROUP\020\001\022\020\n\014PUBLI" +
-      "C_GROUP\020\002\022\023\n\017PRIVATE_CHANNEL\020\003\022\022\n\016PUBLIC" +
-      "_CHANNEL\020\004* \n\010RoomMute\022\n\n\006UNMUTE\020\000\022\010\n\004MU" +
-      "TE\020\001*\233\001\n\013PrivacyType\022\017\n\013USER_STATUS\020\000\022\n\n" +
-      "\006AVATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022\022\n\016CHANNEL_I" +
-      "NVITE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021\n\rVIDEO_CALL" +
-      "ING\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n\013SECRET_CHAT" +
-      "\020\007*?\n\014PrivacyLevel\022\r\n\tALLOW_ALL\020\000\022\014\n\010DEN",
-      "Y_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B\035\n\016net.iGap." +
-      "protoB\013ProtoGlobalb\006proto3"
+      "\001(\t\022\017\n\007TraceNo\030\r \001(\r\"B\n\004Type\022\010\n\004NONE\020\000\022\010" +
+      "\n\004BILL\020\001\022\t\n\005TOPUP\020\002\022\t\n\005SALES\020\003\022\020\n\014CARD_T" +
+      "O_CARD\020\004\"\201\001\n\007BotInfo\022\n\n\002id\030\001 \001(\004\022\026\n\016welc" +
+      "omeMessage\030\002 \001(\t\022)\n\007actions\030\003 \003(\0132\030.prot" +
+      "o.BotInfo.BotAction\032\'\n\tBotAction\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\032\n\007Mention\022\017\n\007userI",
+      "ds\030\001 \003(\004\"\372\002\n\022RoomMessageSticker\0227\n\004type\030" +
+      "\001 \001(\0162).proto.RoomMessageSticker.Sticker" +
+      "TypeEnum\022\017\n\007message\030\002 \001(\t\022\n\n\002id\030\003 \001(\t\022\014\n" +
+      "\004name\030\004 \001(\t\022\014\n\004path\030\005 \001(\t\022\r\n\005token\030\006 \001(\t" +
+      "\022\020\n\010group_id\030\007 \001(\t\022\021\n\tfile_name\030\010 \001(\t\022\021\n" +
+      "\tfile_size\030\t \001(\003\022\017\n\007gift_id\030\n \001(\t\022\023\n\013gif" +
+      "t_amount\030\013 \001(\003\022\023\n\013is_favorite\030\014 \001(\010\022\014\n\004s" +
+      "ort\030\r \001(\005\022\016\n\006ref_id\030\016 \001(\003\022\014\n\004tags\030\017 \003(\t\"" +
+      "D\n\017StickerTypeEnum\022\013\n\007STICKER\020\000\022\020\n\014GIFT_" +
+      "STICKER\020\001\022\022\n\016MOTION_STICKER\020\002\"\225\001\n\025RoomMe",
+      "ssageCardToCard\022\017\n\007message\030\001 \001(\t\022\r\n\005labe" +
+      "l\030\002 \001(\t\022\021\n\timage_url\030\003 \001(\t\022\023\n\013action_typ" +
+      "e\030\004 \001(\t\022\023\n\013card_number\030\005 \001(\t\022\016\n\006amount\030\006" +
+      " \001(\003\022\017\n\007user_id\030\007 \001(\003\"\316\004\n\024RoomMessageBot" +
+      "Action\0229\n\006action\030\001 \001(\0162).proto.RoomMessa" +
+      "geBotAction.BotActionEnum\022\r\n\005label\030\002 \001(\t" +
+      "\022\r\n\005value\030\003 \001(\t\"\334\003\n\rBotActionEnum\022\010\n\004NON" +
+      "E\020\000\022\r\n\tJOIN_LINK\020\001\022\016\n\nBOT_ACTION\020\002\022\021\n\rUS" +
+      "ERNAME_LINK\020\003\022\014\n\010WEB_LINK\020\004\022\020\n\014WEBVIEW_L" +
+      "INK\020\005\022\017\n\013STREAM_PLAY\020\006\022\021\n\rPAY_BY_WALLET\020",
+      "\007\022\016\n\nPAY_DIRECT\020\010\022\021\n\rREQUEST_PHONE\020\t\022\024\n\020" +
+      "REQUEST_LOCATION\020\n\022\016\n\nSHOW_ALERT\020\013\022\010\n\004PA" +
+      "GE\020\014\022\022\n\016FINANCIAL_MENU\020\r\022\r\n\tBILL_MENU\020\016\022" +
+      "\025\n\021TRAFFIC_BILL_MENU\020\017\022\024\n\020MOBILE_BILL_ME" +
+      "NU\020\020\022\023\n\017PHONE_BILL_MENU\020\021\022\016\n\nTOPUP_MENU\020" +
+      "\022\022\017\n\013WALLET_MENU\020\023\022\017\n\013NEARBY_MENU\020\024\022\010\n\004C" +
+      "ALL\020\025\022\020\n\014STICKER_SHOP\020\026\022\010\n\004IVAN\020\027\022\n\n\006IVA" +
+      "NQR\020\030\022\r\n\tIVANDLIST\020\031\022\016\n\nIVANDSCORE\020\032\022\020\n\014" +
+      "CARD_TO_CARD\020\033\"H\n\030RoomMessageBotActionLi" +
+      "st\022,\n\007actions\030\001 \003(\0132\033.proto.RoomMessageB",
+      "otAction\"\334\003\n\tTextSigns\022,\n\ttext_sign\030\001 \003(" +
+      "\0132\031.proto.TextSigns.TextSign\032\240\003\n\010TextSig" +
+      "n\022,\n\004type\030\001 \001(\0162\036.proto.TextSigns.TextSi" +
+      "gn.Type\022\023\n\013start_index\030\002 \001(\005\022\021\n\tend_inde" +
+      "x\030\003 \001(\005\022\014\n\004link\030\004 \001(\t\022\017\n\007user_id\030\005 \001(\003\"\236" +
+      "\002\n\004Type\022\013\n\007UNKNOWN\020\000\022\022\n\016IGAP_DEEP_LINK\020\001" +
+      "\022\r\n\tIGAP_LINK\020\002\022\014\n\010WEB_LINK\020\003\022\017\n\013BOT_COM" +
+      "MAND\020\004\022\020\n\014IGAP_RESOLVE\020\005\022\016\n\nDIGIT_LINK\020\006" +
+      "\022\013\n\007MENTION\020\007\022\013\n\007HASHTAG\020\010\022\010\n\004BOLD\020\t\022\n\n\006" +
+      "ITALIC\020\n\022\r\n\tUNDERLINE\020\013\022\n\n\006STRIKE\020\014\022\013\n\007S",
+      "POILER\020\r\022\t\n\005EMAIL\020\016\022\t\n\005PHONE\020\017\022\r\n\tBANK_C" +
+      "ARD\020\020\022\014\n\010TEXT_URL\020\021\022\010\n\004CODE\020\022\022\020\n\014MENTION" +
+      "_NAME\020\023*+\n\006Gender\022\013\n\007UNKNOWN\020\000\022\010\n\004MALE\020\001" +
+      "\022\n\n\006FEMALE\020\002*<\n\006Device\022\022\n\016UNKNOWN_DEVICE" +
+      "\020\000\022\006\n\002PC\020\001\022\n\n\006TABLET\020\002\022\n\n\006MOBILE\020\003*k\n\010Pl" +
+      "atform\022\024\n\020UNKNOWN_PLATFORM\020\000\022\013\n\007ANDROID\020" +
+      "\001\022\007\n\003IOS\020\002\022\n\n\006MAC_OS\020\003\022\013\n\007WINDOWS\020\004\022\t\n\005L" +
+      "INUX\020\005\022\017\n\013BLACK_BERRY\020\006* \n\010Language\022\t\n\005E" +
+      "N_US\020\000\022\t\n\005FA_IR\020\001*\233\002\n\017RoomMessageType\022\010\n" +
+      "\004TEXT\020\000\022\t\n\005IMAGE\020\001\022\016\n\nIMAGE_TEXT\020\002\022\t\n\005VI",
+      "DEO\020\003\022\016\n\nVIDEO_TEXT\020\004\022\t\n\005AUDIO\020\005\022\016\n\nAUDI" +
+      "O_TEXT\020\006\022\t\n\005VOICE\020\007\022\007\n\003GIF\020\010\022\014\n\010GIF_TEXT" +
+      "\020\016\022\010\n\004FILE\020\t\022\r\n\tFILE_TEXT\020\n\022\014\n\010LOCATION\020" +
+      "\013\022\007\n\003LOG\020\014\022\013\n\007CONTACT\020\r\022\n\n\006WALLET\020\017\022\013\n\007S" +
+      "TICKER\020\020\022\t\n\005STORY\020\021\022\017\n\013STORY_REPLY\020\022\022\020\n\014" +
+      "CARD_TO_CARD\020\023\022\007\n\003BOT\020\024*]\n\021RoomMessageSt" +
+      "atus\022\n\n\006FAILED\020\000\022\013\n\007SENDING\020\001\022\010\n\004SENT\020\002\022" +
+      "\r\n\tDELIVERED\020\003\022\010\n\004SEEN\020\004\022\014\n\010LISTENED\020\005*5" +
+      "\n\023RoomMessageReaction\022\r\n\tTHUMBS_UP\020\000\022\017\n\013" +
+      "THUMBS_DOWN\020\001*\261\001\n\nSearchType\022\024\n\020SEARCH_A",
+      "LL_TYPES\020\000\022\020\n\014SEARCH_IMAGE\020\001\022\020\n\014SEARCH_V" +
+      "IDEO\020\002\022\020\n\014SEARCH_AUDIO\020\003\022\017\n\013SEARCH_FILE\020" +
+      "\004\022\020\n\014SEARCH_VOICE\020\005\022\016\n\nSEARCH_GIF\020\006\022\022\n\016S" +
+      "EARCH_CONTACT\020\007\022\020\n\014SEARCH_MEDIA\020\010* \n\nOri" +
+      "ginator\022\010\n\004USER\020\000\022\010\n\004ROOM\020\001*\244\002\n\014ClientAc" +
+      "tion\022\n\n\006CANCEL\020\000\022\n\n\006TYPING\020\001\022\021\n\rSENDING_" +
+      "IMAGE\020\002\022\023\n\017CAPTURING_IMAGE\020\003\022\021\n\rSENDING_" +
+      "VIDEO\020\004\022\023\n\017CAPTURING_VIDEO\020\005\022\021\n\rSENDING_" +
+      "AUDIO\020\006\022\023\n\017RECORDING_VOICE\020\007\022\021\n\rSENDING_" +
+      "VOICE\020\010\022\024\n\020SENDING_DOCUMENT\020\t\022\017\n\013SENDING",
+      "_GIF\020\n\022\020\n\014SENDING_FILE\020\013\022\024\n\020SENDING_LOCA" +
+      "TION\020\014\022\024\n\020CHOOSING_CONTACT\020\r\022\014\n\010PAINTING" +
+      "\020\016*b\n\010RoomType\022\010\n\004CHAT\020\000\022\021\n\rPRIVATE_GROU" +
+      "P\020\001\022\020\n\014PUBLIC_GROUP\020\002\022\023\n\017PRIVATE_CHANNEL" +
+      "\020\003\022\022\n\016PUBLIC_CHANNEL\020\004* \n\010RoomMute\022\n\n\006UN" +
+      "MUTE\020\000\022\010\n\004MUTE\020\001*\233\001\n\013PrivacyType\022\017\n\013USER" +
+      "_STATUS\020\000\022\n\n\006AVATAR\020\001\022\020\n\014GROUP_INVITE\020\002\022" +
+      "\022\n\016CHANNEL_INVITE\020\003\022\021\n\rVOICE_CALLING\020\004\022\021" +
+      "\n\rVIDEO_CALLING\020\005\022\022\n\016SCREEN_SHARING\020\006\022\017\n" +
+      "\013SECRET_CHAT\020\007*?\n\014PrivacyLevel\022\r\n\tALLOW_",
+      "ALL\020\000\022\014\n\010DENY_ALL\020\001\022\022\n\016ALLOW_CONTACTS\020\002B" +
+      "\035\n\016net.iGap.protoB\013ProtoGlobalb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -59406,7 +70787,7 @@ public final class ProtoGlobal {
     internal_static_proto_RegisteredUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RegisteredUser_descriptor,
-        new java.lang.String[] { "Id", "Username", "Phone", "FirstName", "LastName", "DisplayName", "Initials", "Color", "Status", "LastSeen", "AvatarCount", "Avatar", "Mutual", "Deleted", "CacheId", "Bio", "Verified", "Bot", });
+        new java.lang.String[] { "Id", "Username", "Phone", "FirstName", "LastName", "DisplayName", "Initials", "Color", "Status", "LastSeen", "AvatarCount", "Avatar", "Mutual", "Deleted", "CacheId", "Bio", "Verified", "Bot", "MxbEnable", });
     internal_static_proto_Avatar_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_proto_Avatar_fieldAccessorTable = new
@@ -59418,7 +70799,7 @@ public final class ProtoGlobal {
     internal_static_proto_RoomMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomMessage_descriptor,
-        new java.lang.String[] { "RoomId", "MessageId", "MessageVersion", "Status", "StatusVersion", "MessageType", "Message", "Attachment", "Author", "Location", "Log", "Contact", "Wallet", "Edited", "CreateTime", "UpdateTime", "Deleted", "ForwardFrom", "ReplyTo", "Story", "PreviousMessageId", "RandomId", "AdditionalType", "AdditionalData", "ExtraType", "ChannelExtra", "DocumentId", "VersionDocumentId", });
+        new java.lang.String[] { "RoomId", "MessageId", "MessageVersion", "Status", "StatusVersion", "MessageType", "Message", "Attachment", "Author", "Location", "Log", "Contact", "Wallet", "Edited", "CreateTime", "UpdateTime", "Deleted", "ForwardFrom", "ReplyTo", "Story", "PreviousMessageId", "RandomId", "AdditionalType", "AdditionalData", "ExtraType", "ChannelExtra", "DocumentId", "VersionDocumentId", "GroupExtra", "Sticker", "CardToCard", "BotActionLists", "TextSigns", });
     internal_static_proto_RoomMessage_Author_descriptor =
       internal_static_proto_RoomMessage_descriptor.getNestedTypes().get(0);
     internal_static_proto_RoomMessage_Author_fieldAccessorTable = new
@@ -59443,6 +70824,12 @@ public final class ProtoGlobal {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_RoomMessage_ChannelExtra_descriptor,
         new java.lang.String[] { "Signature", "ViewsLabel", "ThumbsUpLabel", "ThumbsDownLabel", });
+    internal_static_proto_RoomMessage_GroupExtra_descriptor =
+      internal_static_proto_RoomMessage_descriptor.getNestedTypes().get(2);
+    internal_static_proto_RoomMessage_GroupExtra_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessage_GroupExtra_descriptor,
+        new java.lang.String[] { "Mentions", });
     internal_static_proto_RoomDraft_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_proto_RoomDraft_fieldAccessorTable = new
@@ -59460,13 +70847,13 @@ public final class ProtoGlobal {
     internal_static_proto_ChatRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChatRoom_descriptor,
-        new java.lang.String[] { "Peer", });
+        new java.lang.String[] { "Peer", "BotInfo", });
     internal_static_proto_GroupRoom_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_proto_GroupRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_GroupRoom_descriptor,
-        new java.lang.String[] { "Type", "Role", "ParticipantsCount", "ParticipantsCountLabel", "ParticipantsCountLimit", "ParticipantsCountLimitLabel", "Description", "AvatarCount", "Avatar", "PrivateExtra", "PublicExtra", "RoomRights", });
+        new java.lang.String[] { "Type", "Role", "ParticipantsCount", "ParticipantsCountLabel", "ParticipantsCountLimit", "ParticipantsCountLimitLabel", "Description", "AvatarCount", "Avatar", "PrivateExtra", "PublicExtra", "RoomRights", "IsMention", });
     internal_static_proto_GroupRoom_PrivateExtra_descriptor =
       internal_static_proto_GroupRoom_descriptor.getNestedTypes().get(0);
     internal_static_proto_GroupRoom_PrivateExtra_fieldAccessorTable = new
@@ -59605,6 +70992,60 @@ public final class ProtoGlobal {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_MplTransaction_CardToCard_descriptor,
         new java.lang.String[] { "Status", "Amount", "SourceCardNumber", "DestCardNumber", "BankName", "DestBankName", "CardOwnerName", "OrderId", "RequestDateTime", "RRN", "StatusDescription", "TraceNo", });
+    internal_static_proto_BotInfo_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_proto_BotInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_BotInfo_descriptor,
+        new java.lang.String[] { "Id", "WelcomeMessage", "Actions", });
+    internal_static_proto_BotInfo_BotAction_descriptor =
+      internal_static_proto_BotInfo_descriptor.getNestedTypes().get(0);
+    internal_static_proto_BotInfo_BotAction_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_BotInfo_BotAction_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_proto_Mention_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_proto_Mention_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_Mention_descriptor,
+        new java.lang.String[] { "UserIds", });
+    internal_static_proto_RoomMessageSticker_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_proto_RoomMessageSticker_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessageSticker_descriptor,
+        new java.lang.String[] { "Type", "Message", "Id", "Name", "Path", "Token", "GroupId", "FileName", "FileSize", "GiftId", "GiftAmount", "IsFavorite", "Sort", "RefId", "Tags", });
+    internal_static_proto_RoomMessageCardToCard_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_proto_RoomMessageCardToCard_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessageCardToCard_descriptor,
+        new java.lang.String[] { "Message", "Label", "ImageUrl", "ActionType", "CardNumber", "Amount", "UserId", });
+    internal_static_proto_RoomMessageBotAction_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_proto_RoomMessageBotAction_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessageBotAction_descriptor,
+        new java.lang.String[] { "Action", "Label", "Value", });
+    internal_static_proto_RoomMessageBotActionList_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_proto_RoomMessageBotActionList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_RoomMessageBotActionList_descriptor,
+        new java.lang.String[] { "Actions", });
+    internal_static_proto_TextSigns_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_proto_TextSigns_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_TextSigns_descriptor,
+        new java.lang.String[] { "TextSign", });
+    internal_static_proto_TextSigns_TextSign_descriptor =
+      internal_static_proto_TextSigns_descriptor.getNestedTypes().get(0);
+    internal_static_proto_TextSigns_TextSign_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_TextSigns_TextSign_descriptor,
+        new java.lang.String[] { "Type", "StartIndex", "EndIndex", "Link", "UserId", });
     net.iGap.proto.ProtoGroupChangeMemberRights.getDescriptor();
   }
 

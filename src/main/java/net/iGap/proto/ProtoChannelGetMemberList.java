@@ -1199,6 +1199,19 @@ public final class ProtoChannelGetMemberList {
        * <code>optional .proto.ChannelAddAdmin.AdminRights adminRights = 3;</code>
        */
       net.iGap.proto.ProtoChannelAddAdmin.ChannelAddAdmin.AdminRightsOrBuilder getAdminRightsOrBuilder();
+
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      boolean hasUserInfo();
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      net.iGap.proto.ProtoGlobal.RegisteredUser getUserInfo();
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder getUserInfoOrBuilder();
     }
     /**
      * Protobuf type {@code proto.ChannelGetMemberListResponse.Member}
@@ -1261,6 +1274,19 @@ public final class ProtoChannelGetMemberList {
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(adminRights_);
                   adminRights_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 34: {
+                net.iGap.proto.ProtoGlobal.RegisteredUser.Builder subBuilder = null;
+                if (userInfo_ != null) {
+                  subBuilder = userInfo_.toBuilder();
+                }
+                userInfo_ = input.readMessage(net.iGap.proto.ProtoGlobal.RegisteredUser.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(userInfo_);
+                  userInfo_ = subBuilder.buildPartial();
                 }
 
                 break;
@@ -1334,6 +1360,27 @@ public final class ProtoChannelGetMemberList {
         return getAdminRights();
       }
 
+      public static final int USERINFO_FIELD_NUMBER = 4;
+      private net.iGap.proto.ProtoGlobal.RegisteredUser userInfo_;
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      public boolean hasUserInfo() {
+        return userInfo_ != null;
+      }
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RegisteredUser getUserInfo() {
+        return userInfo_ == null ? net.iGap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance() : userInfo_;
+      }
+      /**
+       * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+       */
+      public net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder getUserInfoOrBuilder() {
+        return getUserInfo();
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -1355,6 +1402,9 @@ public final class ProtoChannelGetMemberList {
         if (adminRights_ != null) {
           output.writeMessage(3, getAdminRights());
         }
+        if (userInfo_ != null) {
+          output.writeMessage(4, getUserInfo());
+        }
       }
 
       public int getSerializedSize() {
@@ -1373,6 +1423,10 @@ public final class ProtoChannelGetMemberList {
         if (adminRights_ != null) {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, getAdminRights());
+        }
+        if (userInfo_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, getUserInfo());
         }
         memoizedSize = size;
         return size;
@@ -1398,6 +1452,11 @@ public final class ProtoChannelGetMemberList {
           result = result && getAdminRights()
               .equals(other.getAdminRights());
         }
+        result = result && (hasUserInfo() == other.hasUserInfo());
+        if (hasUserInfo()) {
+          result = result && getUserInfo()
+              .equals(other.getUserInfo());
+        }
         return result;
       }
 
@@ -1416,6 +1475,10 @@ public final class ProtoChannelGetMemberList {
         if (hasAdminRights()) {
           hash = (37 * hash) + ADMINRIGHTS_FIELD_NUMBER;
           hash = (53 * hash) + getAdminRights().hashCode();
+        }
+        if (hasUserInfo()) {
+          hash = (37 * hash) + USERINFO_FIELD_NUMBER;
+          hash = (53 * hash) + getUserInfo().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -1545,6 +1608,12 @@ public final class ProtoChannelGetMemberList {
             adminRights_ = null;
             adminRightsBuilder_ = null;
           }
+          if (userInfoBuilder_ == null) {
+            userInfo_ = null;
+          } else {
+            userInfo_ = null;
+            userInfoBuilder_ = null;
+          }
           return this;
         }
 
@@ -1573,6 +1642,11 @@ public final class ProtoChannelGetMemberList {
             result.adminRights_ = adminRights_;
           } else {
             result.adminRights_ = adminRightsBuilder_.build();
+          }
+          if (userInfoBuilder_ == null) {
+            result.userInfo_ = userInfo_;
+          } else {
+            result.userInfo_ = userInfoBuilder_.build();
           }
           onBuilt();
           return result;
@@ -1623,6 +1697,9 @@ public final class ProtoChannelGetMemberList {
           }
           if (other.hasAdminRights()) {
             mergeAdminRights(other.getAdminRights());
+          }
+          if (other.hasUserInfo()) {
+            mergeUserInfo(other.getUserInfo());
           }
           onChanged();
           return this;
@@ -1835,6 +1912,123 @@ public final class ProtoChannelGetMemberList {
             adminRights_ = null;
           }
           return adminRightsBuilder_;
+        }
+
+        private net.iGap.proto.ProtoGlobal.RegisteredUser userInfo_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            net.iGap.proto.ProtoGlobal.RegisteredUser, net.iGap.proto.ProtoGlobal.RegisteredUser.Builder, net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder> userInfoBuilder_;
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public boolean hasUserInfo() {
+          return userInfoBuilder_ != null || userInfo_ != null;
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.RegisteredUser getUserInfo() {
+          if (userInfoBuilder_ == null) {
+            return userInfo_ == null ? net.iGap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance() : userInfo_;
+          } else {
+            return userInfoBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public Builder setUserInfo(net.iGap.proto.ProtoGlobal.RegisteredUser value) {
+          if (userInfoBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            userInfo_ = value;
+            onChanged();
+          } else {
+            userInfoBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public Builder setUserInfo(
+            net.iGap.proto.ProtoGlobal.RegisteredUser.Builder builderForValue) {
+          if (userInfoBuilder_ == null) {
+            userInfo_ = builderForValue.build();
+            onChanged();
+          } else {
+            userInfoBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public Builder mergeUserInfo(net.iGap.proto.ProtoGlobal.RegisteredUser value) {
+          if (userInfoBuilder_ == null) {
+            if (userInfo_ != null) {
+              userInfo_ =
+                net.iGap.proto.ProtoGlobal.RegisteredUser.newBuilder(userInfo_).mergeFrom(value).buildPartial();
+            } else {
+              userInfo_ = value;
+            }
+            onChanged();
+          } else {
+            userInfoBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public Builder clearUserInfo() {
+          if (userInfoBuilder_ == null) {
+            userInfo_ = null;
+            onChanged();
+          } else {
+            userInfo_ = null;
+            userInfoBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.RegisteredUser.Builder getUserInfoBuilder() {
+          
+          onChanged();
+          return getUserInfoFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        public net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder getUserInfoOrBuilder() {
+          if (userInfoBuilder_ != null) {
+            return userInfoBuilder_.getMessageOrBuilder();
+          } else {
+            return userInfo_ == null ?
+                net.iGap.proto.ProtoGlobal.RegisteredUser.getDefaultInstance() : userInfo_;
+          }
+        }
+        /**
+         * <code>optional .proto.RegisteredUser userInfo = 4;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            net.iGap.proto.ProtoGlobal.RegisteredUser, net.iGap.proto.ProtoGlobal.RegisteredUser.Builder, net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder> 
+            getUserInfoFieldBuilder() {
+          if (userInfoBuilder_ == null) {
+            userInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                net.iGap.proto.ProtoGlobal.RegisteredUser, net.iGap.proto.ProtoGlobal.RegisteredUser.Builder, net.iGap.proto.ProtoGlobal.RegisteredUserOrBuilder>(
+                    getUserInfo(),
+                    getParentForChildren(),
+                    isClean());
+            userInfo_ = null;
+          }
+          return userInfoBuilder_;
         }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2720,15 +2914,16 @@ public final class ProtoChannelGetMemberList {
       "&.proto.ChannelGetMemberList.FilterRole\022" +
       "%\n\npagination\030\004 \001(\0132\021.proto.Pagination\";" +
       "\n\nFilterRole\022\007\n\003ALL\020\000\022\n\n\006MEMBER\020\001\022\r\n\tMOD" +
-      "ERATOR\020\002\022\t\n\005ADMIN\020\003\"\367\001\n\034ChannelGetMember" +
+      "ERATOR\020\002\022\t\n\005ADMIN\020\003\"\241\002\n\034ChannelGetMember" +
       "ListResponse\022!\n\010response\030\001 \001(\0132\017.proto.R",
       "esponse\022:\n\006member\030\002 \003(\0132*.proto.ChannelG" +
-      "etMemberListResponse.Member\032x\n\006Member\022\016\n" +
-      "\006userId\030\001 \001(\004\022%\n\004role\030\002 \001(\0162\027.proto.Chan" +
-      "nelRoom.Role\0227\n\013adminRights\030\003 \001(\0132\".prot" +
-      "o.ChannelAddAdmin.AdminRightsB+\n\016net.iGa" +
-      "p.protoB\031ProtoChannelGetMemberListb\006prot" +
-      "o3"
+      "etMemberListResponse.Member\032\241\001\n\006Member\022\016" +
+      "\n\006userId\030\001 \001(\004\022%\n\004role\030\002 \001(\0162\027.proto.Cha" +
+      "nnelRoom.Role\0227\n\013adminRights\030\003 \001(\0132\".pro" +
+      "to.ChannelAddAdmin.AdminRights\022\'\n\010userIn" +
+      "fo\030\004 \001(\0132\025.proto.RegisteredUserB+\n\016net.i" +
+      "Gap.protoB\031ProtoChannelGetMemberListb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2763,7 +2958,7 @@ public final class ProtoChannelGetMemberList {
     internal_static_proto_ChannelGetMemberListResponse_Member_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ChannelGetMemberListResponse_Member_descriptor,
-        new java.lang.String[] { "UserId", "Role", "AdminRights", });
+        new java.lang.String[] { "UserId", "Role", "AdminRights", "UserInfo", });
     net.iGap.proto.ProtoRequest.getDescriptor();
     net.iGap.proto.ProtoResponse.getDescriptor();
     net.iGap.proto.ProtoGlobal.getDescriptor();
